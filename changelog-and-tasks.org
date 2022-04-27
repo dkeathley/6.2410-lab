@@ -1,15 +1,12 @@
-* Changelog
-** 220307 -- Added Ch. 6 on FROG Retrieval
+* Changelog/Notes
+** 220427 -- Started transferring initial chapter on quantum information (PDK)
 
-Added a new Ch. on FROG retrieval based on recent recitation notes.
+*Morning*
+Translating Dirk's ch. 7 about quantum information.  Emphasis on photonic implementation as this will be the focus of the course.
 
-Fixing issues with display as well that I can repeat for the previous chapters.  
+I am currently at the section on two-qubit gates.
+
 
 * Tasks
-** TODO Fix the videos so that the final plot is not shown (redundant)
-
-Like in Ch. 6
-
-** TODO Fix plot outputs using plt.show() so that text output is suppressed for cells with figures
-
-Like in Ch. 6
+** TODO Complete translating Ch. 7 on quantum information
+** TODO Start adding in additional explanatory material and bringing to proper level for undergrad course.  

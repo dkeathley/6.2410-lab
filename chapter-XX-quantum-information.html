@@ -201,30 +201,45 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#xx-1-quantum-bits-qubits">
    XX.1 Quantum Bits (qubits)
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#xx-2-quantum-gates">
+   XX.2 Quantum Gates
+  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#xx-1-1-quantum-gates">
-     XX.1.1 Quantum Gates
+    <a class="reference internal nav-link" href="#single-qubit-gates">
+     Single Qubit Gates
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#single-qubit-gates">
-       Single Qubit Gates
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#two-qubit-gates">
-       Two Qubit Gates
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#system-settings">
-     System Settings
+    <a class="reference internal nav-link" href="#two-qubit-gates">
+     Two Qubit Gates
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#xx-3-quantum-teleportation">
+   XX.3 Quantum Teleportation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#teleportation-with-cnot">
+     Teleportation With CNOT
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#teleportation-without-cnot">
+     Teleportation Without CNOT
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#xx-4-quantum-error-correction">
+   XX.4 Quantum Error Correction
+  </a>
  </li>
 </ul>
 
@@ -255,30 +270,45 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#xx-1-quantum-bits-qubits">
    XX.1 Quantum Bits (qubits)
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#xx-2-quantum-gates">
+   XX.2 Quantum Gates
+  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#xx-1-1-quantum-gates">
-     XX.1.1 Quantum Gates
+    <a class="reference internal nav-link" href="#single-qubit-gates">
+     Single Qubit Gates
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#single-qubit-gates">
-       Single Qubit Gates
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#two-qubit-gates">
-       Two Qubit Gates
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#system-settings">
-     System Settings
+    <a class="reference internal nav-link" href="#two-qubit-gates">
+     Two Qubit Gates
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#xx-3-quantum-teleportation">
+   XX.3 Quantum Teleportation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#teleportation-with-cnot">
+     Teleportation With CNOT
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#teleportation-without-cnot">
+     Teleportation Without CNOT
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#xx-4-quantum-error-correction">
+   XX.4 Quantum Error Correction
+  </a>
  </li>
 </ul>
 
@@ -289,7 +319,14 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="chapter-xx-quantum-information">
+  <p>Latex Headers</p>
+<div class="math notranslate nohighlight">
+\[\newcommand{\ket}[1]{\left|{#1}\right\rangle}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\bra}[1]{\left\langle{#1}\right|}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\braket}[2]{\left\langle{#1}\middle|{#2}\right\rangle}\]</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="chapter-xx-quantum-information">
 <h1>Chapter XX – Quantum Information<a class="headerlink" href="#chapter-xx-quantum-information" title="Permalink to this headline">¶</a></h1>
 <p>In this chapter we will discuss core concepts in quantum information.  Core principles are explained through the lens of photonic implementations of quantum infromation as this will be how we explore these concepts in the laboratory for this course.  However, you should note that these concepts extend to any quantum information system.</p>
 <p>This recitation will specifically cover the following topics:</p>
@@ -356,10 +393,11 @@ of a photon in a particular basis (e.g., linear or circular), the population of 
 <p>These are maximally entangled states. Let’s consider one of these in more detail, say:</p>
 <p><span class="math notranslate nohighlight">\(\begin{equation} \ket{\beta_{00}} = \frac{1}{\sqrt{2}} \big ( \ket{00} + \ket{11} \big ) \end{equation}\)</span></p>
 <p>If we measure the first qubit, we obtain either ‘0’ or ‘1’ with equal probability. If we measure ‘1’, then the state is projected to <span class="math notranslate nohighlight">\(\ket{\psi} = \ket{11}\)</span>; if we measure ‘0’, then the state is projected to <span class="math notranslate nohighlight">\(\ket{\psi} = \ket{00}\)</span>. The measurement outcomes are correlated, even though the two qubits could be a different locations.</p>
-<div class="section" id="xx-1-1-quantum-gates">
-<h3>XX.1.1 Quantum Gates<a class="headerlink" href="#xx-1-1-quantum-gates" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="xx-2-quantum-gates">
+<h2>XX.2 Quantum Gates<a class="headerlink" href="#xx-2-quantum-gates" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="single-qubit-gates">
-<h4>Single Qubit Gates<a class="headerlink" href="#single-qubit-gates" title="Permalink to this headline">¶</a></h4>
+<h3>Single Qubit Gates<a class="headerlink" href="#single-qubit-gates" title="Permalink to this headline">¶</a></h3>
 <ol>
 <li><p>NOT Gate</p>
 <br>
@@ -409,13 +447,184 @@ M_{\text{H}} =
 </ol>
 </div>
 <div class="section" id="two-qubit-gates">
-<h4>Two Qubit Gates<a class="headerlink" href="#two-qubit-gates" title="Permalink to this headline">¶</a></h4>
+<h3>Two Qubit Gates<a class="headerlink" href="#two-qubit-gates" title="Permalink to this headline">¶</a></h3>
+<ol>
+<li><p>Two-qubit CNOT</p>
+<br>
+<p><span class="math notranslate nohighlight">\(CN = \frac{1}{\sqrt{2}} \big ( \ket{00}\bra{00} + \ket{01}\bra{01} + \ket{10}\bra{01} + \ket{10}\bra{10} \big )\)</span></p>
+<br>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+M_{\text{CN}} = 
+\frac{1}{\sqrt{2}} 
+\begin{pmatrix}
+ 1 &amp; &amp; 0 &amp; 0 \\
+ 0 &amp; 1 &amp; 0 &amp; 0\\
+ 0 &amp; 0 &amp; 0 &amp; 1\\
+ 0 &amp; 0 &amp; 1 &amp; 0
+\end{pmatrix}
+\end{equation}\)</span></p>
+<br>
+<p>Photonic implementation: two single qubit phase gates and two Hadamard gates (see single qubit gates above).</p>
+</li>
+</ol>
 </div>
 </div>
-<div class="section" id="system-settings">
-<h3>System Settings<a class="headerlink" href="#system-settings" title="Permalink to this headline">¶</a></h3>
-<p>Interactive script for easily inputting all desired settings for the actively mode-locked cavity.  All variable names derived from the related equations introduced above.</p>
+<div class="section" id="xx-3-quantum-teleportation">
+<h2>XX.3 Quantum Teleportation<a class="headerlink" href="#xx-3-quantum-teleportation" title="Permalink to this headline">¶</a></h2>
+<p>Quantum teleportation is a technique that allows us to transfer a quantum state without physically moving the system that encodes the state. For instance, suppose Alice has a <span class="math notranslate nohighlight">\(\ket{\psi} = c_0 \ket{0} + c_1 \ket{1}\)</span> encoded in two levels of a Cs atom in her setup in Pasadena, and suppose she wants to transfer this state to Bob’s Cs atom in New York. It would be impractical to move the atom setup from Los Angeles to New York. Furthermore, Alice doesn’t know the state <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> so measuring it would destroy it. Even if she did know the state, it would take infinitely long to transfer the information on the coefficients <span class="math notranslate nohighlight">\(c_0\)</span> and <span class="math notranslate nohighlight">\(c_1\)</span> since they’re continuous variables.</p>
+<p>Alice and Bob can transfer the state if she and Bob also have access to one pair of an entangled state, let’s say the Bell state <span class="math notranslate nohighlight">\(\beta_{00}\)</span> discussed above. The entangled state could consist of two Cs atoms, one in each city.</p>
+<div class="section" id="teleportation-with-cnot">
+<h3>Teleportation With CNOT<a class="headerlink" href="#teleportation-with-cnot" title="Permalink to this headline">¶</a></h3>
+<p>The protocol goes as follows. Alice begins with the product state of her state and <span class="math notranslate nohighlight">\(\beta_{00}\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(\begin{array}
+ \ket{\psi_i} &amp;= (c_0\ket{0} + c_1\ket{1}) \bigotimes \frac{1}{\sqrt{2}} \big ( \ket{0_A \times 0_B} + \ket{1_A \times 1_B} \big ) \\
+              &amp;= \frac{1}{\sqrt{2}} \bigg [ 
+                  c_0 \ket{0} \big ( \ket{0_A \times 0_B} + \ket{1_A \times 1_B} \big ) + 
+                  c_1 \ket{1} \big ( \ket{0_A \times 0_B} + \ket{1_A \times 1_B} \big )
+                 \bigg ]
+ \end{array}\)</span></p>
+<p>Alice then sends her two qubits through a CNOT gate:</p>
+<p><span class="math notranslate nohighlight">\(\begin{array}
+ \ket{\psi_1} = \frac{1}{\sqrt{2}} \bigg [ 
+                &amp; c_0 \ket{0} \big ( \ket{0_A \times 0_B} + \ket{1_A \times 1_B} \big ) + \\
+                &amp; c_1 \ket{1} \big ( \ket{1_A \times 0_B} + \ket{0_A \times 1_B} \big )
+                \bigg ]  
+ \end{array}\)</span></p>
+<p>… and then sends the first qubit through a Hadamard gate:</p>
+<p><span class="math notranslate nohighlight">\(\begin{array}
+ \ket{\psi_2} = \frac{1}{2} 
+                \bigg [ 
+                 &amp;c_0 \big ( \ket{0} + \ket{1} \big ) \big ( \ket{0_A \times 0_B} + \ket{1_A \times 1_B} \big ) + \\
+                 &amp;c_1 \big ( \ket{0} - \ket{1} \big ) \big ( \ket{1_A \times 0_B} + \ket{0_A \times 1_B} \big )
+                \bigg ]
+ \end{array}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\begin{array}
+ \ket{\psi_2} = \frac{1}{2} 
+                \bigg [ 
+                 &amp; \ket{00_A} \big ( c_0 \ket{0_B} + c_1 \ket{1_B} \big ) + \\
+                 &amp; \ket{01_A} \big ( c_0 \ket{1_B} + c_1 \ket{0_B} \big ) + \\
+                 &amp; \ket{10_A} \big ( c_0 \ket{0_B} + c_1 \ket{1_B} \big ) + \\
+                 &amp; \ket{11_A} \big ( c_0 \ket{1_B} + c_1 \ket{0_B} \big )
+                \bigg ]
+ \end{array}\)</span></p>
+<p>Now Alice makes a joint measurement on her qubits.  She can obtain the following outcomes:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(00 \rightarrow \ket{\psi_3(00)} = c_0\ket{0_B} + c_1\ket{1_B} \rightarrow I \rightarrow \ket{\psi_4} = \ket{\psi}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(01 \rightarrow \ket{\psi_3(01)} = c_0\ket{1_B} + c_1\ket{0_B} \rightarrow X \rightarrow \ket{\psi_4} = \ket{\psi}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(10 \rightarrow \ket{\psi_3(10)} = c_0\ket{0_B} - c_1\ket{1_B} \rightarrow Z \rightarrow \ket{\psi_4} = \ket{\psi}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(11 \rightarrow \ket{\psi_3(11)} = c_0\ket{1_B} - c_1\ket{0_B} \rightarrow ZX \rightarrow \ket{\psi_4} = \ket{\psi}\)</span></p></li>
+</ul>
+<p>Now Alice sends Bob the result of her measurement, so that Bob can apply one of four unique single qubit gates to recover the original state <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>.</p>
+<p>Does teleportation violate the Theory of Relativity? No, because the protocol requires that Alice communicates the measurement result to Bob, and this (classical)  communication can’t move faster than the speed of light.</p>
+<p>Teleportation shows that a quantum state can be moved between different physical informations. Quantum teleportation is also crucial for constructing gates that are protected from the environment, using redundant encoding in error correction codes. Quantum teleportation is also crucial for enabling efficient gates in certain quantum computation implementations, such as linear optics quantum computation.</p>
 </div>
+<div class="section" id="teleportation-without-cnot">
+<h3>Teleportation Without CNOT<a class="headerlink" href="#teleportation-without-cnot" title="Permalink to this headline">¶</a></h3>
+<p>We will consider a slightly different scheme that was used to experimentally implement quantum teleportation between two entangled photons. Assume these are in the state</p>
+<p><span class="math notranslate nohighlight">\(\ket{\psi_{AB}} = \frac{1}{\sqrt{2}} \big ( \ket{0_A \times 0_B} - \ket{1_A \times 1_B} \big )\)</span></p>
+<p>where again A and B are in possition by two Alice and Bob at different locations. Alice again has her state <span class="math notranslate nohighlight">\(\ket{\psi} = c_0\ket{0} + c_1\ket{1}\)</span>, and the full state at the beginning of the protocol is given by</p>
+<p><span class="math notranslate nohighlight">\(\begin{array}
+ \ket{\psi_i} &amp;= (c_0\ket{0} + c_1\ket{1}) \bigotimes \frac{1}{\sqrt{2}} \big ( \ket{0_A \times 0_B} + \ket{1_A \times 1_B} \big ) \\
+              &amp;= \frac{1}{\sqrt{2}} \bigg [ 
+                  c_0 \ket{0} \big ( \ket{0_A \times 0_B} + \ket{1_A \times 1_B} \big ) + 
+                  c_1 \ket{1} \big ( \ket{0_A \times 0_B} + \ket{1_A \times 1_B} \big )
+                 \bigg ]
+ \end{array}\)</span></p>
+<p>The four Bell states are given by:</p>
+<p><span class="math notranslate nohighlight">\(\ket{\Phi^{(\pm)}} = \frac{1}{\sqrt{2}} \big ( \ket{00} \pm \ket{11} \big )\)</span></p>
+<p><span class="math notranslate nohighlight">\(\ket{\Psi^{(\pm)}} = \frac{1}{\sqrt{2}} \big ( \ket{01} \pm \ket{10} \big )\)</span></p>
+<p>The state <span class="math notranslate nohighlight">\(\ket{\psi_1}\)</span> can be written in terms of the four Bell states:</p>
+<p><em>FIXME: SEEMS LIKE THERE IS MATERIAL MISSING HERE…</em></p>
+</div>
+</div>
+<div class="section" id="xx-4-quantum-error-correction">
+<h2>XX.4 Quantum Error Correction<a class="headerlink" href="#xx-4-quantum-error-correction" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Following discussion by M. A. Nielsen and I. L. Chuang, Quantum Computation and Quantum Information  (Cambridge Univ. Press, Cambridge, 2000), Chapter 10.</p>
+</div>
+<p>One of the primary challenges of quantum information processing is dealing with system-environment interactions. Quantum error correcting codes are a way to process quantum information reliably in the presence of noise.  Quantum error correction is a complex subject. Here, we’ll consider just a simple example that protects against bit-flip errors in quantum channels. Bit flip errors is just one class of a range of sources of noise, which also include phase flip errors.</p>
+<p>Let’s first consider an example of consider error correction codes: majority voting with three bits. Suppose you have a classical bit in a noisy channel, where the channel just refers to a path in space or time.  The channel could represent a photon flying from point A to B in a fiber, or a magnetic domain in a hard drive sitting there for some time interval.  Suppose that the noise in the channel causes the bit to flip with some probability p over the duration of the channel. In certain applications, a single bit error could have serious consequences, so we’d like to protect the bit.  We can do this by encoding it in redundant bits. To be specific, let’s copy the single bit into three bits:</p>
+<p><span class="math notranslate nohighlight">\(0 \rightarrow 000\)</span></p>
+<p><span class="math notranslate nohighlight">\(1 \rightarrow 111\)</span></p>
+<p>The noisy channel could cause bit flips such as <span class="math notranslate nohighlight">\(000 \rightarrow 001\)</span>, which happens with a probability of <span class="math notranslate nohighlight">\(p\)</span>. In majority voting, we would set the register back to <span class="math notranslate nohighlight">\(000\)</span> after the channel. Clearly, if two or more bits flip, then majority voting fails. This happens with probability given by binomial statistics:</p>
+<p><span class="math notranslate nohighlight">\(\begin{eqnarray}
+  P_\text{fail} =&amp; \sum_{n=2}^3 p^n (1-p)^{3-n} 
+   \begin{pmatrix}
+     3 \\
+     n
+   \end{pmatrix} \\
+   =&amp; 3 p^2 (1 - p) + p^3 = 3 p^2 - 2 p^3
+ \end{eqnarray}\)</span></p>
+<div class="cell tag_hide_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">P_fail_1</span> <span class="o">=</span> <span class="n">p</span>
+<span class="n">P_fail_3</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">p</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">p</span><span class="o">**</span><span class="mi">3</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">P_fail_1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;single-bit&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">P_fail_3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;three-bit&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$p$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$P_\mathrm</span><span class="si">{fail}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="s1">&#39;14&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-XX-quantum-information_18_0.png" src="_images/chapter-XX-quantum-information_18_0.png" />
+</div>
+</div>
+<p>We see that the majority voting code is better if <span class="math notranslate nohighlight">\(p&lt;1/2\)</span>.</p>
+<p>The quantum error correction code must overcome three major difficulties: (1) we can’t copy a quantum state; (2) errors are continuous (not discrete, as for the classical system); (3) we can’t measure an unknown quantum state without perturbing it.</p>
+<p>The following example illustrates that quantum error correction is nevertheless possible and improves on the stabilty of a qubit. In analogy to the classical code, let’s consider encoding a qubit into three qubits. Consider a state</p>
+<p><span class="math notranslate nohighlight">\(\ket{\psi} = c_0 \ket{0} + c_1 \ket{1}\)</span></p>
+<p>and encode the basis states</p>
+<p><span class="math notranslate nohighlight">\(\ket{0} \rightarrow \ket{000}\)</span></p>
+<p>and</p>
+<p><span class="math notranslate nohighlight">\(\ket{1} \rightarrow \ket{111}\)</span></p>
+<p>where the encoding operation can be done with the following circuit involving two CNOT gates, where we use the notation that the channel with the solid circles is the control:</p>
+<p><em>FIXME: THIS FIGURE IS NOT VISIBLE TO ME WHEN I OPEN THE MATHEMATICA NOTEBOOK</em></p>
+<p>Thus our information is encoded in the state</p>
+<p><span class="math notranslate nohighlight">\(\ket{\psi'} = c_0\ket{000} + c_1\ket{111}\)</span></p>
+<p>Now we detect if a single bit is flipped using the following <em>error-detection projectors</em>:</p>
+<p><span class="math notranslate nohighlight">\(\begin{eqnarray}
+P_0 =&amp; \ket{000}\bra{000} + \ket{111}\bra{111} \\
+P_1 =&amp; \ket{100}\bra{100} + \ket{011}\bra{011} \\
+P_2 =&amp; \ket{010}\bra{010} + \ket{101}\bra{101} \\
+P_3 =&amp; \ket{001}\bra{001} + \ket{110}\bra{110}
+ \end{eqnarray}\)</span></p>
+<p>Suppose that with probability <span class="math notranslate nohighlight">\(p\)</span>, one of the qubits flipped, producing, say, the state</p>
+<p><span class="math notranslate nohighlight">\(\ket{\psi''} = c_0 \ket{001} + c_1 \ket{110}\)</span></p>
+<p>Let’s check the probabilties of measuring our different projectors:</p>
+<p><span class="math notranslate nohighlight">\(\begin{eqnarray}
+p_0 =&amp; \bra{\psi''}P_0\ket{\psi''} \\
+p_1 =&amp; \bra{\psi''}P_1\ket{\psi''} \\
+p_2 =&amp; \bra{\psi''}P_2\ket{\psi''} \\
+p_3 =&amp; \bra{\psi''}P_3\ket{\psi''}
+ \end{eqnarray}\)</span></p>
+<p>So we would certainly measure <span class="math notranslate nohighlight">\(P_3\)</span>, telling us which of the bits was flipped. The state after the measurement is</p>
+<p><span class="math notranslate nohighlight">\(\begin{eqnarray}
+ \ket{\psi'''} = \frac{P_3 \ket{\psi''}}{\bra{\psi''}P_3\ket{\psi''}} =&amp; c_0\ket{001} + c_1\ket{110} \\
+               =&amp; \ket{\psi}
+ \end{eqnarray}\)</span></p>
+<p><em>i.e.</em>, the error-detection projector did not change the state! Thus we didn’t learn anything more about the coefficients in</p>
+<p><span class="math notranslate nohighlight">\(\ket{\psi'} = c_0\ket{000} + c_1\ket{111}\)</span></p>
+<p>so the state is still protected. All four error detection operators have this property.</p>
+<p>Conditional on the outcome of the measurement by <span class="math notranslate nohighlight">\(P_i\)</span>, we can finally restore the state by applying a NOT to the <span class="math notranslate nohighlight">\(i^{\text{th}}\)</span> qubit, i.e., by applying <span class="math notranslate nohighlight">\(X_i\)</span>.</p>
+<p>Clearly, our procedure does not work when two or more spin flips have occurred. Thus, the error correction again fails with probabilty</p>
+<p><span class="math notranslate nohighlight">\(\begin{eqnarray}
+  P_\text{fail} =&amp; \sum_{n=2}^3 p^n (1-p)^{3-n} 
+   \begin{pmatrix}
+     3 \\
+     n
+   \end{pmatrix} \\
+   =&amp; 3 p^2 (1 - p) + p^3 = 3 p^2 - 2 p^3
+ \end{eqnarray}\)</span></p>
+<p>just like for the classical error correction code.</p>
 </div>
 </div>
 

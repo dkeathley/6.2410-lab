@@ -362,9 +362,13 @@ of a photon in a particular basis (e.g., linear or circular), the population of 
 <h4>Single Qubit Gates<a class="headerlink" href="#single-qubit-gates" title="Permalink to this headline">¶</a></h4>
 <ol>
 <li><p>NOT Gate</p>
+<br>
 <p><span class="math notranslate nohighlight">\(X = \ket{1} \bra{0} + \ket{0}\bra{1}\)</span></p>
+<br>
 <p><span class="math notranslate nohighlight">\(X\ket{\psi} = X(c_0 \ket{0} + c_1 \ket{1}) = c_0 \ket{1} + c_1 \ket{0}\)</span></p>
+<br>
 <p>Photonic implementation: e.g., a half wave plate (HWP) at 45 degrees to the linear polarization basis.  Recall the Jones matrix for a HWP:</p>
+<br>
 <p><span class="math notranslate nohighlight">\(\begin{equation}
 M_{\text{HWP}} = 
 \begin{pmatrix}
@@ -372,16 +376,25 @@ M_{\text{HWP}} =
  \sin{2\theta} &amp; -\cos{2\theta}
 \end{pmatrix}
 \end{equation}\)</span></p>
+<br>
 </li>
 <li><p>Z Gate</p>
+<br>
 <p><span class="math notranslate nohighlight">\(Z = \ket{0} \bra{0} - \ket{1}\bra{1}\)</span></p>
+<br>   
 <p><span class="math notranslate nohighlight">\(Z\ket{\psi} = Z(c_0 \ket{0} + c_1 \ket{1}) = c_0 \ket{0} - c_1 \ket{1}\)</span></p>
+<br>
 <p>Photonic implementation: e.g., a HWP with <span class="math notranslate nohighlight">\(\theta = 0\)</span>.</p>
+<br>
 </li>
 <li><p>Hadamard Gate</p>
+<br>
 <p>The purpose of this gate is to transform from the input basis to the complimentary basis.  In terms of a polarization basis, it would be essentially a rotation by 45 degrees.</p>
+<br>
 <p><span class="math notranslate nohighlight">\(H = \ket{0} \bra{0} + \ket{1}\bra{0} + \ket{0}\bra{1} - \ket{1}\bra{1}\)</span></p>
+<br>
 <p><span class="math notranslate nohighlight">\(H\ket{\psi} = H(c_0 \ket{0} + c_1 \ket{1}) = \frac{1}{\sqrt{2}} \big ( c_0 \ket{0} + c_0 \ket{1} + c_1\ket{0} - c_1\ket{1} \big )\)</span></p>
+<br>
 <p><span class="math notranslate nohighlight">\(\begin{equation}
 M_{\text{H}} = 
 \frac{1}{\sqrt{2}} 
@@ -390,6 +403,7 @@ M_{\text{H}} =
  1 &amp; -1
 \end{pmatrix}
 \end{equation}\)</span></p>
+<br>   
 <p>Photonic implementation: for polarization states, a HWP at <span class="math notranslate nohighlight">\(\theta = 22.5^{\circ}\)</span>; for mode basis states, a beamsplitter.</p>
 </li>
 </ol>

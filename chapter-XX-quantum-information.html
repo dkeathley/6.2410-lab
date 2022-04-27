@@ -203,6 +203,23 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#xx-1-1-quantum-gates">
+     XX.1.1 Quantum Gates
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#single-qubit-gates">
+       Single Qubit Gates
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#two-qubit-gates">
+       Two Qubit Gates
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#system-settings">
      System Settings
     </a>
@@ -239,6 +256,23 @@ const thebe_selector_output = ".output, .cell_output"
    XX.1 Quantum Bits (qubits)
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#xx-1-1-quantum-gates">
+     XX.1.1 Quantum Gates
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#single-qubit-gates">
+       Single Qubit Gates
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#two-qubit-gates">
+       Two Qubit Gates
+      </a>
+     </li>
+    </ul>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#system-settings">
      System Settings
@@ -317,6 +351,53 @@ of a photon in a particular basis (e.g., linear or circular), the population of 
 <p><span class="math notranslate nohighlight">\(\begin{equation} \ket{\psi}  = c_{00}\ket{00} + c_{01}\ket{01} + c_{10}\ket{10} + c_{11}\ket{11} \end{equation}\)</span></p>
 <p>This simple example already shows one of the fundamental differences – and potential strengths – of the quantum register: it is in all states at once.</p>
 <p>For instance, suppose we wanted to represent the state of <span class="math notranslate nohighlight">\(N\)</span> two-level particles, such as the polarization states of photons or the orientation of electron spins. This would us to store <span class="math notranslate nohighlight">\(2^N\)</span> complex numbers, i.e., <span class="math notranslate nohighlight">\(2^{N+1}\)</span> real numbers. Suppose each real number were stored in a 32-bit classical register. Then we’d need <span class="math notranslate nohighlight">\(32\times2^{N+1}\)</span> bits. If <span class="math notranslate nohighlight">\(N=50\)</span>, that’s already 4500 tera-bytes, and if <span class="math notranslate nohighlight">\(N=500\)</span>, we would require more bits than there are atoms in the universe (double-check!).  In a quantum computer, a register of 500 qubits would suffice! Thus, we already see that for certain applications – like trying to simulate a quantum system – the quantum memory is exponentially more powerful than a classical memory. The idea of using a quantum system for simulating a classical system was proposed by Richard Feynman in the early eighties, and is called quantum simulation.</p>
+<p>Going back to our two-level system, an important set of state are the Bell states:</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation} \bigg \lbrace \frac{1}{\sqrt{2}} \big ( \ket{00} \pm \ket{11} \big ), \frac{1}{\sqrt{2}} \big (\ket{10} \pm \ket{01} \big ) \bigg \rbrace \end{equation}\)</span></p>
+<p>These are maximally entangled states. Let’s consider one of these in more detail, say:</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation} \ket{\beta_{00}} = \frac{1}{\sqrt{2}} \big ( \ket{00} + \ket{11} \big ) \end{equation}\)</span></p>
+<p>If we measure the first qubit, we obtain either ‘0’ or ‘1’ with equal probability. If we measure ‘1’, then the state is projected to <span class="math notranslate nohighlight">\(\ket{\psi} = \ket{11}\)</span>; if we measure ‘0’, then the state is projected to <span class="math notranslate nohighlight">\(\ket{\psi} = \ket{00}\)</span>. The measurement outcomes are correlated, even though the two qubits could be a different locations.</p>
+<div class="section" id="xx-1-1-quantum-gates">
+<h3>XX.1.1 Quantum Gates<a class="headerlink" href="#xx-1-1-quantum-gates" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="single-qubit-gates">
+<h4>Single Qubit Gates<a class="headerlink" href="#single-qubit-gates" title="Permalink to this headline">¶</a></h4>
+<ol>
+<li><p>NOT Gate</p>
+<p><span class="math notranslate nohighlight">\(X = \ket{1} \bra{0} + \ket{0}\bra{1}\)</span></p>
+<p><span class="math notranslate nohighlight">\(X\ket{\psi} = X(c_0 \ket{0} + c_1 \ket{1}) = c_0 \ket{1} + c_1 \ket{0}\)</span></p>
+<p>Photonic implementation: e.g., a half wave plate (HWP) at 45 degrees to the linear polarization basis.  Recall the Jones matrix for a HWP:</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+M_{\text{HWP}} = 
+\begin{pmatrix}
+ \cos{2\theta} &amp; \sin{2\theta} \\
+ \sin{2\theta} &amp; -\cos{2\theta}
+\end{pmatrix}
+\end{equation}\)</span></p>
+</li>
+<li><p>Z Gate</p>
+<p><span class="math notranslate nohighlight">\(Z = \ket{0} \bra{0} - \ket{1}\bra{1}\)</span></p>
+<p><span class="math notranslate nohighlight">\(Z\ket{\psi} = Z(c_0 \ket{0} + c_1 \ket{1}) = c_0 \ket{0} - c_1 \ket{1}\)</span></p>
+<p>Photonic implementation: e.g., a HWP with <span class="math notranslate nohighlight">\(\theta = 0\)</span>.</p>
+</li>
+<li><p>Hadamard Gate</p>
+<p>The purpose of this gate is to transform from the input basis to the complimentary basis.  In terms of a polarization basis, it would be essentially a rotation by 45 degrees.</p>
+<p><span class="math notranslate nohighlight">\(H = \ket{0} \bra{0} + \ket{1}\bra{0} + \ket{0}\bra{1} - \ket{1}\bra{1}\)</span></p>
+<p><span class="math notranslate nohighlight">\(H\ket{\psi} = H(c_0 \ket{0} + c_1 \ket{1}) = \frac{1}{\sqrt{2}} \big ( c_0 \ket{0} + c_0 \ket{1} + c_1\ket{0} - c_1\ket{1} \big )\)</span></p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+M_{\text{H}} = 
+\frac{1}{\sqrt{2}} 
+\begin{pmatrix}
+ 1 &amp; 1 \\
+ 1 &amp; -1
+\end{pmatrix}
+\end{equation}\)</span></p>
+<p>Photonic implementation: for polarization states, a HWP at <span class="math notranslate nohighlight">\(\theta = 22.5^{\circ}\)</span>; for mode basis states, a beamsplitter.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="two-qubit-gates">
+<h4>Two Qubit Gates<a class="headerlink" href="#two-qubit-gates" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
 <div class="section" id="system-settings">
 <h3>System Settings<a class="headerlink" href="#system-settings" title="Permalink to this headline">¶</a></h3>
 <p>Interactive script for easily inputting all desired settings for the actively mode-locked cavity.  All variable names derived from the related equations introduced above.</p>

@@ -541,7 +541,7 @@ M_{\text{CN}} =
 <h2>XX.4 Quantum Error Correction<a class="headerlink" href="#xx-4-quantum-error-correction" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Following discussion by M. A. Nielsen and I. L. Chuang, Quantum Computation and Quantum Information  (Cambridge Univ. Press, Cambridge, 2000), Chapter 10.</p>
+<p>This section follows the discussion by M. A. Nielsen and I. L. Chuang, Quantum Computation and Quantum Information  (Cambridge Univ. Press, Cambridge, 2000), Chapter 10.</p>
 </div>
 <p>One of the primary challenges of quantum information processing is dealing with system-environment interactions. Quantum error correcting codes are a way to process quantum information reliably in the presence of noise.  Quantum error correction is a complex subject. Here, we’ll consider just a simple example that protects against bit-flip errors in quantum channels. Bit flip errors is just one class of a range of sources of noise, which also include phase flip errors.</p>
 <p>Let’s first consider an example of consider error correction codes: majority voting with three bits. Suppose you have a classical bit in a noisy channel, where the channel just refers to a path in space or time.  The channel could represent a photon flying from point A to B in a fiber, or a magnetic domain in a hard drive sitting there for some time interval.  Suppose that the noise in the channel causes the bit to flip with some probability p over the duration of the channel. In certain applications, a single bit error could have serious consequences, so we’d like to protect the bit.  We can do this by encoding it in redundant bits. To be specific, let’s copy the single bit into three bits:</p>

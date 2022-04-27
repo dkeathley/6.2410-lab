@@ -4,4 +4,4 @@
 format: jb-book
 root: intro
 chapters:
-- file: example_notebook
+- file: chapter-XX-quantum-information

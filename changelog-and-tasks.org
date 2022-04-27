@@ -21,7 +21,7 @@ Some questions items I would like to address:
     + What function does it have in general, and why are we taking the time to introduce it?
     + We should also add more schematics with the diagrammatic form of each gate, as well as some realistic examples of optical implementations at the least
  4. [ ] We now need to tie-in with the equipment that we have more I think.
-    + *Appraoch 1* Should we stick with purely optical implementation examples?
+    + *Approach 1* Should we stick with purely optical implementation examples?
     + *Approach 2* Or, should we be more general, but systematically show an example in each kind of platform?  /I vote for this option/.  
       + Example: For each gate we would systematically list out each example platform from a pre-defined list, and then note examples of how each gate is implemented in that respective platform (or at least an example).
       + It would be good to also note current limitations and areas where researchers/engineers are trying to improve upon conventional approaches (for instance integrated-photonics implementations of free-space optical gates)...

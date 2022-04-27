@@ -28,5 +28,8 @@ Some questions items I would like to address:
 
 
 * Tasks
-** TODO Complete translating Ch. 7 on quantum information
+** DONE Complete translating Ch. 7 on quantum information
+CLOSED: [2022-04-27 Wed 13:24]
+** DONE Notes on action items and thoughts of directions for discussion
+CLOSED: [2022-04-27 Wed 13:24]
 ** TODO Start adding in additional explanatory material and bringing to proper level for undergrad course.  

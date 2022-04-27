@@ -1,0 +1,15 @@
+* Changelog
+** 220307 -- Added Ch. 6 on FROG Retrieval
+
+Added a new Ch. on FROG retrieval based on recent recitation notes.
+
+Fixing issues with display as well that I can repeat for the previous chapters.  
+
+* Tasks
+** TODO Fix the videos so that the final plot is not shown (redundant)
+
+Like in Ch. 6
+
+** TODO Fix plot outputs using plt.show() so that text output is suppressed for cells with figures
+
+Like in Ch. 6

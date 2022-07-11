@@ -12,6 +12,8 @@ kernelspec:
   name: python3
 ---
 
++++ {"tags": ["remove-cell"]}
+
 # Latex Headers
 
 $$\newcommand{\ket}[1]{\left|{#1}\right\rangle}$$
@@ -20,7 +22,7 @@ $$\newcommand{\braket}[2]{\left\langle{#1}\middle|{#2}\right\rangle}$$
 $$\newcommand{\adagger}[0]{\hat{a}^{\dagger}}$$
 $$\newcommand{\ahat}[0]{\hat{a}}$$
 
-+++ {"incorrectly_encoded_metadata": "tags=[\"remove-cell\"] jp-MarkdownHeadingCollapsed=true jp-MarkdownHeadingCollapsed=true tags=[] jp-MarkdownHeadingCollapsed=true", "tags": []}
++++ {"incorrectly_encoded_metadata": "tags=[\"remove-cell\"] jp-MarkdownHeadingCollapsed=true jp-MarkdownHeadingCollapsed=true tags=[] jp-MarkdownHeadingCollapsed=true", "tags": ["remove-cell"]}
 
 # Cell Width Adjust
 

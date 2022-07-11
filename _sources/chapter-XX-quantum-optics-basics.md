@@ -16,15 +16,11 @@ kernelspec:
 
 # Latex Headers
 
-```{raw-cell}
-:tags: []
-
 $$\newcommand{\ket}[1]{\left|{#1}\right\rangle}$$
 $$\newcommand{\bra}[1]{\left\langle{#1}\right|}$$
 $$\newcommand{\braket}[2]{\left\langle{#1}\middle|{#2}\right\rangle}$$
 $$\newcommand{\adagger}[0]{\hat{a}^{\dagger}}$$
 $$\newcommand{\ahat}[0]{\hat{a}}$$
-```
 
 +++ {"incorrectly_encoded_metadata": "tags=[\"remove-cell\"] jp-MarkdownHeadingCollapsed=true jp-MarkdownHeadingCollapsed=true tags=[] jp-MarkdownHeadingCollapsed=true", "tags": ["remove-cell"]}
 

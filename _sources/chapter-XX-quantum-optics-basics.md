@@ -154,11 +154,11 @@ A general concept of note is the determination of mean and standard deviation of
 
 The mean of an observable can be found by taking its expectation given the current state of the system $\ket{\psi}$.  For example, the mean photon number would be:
 
-$$ \langle N \rangle =  \bra{\psi}\hat{N}\ket{\psi}$$.
+$$ \langle N \rangle =  \bra{\psi}\hat{N}\ket{\psi}.$$
 
 The standard deviation $\Delta N$ is found through the relation:
 
-$$\langle \Delta N^2 \rangle = \bra{\psi} \hat{N}^2 \ket{\psi} - \langle N \rangle^2$$
+$$\langle \Delta N^2 \rangle = \bra{\psi} \hat{N}^2 \ket{\psi} - \langle N \rangle^2.$$
 
 Calculation of such quantities are very important as they allow us to determine signal-to-noise ratios in our systems that are critical to their real-world operation.
 

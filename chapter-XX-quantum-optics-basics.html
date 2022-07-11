@@ -257,6 +257,29 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#common-state-types-and-their-properties">
+   Common State Types and Their Properties
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-number-state-ket-n">
+     The number state
+     <span class="math notranslate nohighlight">
+      \(\ket{N}\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-coherent-state-ket-alpha">
+     The coherent state
+     <span class="math notranslate nohighlight">
+      \(\ket{\alpha}\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
    References
   </a>
@@ -337,6 +360,29 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#common-state-types-and-their-properties">
+   Common State Types and Their Properties
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-number-state-ket-n">
+     The number state
+     <span class="math notranslate nohighlight">
+      \(\ket{N}\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-coherent-state-ket-alpha">
+     The coherent state
+     <span class="math notranslate nohighlight">
+      \(\ket{\alpha}\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
    References
   </a>
@@ -414,6 +460,10 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="math notranslate nohighlight">
 \[\hat{A}^{(2)} = \frac{\adagger - \ahat}{2i}.\]</div>
 <p>Taking the expectation of either <span class="math notranslate nohighlight">\(\hat{A}^{(1)}\)</span> or <span class="math notranslate nohighlight">\(\hat{A}^{(2)}\)</span> provides the time-averaged output of the in-phase and quadrature components of the field respectively.</p>
+<p>Note that it can be useful to define the more general form:</p>
+<div class="math notranslate nohighlight">
+\[\hat{A}^{(\theta)} = \frac{\ahat e^{-i\theta} + \adagger e^{i\theta}}{2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{A}^{(1)} = \hat{A}^{(\theta)}(0)\)</span>, and <span class="math notranslate nohighlight">\(\hat{A}^{(2)} = \hat{A}^{(\theta)}(\pi/2)\)</span></p>
 </div>
 <div class="section" id="mean-and-standard-deviation-observables">
 <h2>Mean and Standard Deviation Observables<a class="headerlink" href="#mean-and-standard-deviation-observables" title="Permalink to this headline">¶</a></h2>
@@ -427,7 +477,24 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Calculation of such quantities are very important as they allow us to determine signal-to-noise ratios in our systems that are critical to their real-world operation.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Note the similarity to the approach from how such values are obtained for standard random variables in statistics.  For example, see the definitions for <a class="reference external" href="https://en.wikipedia.org/wiki/Standard_deviation">standard deviation</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Variance">variance</a>.</p>
+<p>The approach above follows directly from how such values are obtained for random variables in statistics.  For example, see the definitions for <a class="reference external" href="https://en.wikipedia.org/wiki/Standard_deviation">standard deviation</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Variance">variance</a>.</p>
+</div>
+</div>
+<div class="section" id="common-state-types-and-their-properties">
+<h2>Common State Types and Their Properties<a class="headerlink" href="#common-state-types-and-their-properties" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-number-state-ket-n">
+<h3>The number state <span class="math notranslate nohighlight">\(\ket{N}\)</span><a class="headerlink" href="#the-number-state-ket-n" title="Permalink to this headline">¶</a></h3>
+<p>As per its name, the number state contains a well-defined number of photons, such that</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}N = \bra{N}\hat{N}\ket{N}$$.\\The standard deviation of this photon number $\Delta N = 0$.  \\What can be quite odd about such a state is that despite the fact that the photon number is unrestricted, the average field is always 0.  That is:\\$$\langle \hat{A}^{(1)} \rangle = \langle \hat{A}^{(2)} \rangle = 0\end{aligned}\end{align} \]</div>
+<p>However, the standard deviation of the fields are certainly not zero, with:</p>
+<div class="math notranslate nohighlight">
+\[\Delta A^{(\theta)} = \sqrt{2N + 1}/2\]</div>
+<p>So, while these states carry a very well-defined amount of energy (<span class="math notranslate nohighlight">\(N\hbar\omega\)</span>), they carry it in fields that fluctuate wildly in time, with no net mean field.</p>
+<p>A useful way to visualize quantum fields is to make a two-dimensional plot with <span class="math notranslate nohighlight">\(A^{(1)}\)</span> on the <span class="math notranslate nohighlight">\(x\)</span>-axis, and <span class="math notranslate nohighlight">\(A^{(2)}\)</span> on the <span class="math notranslate nohighlight">\(y\)</span>-axis.  In this configuration, <span class="math notranslate nohighlight">\(\theta\)</span> is then the angle going counter-clockwise from the <span class="math notranslate nohighlight">\(x\)</span>-axis.  Then, you mark the region whos center is the mean value of <span class="math notranslate nohighlight">\(A^{(1)}\)</span> and <span class="math notranslate nohighlight">\(A^{(2)}\)</span> of the state, with a width of <span class="math notranslate nohighlight">\(2\Delta A^{(\theta)}\)</span> for each value of <span class="math notranslate nohighlight">\(\theta\)</span>.  This allows a quick visual representation of both the average value and uncertainty of the fields of any given state.</p>
+</div>
+<div class="section" id="the-coherent-state-ket-alpha">
+<h3>The coherent state <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span><a class="headerlink" href="#the-coherent-state-ket-alpha" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="references">

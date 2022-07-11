@@ -180,17 +180,17 @@ The approach above follows directly from how such values are obtained for random
 
 As per its name, the number state contains a well-defined number of photons, such that 
 
-$$N = \bra{N}\hat{N}\ket{N}$$.
+$$N = \bra{N}\hat{N}\ket{N}.$$
 
 The standard deviation of this photon number $\Delta N = 0$.  
 
 What can be quite odd about such a state is that despite the fact that the photon number is unrestricted, the average field is always 0.  That is:
 
-$$\langle \hat{A}^{(1)} \rangle = \langle \hat{A}^{(2)} \rangle = 0$$
+$$\langle \hat{A}^{(1)} \rangle = \langle \hat{A}^{(2)} \rangle = 0.$$
 
 However, the standard deviation of the fields are certainly not zero, with:
 
-$$\Delta A^{(\theta)} = \sqrt{2N + 1}/2$$
+$$\Delta A^{(\theta)} = \sqrt{2N + 1}/2.$$
 
 So, while these states carry a very well-defined amount of energy ($N\hbar\omega$), they carry it in fields that fluctuate wildly in time, with no net mean field.
 

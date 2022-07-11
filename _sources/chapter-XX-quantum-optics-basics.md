@@ -16,6 +16,8 @@ kernelspec:
 
 # Latex Headers
 
++++
+
 $$\newcommand{\ket}[1]{\left|{#1}\right\rangle}$$
 $$\newcommand{\bra}[1]{\left\langle{#1}\right|}$$
 $$\newcommand{\braket}[2]{\left\langle{#1}\middle|{#2}\right\rangle}$$

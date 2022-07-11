@@ -136,7 +136,7 @@ The quantization of the electromagnetic field is discussed in many textbooks.  F
 
 +++
 
-# References
+## References
 
 ```{bibliography}
 :style: unsrt

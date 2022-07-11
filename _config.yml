@@ -26,6 +26,9 @@ html:
   use_issues_button: true
   use_repository_button: true
 
+#Avoid unwanted files for build
+only_build_toc_files: true
+  
 # Information about where the book exists on the web
 repository:
   url                       : https://github.mit.edu/pages/pdkeat2/6.157-lab/  # Online location of your book

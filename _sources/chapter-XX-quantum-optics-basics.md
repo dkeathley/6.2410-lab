@@ -138,7 +138,9 @@ The quantization of the electromagnetic field is discussed in many textbooks.  F
 
 The operator relating to the "in-phase" component of the electric field is expressed as:
 
-$$\hat{A}^{(1)} = \frac{\adagger + \ahat}{2}$$,
+\begin{equation}
+\hat{A}^{(1)} = \frac{\adagger + \ahat}{2},
+\end{equation}
 
 and that relating to the "quadrature" component of the electric field as:
 

@@ -100,15 +100,15 @@ $\adagger_m \ket{N}_m = \sqrt{N + 1}\ket{N + 1}$
 
 The annihilation operator acts to decrease the photon number in a particular mode by 1.  For instance:
 
-$\ahat_m \ket{1}_m = \ket{0}_m$.
+$$\ahat_m \ket{1}_m = \ket{0}_m.$$
 
 More generally:
 
-$\ahat_m \ket{N}_m = \sqrt{N}\ket{N - 1}$.
+$$\ahat_m \ket{N}_m = \sqrt{N}\ket{N - 1}.$$
 
 Note that:
 
-$\ahat_m \ket{0}_m = 0$
+$$\ahat_m \ket{0}_m = 0.$$
 
 +++
 
@@ -146,6 +146,12 @@ $$\hat{A}^{(2)} = \frac{\adagger - \ahat}{2i}.$$
 
 Taking the expectation of either $\hat{A}^{(1)}$ or $\hat{A}^{(2)}$ provides the time-averaged output of the in-phase and quadrature components of the field respectively.  
 
+Note that it can be useful to define the more general form:
+
+$$\hat{A}^{(\theta)} = \frac{\ahat e^{-i\theta} + \adagger e^{i\theta}}{2}$$
+
+where $\hat{A}^{(1)} = \hat{A}^{(\theta)}(0)$, and $\hat{A}^{(2)} = \hat{A}^{(\theta)}(\pi/2)$
+
 +++
 
 ## Mean and Standard Deviation Observables
@@ -163,10 +169,111 @@ $$\langle \Delta N^2 \rangle = \bra{\psi} \hat{N}^2 \ket{\psi} - \langle N \rang
 Calculation of such quantities are very important as they allow us to determine signal-to-noise ratios in our systems that are critical to their real-world operation.
 
 ```{note}
-Note the similarity to the approach from how such values are obtained for standard random variables in statistics.  For example, see the definitions for [standard deviation](https://en.wikipedia.org/wiki/Standard_deviation) and [variance](https://en.wikipedia.org/wiki/Variance). 
+The approach above follows directly from how such values are obtained for random variables in statistics.  For example, see the definitions for [standard deviation](https://en.wikipedia.org/wiki/Standard_deviation) and [variance](https://en.wikipedia.org/wiki/Variance). 
 ```
 
 +++
+
+## Common State Types and Their Properties
+
+### The number state $\ket{N}$
+
+As per its name, the number state contains a well-defined number of photons, such that 
+
+$$N = \bra{N}\hat{N}\ket{N}.$$
+
+The standard deviation of this photon number $\Delta N = 0$.  
+
+What can be quite odd about such a state is that despite the fact that the photon number is unrestricted, the average field is always 0.  That is:
+
+$$\langle \hat{A}^{(1)} \rangle = \langle \hat{A}^{(2)} \rangle = 0.$$
+
+However, the standard deviation of the fields are certainly not zero, with:
+
+$$\Delta A^{(\theta)} = \sqrt{2N + 1}/2.$$
+
+So, while these states carry a very well-defined amount of energy ($N\hbar\omega$), they carry it in fields that fluctuate wildly in time, with no net mean field.
+
+A useful way to visualize quantum fields is to make a two-dimensional plot with $A^{(1)}$ on the $x$-axis, and $A^{(2)}$ on the $y$-axis.  In this configuration, $\theta$ is then the angle going counter-clockwise from the $x$-axis.  Then, you mark the region whos center is the mean value of $A^{(1)}$ and $A^{(2)}$ of the state, with a width of $2\Delta A^{(\theta)}$ for each value of $\theta$.  This allows a quick visual representation of both the average value and uncertainty of the fields of any given state.
+
+```{code-cell} ipython3
+:tags: [hide-input]
+
+import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib.patches as mpatches
+
+fig = plt.figure()
+ax = fig.add_subplot()
+
+A = 0
+phi = 0
+delA = np.sqrt(2*4 + 1)/2
+
+
+A1 = A*np.cos(phi)
+A2 = A*np.sin(phi)
+
+
+# add a circle
+circle = mpatches.Circle((A1, A2), radius=0.25, ec="none", color='tab:blue')
+ax.add_patch(circle)
+ax.set_xlim(-1.1, 1.1)
+ax.set_ylim(-1.1, 1.1)
+
+ax.set_xlabel('$A^{(1)}$', fontsize=15)
+ax.set_ylabel('$A^{(2)}$', fontsize=15)
+
+ax.axvline(0, color='black', linestyle='--')
+ax.axhline(0, color='black', linestyle='--')
+
+ax.tick_params(labelsize=13) 
+
+plt.gca().set_aspect('equal')
+
+fig.set_size_inches(10, 10)
+```
+
++++ {"tags": []}
+
+### The coherent state $\ket{\alpha}$
+
+```{code-cell} ipython3
+:tags: [hide-input]
+
+import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib.patches as mpatches
+
+fig = plt.figure()
+ax = fig.add_subplot()
+
+A = 4
+phi = np.pi/4
+
+A1 = A*np.cos(phi)
+A2 = A*np.sin(phi)
+delA = 1/2
+
+
+# add a circle
+circle = mpatches.Circle((A1, A2), radius=0.25, ec="none", color='tab:blue')
+ax.add_patch(circle)
+ax.set_xlim(-4.1, 4.1)
+ax.set_ylim(-4.1, 4.1)
+
+ax.set_xlabel('$A^{(1)}$', fontsize=15)
+ax.set_ylabel('$A^{(2)}$', fontsize=15)
+
+ax.axvline(0, color='black', linestyle='--')
+ax.axhline(0, color='black', linestyle='--')
+
+ax.tick_params(labelsize=13) 
+
+plt.gca().set_aspect('equal')
+
+fig.set_size_inches(10, 10)
+```
 
 ## References
 

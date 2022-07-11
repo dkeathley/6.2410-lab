@@ -256,7 +256,7 @@ $$ \bra{\alpha}_m \adagger_m = \alpha^* \bra{\alpha}_m.  $$
 
 This makes working with coherent states very easy, so long as you put all expressions in "normal order", meaning annihilation operators always before creation operators when multiplied out.
 
-```{note}
+```{important}
 Remember that in quantum operators do not necessarily commute.  In particular, the creation and annihilation operators do not commute.  This means that we cannot simply move the annihilation operators to the left of creation operators.  
 
 So how do we put things in normal order?  We take advantage of the commutation relation

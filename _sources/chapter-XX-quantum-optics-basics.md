@@ -199,27 +199,39 @@ A useful way to visualize quantum fields is to make a two-dimensional plot with 
 ```{code-cell} ipython3
 :tags: [hide-input]
 
+import matplotlib.pyplot as plt
 import numpy as np
-import plotly.graph_objects as go
+import matplotlib.patches as mpatches
 
-categories = ['processing cost','mechanical properties','chemical stability',
-              'thermal stability', 'device integration']
+fig = plt.figure()
+ax = fig.add_subplot()
 
-theta = np.linspace(0, 360, 100)
-A = np.sqrt(2*4 + 1)/2*np.ones(theta.size)
+A = 0
+phi = 0
+delA = np.sqrt(2*4 + 1)/2
 
-fig = go.Figure()
 
-fig.add_trace(go.Scatterpolar(
-      r=A,
-      theta=theta,
-      fill='toself',
-      name='Field Representation'
-))
+A1 = A*np.cos(phi)
+A2 = A*np.sin(phi)
 
-fig.update_polars(radialaxis_range=list([0, 4.0]))
 
-fig.show()
+# add a circle
+circle = mpatches.Circle((A1, A2), radius=0.25, ec="none", color='tab:blue')
+ax.add_patch(circle)
+ax.set_xlim(-1.1, 1.1)
+ax.set_ylim(-1.1, 1.1)
+
+ax.set_xlabel('$A^{(1)}$', fontsize=15)
+ax.set_ylabel('$A^{(2)}$', fontsize=15)
+
+ax.axvline(0, color='black', linestyle='--')
+ax.axhline(0, color='black', linestyle='--')
+
+ax.tick_params(labelsize=13) 
+
+plt.gca().set_aspect('equal')
+
+fig.set_size_inches(10, 10)
 ```
 
 +++ {"tags": []}
@@ -229,38 +241,38 @@ fig.show()
 ```{code-cell} ipython3
 :tags: [hide-input]
 
+import matplotlib.pyplot as plt
 import numpy as np
-import plotly.graph_objects as go
+import matplotlib.patches as mpatches
 
-categories = ['processing cost','mechanical properties','chemical stability',
-              'thermal stability', 'device integration']
+fig = plt.figure()
+ax = fig.add_subplot()
 
-
-phi = 45
 A = 4
+phi = np.pi/4
+
+A1 = A*np.cos(phi)
+A2 = A*np.sin(phi)
 delA = 1/2
 
-theta = np.linspace(0, 360, 100)
 
-x = A*np.cos(phi*np.pi/180) + delA*np.cos(theta*np.pi/180)
-y = A*np.sin(phi*np.pi/180) + delA*np.sin(theta*np.pi/180)
+# add a circle
+circle = mpatches.Circle((A1, A2), radius=0.25, ec="none", color='tab:blue')
+ax.add_patch(circle)
+ax.set_xlim(-4.1, 4.1)
+ax.set_ylim(-4.1, 4.1)
 
-R = np.sqrt(x**2 + y**2)
+ax.set_xlabel('$A^{(1)}$', fontsize=15)
+ax.set_ylabel('$A^{(2)}$', fontsize=15)
 
-Theta = np.arctan2(y, x)*180/np.pi
+ax.axvline(0, color='black', linestyle='--')
+ax.axhline(0, color='black', linestyle='--')
 
-fig = go.Figure()
+ax.tick_params(labelsize=13) 
 
-fig.add_trace(go.Scatterpolar(
-      r=R,
-      theta=Theta,
-      fill='toself',
-      name='Field Representation'
-))
+plt.gca().set_aspect('equal')
 
-fig.update_polars(radialaxis_range=list([0, 5.0]))
-
-fig.show()
+fig.set_size_inches(10, 10)
 ```
 
 ## References

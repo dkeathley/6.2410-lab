@@ -544,6 +544,33 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="the-coherent-state-ket-alpha">
 <h3>The coherent state <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span><a class="headerlink" href="#the-coherent-state-ket-alpha" title="Permalink to this headline">¶</a></h3>
+<p>If you have ever seen the interference of laser light with itself, you know that it cannot be described by a pure number state.  Strong laser light has a very well-defined phase and can exhibit interference over very long delays.  It turns out that this kind of light is well described by a coherrent state <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span>, where <span class="math notranslate nohighlight">\(\alpha\)</span> is a complex number whos amplitude relates to the electric field strength, and whos phase relates to the phase offset of the electromagnetic wave.</p>
+<p>An interesting and useful fact is that a coherent state is nothing more than a distribution of number states all added together in a particular way.  For instance, a classical state populating the <span class="math notranslate nohighlight">\(m^\text{th}\)</span> mode is represented as:</p>
+<div class="math notranslate nohighlight">
+\[ \ket{\alpha}_m = e^{-|\alpha|^2/2} \sum_n \frac{\alpha^n}{\sqrt{n!}} \ket{n}_m. \]</div>
+<p>We leave it as an exercise to show that</p>
+<div class="math notranslate nohighlight">
+\[ \ahat_m \ket{\alpha}_m = \alpha \ket{\alpha}_m, \]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[ \bra{\alpha}_m \adagger_m = \alpha^* \bra{\alpha}_m.  \]</div>
+<p>This makes working with coherent states very easy, so long as you put all expressions in “normal order”, meaning annihilation operators always before creation operators when multiplied out.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Remember that in quantum operators do not necessarily commute.  In particular, the creation and annihilation operators do not commute.  This means that we cannot simply move the annihilation operators to the left of creation operators.</p>
+<p>So how do we put things in normal order?  We take advantage of the commutation relation</p>
+<div class="math notranslate nohighlight">
+\[ [\ahat, \adagger] = \ahat\adagger - \adagger\ahat = 1. \]</div>
+<p>For example, take</p>
+<div class="math notranslate nohighlight">
+\[\hat{N}^2 = \adagger\ahat\adagger\ahat = \adagger\ahat + \adagger\adagger\ahat\ahat,\]</div>
+<p>where we have used the commutation relation to achieve the final expression in normal order.</p>
+</div>
+<p>Now we have that</p>
+<p>Using this fact, it is easy to then show that the average photon is</p>
+<div class="math notranslate nohighlight">
+\[ N = |\alpha|^2, \]</div>
+<p>and that the the standard deviation is</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -582,7 +609,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/chapter-XX-quantum-optics-basics_15_0.png" src="_images/chapter-XX-quantum-optics-basics_15_0.png" />
+<img alt="_images/chapter-XX-quantum-optics-basics_16_0.png" src="_images/chapter-XX-quantum-optics-basics_16_0.png" />
 </div>
 </div>
 </div>

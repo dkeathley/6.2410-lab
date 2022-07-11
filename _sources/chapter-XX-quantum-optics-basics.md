@@ -238,6 +238,49 @@ fig.set_size_inches(10, 10)
 
 ### The coherent state $\ket{\alpha}$
 
++++
+
+If you have ever seen the interference of laser light with itself, you know that it cannot be described by a pure number state.  Strong laser light has a very well-defined phase and can exhibit interference over very long delays.  It turns out that this kind of light is well described by a coherrent state $\ket{\alpha}$, where $\alpha$ is a complex number whos amplitude relates to the electric field strength, and whos phase relates to the phase offset of the electromagnetic wave.  
+
+An interesting and useful fact is that a coherent state is nothing more than a distribution of number states all added together in a particular way.  For instance, a classical state populating the $m^\text{th}$ mode is represented as:
+
+$$ \ket{\alpha}_m = e^{-|\alpha|^2/2} \sum_n \frac{\alpha^n}{\sqrt{n!}} \ket{n}_m. $$
+
+We leave it as an exercise to show that
+
+$$ \ahat_m \ket{\alpha}_m = \alpha \ket{\alpha}_m, $$
+
+and
+
+$$ \bra{\alpha}_m \adagger_m = \alpha^* \bra{\alpha}_m.  $$
+
+This makes working with coherent states very easy, so long as you put all expressions in "normal order", meaning annihilation operators always before creation operators when multiplied out.
+
+```{note}
+Remember that in quantum operators do not necessarily commute.  In particular, the creation and annihilation operators do not commute.  This means that we cannot simply move the annihilation operators to the left of creation operators.  
+
+So how do we put things in normal order?  We take advantage of the commutation relation
+
+$$ [\ahat, \adagger] = \ahat\adagger - \adagger\ahat = 1. $$
+
+For example, take 
+
+$$\hat{N}^2 = \adagger\ahat\adagger\ahat = \adagger\ahat + \adagger\adagger\ahat\ahat,$$
+
+where we have used the commutation relation to achieve the final expression in normal order.
+```
+
+Now we have that 
+
+
+Using this fact, it is easy to then show that the average photon is
+
+$$ N = |\alpha|^2, $$
+
+and that the the standard deviation is
+
+
+
 ```{code-cell} ipython3
 :tags: [hide-input]
 

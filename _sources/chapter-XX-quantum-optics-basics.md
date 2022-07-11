@@ -216,10 +216,10 @@ A2 = A*np.sin(phi)
 
 
 # add a circle
-circle = mpatches.Circle((A1, A2), radius=0.25, ec="none", color='tab:blue')
-ax.add_patch(circle)
-ax.set_xlim(-1.1, 1.1)
-ax.set_ylim(-1.1, 1.1)
+patch = mpatches.Ellipse((A1, A2), width=delA*2, height=delA*2, ec="none", color='tab:blue')
+ax.add_patch(patch)
+ax.set_xlim(-5.1, 5.1)
+ax.set_ylim(-5.1, 5.1)
 
 ax.set_xlabel('$A^{(1)}$', fontsize=15)
 ax.set_ylabel('$A^{(2)}$', fontsize=15)
@@ -250,15 +250,15 @@ ax = fig.add_subplot()
 
 A = 4
 phi = np.pi/4
-
-A1 = A*np.cos(phi)
-A2 = A*np.sin(phi)
 delA = 1/2
 
+#Determine projection onto A1 and A2 for center
+A1 = A*np.cos(phi)
+A2 = A*np.sin(phi)
 
 # add a circle
-circle = mpatches.Circle((A1, A2), radius=0.25, ec="none", color='tab:blue')
-ax.add_patch(circle)
+patch = mpatches.Ellipse((A1, A2), width=delA*2, height=delA*2, ec="none", color='tab:blue')
+ax.add_patch(patch)
 ax.set_xlim(-4.1, 4.1)
 ax.set_ylim(-4.1, 4.1)
 

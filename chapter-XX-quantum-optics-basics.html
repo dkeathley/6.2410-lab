@@ -518,10 +518,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <span class="c1"># add a circle</span>
-<span class="n">circle</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Circle</span><span class="p">((</span><span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
+<span class="n">patch</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Ellipse</span><span class="p">((</span><span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="n">delA</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">delA</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">patch</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">5.1</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">5.1</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">)</span>
 
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$A^{(1)}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$A^{(2)}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
@@ -555,15 +555,15 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="n">A</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span>
-
-<span class="n">A1</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
-<span class="n">A2</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
 <span class="n">delA</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
 
+<span class="c1">#Determine projection onto A1 and A2 for center</span>
+<span class="n">A1</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">A2</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
 
 <span class="c1"># add a circle</span>
-<span class="n">circle</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Circle</span><span class="p">((</span><span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
+<span class="n">patch</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Ellipse</span><span class="p">((</span><span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="n">delA</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">delA</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">patch</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">4.1</span><span class="p">,</span> <span class="mf">4.1</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">4.1</span><span class="p">,</span> <span class="mf">4.1</span><span class="p">)</span>
 

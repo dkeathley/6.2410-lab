@@ -100,15 +100,15 @@ $\adagger_m \ket{N}_m = \sqrt{N + 1}\ket{N + 1}$
 
 The annihilation operator acts to decrease the photon number in a particular mode by 1.  For instance:
 
-$\ahat_m \ket{1}_m = \ket{0}_m$.
+$$\ahat_m \ket{1}_m = \ket{0}_m.$$
 
 More generally:
 
-$\ahat_m \ket{N}_m = \sqrt{N}\ket{N - 1}$.
+$$\ahat_m \ket{N}_m = \sqrt{N}\ket{N - 1}.$$
 
 Note that:
 
-$\ahat_m \ket{0}_m = 0$
+$$\ahat_m \ket{0}_m = 0.$$
 
 +++
 
@@ -196,12 +196,72 @@ So, while these states carry a very well-defined amount of energy ($N\hbar\omega
 
 A useful way to visualize quantum fields is to make a two-dimensional plot with $A^{(1)}$ on the $x$-axis, and $A^{(2)}$ on the $y$-axis.  In this configuration, $\theta$ is then the angle going counter-clockwise from the $x$-axis.  Then, you mark the region whos center is the mean value of $A^{(1)}$ and $A^{(2)}$ of the state, with a width of $2\Delta A^{(\theta)}$ for each value of $\theta$.  This allows a quick visual representation of both the average value and uncertainty of the fields of any given state.
 
+```{code-cell} ipython3
+:tags: [hide-input]
+
+import numpy as np
+import plotly.graph_objects as go
+
+categories = ['processing cost','mechanical properties','chemical stability',
+              'thermal stability', 'device integration']
+
+theta = np.linspace(0, 360, 100)
+A = np.sqrt(2*4 + 1)/2*np.ones(theta.size)
+
+fig = go.Figure()
+
+fig.add_trace(go.Scatterpolar(
+      r=A,
+      theta=theta,
+      fill='toself',
+      name='Field Representation'
+))
+
+fig.update_polars(radialaxis_range=list([0, 4.0]))
+
+fig.show()
+```
+
++++ {"tags": []}
+
 ### The coherent state $\ket{\alpha}$
 
+```{code-cell} ipython3
+:tags: [hide-input]
+
+import numpy as np
+import plotly.graph_objects as go
+
+categories = ['processing cost','mechanical properties','chemical stability',
+              'thermal stability', 'device integration']
 
 
+phi = 45
+A = 4
+delA = 1/2
 
-+++
+theta = np.linspace(0, 360, 100)
+
+x = A*np.cos(phi*np.pi/180) + delA*np.cos(theta*np.pi/180)
+y = A*np.sin(phi*np.pi/180) + delA*np.sin(theta*np.pi/180)
+
+R = np.sqrt(x**2 + y**2)
+
+Theta = np.arctan2(y, x)*180/np.pi
+
+fig = go.Figure()
+
+fig.add_trace(go.Scatterpolar(
+      r=R,
+      theta=Theta,
+      fill='toself',
+      name='Field Representation'
+))
+
+fig.update_polars(radialaxis_range=list([0, 5.0]))
+
+fig.show()
+```
 
 ## References
 

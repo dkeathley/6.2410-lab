@@ -138,13 +138,11 @@ The quantization of the electromagnetic field is discussed in many textbooks.  F
 
 The operator relating to the "in-phase" component of the electric field is expressed as:
 
-\begin{equation}
-\hat{A}^{(1)} = \frac{\adagger + \ahat}{2},
-\end{equation}
+$$\hat{A}^{(1)} = \frac{\adagger + \ahat}{2},$$
 
 and that relating to the "quadrature" component of the electric field as:
 
-$$\hat{A}^{(2)} = \frac{\adagger - \ahat}{2i}$$
+$$\hat{A}^{(2)} = \frac{\adagger - \ahat}{2i}.$$
 
 Taking the expectation of either $\hat{A}^{(1)}$ or $\hat{A}^{(2)}$ provides the time-averaged output of the in-phase and quadrature components of the field respectively.  
 

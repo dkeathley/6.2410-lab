@@ -39,11 +39,11 @@ sphinx:
     mathjax_config:
       tex:
         macros:
-          "ket"  : ["\left|{#1}\right\rangle", 1]
-          "bra"  : ["\left\langle{#1}\right|", 1]
-          "braket" : ["\left\langle{#1}\middle|{#2}\right\rangle", 2]
-          "adagger" : ["\hat{a}^{\dagger}"]
-          "ahat" : ["\hat{a}"]
+          "ket"  : ["\\left|{#1}\\right\\rangle", 1]
+          "bra"  : ["\\left\\langle{#1}\\right|", 1]
+          "braket" : ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2]
+          "adagger" : ["\\hat{a}^{\\dagger}"]
+          "ahat" : ["\\hat{a}"]
   
 launch_buttons:
   colab_url: "https://colab.research.google.com"

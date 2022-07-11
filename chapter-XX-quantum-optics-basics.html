@@ -252,6 +252,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mean-and-standard-deviation-of-an-observable">
+   Mean and Standard Deviation of an Observable
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
    References
   </a>
@@ -327,6 +332,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mean-and-standard-deviation-of-an-observable">
+   Mean and Standard Deviation of an Observable
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
    References
   </a>
@@ -355,6 +365,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>The vacuum state represents the condition that no photon populates any mode.  This can be expanded as:</p>
 <p><span class="math notranslate nohighlight">\(\ket{0} = \ket{0}_a\ket{0}_b\ldots\ket{0}_m\ket{0}_n\ldots\)</span>,</p>
 <p>where, for example, <span class="math notranslate nohighlight">\(\ket{0}_n\)</span> represents zero photons for mode <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>Here, we have labeled the modes <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span> for convenience, but it should be noted that there can be infinite number of possible modes.</p>
 </div>
 <div class="section" id="photon-number-states-ket-n">
 <h2>Photon Number States: <span class="math notranslate nohighlight">\(\ket{N}\)</span><a class="headerlink" href="#photon-number-states-ket-n" title="Permalink to this headline">¶</a></h2>
@@ -395,6 +406,22 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The quantization of the electromagnetic field is discussed in many textbooks.  For instance, see the treatment in Ref. <span id="id1">[<a class="reference internal" href="#id3" title="John S. Townsend. A Modern Approach to Quantum Mechanics. University Science Books, Sausalito, CA, first edition, 2000. ISBN 1-891389-13-0.">1</a>]</span>.</p>
+</div>
+<p>The operator relating to the “in-phase” component of the electric field is expressed as:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\hat{A}^{(1)} = \frac{\adagger + \ahat}{2}$$,\\and that relating to the &quot;quadrature&quot; component of the electric field as:\\$$\hat{A}^{(2)} = \frac{\adagger - \ahat}{2i}\end{aligned}\end{align} \]</div>
+<p>Taking the expectation of either <span class="math notranslate nohighlight">\(\hat{A}^{(1)}\)</span> or <span class="math notranslate nohighlight">\(\hat{A}^{(2)}\)</span> provides the time-averaged output of the in-phase and quadrature components of the field respectively.</p>
+</div>
+<div class="section" id="mean-and-standard-deviation-of-an-observable">
+<h2>Mean and Standard Deviation of an Observable<a class="headerlink" href="#mean-and-standard-deviation-of-an-observable" title="Permalink to this headline">¶</a></h2>
+<p>A general concept of note is the determination of mean and standard deviation of an observable, such as photon number or field value.  As engineers, we are often just as concerned about noise and its reduction as we are about the signal itself.</p>
+<p>The mean of an observable can be found by taking its expectation given the current state of the system <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>.  For example, the mean photon number would be:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned} \langle N \rangle =  \bra{\psi}\hat{N}\ket{\psi}$$.\\The standard deviation $\Delta N$ is found through the relation:\\$$\langle \Delta N^2 \rangle = \bra{\psi} \hat{N}^2 \ket{\psi} - \langle N \rangle^2\end{aligned}\end{align} \]</div>
+<p>Calculation of such quantities are very important as they allow us to determine signal-to-noise ratios in our systems that are critical to their real-world operation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note the similarity to the approach from how such values are obtained for standard random variables in statistics.  For example, see the definitions for <a class="reference external" href="https://en.wikipedia.org/wiki/Standard_deviation">standard deviation</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Variance">variance</a>.</p>
 </div>
 </div>
 <div class="section" id="references">

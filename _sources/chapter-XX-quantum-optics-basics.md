@@ -148,7 +148,7 @@ Taking the expectation of either $\hat{A}^{(1)}$ or $\hat{A}^{(2)}$ provides the
 
 +++
 
-## Mean and Standard Deviation of an Observable
+## Mean and Standard Deviation Observables
 
 A general concept of note is the determination of mean and standard deviation of an observable, such as photon number or field value.  As engineers, we are often just as concerned about noise and its reduction as we are about the signal itself.
 

@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.11.5
+    jupytext_version: 1.13.8
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -54,7 +54,7 @@ While we will introduce several quantum engineering platforms in this course, a 
 
 Often we deal with optical signals whose fields oscillate at a single angular frequency $\omega$.  At any given frequency, an optical signal can be written as a summation of modes.  These modes are distinguished by a variety of properties, such as their wave-vector $\mathbf{k}$ or polarization (e.g. linear horizontal, linear vertical, right-hand circular, etc.).  
 
-In most cases, each input or output signal populates a single mode.  
+In most cases, each input or output signal populates a single mode.
 
 +++
 
@@ -124,7 +124,7 @@ $\bra{\psi}_m\hat{N}_m\ket{\psi}_m$.
 
 Using the properties of $\ahat$ and $\adagger$, you can easily show that:
 
-$\bra{N}_m \hat{N}_m \ket{N}_m = N$.  
+$\bra{N}_m \hat{N}_m \ket{N}_m = N$.
 
 +++
 
@@ -216,7 +216,12 @@ A2 = A*np.sin(phi)
 
 
 # add a circle
-patch = mpatches.Ellipse((A1, A2), width=delA*2, height=delA*2, ec="none", color='tab:blue')
+patch = mpatches.Ellipse((A1, A2), 
+                         width=delA*2, 
+                         height=delA*2, 
+                         ec="none", 
+                         color='tab:blue',
+                         alpha=0.7)
 ax.add_patch(patch)
 ax.set_xlim(-5.1, 5.1)
 ax.set_ylim(-5.1, 5.1)
@@ -290,7 +295,7 @@ $$ \Delta A^{(\theta)} = 1/2.$$
 
 The last part is interesting as it means that no matter how large alpha is, the field fluctuations stay the same, and are the same level as that of a vacuum state.   This is due to the fact that phase is very well defined for a coherent state, while the fields can still fluctuate (the opposite of a number state).  
 
-Again, it we can map out the field representation, which we have done below for a coherent state with $|\alpha| = 4$, and $\varphi = \pi/4$.  
+Again, it we can map out the field representation, which we have done below for a coherent state with $|\alpha| = 4$, and $\varphi = \pi/4$.
 
 ```{code-cell} ipython3
 :tags: [hide-input]
@@ -311,7 +316,12 @@ A1 = A*np.cos(phi)
 A2 = A*np.sin(phi)
 
 # add a circle
-patch = mpatches.Ellipse((A1, A2), width=delA*2, height=delA*2, ec="none", color='tab:blue')
+patch = mpatches.Ellipse((A1, A2), 
+                         width=delA*2, 
+                         height=delA*2, 
+                         ec="none", 
+                         color='tab:blue',
+                        alpha=0.7)
 ax.add_patch(patch)
 ax.set_xlim(-4.1, 4.1)
 ax.set_ylim(-4.1, 4.1)
@@ -368,7 +378,12 @@ A1 = 0
 A2 = 0
 
 # add a circle
-patch = mpatches.Ellipse((A1, A2), width=delA1*2, height=delA2*2, ec="none", color='tab:blue', alpha=0.5)
+patch = mpatches.Ellipse((A1, A2), 
+                         width=delA1*2, 
+                         height=delA2*2, 
+                         ec="none", 
+                         color='tab:blue', 
+                         alpha=0.5)
 ax.add_patch(patch)
 
 
@@ -402,7 +417,7 @@ fig.set_size_inches(10, 10)
 
 For $s = 0$ (the red circle), the state is nothing more than the vacuum state.  However, when $s = 0.25$ we arrive at the blue ellipse, where the fluctuations along $A^{(1)}$ have been reduced, while those along $A^{(2)}$ have been increased.  **As engineers, we can design systems that are only sensitive to the fields in one of the two quadratures, thus enabling measurements below the noise floor set by the standard quantum limit (SQL, which is represented by the vacuum state here with $s = 0$).  We will discuss such measurements in detail.**
 
-One final question of interest for $\ket{\psi_s}$ is what happens to the noise along the two quadratures $A^{(1)}$ and $A^{(2)}$ and how does this noise compare to the standard quantum limit (SQL) as we let $s$ vary from 0 to 1.  
+One final question of interest for $\ket{\psi_s}$ is what happens to the noise along the two quadratures $A^{(1)}$ and $A^{(2)}$ and how does this noise compare to the standard quantum limit (SQL) as we let $s$ vary from 0 to 1.
 
 ```{code-cell} ipython3
 :tags: [hide-cell]

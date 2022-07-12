@@ -528,7 +528,12 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <span class="c1"># add a circle</span>
-<span class="n">patch</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Ellipse</span><span class="p">((</span><span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="n">delA</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">delA</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">)</span>
+<span class="n">patch</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Ellipse</span><span class="p">((</span><span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">),</span> 
+                         <span class="n">width</span><span class="o">=</span><span class="n">delA</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> 
+                         <span class="n">height</span><span class="o">=</span><span class="n">delA</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> 
+                         <span class="n">ec</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> 
+                         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">,</span>
+                         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">patch</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">5.1</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">5.1</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">)</span>
@@ -609,7 +614,12 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">A2</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
 
 <span class="c1"># add a circle</span>
-<span class="n">patch</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Ellipse</span><span class="p">((</span><span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="n">delA</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">delA</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">)</span>
+<span class="n">patch</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Ellipse</span><span class="p">((</span><span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">),</span> 
+                         <span class="n">width</span><span class="o">=</span><span class="n">delA</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> 
+                         <span class="n">height</span><span class="o">=</span><span class="n">delA</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> 
+                         <span class="n">ec</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> 
+                         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">,</span>
+                        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">patch</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">4.1</span><span class="p">,</span> <span class="mf">4.1</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">4.1</span><span class="p">,</span> <span class="mf">4.1</span><span class="p">)</span>
@@ -664,7 +674,12 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">A2</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="c1"># add a circle</span>
-<span class="n">patch</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Ellipse</span><span class="p">((</span><span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="n">delA1</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">delA2</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">patch</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Ellipse</span><span class="p">((</span><span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">),</span> 
+                         <span class="n">width</span><span class="o">=</span><span class="n">delA1</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> 
+                         <span class="n">height</span><span class="o">=</span><span class="n">delA2</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> 
+                         <span class="n">ec</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> 
+                         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">,</span> 
+                         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">patch</span><span class="p">)</span>
 
 
@@ -752,12 +767,13 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<p id="id2"><dl class="citation">
+<div class="docutils container" id="id2">
+<dl class="citation">
 <dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>John S. Townsend. <em>A Modern Approach to Quantum Mechanics</em>. University Science Books, Sausalito, CA, first edition, 2000. ISBN 1-891389-13-0.</p>
 </dd>
 </dl>
-</p>
+</div>
 </div>
 </div>
 

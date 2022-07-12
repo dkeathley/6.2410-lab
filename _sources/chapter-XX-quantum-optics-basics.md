@@ -329,7 +329,7 @@ plt.gca().set_aspect('equal')
 fig.set_size_inches(10, 10)
 ```
 
-## Squeezed States
+### Squeezed States
 
 +++
 

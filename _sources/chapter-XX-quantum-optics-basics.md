@@ -405,7 +405,7 @@ For $s = 0$ (the red circle), the state is nothing more than the vacuum state.  
 One final question of interest for $\ket{\psi_s}$ is what happens to the noise along the two quadratures $A^{(1)}$ and $A^{(2)}$ and how does this noise compare to the standard quantum limit (SQL) as we let $s$ vary from 0 to 1.  
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [hide-cell]
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -440,7 +440,7 @@ glue("squeezed_field_fluctuations", fig, display=False)
 ```
 
 ```{glue:figure} squeezed_field_fluctuations
-:figwidth: 300px
+:figwidth: 600px
 :name: "fig-squeezed-field-fluctuations"
 
 Field fluctuations in each quadrature compared to the SQL.  

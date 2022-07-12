@@ -254,7 +254,7 @@ and
 
 $$ \bra{\alpha}_m \adagger_m = \alpha^* \bra{\alpha}_m.  $$
 
-This makes working with coherent states very easy, so long as you put all expressions in "normal order", meaning annihilation operators always before creation operators when multiplied out.
+This makes working with coherent states very easy, so long as you put all expressions in "normal order", meaning annihilation operators are always before creation operators when multiplied out.
 
 ```{important}
 Remember that in quantum operators do not necessarily commute.  In particular, the creation and annihilation operators do not commute.  This means that we cannot simply move the annihilation operators to the left of creation operators.  
@@ -270,16 +270,27 @@ $$\hat{N}^2 = \adagger\ahat\adagger\ahat = \adagger\ahat + \adagger\adagger\ahat
 where we have used the commutation relation to achieve the final expression in normal order.
 ```
 
-Now we have that 
-
-
-Using this fact, it is easy to then show that the average photon is
+By using the relations above along with normal ordering of the annihilation and creation operators, it is easy to then show that the average photon number of a coherent state is
 
 $$ N = |\alpha|^2, $$
 
-and that the the standard deviation is
+and that the the standard deviation of the photon number is
 
+$$ \Delta N = |\alpha|. $$
 
+It turns out that the photon number distribution is that of a poisson distribution, which is consistent with such a relation between the mean and standard deviation.  
+
+We can likewise use the above properties to show that
+
+$$ A^{(\theta)} = |\alpha|\cos(\varphi - \theta), $$
+
+where $\varphi = \arg{\alpha}$.  Also,
+
+$$ \Delta A^{(\theta)} = 1/2.$$
+
+The last part is interesting as it means that no matter how large alpha is, the field fluctuations stay the same, and are the same level as that of a vacuum state.   This is due to the fact that phase is very well defined for a coherent state, while the fields can still fluctuate (the opposite of a number state).  
+
+Again, it we can map out the field representation, which we have done below for a coherent state with $|\alpha| = 4$, and $\varphi = \pi/4$.  
 
 ```{code-cell} ipython3
 :tags: [hide-input]
@@ -313,6 +324,113 @@ ax.axhline(0, color='black', linestyle='--')
 
 ax.tick_params(labelsize=13) 
 
+plt.gca().set_aspect('equal')
+
+fig.set_size_inches(10, 10)
+```
+
+## Squeezed States
+
++++
+
+You might have heard of squeezed states.  Such states exhibit very interesting noise properties.  While there are more rigorous ways to develop notation for generalized squeezed states, lets use a simple example constructured from the vacuum state in addition to a two-photon number state:
+
+$$ \ket{\psi_s} = \sqrt{1 - s^2}\ket{0} - s\ket{2}.$$
+
+Using the properties of number states, you can show that the mean field is
+
+$$ A^{(\theta)} = 0, $$
+
+and that the standar deviation of the field fluctuations is
+
+$$ \Delta A^{(\theta)} = { \bigg \lbrace 1/4 - s \sqrt{\frac{(1 - s^2)}{2}} \cos(2 \theta) + s^2 \bigg \rbrace  }^{1/2}.$$
+
+Note that unlike in past cases, the field fluctions are now a function of $\theta$.  In fact, they are reduced in one quadrature, while increased in the other quadrature in general.  
+
+It can be useful to look at a field represenatation for a couple of values.  Let's say $s = 0.25$ and $s=0$.
+
+```{code-cell} ipython3
+:tags: [hide-input]
+
+import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib.patches as mpatches
+
+fig = plt.figure()
+ax = fig.add_subplot()
+
+
+s = 0.25
+delA1 = np.sqrt(1/4 - s*np.sqrt((1 - s**2)/2) + s**2)
+delA2 = np.sqrt(1/4 + s*np.sqrt((1 + s**2)/2) + s**2)
+
+A1 = 0
+A2 = 0
+
+# add a circle
+patch = mpatches.Ellipse((A1, A2), width=delA1*2, height=delA2*2, ec="none", color='tab:blue', alpha=0.5)
+ax.add_patch(patch)
+
+
+s = 0.0
+delA1 = np.sqrt(1/4 - s*np.sqrt((1 - s**2)/2) + s**2)
+delA2 = np.sqrt(1/4 + s*np.sqrt((1 + s**2)/2) + s**2)
+
+A1 = 0
+A2 = 0
+
+# add a circle
+patch = mpatches.Ellipse((A1, A2), width=delA1*2, height=delA2*2, ec="none", color='tab:red', alpha=0.5)
+ax.add_patch(patch)
+
+
+ax.set_xlim(-1.1, 1.1)
+ax.set_ylim(-1.1, 1.1)
+
+ax.set_xlabel('$A^{(1)}$', fontsize=15)
+ax.set_ylabel('$A^{(2)}$', fontsize=15)
+
+ax.axvline(0, color='black', linestyle='--')
+ax.axhline(0, color='black', linestyle='--')
+
+ax.tick_params(labelsize=13) 
+
+plt.gca().set_aspect('equal')
+
+fig.set_size_inches(10, 10)
+```
+
+For $s = 0$ (the red circle), the state is nothing more than the vacuum state.  However, when $s = 0.25$ we arrive at the blue ellipse, where the fluctuations along $A^{(1)}$ have been reduced, while those along $A^{(2)}$ have been increased.  **As engineers, we can design systems that are only sensitive to the fields in one of the two quadratures, thus enabling measurements below the noise floor set by the standard quantum limit (SQL, which is represented by the vacuum state here with $s = 0$).  We will discuss such measurements in detail.**
+
+One final question of interest for $\ket{\psi_s}$ is what happens to the noise along the two quadratures $A^{(1)}$ and $A^{(2)}$ and how does this noise compare to the standard quantum limit (SQL) as we let $s$ vary from 0 to 1.  
+
+```{code-cell} ipython3
+:tags: [hide-input]
+
+import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib.patches as mpatches
+
+fig = plt.figure()
+ax = fig.add_subplot()
+
+
+s = np.linspace(0, 1, 1000)
+delA1 = np.sqrt(1/4 - s*np.sqrt((1 - s**2)/2) + s**2)
+delA2 = np.sqrt(1/4 + s*np.sqrt((1 + s**2)/2) + s**2)
+
+
+ax.plot(s, delA1, label="$\Delta A^{(1)}$")
+ax.plot(s, delA2, label="$\Delta A^{(2)}$")
+ax.axhline(0.5, color="black", linestyle="--", label='SQL')
+    
+ax.set_xlim(0, 1.0)
+ax.set_ylim(0, 1.55)
+ax.set_xlabel('$s$', fontsize=15)
+ax.set_ylabel('$\Delta A^{(n)}$', fontsize=15)
+ax.tick_params(labelsize=13) 
+ax.legend(fontsize=15)
+    
 plt.gca().set_aspect('equal')
 
 fig.set_size_inches(10, 10)

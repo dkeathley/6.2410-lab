@@ -202,6 +202,7 @@ A useful way to visualize quantum fields is to make a two-dimensional plot with 
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.patches as mpatches
+from myst_nb import glue
 
 fig = plt.figure()
 ax = fig.add_subplot()
@@ -237,6 +238,15 @@ ax.tick_params(labelsize=13)
 plt.gca().set_aspect('equal')
 
 fig.set_size_inches(10, 10)
+
+glue("number_state_field_representation", fig, display=False)
+```
+
+```{glue:figure} number_state_field_representation
+:figwidth: 600px
+:name: "fig-number-state-field-representation"
+
+Field representations for a number state with $N=4$.
 ```
 
 +++ {"tags": []}
@@ -303,6 +313,7 @@ Again, it we can map out the field representation, which we have done below for 
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.patches as mpatches
+from myst_nb import glue
 
 fig = plt.figure()
 ax = fig.add_subplot()
@@ -337,7 +348,18 @@ ax.tick_params(labelsize=13)
 plt.gca().set_aspect('equal')
 
 fig.set_size_inches(10, 10)
+
+glue("coherent_state_field_representation", fig, display=False)
 ```
+
+```{glue:figure} coherent_state_field_representation
+:figwidth: 600px
+:name: "fig-coherent-state-field-representation"
+
+Field representations for a coherent state with $|\alpha| = 4$, and $\varphi = \pi/4$.
+```
+
++++
 
 ### Squeezed States
 

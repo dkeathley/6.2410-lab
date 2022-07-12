@@ -360,11 +360,12 @@ Note that unlike in past cases, the field fluctions are now a function of $\thet
 It can be useful to look at a field represenatation for a couple of values.  Let's say $s = 0.25$ and $s=0$.
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [hide-cell]
 
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.patches as mpatches
+from myst_nb import glue
 
 fig = plt.figure()
 ax = fig.add_subplot()
@@ -413,7 +414,19 @@ ax.tick_params(labelsize=13)
 plt.gca().set_aspect('equal')
 
 fig.set_size_inches(10, 10)
+
+glue("squeezed_state_vs_vac_state_field_representation", fig, display=False)
 ```
+
+```{glue:figure} squeezed_state_vs_vac_state_field_representation
+:figwidth: 600px
+:name: "fig-squeezed-state-vs-vac-field-fluctuations"
+
+Field representations for a vacuum state (red circle) and squeezed state $\ket{\psi_s} = \sqrt{1 - s^2}\ket{0} - s\ket{2}$ (blue circle) for $s=0.25$.
+
+```
+
++++
 
 For $s = 0$ (the red circle), the state is nothing more than the vacuum state.  However, when $s = 0.25$ we arrive at the blue ellipse, where the fluctuations along $A^{(1)}$ have been reduced, while those along $A^{(2)}$ have been increased.  **As engineers, we can design systems that are only sensitive to the fields in one of the two quadratures, thus enabling measurements below the noise floor set by the standard quantum limit (SQL, which is represented by the vacuum state here with $s = 0$).  We will discuss such measurements in detail.**
 

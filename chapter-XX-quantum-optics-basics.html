@@ -656,11 +656,12 @@ const thebe_selector_output = ".output, .cell_output"
 \[ \Delta A^{(\theta)} = { \bigg \lbrace 1/4 - s \sqrt{\frac{(1 - s^2)}{2}} \cos(2 \theta) + s^2 \bigg \rbrace  }^{1/2}.\]</div>
 <p>Note that unlike in past cases, the field fluctions are now a function of <span class="math notranslate nohighlight">\(\theta\)</span>.  In fact, they are reduced in one quadrature, while increased in the other quadrature in general.</p>
 <p>It can be useful to look at a field represenatation for a couple of values.  Let’s say <span class="math notranslate nohighlight">\(s = 0.25\)</span> and <span class="math notranslate nohighlight">\(s=0\)</span>.</p>
-<div class="cell tag_hide-input docutils container">
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">mpatches</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
@@ -709,12 +710,20 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;squeezed_state_vs_vac_state_field_representation&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<img alt="_images/chapter-XX-quantum-optics-basics_19_1.png" src="_images/chapter-XX-quantum-optics-basics_19_1.png" />
+</div>
+</div>
+<div class="figure align-default" id="fig-squeezed-state-vs-vac-field-fluctuations" style="width: 600px">
+<div class="cell_output docutils container">
 <img alt="_images/chapter-XX-quantum-optics-basics_19_0.png" src="_images/chapter-XX-quantum-optics-basics_19_0.png" />
 </div>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Field representations for a vacuum state (red circle) and squeezed state <span class="math notranslate nohighlight">\(\ket{\psi_s} = \sqrt{1 - s^2}\ket{0} - s\ket{2}\)</span> (blue circle) for <span class="math notranslate nohighlight">\(s=0.25\)</span>.</span><a class="headerlink" href="#fig-squeezed-state-vs-vac-field-fluctuations" title="Permalink to this image">¶</a></p>
 </div>
 <p>For <span class="math notranslate nohighlight">\(s = 0\)</span> (the red circle), the state is nothing more than the vacuum state.  However, when <span class="math notranslate nohighlight">\(s = 0.25\)</span> we arrive at the blue ellipse, where the fluctuations along <span class="math notranslate nohighlight">\(A^{(1)}\)</span> have been reduced, while those along <span class="math notranslate nohighlight">\(A^{(2)}\)</span> have been increased.  <strong>As engineers, we can design systems that are only sensitive to the fields in one of the two quadratures, thus enabling measurements below the noise floor set by the standard quantum limit (SQL, which is represented by the vacuum state here with <span class="math notranslate nohighlight">\(s = 0\)</span>).  We will discuss such measurements in detail.</strong></p>
 <p>One final question of interest for <span class="math notranslate nohighlight">\(\ket{\psi_s}\)</span> is what happens to the noise along the two quadratures <span class="math notranslate nohighlight">\(A^{(1)}\)</span> and <span class="math notranslate nohighlight">\(A^{(2)}\)</span> and how does this noise compare to the standard quantum limit (SQL) as we let <span class="math notranslate nohighlight">\(s\)</span> vary from 0 to 1.</p>
@@ -754,14 +763,14 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/chapter-XX-quantum-optics-basics_21_1.png" src="_images/chapter-XX-quantum-optics-basics_21_1.png" />
+<img alt="_images/chapter-XX-quantum-optics-basics_22_1.png" src="_images/chapter-XX-quantum-optics-basics_22_1.png" />
 </div>
 </div>
 <div class="figure align-default" id="fig-squeezed-field-fluctuations" style="width: 600px">
 <div class="cell_output docutils container">
-<img alt="_images/chapter-XX-quantum-optics-basics_21_0.png" src="_images/chapter-XX-quantum-optics-basics_21_0.png" />
+<img alt="_images/chapter-XX-quantum-optics-basics_22_0.png" src="_images/chapter-XX-quantum-optics-basics_22_0.png" />
 </div>
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Field fluctuations in each quadrature compared to the SQL.</span><a class="headerlink" href="#fig-squeezed-field-fluctuations" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Field fluctuations in each quadrature compared to the SQL.</span><a class="headerlink" href="#fig-squeezed-field-fluctuations" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>

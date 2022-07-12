@@ -410,6 +410,7 @@ One final question of interest for $\ket{\psi_s}$ is what happens to the noise a
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.patches as mpatches
+from myst_nb import glue
 
 fig = plt.figure()
 ax = fig.add_subplot()
@@ -434,7 +435,18 @@ ax.legend(fontsize=15)
 plt.gca().set_aspect('equal')
 
 fig.set_size_inches(10, 10)
+
+glue("squeezed_field_fluctuations", fig, display=False)
 ```
+
+```{glue:figure} squeezed_field_fluctuations
+:figwidth: 300px
+:name: "fig-squeezed-field-fluctuations"
+
+Field fluctuations in each quadrature compared to the SQL.  
+```
+
++++
 
 ## References
 

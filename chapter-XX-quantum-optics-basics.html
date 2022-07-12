@@ -709,6 +709,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">mpatches</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
@@ -733,12 +734,20 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;squeezed_field_fluctuations&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<img alt="_images/chapter-XX-quantum-optics-basics_21_1.png" src="_images/chapter-XX-quantum-optics-basics_21_1.png" />
+</div>
+</div>
+<div class="figure align-default" id="fig-squeezed-field-fluctuations" style="width: 300px">
+<div class="cell_output docutils container">
 <img alt="_images/chapter-XX-quantum-optics-basics_21_0.png" src="_images/chapter-XX-quantum-optics-basics_21_0.png" />
 </div>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Field fluctuations in each quadrature compared to the SQL.</span><a class="headerlink" href="#fig-squeezed-field-fluctuations" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="references">

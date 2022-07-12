@@ -329,7 +329,7 @@ plt.gca().set_aspect('equal')
 fig.set_size_inches(10, 10)
 ```
 
-## Squeezed States
+### Squeezed States
 
 +++
 
@@ -405,11 +405,12 @@ For $s = 0$ (the red circle), the state is nothing more than the vacuum state.  
 One final question of interest for $\ket{\psi_s}$ is what happens to the noise along the two quadratures $A^{(1)}$ and $A^{(2)}$ and how does this noise compare to the standard quantum limit (SQL) as we let $s$ vary from 0 to 1.  
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [hide-cell]
 
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.patches as mpatches
+from myst_nb import glue
 
 fig = plt.figure()
 ax = fig.add_subplot()
@@ -434,7 +435,18 @@ ax.legend(fontsize=15)
 plt.gca().set_aspect('equal')
 
 fig.set_size_inches(10, 10)
+
+glue("squeezed_field_fluctuations", fig, display=False)
 ```
+
+```{glue:figure} squeezed_field_fluctuations
+:figwidth: 600px
+:name: "fig-squeezed-field-fluctuations"
+
+Field fluctuations in each quadrature compared to the SQL.  
+```
+
++++
 
 ## References
 

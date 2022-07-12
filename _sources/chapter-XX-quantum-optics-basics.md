@@ -197,7 +197,7 @@ So, while these states carry a very well-defined amount of energy ($N\hbar\omega
 A useful way to visualize quantum fields is to make a two-dimensional plot with $A^{(1)}$ on the $x$-axis, and $A^{(2)}$ on the $y$-axis.  In this configuration, $\theta$ is then the angle going counter-clockwise from the $x$-axis.  Then, you mark the region whos center is the mean value of $A^{(1)}$ and $A^{(2)}$ of the state, with a width of $2\Delta A^{(\theta)}$ for each value of $\theta$.  This allows a quick visual representation of both the average value and uncertainty of the fields of any given state.
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [hide-cell]
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -308,7 +308,7 @@ The last part is interesting as it means that no matter how large alpha is, the 
 Again, it we can map out the field representation, which we have done below for a coherent state with $|\alpha| = 4$, and $\varphi = \pi/4$.
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [hide-cell]
 
 import matplotlib.pyplot as plt
 import numpy as np

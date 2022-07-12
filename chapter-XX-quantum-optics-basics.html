@@ -280,6 +280,11 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#squeezed-states">
+   Squeezed States
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
    References
   </a>
@@ -381,6 +386,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#squeezed-states">
+   Squeezed States
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
@@ -554,7 +564,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>and</p>
 <div class="math notranslate nohighlight">
 \[ \bra{\alpha}_m \adagger_m = \alpha^* \bra{\alpha}_m.  \]</div>
-<p>This makes working with coherent states very easy, so long as you put all expressions in “normal order”, meaning annihilation operators always before creation operators when multiplied out.</p>
+<p>This makes working with coherent states very easy, so long as you put all expressions in “normal order”, meaning annihilation operators are always before creation operators when multiplied out.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Remember that in quantum operators do not necessarily commute.  In particular, the creation and annihilation operators do not commute.  This means that we cannot simply move the annihilation operators to the left of creation operators.</p>
@@ -566,11 +576,21 @@ const thebe_selector_output = ".output, .cell_output"
 \[\hat{N}^2 = \adagger\ahat\adagger\ahat = \adagger\ahat + \adagger\adagger\ahat\ahat,\]</div>
 <p>where we have used the commutation relation to achieve the final expression in normal order.</p>
 </div>
-<p>Now we have that</p>
-<p>Using this fact, it is easy to then show that the average photon is</p>
+<p>By using the relations above along with normal ordering of the annihilation and creation operators, it is easy to then show that the average photon number of a coherent state is</p>
 <div class="math notranslate nohighlight">
 \[ N = |\alpha|^2, \]</div>
-<p>and that the the standard deviation is</p>
+<p>and that the the standard deviation of the photon number is</p>
+<div class="math notranslate nohighlight">
+\[ \Delta N = |\alpha|. \]</div>
+<p>It turns out that the photon number distribution is that of a poisson distribution, which is consistent with such a relation between the mean and standard deviation.</p>
+<p>We can likewise use the above properties to show that</p>
+<div class="math notranslate nohighlight">
+\[ A^{(\theta)} = |\alpha|\cos(\varphi - \theta), \]</div>
+<p>where <span class="math notranslate nohighlight">\(\varphi = \arg{\alpha}\)</span>.  Also,</p>
+<div class="math notranslate nohighlight">
+\[ \Delta A^{(\theta)} = 1/2.\]</div>
+<p>The last part is interesting as it means that no matter how large alpha is, the field fluctuations stay the same, and are the same level as that of a vacuum state.   This is due to the fact that phase is very well defined for a coherent state, while the fields can still fluctuate (the opposite of a number state).</p>
+<p>Again, it we can map out the field representation, which we have done below for a coherent state with <span class="math notranslate nohighlight">\(|\alpha| = 4\)</span>, and <span class="math notranslate nohighlight">\(\varphi = \pi/4\)</span>.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -611,6 +631,113 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_output docutils container">
 <img alt="_images/chapter-XX-quantum-optics-basics_16_0.png" src="_images/chapter-XX-quantum-optics-basics_16_0.png" />
 </div>
+</div>
+</div>
+</div>
+<div class="section" id="squeezed-states">
+<h2>Squeezed States<a class="headerlink" href="#squeezed-states" title="Permalink to this headline">¶</a></h2>
+<p>You might have heard of squeezed states.  Such states exhibit very interesting noise properties.  While there are more rigorous ways to develop notation for generalized squeezed states, lets use a simple example constructured from the vacuum state in addition to a two-photon number state:</p>
+<div class="math notranslate nohighlight">
+\[ \ket{\psi_s} = \sqrt{1 - s^2}\ket{0} - s\ket{2}.\]</div>
+<p>Using the properties of number states, you can show that the mean field is</p>
+<div class="math notranslate nohighlight">
+\[ A^{(\theta)} = 0, \]</div>
+<p>and that the standar deviation of the field fluctuations is</p>
+<div class="math notranslate nohighlight">
+\[ \Delta A^{(\theta)} = { \bigg \lbrace 1/4 - s \sqrt{\frac{(1 - s^2)}{2}} \cos(2 \theta) + s^2 \bigg \rbrace  }^{1/2}.\]</div>
+<p>Note that unlike in past cases, the field fluctions are now a function of <span class="math notranslate nohighlight">\(\theta\)</span>.  In fact, they are reduced in one quadrature, while increased in the other quadrature in general.</p>
+<p>It can be useful to look at a field represenatation for a couple of values.  Let’s say <span class="math notranslate nohighlight">\(s = 0.25\)</span> and <span class="math notranslate nohighlight">\(s=0\)</span>.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">mpatches</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+
+
+<span class="n">s</span> <span class="o">=</span> <span class="mf">0.25</span>
+<span class="n">delA1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span> <span class="o">-</span> <span class="n">s</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">delA2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span> <span class="o">+</span> <span class="n">s</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">A1</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">A2</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># add a circle</span>
+<span class="n">patch</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Ellipse</span><span class="p">((</span><span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="n">delA1</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">delA2</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">patch</span><span class="p">)</span>
+
+
+<span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">delA1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span> <span class="o">-</span> <span class="n">s</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">delA2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span> <span class="o">+</span> <span class="n">s</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">A1</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">A2</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># add a circle</span>
+<span class="n">patch</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Ellipse</span><span class="p">((</span><span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="n">delA1</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">delA2</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:red&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">patch</span><span class="p">)</span>
+
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$A^{(1)}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$A^{(2)}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span> 
+
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-XX-quantum-optics-basics_19_0.png" src="_images/chapter-XX-quantum-optics-basics_19_0.png" />
+</div>
+</div>
+<p>For <span class="math notranslate nohighlight">\(s = 0\)</span> (the red circle), the state is nothing more than the vacuum state.  However, when <span class="math notranslate nohighlight">\(s = 0.25\)</span> we arrive at the blue ellipse, where the fluctuations along <span class="math notranslate nohighlight">\(A^{(1)}\)</span> have been reduced, while those along <span class="math notranslate nohighlight">\(A^{(2)}\)</span> have been increased.  <strong>As engineers, we can design systems that are only sensitive to the fields in one of the two quadratures, thus enabling measurements below the noise floor set by the standard quantum limit (SQL, which is represented by the vacuum state here with <span class="math notranslate nohighlight">\(s = 0\)</span>).  We will discuss such measurements in detail.</strong></p>
+<p>One final question of interest for <span class="math notranslate nohighlight">\(\ket{\psi_s}\)</span> is what happens to the noise along the two quadratures <span class="math notranslate nohighlight">\(A^{(1)}\)</span> and <span class="math notranslate nohighlight">\(A^{(2)}\)</span> and how does this noise compare to the standard quantum limit (SQL) as we let <span class="math notranslate nohighlight">\(s\)</span> vary from 0 to 1.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">mpatches</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">delA1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span> <span class="o">-</span> <span class="n">s</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">delA2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span> <span class="o">+</span> <span class="n">s</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">delA1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$\Delta A^{(1)}$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">delA2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$\Delta A^{(2)}$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;SQL&#39;</span><span class="p">)</span>
+    
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.55</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$s$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$\Delta A^{(n)}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-XX-quantum-optics-basics_21_0.png" src="_images/chapter-XX-quantum-optics-basics_21_0.png" />
 </div>
 </div>
 </div>

@@ -267,7 +267,9 @@ Field representations for a number state with $N=4$.
 
 +++
 
-If you have ever seen the interference of laser light with itself, you know that it cannot be described by a pure number state.  Strong laser light has a very well-defined phase and can exhibit interference over very long delays.  It turns out that this kind of light is well described by a coherrent state $\ket{\alpha}$, where $\alpha$ is a complex number whos amplitude relates to the electric field strength, and whos phase relates to the phase offset of the electromagnetic wave.  
+If you have ever seen the interference of laser light in an interferometer, you know that it cannot be described by a pure number state.  Strong laser light has a very well-defined phase and can exhibit interference over very long delays.  It turns out that this kind of light is well described by a coherrent state $\ket{\alpha}$, where $\alpha$ is a complex number whos amplitude relates to the electric field strength, and whos phase relates to the phase offset of the electromagnetic wave.
+
+**FIXME: Add some picture capturing basics of interference with images**
 
 An interesting and useful fact is that a coherent state is nothing more than a distribution of number states all added together in a particular way.  For instance, a classical state populating the $m^\text{th}$ mode is represented as:
 
@@ -281,10 +283,10 @@ and
 
 $$ \bra{\alpha}_m \adagger_m = \alpha^* \bra{\alpha}_m.  $$
 
-This makes working with coherent states very easy, so long as you put all expressions in "normal order", meaning annihilation operators are always before creation operators when multiplied out.
+This makes working with coherent states very easy, so long as you put all expressions in "normal order", meaning annihilation operators always come before creation operators when multiplied out.
 
 ```{important}
-Remember that in quantum operators do not necessarily commute.  In particular, the creation and annihilation operators do not commute.  This means that we cannot simply move the annihilation operators to the left of creation operators.  
+Remember as we discussed above that quantum operators do not necessarily commute.  In particular, the creation and annihilation operators do not commute.  This means that we cannot simply move the annihilation operators to the left of creation operators.  
 
 So how do we put things in normal order?  We take advantage of the commutation relation
 
@@ -315,7 +317,7 @@ where $\varphi = \arg{\alpha}$.  Also,
 
 $$ \Delta A^{(\theta)} = 1/2.$$
 
-The last part is interesting as it means that no matter how large alpha is, the field fluctuations stay the same, and are the same level as that of a vacuum state.   This is due to the fact that phase is very well defined for a coherent state, while the fields can still fluctuate (the opposite of a number state).  
+The last part is interesting as it means that no matter how large alpha is, the field fluctuations stay the same, and are the same level as that of a vacuum state.   This is due to the fact that phase is very well defined for a coherent state.  Thus the photon contribution to the field is very well-defined, leaving only the remaining vacuum field fluctuations.  This is in spite of the fact that the number of photons actually varies.  Compare this to a number state where there is no fluctuation in the number of photons, but the field fluctuates heavily on top of the ever-present vacuum fluctuations.
 
 Again, it we can map out the field representation, which we have done below for a coherent state with $|\alpha| = 4$, and $\varphi = \pi/4$.
 

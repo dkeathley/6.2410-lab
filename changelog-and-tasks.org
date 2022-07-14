@@ -26,7 +26,6 @@ Some questions items I would like to address:
       + Example: For each gate we would systematically list out each example platform from a pre-defined list, and then note examples of how each gate is implemented in that respective platform (or at least an example).
       + It would be good to also note current limitations and areas where researchers/engineers are trying to improve upon conventional approaches (for instance integrated-photonics implementations of free-space optical gates)...
 
-
 * Tasks
 ** TODO Start adding in additional explanatory material and bringing to proper level for undergrad course.  
 ** DONE Complete translating Ch. 7 on quantum information

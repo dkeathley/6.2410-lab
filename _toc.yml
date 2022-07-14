@@ -6,4 +6,5 @@ root: intro
 chapters:
 - file: chapter-XX-quantum-optics-basics.ipynb
 - file: chapter-XX-quantum-information.ipynb
+- file: chapter-XX-interference-HOM-and-homodyne.ipynb
 

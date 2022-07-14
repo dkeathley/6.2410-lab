@@ -44,6 +44,12 @@ sphinx:
           "braket" : ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2]
           "adagger" : ["\\hat{a}^{\\dagger}"]
           "ahat" : ["\\hat{a}"]
+          "bdagger" : ["\\hat{b}^{\\dagger}"]
+          "bhat" : ["\\hat{b}"]
+          "cdagger" : ["\\hat{c}^{\\dagger}"]
+          "chat" : ["\\hat{c}"]
+          "ddagger" : ["\\hat{d}^{\\dagger}"]
+          "dhat" : ["\\hat{d}"]
   
 launch_buttons:
   colab_url: "https://colab.research.google.com"

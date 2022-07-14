@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.11.5
+    jupytext_version: 1.13.8
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -40,7 +40,7 @@ display(HTML("<style>.jp-MarkdownCell .jp-Cell-inputWrapper { width: "+str(width
 display(HTML("<style>.jp-Cell-outputWrapper { width: "+str(width)+"% !important;  margin: 0 auto; }</style>"))
 ```
 
-# The Basics of Quantum Optics
+# Chapter XX -- The Basics of Quantum Optics
 
 This course is about how we can leverage quantum systems as engineers.  As such it is not intended to be a course focused purely on the physics of quantum systems.  
 
@@ -54,7 +54,7 @@ While we will introduce several quantum engineering platforms in this course, a 
 
 Often we deal with optical signals whose fields oscillate at a single angular frequency $\omega$.  At any given frequency, an optical signal can be written as a summation of modes.  These modes are distinguished by a variety of properties, such as their wave-vector $\mathbf{k}$ or polarization (e.g. linear horizontal, linear vertical, right-hand circular, etc.).  
 
-In most cases, each input or output signal populates a single mode.  
+In most cases, each input or output signal populates a single mode.
 
 +++
 
@@ -124,7 +124,7 @@ $\bra{\psi}_m\hat{N}_m\ket{\psi}_m$.
 
 Using the properties of $\ahat$ and $\adagger$, you can easily show that:
 
-$\bra{N}_m \hat{N}_m \ket{N}_m = N$.  
+$\bra{N}_m \hat{N}_m \ket{N}_m = N$.
 
 +++
 
@@ -197,11 +197,12 @@ So, while these states carry a very well-defined amount of energy ($N\hbar\omega
 A useful way to visualize quantum fields is to make a two-dimensional plot with $A^{(1)}$ on the $x$-axis, and $A^{(2)}$ on the $y$-axis.  In this configuration, $\theta$ is then the angle going counter-clockwise from the $x$-axis.  Then, you mark the region whos center is the mean value of $A^{(1)}$ and $A^{(2)}$ of the state, with a width of $2\Delta A^{(\theta)}$ for each value of $\theta$.  This allows a quick visual representation of both the average value and uncertainty of the fields of any given state.
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [hide-cell]
 
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.patches as mpatches
+from myst_nb import glue
 
 fig = plt.figure()
 ax = fig.add_subplot()
@@ -216,7 +217,12 @@ A2 = A*np.sin(phi)
 
 
 # add a circle
-patch = mpatches.Ellipse((A1, A2), width=delA*2, height=delA*2, ec="none", color='tab:blue')
+patch = mpatches.Ellipse((A1, A2), 
+                         width=delA*2, 
+                         height=delA*2, 
+                         ec="none", 
+                         color='tab:blue',
+                         alpha=0.7)
 ax.add_patch(patch)
 ax.set_xlim(-5.1, 5.1)
 ax.set_ylim(-5.1, 5.1)
@@ -232,6 +238,15 @@ ax.tick_params(labelsize=13)
 plt.gca().set_aspect('equal')
 
 fig.set_size_inches(10, 10)
+
+glue("number_state_field_representation", fig, display=False)
+```
+
+```{glue:figure} number_state_field_representation
+:figwidth: 600px
+:name: "fig-number-state-field-representation"
+
+Field representations for a number state with $N=4$.
 ```
 
 +++ {"tags": []}
@@ -290,14 +305,15 @@ $$ \Delta A^{(\theta)} = 1/2.$$
 
 The last part is interesting as it means that no matter how large alpha is, the field fluctuations stay the same, and are the same level as that of a vacuum state.   This is due to the fact that phase is very well defined for a coherent state, while the fields can still fluctuate (the opposite of a number state).  
 
-Again, it we can map out the field representation, which we have done below for a coherent state with $|\alpha| = 4$, and $\varphi = \pi/4$.  
+Again, it we can map out the field representation, which we have done below for a coherent state with $|\alpha| = 4$, and $\varphi = \pi/4$.
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [hide-cell]
 
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.patches as mpatches
+from myst_nb import glue
 
 fig = plt.figure()
 ax = fig.add_subplot()
@@ -311,7 +327,12 @@ A1 = A*np.cos(phi)
 A2 = A*np.sin(phi)
 
 # add a circle
-patch = mpatches.Ellipse((A1, A2), width=delA*2, height=delA*2, ec="none", color='tab:blue')
+patch = mpatches.Ellipse((A1, A2), 
+                         width=delA*2, 
+                         height=delA*2, 
+                         ec="none", 
+                         color='tab:blue',
+                        alpha=0.7)
 ax.add_patch(patch)
 ax.set_xlim(-4.1, 4.1)
 ax.set_ylim(-4.1, 4.1)
@@ -327,7 +348,18 @@ ax.tick_params(labelsize=13)
 plt.gca().set_aspect('equal')
 
 fig.set_size_inches(10, 10)
+
+glue("coherent_state_field_representation", fig, display=False)
 ```
+
+```{glue:figure} coherent_state_field_representation
+:figwidth: 600px
+:name: "fig-coherent-state-field-representation"
+
+Field representations for a coherent state with $|\alpha| = 4$, and $\varphi = \pi/4$.
+```
+
++++
 
 ### Squeezed States
 
@@ -350,11 +382,12 @@ Note that unlike in past cases, the field fluctions are now a function of $\thet
 It can be useful to look at a field represenatation for a couple of values.  Let's say $s = 0.25$ and $s=0$.
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+:tags: [hide-cell]
 
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.patches as mpatches
+from myst_nb import glue
 
 fig = plt.figure()
 ax = fig.add_subplot()
@@ -368,7 +401,12 @@ A1 = 0
 A2 = 0
 
 # add a circle
-patch = mpatches.Ellipse((A1, A2), width=delA1*2, height=delA2*2, ec="none", color='tab:blue', alpha=0.5)
+patch = mpatches.Ellipse((A1, A2), 
+                         width=delA1*2, 
+                         height=delA2*2, 
+                         ec="none", 
+                         color='tab:blue', 
+                         alpha=0.5)
 ax.add_patch(patch)
 
 
@@ -398,11 +436,23 @@ ax.tick_params(labelsize=13)
 plt.gca().set_aspect('equal')
 
 fig.set_size_inches(10, 10)
+
+glue("squeezed_state_vs_vac_state_field_representation", fig, display=False)
 ```
 
-For $s = 0$ (the red circle), the state is nothing more than the vacuum state.  However, when $s = 0.25$ we arrive at the blue ellipse, where the fluctuations along $A^{(1)}$ have been reduced, while those along $A^{(2)}$ have been increased.  **As engineers, we can design systems that are only sensitive to the fields in one of the two quadratures, thus enabling measurements below the noise floor set by the standard quantum limit (SQL, which is represented by the vacuum state here with $s = 0$).  We will discuss such measurements in detail.**
+```{glue:figure} squeezed_state_vs_vac_state_field_representation
+:figwidth: 600px
+:name: "fig-squeezed-state-vs-vac-field-fluctuations"
 
-One final question of interest for $\ket{\psi_s}$ is what happens to the noise along the two quadratures $A^{(1)}$ and $A^{(2)}$ and how does this noise compare to the standard quantum limit (SQL) as we let $s$ vary from 0 to 1.  
+Field representations for a vacuum state (red circle) and squeezed state $\ket{\psi_s} = \sqrt{1 - s^2}\ket{0} - s\ket{2}$ (blue circle) for $s=0.25$.
+
+```
+
++++
+
+For $s = 0$ (the red circle), the state is nothing more than the vacuum state.  However, when $s = 0.25$ we arrive at the blue ellipse, where the fluctuations along $A^{(1)}$ have been reduced, while those along $A^{(2)}$ have been increased.  **As engineers, we can design systems that are only sensitive to the fields in one of the two quadratures (using [Homodyne detection](https://en.wikipedia.org/wiki/Homodyne_detection ) for example), thus enabling measurements below the noise floor set by the standard quantum limit (SQL, which is represented by the vacuum state here with $s = 0$).  We will discuss such measurements in detail.**
+
+One final question of interest for $\ket{\psi_s}$ is what happens to the noise along the two quadratures $A^{(1)}$ and $A^{(2)}$ and how does this noise compare to the standard quantum limit (SQL) as we let $s$ vary from 0 to 1.
 
 ```{code-cell} ipython3
 :tags: [hide-cell]

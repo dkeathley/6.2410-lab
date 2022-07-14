@@ -112,6 +112,18 @@ $$\ahat_m \ket{0}_m = 0.$$
 
 +++
 
+## Commutation Relation
+
+It's important to note that the annihilation and creation operators **do not** commute.  They have the following commutation relation
+
+$$ [\ahat_m, \adagger_n] \equiv \ahat_m \adagger_n - \adagger_m\ahat_n = \delta_{mn}, $$
+
+where $\delta_{mn} = 1$ if $m = n$ and $\delta_{mn} = 0$ if $m \neq n$.
+
+This relation can be quite useful, in particular for ensuring operators are in "normal order" which we will describe in detail when reviewing the coherent state below.  
+
++++
+
 ## The Number Operator: $\hat{N} = \adagger\ahat$
 
 As the name implies, the number operator relates to the number of photons contained within a mode.  It is related to the annihilation and creation operators:

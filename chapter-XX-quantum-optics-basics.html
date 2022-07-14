@@ -244,6 +244,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commutation-relation">
+   Commutation Relation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-number-operator-hat-n-adagger-ahat">
    The Number Operator:
    <span class="math notranslate nohighlight">
@@ -352,6 +357,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commutation-relation">
+   Commutation Relation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-number-operator-hat-n-adagger-ahat">
    The Number Operator:
    <span class="math notranslate nohighlight">
@@ -455,6 +465,14 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="math notranslate nohighlight">
 \[\ahat_m \ket{0}_m = 0.\]</div>
 </div>
+<div class="section" id="commutation-relation">
+<h2>Commutation Relation<a class="headerlink" href="#commutation-relation" title="Permalink to this headline">¶</a></h2>
+<p>It’s important to note that the annihilation and creation operators <strong>do not</strong> commute.  They have the following commutation relation</p>
+<div class="math notranslate nohighlight">
+\[ [\ahat_m, \adagger_n] \equiv \ahat_m \adagger_n - \adagger_m\ahat_n = \delta_{mn}, \]</div>
+<p>where <span class="math notranslate nohighlight">\(\delta_{mn} = 1\)</span> if <span class="math notranslate nohighlight">\(m = n\)</span> and <span class="math notranslate nohighlight">\(\delta_{mn} = 0\)</span> if <span class="math notranslate nohighlight">\(m \neq n\)</span>.</p>
+<p>This relation can be quite useful, in particular for ensuring operators are in “normal order” which we will describe in detail when reviewing the coherent state below.</p>
+</div>
 <div class="section" id="the-number-operator-hat-n-adagger-ahat">
 <h2>The Number Operator: <span class="math notranslate nohighlight">\(\hat{N} = \adagger\ahat\)</span><a class="headerlink" href="#the-number-operator-hat-n-adagger-ahat" title="Permalink to this headline">¶</a></h2>
 <p>As the name implies, the number operator relates to the number of photons contained within a mode.  It is related to the annihilation and creation operators:</p>
@@ -469,7 +487,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>The annihilation and creation operators are also intrinsically related to the electric field of a state.  In fact, they arise as a result of quantizing the electric field.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The quantization of the electromagnetic field is discussed in many textbooks.  For instance, see the treatment in Ref. <span id="id1">[<a class="reference internal" href="chapter-XX-interference-HOM-and-homodyne.html#id2" title="John S. Townsend. A Modern Approach to Quantum Mechanics. University Science Books, Sausalito, CA, first edition, 2000. ISBN 1-891389-13-0.">1</a>]</span>.</p>
+<p>The quantization of the electromagnetic field is discussed in many textbooks.  For instance, see the treatment in Ref. <span id="id1">[<a class="reference internal" href="#id3" title="John S. Townsend. A Modern Approach to Quantum Mechanics. University Science Books, Sausalito, CA, first edition, 2000. ISBN 1-891389-13-0.">1</a>]</span>.</p>
 </div>
 <p>The operator relating to the “in-phase” component of the electric field is expressed as:</p>
 <div class="math notranslate nohighlight">
@@ -561,12 +579,12 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/chapter-XX-quantum-optics-basics_13_1.png" src="_images/chapter-XX-quantum-optics-basics_13_1.png" />
+<img alt="_images/chapter-XX-quantum-optics-basics_14_1.png" src="_images/chapter-XX-quantum-optics-basics_14_1.png" />
 </div>
 </div>
 <div class="figure align-default" id="fig-number-state-field-representation" style="width: 600px">
 <div class="cell_output docutils container">
-<img alt="_images/chapter-XX-quantum-optics-basics_13_0.png" src="_images/chapter-XX-quantum-optics-basics_13_0.png" />
+<img alt="_images/chapter-XX-quantum-optics-basics_14_0.png" src="_images/chapter-XX-quantum-optics-basics_14_0.png" />
 </div>
 <p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Field representations for a number state with <span class="math notranslate nohighlight">\(N=4\)</span>.</span><a class="headerlink" href="#fig-number-state-field-representation" title="Permalink to this image">¶</a></p>
 </div>
@@ -656,12 +674,12 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/chapter-XX-quantum-optics-basics_17_1.png" src="_images/chapter-XX-quantum-optics-basics_17_1.png" />
+<img alt="_images/chapter-XX-quantum-optics-basics_18_1.png" src="_images/chapter-XX-quantum-optics-basics_18_1.png" />
 </div>
 </div>
 <div class="figure align-default" id="fig-coherent-state-field-representation" style="width: 600px">
 <div class="cell_output docutils container">
-<img alt="_images/chapter-XX-quantum-optics-basics_17_0.png" src="_images/chapter-XX-quantum-optics-basics_17_0.png" />
+<img alt="_images/chapter-XX-quantum-optics-basics_18_0.png" src="_images/chapter-XX-quantum-optics-basics_18_0.png" />
 </div>
 <p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Field representations for a coherent state with <span class="math notranslate nohighlight">\(|\alpha| = 4\)</span>, and <span class="math notranslate nohighlight">\(\varphi = \pi/4\)</span>.</span><a class="headerlink" href="#fig-coherent-state-field-representation" title="Permalink to this image">¶</a></p>
 </div>
@@ -739,12 +757,12 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/chapter-XX-quantum-optics-basics_21_1.png" src="_images/chapter-XX-quantum-optics-basics_21_1.png" />
+<img alt="_images/chapter-XX-quantum-optics-basics_22_1.png" src="_images/chapter-XX-quantum-optics-basics_22_1.png" />
 </div>
 </div>
 <div class="figure align-default" id="fig-squeezed-state-vs-vac-field-fluctuations" style="width: 600px">
 <div class="cell_output docutils container">
-<img alt="_images/chapter-XX-quantum-optics-basics_21_0.png" src="_images/chapter-XX-quantum-optics-basics_21_0.png" />
+<img alt="_images/chapter-XX-quantum-optics-basics_22_0.png" src="_images/chapter-XX-quantum-optics-basics_22_0.png" />
 </div>
 <p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Field representations for a vacuum state (red circle) and squeezed state <span class="math notranslate nohighlight">\(\ket{\psi_s} = \sqrt{1 - s^2}\ket{0} - s\ket{2}\)</span> (blue circle) for <span class="math notranslate nohighlight">\(s=0.25\)</span>.</span><a class="headerlink" href="#fig-squeezed-state-vs-vac-field-fluctuations" title="Permalink to this image">¶</a></p>
 </div>
@@ -786,12 +804,12 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/chapter-XX-quantum-optics-basics_24_1.png" src="_images/chapter-XX-quantum-optics-basics_24_1.png" />
+<img alt="_images/chapter-XX-quantum-optics-basics_25_1.png" src="_images/chapter-XX-quantum-optics-basics_25_1.png" />
 </div>
 </div>
 <div class="figure align-default" id="fig-squeezed-field-fluctuations" style="width: 600px">
 <div class="cell_output docutils container">
-<img alt="_images/chapter-XX-quantum-optics-basics_24_0.png" src="_images/chapter-XX-quantum-optics-basics_24_0.png" />
+<img alt="_images/chapter-XX-quantum-optics-basics_25_0.png" src="_images/chapter-XX-quantum-optics-basics_25_0.png" />
 </div>
 <p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Field fluctuations in each quadrature compared to the SQL.</span><a class="headerlink" href="#fig-squeezed-field-fluctuations" title="Permalink to this image">¶</a></p>
 </div>

@@ -64,21 +64,21 @@ We will also explore the concept of homodyne detection where we leverage the int
 
 Imagine the scenario depicted in Fig. **FIXME: FIGURE**.  A nonlinear crystal is used to generate precisely two photons of energy $\hbar\omega$ when excited by a pulse with a photon energy of $2\hbar\omega$.  This process is called spontaneous parametric down-conversion and is a common technique for generating entangled photon pairs. 
 
-The two photons travel away from the crystal along two paths (top and bottom as shown).  They are then brought together and interfere within a beamsplitter.  The user can control the path length of the top arm, which impars a delay on the photon taking this path.  It is interesting to then examine the signals one would detect at outputs $c$ and $d$ as a function of this delay.  So lets move on to describing how to process and predict detected events.
+The two photons travel away from the crystal along two paths (top and bottom as shown).  They are then brought together and interfere within a beamsplitter.  
 
 **FIXME: HONG-OU-MANDEL EXPERIMENTAL SCHEMATIC**
 
-If we break down the different possibilities, one would be that both photons output in $c$, on would be that both photons output in $d$, and one would be that one photon outputs in $c$ while the other outpus in $d$.  These possibilities can be categorized by coincidence.  In the first two cases, only one detector or the other would click.  In the last case, both detectors would click simultaneously -- a coincidence event.  A useful metric is then to evaluate the coincidence rate as a function of delay.  How do we describe this?
+If we break down all the different possibilities that could happen, one would be that both photons output in $c$, another would be that both photons output in $d$, and a final possibility would be that one photon outputs to $c$ while the other outputs to $d$.   One interesting question to ask is whether the delay has any influence over these possibilities?  
 
-To start with, at the input of the beamsplitter we know we have two states in two different modes, one having a delay.  The first can be described as
+Lets model this system.  Imagine that the input signals are pulsed.  In this case we could for instance represent a single photon input with delay $\tau$ in port $a$ as
 
 $$ \ket{1; \tau}_a, $$
 
-and the second as
+or a single photon input with $0$ delay in port $b$ as
 
 $$ \ket{1; 0}_b.$$
 
-The first number represents the numer of photons, the second the delay.  Finally, the subscript represents the mode.  So, the total input state would be
+The first number represents the numer of photons, the second the delay.  Finally, the subscript represents the mode.  Given a two-photon input to the system from the crystal with delay along path $a$ of $\tau$, the total input state can be written as
 
 $$\ket{\psi_\text{in}} = \ket{1; \tau}_a\ket{1; 0}_b = \adagger_{\tau}\bdagger_0 \ket{0}$$
 
@@ -124,7 +124,7 @@ Remember that probabilities of outcomes are related to $\bra{\psi_out}\ket{\psi_
 Four different possibilities of detection in port c and d given a non-zero delay $\tau$.  
 :::
 
-All possibilities we oultined above happen with equal probability.  This would result in a net coincidence rate of 50%.  
+All possibilities we oultined above happen with equal probability. 
 
 However, for $\tau = 0$ we have something very interesting, and a bit unintuitive.  In this case we have
 
@@ -145,9 +145,12 @@ leading to the following map of outcomes at each detector.
 Two different possibilities of detection in port c and d given a zero delay $\tau$ such that the two photons are indistinguishable in every way at the beamsplitter.  Note each pulse now contains two photons, and the probability of each occurance is $1/2$.  
 :::
 
+In this case **there would be no coincidence events** (that is, events that would trigger an output on both detectors).  Either both photons go to $c$ or both to $d$ with equal probability.  This is in comparison to the case when the modes were fully separate in time when the coincidence rate is 50%.  
 
+```{important}
+We want to emphasize here that we have taken a few small liberties with the notation above.  The approach  used here works in estimating probabilities for the two cases discussed, assuming (1) that each photon pulse is long relative to the central frequency, and (2) that for the delayed case the photons are so far separated in time that there is no overlap between each photon pulse at the input of the beamsplitter.  A more complete model would actually have to expand each input into the frequency domain and model the interference between each spectral component individually.  However this approach is much more involved, and results in the same predictions as discussed here for the cases discussed.  
+```
 
-In this case **there would be no coincidence events**.  Either both photons go to $c$ or both to $d$ with equal probability.
 
 
 +++

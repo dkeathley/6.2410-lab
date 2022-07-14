@@ -139,8 +139,6 @@ $$
 
 leading to the following map of outcomes at each detector.
 
-**FIXME: Map of outcomes for $\tau = 0$ where we show pulses and probabilities.**
-
 :::{figure-md} HOM-possibilities-wo-tau
 <img src="./FIGURES/HOM-possibilities-wo-tau.png" alt="HOM-w-tau" class="bg-primary mb-1" width="500px">
 

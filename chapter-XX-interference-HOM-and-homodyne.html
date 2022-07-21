@@ -214,6 +214,13 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#homodyne-detection">
    Homodyne Detection
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#homodyne-detection-with-squeezed-light">
+     Homodyne Detection with Squeezed Light
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
@@ -249,6 +256,13 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#homodyne-detection">
    Homodyne Detection
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#homodyne-detection-with-squeezed-light">
+     Homodyne Detection with Squeezed Light
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
@@ -346,6 +360,123 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="homodyne-detection">
 <h2>Homodyne Detection<a class="headerlink" href="#homodyne-detection" title="Permalink to this headline">¶</a></h2>
+<p>Let’s consider a configuration similar to the one used to demonstrate the Hong-Ou-Mandel effect above, but with a few key changes.  First, we can drive on input of the beamsplitter with a coherent state <span class="math notranslate nohighlight">\(\ket{\alpha}_a\)</span>.  Second, we let the second input be an arbitrary state <span class="math notranslate nohighlight">\(\ket{\psi}_b\)</span>.  Third, instead of examining coincidence events, we rather examine the subtraction of the photocurrents between ports <span class="math notranslate nohighlight">\(d\)</span> and <span class="math notranslate nohighlight">\(c\)</span>. This configuration is shown pictorally below.</p>
+<p><strong>FIXME: Insert homodyne schematic following description above.</strong></p>
+<p>Given all inputs have the same frequency, this scheme is referred to as a balanced homodyne detection scheme.  It allows us to measure the field observable <span class="math notranslate nohighlight">\(B^{(\theta)}\)</span> of the state <span class="math notranslate nohighlight">\(\ket{\psi}_b\)</span>.  Let’s see how.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that we have again used the convention of labeling all operators with the letter corresponding to the mode label for convenience and clarity.  Thus <span class="math notranslate nohighlight">\(B^{(\theta)}\)</span> corresponds to the average observed field of the state in port <span class="math notranslate nohighlight">\(b\)</span>.</p>
+</div>
+<p>First note that</p>
+<div class="math notranslate nohighlight">
+\[ \chat = \frac{\ahat + \bhat}{\sqrt{2}} \]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[ \dhat = \frac{\ahat - \bhat}{\sqrt{2}}. \]</div>
+<p>We then find that we can use these relations to define an operator that represents the difference current between the detector in path <span class="math notranslate nohighlight">\(d\)</span> and the one in path <span class="math notranslate nohighlight">\(c\)</span>.  We can do this by assuming that the detectors are 100% efficient, and thus the current would be directly proportional to the number of photons incident on each one.</p>
+<div class="math notranslate nohighlight">
+\[ 
+\hat{I}(\theta) \propto \hat{N}_c - \hat{N}_d = 
+\frac{1}{2} 
+\bigg \lbrace 
+(\adagger + \bdagger)(\ahat + \bhat) - 
+(\adagger - \bdagger)(\ahat - \bhat) 
+\bigg \rbrace
+\]</div>
+<p>After a bit of simplfication, we find that</p>
+<div class="math notranslate nohighlight">
+\[ \hat{I}(\theta) \propto \adagger\bhat + \bdagger\ahat. \]</div>
+<p>If we then take the input state to be <span class="math notranslate nohighlight">\(\ket{\alpha}_a\ket{\psi}_b\)</span>, we have that the average current is expressed as</p>
+<div class="math notranslate nohighlight">
+\[ I(\theta) \propto \bra{\psi}_b \bra{\alpha}_a \adagger \bhat + \ahat \bdagger \ket{\alpha}_a \ket{\psi}_b = |\alpha|\bra{\psi}_b \bhat e^{-i\theta} + \bdagger e^{i\theta} \ket{\psi}_b \]</div>
+<p>where we have taken <span class="math notranslate nohighlight">\(\alpha = |\alpha|e^{-i\theta}\)</span>.</p>
+<p>Note that this means that</p>
+<div class="math notranslate nohighlight">
+\[ I(\theta) \propto 2 |\alpha|B^{(\theta)}, \]</div>
+<p>meaning that the measured current can be directly related to the field in B in the quadrature defined by <span class="math notranslate nohighlight">\(\theta\)</span>.  One can simply scan the phase <span class="math notranslate nohighlight">\(\alpha\)</span> (for example by inserting a wedge into the path of <span class="math notranslate nohighlight">\(a\)</span>) to measure the average field in in <span class="math notranslate nohighlight">\(b\)</span> for all relative phase delays.</p>
+<p>Beyond mapping the average field, we can also examine the noise.  To do this, we then need something to correspond to <span class="math notranslate nohighlight">\(\hat{I}^2\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\hat{I}^2(\theta) \propto (\adagger \bhat + \bdagger \ahat)^2.  \]</div>
+<p>Again, after some algebra, we wind up finding that</p>
+<div class="math notranslate nohighlight">
+\[ \langle \hat{I}^2(\theta) \rangle 
+\propto 
+|\alpha|^2 \bra{\psi}_b e^{i 2 \theta}\bhat\bhat + 1 + 2\bdagger\bhat + \bdagger\bdagger e^{-i2\theta} \ket{\psi_b} + N_b, \]</div>
+<p>but, note, this is nothing more than</p>
+<div class="math notranslate nohighlight">
+\[ \langle \hat{I}^2(\theta) \rangle 
+\propto 
+4 |\alpha|^2 {\hat{B}^{(\theta)}}^2 + N_b\]</div>
+<p>Then remember that the noise is simply defined by the standard deviation of the output current, which is</p>
+<div class="math notranslate nohighlight">
+\[ \Delta I(\theta) = \langle \hat{I}^2 \rangle - I^2 \propto 4 |\alpha|^2 \Delta B^{(\theta)}  + N_b \]</div>
+<p>This is a really interesting set of results, so let’s think about them a bit.  Basically, the signal <span class="math notranslate nohighlight">\(I\)</span> is related directly to the field observable of the state in port <span class="math notranslate nohighlight">\(b\)</span> for any quadrature defined by <span class="math notranslate nohighlight">\(\theta\)</span>.  In fact this state information has been enhanced by a factor of <span class="math notranslate nohighlight">\(2|\alpha|\)</span> due to the large field of the coherent state.  The the noise of the differential current is simply the noise of the field observable of the state in port <span class="math notranslate nohighlight">\(b\)</span> enhanced by a factor of <span class="math notranslate nohighlight">\(4|\alpha|^2\)</span>, with an extra contribution of <span class="math notranslate nohighlight">\(N_b\)</span>, the number of photons in the state in port <span class="math notranslate nohighlight">\(b\)</span>.  Note that if we are dealing with few-photon states, then this extra portion <span class="math notranslate nohighlight">\(N_b\)</span> can be safely ignored.  This means, <strong>balanced homodyne detection provides all information about the fields in port <span class="math notranslate nohighlight">\(b\)</span></strong>.</p>
+<p>Let’s see what happens when we inject a squeezed state into port <span class="math notranslate nohighlight">\(b\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Clearly, there is an advantage to having a high intensity coherent state <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span>.  However, one should note that there are technical limitations here, in particular is detector saturation.  As with any photodetection scheme, there is a limit to the average photon rate that can be detected by a given detector.  There are also bandwidth limitations to be considered.  These traditional limitations of optoelectronics still apply and must be considered.  As with all quantum engineering, there is still plenty of classical engineering to be taken into account!</p>
+</div>
+<div class="section" id="homodyne-detection-with-squeezed-light">
+<h3>Homodyne Detection with Squeezed Light<a class="headerlink" href="#homodyne-detection-with-squeezed-light" title="Permalink to this headline">¶</a></h3>
+<p>We know from Chapter <strong>FIXME: LINK TO BASICS CHAPTER</strong> that squeezed light exhibits reduced field fluctuations along a particular quadrature.  We also now know that Homodyne detection can measure the field observable at input port <span class="math notranslate nohighlight">\(b\)</span> along any quadratudre defined by the phase of the coherent state <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<p>Let us start by referring back to the simplified squeezed state we had discussed in <strong>FIXME: LINK TO SQUEEZED STATE SECTION</strong></p>
+<div class="math notranslate nohighlight">
+\[ \ket{\psi_s}_b = \sqrt{1 - s^2}\ket{0}_b - s\ket{2}_b.\]</div>
+<p>From our prior analysis we know that the average field is zero for this squeezed state, thus</p>
+<div class="math notranslate nohighlight">
+\[ I(\theta) \propto 2 |\alpha| B^{(\theta)} = 0,\]</div>
+<p>and that the current noise can be expressed as</p>
+<div class="math notranslate nohighlight">
+\[ \Delta I(\theta) \propto 4 |\alpha|^2 {\hat{B}^{(\theta)}}^2 + N_b
+\]</div>
+<p>which, for our squeezed state is</p>
+<div class="math notranslate nohighlight">
+\[  \Delta I(\theta) = 4 |\alpha|^2 { \bigg \lbrace 1/4 - s \sqrt{\frac{(1 - s^2)}{2}} \cos(2 \theta) + s^2 \bigg \rbrace  }^{1/2} + N_b \]</div>
+<p>As noted above, for a large enough <span class="math notranslate nohighlight">\(|\alpha|\)</span>, we can ignore <span class="math notranslate nohighlight">\(N_b\)</span> here.</p>
+<p>Let’s now plot <span class="math notranslate nohighlight">\(\Delta I(\theta)\)</span> given <span class="math notranslate nohighlight">\(s = 0.3\)</span> (squeezed state) and <span class="math notranslate nohighlight">\(s = 0.0\)</span> (vacuum state – no input).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">mpatches</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+
+
+<span class="n">s</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">delA</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span> <span class="o">-</span> <span class="n">s</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">theta</span><span class="p">)</span> <span class="o">+</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">delA</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;s = 0.3&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;s = 0&quot;</span><span class="p">)</span>
+
+<span class="c1">#ax.set_ylim(0, 1.55)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\t</span><span class="s1">heta$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$\Delta I(</span><span class="se">\t</span><span class="s1">heta)$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    
+<span class="c1">#plt.gca().set_aspect(&#39;equal&#39;)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;homodyne_noise_squeezed_state&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-XX-interference-HOM-and-homodyne_8_1.png" src="_images/chapter-XX-interference-HOM-and-homodyne_8_1.png" />
+</div>
+</div>
+<div class="figure align-default" id="fig-homodyne-noise-squeezed-state" style="width: 600px">
+<div class="cell_output docutils container">
+<img alt="_images/chapter-XX-interference-HOM-and-homodyne_8_0.png" src="_images/chapter-XX-interference-HOM-and-homodyne_8_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Noise of the differential output signal <span class="math notranslate nohighlight">\(\Delta I\)</span> as we scan <span class="math notranslate nohighlight">\(\theta\)</span>.  Note that depending on the value of <span class="math notranslate nohighlight">\(\theta\)</span> with the squeezed state input, the noise can be either significantly increased or decreased compared to the case of no input to port <span class="math notranslate nohighlight">\(b\)</span> (i.e. pure vacuum state input corresponding to <span class="math notranslate nohighlight">\(s = 0\)</span>).</span><a class="headerlink" href="#fig-homodyne-noise-squeezed-state" title="Permalink to this image">¶</a></p>
+</div>
+</div>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>

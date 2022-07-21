@@ -120,7 +120,7 @@ $$ [\ahat_m, \adagger_n] \equiv \ahat_m \adagger_n - \adagger_m\ahat_n = \delta_
 
 where $\delta_{mn} = 1$ if $m = n$ and $\delta_{mn} = 0$ if $m \neq n$.
 
-This relation can be quite useful, in particular for ensuring operators are in "normal order" which we will describe in detail when reviewing the coherent state below.  
+This relation can be quite useful, in particular for ensuring operators are in "normal order" which we will describe in detail when reviewing the coherent state below.
 
 +++
 

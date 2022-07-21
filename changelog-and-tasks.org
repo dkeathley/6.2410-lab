@@ -1,4 +1,12 @@
 * Changelog/Notes
+** 220721 -- Completed draft of HOM and homodyne chapter
+
+Now have everything I want for the HOM and homodyne chapter.
+
+I now need to do the problem sets and examples.
+
+I am thinking that this should definitely have a full LIGO-like interferometery example/PSET problem.
+
 ** 220427 -- Started transferring initial chapter on quantum information (PDK)
 
 *Morning*
@@ -25,7 +33,6 @@ Some questions items I would like to address:
     + *Approach 2* Or, should we be more general, but systematically show an example in each kind of platform?  /I vote for this option/.  
       + Example: For each gate we would systematically list out each example platform from a pre-defined list, and then note examples of how each gate is implemented in that respective platform (or at least an example).
       + It would be good to also note current limitations and areas where researchers/engineers are trying to improve upon conventional approaches (for instance integrated-photonics implementations of free-space optical gates)...
-
 * Tasks
 ** TODO Start adding in additional explanatory material and bringing to proper level for undergrad course.  
 ** DONE Complete translating Ch. 7 on quantum information

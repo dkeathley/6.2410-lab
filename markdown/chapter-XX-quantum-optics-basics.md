@@ -509,12 +509,3 @@ glue("squeezed_field_fluctuations", fig, display=False)
 
 Field fluctuations in each quadrature compared to the SQL.  
 ```
-
-+++
-
-## References
-
-```{bibliography}
-:style: unsrt
-:filter: docname in docnames
-```

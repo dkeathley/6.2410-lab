@@ -34,7 +34,13 @@ Some questions items I would like to address:
       + Example: For each gate we would systematically list out each example platform from a pre-defined list, and then note examples of how each gate is implemented in that respective platform (or at least an example).
       + It would be good to also note current limitations and areas where researchers/engineers are trying to improve upon conventional approaches (for instance integrated-photonics implementations of free-space optical gates)...
 * Tasks
-** TODO Start adding in additional explanatory material and bringing to proper level for undergrad course.  
+** TODO Quantum Information Chapter: Start adding in additional explanatory material and bringing to proper level for undergrad course.  
+** TODO Book Issue: Fix the launch link to the link to google colab
+
+Link not showing.
+
+Don't know if this is related to repo being hosted on MIT github?  Or is it due to the markdown files being in same directory as the .ipynb files?  At least the latter is an easy check.  
+
 ** DONE Complete translating Ch. 7 on quantum information
 CLOSED: [2022-04-27 Wed 13:24]
 ** DONE Notes on action items and thoughts of directions for discussion

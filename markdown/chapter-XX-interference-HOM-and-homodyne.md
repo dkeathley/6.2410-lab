@@ -295,11 +295,3 @@ glue("homodyne_noise_squeezed_state", fig, display=False)
 
 Noise of the differential output signal $\Delta I$ as we scan $\theta$.  Note that depending on the value of $\theta$ with the squeezed state input, the noise can be either significantly increased or decreased compared to the case of no input to port $b$ (i.e. pure vacuum state input corresponding to $s = 0$).  
 ```
-
-+++
-
-## References
-
-```{bibliography}
-:style: unsrt
-```

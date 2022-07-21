@@ -258,6 +258,8 @@ As noted above, for a large enough $|\alpha|$, we can ignore $N_b$ here.
 Let's now plot $\Delta I(\theta)$ given $s = 0.3$ (squeezed state) and $s = 0.0$ (vacuum state -- no input).  
 
 ```{code-cell} ipython3
+:tags: [hide-cell]
+
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.patches as mpatches
@@ -275,8 +277,8 @@ ax.plot(theta*180/np.pi, delA, label="s = 0.3")
 ax.axhline(2.0, color="black", linestyle="--", label="s = 0")
 
 #ax.set_ylim(0, 1.55)
-ax.set_xlabel('$\theta$', fontsize=15)
-ax.set_ylabel('$\Delta I(\theta)$', fontsize=15)
+ax.set_xlabel(r'$\theta$', fontsize=15)
+ax.set_ylabel(r'$\Delta I$($\theta$)', fontsize=15)
 ax.tick_params(labelsize=13) 
 ax.legend(fontsize=15)
     

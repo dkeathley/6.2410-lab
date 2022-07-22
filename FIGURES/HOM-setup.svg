@@ -9,6 +9,9 @@
    viewBox="0 0 208.37231 89.940262"
    height="89.940262mm"
    width="208.37231mm"
+   inkscape:export-filename="/home/dkeathley/Dropbox (MIT)/org/PROJECT-ATTACHMENTS/work/JUPYTER-BOOK-6.157-laboratory-for-quantum-information-science-2022-04-27-07-26/FIGURES/HOM-setup.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -20,7 +23,7 @@
      bordercolor="#666666"
      borderopacity="1.0"
      inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
+     inkscape:pageopacity="1"
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
@@ -32,7 +35,7 @@
      inkscape:window-x="0"
      inkscape:window-y="46"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
@@ -528,6 +531,10 @@
       </symbol>
     </g>
   </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"

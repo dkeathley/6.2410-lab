@@ -1,4 +1,4 @@
-# 6.157 -- Laboratory for Quantum Information Science and Engineering
+# 6.2410 -- Laboratory for Quantum Information Science and Engineering
 
 This book is the text for the EECS 6.157 laboratory course for Quantum Information Science and Engineering. 
 

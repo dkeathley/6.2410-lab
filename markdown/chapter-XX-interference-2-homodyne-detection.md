@@ -48,6 +48,7 @@ display(HTML("<style>.jp-Cell-outputWrapper { width: "+str(width)+"% !important;
 
 # Chapter XX -- Interference Part 2: Homodyne Detection
 
+In Part 1 we explored single-photon interference and the Hong-Ou-Mandel effect.  Here in Part 2 we build on several of the core concepts introduced in Part 1, such as beam-combining and interference, to explore homodyne detection of quantum fields.  We will then show how one can use homodyne detection in combination with squeezed states to make distance measurements with extremely high sensitivity.  
 
 +++
 
@@ -65,7 +66,7 @@ Given all inputs have the same frequency, this scheme is referred to as a balanc
 Note that we have again used the convention of labeling all operators with the letter corresponding to the mode label for convenience and clarity.  Thus $B^{(\theta)}$ corresponds to the average observed field of the state in port $b$.  
 ```
 
-First note that
+First note that as a result of the beamsplitter
 
 $$ \chat = \frac{\ahat + \bhat}{\sqrt{2}} $$
 

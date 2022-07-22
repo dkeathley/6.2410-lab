@@ -54,9 +54,9 @@ Many quantum engineering applications leverage the unique properties of quantum 
 
 Before we can build to larger systems for more functional applications, it is important to understand how how to treat basic building blocks of quantum optical systems.  
 
-In this chapter, we will introduce the concepts of entangled photon pair generation and interference by way of studying the Hong-Ou-Mandel effect.  We will discuss how photons interact with beamsplitters, how to treat their interference, and signal processing methods such as coincidence detection.  
+In this chapter and the next we will discuss interference phenomena in two parts.  In part 1 (this chapter), we examine entangled photon pair interference by way of the Hong-Ou-Mandel effect.  We will discuss how photons interact with beamsplitters, how to treat their interference, and signal processing methods such as coincidence detection.  
 
-We will also explore the concept of homodyne detection where we leverage the interference between more general quantum states and coherent states to characterize quantum fields.  We will build on this to explore how homodyne detection can be used to performe distance measurements with extremely high sensitivity using squeezed light.  Such techniques were in large part perfected for the detection of gravitational waves, but can be applied more generally at smaller scales.
+In part 2 (the following chapter) we will explore the concept of homodyne detection where we leverage the interference between more general quantum states and coherent states to characterize quantum fields.  Building on this we will study how homodyne detection with squeezed light can be used to performe distance measurements with extremely high sensitivity.  Such techniques were in large part perfected for the detection of gravitational waves, but can be applied more generally for engineering applications at smaller scales.
 
 +++
 
@@ -66,7 +66,11 @@ Imagine the scenario depicted in Fig. **FIXME: FIGURE**.  A nonlinear crystal is
 
 The two photons travel away from the crystal along two paths (top and bottom as shown).  They are then brought together and interfere within a beamsplitter.  
 
-**FIXME: HONG-OU-MANDEL EXPERIMENTAL SCHEMATIC**
+:::{figure-md} HOM-setup
+<img src="./FIGURES/HOM-setup.png" alt="HOM-setup" class="bg-primary mb-1" width="800px">
+
+Experimental setup for studying the HOM effect.  
+:::
 
 If we break down all the different possibilities that could happen, one would be that both photons output in $c$, another would be that both photons output in $d$, and a final possibility would be that one photon outputs to $c$ while the other outputs to $d$.   One interesting question to ask is whether the delay has any influence over these possibilities?  
 
@@ -148,5 +152,5 @@ Two different possibilities of detection in port c and d given a zero delay $\ta
 In this case **there would be no coincidence events** (that is, events that would trigger an output on both detectors).  Either both photons go to $c$ or both to $d$ with equal probability.  This is in comparison to the case when the modes were fully separate in time when the coincidence rate is 50%.  
 
 ```{important}
-We want to emphasize here that we have taken a few liberties with the notation above.  The approach  used here works in estimating probabilities for the two cases discussed, assuming (1) that each photon pulse is long relative to the central frequency; (2) that the envelope shape and central frequency of each pulse is the same; and (3) that for the delayed case the photons are so far separated in time that there is no overlap between each photon pulse at the input of the beamsplitter. For these cases the cases are either perfectly indistinguishible or distinguishable.  A more complete model would actually have to expand each input into the frequency domain and model the interference between each spectral component individually.  However this approach is much more involved.  In the end, both approaches result in the same predictions as discussed above.  
+We want to emphasize here that we have taken a few liberties with the notation above.  The approach  used here works in estimating probabilities for the two cases discussed, assuming (1) that each photon pulse is long relative to the central frequency; (2) that the envelope shape and central frequency of each pulse is the same; and (3) that for the delayed case the photons are so far separated in time that there is no overlap between each photon pulse at the input of the beamsplitter. For these cases the states are either perfectly indistinguishible or distinguishable.  A more complete model would actually have to expand each input into the frequency domain and model the interference between each spectral component individually.  However this approach is much more involved.  In the end, both approaches result in the same predictions as discussed above.  
 ```

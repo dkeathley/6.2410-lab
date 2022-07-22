@@ -1,9 +1,9 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: 6.157 -- Laboratory for Quantum Information Science and Engineering
+title: 6.2410 -- Laboratory for Quantum Information Science and Engineering
 author: Dirk Englund, Marc Baldo, Donnie Keathley
-logo: logo.png
+logo: FIGURES/logo-ibm.jpg
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html

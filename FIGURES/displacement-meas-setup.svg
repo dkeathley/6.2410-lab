@@ -9,7 +9,7 @@
    viewBox="0 0 189.12183 118.79764"
    height="118.79764mm"
    width="189.12184mm"
-   inkscape:export-filename="/home/dkeathley/Dropbox (MIT)/org/PROJECT-ATTACHMENTS/work/JUPYTER-BOOK-6.157-laboratory-for-quantum-information-science-2022-04-27-07-26/FIGURES/HOM-setup.png"
+   inkscape:export-filename="/home/dkeathley/Dropbox (MIT)/org/PROJECT-ATTACHMENTS/work/JUPYTER-BOOK-6.157-laboratory-for-quantum-information-science-2022-04-27-07-26/FIGURES/displacement-meas-setup.png"
    inkscape:export-xdpi="300"
    inkscape:export-ydpi="300"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -27,9 +27,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="1.0973349"
-     inkscape:cx="364.69669"
-     inkscape:cy="205.43967"
+     inkscape:zoom="0.54866744"
+     inkscape:cx="620.95296"
+     inkscape:cy="155.32527"
      inkscape:window-width="1916"
      inkscape:window-height="1005"
      inkscape:window-x="0"
@@ -1081,7 +1081,7 @@
      transform="translate(24.0362, -37.9606)">
     <path
        style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 150.89238,63.684744 V 52.175288"
+       d="M 150.89238,60.658924 V 49.149468"
        id="path51594" />
     <g
        id="g17183"
@@ -1148,7 +1148,7 @@
     </g>
     <g
        id="g17183-8"
-       transform="matrix(0,-0.68252393,0.68252393,0,-20.150764,173.2939)"
+       transform="matrix(0,-0.68252393,0.68252393,0,-21.926444,171.70639)"
        style="stroke-width:0.366288;stroke-miterlimit:4;stroke-dasharray:none">
       <g
          id="g1326-7"
@@ -1227,7 +1227,7 @@
     </g>
     <g
        id="g1872-3"
-       transform="matrix(-0.96657241,0,0,-0.96657241,211.22564,210.44823)"
+       transform="matrix(-0.96657241,0,0,-0.96657241,211.22564,207.42239)"
        style="stroke-width:0.206917;stroke-miterlimit:4;stroke-dasharray:none">
       <rect
          style="fill:none;stroke:#000000;stroke-width:0.206917;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
@@ -1243,12 +1243,12 @@
     </g>
     <path
        style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 153.76539,100.91848 c -0.15218,5.83722 -0.0212,13.88908 -0.0212,13.88908 11.07774,-1.30462 9.57917,-14.00832 0.0212,-13.88908 z"
+       d="m 153.76539,97.892657 c -0.15218,5.837203 -0.0212,13.889063 -0.0212,13.889063 11.07774,-1.30462 9.57917,-14.008303 0.0212,-13.889063 z"
        id="path2055"
        sodipodi:nodetypes="ccc" />
     <path
        style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 126.675,88.058011 c 5.83686,0.16507 13.88897,0.0519 13.88897,0.0519 -0.86424,-11.392178 -13.94326,-9.4064 -13.88897,-0.0519 z"
+       d="m 126.675,85.032191 c 5.83686,0.16507 13.88897,0.0519 13.88897,0.0519 -0.86424,-11.392178 -13.94326,-9.4064 -13.88897,-0.0519 z"
        id="path2055-8"
        sodipodi:nodetypes="ccc" />
     <g
@@ -1323,7 +1323,7 @@
        id="path18002" />
     <path
        style="fill:none;stroke:#d000f3;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker28455)"
-       d="m -17.897739,119.35999 v -11.9152 H 120.32369"
+       d="m -17.897739,119.35999 0,-14.96966 H 120.32369"
        id="path22244"
        sodipodi:nodetypes="ccc" />
     <path
@@ -1365,37 +1365,37 @@
     </g>
     <path
        style="fill:none;stroke:#d000f3;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 117.08628,107.44479 h 16.25759 V 87.489163"
+       d="m 117.08628,104.41895 h 16.25759 V 84.463343"
        id="path41879" />
     <path
        style="fill:none;stroke:#d000f3;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 133.34387,107.44479 h 20.66382"
+       d="m 133.34387,104.41895 h 20.66382"
        id="path43825" />
     <path
        style="fill:none;stroke:#ed004b;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker17704-8)"
-       d="m 133.37767,156.51898 -0.0338,-28.39318"
+       d="m 133.37767,156.61506 -0.0338,-31.5151"
        id="path6089-1-1"
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;stroke:#ed004b;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 133.34387,128.1258 v -20.68101 0"
+       d="m 133.34387,125.09996 v -20.68101 0"
        id="path38374-7"
        sodipodi:nodetypes="ccc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 133.87838,80.48211 v -7.629633 -7.629634 l 14.67791,0.0017 m 5.34369,-0.0017 h 11.06065 v 42.773917 h -5.73103"
+       d="m 133.87838,77.45629 v -7.629633 -7.629634 l 14.67791,0.0017 m 5.34369,-0.0017 h 11.06065 v 42.773897 h -5.73103"
        id="path48078"
        sodipodi:nodetypes="cccccccc" />
     <ellipse
        style="fill:#ffffff;fill-opacity:1;stroke:#000003;stroke-width:0.25;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path50014"
        cx="150.94989"
-       cy="65.42028"
+       cy="62.394459"
        rx="4.4522176"
        ry="4.3146458" />
     <g
        inkscape:label=""
-       transform="translate(102.872,78.7506)"
+       transform="translate(102.872,75.72478)"
        id="g51377">
       <g
          id="g7684">
@@ -1434,7 +1434,7 @@
     </g>
     <g
        inkscape:label=""
-       transform="translate(60.606951,-25.281425)"
+       transform="translate(60.606951,-28.307245)"
        id="g52797">
       <g
          id="g5863">
@@ -1494,7 +1494,7 @@
     </g>
     <g
        inkscape:label=""
-       transform="translate(43.253617,69.528526)"
+       transform="translate(43.16837,69.557091)"
        id="g53859">
       <g
          id="g7667">
@@ -1644,7 +1644,7 @@
     </g>
     <g
        inkscape:label=""
-       transform="translate(21.778884,22.233309)"
+       transform="translate(21.778884,19.207489)"
        id="g60245">
       <g
          id="g4359">
@@ -1663,7 +1663,7 @@
     </g>
     <g
        inkscape:label=""
-       transform="translate(44.814342,49.141771)"
+       transform="translate(44.814342,46.115951)"
        id="g61032">
       <g
          id="g5282">
@@ -1682,7 +1682,7 @@
     </g>
     <g
        inkscape:label=""
-       transform="translate(42.797767,12.382918)"
+       transform="translate(42.797767,9.3570986)"
        id="g61837">
       <g
          id="g3868">
@@ -1701,7 +1701,7 @@
     </g>
     <g
        inkscape:label=""
-       transform="translate(52.895037,23.567656)"
+       transform="translate(52.895037,20.541836)"
        id="g62660">
       <g
          id="g978">

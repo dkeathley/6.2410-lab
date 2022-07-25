@@ -271,4 +271,13 @@ fig.set_size_inches(10, 10)
 glue("displacement_LOD_squeezed_state", fig, display=False)
 ```
 
+```{glue:figure} displacement_LOD_squeezed_state
+:figwidth: 600px
+:name: "fig-displacement-LOD-squeezed-state"
+
+Signal to noise ratio of the homodyne output from an interferometer for measuremetn of displacement $\delta$ both with squeezing ($s = 0.3$) and without ($s = 0$).  Clearly, a squeezed state reduces the limits of detection beyond what is capable with purely classical input states. This reduction can be further enhanced with states exhibiting larger amounts of squeezing than what we used here for this example.  
+```
+
++++
+
 By using advanced methods that produce squeezed states with much higher levels of squeezing than our toy state here, this can be even further improved.   As with all other examples, though, one must ensure that quantum fluctuations are the dominant source of noise.  **The limit in real life can often be set by thermal, mechanical, and other technical noise taht is not quantum in nature.**  There must also be significant engineering introduced to reduce these noise factors as well.

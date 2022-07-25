@@ -205,13 +205,16 @@ Now we have shown that the noise at the output of a Homodyne detector can be red
 
 Myriad precision instruments use laser-based interferometers to characterize ultra-small changes in the displacement of an object.  For example, precision stages sometimes use laser-based interferometers to obtain nanometer-level precision in their movement.  A rather famous example of precision displacement measurements is for LIGO, where kilometer-scale interferometers are used to measure changes in path lengths that measure just fractions of the width of one atom.  This marvel of measurements was made possible through incredible engineering which included the use of quantum-enhanced measurement techniques based on homodyne detection with squeezed states.  
 
-**FIXME: BASIC INTERFEROMETER + HOMODYNE DETECTOR FIGURE INTRODUCING KEY VARIABLES**
+:::{figure-md} HOM-setup
+<img src="./FIGURES/displacement-meas-setup.png" alt="displacement-meas-setup" class="bg-primary mb-1" width="800px">
 
+Experimental setup for a quantum-enhanced displacment measurement.    
+:::
 In Figure **FIXME: FIGURE REFERENCE** we show how one can couple an interferometer to a homodyne detector for precision displacement measurements.  There are three key inputs to this system:
 
  1. A coherent state probe: $\ket{\alpha}$
  
- 2. A squeezed state input: $\psi_s$, and
+ 2. A squeezed state input: $\ket{\psi_s}$, and
  
  3. A coherent state local oscillator reference: $\beta$
  

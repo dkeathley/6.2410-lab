@@ -217,13 +217,16 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#homodyne-detection">
    Homodyne Detection
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#homodyne-detection-with-squeezed-light">
-     Homodyne Detection with Squeezed Light
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#homodyne-detection-with-squeezed-light">
+   Homodyne Detection with Squeezed Light
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quantum-enhanced-displacement-measurements">
+   Quantum-Enhanced Displacement Measurements
+  </a>
  </li>
 </ul>
 
@@ -249,13 +252,16 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#homodyne-detection">
    Homodyne Detection
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#homodyne-detection-with-squeezed-light">
-     Homodyne Detection with Squeezed Light
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#homodyne-detection-with-squeezed-light">
+   Homodyne Detection with Squeezed Light
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quantum-enhanced-displacement-measurements">
+   Quantum-Enhanced Displacement Measurements
+  </a>
  </li>
 </ul>
 
@@ -327,8 +333,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p class="admonition-title">Note</p>
 <p>Clearly, there is an advantage to having a high intensity coherent state <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span>.  However, one should note that there are technical limitations here, in particular is detector saturation.  As with any photodetection scheme, there is a limit to the average photon rate that can be detected by a given detector.  There are also bandwidth limitations to be considered.  These traditional limitations of optoelectronics still apply and must be considered.  As with all quantum engineering, there is still plenty of classical engineering to be taken into account!</p>
 </div>
+</div>
 <div class="section" id="homodyne-detection-with-squeezed-light">
-<h3>Homodyne Detection with Squeezed Light<a class="headerlink" href="#homodyne-detection-with-squeezed-light" title="Permalink to this headline">¶</a></h3>
+<h2>Homodyne Detection with Squeezed Light<a class="headerlink" href="#homodyne-detection-with-squeezed-light" title="Permalink to this headline">¶</a></h2>
 <p>We know from Chapter <strong>FIXME: LINK TO BASICS CHAPTER</strong> that squeezed light exhibits reduced field fluctuations along a particular quadrature.  We also now know that Homodyne detection can measure the field observable at input port <span class="math notranslate nohighlight">\(b\)</span> along any quadratudre defined by the phase of the coherent state <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
 <p>Let us start by referring back to the simplified squeezed state we had discussed in <strong>FIXME: LINK TO SQUEEZED STATE SECTION</strong></p>
 <div class="math notranslate nohighlight">
@@ -387,7 +394,74 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Noise of the differential output signal <span class="math notranslate nohighlight">\(\Delta I\)</span> as we scan <span class="math notranslate nohighlight">\(\theta\)</span>.  Note that depending on the value of <span class="math notranslate nohighlight">\(\theta\)</span> with the squeezed state input, the noise can be either significantly increased or decreased compared to the case of no input to port <span class="math notranslate nohighlight">\(b\)</span> (i.e. pure vacuum state input corresponding to <span class="math notranslate nohighlight">\(s = 0\)</span>).</span><a class="headerlink" href="#fig-homodyne-noise-squeezed-state" title="Permalink to this image">¶</a></p>
 </div>
+<p>Now we have shown that the noise at the output of a Homodyne detector can be reduced by injection of a squeezed state.  In the next section we examine how we can put this to use for quantum-enhanced measurements of mirror displacement.</p>
 </div>
+<div class="section" id="quantum-enhanced-displacement-measurements">
+<h2>Quantum-Enhanced Displacement Measurements<a class="headerlink" href="#quantum-enhanced-displacement-measurements" title="Permalink to this headline">¶</a></h2>
+<p>Myriad precision instruments use laser-based interferometers to characterize ultra-small changes in the displacement of an object.  For example, precision stages sometimes use laser-based interferometers to obtain nanometer-level precision in their movement.  A rather famous example of precision displacement measurements is for LIGO, where kilometer-scale interferometers are used to measure changes in path lengths that measure just fractions of the width of one atom.  This marvel of measurements was made possible through incredible engineering which included the use of quantum-enhanced measurement techniques based on homodyne detection with squeezed states.</p>
+<p><strong>FIXME: BASIC INTERFEROMETER + HOMODYNE DETECTOR FIGURE INTRODUCING KEY VARIABLES</strong></p>
+<p>In Figure <strong>FIXME: FIGURE REFERENCE</strong> we show how one can couple an interferometer to a homodyne detector for precision displacement measurements.  There are three key inputs to this system:</p>
+<ol class="simple">
+<li><p>A coherent state probe: <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span></p></li>
+<li><p>A squeezed state input: <span class="math notranslate nohighlight">\(\psi_s\)</span>, and</p></li>
+<li><p>A coherent state local oscillator reference: <span class="math notranslate nohighlight">\(\beta\)</span></p></li>
+</ol>
+<p>If the path length difference between the two arms changes by a distance of <span class="math notranslate nohighlight">\(\delta\)</span>, then this induces a phase change <span class="math notranslate nohighlight">\(\theta = 2 \pi \delta/\lambda\)</span>, where <span class="math notranslate nohighlight">\(\lambda\)</span> is the wavelength of the light being used (we have assumed all three input states are of the same central wavelength).  With a bit of effort (which we will go through in detail in the example and problem set questions at the end of this chapter), we find that the measured output current assuming <span class="math notranslate nohighlight">\(\delta\)</span> is very small (much less than one wavelength).</p>
+<div class="math notranslate nohighlight">
+\[ I \propto \frac{2\pi\delta |\alpha| |\beta|}{\lambda}\]</div>
+<p>To see the general effect of squeezing, we can inject our example squeezed state into the system</p>
+<div class="math notranslate nohighlight">
+\[ \ket{\psi_s} = \sqrt{1 - s^2} \ket{0} - s \ket{2},\]</div>
+<p>resulting in the following approximate noise current (assuming large <span class="math notranslate nohighlight">\(\beta\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[ \Delta I^2 \propto |\beta|^2 (1 + 4s^2 - 2\sqrt(2) s \sqrt{1-s^2} \cos(2\phi - 2\pi \delta/\lambda).\]</div>
+<p>This then leads to a signal to noise ratio of</p>
+<div class="math notranslate nohighlight">
+\[ \text{SNR} = \frac{I^2}{\Delta I^2} = \frac{4 \pi^2 \delta^2 |\alpha|^2}{\lambda^2 (1 + 4s^2 - 2\sqrt(2) s \sqrt{1-s^2} \cos(2\phi - 2\pi \delta/\lambda)} \]</div>
+<p>From a measurement perspective, we are interested in the value of <span class="math notranslate nohighlight">\(\delta\)</span> where <span class="math notranslate nohighlight">\(\text{SNR} &gt; 1\)</span>.  This value becomes an important metric for the lower limit of detection of the system.  So, again, let’s pick the values of <span class="math notranslate nohighlight">\(s = 0\)</span> and <span class="math notranslate nohighlight">\(s = 0.3\)</span> as comparison points for the SNR as a function of <span class="math notranslate nohighlight">\(\delta\)</span>.  We assume a wavelength of 600 nm, and a probe photon rate of 100 photons per second.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">mpatches</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+
+
+<span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">alpha2</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="mi">600</span>
+<span class="n">SNR_vac</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">delta</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">alpha2</span><span class="o">/</span><span class="p">(</span><span class="n">y0</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="n">s</span><span class="p">))</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">SNR_sqz</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">delta</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">alpha2</span><span class="o">/</span><span class="p">(</span><span class="n">y0</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="n">s</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span> <span class="n">SNR_vac</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;s = 0.0&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span> <span class="n">SNR_sqz</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;s = 0.3&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;SNR = 1&quot;</span><span class="p">)</span>
+
+<span class="c1">#ax.set_ylim(0, 1.55)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\delta$ (nm)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;SNR&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    
+<span class="c1">#plt.gca().set_aspect(&#39;equal&#39;)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;displacement_LOD_squeezed_state&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-XX-interference-2-homodyne-detection_11_1.png" src="_images/chapter-XX-interference-2-homodyne-detection_11_1.png" />
+</div>
+</div>
+<p>By using advanced methods that produce squeezed states with much higher levels of squeezing than our toy state here, this can be even further improved.   As with all other examples, though, one must ensure that quantum fluctuations are the dominant source of noise.  <strong>The limit in real life can often be set by thermal, mechanical, and other technical noise taht is not quantum in nature.</strong>  There must also be significant engineering introduced to reduce these noise factors as well.</p>
 </div>
 </div>
 

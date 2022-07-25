@@ -407,9 +407,9 @@ const thebe_selector_output = ".output, .cell_output"
 <ol class="simple">
 <li><p>A coherent state probe: <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span></p></li>
 <li><p>A squeezed state input: <span class="math notranslate nohighlight">\(\ket{\psi_s}\)</span>, and</p></li>
-<li><p>A coherent state local oscillator reference: <span class="math notranslate nohighlight">\(\beta\)</span></p></li>
+<li><p>A coherent state local oscillator reference: <span class="math notranslate nohighlight">\(\ket{\beta}\)</span></p></li>
 </ol>
-<p>If the path length difference between the two arms changes by a distance of <span class="math notranslate nohighlight">\(\delta\)</span>, then this induces a phase change <span class="math notranslate nohighlight">\(\theta = 2 \pi \delta/\lambda\)</span>, where <span class="math notranslate nohighlight">\(\lambda\)</span> is the wavelength of the light being used (we have assumed all three input states are of the same central wavelength).  With a bit of effort (which we will go through in detail in the example and problem set questions at the end of this chapter), we find that the measured output current assuming <span class="math notranslate nohighlight">\(\delta\)</span> is very small (much less than one wavelength).</p>
+<p>If the path length difference between the two arms changes by a distance of <span class="math notranslate nohighlight">\(\delta\)</span>, then this induces a phase change <span class="math notranslate nohighlight">\(\theta = 2 \pi \delta/\lambda\)</span>, where <span class="math notranslate nohighlight">\(\lambda\)</span> is the wavelength of the light being used (we have assumed all three input states are of the same central wavelength).  With a bit of effort (which we will go through in detail in the example and problem set questions at the end of this chapter), we find that the measured output current.  Assuming <span class="math notranslate nohighlight">\(\delta\)</span> is very small (much less than one wavelength), and for appropriate phase selection of the probe state <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span>, the current can be approximated as</p>
 <div class="math notranslate nohighlight">
 \[ I \propto \frac{2\pi\delta |\alpha| |\beta|}{\lambda}\]</div>
 <p>To see the general effect of squeezing, we can inject our example squeezed state into the system</p>
@@ -417,10 +417,11 @@ const thebe_selector_output = ".output, .cell_output"
 \[ \ket{\psi_s} = \sqrt{1 - s^2} \ket{0} - s \ket{2},\]</div>
 <p>resulting in the following approximate noise current (assuming large <span class="math notranslate nohighlight">\(\beta\)</span>)</p>
 <div class="math notranslate nohighlight">
-\[ \Delta I^2 \propto |\beta|^2 (1 + 4s^2 - 2\sqrt(2) s \sqrt{1-s^2} \cos(2\phi - 2\pi \delta/\lambda).\]</div>
+\[ \Delta I^2 \propto |\beta|^2 (1 + 4s^2 - 2 s \sqrt{2(1-s^2)} \cos(2\phi - 2\pi \delta/\lambda).\]</div>
 <p>This then leads to a signal to noise ratio of</p>
 <div class="math notranslate nohighlight">
-\[ \text{SNR} = \frac{I^2}{\Delta I^2} = \frac{4 \pi^2 \delta^2 |\alpha|^2}{\lambda^2 (1 + 4s^2 - 2\sqrt(2) s \sqrt{1-s^2} \cos(2\phi - 2\pi \delta/\lambda)} \]</div>
+\[ \text{SNR} = \frac{I^2}{\Delta I^2} = \frac{4 \pi^2 \delta^2 |\alpha|^2}{\lambda^2 (1 + 4s^2 - 2 s \sqrt{2(1-s^2)} \cos(2\phi - 2\pi \delta/\lambda)} \]</div>
+<p>As for the simplified case of heterodyne detection of a squeezed state discussed above, the injection of a squeezed state into an interferometer for displacement measurement also has the effect of reducing the background noise. This noise reduction occurs <strong>so long as the homodyne detector is measuring the displacement along the appropriate quadrature where the noise has been reduced.</strong>  This is achieved by setting <span class="math notranslate nohighlight">\(\phi = 0\)</span>, where <span class="math notranslate nohighlight">\(\phi\)</span> is the phase of <span class="math notranslate nohighlight">\(\ket{\beta}\)</span>.</p>
 <p>From a measurement perspective, we are interested in the value of <span class="math notranslate nohighlight">\(\delta\)</span> where <span class="math notranslate nohighlight">\(\text{SNR} &gt; 1\)</span>.  This value becomes an important metric for the lower limit of detection of the system.  So, again, let’s pick the values of <span class="math notranslate nohighlight">\(s = 0\)</span> and <span class="math notranslate nohighlight">\(s = 0.3\)</span> as comparison points for the SNR as a function of <span class="math notranslate nohighlight">\(\delta\)</span>.  We assume a wavelength of 600 nm, and a probe photon rate of 100 photons per second.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">

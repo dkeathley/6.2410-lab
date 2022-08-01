@@ -56,9 +56,13 @@ In Part 1 we explored single-photon interference and the Hong-Ou-Mandel effect. 
 
 +++
 
-Let's consider a configuration similar to the one used to demonstrate the Hong-Ou-Mandel effect above, but with a few key changes.  First, we can drive on input of the beamsplitter with a coherent state $\ket{\alpha}_a$.  Second, we let the second input be an arbitrary state $\ket{\psi}_b$.  Third, instead of examining coincidence events, we rather examine the subtraction of the photocurrents between ports $d$ and $c$. This configuration is shown pictorally below.
+Let's consider a configuration in {numref}`homodyne-detection-setup`.  This is similar to the one used to demonstrate the Hong-Ou-Mandel effect, but with a few key changes.  First, we can drive on input of the beamsplitter with a coherent state $\ket{\alpha}_a$.  Second, we let the second input be an arbitrary state $\ket{\psi}_b$.  Third, instead of examining coincidence events, we rather examine the subtraction of the photocurrents between ports $d$ and $c$. This configuration is shown pictorally below.
 
-**FIXME: Insert homodyne schematic following description above.**
+:::{figure-md} homodyne-detection-setup
+<img src="./FIGURES/homodyne-detection-setup.png" alt="homodyne-detection-setup" class="bg-primary mb-1" width="400px">
+
+Experimental setup for homodyne detection.  
+:::
 
 Given all inputs have the same frequency, this scheme is referred to as a balanced homodyne detection scheme.  It allows us to measure the field observable $B^{(\theta)}$ of the state $\ket{\psi}_b$.  Let's see how.
 
@@ -205,12 +209,13 @@ Now we have shown that the noise at the output of a Homodyne detector can be red
 
 Myriad precision instruments use laser-based interferometers to characterize ultra-small changes in the displacement of an object.  For example, precision stages sometimes use laser-based interferometers to obtain nanometer-level precision in their movement.  A rather famous example of precision displacement measurements is for LIGO, where kilometer-scale interferometers are used to measure changes in path lengths that measure just fractions of the width of one atom.  This marvel of measurements was made possible through incredible engineering which included the use of quantum-enhanced measurement techniques based on homodyne detection with squeezed states.  
 
-:::{figure-md} HOM-setup
+:::{figure-md} displacement-meas-setup
 <img src="./FIGURES/displacement-meas-setup.png" alt="displacement-meas-setup" class="bg-primary mb-1" width="800px">
 
 Experimental setup for a quantum-enhanced displacment measurement.    
 :::
-In Figure **FIXME: FIGURE REFERENCE** we show how one can couple an interferometer to a homodyne detector for precision displacement measurements.  There are three key inputs to this system:
+
+In {numref}`displacement-meas-setup` we show how one can couple an interferometer to a homodyne detector for precision displacement measurements.  There are three key inputs to this system:
 
  1. A coherent state probe: $\ket{\alpha}$
  

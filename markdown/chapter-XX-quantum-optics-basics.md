@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.11.5
+    jupytext_version: 1.13.8
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -267,9 +267,9 @@ Field representations for a number state with $N=4$.
 
 +++
 
-In contrast to number states, we know that the fields of laser light should have regions of high and low fields that are well defined.  This corresponds to the image of a plane wave that oscillates smothly in time and space.  Such light is well described by coherrent states.  
+In contrast to number states, classical electromagnetic waves are  described as a collection of plane waves that oscillates smothly in time and space. These plane waves have regions of high and low fields that are well defined as a function of phase.  There are many applications in quantum optics that use such "classical" sources of light (e.g. a continuous-wave laser source), so we need a way to describe it within our quantum fraemwork.  For this purpose, we can use *coherent states*.    
 
-We might denote a coherent state as $\ket{\alpha}$, where $\alpha$ is a complex number whos amplitude relates to the electric field strength, and whos phase relates to the phase offset of the electromagnetic wave.  Of course, these states can also have other properties, such as polarization.  
+We denote a coherent state as $\ket{\alpha}$, where $\alpha$ is a complex number whos amplitude relates to the electric field strength, and whos phase relates to the phase offset of the electromagnetic wave.  As with number states, these states can also have other properties, such as polarization and spatial mode.  
 
 An interesting and useful fact is that a coherent state is nothing more than a distribution of number states all added together in a particular way.  For instance, a classical state populating the $m^\text{th}$ mode is represented as:
 
@@ -320,6 +320,8 @@ $$ \Delta A^{(\theta)} = 1/2.$$
 The last part is interesting as it means that no matter how large alpha is, the field fluctuations stay the same, and are the same level as that of a vacuum state.   This is due to the fact that phase is very well defined for a coherent state.  Thus the photon contribution to the field is very well-defined, leaving only the remaining vacuum field fluctuations.  This is in spite of the fact that the number of photons actually varies.  Compare this to a number state where there is no fluctuation in the number of photons, but the field fluctuates heavily on top of the ever-present vacuum fluctuations.
 
 Again, it we can map out the field representation, which we have done below for a coherent state with $|\alpha| = 4$, and $\varphi = \pi/4$.
+
+**FIXME:  Add in a figure that shows the coherent state as a function of $\theta$ vs. a number state having the same average numer of photons N**.  
 
 ```{code-cell} ipython3
 :tags: [hide-cell]
@@ -510,3 +512,13 @@ glue("squeezed_field_fluctuations", fig, display=False)
 
 Field fluctuations in each quadrature compared to the SQL.  
 ```
+
++++
+
+**FIXME: Add in a short note on a generalized squeezer and how you represent it's creation and annihilation operators.  Also provide a schematic of the system.**
+
++++
+
+### Entangled States
+
+**FIXME: Flesh out a simple section getting to the essence of entanglement and a simple demonstration of entangled states.**

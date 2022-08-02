@@ -299,6 +299,11 @@ const thebe_selector_output = ".output, .cell_output"
      1.10.3. Squeezed States
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#entangled-states">
+     1.10.4. Entangled States
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -405,6 +410,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#squeezed-states">
      1.10.3. Squeezed States
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#entangled-states">
+     1.10.4. Entangled States
     </a>
    </li>
   </ul>
@@ -588,8 +598,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="the-coherent-state-ket-alpha">
 <h3><span class="section-number">1.10.2. </span>The coherent state <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span><a class="headerlink" href="#the-coherent-state-ket-alpha" title="Permalink to this headline">¶</a></h3>
-<p>In contrast to number states, we know that the fields of laser light should have regions of high and low fields that are well defined.  This corresponds to the image of a plane wave that oscillates smothly in time and space.  Such light is well described by coherrent states.</p>
-<p>We might denote a coherent state as <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span>, where <span class="math notranslate nohighlight">\(\alpha\)</span> is a complex number whos amplitude relates to the electric field strength, and whos phase relates to the phase offset of the electromagnetic wave.  Of course, these states can also have other properties, such as polarization.</p>
+<p>In contrast to number states, classical electromagnetic waves are  described as a collection of plane waves that oscillates smothly in time and space. These plane waves have regions of high and low fields that are well defined as a function of phase.  There are many applications in quantum optics that use such “classical” sources of light (e.g. a continuous-wave laser source), so we need a way to describe it within our quantum fraemwork.  For this purpose, we can use <em>coherent states</em>.</p>
+<p>We denote a coherent state as <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span>, where <span class="math notranslate nohighlight">\(\alpha\)</span> is a complex number whos amplitude relates to the electric field strength, and whos phase relates to the phase offset of the electromagnetic wave.  As with number states, these states can also have other properties, such as polarization and spatial mode.</p>
 <p>An interesting and useful fact is that a coherent state is nothing more than a distribution of number states all added together in a particular way.  For instance, a classical state populating the <span class="math notranslate nohighlight">\(m^\text{th}\)</span> mode is represented as:</p>
 <div class="math notranslate nohighlight">
 \[ \ket{\alpha}_m = e^{-|\alpha|^2/2} \sum_n \frac{\alpha^n}{\sqrt{n!}} \ket{n}_m. \]</div>
@@ -626,6 +636,7 @@ const thebe_selector_output = ".output, .cell_output"
 \[ \Delta A^{(\theta)} = 1/2.\]</div>
 <p>The last part is interesting as it means that no matter how large alpha is, the field fluctuations stay the same, and are the same level as that of a vacuum state.   This is due to the fact that phase is very well defined for a coherent state.  Thus the photon contribution to the field is very well-defined, leaving only the remaining vacuum field fluctuations.  This is in spite of the fact that the number of photons actually varies.  Compare this to a number state where there is no fluctuation in the number of photons, but the field fluctuates heavily on top of the ever-present vacuum fluctuations.</p>
 <p>Again, it we can map out the field representation, which we have done below for a coherent state with <span class="math notranslate nohighlight">\(|\alpha| = 4\)</span>, and <span class="math notranslate nohighlight">\(\varphi = \pi/4\)</span>.</p>
+<p><strong>FIXME:  Add in a figure that shows the coherent state as a function of <span class="math notranslate nohighlight">\(\theta\)</span> vs. a number state having the same average numer of photons N</strong>.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -811,6 +822,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p class="caption"><span class="caption-number">Fig. 1.4 </span><span class="caption-text">Field fluctuations in each quadrature compared to the SQL.</span><a class="headerlink" href="#fig-squeezed-field-fluctuations" title="Permalink to this image">¶</a></p>
 </div>
+<p><strong>FIXME: Add in a short note on a generalized squeezer and how you represent it’s creation and annihilation operators.  Also provide a schematic of the system.</strong></p>
+</div>
+<div class="section" id="entangled-states">
+<h3><span class="section-number">1.10.4. </span>Entangled States<a class="headerlink" href="#entangled-states" title="Permalink to this headline">¶</a></h3>
+<p><strong>FIXME: Flesh out a simple section getting to the essence of entanglement and a simple demonstration of entangled states.</strong></p>
 </div>
 </div>
 </div>

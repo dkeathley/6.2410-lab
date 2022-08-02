@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-+++ {"tags": ["remove-cell"]}
++++ {"tags": ["remove-cell"], "jp-MarkdownHeadingCollapsed": true}
 
 # Latex Headers
 
@@ -62,7 +62,7 @@ In part 2 (the following chapter) we will explore the concept of homodyne detect
 
 ## Hong-Ou-Mandel Effect
 
-Imagine the scenario depicted in Fig. **FIXME: FIGURE**.  A nonlinear crystal is used to generate precisely two photons of energy $\hbar\omega$ when excited by a pulse with a photon energy of $2\hbar\omega$.  This process is called spontaneous parametric down-conversion and is a common technique for generating entangled photon pairs. 
+Imagine the scenario depicted in Fig. {numref}`HOM-setup`.  A nonlinear crystal is used to generate precisely two photons of energy $\hbar\omega$ when excited by a pulse with a photon energy of $2\hbar\omega$.  This process is called spontaneous parametric down-conversion and is a common technique for generating entangled photon pairs. 
 
 The two photons travel away from the crystal along two paths (top and bottom as shown).  They are then brought together and interfere within a beamsplitter.  
 

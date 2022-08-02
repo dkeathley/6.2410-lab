@@ -267,9 +267,7 @@ Field representations for a number state with $N=4$.
 
 +++
 
-If you have ever seen the interference of laser light in an interferometer, you know that it cannot be described by a pure number state.  Strong laser light has a very well-defined phase and can exhibit interference over very long delays.  It turns out that this kind of light is well described by a coherrent state $\ket{\alpha}$, where $\alpha$ is a complex number whos amplitude relates to the electric field strength, and whos phase relates to the phase offset of the electromagnetic wave.
-
-**FIXME: Add some picture capturing basics of interference with images**
+In contrast to number states, we know that the fields of strong laser light can oscillate with a very well-defined phase.  Laser light is well described by coherrent states.  We might denote a coherent state as $\ket{\alpha}$, where $\alpha$ is a complex number whos amplitude relates to the electric field strength, and whos phase relates to the phase offset of the electromagnetic wave.  Of course, these states can also have other properties, such as polarization.  
 
 An interesting and useful fact is that a coherent state is nothing more than a distribution of number states all added together in a particular way.  For instance, a classical state populating the $m^\text{th}$ mode is represented as:
 
@@ -373,8 +371,9 @@ glue("coherent_state_field_representation", fig, display=False)
 Field representations for a coherent state with $|\alpha| = 4$, and $\varphi = \pi/4$.
 ```
 
-+++
++++ {"tags": []}
 
+(sec:quantum-optics-basics:squeezed-states)=
 ### Squeezed States
 
 +++

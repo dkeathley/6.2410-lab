@@ -137,9 +137,9 @@ Clearly, there is an advantage to having a high intensity coherent state $\ket{\
 
 ## Homodyne Detection with Squeezed Light
 
-We know from Chapter **FIXME: LINK TO BASICS CHAPTER** that squeezed light exhibits reduced field fluctuations along a particular quadrature.  We also now know that Homodyne detection can measure the field observable at input port $b$ along any quadratudre defined by the phase of the coherent state $\theta$.  
+We know from {numref}`sec:quantum-optics-basics:squeezed-states` that squeezed light exhibits reduced field fluctuations along a particular quadrature.  We also now know that Homodyne detection can measure the field observable at input port $b$ along any quadratudre defined by the phase of the coherent state $\theta$.  
 
-Let us start by referring back to the simplified squeezed state we had discussed in **FIXME: LINK TO SQUEEZED STATE SECTION**
+Let us start by referring back to the simplified squeezed state we had discussed in {numref}`sec:quantum-optics-basics:squeezed-states`.  
 
 $$ \ket{\psi_s}_b = \sqrt{1 - s^2}\ket{0}_b - s\ket{2}_b.$$
 
@@ -290,4 +290,4 @@ Signal to noise ratio of the homodyne output from an interferometer for measurem
 
 +++
 
-By using advanced methods that produce squeezed states with much higher levels of squeezing than our toy state here, this can be even further improved.   As with all other examples, though, one must ensure that quantum fluctuations are the dominant source of noise.  **The limit in real life can often be set by thermal, mechanical, and other technical noise taht is not quantum in nature.**  There must also be significant engineering introduced to reduce these noise factors as well.
+By using advanced methods that produce squeezed states with much higher levels of squeezing than our toy state here, this can be even further improved.   As with all other examples, though, one must ensure that quantum fluctuations are the dominant source of noise.  **The limit in real life can often be set by thermal, mechanical, and other technical noise taht is not quantum in nature.**  There must also be significant engineering introduced to reduce these noise factors.

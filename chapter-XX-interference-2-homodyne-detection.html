@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chapter XX – Interference Part 2: Homodyne Detection &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+    <title>4. Chapter XX – Interference Part 2: Homodyne Detection &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="References" href="references.html" />
-    <link rel="prev" title="Chapter XX – Interference Part 1: Hong-Ou-Mandel Effect" href="chapter-XX-interference-1-HOM.html" />
+    <link rel="next" title="5. References" href="references.html" />
+    <link rel="prev" title="3. Chapter XX – Interference Part 1: Hong-Ou-Mandel Effect" href="chapter-XX-interference-1-HOM.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -103,27 +103,27 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-XX-quantum-optics-basics.html">
-   Chapter XX – The Basics of Quantum Optics
+   1. Chapter XX – The Basics of Quantum Optics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-XX-quantum-information.html">
-   Chapter XX – Quantum Information
+   2. Chapter XX – Quantum Information
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-XX-interference-1-HOM.html">
-   Chapter XX – Interference Part 1: Hong-Ou-Mandel Effect
+   3. Chapter XX – Interference Part 1: Hong-Ou-Mandel Effect
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Chapter XX – Interference Part 2: Homodyne Detection
+   4. Chapter XX – Interference Part 2: Homodyne Detection
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="references.html">
-   References
+   5. References
   </a>
  </li>
 </ul>
@@ -215,17 +215,17 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#homodyne-detection">
-   Homodyne Detection
+   4.1. Homodyne Detection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#homodyne-detection-with-squeezed-light">
-   Homodyne Detection with Squeezed Light
+   4.2. Homodyne Detection with Squeezed Light
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#quantum-enhanced-displacement-measurements">
-   Quantum-Enhanced Displacement Measurements
+   4.3. Quantum-Enhanced Displacement Measurements
   </a>
  </li>
 </ul>
@@ -250,17 +250,17 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#homodyne-detection">
-   Homodyne Detection
+   4.1. Homodyne Detection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#homodyne-detection-with-squeezed-light">
-   Homodyne Detection with Squeezed Light
+   4.2. Homodyne Detection with Squeezed Light
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#quantum-enhanced-displacement-measurements">
-   Quantum-Enhanced Displacement Measurements
+   4.3. Quantum-Enhanced Displacement Measurements
   </a>
  </li>
 </ul>
@@ -273,14 +273,14 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="chapter-xx-interference-part-2-homodyne-detection">
-<h1>Chapter XX – Interference Part 2: Homodyne Detection<a class="headerlink" href="#chapter-xx-interference-part-2-homodyne-detection" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4. </span>Chapter XX – Interference Part 2: Homodyne Detection<a class="headerlink" href="#chapter-xx-interference-part-2-homodyne-detection" title="Permalink to this headline">¶</a></h1>
 <p>In Part 1 we explored single-photon interference and the Hong-Ou-Mandel effect.  Here in Part 2 we build on several of the core concepts introduced in Part 1, such as beam-combining and interference, to explore homodyne detection of quantum fields.  We will then show how one can use homodyne detection in combination with squeezed states to make distance measurements with extremely high sensitivity.</p>
 <div class="section" id="homodyne-detection">
-<h2>Homodyne Detection<a class="headerlink" href="#homodyne-detection" title="Permalink to this headline">¶</a></h2>
-<p>Let’s consider a configuration in <a class="reference internal" href="#homodyne-detection-setup"><span class="std std-numref">Fig. 8</span></a>.  This is similar to the one used to demonstrate the Hong-Ou-Mandel effect, but with a few key changes.  First, we can drive on input of the beamsplitter with a coherent state <span class="math notranslate nohighlight">\(\ket{\alpha}_a\)</span>.  Second, we let the second input be an arbitrary state <span class="math notranslate nohighlight">\(\ket{\psi}_b\)</span>.  Third, instead of examining coincidence events, we rather examine the subtraction of the photocurrents between ports <span class="math notranslate nohighlight">\(d\)</span> and <span class="math notranslate nohighlight">\(c\)</span>. This configuration is shown pictorally below.</p>
+<h2><span class="section-number">4.1. </span>Homodyne Detection<a class="headerlink" href="#homodyne-detection" title="Permalink to this headline">¶</a></h2>
+<p>Let’s consider a configuration in <a class="reference internal" href="#homodyne-detection-setup"><span class="std std-numref">Fig. 4.1</span></a>.  This is similar to the one used to demonstrate the Hong-Ou-Mandel effect, but with a few key changes.  First, we can drive on input of the beamsplitter with a coherent state <span class="math notranslate nohighlight">\(\ket{\alpha}_a\)</span>.  Second, we let the second input be an arbitrary state <span class="math notranslate nohighlight">\(\ket{\psi}_b\)</span>.  Third, instead of examining coincidence events, we rather examine the subtraction of the photocurrents between ports <span class="math notranslate nohighlight">\(d\)</span> and <span class="math notranslate nohighlight">\(c\)</span>. This configuration is shown pictorally below.</p>
 <div class="figure align-default" id="homodyne-detection-setup">
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/homodyne-detection-setup.png"><img alt="homodyne-detection-setup" class="bg-primary mb-1" src="_images/homodyne-detection-setup.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Experimental setup for homodyne detection.</span><a class="headerlink" href="#homodyne-detection-setup" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.1 </span><span class="caption-text">Experimental setup for homodyne detection.</span><a class="headerlink" href="#homodyne-detection-setup" title="Permalink to this image">¶</a></p>
 </div>
 <p>Given all inputs have the same frequency, this scheme is referred to as a balanced homodyne detection scheme.  It allows us to measure the field observable <span class="math notranslate nohighlight">\(B^{(\theta)}\)</span> of the state <span class="math notranslate nohighlight">\(\ket{\psi}_b\)</span>.  Let’s see how.</p>
 <div class="admonition note">
@@ -338,8 +338,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="homodyne-detection-with-squeezed-light">
-<h2>Homodyne Detection with Squeezed Light<a class="headerlink" href="#homodyne-detection-with-squeezed-light" title="Permalink to this headline">¶</a></h2>
-<p>We know from Chapter <strong>FIXME: LINK TO BASICS CHAPTER</strong> that squeezed light exhibits reduced field fluctuations along a particular quadrature.  We also now know that Homodyne detection can measure the field observable at input port <span class="math notranslate nohighlight">\(b\)</span> along any quadratudre defined by the phase of the coherent state <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<h2><span class="section-number">4.2. </span>Homodyne Detection with Squeezed Light<a class="headerlink" href="#homodyne-detection-with-squeezed-light" title="Permalink to this headline">¶</a></h2>
+<p>We know from <strong>FIXME: LINK TO BASICS CHAPTER</strong> <a class="reference internal" href="chapter-XX-quantum-optics-basics.html#sec-quantum-optics-basics-squeezed-states"><span class="std std-numref">Section 1.10.3</span></a> that squeezed light exhibits reduced field fluctuations along a particular quadrature.  We also now know that Homodyne detection can measure the field observable at input port <span class="math notranslate nohighlight">\(b\)</span> along any quadratudre defined by the phase of the coherent state <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
 <p>Let us start by referring back to the simplified squeezed state we had discussed in <strong>FIXME: LINK TO SQUEEZED STATE SECTION</strong></p>
 <div class="math notranslate nohighlight">
 \[ \ket{\psi_s}_b = \sqrt{1 - s^2}\ket{0}_b - s\ket{2}_b.\]</div>
@@ -395,18 +395,18 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_output docutils container">
 <img alt="_images/chapter-XX-interference-2-homodyne-detection_7_0.png" src="_images/chapter-XX-interference-2-homodyne-detection_7_0.png" />
 </div>
-<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Noise of the differential output signal <span class="math notranslate nohighlight">\(\Delta I\)</span> as we scan <span class="math notranslate nohighlight">\(\theta\)</span>.  Note that depending on the value of <span class="math notranslate nohighlight">\(\theta\)</span> with the squeezed state input, the noise can be either significantly increased or decreased compared to the case of no input to port <span class="math notranslate nohighlight">\(b\)</span> (i.e. pure vacuum state input corresponding to <span class="math notranslate nohighlight">\(s = 0\)</span>).</span><a class="headerlink" href="#fig-homodyne-noise-squeezed-state" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2 </span><span class="caption-text">Noise of the differential output signal <span class="math notranslate nohighlight">\(\Delta I\)</span> as we scan <span class="math notranslate nohighlight">\(\theta\)</span>.  Note that depending on the value of <span class="math notranslate nohighlight">\(\theta\)</span> with the squeezed state input, the noise can be either significantly increased or decreased compared to the case of no input to port <span class="math notranslate nohighlight">\(b\)</span> (i.e. pure vacuum state input corresponding to <span class="math notranslate nohighlight">\(s = 0\)</span>).</span><a class="headerlink" href="#fig-homodyne-noise-squeezed-state" title="Permalink to this image">¶</a></p>
 </div>
 <p>Now we have shown that the noise at the output of a Homodyne detector can be reduced by injection of a squeezed state.  In the next section we examine how we can put this to use for quantum-enhanced measurements of mirror displacement.</p>
 </div>
 <div class="section" id="quantum-enhanced-displacement-measurements">
-<h2>Quantum-Enhanced Displacement Measurements<a class="headerlink" href="#quantum-enhanced-displacement-measurements" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.3. </span>Quantum-Enhanced Displacement Measurements<a class="headerlink" href="#quantum-enhanced-displacement-measurements" title="Permalink to this headline">¶</a></h2>
 <p>Myriad precision instruments use laser-based interferometers to characterize ultra-small changes in the displacement of an object.  For example, precision stages sometimes use laser-based interferometers to obtain nanometer-level precision in their movement.  A rather famous example of precision displacement measurements is for LIGO, where kilometer-scale interferometers are used to measure changes in path lengths that measure just fractions of the width of one atom.  This marvel of measurements was made possible through incredible engineering which included the use of quantum-enhanced measurement techniques based on homodyne detection with squeezed states.</p>
 <div class="figure align-default" id="displacement-meas-setup">
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/displacement-meas-setup.png"><img alt="displacement-meas-setup" class="bg-primary mb-1" src="_images/displacement-meas-setup.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Experimental setup for a quantum-enhanced displacment measurement.</span><a class="headerlink" href="#displacement-meas-setup" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.3 </span><span class="caption-text">Experimental setup for a quantum-enhanced displacment measurement.</span><a class="headerlink" href="#displacement-meas-setup" title="Permalink to this image">¶</a></p>
 </div>
-<p>In <a class="reference internal" href="#displacement-meas-setup"><span class="std std-numref">Fig. 10</span></a> we show how one can couple an interferometer to a homodyne detector for precision displacement measurements.  There are three key inputs to this system:</p>
+<p>In <a class="reference internal" href="#displacement-meas-setup"><span class="std std-numref">Fig. 4.3</span></a> we show how one can couple an interferometer to a homodyne detector for precision displacement measurements.  There are three key inputs to this system:</p>
 <ol class="simple">
 <li><p>A coherent state probe: <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span></p></li>
 <li><p>A squeezed state input: <span class="math notranslate nohighlight">\(\ket{\psi_s}\)</span>, and</p></li>
@@ -472,9 +472,9 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_output docutils container">
 <img alt="_images/chapter-XX-interference-2-homodyne-detection_11_0.png" src="_images/chapter-XX-interference-2-homodyne-detection_11_0.png" />
 </div>
-<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Signal to noise ratio of the homodyne output from an interferometer for measuremetn of displacement <span class="math notranslate nohighlight">\(\delta\)</span> both with squeezing (<span class="math notranslate nohighlight">\(s = 0.3\)</span>) and without (<span class="math notranslate nohighlight">\(s = 0\)</span>).  Clearly, a squeezed state reduces the limits of detection beyond what is capable with purely classical input states. This reduction can be further enhanced with states exhibiting larger amounts of squeezing than what we used here for this example.</span><a class="headerlink" href="#fig-displacement-lod-squeezed-state" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.4 </span><span class="caption-text">Signal to noise ratio of the homodyne output from an interferometer for measuremetn of displacement <span class="math notranslate nohighlight">\(\delta\)</span> both with squeezing (<span class="math notranslate nohighlight">\(s = 0.3\)</span>) and without (<span class="math notranslate nohighlight">\(s = 0\)</span>).  Clearly, a squeezed state reduces the limits of detection beyond what is capable with purely classical input states. This reduction can be further enhanced with states exhibiting larger amounts of squeezing than what we used here for this example.</span><a class="headerlink" href="#fig-displacement-lod-squeezed-state" title="Permalink to this image">¶</a></p>
 </div>
-<p>By using advanced methods that produce squeezed states with much higher levels of squeezing than our toy state here, this can be even further improved.   As with all other examples, though, one must ensure that quantum fluctuations are the dominant source of noise.  <strong>The limit in real life can often be set by thermal, mechanical, and other technical noise taht is not quantum in nature.</strong>  There must also be significant engineering introduced to reduce these noise factors as well.</p>
+<p>By using advanced methods that produce squeezed states with much higher levels of squeezing than our toy state here, this can be even further improved.   As with all other examples, though, one must ensure that quantum fluctuations are the dominant source of noise.  <strong>The limit in real life can often be set by thermal, mechanical, and other technical noise taht is not quantum in nature.</strong>  There must also be significant engineering introduced to reduce these noise factors.</p>
 </div>
 </div>
 
@@ -507,13 +507,13 @@ const thebe_selector_output = ".output, .cell_output"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Chapter XX – Interference Part 1: Hong-Ou-Mandel Effect</p>
+            <p class="prev-next-title"><span class="section-number">3. </span>Chapter XX – Interference Part 1: Hong-Ou-Mandel Effect</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="references.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">References</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>References</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

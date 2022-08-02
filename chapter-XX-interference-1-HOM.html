@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chapter XX – Interference Part 1: Hong-Ou-Mandel Effect &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+    <title>3. Chapter XX – Interference Part 1: Hong-Ou-Mandel Effect &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Chapter XX – Interference Part 2: Homodyne Detection" href="chapter-XX-interference-2-homodyne-detection.html" />
-    <link rel="prev" title="Chapter XX – Quantum Information" href="chapter-XX-quantum-information.html" />
+    <link rel="next" title="4. Chapter XX – Interference Part 2: Homodyne Detection" href="chapter-XX-interference-2-homodyne-detection.html" />
+    <link rel="prev" title="2. Chapter XX – Quantum Information" href="chapter-XX-quantum-information.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -103,27 +103,27 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-XX-quantum-optics-basics.html">
-   Chapter XX – The Basics of Quantum Optics
+   1. Chapter XX – The Basics of Quantum Optics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-XX-quantum-information.html">
-   Chapter XX – Quantum Information
+   2. Chapter XX – Quantum Information
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Chapter XX – Interference Part 1: Hong-Ou-Mandel Effect
+   3. Chapter XX – Interference Part 1: Hong-Ou-Mandel Effect
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="chapter-XX-interference-2-homodyne-detection.html">
-   Chapter XX – Interference Part 2: Homodyne Detection
+   4. Chapter XX – Interference Part 2: Homodyne Detection
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="references.html">
-   References
+   5. References
   </a>
  </li>
 </ul>
@@ -215,7 +215,7 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hong-ou-mandel-effect">
-   Hong-Ou-Mandel Effect
+   3.1. Hong-Ou-Mandel Effect
   </a>
  </li>
 </ul>
@@ -240,7 +240,7 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hong-ou-mandel-effect">
-   Hong-Ou-Mandel Effect
+   3.1. Hong-Ou-Mandel Effect
   </a>
  </li>
 </ul>
@@ -253,19 +253,19 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="chapter-xx-interference-part-1-hong-ou-mandel-effect">
-<h1>Chapter XX – Interference Part 1: Hong-Ou-Mandel Effect<a class="headerlink" href="#chapter-xx-interference-part-1-hong-ou-mandel-effect" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3. </span>Chapter XX – Interference Part 1: Hong-Ou-Mandel Effect<a class="headerlink" href="#chapter-xx-interference-part-1-hong-ou-mandel-effect" title="Permalink to this headline">¶</a></h1>
 <p>Many quantum engineering applications leverage the unique properties of quantum light and its interactions with basic optical elements.  For example, many applications will have multiple stages for splitting, propagating, and recombining/interfering photons before final detection.  For instance, a simplified optical implementation of quantum key distribution is shown in the figure below.</p>
 <p><strong>FIXME: Figure for QKD implementation</strong></p>
 <p>Before we can build to larger systems for more functional applications, it is important to understand how how to treat basic building blocks of quantum optical systems.</p>
 <p>In this chapter and the next we will discuss interference phenomena in two parts.  In part 1 (this chapter), we examine entangled photon pair interference by way of the Hong-Ou-Mandel effect.  We will discuss how photons interact with beamsplitters, how to treat their interference, and signal processing methods such as coincidence detection.</p>
 <p>In part 2 (the following chapter) we will explore the concept of homodyne detection where we leverage the interference between more general quantum states and coherent states to characterize quantum fields.  Building on this we will study how homodyne detection with squeezed light can be used to performe distance measurements with extremely high sensitivity.  Such techniques were in large part perfected for the detection of gravitational waves, but can be applied more generally for engineering applications at smaller scales.</p>
 <div class="section" id="hong-ou-mandel-effect">
-<h2>Hong-Ou-Mandel Effect<a class="headerlink" href="#hong-ou-mandel-effect" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1. </span>Hong-Ou-Mandel Effect<a class="headerlink" href="#hong-ou-mandel-effect" title="Permalink to this headline">¶</a></h2>
 <p>Imagine the scenario depicted in Fig. <strong>FIXME: FIGURE</strong>.  A nonlinear crystal is used to generate precisely two photons of energy <span class="math notranslate nohighlight">\(\hbar\omega\)</span> when excited by a pulse with a photon energy of <span class="math notranslate nohighlight">\(2\hbar\omega\)</span>.  This process is called spontaneous parametric down-conversion and is a common technique for generating entangled photon pairs.</p>
 <p>The two photons travel away from the crystal along two paths (top and bottom as shown).  They are then brought together and interfere within a beamsplitter.</p>
 <div class="figure align-default" id="hom-setup">
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/HOM-setup.png"><img alt="HOM-setup" class="bg-primary mb-1" src="_images/HOM-setup.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Experimental setup for studying the HOM effect.</span><a class="headerlink" href="#hom-setup" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Experimental setup for studying the HOM effect.</span><a class="headerlink" href="#hom-setup" title="Permalink to this image">¶</a></p>
 </div>
 <p>If we break down all the different possibilities that could happen, one would be that both photons output in <span class="math notranslate nohighlight">\(c\)</span>, another would be that both photons output in <span class="math notranslate nohighlight">\(d\)</span>, and a final possibility would be that one photon outputs to <span class="math notranslate nohighlight">\(c\)</span> while the other outputs to <span class="math notranslate nohighlight">\(d\)</span>.   One interesting question to ask is whether the delay has any influence over these possibilities?</p>
 <p>Lets model this system.  Imagine that the input signals are pulsed.  In this case we could for instance represent a single photon input with delay <span class="math notranslate nohighlight">\(\tau\)</span> in port <span class="math notranslate nohighlight">\(a\)</span> as</p>
@@ -311,7 +311,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Remember that probabilities of outcomes are related to <span class="math notranslate nohighlight">\(\bra{\psi_out}\ket{\psi_out}\)</span>, thus we can make the following map of outcomes at each detector.</p>
 <div class="figure align-default" id="hom-possibilities-w-tau">
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/HOM-possibilities-w-tau.png"><img alt="HOM-w-tau" class="bg-primary mb-1" src="_images/HOM-possibilities-w-tau.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Four different possibilities of detection in port c and d given a non-zero delay <span class="math notranslate nohighlight">\(\tau\)</span>.</span><a class="headerlink" href="#hom-possibilities-w-tau" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2 </span><span class="caption-text">Four different possibilities of detection in port c and d given a non-zero delay <span class="math notranslate nohighlight">\(\tau\)</span>.</span><a class="headerlink" href="#hom-possibilities-w-tau" title="Permalink to this image">¶</a></p>
 </div>
 <p>All possibilities we oultined above happen with equal probability.</p>
 <p>However, for <span class="math notranslate nohighlight">\(\tau = 0\)</span> we have something very interesting, and a bit unintuitive.  In this case we have</p>
@@ -327,7 +327,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>leading to the following map of outcomes at each detector.</p>
 <div class="figure align-default" id="hom-possibilities-wo-tau">
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/HOM-possibilities-wo-tau.png"><img alt="HOM-w-tau" class="bg-primary mb-1" src="_images/HOM-possibilities-wo-tau.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Two different possibilities of detection in port c and d given a zero delay <span class="math notranslate nohighlight">\(\tau\)</span> such that the two photons are indistinguishable in every way at the beamsplitter.  Note each pulse now contains two photons, and the probability of each occurance is <span class="math notranslate nohighlight">\(1/2\)</span>.</span><a class="headerlink" href="#hom-possibilities-wo-tau" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3 </span><span class="caption-text">Two different possibilities of detection in port c and d given a zero delay <span class="math notranslate nohighlight">\(\tau\)</span> such that the two photons are indistinguishable in every way at the beamsplitter.  Note each pulse now contains two photons, and the probability of each occurance is <span class="math notranslate nohighlight">\(1/2\)</span>.</span><a class="headerlink" href="#hom-possibilities-wo-tau" title="Permalink to this image">¶</a></p>
 </div>
 <p>In this case <strong>there would be no coincidence events</strong> (that is, events that would trigger an output on both detectors).  Either both photons go to <span class="math notranslate nohighlight">\(c\)</span> or both to <span class="math notranslate nohighlight">\(d\)</span> with equal probability.  This is in comparison to the case when the modes were fully separate in time when the coincidence rate is 50%.</p>
 <div class="admonition important">
@@ -366,13 +366,13 @@ const thebe_selector_output = ".output, .cell_output"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Chapter XX – Quantum Information</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>Chapter XX – Quantum Information</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="chapter-XX-interference-2-homodyne-detection.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Chapter XX – Interference Part 2: Homodyne Detection</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Chapter XX – Interference Part 2: Homodyne Detection</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

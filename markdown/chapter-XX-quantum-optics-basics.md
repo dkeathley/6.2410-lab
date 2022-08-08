@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.13.8
+    jupytext_version: 1.11.5
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -321,7 +321,7 @@ The last part is interesting as it means that no matter how large alpha is, the 
 
 Again, it we can map out the field representation, which we have done below for a coherent state with $|\alpha| = 4$, and $\varphi = \pi/4$.
 
-**FIXME:  Add in a figure that shows the coherent state as a function of $\theta$ vs. a number state having the same average numer of photons N**.  
+**FIXME:  Add in a figure that shows the coherent state as a function of $\theta$ vs. a number state having the same average numer of photons N**.
 
 ```{code-cell} ipython3
 :tags: [hide-cell]

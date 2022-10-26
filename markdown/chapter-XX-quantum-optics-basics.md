@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.11.5
+    jupytext_version: 1.13.8
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -267,7 +267,7 @@ Field representations for a number state with $N=4$.
 
 +++
 
-In contrast to number states, classical electromagnetic waves are  described as a collection of plane waves that oscillates smothly in time and space. These plane waves have regions of high and low fields that are well defined as a function of phase.  There are many applications in quantum optics that use such "classical" sources of light (e.g. a continuous-wave laser source), so we need a way to describe it within our quantum fraemwork.  For this purpose, we can use *coherent states*.    
+In contrast to number states, classical electromagnetic waves are  described as a collection of plane waves that oscillates smothly in time and space. These plane waves have regions of high and low fields that are well defined as a function of phase.  There are many applications in quantum optics that use such "classical" sources of light (e.g. a continuous-wave laser source), so we need a way to describe it within our quantum framework.  For this purpose, we can use *coherent states*.    
 
 We denote a coherent state as $\ket{\alpha}$, where $\alpha$ is a complex number whos amplitude relates to the electric field strength, and whos phase relates to the phase offset of the electromagnetic wave.  As with number states, these states can also have other properties, such as polarization and spatial mode.  
 

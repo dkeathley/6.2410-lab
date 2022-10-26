@@ -1,3 +1,3 @@
-# 6.2410-Quantum Engineering Platforms Lab
+# 6.2410 - Laboratory in Quantum Systems Engineering
 
-Text for the EECS course 6.2410 -- Quantum Engineering Platforms Lab
+Text and materials for the EECS course 6.2410 --  Laboratory in Quantum Systems Engineering.

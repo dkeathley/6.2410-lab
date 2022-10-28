@@ -50,6 +50,10 @@ sphinx:
           "chat" : ["\\hat{c}"]
           "ddagger" : ["\\hat{d}^{\\dagger}"]
           "dhat" : ["\\hat{d}"]
+          "edagger" : ["\\hat{e}^{\\dagger}"]
+          "ehat" : ["\\hat{e}"]
+          "fdagger" : ["\\hat{f}^{\\dagger}"]
+          "fhat" : ["\\hat{f}"]
   
 launch_buttons:
   colab_url: "https://colab.research.google.com"

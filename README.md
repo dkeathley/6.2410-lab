@@ -1,3 +1,3 @@
-# 6.157-lab
+# 6.2410 - Laboratory in Quantum Systems Engineering
 
-Text for the EECS course 6.157 -- Laboratory for Quantum Information Science
+Text and materials for the EECS course 6.2410 --  Laboratory in Quantum Systems Engineering.

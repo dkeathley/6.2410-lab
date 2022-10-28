@@ -111,7 +111,7 @@ $$
 \bigg\rbrace.
 $$
 
-Remember that probabilities of outcomes are related to $\bra{\psi_out}\ket{\psi_out}$, thus we can make the following map of outcomes at each detector.
+Remember that probabilities of outcomes are related to $\bra{\psi_\mathrm{out}}\ket{\psi_\mathrm{out}}$, thus we can make the following map of outcomes at each detector.
 
 :::{figure-md} HOM-possibilities-w-tau
 <img src="https://drive.google.com/uc?export=view&id=1sRjwvkQuXH4L5q9mrOIiP2TysdWnx54_" alt="HOM-w-tau" class="bg-primary mb-1" width="500px">

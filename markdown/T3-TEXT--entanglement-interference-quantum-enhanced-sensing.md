@@ -111,7 +111,7 @@ $$
 \bigg\rbrace.
 $$
 
-Remember that probabilities of outcomes are related to $\bra{\psi_\mathrm{out}}\ket{\psi_\mathrm{out}}$, thus we can make the following map of outcomes at each detector.
+Remember that probabilities of outcomes are related to $\braket{\psi_\mathrm{out}}{\psi_\mathrm{out}}$, thus we can make the following map of outcomes at each detector.
 
 :::{figure-md} HOM-possibilities-w-tau
 <img src="https://drive.google.com/uc?export=view&id=1sRjwvkQuXH4L5q9mrOIiP2TysdWnx54_" alt="HOM-w-tau" class="bg-primary mb-1" width="500px">
@@ -158,7 +158,7 @@ A limitation to the measurement of interferometric phase shifts is caused by noi
 
 $$\delta \varphi^2_\mathrm{classical} = \frac{1}{N_\mathrm{ph}} \mathrm{.}$$
 
-where $\varphi$ is the phase to be measured, and $N_\mathrm{ph}$ is the total number of photons passing through the interferometer. Here we will present a method for leveraging quantum properties to achieve phase noise performance beyond this standard quantum limit (SQL).  We will also build and study such a quantum-enhanced interferometer in the lab.  
+where $\varphi$ is the phase to be measured, and $N_\mathrm{ph}$ is the total number of photons passing through the interferometer. Here we will present a method for leveraging quantum properties to achieve phase noise performance beyond this standard quantum limit (SQL).  We will also build and study such a quantum-enhanced interferometer in the lab.
 
 +++ {"id": "caf35967-6267-459a-a1a9-dd34fbbb1f0f"}
 
@@ -235,7 +235,9 @@ The variance in the number of detected coincidences can be found to be
 
 $$\Delta C_k^2 = k P_\mathrm{co}(\varphi) (1 - P_\mathrm{co}(\varphi))\mathrm{.}$$
 
-So far so good.  These are just directly from the properties of a binomial distribution.  However, we don't want the variation of the number of coincidences, we want the variation in the value of $\varphi$ being measured.  To do this, we need to convert the variance in coincidence number to a variance in $\varphi$.  This can be estimated by dividing the square of the rate of change of the coincidence number with respect to $\varphi$ evaluated at the mean position of $\varphi_0$.  
+So far so good.  This variance follows directly from the properties of a binomial distribution.  
+
+However, at the end of the day we don't want to know the variation of the number of coincidences, but rather the variation of our measurement of $\varphi$, $\delta \varphi^2$.  To determine $\delta \varphi^2$, we need to convert the variance in coincidence number to a variance in $\varphi$.  This can be estimated by dividing the square of the rate of change of the coincidence number with respect to $\varphi$ evaluated at the mean position of $\varphi_0$. If you think about it for a bit, this makes sense.  It follows from the assumption that the fluctuations in the photon number are relatively small enough that over their range of fluction we can approximate the dependence of the modulation in photon number with $\varphi$ using a first-order Taylor expansion. 
 
 If the interferometer is setup such that the mean value of $\varphi$ is $\varphi_0$, we can then estimate the variance in a measurement of $\varphi$ to be 
 
@@ -249,7 +251,7 @@ Putting it all together we have
 
 $$\delta \varphi^2 = (1 + \cos^2(2\varphi))/(4k\sin^2(2\varphi))\mathrm{.}$$
 
-Let's explore this by plotting it.  In the plot, we set $k = 1$ as we are simply looking for the behavior of the function with respect to $\varphi$.  
+Let's explore this by plotting it.  In the plot, we set $k = 1$ as we are simply looking for the behavior of the function with respect to $\varphi$.
 
 ```{code-cell} ipython3
 ---
@@ -274,7 +276,7 @@ plt.plot(phi/np.pi, var_phi, linewidth = 2)
 plt.xlabel(r'$\varphi/\pi$', fontsize=15)
 plt.ylabel(r'$\delta \varphi^2$', fontsize=15)
 plt.gca().tick_params(labelsize=14)
-plt.ylim(0, 1)
+plt.ylim(0, 1);
 ```
 
 ```{code-cell} ipython3
@@ -312,6 +314,103 @@ $$\delta \varphi^2_\mathrm{classical} = \frac{1}{N_\mathrm{ph}} \mathrm{.}$$
 This means that our $N=2$ NOON state interferometer has improved the fundamental variance of phase measurement by a factor of $2$ compared to a classical interferometer, enabling superresolution.  
 
 In general, larger reductions in variance could be achieved if we could keep increasing the order of the input NOON state.  In the problem set questions below, you will explore extensions to $N = 3$ and $N = 4$ and why this is so technically challenging to accomplish in the real world. However, we emphasize, **these challenges aren't fundamental -- only technological.  Yet another example of why we need quantum engineers.**
+
+```{code-cell} ipython3
+---
+colab:
+  base_uri: https://localhost:8080/
+  height: 513
+id: 2c213cbb-39d2-4c14-a48b-a4e83b72246a
+outputId: 2560f16d-e7b7-4a76-fc1d-2f10399e6051
+tags: [hide-cell]
+---
+import numpy as np
+import matplotlib.pyplot as plt
+import ipywidgets
+
+
+fig = plt.figure();
+fig.set_size_inches(15, 7);
+
+del_phi_0 = 0.1
+N_ph = 1000
+
+# -- Calculations --
+def update(del_phi_0, N_ph, fig):
+    
+    t = np.linspace(0, 1, 1000)
+    f = 4
+    omega = 2*np.pi*f
+    del_phi = del_phi_0*np.sin(omega*t)
+
+    phi_cl = np.pi/2
+    phi_2002 = np.pi/4
+    phi_4004 = np.pi/8
+
+    P_cl = np.sin((phi_cl + del_phi)/2)**2
+    P_2002 = np.sin(phi_2002 + del_phi)**2
+    P_4004 = np.sin(2*(phi_4004 + del_phi))**2
+
+    N_cl = np.random.binomial(N_ph, P_cl)
+    N_2002 = np.random.binomial(N_ph/2, P_2002)
+    N_4004 = np.random.binomial(N_ph/4, P_4004)
+    
+    ax1 = []
+    ax2 = []
+    ax3 = []
+    axes = fig.get_axes()
+    if(len(axes)==0):
+        ax1 = fig.add_subplot(1, 3, 1)
+        ax2 = fig.add_subplot(1, 3, 2)
+        ax3 = fig.add_subplot(1, 3, 3)
+    else:
+        ax1 = axes[0]
+        ax2 = axes[1]
+        ax3 = axes[2]
+    
+    ax1.clear()
+    ax1.plot(t, N_cl, 'o');
+    ax1.set_ylabel('Counts', fontsize=15)
+    ax1.set_title('Classical', fontsize=15)
+
+    ax2.clear()
+    ax2.plot(t, N_2002, 'o');
+    ax2.set_xlabel('Time (s)', fontsize=15)
+    ax2.set_title('2002', fontsize=15)
+
+    ax3.clear()
+    ax3.plot(t, N_4004, 'o');
+    ax3.set_title('4004', fontsize=15)
+    
+    display(fig);
+    
+    return del_phi_0, N_ph
+
+system_set = ipywidgets.interactive(update,
+                                    del_phi_0=ipywidgets.FloatText(value=del_phi_0, description=r'$\delta\varphi_0$ (rad)'),
+                                    N_ph = ipywidgets.FloatText(value=N_ph, description=r'$N_\mathrm{ph}$'),
+                                    fig=ipywidgets.fixed(fig));
+
+display(system_set);
+```
+
+```{code-cell} ipython3
+:id: 244f29bc-77de-449a-bad3-927510c5a4f0
+:outputId: 9c825584-870a-4df2-c76d-b56efbaa481f
+:tags: [remove-cell]
+
+from myst_nb import glue
+glue("noon_classical_comparison", fig, display=True)
+```
+
++++ {"id": "e3e102af-b5ec-4e81-b942-d4b0a45f5428"}
+
+```{glue:figure} noon_classical_comparison
+:figwidth: 800px
+:name: "fig-noon-classical-comparison"
+
+Comparison of classical and NOON state interferomters.  The plot shows the recorded number of counts (photon counts for the classical case, or multiphoton events in the NOON state cases) for a fixed number of photons input to the interferometer while the phase is modulated with time (four cycles per second for the cases shown).  Note the improved noise performance of the NOON-state interferometers.  If you reduce the phase modulation amplitude, you will notice that the NOON state interferometers can resolve phase modulations of lower amplitude than the classical interferometer. 
+```
 
 +++ {"id": "WEqkDzKhWJM-"}
 

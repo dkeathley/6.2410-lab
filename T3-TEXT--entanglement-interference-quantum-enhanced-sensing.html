@@ -232,6 +232,11 @@ const thebe_selector_output = ".output, .cell_output"
      3.2.2. Demonstrating Supersensitivity
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numerical-experiments">
+     3.2.3. Numerical Experiments
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -281,6 +286,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#demonstrating-supersensitivity">
      3.2.2. Demonstrating Supersensitivity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numerical-experiments">
+     3.2.3. Numerical Experiments
     </a>
    </li>
   </ul>
@@ -499,6 +509,81 @@ const thebe_selector_output = ".output, .cell_output"
 \[\delta \varphi^2_\mathrm{classical} = \frac{1}{N_\mathrm{ph}} \mathrm{.}\]</div>
 <p>This means that our <span class="math notranslate nohighlight">\(N=2\)</span> NOON state interferometer has improved the fundamental variance of phase measurement by a factor of <span class="math notranslate nohighlight">\(2\)</span> compared to a classical interferometer, enabling superresolution.</p>
 <p>In general, larger reductions in variance could be achieved if we could keep increasing the order of the input NOON state.  In the problem set questions below, you will explore extensions to <span class="math notranslate nohighlight">\(N = 3\)</span> and <span class="math notranslate nohighlight">\(N = 4\)</span> and why this is so technically challenging to accomplish in the real world. However, we emphasize, <strong>these challenges aren’t fundamental – only technological.  Yet another example of why we need quantum engineers.</strong></p>
+</div>
+<div class="section" id="numerical-experiments">
+<h3><span class="section-number">3.2.3. </span>Numerical Experiments<a class="headerlink" href="#numerical-experiments" title="Permalink to this headline">¶</a></h3>
+<p>In this section we explore a numerical experiment that accounts for the photon detection statistics of a classical interferometer and NOON-state interferometry.  The goal of this is to compare the noise performance of phase detection for each case.</p>
+<p>For such numerical experiments we just need to understand the probability of detection.  In general, the probability of detection goes as</p>
+<div class="math notranslate nohighlight">
+\[P_\text{NOON} = \sin^2(\varphi*N/2)\mathrm{.}\]</div>
+<p>Note that if we set <span class="math notranslate nohighlight">\(N=1\)</span> this probability is that of a classical interferometer.  Also, it is important to consider that at the input you require <span class="math notranslate nohighlight">\(N\)</span> photons.  We need to consider this input photon number so that we make a fair comparison of the output statistics considering the same number of photons.</p>
+<p>At the output, we have statistics that follow a binomial distribution.  We either detect the desired event with probability <span class="math notranslate nohighlight">\(P\)</span>, or we down with probability <span class="math notranslate nohighlight">\(1-P\)</span>.  Most scientific programming environments can simulate such binomial statistics.  Using <code class="docutils literal notranslate"><span class="pre">numpy</span></code> we can call <code class="docutils literal notranslate"><span class="pre">numpy.random.binomial(n,</span> <span class="pre">P)</span></code> where <code class="docutils literal notranslate"><span class="pre">n</span></code> is the number of trials and <code class="docutils literal notranslate"><span class="pre">P</span></code> is the probability of detecting the desired outcome.</p>
+<p>In the following, we simulate the cases for <span class="math notranslate nohighlight">\(N=1\)</span> <span class="math notranslate nohighlight">\(N=2\)</span>, and <span class="math notranslate nohighlight">\(N=4\)</span> considering a fixed input of <span class="math notranslate nohighlight">\(N_\mathrm{ph}\)</span> photons.  To see the sensitivity to <span class="math notranslate nohighlight">\(\varphi\)</span> we consider that it is modulating in time such that</p>
+<div class="math notranslate nohighlight">
+\[\varphi = \varphi_0 + \delta\varphi \sin (2\pi f t)\mathrm{.}\]</div>
+<p>This is rather arbitrary for visualization, and we look over a period of 1 second with <span class="math notranslate nohighlight">\(f=4\)</span> Hz. We consider <span class="math notranslate nohighlight">\(\delta\varphi = 0.05\)</span>.  The value of <span class="math notranslate nohighlight">\(\varphi_0\)</span> is chosen for each case to put the probability at the highest slope where <span class="math notranslate nohighlight">\(P=0.5\)</span>.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span>
+
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+
+<span class="n">del_phi_0</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">N_ph</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">f</span>
+<span class="n">del_phi</span> <span class="o">=</span> <span class="n">del_phi_0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">omega</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">phi_cl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">phi_2002</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span>
+<span class="n">phi_4004</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">8</span>
+
+<span class="n">P_cl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">((</span><span class="n">phi_cl</span> <span class="o">+</span> <span class="n">del_phi</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">P_2002</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi_2002</span> <span class="o">+</span> <span class="n">del_phi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">P_4004</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">phi_4004</span> <span class="o">+</span> <span class="n">del_phi</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">N_cl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">N_ph</span><span class="p">,</span> <span class="n">P_cl</span><span class="p">)</span>
+<span class="n">N_2002</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">N_ph</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">P_2002</span><span class="p">)</span>
+<span class="n">N_4004</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">N_ph</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="n">P_4004</span><span class="p">)</span>
+
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">ax3</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">N_cl</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">);</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Counts&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Classical&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">N_2002</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;2002&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="n">ax3</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">N_4004</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">);</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;4004&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/T3-TEXT--entanglement-interference-quantum-enhanced-sensing_11_0.png" src="_images/T3-TEXT--entanglement-interference-quantum-enhanced-sensing_11_0.png" />
+</div>
+</div>
+<div class="figure align-default" id="fig-noon-classical-comparison" style="width: 800px">
+<div class="cell_output docutils container">
+<img alt="_images/T3-TEXT--entanglement-interference-quantum-enhanced-sensing_12_0.png" src="_images/T3-TEXT--entanglement-interference-quantum-enhanced-sensing_12_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 3.6 </span><span class="caption-text">Comparison of classical and NOON state interferomters.  The plot shows the recorded number of counts (photon counts for the classical case, or multiphoton events in the NOON state cases) for a fixed number of 1000 photons input to each interferomter.  The phase is modulated sinusoidally in time with an amplitude of 0.05 radians and frequency of 4 Hz.  Note the improved noise performance of the NOON-state interferometers.  If you reduce the phase modulation amplitude, you will notice that the NOON state interferometers can resolve phase modulations of lower amplitude than the classical interferometer.</span><a class="headerlink" href="#fig-noon-classical-comparison" title="Permalink to this image">¶</a></p>
+</div>
+<p>Note how the modulation is clearly more well defined with higher signal-to-noise ratio as the photon order increases. This is even in-spite of progressively fewer collected events!</p>
+<p>You are encouraged to launch this notebook where you will find an interactive version of this code below.  Play with the number of input photons and the phase modulation amplitude and observe how the statistics change.  Note that if you progressively decrease the amplitude of the phase modulation, you will find a value where the modulation is almost impossible to discern for the classical <span class="math notranslate nohighlight">\(N=1\)</span> case, but easily discernable for the <span class="math notranslate nohighlight">\(N=4\)</span> case.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -567,13 +652,13 @@ const thebe_selector_output = ".output, .cell_output"
                                     <span class="n">del_phi_0</span><span class="o">=</span><span class="n">ipywidgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">del_phi_0</span><span class="p">,</span>
                                                         <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
                                                         <span class="nb">max</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
-                                                        <span class="n">step</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>
+                                                        <span class="n">step</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span>
                                                         <span class="n">description</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\delta\varphi_0$ (rad)&#39;</span><span class="p">,</span>
                                                         <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
                                                         <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
                                                         <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span>
                                                         <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                                                        <span class="n">readout_format</span><span class="o">=</span><span class="s1">&#39;.2f&#39;</span><span class="p">,),</span>
+                                                        <span class="n">readout_format</span><span class="o">=</span><span class="s1">&#39;.3f&#39;</span><span class="p">,),</span>
                                     <span class="n">N_ph</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">FloatText</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">N_ph</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$N_\mathrm</span><span class="si">{ph}</span><span class="s1">$&#39;</span><span class="p">),</span>
                                     <span class="n">fig</span><span class="o">=</span><span class="n">ipywidgets</span><span class="o">.</span><span class="n">fixed</span><span class="p">(</span><span class="n">fig</span><span class="p">));</span>
 
@@ -583,17 +668,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "3f06e7573e674c10b379df8a15794c8a", "version_major": 2, "version_minor": 0}
+{"model_id": "e063f7d0e26a48459deb0ffdab5ca8bc", "version_major": 2, "version_minor": 0}
 </script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1080x504 with 0 Axes&gt;
 </pre></div>
 </div>
 </div>
-</div>
-<div class="figure align-default" id="fig-noon-classical-comparison" style="width: 800px">
-<div class="cell_output docutils container">
-<img alt="_images/T3-TEXT--entanglement-interference-quantum-enhanced-sensing_11_0.png" src="_images/T3-TEXT--entanglement-interference-quantum-enhanced-sensing_11_0.png" />
-</div>
-<p class="caption"><span class="caption-number">Fig. 3.6 </span><span class="caption-text">Comparison of classical and NOON state interferomters.  The plot shows the recorded number of counts (photon counts for the classical case, or multiphoton events in the NOON state cases) for a fixed number of 1000 photons input to each interferomter.  The phase is modulated sinusoidally in time with an amplitude of 0.05 radians and frequency of 4 Hz.  Note the improved noise performance of the NOON-state interferometers.  If you reduce the phase modulation amplitude, you will notice that the NOON state interferometers can resolve phase modulations of lower amplitude than the classical interferometer.</span><a class="headerlink" href="#fig-noon-classical-comparison" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>

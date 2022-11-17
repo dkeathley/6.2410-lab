@@ -332,7 +332,7 @@ import ipywidgets
 fig = plt.figure();
 fig.set_size_inches(15, 7);
 
-del_phi_0 = 0.1
+del_phi_0 = 0.05
 N_ph = 1000
 
 # -- Calculations --
@@ -387,7 +387,16 @@ def update(del_phi_0, N_ph, fig):
     return del_phi_0, N_ph
 
 system_set = ipywidgets.interactive(update,
-                                    del_phi_0=ipywidgets.FloatText(value=del_phi_0, description=r'$\delta\varphi_0$ (rad)'),
+                                    del_phi_0=ipywidgets.FloatSlider(value=del_phi_0,
+                                                        min=0,
+                                                        max=0.1,
+                                                        step=0.01,
+                                                        description=r'$\delta\varphi_0$ (rad)',
+                                                        disabled=False,
+                                                        continuous_update=False,
+                                                        orientation='horizontal',
+                                                        readout=True,
+                                                        readout_format='.2f',),
                                     N_ph = ipywidgets.FloatText(value=N_ph, description=r'$N_\mathrm{ph}$'),
                                     fig=ipywidgets.fixed(fig));
 
@@ -409,7 +418,7 @@ glue("noon_classical_comparison", fig, display=True)
 :figwidth: 800px
 :name: "fig-noon-classical-comparison"
 
-Comparison of classical and NOON state interferomters.  The plot shows the recorded number of counts (photon counts for the classical case, or multiphoton events in the NOON state cases) for a fixed number of photons input to the interferometer while the phase is modulated with time (four cycles per second for the cases shown).  Note the improved noise performance of the NOON-state interferometers.  If you reduce the phase modulation amplitude, you will notice that the NOON state interferometers can resolve phase modulations of lower amplitude than the classical interferometer. 
+Comparison of classical and NOON state interferomters.  The plot shows the recorded number of counts (photon counts for the classical case, or multiphoton events in the NOON state cases) for a fixed number of 1000 photons input to each interferomter.  The phase is modulated sinusoidally in time with an amplitude of 0.05 radians and frequency of 4 Hz.  Note the improved noise performance of the NOON-state interferometers.  If you reduce the phase modulation amplitude, you will notice that the NOON state interferometers can resolve phase modulations of lower amplitude than the classical interferometer. 
 ```
 
 +++ {"id": "WEqkDzKhWJM-"}

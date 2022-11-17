@@ -315,6 +315,106 @@ This means that our $N=2$ NOON state interferometer has improved the fundamental
 
 In general, larger reductions in variance could be achieved if we could keep increasing the order of the input NOON state.  In the problem set questions below, you will explore extensions to $N = 3$ and $N = 4$ and why this is so technically challenging to accomplish in the real world. However, we emphasize, **these challenges aren't fundamental -- only technological.  Yet another example of why we need quantum engineers.**
 
++++
+
+### Numerical Experiments
+
+In this section we explore a numerical experiment that accounts for the photon detection statistics of a classical interferometer and NOON-state interferometry.  The goal of this is to compare the noise performance of phase detection for each case.  
+
+For such numerical experiments we just need to understand the probability of detection.  In general, the probability of detection goes as 
+
+$$P_\text{NOON} = \sin^2(\varphi*N/2)\mathrm{.}$$
+
+Note that if we set $N=1$ this probability is that of a classical interferometer.  Also, it is important to consider that at the input you require $N$ photons.  We need to consider this input photon number so that we make a fair comparison of the output statistics considering the same number of photons.   
+
+At the output, we have statistics that follow a binomial distribution.  We either detect the desired event with probability $P$, or we down with probability $1-P$.  Most scientific programming environments can simulate such binomial statistics.  Using `numpy` we can call `numpy.random.binomial(n, P)` where `n` is the number of trials and `P` is the probability of detecting the desired outcome.  
+
+In the following, we simulate the cases for $N=1$ $N=2$, and $N=4$ considering a fixed input of $N_\mathrm{ph}$ photons.  To see the sensitivity to $\varphi$ we consider that it is modulating in time such that 
+
+$$\varphi = \varphi_0 + \delta\varphi \sin (2\pi f t)\mathrm{.}$$
+
+This is rather arbitrary for visualization, and we look over a period of 1 second with $f=4$ Hz. We consider $\delta\varphi = 0.05$.  The value of $\varphi_0$ is chosen for each case to put the probability at the highest slope where $P=0.5$.  
+
+```{code-cell} ipython3
+---
+colab:
+  base_uri: https://localhost:8080/
+  height: 513
+id: 2c213cbb-39d2-4c14-a48b-a4e83b72246a
+outputId: 2560f16d-e7b7-4a76-fc1d-2f10399e6051
+tags: [hide-output]
+---
+import numpy as np
+import matplotlib.pyplot as plt
+import ipywidgets
+
+
+fig = plt.figure();
+fig.set_size_inches(15, 7);
+
+del_phi_0 = 0.05
+N_ph = 1000
+
+t = np.linspace(0, 1, 1000)
+f = 4
+omega = 2*np.pi*f
+del_phi = del_phi_0*np.sin(omega*t)
+
+phi_cl = np.pi/2
+phi_2002 = np.pi/4
+phi_4004 = np.pi/8
+
+P_cl = np.sin((phi_cl + del_phi)/2)**2
+P_2002 = np.sin(phi_2002 + del_phi)**2
+P_4004 = np.sin(2*(phi_4004 + del_phi))**2
+
+N_cl = np.random.binomial(N_ph, P_cl)
+N_2002 = np.random.binomial(N_ph/2, P_2002)
+N_4004 = np.random.binomial(N_ph/4, P_4004)
+
+ax1 = fig.add_subplot(1, 3, 1)
+ax2 = fig.add_subplot(1, 3, 2)
+ax3 = fig.add_subplot(1, 3, 3)
+
+ax1.clear()
+ax1.plot(t, N_cl, 'o');
+ax1.set_ylabel('Counts', fontsize=15)
+ax1.set_title('Classical', fontsize=15)
+
+ax2.clear()
+ax2.plot(t, N_2002, 'o');
+ax2.set_xlabel('Time (s)', fontsize=15)
+ax2.set_title('2002', fontsize=15)
+
+ax3.clear()
+ax3.plot(t, N_4004, 'o');
+ax3.set_title('4004', fontsize=15);
+```
+
+```{code-cell} ipython3
+:id: 244f29bc-77de-449a-bad3-927510c5a4f0
+:outputId: 9c825584-870a-4df2-c76d-b56efbaa481f
+:tags: [remove-cell]
+
+from myst_nb import glue
+glue("noon_classical_comparison", fig, display=True)
+```
+
++++ {"id": "e3e102af-b5ec-4e81-b942-d4b0a45f5428"}
+
+```{glue:figure} noon_classical_comparison
+:figwidth: 800px
+:name: "fig-noon-classical-comparison"
+
+Comparison of classical and NOON state interferomters.  The plot shows the recorded number of counts (photon counts for the classical case, or multiphoton events in the NOON state cases) for a fixed number of 1000 photons input to each interferomter.  The phase is modulated sinusoidally in time with an amplitude of 0.05 radians and frequency of 4 Hz.  Note the improved noise performance of the NOON-state interferometers.  If you reduce the phase modulation amplitude, you will notice that the NOON state interferometers can resolve phase modulations of lower amplitude than the classical interferometer. 
+```
+
++++
+
+Note how the modulation is clearly more well defined with higher signal-to-noise ratio as the photon order increases. This is even in-spite of progressively fewer collected events!  
+
+You are encouraged to launch this notebook where you will find an interactive version of this code below.  Play with the number of input photons and the phase modulation amplitude and observe how the statistics change.  Note that if you progressively decrease the amplitude of the phase modulation, you will find a value where the modulation is almost impossible to discern for the classical $N=1$ case, but easily discernable for the $N=4$ case.  
+
 ```{code-cell} ipython3
 ---
 colab:
@@ -390,35 +490,17 @@ system_set = ipywidgets.interactive(update,
                                     del_phi_0=ipywidgets.FloatSlider(value=del_phi_0,
                                                         min=0,
                                                         max=0.1,
-                                                        step=0.01,
+                                                        step=0.001,
                                                         description=r'$\delta\varphi_0$ (rad)',
                                                         disabled=False,
                                                         continuous_update=False,
                                                         orientation='horizontal',
                                                         readout=True,
-                                                        readout_format='.2f',),
+                                                        readout_format='.3f',),
                                     N_ph = ipywidgets.FloatText(value=N_ph, description=r'$N_\mathrm{ph}$'),
                                     fig=ipywidgets.fixed(fig));
 
 display(system_set);
-```
-
-```{code-cell} ipython3
-:id: 244f29bc-77de-449a-bad3-927510c5a4f0
-:outputId: 9c825584-870a-4df2-c76d-b56efbaa481f
-:tags: [remove-cell]
-
-from myst_nb import glue
-glue("noon_classical_comparison", fig, display=True)
-```
-
-+++ {"id": "e3e102af-b5ec-4e81-b942-d4b0a45f5428"}
-
-```{glue:figure} noon_classical_comparison
-:figwidth: 800px
-:name: "fig-noon-classical-comparison"
-
-Comparison of classical and NOON state interferomters.  The plot shows the recorded number of counts (photon counts for the classical case, or multiphoton events in the NOON state cases) for a fixed number of 1000 photons input to each interferomter.  The phase is modulated sinusoidally in time with an amplitude of 0.05 radians and frequency of 4 Hz.  Note the improved noise performance of the NOON-state interferometers.  If you reduce the phase modulation amplitude, you will notice that the NOON state interferometers can resolve phase modulations of lower amplitude than the classical interferometer. 
 ```
 
 +++ {"id": "WEqkDzKhWJM-"}

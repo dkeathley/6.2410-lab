@@ -323,7 +323,7 @@ In this section we explore a numerical experiment that accounts for the photon d
 
 For such numerical experiments we just need to understand the probability of detection.  In general, the probability of detection goes as 
 
-$$P_\text{NOON} = \sin^2(\varphi*N/2)\mathrm{.}$$
+$$P_\text{NOON} = \sin^2(\varphi N/2)\mathrm{.}$$
 
 Note that if we set $N=1$ this probability is that of a classical interferometer.  Also, it is important to consider that at the input you require $N$ photons.  We need to consider this input photon number so that we make a fair comparison of the output statistics considering the same number of photons.   
 
@@ -333,7 +333,7 @@ In the following, we simulate the cases for $N=1$ $N=2$, and $N=4$ considering a
 
 $$\varphi = \varphi_0 + \delta\varphi \sin (2\pi f t)\mathrm{.}$$
 
-This is rather arbitrary for visualization, and we look over a period of 1 second with $f=4$ Hz. We consider $\delta\varphi = 0.05$.  The value of $\varphi_0$ is chosen for each case to put the probability at the highest slope where $P=0.5$.  
+This is rather arbitrary for visualization, and we look over a period of 1 second with $f=4$ Hz. We consider $\delta\varphi = 0.05$.  The value of $\varphi_0$ is chosen for each case to put the probability at the highest slope where $P=0.5$.
 
 ```{code-cell} ipython3
 ---
@@ -413,7 +413,7 @@ Comparison of classical and NOON state interferomters.  The plot shows the recor
 
 Note how the modulation is clearly more well defined with higher signal-to-noise ratio as the photon order increases. This is even in-spite of progressively fewer collected events!  
 
-You are encouraged to launch this notebook where you will find an interactive version of this code below.  Play with the number of input photons and the phase modulation amplitude and observe how the statistics change.  Note that if you progressively decrease the amplitude of the phase modulation, you will find a value where the modulation is almost impossible to discern for the classical $N=1$ case, but easily discernable for the $N=4$ case.  
+You are encouraged to launch this notebook where you will find an interactive version of this code below.  Play with the number of input photons and the phase modulation amplitude and observe how the statistics change.  Note that if you progressively decrease the amplitude of the phase modulation, you will find a value where the modulation is almost impossible to discern for the classical $N=1$ case, but easily discernable for the $N=4$ case.
 
 ```{code-cell} ipython3
 ---

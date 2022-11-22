@@ -39,13 +39,7 @@ $$\newcommand{\fhat}[0]{\hat{f}}$$
 
 # Chapter XX -- Interference, Entanglement and Quantum-Enhanced Metrology
 
-Many quantum engineering applications leverage the unique properties of quantum light and its interactions with basic optical elements.  For example, many applications will have multiple stages for splitting, propagating, and recombining/interfering photons before final detection.  For instance, a simplified optical implementation of quantum key distribution is shown in the figure below.
-
-**FIXME: Figure for QKD implementation**
-
-Before we can build to larger systems for more functional applications, it is important to understand how how to treat basic building blocks of quantum optical systems, and how to combine multiple of these building blocks together to engineer solutions that go beyond what is possible using classical systems.    
-
-In this chapter we examine entangled pairs of photon states, entangled photon pair interference by way of the Hong-Ou-Mandel effect, and entangled multi-photon Fock state interference for enhanced quantum phase sensing.  Along the way we will discuss many basic principles important to a variety of areas in quantum photonics, such as: the interaction of photons with beamsplitters; the interference of photon states; signal detection and processing methods such as coincidence detection; and how to analyze statistical fluctuations of photon detection events for determining sensitivity and signal to noise ratio in measurements.
+In this chapter we examine entangled photon pair generation, entangled photon pair interference by way of the Hong-Ou-Mandel effect, and entangled multi-photon Fock state interference for quantum-enhanced phase sensing.  Along the way we will discuss basic principles important to a variety of areas in quantum photonics, such as: the interaction of photons with beamsplitters; the interference of photon number states; signal detection and processing methods such as coincidence detection; and how to analyze statistical fluctuations of photon detection events for determining sensitivity and signal to noise ratio in measurements.
 
 +++ {"id": "4b595179-c2b9-4d45-819a-5c18c297dfe0"}
 
@@ -379,7 +373,7 @@ ax3 = fig.add_subplot(1, 3, 3)
 ax1.clear()
 ax1.plot(t, N_cl, 'o');
 ax1.set_ylabel('Counts', fontsize=15)
-ax1.set_title('Classical', fontsize=15)
+ax1.set_title('1001 (Classical)', fontsize=15)
 
 ax2.clear()
 ax2.plot(t, N_2002, 'o');
@@ -471,7 +465,7 @@ def update(del_phi_0, N_ph, fig):
     ax1.clear()
     ax1.plot(t, N_cl, 'o');
     ax1.set_ylabel('Counts', fontsize=15)
-    ax1.set_title('Classical', fontsize=15)
+    ax1.set_title('1001 (Classical)', fontsize=15)
 
     ax2.clear()
     ax2.plot(t, N_2002, 'o');
@@ -491,7 +485,7 @@ system_set = ipywidgets.interactive(update,
                                                         min=0,
                                                         max=0.1,
                                                         step=0.001,
-                                                        description=r'$\delta\varphi_0$ (rad)',
+                                                        description=r'$\delta\varphi$ (rad)',
                                                         disabled=False,
                                                         continuous_update=False,
                                                         orientation='horizontal',

@@ -311,10 +311,7 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="chapter-xx-interference-entanglement-and-quantum-enhanced-metrology">
 <h1><span class="section-number">3. </span>Chapter XX – Interference, Entanglement and Quantum-Enhanced Metrology<a class="headerlink" href="#chapter-xx-interference-entanglement-and-quantum-enhanced-metrology" title="Permalink to this headline">¶</a></h1>
-<p>Many quantum engineering applications leverage the unique properties of quantum light and its interactions with basic optical elements.  For example, many applications will have multiple stages for splitting, propagating, and recombining/interfering photons before final detection.  For instance, a simplified optical implementation of quantum key distribution is shown in the figure below.</p>
-<p><strong>FIXME: Figure for QKD implementation</strong></p>
-<p>Before we can build to larger systems for more functional applications, it is important to understand how how to treat basic building blocks of quantum optical systems, and how to combine multiple of these building blocks together to engineer solutions that go beyond what is possible using classical systems.</p>
-<p>In this chapter we examine entangled pairs of photon states, entangled photon pair interference by way of the Hong-Ou-Mandel effect, and entangled multi-photon Fock state interference for enhanced quantum phase sensing.  Along the way we will discuss many basic principles important to a variety of areas in quantum photonics, such as: the interaction of photons with beamsplitters; the interference of photon states; signal detection and processing methods such as coincidence detection; and how to analyze statistical fluctuations of photon detection events for determining sensitivity and signal to noise ratio in measurements.</p>
+<p>In this chapter we examine entangled photon pair generation, entangled photon pair interference by way of the Hong-Ou-Mandel effect, and entangled multi-photon Fock state interference for quantum-enhanced phase sensing.  Along the way we will discuss basic principles important to a variety of areas in quantum photonics, such as: the interaction of photons with beamsplitters; the interference of photon number states; signal detection and processing methods such as coincidence detection; and how to analyze statistical fluctuations of photon detection events for determining sensitivity and signal to noise ratio in measurements.</p>
 <div class="section" id="single-photon-interference-the-hong-ou-mandel-effect">
 <h2><span class="section-number">3.1. </span>Single Photon Interference: The Hong-Ou-Mandel Effect<a class="headerlink" href="#single-photon-interference-the-hong-ou-mandel-effect" title="Permalink to this headline">¶</a></h2>
 <p>Imagine the scenario depicted in Fig. <a class="reference internal" href="#hom-setup"><span class="std std-numref">Fig. 3.1</span></a>.  A nonlinear crystal is used to generate precisely two photons of energy <span class="math notranslate nohighlight">\(\hbar\omega\)</span> when excited by a pulse with a photon energy of <span class="math notranslate nohighlight">\(2\hbar\omega\)</span>.  This process is called spontaneous parametric down-conversion and is a common technique for generating entangled photon pairs.</p>
@@ -515,7 +512,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>In this section we explore a numerical experiment that accounts for the photon detection statistics of a classical interferometer and NOON-state interferometry.  The goal of this is to compare the noise performance of phase detection for each case.</p>
 <p>For such numerical experiments we just need to understand the probability of detection.  In general, the probability of detection goes as</p>
 <div class="math notranslate nohighlight">
-\[P_\text{NOON} = \sin^2(\varphi*N/2)\mathrm{.}\]</div>
+\[P_\text{NOON} = \sin^2(\varphi N/2)\mathrm{.}\]</div>
 <p>Note that if we set <span class="math notranslate nohighlight">\(N=1\)</span> this probability is that of a classical interferometer.  Also, it is important to consider that at the input you require <span class="math notranslate nohighlight">\(N\)</span> photons.  We need to consider this input photon number so that we make a fair comparison of the output statistics considering the same number of photons.</p>
 <p>At the output, we have statistics that follow a binomial distribution.  We either detect the desired event with probability <span class="math notranslate nohighlight">\(P\)</span>, or we down with probability <span class="math notranslate nohighlight">\(1-P\)</span>.  Most scientific programming environments can simulate such binomial statistics.  Using <code class="docutils literal notranslate"><span class="pre">numpy</span></code> we can call <code class="docutils literal notranslate"><span class="pre">numpy.random.binomial(n,</span> <span class="pre">P)</span></code> where <code class="docutils literal notranslate"><span class="pre">n</span></code> is the number of trials and <code class="docutils literal notranslate"><span class="pre">P</span></code> is the probability of detecting the desired outcome.</p>
 <p>In the following, we simulate the cases for <span class="math notranslate nohighlight">\(N=1\)</span> <span class="math notranslate nohighlight">\(N=2\)</span>, and <span class="math notranslate nohighlight">\(N=4\)</span> considering a fixed input of <span class="math notranslate nohighlight">\(N_\mathrm{ph}\)</span> photons.  To see the sensitivity to <span class="math notranslate nohighlight">\(\varphi\)</span> we consider that it is modulating in time such that</p>
@@ -559,7 +556,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">ax1</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">N_cl</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">);</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Counts&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Classical&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;1001 (Classical)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 
 <span class="n">ax2</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">N_2002</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">);</span>
@@ -633,7 +630,7 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="n">ax1</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
     <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">N_cl</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">);</span>
     <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Counts&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-    <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Classical&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;1001 (Classical)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 
     <span class="n">ax2</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
     <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">N_2002</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">);</span>
@@ -653,7 +650,7 @@ const thebe_selector_output = ".output, .cell_output"
                                                         <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
                                                         <span class="nb">max</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
                                                         <span class="n">step</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span>
-                                                        <span class="n">description</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\delta\varphi_0$ (rad)&#39;</span><span class="p">,</span>
+                                                        <span class="n">description</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\delta\varphi$ (rad)&#39;</span><span class="p">,</span>
                                                         <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
                                                         <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
                                                         <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span>
@@ -668,7 +665,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "e063f7d0e26a48459deb0ffdab5ca8bc", "version_major": 2, "version_minor": 0}
+{"model_id": "d0d17572fe4c4ae0b8ffbff87d23bb02", "version_major": 2, "version_minor": 0}
 </script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1080x504 with 0 Axes&gt;
 </pre></div>
 </div>

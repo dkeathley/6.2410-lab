@@ -5,9 +5,18 @@ format: jb-book
 root: intro
 options:
   numbered: true
-chapters:
-- file: chapter-XX-quantum-optics-basics.ipynb
-- file: chapter-XX-quantum-information.ipynb
-- file: T3-TEXT--entanglement-interference-quantum-enhanced-sensing.ipynb
-- file: references.md
+  
+parts:
+  - caption: Introductory Material
+    chapters:
+    - file: BASICS-quantum-optics-basics.ipynb
+    - file: BASICS-quantum-information.ipynb
+  - caption: Interference and Entanglement
+    chapters:
+    - file: T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.ipynb
+  - caption: Quantum Key Distribution
+    - file: T2E1-LAB-quantum key distribution-lab.ipynb
+  - caption: Solid-State Spins
+    chapters:
+    - file: T3E3-LAB-Cavity_QED_sensor.ipynb
 

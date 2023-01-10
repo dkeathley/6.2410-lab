@@ -1,0 +1,828 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>2. Chapter XX – Quantum Information &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="1. Chapter XX – The Basics of Quantum Optics" href="BASICS-quantum-optics-basics.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo-ibm.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">6.2410 -- Laboratory for Quantum Information Science and Engineering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    6.2410 – Laboratory for Quantum Information Science and Engineering
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="BASICS-quantum-optics-basics.html">
+   1. Chapter XX – The Basics of Quantum Optics
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Chapter XX – Quantum Information
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="git@github.mit.edu:pdkeat2/6.2410-lab.git"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="git@github.mit.edu:pdkeat2/6.2410-lab.git/issues/new?title=Issue%20on%20page%20%2FBASICS-quantum-information.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/BASICS-quantum-information.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#packages-functions-and-variables">
+   2.1. Packages, Functions and Variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#xx-1-quantum-bits-qubits">
+   2.2. XX.1 Quantum Bits (qubits)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#xx-2-quantum-gates">
+   2.3. XX.2 Quantum Gates
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#single-qubit-gates">
+     2.3.1. Single Qubit Gates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#two-qubit-gates">
+     2.3.2. Two Qubit Gates
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#xx-3-quantum-teleportation">
+   2.4. XX.3 Quantum Teleportation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#teleportation-with-cnot">
+     2.4.1. Teleportation With CNOT
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#teleportation-without-cnot">
+     2.4.2. Teleportation Without CNOT
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#xx-4-quantum-error-correction">
+   2.5. XX.4 Quantum Error Correction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#xx-5-entanglement-based-qkd">
+   2.6. XX.5 Entanglement-Based QKD
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Chapter XX – Quantum Information</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#packages-functions-and-variables">
+   2.1. Packages, Functions and Variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#xx-1-quantum-bits-qubits">
+   2.2. XX.1 Quantum Bits (qubits)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#xx-2-quantum-gates">
+   2.3. XX.2 Quantum Gates
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#single-qubit-gates">
+     2.3.1. Single Qubit Gates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#two-qubit-gates">
+     2.3.2. Two Qubit Gates
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#xx-3-quantum-teleportation">
+   2.4. XX.3 Quantum Teleportation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#teleportation-with-cnot">
+     2.4.1. Teleportation With CNOT
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#teleportation-without-cnot">
+     2.4.2. Teleportation Without CNOT
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#xx-4-quantum-error-correction">
+   2.5. XX.4 Quantum Error Correction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#xx-5-entanglement-based-qkd">
+   2.6. XX.5 Entanglement-Based QKD
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-xx-quantum-information">
+<h1><span class="section-number">2. </span>Chapter XX – Quantum Information<a class="headerlink" href="#chapter-xx-quantum-information" title="Permalink to this headline">#</a></h1>
+<p>In this chapter we will discuss core concepts in quantum information.  Core principles are explained through the lens of photonic implementations of quantum infromation as this will be how we explore these concepts in the laboratory for this course.  However, you should note that these concepts extend to any quantum information system.</p>
+<p>This recitation will specifically cover the following topics:</p>
+<ol class="simple">
+<li><p>Quantum Bits (qubits)</p></li>
+<li><p>Quantum Gates</p></li>
+<li><p>Quantum Teleportation</p></li>
+<li><p>Quantum Error Correction</p></li>
+<li><p>Quantum Cryptography</p></li>
+<li><p>Quantum Key Distribution</p></li>
+</ol>
+<section id="packages-functions-and-variables">
+<h2><span class="section-number">2.1. </span>Packages, Functions and Variables<a class="headerlink" href="#packages-functions-and-variables" title="Permalink to this headline">#</a></h2>
+<p>The following code-block contains the packages, functions and variables needed for the code found later in this notebook.  It must be run first.  Note that if you are running this on your personal computer, you should ensure that all packages needed are installed first (for example the <a class="reference external" href="https://numpy.org/">numpy</a>, <a class="reference external" href="https://scipy.org/">scipy</a>, and <a class="reference external" href="https://matplotlib.org/">matplotlib</a> packages must be installed on your computer along with others).  You can find a launcher link at the top to conveniently run this notebook in Google Colab.</p>
+<p>The code below is hidden by default, but you are encouraged to expand it and study it.  The functions and constants will update as needed during the progression of the course, so you should note what new functions have been and added and study how they work.</p>
+<div class="cell tag_hide_cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span>
+<span class="kn">import</span> <span class="nn">h5py</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span>
+<span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="kn">import</span> <span class="n">UnivariateSpline</span> 
+
+<span class="c1"># Import the matplotlib animation tools</span>
+<span class="c1"># as well as the html tools for creating</span>
+<span class="c1"># javascript animations</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">animation</span><span class="p">,</span> <span class="n">rc</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+
+<span class="c1">#-- Export Settings --</span>
+<span class="c1"># If on, then it applies a few tweaks to make sure the export looks good</span>
+<span class="n">want_export</span><span class="o">=</span><span class="kc">False</span>
+
+<span class="c1">#--Physical Constants--</span>
+<span class="n">hbar</span> <span class="o">=</span> <span class="mf">1.054e-34</span> <span class="c1">#normalized Planck constant [J*s]</span>
+<span class="n">evcon</span> <span class="o">=</span> <span class="mf">1.602e-19</span> <span class="c1">#conversion factor, [J/eV]</span>
+<span class="n">eta</span> <span class="o">=</span> <span class="mf">119.91699832</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="c1">#impedance of freespace [ohms]</span>
+<span class="n">me</span> <span class="o">=</span> <span class="mf">9.10938188e-31</span> <span class="c1">#mass of electron [kg]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">2.99792458e8</span> <span class="c1">#speed of light [m/s]</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mf">1.602e-19</span> <span class="c1">#electron charge [C]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="xx-1-quantum-bits-qubits">
+<h2><span class="section-number">2.2. </span>XX.1 Quantum Bits (qubits)<a class="headerlink" href="#xx-1-quantum-bits-qubits" title="Permalink to this headline">#</a></h2>
+<p>Analogous to the bit, the fundamental unit of information of classical computers, a quantum bit (qubit)
+corresponds to a two level system. However, the qubit can have both values at the same time:</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+\ket{\psi} = c_0 \ket{0} + c_1 \ket{1} 
+\end{equation}\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(c_i\)</span> are complex numbers and <span class="math notranslate nohighlight">\(\sum_i c_i^2 = 1\)</span>. Physically, this state could be represented by the polarization
+of a photon in a particular basis (e.g., linear or circular), the population of a photon in a particular mode, or the spin orientation of a spin-1/2 particle such as an electron or spin-1/2 nucleus.</p>
+<p>Now let’s consider two classical bits, which have four possible states:</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation} \lbrace 00, 01, 10, 11 \rbrace \end{equation}\)</span></p>
+<p>The quantum register consisting of two qubits is again in all four possible states at once:</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation} \ket{\psi}  = c_{00}\ket{00} + c_{01}\ket{01} + c_{10}\ket{10} + c_{11}\ket{11} \end{equation}\)</span></p>
+<p>This simple example already shows one of the fundamental differences – and potential strengths – of the quantum register: it is in all states at once.</p>
+<p>For instance, suppose we wanted to represent the state of <span class="math notranslate nohighlight">\(N\)</span> two-level particles, such as the polarization states of photons or the orientation of electron spins. This would us to store <span class="math notranslate nohighlight">\(2^N\)</span> complex numbers, i.e., <span class="math notranslate nohighlight">\(2^{N+1}\)</span> real numbers. Suppose each real number were stored in a 32-bit classical register. Then we’d need <span class="math notranslate nohighlight">\(32\times2^{N+1}\)</span> bits. If <span class="math notranslate nohighlight">\(N=50\)</span>, that’s already 4500 tera-bytes, and if <span class="math notranslate nohighlight">\(N=500\)</span>, we would require more bits than there are atoms in the universe (double-check!).  In a quantum computer, a register of 500 qubits would suffice! Thus, we already see that for certain applications – like trying to simulate a quantum system – the quantum memory is exponentially more powerful than a classical memory. The idea of using a quantum system for simulating a classical system was proposed by Richard Feynman in the early eighties, and is called quantum simulation.</p>
+<p>Going back to our two-level system, an important set of state are the Bell states:</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation} \bigg \lbrace \frac{1}{\sqrt{2}} \big ( \ket{00} \pm \ket{11} \big ), \frac{1}{\sqrt{2}} \big (\ket{10} \pm \ket{01} \big ) \bigg \rbrace \end{equation}\)</span></p>
+<p>These are maximally entangled states. Let’s consider one of these in more detail, say:</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation} \ket{\beta_{00}} = \frac{1}{\sqrt{2}} \big ( \ket{00} + \ket{11} \big ) \end{equation}\)</span></p>
+<p>If we measure the first qubit, we obtain either ‘0’ or ‘1’ with equal probability. If we measure ‘1’, then the state is projected to <span class="math notranslate nohighlight">\(\ket{\psi} = \ket{11}\)</span>; if we measure ‘0’, then the state is projected to <span class="math notranslate nohighlight">\(\ket{\psi} = \ket{00}\)</span>. The measurement outcomes are correlated, even though the two qubits could be a different locations.</p>
+</section>
+<section id="xx-2-quantum-gates">
+<h2><span class="section-number">2.3. </span>XX.2 Quantum Gates<a class="headerlink" href="#xx-2-quantum-gates" title="Permalink to this headline">#</a></h2>
+<section id="single-qubit-gates">
+<h3><span class="section-number">2.3.1. </span>Single Qubit Gates<a class="headerlink" href="#single-qubit-gates" title="Permalink to this headline">#</a></h3>
+<ol>
+<li><p>NOT Gate</p>
+<br>
+<p><span class="math notranslate nohighlight">\(X = \ket{1} \bra{0} + \ket{0}\bra{1}\)</span></p>
+<br>
+<p><span class="math notranslate nohighlight">\(X\ket{\psi} = X(c_0 \ket{0} + c_1 \ket{1}) = c_0 \ket{1} + c_1 \ket{0}\)</span></p>
+<br>
+<p>Photonic implementation: e.g., a half wave plate (HWP) at 45 degrees to the linear polarization basis.  Recall the Jones matrix for a HWP:</p>
+<br>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+M_{\text{HWP}} = 
+\begin{pmatrix}
+ \cos{2\theta} &amp; \sin{2\theta} \\
+ \sin{2\theta} &amp; -\cos{2\theta}
+\end{pmatrix}
+\end{equation}\)</span></p>
+<br>
+</li>
+<li><p>Z Gate</p>
+<br>
+<p><span class="math notranslate nohighlight">\(Z = \ket{0} \bra{0} - \ket{1}\bra{1}\)</span></p>
+<br>   
+<p><span class="math notranslate nohighlight">\(Z\ket{\psi} = Z(c_0 \ket{0} + c_1 \ket{1}) = c_0 \ket{0} - c_1 \ket{1}\)</span></p>
+<br>
+<p>Photonic implementation: e.g., a HWP with <span class="math notranslate nohighlight">\(\theta = 0\)</span>.</p>
+<br>
+</li>
+<li><p>Hadamard Gate</p>
+<br>
+<p>The purpose of this gate is to transform from the input basis to the complimentary basis.  In terms of a polarization basis, it would be essentially a rotation by 45 degrees.</p>
+<br>
+<p><span class="math notranslate nohighlight">\(H = \ket{0} \bra{0} + \ket{1}\bra{0} + \ket{0}\bra{1} - \ket{1}\bra{1}\)</span></p>
+<br>
+<p><span class="math notranslate nohighlight">\(H\ket{\psi} = H(c_0 \ket{0} + c_1 \ket{1}) = \frac{1}{\sqrt{2}} \big ( c_0 \ket{0} + c_0 \ket{1} + c_1\ket{0} - c_1\ket{1} \big )\)</span></p>
+<br>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+M_{\text{H}} = 
+\frac{1}{\sqrt{2}} 
+\begin{pmatrix}
+ 1 &amp; 1 \\
+ 1 &amp; -1
+\end{pmatrix}
+\end{equation}\)</span></p>
+<br>   
+<p>Photonic implementation: for polarization states, a HWP at <span class="math notranslate nohighlight">\(\theta = 22.5^{\circ}\)</span>; for mode basis states, a beamsplitter.</p>
+</li>
+</ol>
+</section>
+<section id="two-qubit-gates">
+<h3><span class="section-number">2.3.2. </span>Two Qubit Gates<a class="headerlink" href="#two-qubit-gates" title="Permalink to this headline">#</a></h3>
+<ol>
+<li><p>Two-qubit CNOT</p>
+<br>
+<p><span class="math notranslate nohighlight">\(CN = \frac{1}{\sqrt{2}} \big ( \ket{00}\bra{00} + \ket{01}\bra{01} + \ket{10}\bra{01} + \ket{10}\bra{10} \big )\)</span></p>
+<br>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+M_{\text{CN}} = 
+\frac{1}{\sqrt{2}} 
+\begin{pmatrix}
+ 1 &amp; &amp; 0 &amp; 0 \\
+ 0 &amp; 1 &amp; 0 &amp; 0\\
+ 0 &amp; 0 &amp; 0 &amp; 1\\
+ 0 &amp; 0 &amp; 1 &amp; 0
+\end{pmatrix}
+\end{equation}\)</span></p>
+<br>
+<p>Photonic implementation: two single qubit phase gates and two Hadamard gates (see single qubit gates above).</p>
+</li>
+</ol>
+</section>
+</section>
+<section id="xx-3-quantum-teleportation">
+<h2><span class="section-number">2.4. </span>XX.3 Quantum Teleportation<a class="headerlink" href="#xx-3-quantum-teleportation" title="Permalink to this headline">#</a></h2>
+<p>Quantum teleportation is a technique that allows us to transfer a quantum state without physically moving the system that encodes the state. For instance, suppose Alice has a <span class="math notranslate nohighlight">\(\ket{\psi} = c_0 \ket{0} + c_1 \ket{1}\)</span> encoded in two levels of a Cs atom in her setup in Pasadena, and suppose she wants to transfer this state to Bob’s Cs atom in New York. It would be impractical to move the atom setup from Los Angeles to New York. Furthermore, Alice doesn’t know the state <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> so measuring it would destroy it. Even if she did know the state, it would take infinitely long to transfer the information on the coefficients <span class="math notranslate nohighlight">\(c_0\)</span> and <span class="math notranslate nohighlight">\(c_1\)</span> since they’re continuous variables.</p>
+<p>Alice and Bob can transfer the state if she and Bob also have access to one pair of an entangled state, let’s say the Bell state <span class="math notranslate nohighlight">\(\beta_{00}\)</span> discussed above. The entangled state could consist of two Cs atoms, one in each city.</p>
+<section id="teleportation-with-cnot">
+<h3><span class="section-number">2.4.1. </span>Teleportation With CNOT<a class="headerlink" href="#teleportation-with-cnot" title="Permalink to this headline">#</a></h3>
+<p>The protocol goes as follows. Alice begins with the product state of her state and <span class="math notranslate nohighlight">\(\beta_{00}\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(\begin{array}
+ \ket{\psi_i} &amp;= (c_0\ket{0} + c_1\ket{1}) \bigotimes \frac{1}{\sqrt{2}} \big ( \ket{0_A \times 0_B} + \ket{1_A \times 1_B} \big ) \\
+              &amp;= \frac{1}{\sqrt{2}} \bigg [ 
+                  c_0 \ket{0} \big ( \ket{0_A \times 0_B} + \ket{1_A \times 1_B} \big ) + 
+                  c_1 \ket{1} \big ( \ket{0_A \times 0_B} + \ket{1_A \times 1_B} \big )
+                 \bigg ]
+ \end{array}\)</span></p>
+<p>Alice then sends her two qubits through a CNOT gate:</p>
+<p><span class="math notranslate nohighlight">\(\begin{array}
+ \ket{\psi_1} = \frac{1}{\sqrt{2}} \bigg [ 
+                &amp; c_0 \ket{0} \big ( \ket{0_A \times 0_B} + \ket{1_A \times 1_B} \big ) + \\
+                &amp; c_1 \ket{1} \big ( \ket{1_A \times 0_B} + \ket{0_A \times 1_B} \big )
+                \bigg ]  
+ \end{array}\)</span></p>
+<p>… and then sends the first qubit through a Hadamard gate:</p>
+<p><span class="math notranslate nohighlight">\(\begin{array}
+ \ket{\psi_2} = \frac{1}{2} 
+                \bigg [ 
+                 &amp;c_0 \big ( \ket{0} + \ket{1} \big ) \big ( \ket{0_A \times 0_B} + \ket{1_A \times 1_B} \big ) + \\
+                 &amp;c_1 \big ( \ket{0} - \ket{1} \big ) \big ( \ket{1_A \times 0_B} + \ket{0_A \times 1_B} \big )
+                \bigg ]
+ \end{array}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\begin{array}
+ \ket{\psi_2} = \frac{1}{2} 
+                \bigg [ 
+                 &amp; \ket{00_A} \big ( c_0 \ket{0_B} + c_1 \ket{1_B} \big ) + \\
+                 &amp; \ket{01_A} \big ( c_0 \ket{1_B} + c_1 \ket{0_B} \big ) + \\
+                 &amp; \ket{10_A} \big ( c_0 \ket{0_B} + c_1 \ket{1_B} \big ) + \\
+                 &amp; \ket{11_A} \big ( c_0 \ket{1_B} + c_1 \ket{0_B} \big )
+                \bigg ]
+ \end{array}\)</span></p>
+<p>Now Alice makes a joint measurement on her qubits.  She can obtain the following outcomes:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(00 \rightarrow \ket{\psi_3(00)} = c_0\ket{0_B} + c_1\ket{1_B} \rightarrow I \rightarrow \ket{\psi_4} = \ket{\psi}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(01 \rightarrow \ket{\psi_3(01)} = c_0\ket{1_B} + c_1\ket{0_B} \rightarrow X \rightarrow \ket{\psi_4} = \ket{\psi}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(10 \rightarrow \ket{\psi_3(10)} = c_0\ket{0_B} - c_1\ket{1_B} \rightarrow Z \rightarrow \ket{\psi_4} = \ket{\psi}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(11 \rightarrow \ket{\psi_3(11)} = c_0\ket{1_B} - c_1\ket{0_B} \rightarrow ZX \rightarrow \ket{\psi_4} = \ket{\psi}\)</span></p></li>
+</ul>
+<p>Now Alice sends Bob the result of her measurement, so that Bob can apply one of four unique single qubit gates to recover the original state <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>.</p>
+<p>Does teleportation violate the Theory of Relativity? No, because the protocol requires that Alice communicates the measurement result to Bob, and this (classical)  communication can’t move faster than the speed of light.</p>
+<p>Teleportation shows that a quantum state can be moved between different physical informations. Quantum teleportation is also crucial for constructing gates that are protected from the environment, using redundant encoding in error correction codes. Quantum teleportation is also crucial for enabling efficient gates in certain quantum computation implementations, such as linear optics quantum computation.</p>
+</section>
+<section id="teleportation-without-cnot">
+<h3><span class="section-number">2.4.2. </span>Teleportation Without CNOT<a class="headerlink" href="#teleportation-without-cnot" title="Permalink to this headline">#</a></h3>
+<p>We will consider a slightly different scheme that was used to experimentally implement quantum teleportation between two entangled photons. Assume these are in the state</p>
+<p><span class="math notranslate nohighlight">\(\ket{\psi_{AB}} = \frac{1}{\sqrt{2}} \big ( \ket{0_A \times 0_B} - \ket{1_A \times 1_B} \big )\)</span></p>
+<p>where again A and B are in possition by two Alice and Bob at different locations. Alice again has her state <span class="math notranslate nohighlight">\(\ket{\psi} = c_0\ket{0} + c_1\ket{1}\)</span>, and the full state at the beginning of the protocol is given by</p>
+<p><span class="math notranslate nohighlight">\(\begin{array}
+ \ket{\psi_i} &amp;= (c_0\ket{0} + c_1\ket{1}) \bigotimes \frac{1}{\sqrt{2}} \big ( \ket{0_A \times 0_B} + \ket{1_A \times 1_B} \big ) \\
+              &amp;= \frac{1}{\sqrt{2}} \bigg [ 
+                  c_0 \ket{0} \big ( \ket{0_A \times 0_B} + \ket{1_A \times 1_B} \big ) + 
+                  c_1 \ket{1} \big ( \ket{0_A \times 0_B} + \ket{1_A \times 1_B} \big )
+                 \bigg ]
+ \end{array}\)</span></p>
+<p>The four Bell states are given by:</p>
+<p><span class="math notranslate nohighlight">\(\ket{\Phi^{(\pm)}} = \frac{1}{\sqrt{2}} \big ( \ket{00} \pm \ket{11} \big )\)</span></p>
+<p><span class="math notranslate nohighlight">\(\ket{\Psi^{(\pm)}} = \frac{1}{\sqrt{2}} \big ( \ket{01} \pm \ket{10} \big )\)</span></p>
+<p>The state <span class="math notranslate nohighlight">\(\ket{\psi_1}\)</span> can be written in terms of the four Bell states:</p>
+<p><em>FIXME: SEEMS LIKE THERE IS MATERIAL MISSING HERE…</em></p>
+</section>
+</section>
+<section id="xx-4-quantum-error-correction">
+<h2><span class="section-number">2.5. </span>XX.4 Quantum Error Correction<a class="headerlink" href="#xx-4-quantum-error-correction" title="Permalink to this headline">#</a></h2>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section follows the discussion by M. A. Nielsen and I. L. Chuang, Quantum Computation and Quantum Information  (Cambridge Univ. Press, Cambridge, 2000), Chapter 10.</p>
+</div>
+</aside>
+<p>One of the primary challenges of quantum information processing is dealing with system-environment interactions. Quantum error correcting codes are a way to process quantum information reliably in the presence of noise.  Quantum error correction is a complex subject. Here, we’ll consider just a simple example that protects against bit-flip errors in quantum channels. Bit flip errors is just one class of a range of sources of noise, which also include phase flip errors.</p>
+<p>Let’s first consider an example of consider error correction codes: majority voting with three bits. Suppose you have a classical bit in a noisy channel, where the channel just refers to a path in space or time.  The channel could represent a photon flying from point A to B in a fiber, or a magnetic domain in a hard drive sitting there for some time interval.  Suppose that the noise in the channel causes the bit to flip with some probability p over the duration of the channel. In certain applications, a single bit error could have serious consequences, so we’d like to protect the bit.  We can do this by encoding it in redundant bits. To be specific, let’s copy the single bit into three bits:</p>
+<p><span class="math notranslate nohighlight">\(0 \rightarrow 000\)</span></p>
+<p><span class="math notranslate nohighlight">\(1 \rightarrow 111\)</span></p>
+<p>The noisy channel could cause bit flips such as <span class="math notranslate nohighlight">\(000 \rightarrow 001\)</span>, which happens with a probability of <span class="math notranslate nohighlight">\(p\)</span>. In majority voting, we would set the register back to <span class="math notranslate nohighlight">\(000\)</span> after the channel. Clearly, if two or more bits flip, then majority voting fails. This happens with probability given by binomial statistics:</p>
+<p><span class="math notranslate nohighlight">\(\begin{eqnarray}
+  P_\text{fail} =&amp; \sum_{n=2}^3 p^n (1-p)^{3-n} 
+   \begin{pmatrix}
+     3 \\
+     n
+   \end{pmatrix} \\
+   =&amp; 3 p^2 (1 - p) + p^3 = 3 p^2 - 2 p^3
+ \end{eqnarray}\)</span></p>
+<div class="cell tag_hide_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">P_fail_1</span> <span class="o">=</span> <span class="n">p</span>
+<span class="n">P_fail_3</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">p</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">p</span><span class="o">**</span><span class="mi">3</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">P_fail_1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;single-bit&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">P_fail_3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;three-bit&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$p$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$P_\mathrm</span><span class="si">{fail}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="s1">&#39;14&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/BASICS-quantum-information_18_0.png" src="_images/BASICS-quantum-information_18_0.png" />
+</div>
+</div>
+<p>We see that the majority voting code is better if <span class="math notranslate nohighlight">\(p&lt;1/2\)</span>.</p>
+<p>The quantum error correction code must overcome three major difficulties: (1) we can’t copy a quantum state; (2) errors are continuous (not discrete, as for the classical system); (3) we can’t measure an unknown quantum state without perturbing it.</p>
+<p>The following example illustrates that quantum error correction is nevertheless possible and improves on the stabilty of a qubit. In analogy to the classical code, let’s consider encoding a qubit into three qubits. Consider a state</p>
+<p><span class="math notranslate nohighlight">\(\ket{\psi} = c_0 \ket{0} + c_1 \ket{1}\)</span></p>
+<p>and encode the basis states</p>
+<p><span class="math notranslate nohighlight">\(\ket{0} \rightarrow \ket{000}\)</span></p>
+<p>and</p>
+<p><span class="math notranslate nohighlight">\(\ket{1} \rightarrow \ket{111}\)</span></p>
+<p>where the encoding operation can be done with the following circuit involving two CNOT gates, where we use the notation that the channel with the solid circles is the control:</p>
+<p><em>FIXME: THIS FIGURE IS NOT VISIBLE TO ME WHEN I OPEN THE MATHEMATICA NOTEBOOK</em></p>
+<p>Thus our information is encoded in the state</p>
+<p><span class="math notranslate nohighlight">\(\ket{\psi'} = c_0\ket{000} + c_1\ket{111}\)</span></p>
+<p>Now we detect if a single bit is flipped using the following <em>error-detection projectors</em>:</p>
+<p><span class="math notranslate nohighlight">\(\begin{eqnarray}
+P_0 =&amp; \ket{000}\bra{000} + \ket{111}\bra{111} \\
+P_1 =&amp; \ket{100}\bra{100} + \ket{011}\bra{011} \\
+P_2 =&amp; \ket{010}\bra{010} + \ket{101}\bra{101} \\
+P_3 =&amp; \ket{001}\bra{001} + \ket{110}\bra{110}
+ \end{eqnarray}\)</span></p>
+<p>Suppose that with probability <span class="math notranslate nohighlight">\(p\)</span>, one of the qubits flipped, producing, say, the state</p>
+<p><span class="math notranslate nohighlight">\(\ket{\psi''} = c_0 \ket{001} + c_1 \ket{110}\)</span></p>
+<p>Let’s check the probabilties of measuring our different projectors:</p>
+<p><span class="math notranslate nohighlight">\(\begin{eqnarray}
+p_0 =&amp; \bra{\psi''}P_0\ket{\psi''} \\
+p_1 =&amp; \bra{\psi''}P_1\ket{\psi''} \\
+p_2 =&amp; \bra{\psi''}P_2\ket{\psi''} \\
+p_3 =&amp; \bra{\psi''}P_3\ket{\psi''}
+ \end{eqnarray}\)</span></p>
+<p>So we would certainly measure <span class="math notranslate nohighlight">\(P_3\)</span>, telling us which of the bits was flipped. The state after the measurement is</p>
+<p><span class="math notranslate nohighlight">\(\begin{eqnarray}
+ \ket{\psi'''} = \frac{P_3 \ket{\psi''}}{\bra{\psi''}P_3\ket{\psi''}} =&amp; c_0\ket{001} + c_1\ket{110} \\
+               =&amp; \ket{\psi}
+ \end{eqnarray}\)</span></p>
+<p><em>i.e.</em>, the error-detection projector did not change the state! Thus we didn’t learn anything more about the coefficients in</p>
+<p><span class="math notranslate nohighlight">\(\ket{\psi'} = c_0\ket{000} + c_1\ket{111}\)</span></p>
+<p>so the state is still protected. All four error detection operators have this property.</p>
+<p>Conditional on the outcome of the measurement by <span class="math notranslate nohighlight">\(P_i\)</span>, we can finally restore the state by applying a NOT to the <span class="math notranslate nohighlight">\(i^{\text{th}}\)</span> qubit, i.e., by applying <span class="math notranslate nohighlight">\(X_i\)</span>.</p>
+<p>Clearly, our procedure does not work when two or more spin flips have occurred. Thus, the error correction again fails with probabilty</p>
+<p><span class="math notranslate nohighlight">\(\begin{eqnarray}
+  P_\text{fail} =&amp; \sum_{n=2}^3 p^n (1-p)^{3-n} 
+   \begin{pmatrix}
+     3 \\
+     n
+   \end{pmatrix} \\
+   =&amp; 3 p^2 (1 - p) + p^3 = 3 p^2 - 2 p^3
+ \end{eqnarray}\)</span></p>
+<p>just like for the classical error correction code.</p>
+</section>
+<section id="xx-5-entanglement-based-qkd">
+<h2><span class="section-number">2.6. </span>XX.5 Entanglement-Based QKD<a class="headerlink" href="#xx-5-entanglement-based-qkd" title="Permalink to this headline">#</a></h2>
+<p>Alice and Bob share many entangled photon pairs of the form</p>
+<p><span class="math notranslate nohighlight">\(\ket{\psi} = \frac{\ket{XX} + \ket{YY}}{\sqrt{2}}\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are two orthogonal states; for example, <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> could refer to the polarization states of a photon.  We can consider another basis,</p>
+<p><span class="math notranslate nohighlight">\(\ket{u} = \frac{\ket{x} + \ket{y}}{\sqrt{2}}, \ket{v} = \frac{\ket{x} - \ket{y}}{\sqrt{2}} \text{.}\)</span></p>
+<p>Note, the states are then also maximally entangled:</p>
+<p><span class="math notranslate nohighlight">\(\ket{\psi} = \frac{1}{\sqrt{2}} \bigg ( \frac{\ket{u} + \ket{v}}{\sqrt{2}} \frac{\ket{u} + \ket{v}}{\sqrt{2}} + 
+              \frac{\ket{u} - \ket{v}}{\sqrt{2}} \frac{\ket{u} - \ket{v}}{\sqrt{2}} \bigg )\)</span></p>
+<p><span class="math notranslate nohighlight">\(\ket{\psi} = \frac{1}{\sqrt{2}} \frac{\ket{uu} + \ket{vv}}{\sqrt{2}}\)</span></p>
+<p>Thus, whether Alice and Bob both measure in the x-y basis or both in the u-v basis, their results will be perfectly correlated. If they measure in different bases, their measurements are completely uncorrelated. Alice and Bob publically compare their basis choice and agree to keep only those cases where they chose the same basis. This forms the <em>sifted key</em>.</p>
+<p>Any communication will have some chance of errors, and QKD is no exception. These errors are mostly related to experimental imperfections – for instance, imperfect detectors, lossy channels, etc. Importantly, errors can also come from eavesdropping! We therefore need to employ error correction to achieve noise-free communication.</p>
+<p>Alice, Bob, and Eve possess strings <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span>, an <span class="math notranslate nohighlight">\(Z\)</span> after the key sifting. Alice sends Bob a message <span class="math notranslate nohighlight">\(U\)</span> so that knowledge of <span class="math notranslate nohighlight">\(Y\)</span> and <span class="math notranslate nohighlight">\(U\)</span> leaves little uncertainty of <span class="math notranslate nohighlight">\(X\)</span>.</p>
+<p>To see this we can use the Shannon entropy function</p>
+<p><span class="math notranslate nohighlight">\(H(X) = -\sum_x p(x) \log_2 p(x)\)</span></p>
+<p>… and the conditional entropy function</p>
+<p><span class="math notranslate nohighlight">\(H(X|Y = y) = \sum_y p(y) H(X | Y = y)\)</span></p>
+<p>The message <span class="math notranslate nohighlight">\(U\)</span> should give Bob enough information so that</p>
+<p><span class="math notranslate nohighlight">\(H(X|Y U) \approx 0\)</span></p>
+<p><em>FIXME – CONTINUE FROM HERE</em></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="BASICS-quantum-optics-basics.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>Chapter XX – The Basics of Quantum Optics</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Dirk Englund, Marc Baldo, Donnie Keathley<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

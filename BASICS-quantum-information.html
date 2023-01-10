@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2. Chapter XX – Quantum Information &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+    <title>Chapter XX – Quantum Information &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,7 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="1. Chapter XX – The Basics of Quantum Optics" href="BASICS-quantum-optics-basics.html" />
+    <link rel="next" title="Chapter XX – Interference, Entanglement and Quantum-Enhanced Metrology" href="T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html" />
+    <link rel="prev" title="Chapter XX – The Basics of Quantum Optics" href="BASICS-quantum-optics-basics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -114,15 +115,32 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introductory Material
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="BASICS-quantum-optics-basics.html">
-   1. Chapter XX – The Basics of Quantum Optics
+   Chapter XX – The Basics of Quantum Optics
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   2. Chapter XX – Quantum Information
+   Chapter XX – Quantum Information
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Interference and Entanglement
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html">
+   Chapter XX – Interference, Entanglement and Quantum-Enhanced Metrology
   </a>
  </li>
 </ul>
@@ -304,56 +322,56 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#packages-functions-and-variables">
-   2.1. Packages, Functions and Variables
+   Packages, Functions and Variables
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#xx-1-quantum-bits-qubits">
-   2.2. XX.1 Quantum Bits (qubits)
+   XX.1 Quantum Bits (qubits)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#xx-2-quantum-gates">
-   2.3. XX.2 Quantum Gates
+   XX.2 Quantum Gates
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#single-qubit-gates">
-     2.3.1. Single Qubit Gates
+     Single Qubit Gates
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#two-qubit-gates">
-     2.3.2. Two Qubit Gates
+     Two Qubit Gates
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#xx-3-quantum-teleportation">
-   2.4. XX.3 Quantum Teleportation
+   XX.3 Quantum Teleportation
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#teleportation-with-cnot">
-     2.4.1. Teleportation With CNOT
+     Teleportation With CNOT
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#teleportation-without-cnot">
-     2.4.2. Teleportation Without CNOT
+     Teleportation Without CNOT
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#xx-4-quantum-error-correction">
-   2.5. XX.4 Quantum Error Correction
+   XX.4 Quantum Error Correction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#xx-5-entanglement-based-qkd">
-   2.6. XX.5 Entanglement-Based QKD
+   XX.5 Entanglement-Based QKD
   </a>
  </li>
 </ul>
@@ -377,56 +395,56 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#packages-functions-and-variables">
-   2.1. Packages, Functions and Variables
+   Packages, Functions and Variables
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#xx-1-quantum-bits-qubits">
-   2.2. XX.1 Quantum Bits (qubits)
+   XX.1 Quantum Bits (qubits)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#xx-2-quantum-gates">
-   2.3. XX.2 Quantum Gates
+   XX.2 Quantum Gates
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#single-qubit-gates">
-     2.3.1. Single Qubit Gates
+     Single Qubit Gates
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#two-qubit-gates">
-     2.3.2. Two Qubit Gates
+     Two Qubit Gates
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#xx-3-quantum-teleportation">
-   2.4. XX.3 Quantum Teleportation
+   XX.3 Quantum Teleportation
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#teleportation-with-cnot">
-     2.4.1. Teleportation With CNOT
+     Teleportation With CNOT
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#teleportation-without-cnot">
-     2.4.2. Teleportation Without CNOT
+     Teleportation Without CNOT
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#xx-4-quantum-error-correction">
-   2.5. XX.4 Quantum Error Correction
+   XX.4 Quantum Error Correction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#xx-5-entanglement-based-qkd">
-   2.6. XX.5 Entanglement-Based QKD
+   XX.5 Entanglement-Based QKD
   </a>
  </li>
 </ul>
@@ -440,7 +458,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-xx-quantum-information">
-<h1><span class="section-number">2. </span>Chapter XX – Quantum Information<a class="headerlink" href="#chapter-xx-quantum-information" title="Permalink to this headline">#</a></h1>
+<h1>Chapter XX – Quantum Information<a class="headerlink" href="#chapter-xx-quantum-information" title="Permalink to this headline">#</a></h1>
 <p>In this chapter we will discuss core concepts in quantum information.  Core principles are explained through the lens of photonic implementations of quantum infromation as this will be how we explore these concepts in the laboratory for this course.  However, you should note that these concepts extend to any quantum information system.</p>
 <p>This recitation will specifically cover the following topics:</p>
 <ol class="simple">
@@ -452,7 +470,7 @@ title="Print to PDF"
 <li><p>Quantum Key Distribution</p></li>
 </ol>
 <section id="packages-functions-and-variables">
-<h2><span class="section-number">2.1. </span>Packages, Functions and Variables<a class="headerlink" href="#packages-functions-and-variables" title="Permalink to this headline">#</a></h2>
+<h2>Packages, Functions and Variables<a class="headerlink" href="#packages-functions-and-variables" title="Permalink to this headline">#</a></h2>
 <p>The following code-block contains the packages, functions and variables needed for the code found later in this notebook.  It must be run first.  Note that if you are running this on your personal computer, you should ensure that all packages needed are installed first (for example the <a class="reference external" href="https://numpy.org/">numpy</a>, <a class="reference external" href="https://scipy.org/">scipy</a>, and <a class="reference external" href="https://matplotlib.org/">matplotlib</a> packages must be installed on your computer along with others).  You can find a launcher link at the top to conveniently run this notebook in Google Colab.</p>
 <p>The code below is hidden by default, but you are encouraged to expand it and study it.  The functions and constants will update as needed during the progression of the course, so you should note what new functions have been and added and study how they work.</p>
 <div class="cell tag_hide_cell docutils container">
@@ -487,7 +505,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="xx-1-quantum-bits-qubits">
-<h2><span class="section-number">2.2. </span>XX.1 Quantum Bits (qubits)<a class="headerlink" href="#xx-1-quantum-bits-qubits" title="Permalink to this headline">#</a></h2>
+<h2>XX.1 Quantum Bits (qubits)<a class="headerlink" href="#xx-1-quantum-bits-qubits" title="Permalink to this headline">#</a></h2>
 <p>Analogous to the bit, the fundamental unit of information of classical computers, a quantum bit (qubit)
 corresponds to a two level system. However, the qubit can have both values at the same time:</p>
 <p><span class="math notranslate nohighlight">\(\begin{equation}
@@ -508,9 +526,9 @@ of a photon in a particular basis (e.g., linear or circular), the population of 
 <p>If we measure the first qubit, we obtain either ‘0’ or ‘1’ with equal probability. If we measure ‘1’, then the state is projected to <span class="math notranslate nohighlight">\(\ket{\psi} = \ket{11}\)</span>; if we measure ‘0’, then the state is projected to <span class="math notranslate nohighlight">\(\ket{\psi} = \ket{00}\)</span>. The measurement outcomes are correlated, even though the two qubits could be a different locations.</p>
 </section>
 <section id="xx-2-quantum-gates">
-<h2><span class="section-number">2.3. </span>XX.2 Quantum Gates<a class="headerlink" href="#xx-2-quantum-gates" title="Permalink to this headline">#</a></h2>
+<h2>XX.2 Quantum Gates<a class="headerlink" href="#xx-2-quantum-gates" title="Permalink to this headline">#</a></h2>
 <section id="single-qubit-gates">
-<h3><span class="section-number">2.3.1. </span>Single Qubit Gates<a class="headerlink" href="#single-qubit-gates" title="Permalink to this headline">#</a></h3>
+<h3>Single Qubit Gates<a class="headerlink" href="#single-qubit-gates" title="Permalink to this headline">#</a></h3>
 <ol>
 <li><p>NOT Gate</p>
 <br>
@@ -560,7 +578,7 @@ M_{\text{H}} =
 </ol>
 </section>
 <section id="two-qubit-gates">
-<h3><span class="section-number">2.3.2. </span>Two Qubit Gates<a class="headerlink" href="#two-qubit-gates" title="Permalink to this headline">#</a></h3>
+<h3>Two Qubit Gates<a class="headerlink" href="#two-qubit-gates" title="Permalink to this headline">#</a></h3>
 <ol>
 <li><p>Two-qubit CNOT</p>
 <br>
@@ -583,11 +601,11 @@ M_{\text{CN}} =
 </section>
 </section>
 <section id="xx-3-quantum-teleportation">
-<h2><span class="section-number">2.4. </span>XX.3 Quantum Teleportation<a class="headerlink" href="#xx-3-quantum-teleportation" title="Permalink to this headline">#</a></h2>
+<h2>XX.3 Quantum Teleportation<a class="headerlink" href="#xx-3-quantum-teleportation" title="Permalink to this headline">#</a></h2>
 <p>Quantum teleportation is a technique that allows us to transfer a quantum state without physically moving the system that encodes the state. For instance, suppose Alice has a <span class="math notranslate nohighlight">\(\ket{\psi} = c_0 \ket{0} + c_1 \ket{1}\)</span> encoded in two levels of a Cs atom in her setup in Pasadena, and suppose she wants to transfer this state to Bob’s Cs atom in New York. It would be impractical to move the atom setup from Los Angeles to New York. Furthermore, Alice doesn’t know the state <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> so measuring it would destroy it. Even if she did know the state, it would take infinitely long to transfer the information on the coefficients <span class="math notranslate nohighlight">\(c_0\)</span> and <span class="math notranslate nohighlight">\(c_1\)</span> since they’re continuous variables.</p>
 <p>Alice and Bob can transfer the state if she and Bob also have access to one pair of an entangled state, let’s say the Bell state <span class="math notranslate nohighlight">\(\beta_{00}\)</span> discussed above. The entangled state could consist of two Cs atoms, one in each city.</p>
 <section id="teleportation-with-cnot">
-<h3><span class="section-number">2.4.1. </span>Teleportation With CNOT<a class="headerlink" href="#teleportation-with-cnot" title="Permalink to this headline">#</a></h3>
+<h3>Teleportation With CNOT<a class="headerlink" href="#teleportation-with-cnot" title="Permalink to this headline">#</a></h3>
 <p>The protocol goes as follows. Alice begins with the product state of her state and <span class="math notranslate nohighlight">\(\beta_{00}\)</span>:</p>
 <p><span class="math notranslate nohighlight">\(\begin{array}
  \ket{\psi_i} &amp;= (c_0\ket{0} + c_1\ket{1}) \bigotimes \frac{1}{\sqrt{2}} \big ( \ket{0_A \times 0_B} + \ket{1_A \times 1_B} \big ) \\
@@ -632,7 +650,7 @@ M_{\text{CN}} =
 <p>Teleportation shows that a quantum state can be moved between different physical informations. Quantum teleportation is also crucial for constructing gates that are protected from the environment, using redundant encoding in error correction codes. Quantum teleportation is also crucial for enabling efficient gates in certain quantum computation implementations, such as linear optics quantum computation.</p>
 </section>
 <section id="teleportation-without-cnot">
-<h3><span class="section-number">2.4.2. </span>Teleportation Without CNOT<a class="headerlink" href="#teleportation-without-cnot" title="Permalink to this headline">#</a></h3>
+<h3>Teleportation Without CNOT<a class="headerlink" href="#teleportation-without-cnot" title="Permalink to this headline">#</a></h3>
 <p>We will consider a slightly different scheme that was used to experimentally implement quantum teleportation between two entangled photons. Assume these are in the state</p>
 <p><span class="math notranslate nohighlight">\(\ket{\psi_{AB}} = \frac{1}{\sqrt{2}} \big ( \ket{0_A \times 0_B} - \ket{1_A \times 1_B} \big )\)</span></p>
 <p>where again A and B are in possition by two Alice and Bob at different locations. Alice again has her state <span class="math notranslate nohighlight">\(\ket{\psi} = c_0\ket{0} + c_1\ket{1}\)</span>, and the full state at the beginning of the protocol is given by</p>
@@ -651,7 +669,7 @@ M_{\text{CN}} =
 </section>
 </section>
 <section id="xx-4-quantum-error-correction">
-<h2><span class="section-number">2.5. </span>XX.4 Quantum Error Correction<a class="headerlink" href="#xx-4-quantum-error-correction" title="Permalink to this headline">#</a></h2>
+<h2>XX.4 Quantum Error Correction<a class="headerlink" href="#xx-4-quantum-error-correction" title="Permalink to this headline">#</a></h2>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition note">
@@ -744,7 +762,7 @@ p_3 =&amp; \bra{\psi''}P_3\ket{\psi''}
 <p>just like for the classical error correction code.</p>
 </section>
 <section id="xx-5-entanglement-based-qkd">
-<h2><span class="section-number">2.6. </span>XX.5 Entanglement-Based QKD<a class="headerlink" href="#xx-5-entanglement-based-qkd" title="Permalink to this headline">#</a></h2>
+<h2>XX.5 Entanglement-Based QKD<a class="headerlink" href="#xx-5-entanglement-based-qkd" title="Permalink to this headline">#</a></h2>
 <p>Alice and Bob share many entangled photon pairs of the form</p>
 <p><span class="math notranslate nohighlight">\(\ket{\psi} = \frac{\ket{XX} + \ket{YY}}{\sqrt{2}}\)</span></p>
 <p>where <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are two orthogonal states; for example, <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> could refer to the polarization states of a photon.  We can consider another basis,</p>
@@ -797,8 +815,15 @@ p_3 =&amp; \bra{\psi''}P_3\ket{\psi''}
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1. </span>Chapter XX – The Basics of Quantum Optics</p>
+            <p class="prev-next-title">Chapter XX – The Basics of Quantum Optics</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter XX – Interference, Entanglement and Quantum-Enhanced Metrology</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>

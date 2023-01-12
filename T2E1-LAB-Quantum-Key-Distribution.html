@@ -1,0 +1,766 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quantum Key Distribution Laboratory : Instructions &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="LAB – Solid State Spins" href="T3E3-LAB-Cavity_QED_sensor.html" />
+    <link rel="prev" title="QKD Text" href="T2E1-TEXT-Quantum-Key-Distribution.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo-ibm.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">6.2410 -- Laboratory for Quantum Information Science and Engineering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   6.2410 – Laboratory for Quantum Information Science and Engineering
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introductory Material
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="BASICS-quantum-optics-basics.html">
+   BASICS – Quantum Optics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="BASICS-quantum-information.html">
+   BASICS – Quantum Information
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Interference and Entanglement
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html">
+   TEXT – Interference, Entanglement and Quantum-Enhanced Metrology
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Quantum Key Distribution
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="T2E1-TEXT-Quantum-Key-Distribution.html">
+   QKD Text
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Quantum Key Distribution Laboratory : Instructions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Solid State Spins
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="T3E3-LAB-Cavity_QED_sensor.html">
+   LAB – Solid State Spins
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/T2E1-LAB-Quantum-Key-Distribution.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="git@github.mit.edu:pdkeat2/6.2410-lab.git"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="git@github.mit.edu:pdkeat2/6.2410-lab.git/issues/new?title=Issue%20on%20page%20%2FT2E1-LAB-Quantum-Key-Distribution.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimate-the-secret-key-rate-you-expect-to-see">
+   Estimate the secret key rate you expect to see
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaluate-equipment">
+     Evaluate Equipment
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#verify-mean-number-of-photons">
+   Verify mean number of photons
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bb84-s-security-is-based-on-the-no-cloning-theorem">
+     BB84’s security is based on the no-cloning theorem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hanbury-brown-twiss">
+     Hanbury Brown Twiss
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generate-raw-key">
+   Generate Raw Key
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sift-the-raw-bits">
+   Sift the raw bits
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#error-correction">
+   Error Correction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#privacy-amplification">
+   Privacy Amplification
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#with-heralding">
+   With heralding
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Quantum Key Distribution Laboratory : Instructions</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimate-the-secret-key-rate-you-expect-to-see">
+   Estimate the secret key rate you expect to see
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaluate-equipment">
+     Evaluate Equipment
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#verify-mean-number-of-photons">
+   Verify mean number of photons
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bb84-s-security-is-based-on-the-no-cloning-theorem">
+     BB84’s security is based on the no-cloning theorem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hanbury-brown-twiss">
+     Hanbury Brown Twiss
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generate-raw-key">
+   Generate Raw Key
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sift-the-raw-bits">
+   Sift the raw bits
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#error-correction">
+   Error Correction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#privacy-amplification">
+   Privacy Amplification
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#with-heralding">
+   With heralding
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="quantum-key-distribution-laboratory-instructions">
+<h1>Quantum Key Distribution Laboratory : Instructions<a class="headerlink" href="#quantum-key-distribution-laboratory-instructions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="estimate-the-secret-key-rate-you-expect-to-see">
+<h2>Estimate the secret key rate you expect to see<a class="headerlink" href="#estimate-the-secret-key-rate-you-expect-to-see" title="Permalink to this headline">¶</a></h2>
+<p>Ultimately, I want to know the secure key rate (SKR) of the system, ie how many secure bits per second Alice and Bob can generate. <em>Calculation time for error correction and privacy amplification don’t affect the SKR</em></p>
+<ul class="simple">
+<li><p>How fast can Alice encode photons?</p></li>
+<li><p>What’s the loss between Alice’s source and Bob’s measurement? If Alice sends 1 photon, what’s the probability Bob gets a click?</p></li>
+<li><p>How good is Alice and Bob’s equipment? ie if Alice sets her HWP to send a photon at <span class="math notranslate nohighlight">\(22.5^{\circ}\)</span>, how correct is that? If Bob thinks he’s measuring a photon with polarization <span class="math notranslate nohighlight">\(22.5^{\circ}\)</span>, how often is he correct?</p></li>
+<li><p>How much of the raw key gets lost through sifting, BER estimate, information reconciliation, and privacy amplification?</p></li>
+</ul>
+<div class="section" id="evaluate-equipment">
+<h3>Evaluate Equipment<a class="headerlink" href="#evaluate-equipment" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Measure the efficiency of the APDs</p></li>
+<li><p>Calibrate attenuators</p></li>
+<li><p>Measure the power at a level the power meter can see</p></li>
+<li><p>Attenuate the known power and measure singles.</p></li>
+<li><p>Repeat measurement for all APDs.</p></li>
+<li><p>Put information in a table</p></li>
+<li><p>Evaluate g2 to verify single photon source</p></li>
+<li><p>Why do we care?</p></li>
+<li><p>See <a class="reference external" href="https://qutools.com/qued/qued-sample-experiments/sample-experiments-particle-nature-of-photons/">HBT on QuTools</a></p></li>
+<li><p>The HWP</p></li>
+<li><p>How fast does it spin?</p></li>
+<li><p>How well does it rotate the polarization?</p></li>
+<li><p>The PBS</p></li>
+<li><p>How well does it eliminate the other polarization?</p></li>
+<li><p>What is the loss?</p></li>
+<li><p>How much leaks through?</p></li>
+<li><p>Estimate how much that will contribute to loss and/or errors.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="verify-mean-number-of-photons">
+<h2>Verify mean number of photons<a class="headerlink" href="#verify-mean-number-of-photons" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bb84-s-security-is-based-on-the-no-cloning-theorem">
+<h3>BB84’s security is based on the no-cloning theorem<a class="headerlink" href="#bb84-s-security-is-based-on-the-no-cloning-theorem" title="Permalink to this headline">¶</a></h3>
+<p>The no-cloning theorem states that for a given quanta in a superposition of eigenstates, it’s impossible to produce a perfect copy. See, eg <span class="xref myst">Wootters and Zurek 1982</span> or <span class="xref myst">Dieks 1982</span>.</p>
+<p>Photon number splitting attack <span class="xref myst">Brassard, Lutkenhaus, Mor, Sanders 2000</span></p>
+<p>Need to have single photon source - how to verify that?</p>
+</div>
+<div class="section" id="hanbury-brown-twiss">
+<h3>Hanbury Brown Twiss<a class="headerlink" href="#hanbury-brown-twiss" title="Permalink to this headline">¶</a></h3>
+<p><em>There will need to be something about this in the “chapter” on QKD. It’d be good to talk about how g2 can indicate different types of light</em>
+Need to measure the g2 of the source to verify it’s single photon</p>
+<ul class="simple">
+<li><p>Read the quTools-provided manual</p></li>
+<li><p>Generate Python code to do the g2 measurement - need a code to do “if idler clicks, then measure signal on 2 detectors, take coincidence. Let students troubleshoot</p></li>
+<li><p>A cool extension would be setting up HBT with variable time delay and then doing the measurements with coherent light, the heralded SPDC, and thermal light and showing the differences</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pseudo code</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="generate-raw-key">
+<h2>Generate Raw Key<a class="headerlink" href="#generate-raw-key" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Start with many photons per bit</p></li>
+<li><p>Generate all the bases at the beginning</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import necessary Libraries</span>
+<span class="c1"># Generate the basis for each bit from Alice and Bob</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">LENGTH</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+<span class="c1"># Generate the random bases for Alice and Bob. Let 0 be HV and 1 be AD</span>
+<span class="n">basis_Alice</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">k</span> <span class="o">=</span> <span class="n">LENGTH</span><span class="p">)</span>
+<span class="n">basis_Bob</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">k</span> <span class="o">=</span> <span class="n">LENGTH</span><span class="p">)</span>
+
+<span class="c1"># Now set the correct values for Alice and Bob&#39;s rotation</span>
+<span class="n">angles_Alice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">LENGTH</span><span class="p">))</span>
+<span class="n">angles_Bob</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">LENGTH</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">LENGTH</span><span class="p">):</span>
+    <span class="n">angles_Bob</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="mf">22.5</span><span class="o">*</span><span class="n">basis_Bob</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+    <span class="n">angles_Alice</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="mf">22.5</span><span class="o">*</span><span class="n">basis_Alice</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">angles_Bob</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">angles_Alice</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[22.5  0.   0.   0.  22.5 22.5  0.   0.  22.5  0. ]
+[ 0.   0.   0.  22.5  0.  22.5 22.5  0.   0.   0. ]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Place holder for actual data gathering</span>
+
+<span class="c1"># Send in the correct angles for the polarizer</span>
+
+<span class="c1"># Then read the data</span>
+
+<span class="c1"># Repeat</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sift-the-raw-bits">
+<h2>Sift the raw bits<a class="headerlink" href="#sift-the-raw-bits" title="Permalink to this headline">¶</a></h2>
+<p>You need to check several things:</p>
+<ol class="simple">
+<li><p>Did Bob get a click?</p></li>
+<li><p>If yes, did he have the same basis as Alice?</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Place holder for checking for Bob getting a click</span>
+
+<span class="c1"># For each transmitted bit: did bob get any clicks? Select only the bits where Bob got a click</span>
+
+<span class="c1"># If Bob got a click, tell us whether he got a 1 or a 0</span>
+
+<span class="c1"># Then check if Bob and Alice have same basis. If yes, hooray, add that bit to the key</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="error-correction">
+<h2>Error Correction<a class="headerlink" href="#error-correction" title="Permalink to this headline">¶</a></h2>
+<p>I found a description of Cascade Error Correction <a class="reference external" href="https://cascade-python.readthedocs.io/en/latest/protocol.html">here</a>.</p>
+<p>The below section uses a very simple one way Hamming code following the example in the section “Error Correction for Quantum Key Distribution” in Loepp and Wootters <a class="reference external" href="https://www.cambridge.org/core/books/abs/protecting-information/quantum-cryptography-revisited/8A88AA6C8C88E8A07E535FACEDE3C310">book available online with MIT Library sign in</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estimate the q BER by revealing some of the bits.</span>
+
+<span class="n">length_reveal</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="c1"># errors = (bits_tx_sifted[0:length_reveal - 1] != bits_rx_sifted[0:length_reveal - 1]).astype(int)</span>
+<span class="c1"># errors_total = errors.sum()</span>
+<span class="c1"># BER = 1.0/length_reveal * errors.sum()</span>
+
+<span class="n">Al_all</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="n">length_reveal</span><span class="o">+</span><span class="mi">30</span><span class="p">,))</span>
+
+<span class="c1"># give Bob some errors for testing</span>
+<span class="n">err_vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">length_reveal</span><span class="o">+</span><span class="mi">30</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="p">[</span><span class="mf">0.9</span><span class="p">,</span><span class="mf">0.1</span><span class="p">])</span>
+<span class="n">Bob_all</span> <span class="o">=</span> <span class="n">Al_all</span> <span class="o">^</span> <span class="n">err_vec</span>
+
+<span class="n">key_test</span> <span class="o">=</span> <span class="n">Al_all</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">length_reveal</span><span class="p">]</span>
+<span class="n">Bob_test</span> <span class="o">=</span> <span class="n">Bob_all</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">length_reveal</span><span class="p">]</span>
+<span class="n">BERest</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">key_test</span> <span class="o">!=</span> <span class="n">Bob_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">BERest</span><span class="p">)</span>
+
+<span class="c1"># Discard those bits</span>
+<span class="n">Al_all</span> <span class="o">=</span> <span class="n">Al_all</span><span class="p">[</span><span class="n">length_reveal</span><span class="p">:]</span>
+<span class="n">Bob_all</span> <span class="o">=</span> <span class="n">Bob_all</span><span class="p">[</span><span class="n">length_reveal</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.08
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Working out the Hamming Error matrix once</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+
+<span class="c1"># Define the error correction functions we&#39;ll need</span>
+
+<span class="k">def</span> <span class="nf">errCor</span><span class="p">(</span><span class="n">err_mat</span><span class="p">,</span><span class="n">H</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># Multiply Alice&#39;s bits a by H</span>
+    <span class="n">at</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">Hat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">at</span><span class="p">)</span>
+    <span class="n">Hat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">remainder</span><span class="p">(</span><span class="n">Hat</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="c1"># Multiply Bob&#39;s bits b by H</span>
+    <span class="n">bt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="n">Hbt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">bt</span><span class="p">)</span>
+    <span class="n">Hbt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">remainder</span><span class="p">(</span><span class="n">Hbt</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="c1"># Find Hb - Ha = s </span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">Hat</span> <span class="o">^</span> <span class="n">Hbt</span>
+    <span class="n">sT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    
+    <span class="c1"># s = He where e is the error vector.</span>
+    <span class="c1"># If we know s, we can find which row of the error matrix it matches</span>
+    <span class="c1"># Based on that, we know where the error is</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">err_mat</span><span class="o">==</span><span class="n">sT</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">err_vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span> 
+     <span class="n">err_vec</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+     
+    <span class="n">ev</span> <span class="o">=</span> <span class="n">err_vec</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">ev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">ev</span><span class="p">,(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
+
+    
+    <span class="c1"># Bob now has a corrected vector</span>
+    <span class="c1"># bc = binSub(b,err_vec)</span>
+    <span class="n">bc</span> <span class="o">=</span> <span class="n">b</span> <span class="o">^</span> <span class="n">ev</span>
+    <span class="k">return</span> <span class="n">bc</span>
+
+<span class="k">def</span> <span class="nf">makeErrMat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">H</span><span class="p">):</span>
+    <span class="n">err_mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">err_vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+        <span class="n">err_vec</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">HeT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">err_vec</span><span class="p">)</span>
+        <span class="n">HeTT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">HeT</span><span class="p">)</span>
+        <span class="c1"># print(&#39;err loc&#39;,err_vec)</span>
+        <span class="c1"># print(&#39;HeT&#39;, HeT)</span>
+        <span class="n">err_mat</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span> <span class="o">=</span> <span class="n">HeTT</span>    
+
+    <span class="n">err_mat</span> <span class="o">=</span> <span class="n">err_mat</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">err_mat</span>
+
+<span class="n">err_mat</span> <span class="o">=</span> <span class="n">makeErrMat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">H</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># do error correction for each block</span>
+
+<span class="c1"># The following is an example script</span>
+<span class="n">LL</span> <span class="o">=</span> <span class="mi">31</span>
+
+<span class="n">Al_all</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="n">LL</span><span class="p">,))</span>
+
+
+
+<span class="n">err_all</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">LL</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">err_all</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">err_all</span><span class="p">[</span><span class="mi">26</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">err_all</span><span class="p">[</span><span class="mi">18</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+
+<span class="n">Bob_all</span> <span class="o">=</span> <span class="n">Al_all</span> <span class="o">^</span> <span class="n">err_all</span>
+
+
+<span class="c1"># We&#39;ve skipped sifting for now</span>
+<span class="n">sk</span> <span class="o">=</span> <span class="n">Bob_all</span><span class="o">.</span><span class="n">size</span>
+
+<span class="n">cutoff</span> <span class="o">=</span>  <span class="n">sk</span> <span class="o">%</span> <span class="n">n</span> <span class="c1"># find key length modulo n</span>
+
+<span class="c1"># elimate the &quot;cut-off&quot; bits</span>
+<span class="n">Bob</span> <span class="o">=</span> <span class="n">Bob_all</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="n">cutoff</span><span class="p">]</span>
+
+<span class="c1"># reshape Alice and Bob&#39;s bits into a 2d matrix</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+
+
+<span class="n">Bob</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">Bob</span><span class="p">,(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
+<span class="n">Al</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">Al_all</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="n">cutoff</span><span class="p">],(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
+<span class="n">Al</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">a</span>
+<span class="n">Bob</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">b</span>
+
+<span class="n">shape</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">Al</span><span class="p">)</span>
+<span class="n">Bob_corr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">shape</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="c1">#initialize matrix for Bob&#39;s error correction</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
+    <span class="n">Al_word</span> <span class="o">=</span> <span class="n">Al</span><span class="p">[</span><span class="n">ii</span><span class="p">,:]</span>
+    <span class="n">Bob_word</span> <span class="o">=</span> <span class="n">Bob</span><span class="p">[</span><span class="n">ii</span><span class="p">,:]</span>
+    <span class="n">Bob_word_corr</span> <span class="o">=</span> <span class="n">errCor</span><span class="p">(</span><span class="n">err_mat</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">Al_word</span><span class="p">,</span><span class="n">Bob_word</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">Bob_corr</span><span class="p">[</span><span class="n">ii</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">Bob_word_corr</span>
+    
+<span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Al</span> <span class="o">!=</span> <span class="n">Bob_corr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="privacy-amplification">
+<h2>Privacy Amplification<a class="headerlink" href="#privacy-amplification" title="Permalink to this headline">¶</a></h2>
+<p>In this set-up, Eve isn’t interacting with the optical set-up, so the only information she has is what Alice and Bob share via the classical channel. So, following pg 184 from the above book, we simply get rid of the last 3 bits of each of the 7-word chunks, and Eve will have no information about Alice and Bob’s shared key.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Take the giant matrix of error-correct keys, and just skip the last few columns (or rows)</span>
+<span class="n">Bob_corr</span> <span class="o">=</span> <span class="n">Bob_corr</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">Al</span> <span class="o">=</span> <span class="n">Al</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+
+<span class="c1"># Then reshape the key into one long string of bits</span>
+<span class="n">Bob_key</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">Bob_corr</span><span class="p">,(</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">Al_key</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">Al</span><span class="p">,(</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="with-heralding">
+<h2>With heralding<a class="headerlink" href="#with-heralding" title="Permalink to this headline">¶</a></h2>
+<p>Now change the data taking so that you only measure clicks within a time <span class="math notranslate nohighlight">\(\Delta t\)</span> of the herald.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="T2E1-TEXT-Quantum-Key-Distribution.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">QKD Text</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="T3E3-LAB-Cavity_QED_sensor.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">LAB – Solid State Spins</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Dirk Englund, Marc Baldo, Donnie Keathley<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

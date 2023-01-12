@@ -19,7 +19,8 @@ parts:
     - file: T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.ipynb
   - caption: Quantum Key Distribution
     chapters:
-    - file: T2E1-LAB-quantum-key-distribution-lab.ipynb
+    - file: T2E1-TEXT-Quantum-Key-Distribution.ipynb
+    - file: T2E1-LAB-Quantum-Key-Distribution.ipynb
   - caption: Solid State Spins
     chapters:
     - file: T3E3-LAB-Cavity_QED_sensor.ipynb

@@ -40,7 +40,7 @@ display(HTML("<style>.jp-MarkdownCell .jp-Cell-inputWrapper { width: "+str(width
 display(HTML("<style>.jp-Cell-outputWrapper { width: "+str(width)+"% !important;  margin: 0 auto; }</style>"))
 ```
 
-# Chapter XX -- The Basics of Quantum Optics
+# BASICS -- Quantum Optics
 
 This course is about how we can leverage quantum systems as engineers.  As such it is not intended to be a course focused purely on the physics of quantum systems.  
 

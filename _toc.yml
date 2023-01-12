@@ -2,10 +2,13 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
+
 root: intro
+
 options:
   numbered: true
   
+
 parts:
   - caption: Introductory Material
     chapters:
@@ -15,8 +18,8 @@ parts:
     chapters:
     - file: T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.ipynb
   - caption: Quantum Key Distribution
-    - file: T2E1-LAB-quantum key distribution-lab.ipynb
-  - caption: Solid-State Spins
+    chapters:
+    - file: T2E1-LAB-quantum-key-distribution-lab.ipynb
+  - caption: Solid State Spins
     chapters:
     - file: T3E3-LAB-Cavity_QED_sensor.ipynb
-

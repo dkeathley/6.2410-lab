@@ -79,8 +79,7 @@ A schematic view of the Quantenkoffer's SPDC source.
 
 Before the lab, please first watch this video demonstration of the source.
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=VNoJ-0_c6c8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VNoJ-0_c6c8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Lab Exercise
 

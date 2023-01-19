@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="TEXT – Quantum Key Distribution" href="T2E1-TEXT-Quantum-Key-Distribution.html" />
@@ -269,6 +271,35 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aim-2-demonstration-of-polarization-entanglement">
+   Aim 2: Demonstration of Polarization Entanglement
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prelab">
+     Prelab
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aim-3-single-photon-interference">
+   Aim 3: Single-Photon Interference
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Prelab
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Lab Exercise
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -311,6 +342,35 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aim-2-demonstration-of-polarization-entanglement">
+   Aim 2: Demonstration of Polarization Entanglement
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prelab">
+     Prelab
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aim-3-single-photon-interference">
+   Aim 3: Single-Photon Interference
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Prelab
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Lab Exercise
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
                         </nav>
@@ -327,9 +387,9 @@ const thebe_selector_output = ".output, .cell_output"
 <ol class="simple">
 <li><p>Introduction to the quantenkoffer</p></li>
 <li><p>Understand SPDC generation of entangled photon pairs</p></li>
+<li><p>Demonstrate polarization entanglement between two photons</p></li>
 <li><p>Explore interference of a photon with itself</p></li>
 <li><p>Use the properties of coincidence detection to measure the speed of light</p></li>
-<li><p>Demonstrate polarization entanglement between two photons</p></li>
 <li><p>Explore the interference of two single photons: the Hong-Ou-Mandel effect</p></li>
 <li><p>Develop a NOON state interferometer demonstrating supersensitivty to path length changes</p></li>
 </ol>
@@ -349,7 +409,6 @@ const thebe_selector_output = ".output, .cell_output"
 <p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">A schematic view of the Quantenkoffer’s SPDC source.</span><a class="headerlink" href="#fig-t3e1-lab-spdc-source" title="Permalink to this image">¶</a></p>
 </div>
 <p>Before the lab, please first watch this video demonstration of the source.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VNoJ-0_c6c8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <div class="section" id="lab-exercise">
 <h3>Lab Exercise<a class="headerlink" href="#lab-exercise" title="Permalink to this headline">¶</a></h3>
@@ -358,12 +417,70 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>After turning the quantenkoffer on, place a periscope on each source port at the left side.  Thes bring up the underlying sources to the surface.</p></li>
 <li><p>Turn the red HeNe alignment source to full power.  You should now see a red light coming from each arm. This will be used for pre-alignment as it is following almost the same path as the single photon sources which are too weak for your eyes to detect.</p></li>
 <li><p>Now place a periscope on the two detector ports.  These send the light down to the single-photon detectors housed under the board.</p></li>
-<li></li>
+<li><p>Tap a source perisocope on the left to activate the source view on the control pad.  Adjust the mirrors A1, A2, and B1 and B2 to optimize the count rates on both detectors.</p></li>
+<li><p>Now, focusing on coincidence events (A and B), adjust the same mirrors to optimize coincidence counts.  You may note that this results in slightly less  than optimum total counts.  Tha is OK.  What we are doing is ensurin that we optimize for selection of entangled photon pairs for later experiments.</p></li>
 </ol>
-<p>Once you have completed these steps, your setup should look like that in <a class="reference internal" href="#fig-t3e1-lab-spdc-coincidence-setup"><span class="std std-numref">Fig. 12</span></a>.</p>
+<p>Once you have completed these steps, your setup should look like that in <a class="reference internal" href="#fig-t3e1-lab-spdc-coincidence-setup"><span class="std std-numref">Fig. 12</span></a>.  Typical values might be <span class="math notranslate nohighlight">\(3\times10^5\)</span> total counts in A and B, with <span class="math notranslate nohighlight">\(1.5\times10^4\)</span> coincidence counts.  You should not proceed until you get at least <span class="math notranslate nohighlight">\(1\times10^4\)</span> coincidence counts.</p>
 <div class="figure align-default" id="fig-t3e1-lab-spdc-coincidence-setup">
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/aim1-spdc-coincidence-setup.jpg"><img alt="QK SPDC Coincidences" class="bg-primary mb-1" src="_images/aim1-spdc-coincidence-setup.jpg" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">What your setup should look like for coincidence detection of the SPDC photons.  Note that here there are between 250K to 300K single electron events in each arm with 14K coincidence events.</span><a class="headerlink" href="#fig-t3e1-lab-spdc-coincidence-setup" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">What your setup should look like for coincidence detection of the SPDC photons.  Note that here there are between 250K to 300K single electron events in each arm with 14K coincidence events.  In the histogram view, you should see a strong peak near 0 seconds.</span><a class="headerlink" href="#fig-t3e1-lab-spdc-coincidence-setup" title="Permalink to this image">¶</a></p>
+</div>
+<p>What we have been doing is ensuring that we have selected the correct locations of the output cone angles from the SPDC crystal that correspond to photon pair locations.  There are many options for optimizing the counts in either detector A or B from either cone of the SPDC output, but only two relative locations will give truly entangled photon pairs.</p>
+</div>
+</div>
+<div class="section" id="aim-2-demonstration-of-polarization-entanglement">
+<h2>Aim 2: Demonstration of Polarization Entanglement<a class="headerlink" href="#aim-2-demonstration-of-polarization-entanglement" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="prelab">
+<h3>Prelab<a class="headerlink" href="#prelab" title="Permalink to this headline">¶</a></h3>
+<p>Before the lab, watch the following video related to the concepts we will explore in this part.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/126FD05vltU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+</div>
+<div class="section" id="aim-3-single-photon-interference">
+<h2>Aim 3: Single-Photon Interference<a class="headerlink" href="#aim-3-single-photon-interference" title="Permalink to this headline">¶</a></h2>
+<p>In this ecxercise we will build an interferometer to explore single-photon interference.  We will explore the coherence time of the single photons as well as the concept of interaction free measurement made possible through the wave-particle duality.</p>
+<div class="section" id="id1">
+<h3>Prelab<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Before the lab, watch the following video related to the concepts we will explore in this part.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4d6d8BB7_n0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+<div class="section" id="id2">
+<h3>Lab Exercise<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Construct a <a class="reference external" href="https://en.wikipedia.org/wiki/Michelson_interferometer">Michelson interferometer</a> on the quantenkoffer.  There’s technically not a fixed way to do this, but an example configuration is shown in <a class="reference internal" href="#fig-t3e1-lab-michelson-setup"><span class="std std-numref">Fig. 13</span></a>.  The important thing is that we need a motorized wedge in each arm for delay control of each arm. For alignment purposes, use the following procedure.</p>
+<ul class="simple">
+<li><p>Turn the red reference laser on to full power</p></li>
+<li><p>Direct the beam from one port to a beamsplitter using a 90 degree mirror</p></li>
+<li><p>Place a wedge just after the transmitted and reflected arm</p></li>
+<li><p>Using the alignment target, make sure the transmitted beam is aligned to the target with the 90 degree mirror</p></li>
+<li><p>Now do the same on the reflected path using the beamsplitter</p></li>
+<li><p>Place a flat mirror on each arm</p></li>
+<li><p>Looking at the output of the beamsplitter, you should see two beams.  Make sure both ar aligned to the target just after the beamsplitter</p></li>
+<li><p>Now let the beam travel to a flat surface further away (e.g. the wall or a board) – you should see two dots</p></li>
+<li><p>Overlap the two dots using a slight adjustment of the beamsplitter – you will notice interference flickering when they overlap</p></li>
+<li><p>Now direct the beam toward a detector periscope, making sure it is aligned to the target as you go</p></li>
+<li><p>Optimize the coupling to the detector for the alignment laser</p></li>
+<li><p>Turn the alignment laser off and repeat this step for the single-photon source</p></li>
+<li><p>Check that both arms are well aligned, tweaking the end mirror of each arm if necessary, by blocking one at a time and looking at the detector response</p></li>
+</ul>
+</li>
+</ol>
+<div class="figure align-default" id="fig-t3e1-lab-michelson-setup">
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/aim-3-michelson-setup.jpg"><img alt="QK Michelson Setup" class="bg-primary mb-1" src="_images/aim-3-michelson-setup.jpg" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">The configuration for a Michelson interferometer that we will use to explore single-photon interference in this lab.</span><a class="headerlink" href="#fig-t3e1-lab-michelson-setup" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="simple">
+<li><p>Look for single-photon interference</p>
+<ul class="simple">
+<li><p>Scan throuh the wedge postions on both arms looking for interference at the detector</p></li>
+<li><p>when found, note the position near the interference on the wedges</p></li>
+<li><p>Choose a wedge to oscillate, and move it around the interference region</p></li>
+<li><p>When found, your output should look like that shown in <a class="reference internal" href="#fig-t3e1-lab-interference-output"><span class="std std-numref">Fig. 14</span></a></p></li>
+<li><p>From this measurement, can you comment on the coherence time of the photons?  How does the interference relate to coherence time?  Explain how you determined a rough estimate of the coherence time.</p></li>
+</ul>
+</li>
+</ol>
+<div class="figure align-default" id="fig-t3e1-lab-interference-output">
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/aim-3-single-photon-interference-scan.jpg"><img alt="QK Michelson Setup" class="bg-primary mb-1" src="_images/aim-3-single-photon-interference-scan.jpg" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Scanning through delay position with a wedge to see single-photon interference at an output port.</span><a class="headerlink" href="#fig-t3e1-lab-interference-output" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>

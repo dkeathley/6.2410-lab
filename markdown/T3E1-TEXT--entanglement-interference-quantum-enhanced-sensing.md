@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.13.8
+    jupytext_version: 1.14.2
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -157,6 +157,8 @@ where $\varphi$ is the phase to be measured, and $N_\mathrm{ph}$ is the total nu
 +++ {"id": "caf35967-6267-459a-a1a9-dd34fbbb1f0f"}
 
 ### Analysis of Phase Estimation in an $N=2$ NOON State Interferometer
+
+<iframe src="https://drive.google.com/file/d/1DDXMLs7zM1zuTzA03w7DcJZp1YPt03Mu/preview" width="640" height="480" allow="autoplay"></iframe>
 
 Consider a setup that builds on the HOM setup as shown in Fig. {numref}`NOON-state-interferometer`.
 

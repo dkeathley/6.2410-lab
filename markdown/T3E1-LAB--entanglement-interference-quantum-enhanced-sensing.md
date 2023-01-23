@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.13.8
+    jupytext_version: 1.14.2
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -194,3 +194,13 @@ If done properly, you should see the signal increase each time the object is pla
 
 Each time the object is placed in the beam, the signal in channel B increases.  This is an "interaction-free" measurement.
 :::
+
++++
+
+## Aim 6: Quantum-Enhanced Measurement with a NOON State Interferometer
+
++++
+
+
+
+<iframe src="https://drive.google.com/file/d/1DRJjQdnbupAooSxLQuY_es3w9Idbgdeg/preview" width="640" height="480" allow="autoplay"></iframe>

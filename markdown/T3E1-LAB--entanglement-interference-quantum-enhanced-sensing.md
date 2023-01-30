@@ -51,7 +51,7 @@ Specific aims are:
  3. Explore interference of a photon with itself
  4. Use the properties of coincidence detection to measure the speed of light
  5. Explore the interference of two single photons: the Hong-Ou-Mandel effect
- 6. Develop a NOON state interferometer demonstrating supersensitivty to path length changes
+ 6. **BONUS:** Develop a NOON state interferometer demonstrating supersensitivty to path length changes
 
 +++
 
@@ -197,10 +197,16 @@ Each time the object is placed in the beam, the signal in channel B increases.  
 
 +++
 
-## Aim 6: Quantum-Enhanced Measurement with a NOON State Interferometer
+## Aim 4: Understanding Coincidence Detection -- Speed of Light Measurement
 
 +++
 
+## Aim 5: Single-Photon Interference and NOON State Generation -- Hong Ou Mandel Effect
 
++++
+
+## **BONUS** Aim 6: Quantum-Enhanced Measurement with a NOON State Interferometer
+
++++
 
 <iframe src="https://drive.google.com/file/d/1DRJjQdnbupAooSxLQuY_es3w9Idbgdeg/preview" width="640" height="480" allow="autoplay"></iframe>

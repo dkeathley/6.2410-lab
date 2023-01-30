@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Problem 1 &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+    <title>PRELAB: Quantum Computing with Qiskit &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,11 +50,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="LAB-IBM-Qiskit.html" />
+    <link rel="next" title="Quantum Computing Lab w/ Qiskit" href="LAB-IBM-Qiskit.html" />
     <link rel="prev" title="Cavity-coupled quantum electrodynamic (QED) sensor" href="T3E3-LAB-Cavity_QED_sensor.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -196,7 +198,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Problem 1
+   PRELAB: Quantum Computing with Qiskit
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="LAB-IBM-Qiskit.html">
+   Quantum Computing Lab w/ Qiskit
   </a>
  </li>
 </ul>
@@ -376,56 +383,56 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-1">
    Problem 1
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#a">
      (a)
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#b">
      (b)
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#problem-2">
    Problem 2
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#problem-3">
    Problem 3
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
      (a)
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id2">
      (b)
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#c">
      (c)
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#problem-4">
    Problem 4
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#problem-5">
    Problem 5
   </a>
@@ -439,7 +446,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Problem 1</h1>
+                <h1>PRELAB: Quantum Computing with Qiskit</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -449,56 +456,56 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-1">
    Problem 1
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#a">
      (a)
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#b">
      (b)
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#problem-2">
    Problem 2
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#problem-3">
    Problem 3
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
      (a)
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id2">
      (b)
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#c">
      (c)
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#problem-4">
    Problem 4
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#problem-5">
    Problem 5
   </a>
@@ -513,10 +520,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="problem-1">
-<h1>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="prelab-quantum-computing-with-qiskit">
+<h1>PRELAB: Quantum Computing with Qiskit<a class="headerlink" href="#prelab-quantum-computing-with-qiskit" title="Permalink to this headline">#</a></h1>
+<section id="problem-1">
+<h2>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">#</a></h2>
 <section id="a">
-<h2>(a)<a class="headerlink" href="#a" title="Permalink to this headline">#</a></h2>
+<h3>(a)<a class="headerlink" href="#a" title="Permalink to this headline">#</a></h3>
 <p>Show that
 $<span class="math notranslate nohighlight">\(
 \begin{align}
@@ -528,7 +537,7 @@ where \)</span><span class="math notranslate nohighlight">\( H = \frac{1}{\sqrt{
 <p>Recall that <span class="math notranslate nohighlight">\(|\pm\rangle = (|0\rangle\pm |1\rangle)/\sqrt{2}\)</span> is an eigenstate of the Pauli-<span class="math notranslate nohighlight">\(X\)</span> operator.</p>
 </section>
 <section id="b">
-<h2>(b)<a class="headerlink" href="#b" title="Permalink to this headline">#</a></h2>
+<h3>(b)<a class="headerlink" href="#b" title="Permalink to this headline">#</a></h3>
 <p>Show that (up to a global phase)
 $<span class="math notranslate nohighlight">\(
 \begin{align}
@@ -538,8 +547,8 @@ H &amp;= e^{-i\frac{\pi}{2} \sigma_{\hat{i}}}
 where \)</span> \hat{i} = \frac{1}{\sqrt{2}}\left( \begin{array}{c} 1\0\1 \end{array} \right) $.</p>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="problem-2">
-<h1>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">#</a></h1>
+<section id="problem-2">
+<h2>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">#</a></h2>
 <p>Show that the following circuit performs a SWAP operation:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -561,14 +570,14 @@ q_1: ┤ X ├──■──┤ X ├
      └───┘     └───┘</pre></div></div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="problem-3">
-<h1>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this headline">#</a></h1>
+<section id="problem-3">
+<h2>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this headline">#</a></h2>
 <section id="id1">
-<h2>(a)<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<h3>(a)<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <p>Show that <span class="math notranslate nohighlight">\( HXH = Z \)</span> and <span class="math notranslate nohighlight">\( HZH = X \)</span>.</p>
 </section>
 <section id="id2">
-<h2>(b)<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h3>(b)<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <p>Using the identities above, which two-qubit gate is the following quantum circuit equivalent to?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -591,7 +600,7 @@ q_1: ┤ H ├─■─┤ H ├
 </div>
 </section>
 <section id="c">
-<h2>(c)<a class="headerlink" href="#c" title="Permalink to this headline">#</a></h2>
+<h3>(c)<a class="headerlink" href="#c" title="Permalink to this headline">#</a></h3>
 <p>In real-world experiments, qubits often <em>do not</em> have all-to-all connectivities. For example, the quantum circuit below performs effectively a two-qubit gate between q_1 and q_2 by using q_0 as an auxiliary qubit. Which two-qubit gate is it and prove that this is indeed the case.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -617,14 +626,15 @@ q_2: ─────────■──────
 </div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="problem-4">
-<h1>Problem 4<a class="headerlink" href="#problem-4" title="Permalink to this headline">#</a></h1>
+<section id="problem-4">
+<h2>Problem 4<a class="headerlink" href="#problem-4" title="Permalink to this headline">#</a></h2>
 <p>Quantum Fourier transform (QFT) is an essential primitive for many quantum algorithms. It is a unitary transformation that maps $<span class="math notranslate nohighlight">\( |X\rangle = \sum_{j=0}^{N-1} x_j |j\rangle \)</span><span class="math notranslate nohighlight">\( to \)</span><span class="math notranslate nohighlight">\( |Y\rangle = \sum_{k=0}^{N-1} y_k |k\rangle\)</span><span class="math notranslate nohighlight">\(, where \)</span> y_k = \frac{1}{\sqrt{N}} \sum_{j=0}^{N-1} x_j \omega_N^{jk}<span class="math notranslate nohighlight">\( and \)</span> \omega_N^{jk}=e^{2\pi i \frac{jk}{N}}<span class="math notranslate nohighlight">\(. \)</span>N=2^n<span class="math notranslate nohighlight">\( represents the size of the Hilbert space spanned by \)</span>n$ qubits.</p>
 <p>Show that the Hadamard gate is a 1-qubit QFT.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="problem-5">
-<h1>Problem 5<a class="headerlink" href="#problem-5" title="Permalink to this headline">#</a></h1>
+<section id="problem-5">
+<h2>Problem 5<a class="headerlink" href="#problem-5" title="Permalink to this headline">#</a></h2>
 <p>Typically, a CNOT gate performed on a control qubit q_c and a target qubit q_t results in a change in the state of q_t depending on the state of q_c. Show that in the <span class="math notranslate nohighlight">\(X\)</span>-basis, instead, the state of q_c changes depending on the state of q_t. This phenomenon is called phase kickback, a mechanism essential to the quantum phase estimation algorithm as you will see in lab.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -664,7 +674,7 @@ q_2: ─────────■──────
     <a class='right-next' id="next-link" href="LAB-IBM-Qiskit.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Quantum Computing Lab w/ Qiskit</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

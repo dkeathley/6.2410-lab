@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+    <title>Quantum Computing Lab w/ Qiskit &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,11 +50,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Problem 1" href="LAB-IBM-Qiskit-Prelab.html" />
+    <link rel="prev" title="PRELAB: Quantum Computing with Qiskit" href="LAB-IBM-Qiskit-Prelab.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -192,10 +194,15 @@ const thebe_selector_output = ".output, .cell_output"
   Quantum Computing (QISKIT)
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="LAB-IBM-Qiskit-Prelab.html">
-   Problem 1
+   PRELAB: Quantum Computing with Qiskit
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Quantum Computing Lab w/ Qiskit
   </a>
  </li>
 </ul>
@@ -374,7 +381,471 @@ title="Print to PDF"
         <i class="fas fa-list"></i> Contents
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="simple visible nav section-nav flex-column">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-quantum-circuits">
+   Part 1: Quantum Circuits
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-quantum-measurements">
+   Part 2 Quantum Measurements
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#measuring-the-state-of-a-qubit">
+     Measuring the state of a qubit
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#express-the-expectation-values-of-the-pauli-operators-for-an-arbitrary-qubit-state-q-rangle-in-the-computational-basis">
+       1. Express the expectation values of the Pauli operators for an arbitrary qubit state
+       <span class="math notranslate nohighlight">
+        \(|q\rangle\)
+       </span>
+       in the computational basis.
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#measure-the-bloch-sphere-coordinates-of-a-qubit-using-the-aer-simulator-and-plot-the-vector-on-the-bloch-sphere">
+       2. Measure the Bloch sphere coordinates of a qubit using the Aer simulator and plot the vector on the Bloch sphere.
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-a-create-a-qubit-state-using-the-circuit-method-code-initialize-code-with-two-random-complex-numbers-as-the-parameter">
+         Step A. Create a qubit state using the circuit method,
+         <code>
+          initialize
+         </code>
+         with two random complex numbers as the parameter.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-b-build-the-circuits-to-measure-the-expectation-values-of-x-y-z-gate-based-on-your-answers-to-the-question-1-run-the-cell-below-to-estimate-the-bloch-sphere-coordinates-of-the-qubit-from-step-a-using-the-aer-simulator">
+         Step B. Build the circuits to measure the expectation values of
+         <span class="math notranslate nohighlight">
+          \(X, Y, Z\)
+         </span>
+         gate based on your answers to the question 1.  Run the cell below to estimate the Bloch sphere coordinates of the qubit from step A using the Aer simulator.
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#measuring-energy">
+     Measuring Energy
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#express-the-expectation-value-of-each-term-in-the-hamiltonian-for-an-arbitrary-two-qubit-state-psi-rangle-in-the-computational-basis">
+       1. Express the expectation value of each term in the Hamiltonian for an arbitrary two qubit state
+       <span class="math notranslate nohighlight">
+        \(|\psi \rangle\)
+       </span>
+       in the computational basis.
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#measure-the-expected-energy-of-the-system-using-the-aer-simulator-when-two-qubits-are-entangled-regard-the-bell-basis-four-different-entangled-states">
+       2. Measure the expected energy of the system using the Aer simulator when two qubits are entangled. Regard the bell basis, four different entangled states.
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-a-construct-the-circuits-to-prepare-four-different-bell-states">
+         Step A. Construct the circuits to prepare four different bell states.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-b-create-the-circuits-to-measure-the-expectation-value-of-each-term-in-the-hamiltonian-based-on-your-answer-to-the-question-1">
+         Step B. Create the circuits to measure the expectation value of each term in the Hamiltonian based on your answer to the question 1.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-c-execute-the-circuits-on-aer-simulator-by-running-the-cell-below-and-evaluate-the-energy-expectation-value-for-each-state">
+         Step C. Execute the circuits on Aer simulator by running the cell below and evaluate the energy expectation value for each state.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-d-understanding-the-result">
+         Step D. Understanding the result.
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quantum-teleportation">
+     Quantum teleportation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-a-generate-a-random-single-qubit-and-plot-it-on-the-bloch-sphere">
+       Step A. Generate a random single qubit and plot it on the Bloch sphere.
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-b-create-a-quantum-teleportation-circuit">
+       Step B. Create a quantum teleportation circuit.
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-c-plot-the-teleported-qubit">
+       Step C. Plot the teleported qubit.
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3-accuracy-of-quantum-phase-estimation">
+   Part 3 Accuracy of Quantum Phase Estimation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#performance-of-quantum-phase-estimation">
+     Performance of Quantum Phase Estimation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#find-the-probability-of-obtaining-the-estimation-for-a-phase-value-accurate-to-2-2-successfully-with-four-counting-qubits">
+       1. Find the probability of obtaining the estimation for a phase value accurate to
+       <span class="math notranslate nohighlight">
+        \(2^{-2}\)
+       </span>
+       successfully with four counting qubits.
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-a-set-up-the-qpe-circuit-with-four-counting-qubits-and-save-the-circuit-to-the-variable-qc4-execute-qc4-on-a-aer-simulator-plot-the-histogram-of-the-result">
+         Step A. Set up the QPE circuit with four counting qubits and save the circuit to the variable ‘qc4’.  Execute ‘qc4’ on a Aer simulator.  Plot the histogram of the result.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-b-find-e-the-maximum-difference-in-integer-from-the-best-estimation-code-0101-code-so-that-all-the-outcomes-m-s-would-approximate-phi-to-an-accuracy-2-2-when-m-b-leq-frac-e-2-t">
+         Step B. Find
+         <span class="math notranslate nohighlight">
+          \(e\)
+         </span>
+         , the maximum difference in integer from the best estimation
+         <code>
+          0101
+         </code>
+         so that all the outcomes, ‘m’s, would approximate
+         <span class="math notranslate nohighlight">
+          \(\phi\)
+         </span>
+         to an accuracy
+         <span class="math notranslate nohighlight">
+          \(2^{-2}\)
+         </span>
+         when
+         <span class="math notranslate nohighlight">
+          \(|m - b| \leq \frac{e}{2^{t}}\)
+         </span>
+         .
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-c-compute-the-probability-of-obtaining-an-approximation-correct-to-an-accuracy-2-2-verify-that-the-computed-probability-value-is-larger-or-equal-to-1-frac-1-2-2-t-n-2-where-t-is-the-number-of-counting-bits-and-the-2-n-is-the-desired-accuracy">
+         Step C. Compute the probability of obtaining an approximation correct to an accuracy
+         <span class="math notranslate nohighlight">
+          \(2^{-2}\)
+         </span>
+         .  Verify that the computed probability value is larger or equal to
+         <span class="math notranslate nohighlight">
+          \(1- \frac{1}{2(2^{(t-n)}-2)}\)
+         </span>
+         where
+         <span class="math notranslate nohighlight">
+          \(t\)
+         </span>
+         is the number of counting bits and the
+         <span class="math notranslate nohighlight">
+          \(2^{-n}\)
+         </span>
+         is the desired accuracy.
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#compute-the-probability-of-success-for-the-accuracy-2-2-when-the-number-of-counting-qubits-t-varies-from-four-to-nine-compare-your-result-with-the-equation-t-n-log-2-frac-1-2-epsilon-when-2-n-is-the-desired-accuracy-and-epsilon-is-1-probability-of-success">
+       2. Compute the probability of success for the accuracy
+       <span class="math notranslate nohighlight">
+        \(2^{-2}\)
+       </span>
+       when the number of counting qubits,
+       <span class="math notranslate nohighlight">
+        \(t\)
+       </span>
+       , varies from four to nine. Compare your result with the equation
+       <span class="math notranslate nohighlight">
+        \(t=n+log(2+\frac{1}{2\epsilon})\)
+       </span>
+       when
+       <span class="math notranslate nohighlight">
+        \(2^{-n}\)
+       </span>
+       is the desired accuracy and
+       <span class="math notranslate nohighlight">
+        \(\epsilon\)
+       </span>
+       is 1 - probability  of success.
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-a-construct-qpe-circuit-to-estimate-phi-when-phi-1-3-with-for-the-different-number-of-counting-qubits-t-when-t-4-5-6-7-8-9-store-all-the-circuits-in-a-list-variable-circ-to-simulate-all-the-circuits-at-once-as-we-did-in-lab2">
+         Step A. Construct QPE circuit to estimate
+         <span class="math notranslate nohighlight">
+          \(\phi\)
+         </span>
+         when
+         <span class="math notranslate nohighlight">
+          \(\phi = 1/3\)
+         </span>
+         with for the different number of counting qubits,
+         <span class="math notranslate nohighlight">
+          \(t\)
+         </span>
+         , when
+         <span class="math notranslate nohighlight">
+          \(t = [4, 5, 6, 7, 8, 9]\)
+         </span>
+         . Store all the circuits in a list variable ‘circ’ to simulate all the circuits at once as we did in Lab2.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-b-determine-e-the-maximum-difference-in-integer-from-the-best-estimation-for-the-different-number-of-counting-qubits-t-4-5-6-7-8-9-verify-the-relationship-e-2-t-n-1-where-n-2-since-the-desired-accuracy-is-2-2-in-this-case">
+         Step B. Determine
+         <span class="math notranslate nohighlight">
+          \(e\)
+         </span>
+         , the maximum difference in integer from the best estimation for the different number of counting qubits,
+         <span class="math notranslate nohighlight">
+          \(t = [4, 5, 6, 7, 8, 9]\)
+         </span>
+         . Verify the relationship
+         <span class="math notranslate nohighlight">
+          \(e=2^{t-n}-1\)
+         </span>
+         where
+         <span class="math notranslate nohighlight">
+          \(n=2\)
+         </span>
+         since the desired accuracy is
+         <span class="math notranslate nohighlight">
+          \(2^{-2}\)
+         </span>
+         in this case.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-c-evaluate-the-probability-of-success-estimating-phi-to-an-accuracy-2-2-for-all-the-values-of-t-the-number-of-counting-qubits-save-the-probabilities-to-the-list-variable-prob-success">
+         Step C. Evaluate the probability of success estimating
+         <span class="math notranslate nohighlight">
+          \(\phi\)
+         </span>
+         to an accuracy
+         <span class="math notranslate nohighlight">
+          \(2^{-2}\)
+         </span>
+         for all the values of
+         <span class="math notranslate nohighlight">
+          \(t\)
+         </span>
+         , the number of counting qubits. Save the probabilities to the list variable, ‘prob_success’.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-d-overlay-the-results-of-step-c-on-the-graph-that-shows-the-relationship-between-the-number-of-counting-qubits-t-and-the-minimum-probability-of-success-to-approximate-the-phase-to-an-accuracy-2-2-understand-the-result">
+         Step D. Overlay the results of Step C on the graph that shows the relationship between the number of counting qubits,
+         <span class="math notranslate nohighlight">
+          \(t\)
+         </span>
+         , and the minimum probability of success to approximate the phase to an accuracy
+         <span class="math notranslate nohighlight">
+          \(2^{-2}\)
+         </span>
+         . Understand the result.
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-4-quantum-error-correction">
+   Part 4 Quantum Error Correction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#qubit-code">
+     3-qubit code
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#detect-and-locate-a-single-bit-flip-x-error-utilizing-3-qubit-code-and-parity-check-circuit">
+       1. Detect and locate a single bit-flip ( X ) error utilizing 3-qubit code and parity check circuit.
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-a-create-a-circuit-to-encode-the-state-psi-rangle-frac-1-sqrt-2-0-rangle-i-1-rangle-into-3-qubit-code-state-frac-1-sqrt-2-000-rangle-i-111-rangle-to-be-protected-from-one-bit-flip-x-error">
+         Step A. Create a circuit to encode the state
+         <span class="math notranslate nohighlight">
+          \(|\psi\rangle = \frac{1}{\sqrt{2}}(|0\rangle + i|1\rangle)\)
+         </span>
+         into 3-qubit code state,
+         <span class="math notranslate nohighlight">
+          \(\frac{1}{\sqrt{2}}(|000\rangle + i|111\rangle)\)
+         </span>
+         to be protected from one bit-flip ( X ) error.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-b-plot-the-3-qubit-code-state-produced-by-the-above-circuit-code-qc-3qx-code-on-the-qsphere-to-validate-the-encoding">
+         Step B. Plot the 3-qubit code state produced by the above circuit,
+         <code>
+          qc_3qx
+         </code>
+         on the qsphere to validate the encoding.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-c-implement-the-parity-check-gates-to-detect-and-localize-a-single-bit-flip-error-on-the-code-qubits">
+         Step C. Implement the parity check gates to detect and localize a single bit flip error on the code qubits.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-d-complete-the-dictionary-in-the-following-cell-to-make-the-syndrome-look-up-table-for-all-single-bit-flip-errors-on-the-three-qubit-code">
+         Step D. Complete the dictionary in the following cell to make the syndrome look-up table for all single bit-flip errors on the three qubit code.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-e-find-the-single-bit-error-and-two-bit-error-based-on-the-measured-syndrome-bits-and-check-your-answer-with-the-value-of-the-variable-code-which-qubit-code">
+         Step E. Find the single bit-error and two bit-error based on the measured syndrome bits and check your answer with the value of the variable,
+         <code>
+          which_qubit
+         </code>
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-f-identify-the-logical-x-x-l-and-logical-z-z-l-operators-for-the-three-qubit-bit-flip-code">
+         Step F. Identify the logical
+         <span class="math notranslate nohighlight">
+          \(X\)
+         </span>
+         (
+         <span class="math notranslate nohighlight">
+          \(X_{L}\)
+         </span>
+         ) and logical
+         <span class="math notranslate nohighlight">
+          \(Z\)
+         </span>
+         (
+         <span class="math notranslate nohighlight">
+          \(Z_{L}\)
+         </span>
+         ) operators for the three qubit bit flip code.
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#construct-a-circuit-that-encodes-one-qubit-state-into-3-qubit-code-states-and-can-locate-a-single-phase-flip-z-error-through-parity-check">
+       2. Construct a circuit that encodes one qubit state into 3-qubit code states and can locate a single phase-flip ( Z ) error through parity check.
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-a-create-a-circuit-to-encode-the-state-psi-rangle-frac-1-sqrt-2-0-rangle-i-1-rangle-into-a-3-qubit-code-to-protect-it-from-one-phase-flip-z-error">
+         Step A. Create a circuit to encode the state
+         <span class="math notranslate nohighlight">
+          \(|\psi\rangle = \frac{1}{\sqrt{2}}(|0\rangle + i|1\rangle)\)
+         </span>
+         into a 3-qubit code to protect it from one phase-flip ( Z ) error.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-b-implement-the-parity-check-gates-to-detect-and-localize-a-single-phase-flip-error-on-the-code-qubits">
+         Step B. Implement the parity check gates to detect and localize a single phase flip error on the code qubits.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-c-find-the-single-phase-error-based-on-the-measured-syndrome-bits-and-check-your-answer-with-the-value-of-the-variable-code-which-qubit-code">
+         Step C. Find the single phase-error based on the measured syndrome bits and check your answer with the value of the variable,
+         <code>
+          which_qubit
+         </code>
+         .
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#repetition-code-as-a-stabilizer-code">
+     Repetition code as a stabilizer code
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#find-the-two-independent-stablizer-operators-for-the-3-qubit-code-states-000-rangle-111-rangle">
+       1. Find the two independent stablizer operators for the 3 qubit code states,
+       <span class="math notranslate nohighlight">
+        \(|000\rangle,~ |111\rangle\)
+       </span>
+       .
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#construct-a-quantum-phase-estimation-qpe-circuit-to-produce-the-eigenvalues-for-one-of-the-stablizer-i-otimes-z-otimes-z">
+       2. Construct a Quantum Phase Estimation ( QPE ) circuit to produce the eigenvalues for one of the stablizer,
+       <span class="math notranslate nohighlight">
+        \(I\otimes Z\otimes Z\)
+       </span>
+       .
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-a-what-are-the-eigenvalues-of-the-operator-i-otimes-z-otimes-z-determine-the-minimum-number-of-counting-qubits-needed-in-qpe-circuit-to-estimate-the-eigenvalue-accurately">
+         Step A. What are the eigenvalues of the operator
+         <span class="math notranslate nohighlight">
+          \(I\otimes Z \otimes Z\)
+         </span>
+         ? Determine the minimum number of counting qubits needed in QPE circuit to estimate the eigenvalue accurately.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-b-complete-the-following-code-to-build-the-qpe-circuit">
+         Step B. Complete the following code to build the QPE circuit.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-c-using-the-circuit-identities-convert-qpe-part-of-the-above-circuit-code-qc0-code-to-the-one-with-only-cnot-gates">
+         Step C. Using the circuit identities, convert QPE part of the above circuit
+         <code>
+          qc0
+         </code>
+         to the one with only CNOT gates.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#summary">
+         Summary
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </nav>
@@ -384,7 +855,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><no title></h1>
+                <h1>Quantum Computing Lab w/ Qiskit</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -393,7 +864,471 @@ title="Print to PDF"
                             <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
-                            <ul class="simple visible nav section-nav flex-column">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-quantum-circuits">
+   Part 1: Quantum Circuits
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-quantum-measurements">
+   Part 2 Quantum Measurements
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#measuring-the-state-of-a-qubit">
+     Measuring the state of a qubit
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#express-the-expectation-values-of-the-pauli-operators-for-an-arbitrary-qubit-state-q-rangle-in-the-computational-basis">
+       1. Express the expectation values of the Pauli operators for an arbitrary qubit state
+       <span class="math notranslate nohighlight">
+        \(|q\rangle\)
+       </span>
+       in the computational basis.
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#measure-the-bloch-sphere-coordinates-of-a-qubit-using-the-aer-simulator-and-plot-the-vector-on-the-bloch-sphere">
+       2. Measure the Bloch sphere coordinates of a qubit using the Aer simulator and plot the vector on the Bloch sphere.
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-a-create-a-qubit-state-using-the-circuit-method-code-initialize-code-with-two-random-complex-numbers-as-the-parameter">
+         Step A. Create a qubit state using the circuit method,
+         <code>
+          initialize
+         </code>
+         with two random complex numbers as the parameter.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-b-build-the-circuits-to-measure-the-expectation-values-of-x-y-z-gate-based-on-your-answers-to-the-question-1-run-the-cell-below-to-estimate-the-bloch-sphere-coordinates-of-the-qubit-from-step-a-using-the-aer-simulator">
+         Step B. Build the circuits to measure the expectation values of
+         <span class="math notranslate nohighlight">
+          \(X, Y, Z\)
+         </span>
+         gate based on your answers to the question 1.  Run the cell below to estimate the Bloch sphere coordinates of the qubit from step A using the Aer simulator.
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#measuring-energy">
+     Measuring Energy
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#express-the-expectation-value-of-each-term-in-the-hamiltonian-for-an-arbitrary-two-qubit-state-psi-rangle-in-the-computational-basis">
+       1. Express the expectation value of each term in the Hamiltonian for an arbitrary two qubit state
+       <span class="math notranslate nohighlight">
+        \(|\psi \rangle\)
+       </span>
+       in the computational basis.
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#measure-the-expected-energy-of-the-system-using-the-aer-simulator-when-two-qubits-are-entangled-regard-the-bell-basis-four-different-entangled-states">
+       2. Measure the expected energy of the system using the Aer simulator when two qubits are entangled. Regard the bell basis, four different entangled states.
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-a-construct-the-circuits-to-prepare-four-different-bell-states">
+         Step A. Construct the circuits to prepare four different bell states.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-b-create-the-circuits-to-measure-the-expectation-value-of-each-term-in-the-hamiltonian-based-on-your-answer-to-the-question-1">
+         Step B. Create the circuits to measure the expectation value of each term in the Hamiltonian based on your answer to the question 1.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-c-execute-the-circuits-on-aer-simulator-by-running-the-cell-below-and-evaluate-the-energy-expectation-value-for-each-state">
+         Step C. Execute the circuits on Aer simulator by running the cell below and evaluate the energy expectation value for each state.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-d-understanding-the-result">
+         Step D. Understanding the result.
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quantum-teleportation">
+     Quantum teleportation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-a-generate-a-random-single-qubit-and-plot-it-on-the-bloch-sphere">
+       Step A. Generate a random single qubit and plot it on the Bloch sphere.
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-b-create-a-quantum-teleportation-circuit">
+       Step B. Create a quantum teleportation circuit.
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-c-plot-the-teleported-qubit">
+       Step C. Plot the teleported qubit.
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3-accuracy-of-quantum-phase-estimation">
+   Part 3 Accuracy of Quantum Phase Estimation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#performance-of-quantum-phase-estimation">
+     Performance of Quantum Phase Estimation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#find-the-probability-of-obtaining-the-estimation-for-a-phase-value-accurate-to-2-2-successfully-with-four-counting-qubits">
+       1. Find the probability of obtaining the estimation for a phase value accurate to
+       <span class="math notranslate nohighlight">
+        \(2^{-2}\)
+       </span>
+       successfully with four counting qubits.
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-a-set-up-the-qpe-circuit-with-four-counting-qubits-and-save-the-circuit-to-the-variable-qc4-execute-qc4-on-a-aer-simulator-plot-the-histogram-of-the-result">
+         Step A. Set up the QPE circuit with four counting qubits and save the circuit to the variable ‘qc4’.  Execute ‘qc4’ on a Aer simulator.  Plot the histogram of the result.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-b-find-e-the-maximum-difference-in-integer-from-the-best-estimation-code-0101-code-so-that-all-the-outcomes-m-s-would-approximate-phi-to-an-accuracy-2-2-when-m-b-leq-frac-e-2-t">
+         Step B. Find
+         <span class="math notranslate nohighlight">
+          \(e\)
+         </span>
+         , the maximum difference in integer from the best estimation
+         <code>
+          0101
+         </code>
+         so that all the outcomes, ‘m’s, would approximate
+         <span class="math notranslate nohighlight">
+          \(\phi\)
+         </span>
+         to an accuracy
+         <span class="math notranslate nohighlight">
+          \(2^{-2}\)
+         </span>
+         when
+         <span class="math notranslate nohighlight">
+          \(|m - b| \leq \frac{e}{2^{t}}\)
+         </span>
+         .
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-c-compute-the-probability-of-obtaining-an-approximation-correct-to-an-accuracy-2-2-verify-that-the-computed-probability-value-is-larger-or-equal-to-1-frac-1-2-2-t-n-2-where-t-is-the-number-of-counting-bits-and-the-2-n-is-the-desired-accuracy">
+         Step C. Compute the probability of obtaining an approximation correct to an accuracy
+         <span class="math notranslate nohighlight">
+          \(2^{-2}\)
+         </span>
+         .  Verify that the computed probability value is larger or equal to
+         <span class="math notranslate nohighlight">
+          \(1- \frac{1}{2(2^{(t-n)}-2)}\)
+         </span>
+         where
+         <span class="math notranslate nohighlight">
+          \(t\)
+         </span>
+         is the number of counting bits and the
+         <span class="math notranslate nohighlight">
+          \(2^{-n}\)
+         </span>
+         is the desired accuracy.
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#compute-the-probability-of-success-for-the-accuracy-2-2-when-the-number-of-counting-qubits-t-varies-from-four-to-nine-compare-your-result-with-the-equation-t-n-log-2-frac-1-2-epsilon-when-2-n-is-the-desired-accuracy-and-epsilon-is-1-probability-of-success">
+       2. Compute the probability of success for the accuracy
+       <span class="math notranslate nohighlight">
+        \(2^{-2}\)
+       </span>
+       when the number of counting qubits,
+       <span class="math notranslate nohighlight">
+        \(t\)
+       </span>
+       , varies from four to nine. Compare your result with the equation
+       <span class="math notranslate nohighlight">
+        \(t=n+log(2+\frac{1}{2\epsilon})\)
+       </span>
+       when
+       <span class="math notranslate nohighlight">
+        \(2^{-n}\)
+       </span>
+       is the desired accuracy and
+       <span class="math notranslate nohighlight">
+        \(\epsilon\)
+       </span>
+       is 1 - probability  of success.
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-a-construct-qpe-circuit-to-estimate-phi-when-phi-1-3-with-for-the-different-number-of-counting-qubits-t-when-t-4-5-6-7-8-9-store-all-the-circuits-in-a-list-variable-circ-to-simulate-all-the-circuits-at-once-as-we-did-in-lab2">
+         Step A. Construct QPE circuit to estimate
+         <span class="math notranslate nohighlight">
+          \(\phi\)
+         </span>
+         when
+         <span class="math notranslate nohighlight">
+          \(\phi = 1/3\)
+         </span>
+         with for the different number of counting qubits,
+         <span class="math notranslate nohighlight">
+          \(t\)
+         </span>
+         , when
+         <span class="math notranslate nohighlight">
+          \(t = [4, 5, 6, 7, 8, 9]\)
+         </span>
+         . Store all the circuits in a list variable ‘circ’ to simulate all the circuits at once as we did in Lab2.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-b-determine-e-the-maximum-difference-in-integer-from-the-best-estimation-for-the-different-number-of-counting-qubits-t-4-5-6-7-8-9-verify-the-relationship-e-2-t-n-1-where-n-2-since-the-desired-accuracy-is-2-2-in-this-case">
+         Step B. Determine
+         <span class="math notranslate nohighlight">
+          \(e\)
+         </span>
+         , the maximum difference in integer from the best estimation for the different number of counting qubits,
+         <span class="math notranslate nohighlight">
+          \(t = [4, 5, 6, 7, 8, 9]\)
+         </span>
+         . Verify the relationship
+         <span class="math notranslate nohighlight">
+          \(e=2^{t-n}-1\)
+         </span>
+         where
+         <span class="math notranslate nohighlight">
+          \(n=2\)
+         </span>
+         since the desired accuracy is
+         <span class="math notranslate nohighlight">
+          \(2^{-2}\)
+         </span>
+         in this case.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-c-evaluate-the-probability-of-success-estimating-phi-to-an-accuracy-2-2-for-all-the-values-of-t-the-number-of-counting-qubits-save-the-probabilities-to-the-list-variable-prob-success">
+         Step C. Evaluate the probability of success estimating
+         <span class="math notranslate nohighlight">
+          \(\phi\)
+         </span>
+         to an accuracy
+         <span class="math notranslate nohighlight">
+          \(2^{-2}\)
+         </span>
+         for all the values of
+         <span class="math notranslate nohighlight">
+          \(t\)
+         </span>
+         , the number of counting qubits. Save the probabilities to the list variable, ‘prob_success’.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-d-overlay-the-results-of-step-c-on-the-graph-that-shows-the-relationship-between-the-number-of-counting-qubits-t-and-the-minimum-probability-of-success-to-approximate-the-phase-to-an-accuracy-2-2-understand-the-result">
+         Step D. Overlay the results of Step C on the graph that shows the relationship between the number of counting qubits,
+         <span class="math notranslate nohighlight">
+          \(t\)
+         </span>
+         , and the minimum probability of success to approximate the phase to an accuracy
+         <span class="math notranslate nohighlight">
+          \(2^{-2}\)
+         </span>
+         . Understand the result.
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-4-quantum-error-correction">
+   Part 4 Quantum Error Correction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#qubit-code">
+     3-qubit code
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#detect-and-locate-a-single-bit-flip-x-error-utilizing-3-qubit-code-and-parity-check-circuit">
+       1. Detect and locate a single bit-flip ( X ) error utilizing 3-qubit code and parity check circuit.
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-a-create-a-circuit-to-encode-the-state-psi-rangle-frac-1-sqrt-2-0-rangle-i-1-rangle-into-3-qubit-code-state-frac-1-sqrt-2-000-rangle-i-111-rangle-to-be-protected-from-one-bit-flip-x-error">
+         Step A. Create a circuit to encode the state
+         <span class="math notranslate nohighlight">
+          \(|\psi\rangle = \frac{1}{\sqrt{2}}(|0\rangle + i|1\rangle)\)
+         </span>
+         into 3-qubit code state,
+         <span class="math notranslate nohighlight">
+          \(\frac{1}{\sqrt{2}}(|000\rangle + i|111\rangle)\)
+         </span>
+         to be protected from one bit-flip ( X ) error.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-b-plot-the-3-qubit-code-state-produced-by-the-above-circuit-code-qc-3qx-code-on-the-qsphere-to-validate-the-encoding">
+         Step B. Plot the 3-qubit code state produced by the above circuit,
+         <code>
+          qc_3qx
+         </code>
+         on the qsphere to validate the encoding.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-c-implement-the-parity-check-gates-to-detect-and-localize-a-single-bit-flip-error-on-the-code-qubits">
+         Step C. Implement the parity check gates to detect and localize a single bit flip error on the code qubits.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-d-complete-the-dictionary-in-the-following-cell-to-make-the-syndrome-look-up-table-for-all-single-bit-flip-errors-on-the-three-qubit-code">
+         Step D. Complete the dictionary in the following cell to make the syndrome look-up table for all single bit-flip errors on the three qubit code.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-e-find-the-single-bit-error-and-two-bit-error-based-on-the-measured-syndrome-bits-and-check-your-answer-with-the-value-of-the-variable-code-which-qubit-code">
+         Step E. Find the single bit-error and two bit-error based on the measured syndrome bits and check your answer with the value of the variable,
+         <code>
+          which_qubit
+         </code>
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-f-identify-the-logical-x-x-l-and-logical-z-z-l-operators-for-the-three-qubit-bit-flip-code">
+         Step F. Identify the logical
+         <span class="math notranslate nohighlight">
+          \(X\)
+         </span>
+         (
+         <span class="math notranslate nohighlight">
+          \(X_{L}\)
+         </span>
+         ) and logical
+         <span class="math notranslate nohighlight">
+          \(Z\)
+         </span>
+         (
+         <span class="math notranslate nohighlight">
+          \(Z_{L}\)
+         </span>
+         ) operators for the three qubit bit flip code.
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#construct-a-circuit-that-encodes-one-qubit-state-into-3-qubit-code-states-and-can-locate-a-single-phase-flip-z-error-through-parity-check">
+       2. Construct a circuit that encodes one qubit state into 3-qubit code states and can locate a single phase-flip ( Z ) error through parity check.
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-a-create-a-circuit-to-encode-the-state-psi-rangle-frac-1-sqrt-2-0-rangle-i-1-rangle-into-a-3-qubit-code-to-protect-it-from-one-phase-flip-z-error">
+         Step A. Create a circuit to encode the state
+         <span class="math notranslate nohighlight">
+          \(|\psi\rangle = \frac{1}{\sqrt{2}}(|0\rangle + i|1\rangle)\)
+         </span>
+         into a 3-qubit code to protect it from one phase-flip ( Z ) error.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-b-implement-the-parity-check-gates-to-detect-and-localize-a-single-phase-flip-error-on-the-code-qubits">
+         Step B. Implement the parity check gates to detect and localize a single phase flip error on the code qubits.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-c-find-the-single-phase-error-based-on-the-measured-syndrome-bits-and-check-your-answer-with-the-value-of-the-variable-code-which-qubit-code">
+         Step C. Find the single phase-error based on the measured syndrome bits and check your answer with the value of the variable,
+         <code>
+          which_qubit
+         </code>
+         .
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#repetition-code-as-a-stabilizer-code">
+     Repetition code as a stabilizer code
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#find-the-two-independent-stablizer-operators-for-the-3-qubit-code-states-000-rangle-111-rangle">
+       1. Find the two independent stablizer operators for the 3 qubit code states,
+       <span class="math notranslate nohighlight">
+        \(|000\rangle,~ |111\rangle\)
+       </span>
+       .
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#construct-a-quantum-phase-estimation-qpe-circuit-to-produce-the-eigenvalues-for-one-of-the-stablizer-i-otimes-z-otimes-z">
+       2. Construct a Quantum Phase Estimation ( QPE ) circuit to produce the eigenvalues for one of the stablizer,
+       <span class="math notranslate nohighlight">
+        \(I\otimes Z\otimes Z\)
+       </span>
+       .
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-a-what-are-the-eigenvalues-of-the-operator-i-otimes-z-otimes-z-determine-the-minimum-number-of-counting-qubits-needed-in-qpe-circuit-to-estimate-the-eigenvalue-accurately">
+         Step A. What are the eigenvalues of the operator
+         <span class="math notranslate nohighlight">
+          \(I\otimes Z \otimes Z\)
+         </span>
+         ? Determine the minimum number of counting qubits needed in QPE circuit to estimate the eigenvalue accurately.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-b-complete-the-following-code-to-build-the-qpe-circuit">
+         Step B. Complete the following code to build the QPE circuit.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-c-using-the-circuit-identities-convert-qpe-part-of-the-above-circuit-code-qc0-code-to-the-one-with-only-cnot-gates">
+         Step C. Using the circuit identities, convert QPE part of the above circuit
+         <code>
+          qc0
+         </code>
+         to the one with only CNOT gates.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#summary">
+         Summary
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
 
                         </nav>
@@ -405,9 +1340,11 @@ title="Print to PDF"
               <div>
                 
   <p>*The following Qiskit exercises are adapted from the official IBM Qiskit textbook.</p>
-<h1 style="font-size:35px;
-        color:black;
-        ">Part 1: Quantum Circuits</h1><p>Prerequisite</p>
+<section class="tex2jax_ignore mathjax_ignore" id="quantum-computing-lab-w-qiskit">
+<h1>Quantum Computing Lab w/ Qiskit<a class="headerlink" href="#quantum-computing-lab-w-qiskit" title="Permalink to this headline">#</a></h1>
+<section id="part-1-quantum-circuits">
+<h2>Part 1: Quantum Circuits<a class="headerlink" href="#part-1-quantum-circuits" title="Permalink to this headline">#</a></h2>
+<p>Prerequisite</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://qiskit.org/documentation/tutorials/circuits/1_getting_started_with_qiskit.html">Qiskit basics</a></p></li>
 <li><p><a class="reference external" href="https://qiskit.org/textbook/ch-states/atoms-computation.html">Ch.1.2 The Atoms of Computation</a></p></li>
@@ -500,6 +1437,25 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NOT with input 0 gives output 1
+</pre></div>
+</div>
+<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">           ░ ┌───┐ ░ ┌─┐
+  q: ─|0>──░─┤ X ├─░─┤M├
+           ░ └───┘ ░ └╥┘
+c: 1/═════════════════╩═
+                      0 </pre></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NOT with input 1 gives output 0
+</pre></div>
+</div>
+<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">          ┌───┐ ░ ┌───┐ ░ ┌─┐
+  q: ─|0>─┤ X ├─░─┤ X ├─░─┤M├
+          └───┘ ░ └───┘ ░ └╥┘
+c: 1/══════════════════════╩═
+                           0 </pre></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
 </div>
 <h3 style="font-size: 20px">&#128211; XOR gate</h3>
 <p>Takes two binary strings as input and gives one as output.</p>
@@ -570,6 +1526,47 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>XOR with inputs 0 0 gives output 0
+</pre></div>
+</div>
+<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">           ░  ░    
+q_0: ─|0>──░──░────
+           ░  ░ ┌─┐
+q_1: ─|0>──░──░─┤M├
+           ░  ░ └╥┘
+c: 1/════════════╩═
+                 0 </pre></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>XOR with inputs 0 1 gives output 1
+</pre></div>
+</div>
+<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">                ░  ░    
+q_0: ─|0>───────░──░────
+          ┌───┐ ░  ░ ┌─┐
+q_1: ─|0>─┤ X ├─░──░─┤M├
+          └───┘ ░  ░ └╥┘
+c: 1/═════════════════╩═
+                      0 </pre></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>XOR with inputs 1 0 gives output 0
+</pre></div>
+</div>
+<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">          ┌───┐ ░  ░    
+q_0: ─|0>─┤ X ├─░──░────
+          └───┘ ░  ░ ┌─┐
+q_1: ─|0>───────░──░─┤M├
+                ░  ░ └╥┘
+c: 1/═════════════════╩═
+                      0 </pre></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>XOR with inputs 1 1 gives output 1
+</pre></div>
+</div>
+<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">          ┌───┐ ░  ░    
+q_0: ─|0>─┤ X ├─░──░────
+          ├───┤ ░  ░ ┌─┐
+q_1: ─|0>─┤ X ├─░──░─┤M├
+          └───┘ ░  ░ └╥┘
+c: 1/═════════════════╩═
+                      0 </pre></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
 </div>
 <h3 style="font-size: 20px">&#128211; AND gate</h3>
 <p>Takes two binary strings as input and gives one as output.</p>
@@ -637,6 +1634,55 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AND with inputs 0 0 gives output 0
+</pre></div>
+</div>
+<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">           ░  ░    
+q_0: ─|0>──░──░────
+           ░  ░    
+q_1: ─|0>──░──░────
+           ░  ░ ┌─┐
+q_2: ──────░──░─┤M├
+           ░  ░ └╥┘
+c: 1/════════════╩═
+                 0 </pre></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AND with inputs 0 1 gives output 0
+</pre></div>
+</div>
+<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">                ░  ░    
+q_0: ─|0>───────░──░────
+          ┌───┐ ░  ░    
+q_1: ─|0>─┤ X ├─░──░────
+          └───┘ ░  ░ ┌─┐
+q_2: ───────────░──░─┤M├
+                ░  ░ └╥┘
+c: 1/═════════════════╩═
+                      0 </pre></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AND with inputs 1 0 gives output 0
+</pre></div>
+</div>
+<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">          ┌───┐ ░  ░    
+q_0: ─|0>─┤ X ├─░──░────
+          └───┘ ░  ░    
+q_1: ─|0>───────░──░────
+                ░  ░ ┌─┐
+q_2: ───────────░──░─┤M├
+                ░  ░ └╥┘
+c: 1/═════════════════╩═
+                      0 </pre></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AND with inputs 1 1 gives output 0
+</pre></div>
+</div>
+<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">          ┌───┐ ░  ░    
+q_0: ─|0>─┤ X ├─░──░────
+          ├───┤ ░  ░    
+q_1: ─|0>─┤ X ├─░──░────
+          └───┘ ░  ░ ┌─┐
+q_2: ───────────░──░─┤M├
+                ░  ░ └╥┘
+c: 1/═════════════════╩═
+                      0 </pre></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
 </div>
 <h3 style="font-size: 20px">&#128211; NAND gate</h3>
 <p>Takes two binary strings as input and gives one as output.</p>
@@ -701,6 +1747,55 @@ title="Print to PDF"
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;NAND with inputs&#39;</span><span class="p">,</span><span class="n">inp1</span><span class="p">,</span><span class="n">inp2</span><span class="p">,</span><span class="s1">&#39;gives output&#39;</span><span class="p">,</span><span class="n">output</span><span class="p">)</span>
         <span class="n">display</span><span class="p">(</span><span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">())</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NAND with inputs 0 0 gives output 0
+</pre></div>
+</div>
+<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">           ░  ░    
+q_0: ─|0>──░──░────
+           ░  ░    
+q_1: ─|0>──░──░────
+           ░  ░ ┌─┐
+q_2: ─|0>──░──░─┤M├
+           ░  ░ └╥┘
+c: 1/════════════╩═
+                 0 </pre></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NAND with inputs 0 1 gives output 0
+</pre></div>
+</div>
+<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">                ░  ░    
+q_0: ─|0>───────░──░────
+          ┌───┐ ░  ░    
+q_1: ─|0>─┤ X ├─░──░────
+          └───┘ ░  ░ ┌─┐
+q_2: ─|0>───────░──░─┤M├
+                ░  ░ └╥┘
+c: 1/═════════════════╩═
+                      0 </pre></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NAND with inputs 1 0 gives output 0
+</pre></div>
+</div>
+<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">          ┌───┐ ░  ░    
+q_0: ─|0>─┤ X ├─░──░────
+          └───┘ ░  ░    
+q_1: ─|0>───────░──░────
+                ░  ░ ┌─┐
+q_2: ─|0>───────░──░─┤M├
+                ░  ░ └╥┘
+c: 1/═════════════════╩═
+                      0 </pre></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NAND with inputs 1 1 gives output 0
+</pre></div>
+</div>
+<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">          ┌───┐ ░  ░    
+q_0: ─|0>─┤ X ├─░──░────
+          ├───┤ ░  ░    
+q_1: ─|0>─┤ X ├─░──░────
+          └───┘ ░  ░ ┌─┐
+q_2: ─|0>───────░──░─┤M├
+                ░  ░ └╥┘
+c: 1/═════════════════╩═
+                      0 </pre></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -774,10 +1869,60 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OR with inputs 0 0 gives output 0
+</pre></div>
 </div>
-<h1 style="font-size:35px;
-        color:black;
-        ">Part 2 Quantum Measurements</h1><p>Prerequisite</p>
+<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">           ░  ░    
+q_0: ─|0>──░──░────
+           ░  ░    
+q_1: ─|0>──░──░────
+           ░  ░ ┌─┐
+q_2: ─|0>──░──░─┤M├
+           ░  ░ └╥┘
+c: 1/════════════╩═
+                 0 </pre></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OR with inputs 0 1 gives output 0
+</pre></div>
+</div>
+<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">                ░  ░    
+q_0: ─|0>───────░──░────
+          ┌───┐ ░  ░    
+q_1: ─|0>─┤ X ├─░──░────
+          └───┘ ░  ░ ┌─┐
+q_2: ─|0>───────░──░─┤M├
+                ░  ░ └╥┘
+c: 1/═════════════════╩═
+                      0 </pre></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OR with inputs 1 0 gives output 0
+</pre></div>
+</div>
+<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">          ┌───┐ ░  ░    
+q_0: ─|0>─┤ X ├─░──░────
+          └───┘ ░  ░    
+q_1: ─|0>───────░──░────
+                ░  ░ ┌─┐
+q_2: ─|0>───────░──░─┤M├
+                ░  ░ └╥┘
+c: 1/═════════════════╩═
+                      0 </pre></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OR with inputs 1 1 gives output 0
+</pre></div>
+</div>
+<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">          ┌───┐ ░  ░    
+q_0: ─|0>─┤ X ├─░──░────
+          ├───┤ ░  ░    
+q_1: ─|0>─┤ X ├─░──░────
+          └───┘ ░  ░ ┌─┐
+q_2: ─|0>───────░──░─┤M├
+                ░  ░ └╥┘
+c: 1/═════════════════╩═
+                      0 </pre></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="part-2-quantum-measurements">
+<h2>Part 2 Quantum Measurements<a class="headerlink" href="#part-2-quantum-measurements" title="Permalink to this headline">#</a></h2>
+<p>Prerequisite</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://qiskit.org/textbook/ch-states/single-qubit-gates.html">Ch.1.4 Single Qubit Gates</a></p></li>
 <li><p><a class="reference external" href="https://qiskit.org/textbook/ch-gates/multiple-qubits-entangled-states.html">Ch.2.2 Multiple Qubits and Entangled States</a></p></li>
@@ -801,7 +1946,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<h2 style="font-size:24px;">Measuring the state of a qubit</h2>
+<section id="measuring-the-state-of-a-qubit">
+<h3>Measuring the state of a qubit<a class="headerlink" href="#measuring-the-state-of-a-qubit" title="Permalink to this headline">#</a></h3>
 <br>
 <div style="background: #E8E7EB; border-radius: 5px;
 -moz-border-radius: 5px;">
@@ -815,7 +1961,8 @@ title="Print to PDF"
               font-size:16px;">Determine the Bloch components of a qubit.</p>
 </div>
 <p>Fundamental to the operation of a quantum computer is the ability to compute the Bloch components of a qubit or qubits. These components correspond to the expectation values of the Pauli operators <span class="math notranslate nohighlight">\(X, Y, Z\)</span>, and are important quantities for applications such as quantum chemistry and optimization.  Unfortunately, it is impossible to simultaneously compute these values, thus requiring many executions of the same circuit.  In addition, measurements are restricted to the computational basis (Z-basis) so that each Pauli needs to be rotated to the standard basis to access the x and y components.  Here we verify the methods by considering the case of a random vector on the Bloch sphere.</p>
-<h3 style="font-size: 20px">&#128211; 1. Express the expectation values of the Pauli operators for an arbitrary qubit state $|q\rangle$ in the computational basis. </h3>
+<section id="express-the-expectation-values-of-the-pauli-operators-for-an-arbitrary-qubit-state-q-rangle-in-the-computational-basis">
+<h4>1. Express the expectation values of the Pauli operators for an arbitrary qubit state <span class="math notranslate nohighlight">\(|q\rangle\)</span> in the computational basis.<a class="headerlink" href="#express-the-expectation-values-of-the-pauli-operators-for-an-arbitrary-qubit-state-q-rangle-in-the-computational-basis" title="Permalink to this headline">#</a></h4>
 <p>The case for the expectation value of Pauli Z gate is given as an example.</p>
 <p>Using the diagonal representation, also known as spectral form or orthonormal decomposition, of Pauli <span class="math notranslate nohighlight">\(Z\)</span> gate and the relations among the Pauli gates (see <a class="reference external" href="https://qiskit.org/textbook/ch-states/single-qubit-gates.html">here</a>), expectation values of <span class="math notranslate nohighlight">\( X, Y, Z \)</span> gates can be written as</p>
 <div class="math notranslate nohighlight">
@@ -831,7 +1978,11 @@ title="Print to PDF"
 \end{split}\]</div>
 <p>, respectively.</p>
 <p>Therefore, the expectation values of the Paulis for a qubit state <span class="math notranslate nohighlight">\(|q\rangle\)</span> can be obtained by making a measurement in the standard basis after rotating the standard basis frame to lie along the corresponding axis. The probabilities of obtaining the two possible outcomes 0 and 1 are used to evaluate the desired expectation value as the above equations show.</p>
-<h3 style="font-size: 20px">2. Measure the Bloch sphere coordinates of a qubit using the Aer simulator and plot the vector on the Bloch sphere.</h3><h4 style="font-size: 17px">&#128211;Step A. Create a qubit state using the circuit method, <code>initialize</code> with two random complex numbers as the parameter.</h4>
+</section>
+<section id="measure-the-bloch-sphere-coordinates-of-a-qubit-using-the-aer-simulator-and-plot-the-vector-on-the-bloch-sphere">
+<h4>2. Measure the Bloch sphere coordinates of a qubit using the Aer simulator and plot the vector on the Bloch sphere.<a class="headerlink" href="#measure-the-bloch-sphere-coordinates-of-a-qubit-using-the-aer-simulator-and-plot-the-vector-on-the-bloch-sphere" title="Permalink to this headline">#</a></h4>
+<section id="step-a-create-a-qubit-state-using-the-circuit-method-code-initialize-code-with-two-random-complex-numbers-as-the-parameter">
+<h5>Step A. Create a qubit state using the circuit method, <code>initialize</code> with two random complex numbers as the parameter.<a class="headerlink" href="#step-a-create-a-qubit-state-using-the-circuit-method-code-initialize-code-with-two-random-complex-numbers-as-the-parameter" title="Permalink to this headline">#</a></h5>
 <p>To learn how to use the function <code class="docutils literal notranslate"><span class="pre">initialize</span></code>, check <a class="reference external" href="https://qiskit.org/documentation/tutorials/circuits/3_summary_of_quantum_operations.html#Arbitrary-initialization">here</a>. (go to the <code class="docutils literal notranslate"><span class="pre">arbitrary</span> <span class="pre">initialization</span></code> section.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -856,7 +2007,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<h4 style="font-size: 17px">&#128211; Step B. Build the circuits to measure the expectation values of $X, Y, Z$ gate based on your answers to the question 1.  Run the cell below to estimate the Bloch sphere coordinates of the qubit from step A using the Aer simulator.</h4>
+</section>
+<section id="step-b-build-the-circuits-to-measure-the-expectation-values-of-x-y-z-gate-based-on-your-answers-to-the-question-1-run-the-cell-below-to-estimate-the-bloch-sphere-coordinates-of-the-qubit-from-step-a-using-the-aer-simulator">
+<h5>Step B. Build the circuits to measure the expectation values of <span class="math notranslate nohighlight">\(X, Y, Z\)</span> gate based on your answers to the question 1.  Run the cell below to estimate the Bloch sphere coordinates of the qubit from step A using the Aer simulator.<a class="headerlink" href="#step-b-build-the-circuits-to-measure-the-expectation-values-of-x-y-z-gate-based-on-your-answers-to-the-question-1-run-the-cell-below-to-estimate-the-bloch-sphere-coordinates-of-the-qubit-from-step-a-using-the-aer-simulator" title="Permalink to this headline">#</a></h5>
 <p>The circuit for <span class="math notranslate nohighlight">\(Z\)</span> gate measurement is given as an example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -918,6 +2071,27 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">QiskitError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="nn">/tmp/ipykernel_141769/1041644693.py</span> in <span class="ni">&lt;cell line: 35&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span>     <span class="c1"># run the circuit with the selected measurement and get the number of samples that output each bit value</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span>     <span class="n">circ_trans</span> <span class="o">=</span> <span class="n">transpile</span><span class="p">(</span><span class="n">qc</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span><span class="n">measure_circuit</span><span class="p">),</span> <span class="n">sim</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">39</span>     <span class="n">counts</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">qc</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span><span class="n">circ_trans</span><span class="p">),</span> <span class="n">shots</span><span class="o">=</span><span class="n">shots</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span><span class="o">.</span><span class="n">get_counts</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span> 
+<span class="g g-Whitespace">     </span><span class="mi">41</span>     <span class="c1"># calculate the probabilities for each bit value</span>
+
+<span class="nn">~/anaconda3/lib/python3.8/site-packages/qiskit/result/result.py</span> in <span class="ni">get_counts</span><span class="nt">(self, experiment)</span>
+<span class="g g-Whitespace">    </span><span class="mi">287</span>                 <span class="n">dict_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">statevector</span><span class="o">.</span><span class="n">Statevector</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span><span class="o">.</span><span class="n">probabilities_dict</span><span class="p">(</span><span class="n">decimals</span><span class="o">=</span><span class="mi">15</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">288</span>             <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">289</span>                 <span class="k">raise</span> <span class="n">QiskitError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;No counts for experiment &quot;</span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">290</span> 
+<span class="g g-Whitespace">    </span><span class="mi">291</span>         <span class="c1"># Return first item of dict_list if size is 1</span>
+
+<span class="ne">QiskitError</span>: &#39;No counts for experiment &quot;0&quot;&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -928,7 +2102,11 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<h2 style="font-size:24px;">Measuring Energy</h2>
+</section>
+</section>
+</section>
+<section id="measuring-energy">
+<h3>Measuring Energy<a class="headerlink" href="#measuring-energy" title="Permalink to this headline">#</a></h3>
 <br>
 <div style="background: #E8E7EB; border-radius: 5px;
 -moz-border-radius: 5px;">
@@ -945,7 +2123,8 @@ title="Print to PDF"
 <p>The ground state of hydrogen is not defined as a single unique state but actually contains four different states due to the spins of the electron and proton. In part 2 of this lab, we evaluate the energy difference among these four states, which is from the <code class="docutils literal notranslate"><span class="pre">hyperfine</span> <span class="pre">splitting</span></code>, by computing the energy expectation value for the system of two spins with the Hamiltonian expressed in Pauli operators. For more information about <code class="docutils literal notranslate"><span class="pre">hyperfine</span> <span class="pre">structure</span></code>, see <a class="reference external" href="https://www.feynmanlectures.caltech.edu/III_12.html">here</a></p>
 <p>Consider the system with two qubit interaction Hamiltonian <span class="math notranslate nohighlight">\(H = A(XX+YY+ZZ)\)</span> where <span class="math notranslate nohighlight">\(A = 1.47e^{-6} eV\)</span> and <span class="math notranslate nohighlight">\(X, Y, Z\)</span> are Pauli gates. Then the energy expectation value of the system can be evaluated by combining the expectation value of each term in the Hamiltonian.
 In this case, <span class="math notranslate nohighlight">\(E = \langle H\rangle = A( \langle XX\rangle + \langle YY\rangle + \langle ZZ\rangle )\)</span>.</p>
-<h3 style="font-size: 20px">&#128211; 1. Express the expectation value of each term in the Hamiltonian for an arbitrary two qubit state   $|\psi \rangle$ in the computational basis.</h3>
+<section id="express-the-expectation-value-of-each-term-in-the-hamiltonian-for-an-arbitrary-two-qubit-state-psi-rangle-in-the-computational-basis">
+<h4>1. Express the expectation value of each term in the Hamiltonian for an arbitrary two qubit state   <span class="math notranslate nohighlight">\(|\psi \rangle\)</span> in the computational basis.<a class="headerlink" href="#express-the-expectation-value-of-each-term-in-the-hamiltonian-for-an-arbitrary-two-qubit-state-psi-rangle-in-the-computational-basis" title="Permalink to this headline">#</a></h4>
 <p>The case for the term <span class="math notranslate nohighlight">\(\langle ZZ\rangle\)</span> is given as an example.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -956,7 +2135,11 @@ In this case, <span class="math notranslate nohighlight">\(E = \langle H\rangle 
 \langle YY\rangle &amp;= 
 \end{align}
 \end{split}\]</div>
-<h3 style="font-size: 20px">2. Measure the expected energy of the system using the Aer simulator when two qubits are entangled. Regard the bell basis, four different entangled states.</h3><h4 style="font-size: 17px">&#128211;Step A. Construct the circuits to prepare four different bell states.</h4>
+</section>
+<section id="measure-the-expected-energy-of-the-system-using-the-aer-simulator-when-two-qubits-are-entangled-regard-the-bell-basis-four-different-entangled-states">
+<h4>2. Measure the expected energy of the system using the Aer simulator when two qubits are entangled. Regard the bell basis, four different entangled states.<a class="headerlink" href="#measure-the-expected-energy-of-the-system-using-the-aer-simulator-when-two-qubits-are-entangled-regard-the-bell-basis-four-different-entangled-states" title="Permalink to this headline">#</a></h4>
+<section id="step-a-construct-the-circuits-to-prepare-four-different-bell-states">
+<h5>Step A. Construct the circuits to prepare four different bell states.<a class="headerlink" href="#step-a-construct-the-circuits-to-prepare-four-different-bell-states" title="Permalink to this headline">#</a></h5>
 <p>Let’s label each bell state as
 $<span class="math notranslate nohighlight">\(
 \begin{align}
@@ -1018,7 +2201,10 @@ Sing &amp;= \frac{1}{\sqrt2} (|10\rangle - |01\rangle)
 </div>
 </div>
 </div>
-<h4 style="font-size: 17px">&#128211;Step B. Create the circuits to measure the expectation value of each term in the Hamiltonian based on your answer to the question 1.</h4><div class="cell docutils container">
+</section>
+<section id="step-b-create-the-circuits-to-measure-the-expectation-value-of-each-term-in-the-hamiltonian-based-on-your-answer-to-the-question-1">
+<h5>Step B. Create the circuits to measure the expectation value of each term in the Hamiltonian based on your answer to the question 1.<a class="headerlink" href="#step-b-create-the-circuits-to-measure-the-expectation-value-of-each-term-in-the-hamiltonian-based-on-your-answer-to-the-question-1" title="Permalink to this headline">#</a></h5>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &lt;ZZ&gt; </span>
 <span class="n">measure_ZZ</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -1050,7 +2236,10 @@ Sing &amp;= \frac{1}{\sqrt2} (|10\rangle - |01\rangle)
 </div>
 </div>
 </div>
- <h4 style="font-size: 17px">Step C. Execute the circuits on Aer simulator by running the cell below and evaluate the energy expectation value for each state.</h4><div class="cell docutils container">
+</section>
+<section id="step-c-execute-the-circuits-on-aer-simulator-by-running-the-cell-below-and-evaluate-the-energy-expectation-value-for-each-state">
+<h5>Step C. Execute the circuits on Aer simulator by running the cell below and evaluate the energy expectation value for each state.<a class="headerlink" href="#step-c-execute-the-circuits-on-aer-simulator-by-running-the-cell-below-and-evaluate-the-energy-expectation-value-for-each-state" title="Permalink to this headline">#</a></h5>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shots</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">14</span> <span class="c1"># number of samples used for statistics</span>
 
@@ -1092,7 +2281,9 @@ Sing &amp;= \frac{1}{\sqrt2} (|10\rangle - |01\rangle)
 </div>
 </div>
 </div>
- <h4 style="font-size: 17px">Step D. Understanding the result. </h4>
+</section>
+<section id="step-d-understanding-the-result">
+<h5>Step D. Understanding the result.<a class="headerlink" href="#step-d-understanding-the-result" title="Permalink to this headline">#</a></h5>
 <p>If you found the energy expectation values successfully, you would have obtained exactly the same value, <span class="math notranslate nohighlight">\(A (= 1.47e^{-6} eV)\)</span>, for the triplet states, <span class="math notranslate nohighlight">\(|Tri1\rangle, |Tri2\rangle, |Tri3\rangle\)</span> and one lower energy level, <span class="math notranslate nohighlight">\(-3A (= -4.41e^{-6} eV)\)</span> for the singlet state <span class="math notranslate nohighlight">\(|Sing\rangle\)</span>.</p>
 <p>What we have done here is measuring the energies of the four different spin states corresponding to the ground state of hydrogen and observed <code class="docutils literal notranslate"><span class="pre">hyperfine</span> <span class="pre">structure</span></code> in the energy levels caused by spin-spin coupling.  This tiny energy difference between the singlet and triplet states is the reason for the famous 21-cm wavelength radiation used to map the structure of the galaxy.</p>
 <p>In the cell below, we verify the wavelength of the emission from the transition between the triplet states and singlet state.</p>
@@ -1116,7 +2307,11 @@ Sing &amp;= \frac{1}{\sqrt2} (|10\rangle - |01\rangle)
 </div>
 </div>
 </div>
-<h2 style="font-size:24px;">Quantum teleportation</h2>
+</section>
+</section>
+</section>
+<section id="quantum-teleportation">
+<h3>Quantum teleportation<a class="headerlink" href="#quantum-teleportation" title="Permalink to this headline">#</a></h3>
 <br>
 <div style="background: #E8E7EB; border-radius: 5px;
 -moz-border-radius: 5px;">
@@ -1130,7 +2325,8 @@ Sing &amp;= \frac{1}{\sqrt2} (|10\rangle - |01\rangle)
               font-size:16px;">To show how quantum teleportation is performed and how Pauli correction is made depending on the measurement result.</p>
 </div>
 <p>For this exercise, we will see how quantum teleportation is performed using an entangled state as a resource. Importantly, to transfer one qubit faithfully to another, an additional Pauli rotation needs to be applied <span class="math notranslate nohighlight">\(\textit{depending on the measurement result of the original qubit}\)</span>.</p>
- <h4 style="font-size: 17px">Step A. Generate a random single qubit and plot it on the Bloch sphere. </h4>
+<section id="step-a-generate-a-random-single-qubit-and-plot-it-on-the-bloch-sphere">
+<h4>Step A. Generate a random single qubit and plot it on the Bloch sphere.<a class="headerlink" href="#step-a-generate-a-random-single-qubit-and-plot-it-on-the-bloch-sphere" title="Permalink to this headline">#</a></h4>
 <p>Hint: qiskit.quantum_info may have useful methods.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1139,7 +2335,9 @@ Sing &amp;= \frac{1}{\sqrt2} (|10\rangle - |01\rangle)
 </div>
 </div>
 </div>
- <h4 style="font-size: 17px">Step B. Create a quantum teleportation circuit. </h4>
+</section>
+<section id="step-b-create-a-quantum-teleportation-circuit">
+<h4>Step B. Create a quantum teleportation circuit.<a class="headerlink" href="#step-b-create-a-quantum-teleportation-circuit" title="Permalink to this headline">#</a></h4>
 <p>Construct a quantum circuit that has <em>two</em> qubits. One is the random single qubit <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> produced above, and another is a qubit initialized as <span class="math notranslate nohighlight">\(|0\rangle\)</span> and will be mapped to <span class="math notranslate nohighlight">\(|\psi\rangle\)</span>, i.e. <span class="math notranslate nohighlight">\(|0\rangle\rightarrow |\psi\rangle\)</span>. The Qiskit chapter on quantum teleportation may be helpful: <a class="reference external" href="https://qiskit.org/textbook/ch-algorithms/teleportation.html">https://qiskit.org/textbook/ch-algorithms/teleportation.html</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1166,7 +2364,9 @@ Sing &amp;= \frac{1}{\sqrt2} (|10\rangle - |01\rangle)
 </div>
 </div>
 </div>
- <h4 style="font-size: 17px">Step C. Plot the teleported qubit. </h4>
+</section>
+<section id="step-c-plot-the-teleported-qubit">
+<h4>Step C. Plot the teleported qubit.<a class="headerlink" href="#step-c-plot-the-teleported-qubit" title="Permalink to this headline">#</a></h4>
 <p>Plot the teleported qubit on a Bloch sphere and confirm you indeed have recovered the same state as one shown in Step A.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1184,9 +2384,12 @@ Sing &amp;= \frac{1}{\sqrt2} (|10\rangle - |01\rangle)
 </div>
 </div>
 </div>
-<h1 style="font-size:35px;
-        color:black;
-        ">Part 3 Accuracy of Quantum Phase Estimation</h1><p>Prerequisite</p>
+</section>
+</section>
+</section>
+<section id="part-3-accuracy-of-quantum-phase-estimation">
+<h2>Part 3 Accuracy of Quantum Phase Estimation<a class="headerlink" href="#part-3-accuracy-of-quantum-phase-estimation" title="Permalink to this headline">#</a></h2>
+<p>Prerequisite</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://qiskit.org/textbook/ch-algorithms/quantum-fourier-transform.html">Ch.3.5 Quantum Fourier Transform</a></p></li>
 <li><p><a class="reference external" href="https://qiskit.org/textbook/ch-algorithms/quantum-phase-estimation.html">Ch.3.6 Quantum Phase Estimation</a></p></li>
@@ -1207,7 +2410,8 @@ Sing &amp;= \frac{1}{\sqrt2} (|10\rangle - |01\rangle)
 </div>
 </div>
 </div>
-<h2 style="font-size:24px;">Performance of Quantum Phase Estimation</h2>
+<section id="performance-of-quantum-phase-estimation">
+<h3>Performance of Quantum Phase Estimation<a class="headerlink" href="#performance-of-quantum-phase-estimation" title="Permalink to this headline">#</a></h3>
 <br>
 <div style="background: #E8E7EB; border-radius: 5px;
 -moz-border-radius: 5px;">
@@ -1222,7 +2426,11 @@ Sing &amp;= \frac{1}{\sqrt2} (|10\rangle - |01\rangle)
 </div>
 <p>The accuracy of the estimated value through Quantum Phase Estimation (QPE) and its probability of success depend on the number of qubits employed in QPE circuits. Therefore, one might want to know the necessary number of qubits to achieve the targeted level of QPE performance, especially when the phase that needs to be determined cannot be decomposed in a finite bit binary expansion.
 In Part 1 of this lab, we examine the number of qubits required to accomplish the desired accuracy and the probability of success in determining the phase through QPE.</p>
-<h3 style="font-size: 20px">1. Find the probability of obtaining the estimation for a phase value accurate to $2^{-2}$ successfully with four counting qubits.</h3> <h4 style="font-size: 17px">&#128211;Step A. Set up the QPE circuit with four counting qubits and save the circuit to the variable 'qc4'.  Execute 'qc4' on a Aer simulator.  Plot the histogram of the result.</h4><p>Check the QPE chapter in Qiskit textbook ( go to <code class="docutils literal notranslate"><span class="pre">3.</span> <span class="pre">Example:</span> <span class="pre">Getting</span> <span class="pre">More</span> <span class="pre">Precision</span></code> section <a class="reference external" href="https://qiskit.org/textbook/ch-algorithms/quantum-phase-estimation.html#3.-Example:-Getting-More-Precision-">here</a> ) for the circuit.</p>
+<section id="find-the-probability-of-obtaining-the-estimation-for-a-phase-value-accurate-to-2-2-successfully-with-four-counting-qubits">
+<h4>1. Find the probability of obtaining the estimation for a phase value accurate to <span class="math notranslate nohighlight">\(2^{-2}\)</span> successfully with four counting qubits.<a class="headerlink" href="#find-the-probability-of-obtaining-the-estimation-for-a-phase-value-accurate-to-2-2-successfully-with-four-counting-qubits" title="Permalink to this headline">#</a></h4>
+<section id="step-a-set-up-the-qpe-circuit-with-four-counting-qubits-and-save-the-circuit-to-the-variable-qc4-execute-qc4-on-a-aer-simulator-plot-the-histogram-of-the-result">
+<h5>Step A. Set up the QPE circuit with four counting qubits and save the circuit to the variable ‘qc4’.  Execute ‘qc4’ on a Aer simulator.  Plot the histogram of the result.<a class="headerlink" href="#step-a-set-up-the-qpe-circuit-with-four-counting-qubits-and-save-the-circuit-to-the-variable-qc4-execute-qc4-on-a-aer-simulator-plot-the-histogram-of-the-result" title="Permalink to this headline">#</a></h5>
+<p>Check the QPE chapter in Qiskit textbook ( go to <code class="docutils literal notranslate"><span class="pre">3.</span> <span class="pre">Example:</span> <span class="pre">Getting</span> <span class="pre">More</span> <span class="pre">Precision</span></code> section <a class="reference external" href="https://qiskit.org/textbook/ch-algorithms/quantum-phase-estimation.html#3.-Example:-Getting-More-Precision-">here</a> ) for the circuit.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">qft</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -1281,7 +2489,10 @@ In Part 1 of this lab, we examine the number of qubits required to accomplish th
 </div>
 </div>
 <p><strong>Suppose the outcome of the final measurement is <span class="math notranslate nohighlight">\(m\)</span>, and let <span class="math notranslate nohighlight">\(b\)</span> the best estimation which is <code class="docutils literal notranslate"><span class="pre">0.3125</span></code> for this case.</strong></p>
-<h4 style="font-size: 17px">&#128211;Step B. Find $e$, the maximum difference in integer from the best estimation <code>0101</code> so that all the outcomes, 'm's, would approximate $\phi$ to an accuracy $2^{-2}$ when $|m - b| \leq \frac{e}{2^{t}}$. </h4><p>In this case, the values of <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are <span class="math notranslate nohighlight">\(4\)</span> and <span class="math notranslate nohighlight">\(0.3125\)</span>, respectively.</p>
+</section>
+<section id="step-b-find-e-the-maximum-difference-in-integer-from-the-best-estimation-code-0101-code-so-that-all-the-outcomes-m-s-would-approximate-phi-to-an-accuracy-2-2-when-m-b-leq-frac-e-2-t">
+<h5>Step B. Find <span class="math notranslate nohighlight">\(e\)</span>, the maximum difference in integer from the best estimation <code>0101</code> so that all the outcomes, ‘m’s, would approximate <span class="math notranslate nohighlight">\(\phi\)</span> to an accuracy <span class="math notranslate nohighlight">\(2^{-2}\)</span> when <span class="math notranslate nohighlight">\(|m - b| \leq \frac{e}{2^{t}}\)</span>.<a class="headerlink" href="#step-b-find-e-the-maximum-difference-in-integer-from-the-best-estimation-code-0101-code-so-that-all-the-outcomes-m-s-would-approximate-phi-to-an-accuracy-2-2-when-m-b-leq-frac-e-2-t" title="Permalink to this headline">#</a></h5>
+<p>In this case, the values of <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are <span class="math notranslate nohighlight">\(4\)</span> and <span class="math notranslate nohighlight">\(0.3125\)</span>, respectively.</p>
 <p>For example, under <span class="math notranslate nohighlight">\(e = 1\)</span>, the considered outcomes are <code class="docutils literal notranslate"><span class="pre">0100</span></code>, <code class="docutils literal notranslate"><span class="pre">0101</span></code>, <code class="docutils literal notranslate"><span class="pre">0110</span></code> which correspond to the values of <span class="math notranslate nohighlight">\(m\)</span>: <span class="math notranslate nohighlight">\(0.25,~0.312,~0.375\)</span>, respectively, and all of them approximate the value <span class="math notranslate nohighlight">\(\frac{1}{3}\)</span> to an accuracy <span class="math notranslate nohighlight">\(2^{-2}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1290,7 +2501,10 @@ In Part 1 of this lab, we examine the number of qubits required to accomplish th
 </div>
 </div>
 </div>
-<h4 style="font-size: 17px">&#128211;Step C. Compute the probability of obtaining an approximation correct to an accuracy $2^{-2}$.  Verify that the computed probability value is larger or equal to $1- \frac{1}{2(2^{(t-n)}-2)}$ where $t$ is the number of counting bits and the $2^{-n}$ is the desired accuracy. </h4><p>Now it is easy to evaluate the probability of the success from the histogram since all the outcomes that approximate <span class="math notranslate nohighlight">\(\phi\)</span> to the accuracy <span class="math notranslate nohighlight">\(2^{-2}\)</span> can be found based on the maximum difference <span class="math notranslate nohighlight">\(e\)</span> from the best estimate.</p>
+</section>
+<section id="step-c-compute-the-probability-of-obtaining-an-approximation-correct-to-an-accuracy-2-2-verify-that-the-computed-probability-value-is-larger-or-equal-to-1-frac-1-2-2-t-n-2-where-t-is-the-number-of-counting-bits-and-the-2-n-is-the-desired-accuracy">
+<h5>Step C. Compute the probability of obtaining an approximation correct to an accuracy <span class="math notranslate nohighlight">\(2^{-2}\)</span>.  Verify that the computed probability value is larger or equal to <span class="math notranslate nohighlight">\(1- \frac{1}{2(2^{(t-n)}-2)}\)</span> where <span class="math notranslate nohighlight">\(t\)</span> is the number of counting bits and the <span class="math notranslate nohighlight">\(2^{-n}\)</span> is the desired accuracy.<a class="headerlink" href="#step-c-compute-the-probability-of-obtaining-an-approximation-correct-to-an-accuracy-2-2-verify-that-the-computed-probability-value-is-larger-or-equal-to-1-frac-1-2-2-t-n-2-where-t-is-the-number-of-counting-bits-and-the-2-n-is-the-desired-accuracy" title="Permalink to this headline">#</a></h5>
+<p>Now it is easy to evaluate the probability of the success from the histogram since all the outcomes that approximate <span class="math notranslate nohighlight">\(\phi\)</span> to the accuracy <span class="math notranslate nohighlight">\(2^{-2}\)</span> can be found based on the maximum difference <span class="math notranslate nohighlight">\(e\)</span> from the best estimate.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Your code goes here</span>
@@ -1298,7 +2512,11 @@ In Part 1 of this lab, we examine the number of qubits required to accomplish th
 </div>
 </div>
 </div>
-<h3 style="font-size: 20px">2. Compute the probability of success for the accuracy $2^{-2}$ when the number of counting qubits, $t$, varies from four to nine. Compare your result with the equation $t=n+log(2+\frac{1}{2\epsilon})$ when $2^{-n}$ is the desired accuracy and $\epsilon$ is 1 - probability  of success.</h3> <p>The following plot shows the relationship between the number of counting qubit, t, and the minimum probability of success to approximate the phase to an accuracy <span class="math notranslate nohighlight">\(2^{-2}\)</span>.  Check the Ch. 5.2.1 Performance and requirements in <code class="docutils literal notranslate"><span class="pre">[QCQI]</span></code>.</p>
+</section>
+</section>
+<section id="compute-the-probability-of-success-for-the-accuracy-2-2-when-the-number-of-counting-qubits-t-varies-from-four-to-nine-compare-your-result-with-the-equation-t-n-log-2-frac-1-2-epsilon-when-2-n-is-the-desired-accuracy-and-epsilon-is-1-probability-of-success">
+<h4>2. Compute the probability of success for the accuracy <span class="math notranslate nohighlight">\(2^{-2}\)</span> when the number of counting qubits, <span class="math notranslate nohighlight">\(t\)</span>, varies from four to nine. Compare your result with the equation <span class="math notranslate nohighlight">\(t=n+log(2+\frac{1}{2\epsilon})\)</span> when <span class="math notranslate nohighlight">\(2^{-n}\)</span> is the desired accuracy and <span class="math notranslate nohighlight">\(\epsilon\)</span> is 1 - probability  of success.<a class="headerlink" href="#compute-the-probability-of-success-for-the-accuracy-2-2-when-the-number-of-counting-qubits-t-varies-from-four-to-nine-compare-your-result-with-the-equation-t-n-log-2-frac-1-2-epsilon-when-2-n-is-the-desired-accuracy-and-epsilon-is-1-probability-of-success" title="Permalink to this headline">#</a></h4>
+<p>The following plot shows the relationship between the number of counting qubit, t, and the minimum probability of success to approximate the phase to an accuracy <span class="math notranslate nohighlight">\(2^{-2}\)</span>.  Check the Ch. 5.2.1 Performance and requirements in <code class="docutils literal notranslate"><span class="pre">[QCQI]</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="mi">1</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">n</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
@@ -1316,7 +2534,9 @@ In Part 1 of this lab, we examine the number of qubits required to accomplish th
 </div>
 </div>
 </div>
-<h4 style="font-size: 17px">&#128211;Step A. Construct QPE circuit to estimate $\phi$ when $\phi = 1/3$ with for the different number of counting qubits, $t$, when $t = [4, 5, 6, 7, 8, 9]$. Store all the circuits in a list variable 'circ' to simulate all the circuits at once as we did in Lab2. </h4><div class="cell docutils container">
+<section id="step-a-construct-qpe-circuit-to-estimate-phi-when-phi-1-3-with-for-the-different-number-of-counting-qubits-t-when-t-4-5-6-7-8-9-store-all-the-circuits-in-a-list-variable-circ-to-simulate-all-the-circuits-at-once-as-we-did-in-lab2">
+<h5>Step A. Construct QPE circuit to estimate <span class="math notranslate nohighlight">\(\phi\)</span> when <span class="math notranslate nohighlight">\(\phi = 1/3\)</span> with for the different number of counting qubits, <span class="math notranslate nohighlight">\(t\)</span>, when <span class="math notranslate nohighlight">\(t = [4, 5, 6, 7, 8, 9]\)</span>. Store all the circuits in a list variable ‘circ’ to simulate all the circuits at once as we did in Lab2.<a class="headerlink" href="#step-a-construct-qpe-circuit-to-estimate-phi-when-phi-1-3-with-for-the-different-number-of-counting-qubits-t-when-t-4-5-6-7-8-9-store-all-the-circuits-in-a-list-variable-circ-to-simulate-all-the-circuits-at-once-as-we-did-in-lab2" title="Permalink to this headline">#</a></h5>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Your Code to create the list variable &#39;circ&#39; goes here</span>
 </pre></div>
@@ -1340,7 +2560,10 @@ In Part 1 of this lab, we examine the number of qubits required to accomplish th
 </div>
 </div>
 </div>
-<h4 style="font-size: 17px">&#128211;Step B. Determine $e$, the maximum difference in integer from the best estimation for the different number of counting qubits, $t = [4, 5, 6, 7, 8, 9]$. Verify the relationship $e=2^{t-n}-1$ where $n=2$ since the desired accuracy is $2^{-2}$ in this case. </h4><div class="cell docutils container">
+</section>
+<section id="step-b-determine-e-the-maximum-difference-in-integer-from-the-best-estimation-for-the-different-number-of-counting-qubits-t-4-5-6-7-8-9-verify-the-relationship-e-2-t-n-1-where-n-2-since-the-desired-accuracy-is-2-2-in-this-case">
+<h5>Step B. Determine <span class="math notranslate nohighlight">\(e\)</span>, the maximum difference in integer from the best estimation for the different number of counting qubits, <span class="math notranslate nohighlight">\(t = [4, 5, 6, 7, 8, 9]\)</span>. Verify the relationship <span class="math notranslate nohighlight">\(e=2^{t-n}-1\)</span> where <span class="math notranslate nohighlight">\(n=2\)</span> since the desired accuracy is <span class="math notranslate nohighlight">\(2^{-2}\)</span> in this case.<a class="headerlink" href="#step-b-determine-e-the-maximum-difference-in-integer-from-the-best-estimation-for-the-different-number-of-counting-qubits-t-4-5-6-7-8-9-verify-the-relationship-e-2-t-n-1-where-n-2-since-the-desired-accuracy-is-2-2-in-this-case" title="Permalink to this headline">#</a></h5>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Your Code goes here</span>
 </pre></div>
@@ -1348,14 +2571,20 @@ In Part 1 of this lab, we examine the number of qubits required to accomplish th
 </div>
 </div>
 <p>If you successfully calculated <span class="math notranslate nohighlight">\(e\)</span> values for all the counting qubits, <span class="math notranslate nohighlight">\(t=[4,5,6,7,8,9]\)</span>, you will be able to generate the following graph that verifies the relationship <span class="math notranslate nohighlight">\(e = 2^{t-2} -1\)</span> with the <span class="math notranslate nohighlight">\(e\)</span> values that you computed.</p>
-<h4 style="font-size: 17px">&#128211;Step C. Evaluate the probability of success estimating $\phi$ to an accuracy $2^{-2}$ for all the values of $t$, the number of counting qubits. Save the probabilities to the list variable, 'prob_success'.  </h4><div class="cell docutils container">
+</section>
+<section id="step-c-evaluate-the-probability-of-success-estimating-phi-to-an-accuracy-2-2-for-all-the-values-of-t-the-number-of-counting-qubits-save-the-probabilities-to-the-list-variable-prob-success">
+<h5>Step C. Evaluate the probability of success estimating <span class="math notranslate nohighlight">\(\phi\)</span> to an accuracy <span class="math notranslate nohighlight">\(2^{-2}\)</span> for all the values of <span class="math notranslate nohighlight">\(t\)</span>, the number of counting qubits. Save the probabilities to the list variable, ‘prob_success’.<a class="headerlink" href="#step-c-evaluate-the-probability-of-success-estimating-phi-to-an-accuracy-2-2-for-all-the-values-of-t-the-number-of-counting-qubits-save-the-probabilities-to-the-list-variable-prob-success" title="Permalink to this headline">#</a></h5>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Your code to create the list variable, &#39;prob_success&#39;,  goes here</span>
 </pre></div>
 </div>
 </div>
 </div>
-<h4 style="font-size: 17px">&#128211;Step D. Overlay the results of Step C on the graph that shows the relationship between the number of counting qubits, $t$, and the minimum probability of success to approximate the phase to an accuracy $2^{-2}$. Understand the result.  </h4><div class="cell docutils container">
+</section>
+<section id="step-d-overlay-the-results-of-step-c-on-the-graph-that-shows-the-relationship-between-the-number-of-counting-qubits-t-and-the-minimum-probability-of-success-to-approximate-the-phase-to-an-accuracy-2-2-understand-the-result">
+<h5>Step D. Overlay the results of Step C on the graph that shows the relationship between the number of counting qubits, <span class="math notranslate nohighlight">\(t\)</span>, and the minimum probability of success to approximate the phase to an accuracy <span class="math notranslate nohighlight">\(2^{-2}\)</span>. Understand the result.<a class="headerlink" href="#step-d-overlay-the-results-of-step-c-on-the-graph-that-shows-the-relationship-between-the-number-of-counting-qubits-t-and-the-minimum-probability-of-success-to-approximate-the-phase-to-an-accuracy-2-2-understand-the-result" title="Permalink to this headline">#</a></h5>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Your code goes here</span>
 </pre></div>
@@ -1382,9 +2611,12 @@ The line plot in the left panel shows the minimum success probability to estimat
 </div>
 </div>
 </div>
-<h1 style="font-size:35px;
-        color:black;
-        ">Part 4 Quantum Error Correction </h1>
+</section>
+</section>
+</section>
+</section>
+<section id="part-4-quantum-error-correction">
+<h2>Part 4 Quantum Error Correction<a class="headerlink" href="#part-4-quantum-error-correction" title="Permalink to this headline">#</a></h2>
 <p>Prerequisite</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://qiskit.org/textbook/ch-quantum-hardware/error-correction-repetition-code.html#Storing-qubits">5.1 Introduction to Quantum Error Correction</a></p></li>
@@ -1415,7 +2647,8 @@ The line plot in the left panel shows the minimum success probability to estimat
 </div>
 </div>
 </div>
-<h2 style="font-size:24px;"> 3-qubit code </h2>
+<section id="qubit-code">
+<h3>3-qubit code<a class="headerlink" href="#qubit-code" title="Permalink to this headline">#</a></h3>
 <br>
 <div style="background: #E8E7EB; border-radius: 5px;
 -moz-border-radius: 5px;">
@@ -1427,7 +2660,11 @@ The line plot in the left panel shows the minimum success probability to estimat
             "><b>Goal</b></p>
     <p style=" padding: 0px 0px 10px 10px;
               font-size:16px;"> Create circuits for 3-qubit code that encodes a one qubit state into a three qubit code state and utilize partiy check to detect and localise either bit-flip ( X ) or phase-flip ( Z ) errors on a single qubit in the codes.</p>
-</div><h3 style="font-size: 20px"> 1. Detect and locate a single bit-flip ( X ) error utilizing 3-qubit code and parity check circuit.</h3><h4 style="font-size: 17px">&#128211;Step A. Create a circuit to encode the state $|\psi\rangle = \frac{1}{\sqrt{2}}(|0\rangle + i|1\rangle)$ into 3-qubit code state, $\frac{1}{\sqrt{2}}(|000\rangle + i|111\rangle)$ to be protected from one bit-flip ( X ) error.</h4><div class="cell docutils container">
+</div><section id="detect-and-locate-a-single-bit-flip-x-error-utilizing-3-qubit-code-and-parity-check-circuit">
+<h4>1. Detect and locate a single bit-flip ( X ) error utilizing 3-qubit code and parity check circuit.<a class="headerlink" href="#detect-and-locate-a-single-bit-flip-x-error-utilizing-3-qubit-code-and-parity-check-circuit" title="Permalink to this headline">#</a></h4>
+<section id="step-a-create-a-circuit-to-encode-the-state-psi-rangle-frac-1-sqrt-2-0-rangle-i-1-rangle-into-3-qubit-code-state-frac-1-sqrt-2-000-rangle-i-111-rangle-to-be-protected-from-one-bit-flip-x-error">
+<h5>Step A. Create a circuit to encode the state <span class="math notranslate nohighlight">\(|\psi\rangle = \frac{1}{\sqrt{2}}(|0\rangle + i|1\rangle)\)</span> into 3-qubit code state, <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{2}}(|000\rangle + i|111\rangle)\)</span> to be protected from one bit-flip ( X ) error.<a class="headerlink" href="#step-a-create-a-circuit-to-encode-the-state-psi-rangle-frac-1-sqrt-2-0-rangle-i-1-rangle-into-3-qubit-code-state-frac-1-sqrt-2-000-rangle-i-111-rangle-to-be-protected-from-one-bit-flip-x-error" title="Permalink to this headline">#</a></h5>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qc_3qx</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 
@@ -1451,7 +2688,10 @@ The line plot in the left panel shows the minimum success probability to estimat
 </div>
 </div>
 </div>
-<h4 style="font-size: 17px">&#128211;Step B. Plot the 3-qubit code state produced by the above circuit, <code>qc_3qx</code> on the qsphere to validate the encoding.  </h4><p>The state displayed on the qshpere should match the 3-qubit code state for <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> upto a global phase.</p>
+</section>
+<section id="step-b-plot-the-3-qubit-code-state-produced-by-the-above-circuit-code-qc-3qx-code-on-the-qsphere-to-validate-the-encoding">
+<h5>Step B. Plot the 3-qubit code state produced by the above circuit, <code>qc_3qx</code> on the qsphere to validate the encoding.<a class="headerlink" href="#step-b-plot-the-3-qubit-code-state-produced-by-the-above-circuit-code-qc-3qx-code-on-the-qsphere-to-validate-the-encoding" title="Permalink to this headline">#</a></h5>
+<p>The state displayed on the qshpere should match the 3-qubit code state for <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> upto a global phase.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### your code goes here ###</span>
@@ -1459,7 +2699,10 @@ The line plot in the left panel shows the minimum success probability to estimat
 </div>
 </div>
 </div>
-<h4 style="font-size: 17px">Step C. Implement the parity check gates to detect and localize a single bit flip error on the code qubits.</h4><p>Following operation will apply a single bit flip error on the code. Execute the cells below.</p>
+</section>
+<section id="step-c-implement-the-parity-check-gates-to-detect-and-localize-a-single-bit-flip-error-on-the-code-qubits">
+<h5>Step C. Implement the parity check gates to detect and localize a single bit flip error on the code qubits.<a class="headerlink" href="#step-c-implement-the-parity-check-gates-to-detect-and-localize-a-single-bit-flip-error-on-the-code-qubits" title="Permalink to this headline">#</a></h5>
+<p>Following operation will apply a single bit flip error on the code. Execute the cells below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">apply_err</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">err</span><span class="p">):</span>
@@ -1526,7 +2769,10 @@ The line plot in the left panel shows the minimum success probability to estimat
 </div>
 </div>
 </div>
-<h4 style="font-size: 17px">&#128211;Step D. Complete the dictionary in the following cell to make the syndrome look-up table for all single bit-flip errors on the three qubit code.</h4><p>The key of the dictionary is a two-bit string for the syndrome and the values reprent the corresponding a single qubit error gates with the appropriate qubit indicies on the code circuit.</p>
+</section>
+<section id="step-d-complete-the-dictionary-in-the-following-cell-to-make-the-syndrome-look-up-table-for-all-single-bit-flip-errors-on-the-three-qubit-code">
+<h5>Step D. Complete the dictionary in the following cell to make the syndrome look-up table for all single bit-flip errors on the three qubit code.<a class="headerlink" href="#step-d-complete-the-dictionary-in-the-following-cell-to-make-the-syndrome-look-up-table-for-all-single-bit-flip-errors-on-the-three-qubit-code" title="Permalink to this headline">#</a></h5>
+<p>The key of the dictionary is a two-bit string for the syndrome and the values reprent the corresponding a single qubit error gates with the appropriate qubit indicies on the code circuit.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### complete the dictionary ###</span>
@@ -1550,7 +2796,10 @@ The line plot in the left panel shows the minimum success probability to estimat
 </div>
 </div>
 </div>
-<h4 style="font-size: 17px">&#128211;Step E. Find the single bit-error and two bit-error based on the measured syndrome bits and check your answer with the value of the variable, <code>which_qubit</code>.</h4><p>Run the following cell.</p>
+</section>
+<section id="step-e-find-the-single-bit-error-and-two-bit-error-based-on-the-measured-syndrome-bits-and-check-your-answer-with-the-value-of-the-variable-code-which-qubit-code">
+<h5>Step E. Find the single bit-error and two bit-error based on the measured syndrome bits and check your answer with the value of the variable, <code>which_qubit</code><a class="headerlink" href="#step-e-find-the-single-bit-error-and-two-bit-error-based-on-the-measured-syndrome-bits-and-check-your-answer-with-the-value-of-the-variable-code-which-qubit-code" title="Permalink to this headline">#</a></h5>
+<p>Run the following cell.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">your_answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the index of the code qubit that underwent bit-flip error: &#39;</span><span class="p">)</span>
@@ -1560,7 +2809,10 @@ The line plot in the left panel shows the minimum success probability to estimat
 </div>
 </div>
 </div>
-<h4 style="font-size: 17px">Step F. Identify the logical $X$ ( $X_{L}$ ) and logical $Z$ ( $Z_{L}$ ) operators for the three qubit bit flip code.</h4><p>📓 Find the logical <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(X_{L}\)</span>, for three qubit bit flip code where <span class="math notranslate nohighlight">\(X_{L}|000\rangle = |111\rangle\)</span>. Construct a circuit to perform <span class="math notranslate nohighlight">\(X_{L}|0\rangle_{L}\)</span> and simulate it to check if the state produced by the circuit is <span class="math notranslate nohighlight">\(|1\rangle_{L}\)</span>, where the logical code word basis states, <span class="math notranslate nohighlight">\(|0\rangle_{L}\)</span> and <span class="math notranslate nohighlight">\(|1\rangle_{L}\)</span>, are encoded as <span class="math notranslate nohighlight">\(|0\rangle_{L} = |000\rangle, ~ |1\rangle_{L}=|111\rangle\)</span> .</p>
+</section>
+<section id="step-f-identify-the-logical-x-x-l-and-logical-z-z-l-operators-for-the-three-qubit-bit-flip-code">
+<h5>Step F. Identify the logical <span class="math notranslate nohighlight">\(X\)</span> ( <span class="math notranslate nohighlight">\(X_{L}\)</span> ) and logical <span class="math notranslate nohighlight">\(Z\)</span> ( <span class="math notranslate nohighlight">\(Z_{L}\)</span> ) operators for the three qubit bit flip code.<a class="headerlink" href="#step-f-identify-the-logical-x-x-l-and-logical-z-z-l-operators-for-the-three-qubit-bit-flip-code" title="Permalink to this headline">#</a></h5>
+<p>📓 Find the logical <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(X_{L}\)</span>, for three qubit bit flip code where <span class="math notranslate nohighlight">\(X_{L}|000\rangle = |111\rangle\)</span>. Construct a circuit to perform <span class="math notranslate nohighlight">\(X_{L}|0\rangle_{L}\)</span> and simulate it to check if the state produced by the circuit is <span class="math notranslate nohighlight">\(|1\rangle_{L}\)</span>, where the logical code word basis states, <span class="math notranslate nohighlight">\(|0\rangle_{L}\)</span> and <span class="math notranslate nohighlight">\(|1\rangle_{L}\)</span>, are encoded as <span class="math notranslate nohighlight">\(|0\rangle_{L} = |000\rangle, ~ |1\rangle_{L}=|111\rangle\)</span> .</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##################################################</span>
@@ -1587,7 +2839,13 @@ The line plot in the left panel shows the minimum success probability to estimat
 <li><p>distance of a code: the minimum number of errors that will change one logical code word basis state to another or the maximum number of errors that can be detected.</p></li>
 </ul>
 <p><strong>Your answer :</strong></p>
-<h3 style="font-size: 20px">2. Construct a circuit that encodes one qubit state into 3-qubit code states and can locate a single phase-flip ( Z ) error through parity check.</h3><h4 style="font-size: 17px">&#128211;Step A. Create a circuit to encode the state $|\psi\rangle = \frac{1}{\sqrt{2}}(|0\rangle + i|1\rangle)$ into a 3-qubit code to protect it from one phase-flip ( Z ) error.</h4><p>Here, the logical code word basis states, <span class="math notranslate nohighlight">\(|0\rangle_{L}\)</span> and <span class="math notranslate nohighlight">\(|1\rangle_{L}\)</span>, are encoded as, <span class="math notranslate nohighlight">\(|0\rangle_{L} = |+++\rangle\)</span> and <span class="math notranslate nohighlight">\(|1\rangle_{L} = |---\rangle\)</span>.</p>
+</section>
+</section>
+<section id="construct-a-circuit-that-encodes-one-qubit-state-into-3-qubit-code-states-and-can-locate-a-single-phase-flip-z-error-through-parity-check">
+<h4>2. Construct a circuit that encodes one qubit state into 3-qubit code states and can locate a single phase-flip ( Z ) error through parity check.<a class="headerlink" href="#construct-a-circuit-that-encodes-one-qubit-state-into-3-qubit-code-states-and-can-locate-a-single-phase-flip-z-error-through-parity-check" title="Permalink to this headline">#</a></h4>
+<section id="step-a-create-a-circuit-to-encode-the-state-psi-rangle-frac-1-sqrt-2-0-rangle-i-1-rangle-into-a-3-qubit-code-to-protect-it-from-one-phase-flip-z-error">
+<h5>Step A. Create a circuit to encode the state <span class="math notranslate nohighlight">\(|\psi\rangle = \frac{1}{\sqrt{2}}(|0\rangle + i|1\rangle)\)</span> into a 3-qubit code to protect it from one phase-flip ( Z ) error.<a class="headerlink" href="#step-a-create-a-circuit-to-encode-the-state-psi-rangle-frac-1-sqrt-2-0-rangle-i-1-rangle-into-a-3-qubit-code-to-protect-it-from-one-phase-flip-z-error" title="Permalink to this headline">#</a></h5>
+<p>Here, the logical code word basis states, <span class="math notranslate nohighlight">\(|0\rangle_{L}\)</span> and <span class="math notranslate nohighlight">\(|1\rangle_{L}\)</span>, are encoded as, <span class="math notranslate nohighlight">\(|0\rangle_{L} = |+++\rangle\)</span> and <span class="math notranslate nohighlight">\(|1\rangle_{L} = |---\rangle\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qc_3qz</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -1609,7 +2867,10 @@ The line plot in the left panel shows the minimum success probability to estimat
 </div>
 </div>
 </div>
-<h4 style="font-size: 17px">&#128211;Step B. Implement the parity check gates to detect and localize a single phase flip error on the code qubits.</h4><p>Extra registers need to be added on the circuit for the auxiliary qubits and syndrome bits.</p>
+</section>
+<section id="step-b-implement-the-parity-check-gates-to-detect-and-localize-a-single-phase-flip-error-on-the-code-qubits">
+<h5>Step B. Implement the parity check gates to detect and localize a single phase flip error on the code qubits.<a class="headerlink" href="#step-b-implement-the-parity-check-gates-to-detect-and-localize-a-single-phase-flip-error-on-the-code-qubits" title="Permalink to this headline">#</a></h5>
+<p>Extra registers need to be added on the circuit for the auxiliary qubits and syndrome bits.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">err</span><span class="p">,</span> <span class="n">which_qubit</span> <span class="o">=</span> <span class="n">apply_err</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;phase&#39;</span><span class="p">)</span>
@@ -1645,7 +2906,10 @@ The line plot in the left panel shows the minimum success probability to estimat
 </div>
 </div>
 </div>
-<h4 style="font-size: 17px">&#128211;Step C. Find the single phase-error based on the measured syndrome bits and check your answer with the value of the variable, <code>which_qubit</code>.</h4><div class="cell docutils container">
+</section>
+<section id="step-c-find-the-single-phase-error-based-on-the-measured-syndrome-bits-and-check-your-answer-with-the-value-of-the-variable-code-which-qubit-code">
+<h5>Step C. Find the single phase-error based on the measured syndrome bits and check your answer with the value of the variable, <code>which_qubit</code>.<a class="headerlink" href="#step-c-find-the-single-phase-error-based-on-the-measured-syndrome-bits-and-check-your-answer-with-the-value-of-the-variable-code-which-qubit-code" title="Permalink to this headline">#</a></h5>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">your_answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the index of the code qubit that underwent phase-flip error: &#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -1654,7 +2918,11 @@ The line plot in the left panel shows the minimum success probability to estimat
 </div>
 </div>
 </div>
-<h2 style="font-size:24px;"> Repetition code as a stabilizer code </h2>
+</section>
+</section>
+</section>
+<section id="repetition-code-as-a-stabilizer-code">
+<h3>Repetition code as a stabilizer code<a class="headerlink" href="#repetition-code-as-a-stabilizer-code" title="Permalink to this headline">#</a></h3>
 <br>
 <div style="background: #E8E7EB; border-radius: 5px;
 -moz-border-radius: 5px;">
@@ -1666,11 +2934,18 @@ The line plot in the left panel shows the minimum success probability to estimat
             "><b>Goal</b></p>
     <p style=" padding: 0px 0px 10px 10px;
               font-size:16px;"> Stabilizer formalism defines Quantum Error Correcting Codes ( QECC ) by the set of operators that stabilize the logical code word states, instead of its state vectors. Interpreting quantum error correcting codes in terms of its stabilizers is beneficial since the decription of QECC is more concise and encoded logical operators can be obtained systematically. In the part 2 of this lab, we re-construct the repetition code as a stabilizer code to understand this new method.</p>
-</div><h3 style="font-size: 20px">&#128211; 1. Find the two independent stablizer operators for the 3 qubit code states, $|000\rangle,~ |111\rangle$.</h3><ul class="simple">
+</div><section id="find-the-two-independent-stablizer-operators-for-the-3-qubit-code-states-000-rangle-111-rangle">
+<h4>1. Find the two independent stablizer operators for the 3 qubit code states, <span class="math notranslate nohighlight">\(|000\rangle,~ |111\rangle\)</span>.<a class="headerlink" href="#find-the-two-independent-stablizer-operators-for-the-3-qubit-code-states-000-rangle-111-rangle" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
 <li><p>The stabilizer operator <span class="math notranslate nohighlight">\(S\)</span> of a n-qubit state <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> is the set of n-qubit Pauli operators that satisfy <span class="math notranslate nohighlight">\(S|\psi\rangle = |\psi\rangle\)</span>.</p></li>
 </ul>
 <p><strong>Your answer :</strong></p>
-<h3 style="font-size: 20px"> 2. Construct a Quantum Phase Estimation ( QPE ) circuit to produce the eigenvalues for one of the stablizer, $I\otimes Z\otimes Z$.</h3><h4 style="font-size: 17px">&#128211;Step A. What are the eigenvalues of the operator $I\otimes Z \otimes Z$? Determine the minimum number of counting qubits needed in QPE circuit to estimate the eigenvalue accurately.</h4><p><strong>Your answer :</strong></p>
+</section>
+<section id="construct-a-quantum-phase-estimation-qpe-circuit-to-produce-the-eigenvalues-for-one-of-the-stablizer-i-otimes-z-otimes-z">
+<h4>2. Construct a Quantum Phase Estimation ( QPE ) circuit to produce the eigenvalues for one of the stablizer, <span class="math notranslate nohighlight">\(I\otimes Z\otimes Z\)</span>.<a class="headerlink" href="#construct-a-quantum-phase-estimation-qpe-circuit-to-produce-the-eigenvalues-for-one-of-the-stablizer-i-otimes-z-otimes-z" title="Permalink to this headline">#</a></h4>
+<section id="step-a-what-are-the-eigenvalues-of-the-operator-i-otimes-z-otimes-z-determine-the-minimum-number-of-counting-qubits-needed-in-qpe-circuit-to-estimate-the-eigenvalue-accurately">
+<h5>Step A. What are the eigenvalues of the operator <span class="math notranslate nohighlight">\(I\otimes Z \otimes Z\)</span>? Determine the minimum number of counting qubits needed in QPE circuit to estimate the eigenvalue accurately.<a class="headerlink" href="#step-a-what-are-the-eigenvalues-of-the-operator-i-otimes-z-otimes-z-determine-the-minimum-number-of-counting-qubits-needed-in-qpe-circuit-to-estimate-the-eigenvalue-accurately" title="Permalink to this headline">#</a></h5>
+<p><strong>Your answer :</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Your answer goes here</span>
@@ -1679,7 +2954,10 @@ The line plot in the left panel shows the minimum success probability to estimat
 </div>
 </div>
 </div>
-<h4 style="font-size: 17px">&#128211;Step B. Complete the following code to build the QPE circuit. </h4><p>Note: The QPE circuit essentially performs the projective measurement of the operator <span class="math notranslate nohighlight">\(I\otimes Z\otimes Z\)</span> on the <span class="math notranslate nohighlight">\(|\psi\rangle = |0\rangle \otimes |0\rangle \otimes|+\rangle\)</span>.</p>
+</section>
+<section id="step-b-complete-the-following-code-to-build-the-qpe-circuit">
+<h5>Step B. Complete the following code to build the QPE circuit.<a class="headerlink" href="#step-b-complete-the-following-code-to-build-the-qpe-circuit" title="Permalink to this headline">#</a></h5>
+<p>Note: The QPE circuit essentially performs the projective measurement of the operator <span class="math notranslate nohighlight">\(I\otimes Z\otimes Z\)</span> on the <span class="math notranslate nohighlight">\(|\psi\rangle = |0\rangle \otimes |0\rangle \otimes|+\rangle\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qc0</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -1715,7 +2993,10 @@ The line plot in the left panel shows the minimum success probability to estimat
 </div>
 </div>
 </div>
-<h4 style="font-size: 17px">&#128211;Step C. Using the circuit identities, convert QPE part of the above circuit <code>qc0</code> to the one with only CNOT gates.</h4><div class="cell docutils container">
+</section>
+<section id="step-c-using-the-circuit-identities-convert-qpe-part-of-the-above-circuit-code-qc0-code-to-the-one-with-only-cnot-gates">
+<h5>Step C. Using the circuit identities, convert QPE part of the above circuit <code>qc0</code> to the one with only CNOT gates.<a class="headerlink" href="#step-c-using-the-circuit-identities-convert-qpe-part-of-the-above-circuit-code-qc0-code-to-the-one-with-only-cnot-gates" title="Permalink to this headline">#</a></h5>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qc1</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
@@ -1751,9 +3032,23 @@ The line plot in the left panel shows the minimum success probability to estimat
 </div>
 </div>
 </div>
-<h4 style="font-size: 17px"> Summary </h4><p>An error correcting code can be defined as an independent set of stabilizers and the errors are dectected by the measurement outcomes of this set of stabilizers.</p>
+</section>
+<section id="summary">
+<h5>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h5>
+<p>An error correcting code can be defined as an independent set of stabilizers and the errors are dectected by the measurement outcomes of this set of stabilizers.</p>
 <p>Here, in part2 of this lab, we checked that there are two indepndent stabilizers for the three qubit repetition code, and measuring a stabilizer is equivalent to checking a parity. Therefore, to obtain set of syndromes for a single bit error detection with the three qubit repetition code, the circuit for encoding an arbitrary single qubit state and measuring two stabilizers has the folllowing structure.</p>
 <p><img alt="image.png" src="attachment:image.png" /></p>
+</section>
+</section>
+</section>
+</section>
+</section>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"023501873e39468c84b5e44258db89e2": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"description_width": ""}}, "1b334f67c56342d6be2c63746a016f3b": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"description_width": ""}}, "286c1debf1f74c898f33dba8be212809": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"layout": "IPY_MODEL_7af5a97d7f754cf7923ecabde5fa0c13", "style": "IPY_MODEL_e28bb6af18b4445cbfb32f13e24f7828", "value": "<p style='font-family: IBM Plex Sans, Arial, Helvetica, sans-serif; font-size: 20px; font-weight: medium;'>Circuit Properties</p>"}}, "30940865a3b446dbbff8ab4b9415a020": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"width": "190px"}}, "3d6e463a0d334c0eb71a5fde59973be4": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"layout": "IPY_MODEL_a2a1a25c68994e678e4de187a4f022df", "style": "IPY_MODEL_8d058b4e03e6472fa6cdb9313e051938", "value": "<h5>Message</h5>"}}, "3f50c16108384147a17dd61f7f185939": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ButtonModel", "state": {"button_style": "primary", "description": "Clear", "layout": "IPY_MODEL_a7d47c206a3b4944bb10519480fbdd27", "style": "IPY_MODEL_fea0faf4708748cb81cfbc91f2ff5948"}}, "412a7fb74b274f8d9568cfc40f44d79c": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"grid_template_areas": "\n                                       \". . . . right \"\n                                        ", "grid_template_columns": "20% 20% 20% 20% 20%", "width": "100%"}}, "51dae960464040f4acaa238e08a7d863": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"layout": "IPY_MODEL_ffc2adb185344e7d9251849c67d9520c", "style": "IPY_MODEL_1b334f67c56342d6be2c63746a016f3b", "value": "<h5>Queue</h5>"}}, "6326d13368fd428a980784c25601e405": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"width": "95px"}}, "698e68ab96ca4e72af146f1c4a430e9c": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"layout": "IPY_MODEL_30940865a3b446dbbff8ab4b9415a020", "style": "IPY_MODEL_d0100a48ed794b47bc24a6a3b29f7ba7", "value": "<h5>Job ID</h5>"}}, "7af5a97d7f754cf7923ecabde5fa0c13": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"margin": "0px 0px 10px 0px"}}, "854d9f3908bf431b94a9e959c03f45d8": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"margin": "0px 0px 0px 37px", "width": "600px"}}, "856df6e62f2548e7920eb693fc95d17e": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"layout": "IPY_MODEL_6326d13368fd428a980784c25601e405", "style": "IPY_MODEL_fbf7ad3d17d845fdb3cb2974e526d9dd", "value": "<h5>Status</h5>"}}, "8a2538d6637e4212a373143f6bb9adcc": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "GridBoxModel", "state": {"children": ["IPY_MODEL_3f50c16108384147a17dd61f7f185939"], "layout": "IPY_MODEL_412a7fb74b274f8d9568cfc40f44d79c"}}, "8d058b4e03e6472fa6cdb9313e051938": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"description_width": ""}}, "9e2a6e4d0ba941919bd73ab1d176f93d": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HBoxModel", "state": {"children": ["IPY_MODEL_698e68ab96ca4e72af146f1c4a430e9c", "IPY_MODEL_ac2e877af46b4d48aaf2f082e31167fe", "IPY_MODEL_856df6e62f2548e7920eb693fc95d17e", "IPY_MODEL_51dae960464040f4acaa238e08a7d863", "IPY_MODEL_3d6e463a0d334c0eb71a5fde59973be4"], "layout": "IPY_MODEL_854d9f3908bf431b94a9e959c03f45d8"}}, "a2a1a25c68994e678e4de187a4f022df": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "a7d47c206a3b4944bb10519480fbdd27": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"grid_area": "right", "padding": "0px 0px 0px 0px", "width": "70px"}}, "ac2e877af46b4d48aaf2f082e31167fe": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"layout": "IPY_MODEL_f6063145dc6d4bdf8eb7eb13e885672e", "style": "IPY_MODEL_023501873e39468c84b5e44258db89e2", "value": "<h5>Backend</h5>"}}, "d0100a48ed794b47bc24a6a3b29f7ba7": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"description_width": ""}}, "e28bb6af18b4445cbfb32f13e24f7828": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"description_width": ""}}, "f6063145dc6d4bdf8eb7eb13e885672e": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"width": "145px"}}, "fbf7ad3d17d845fdb3cb2974e526d9dd": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"description_width": ""}}, "fea0faf4708748cb81cfbc91f2ff5948": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ButtonStyleModel", "state": {}}, "ffc2adb185344e7d9251849c67d9520c": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"width": "70px"}}}, "version_major": 2, "version_minor": 0}
+</script>
+
 
     <script type="text/x-thebe-config">
     {
@@ -1786,7 +3081,7 @@ The line plot in the left panel shows the minimum success probability to estimat
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Problem 1</p>
+            <p class="prev-next-title">PRELAB: Quantum Computing with Qiskit</p>
         </div>
     </a>
 </div>

@@ -20,10 +20,10 @@ parts:
     - file: T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.ipynb
   - caption: Quantum Information and Quantum Key Distribution
     chapters:
-    - file: T2E1-TEXT-QKD-simulation.ipynb
-    - file: T2E1-LAB-BB84.ipynb
     - file: T2E1-TEXT-Intro-to-SPDC-and-HBT.ipynb
     - file: T2E1-LAB-Single-photon-and-HBT.ipynb
+    - file: T2E1-TEXT-QKD-simulation.ipynb
+    - file: T2E1-LAB-BB84.ipynb
   - caption: Solid State Spins
     chapters:
     - file: T3E3-LAB-Cavity_QED_sensor.ipynb

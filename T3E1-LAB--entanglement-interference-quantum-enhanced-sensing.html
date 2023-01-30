@@ -50,13 +50,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="TEXT – Quantum Key Distribution" href="T2E1-TEXT-Quantum-Key-Distribution.html" />
+    <link rel="next" title="BB84 Lab Write-up" href="T2E1-TEXT-QKD-simulation.html" />
     <link rel="prev" title="TEXT – Interference, Entanglement and Quantum-Enhanced Metrology" href="T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -158,13 +156,23 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="T2E1-TEXT-Quantum-Key-Distribution.html">
-   TEXT – Quantum Key Distribution
+  <a class="reference internal" href="T2E1-TEXT-QKD-simulation.html">
+   BB84 Lab Write-up
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="T2E1-LAB-Quantum-Key-Distribution.html">
-   LAB – Quantum Key Distribution Laboratory
+  <a class="reference internal" href="T2E1-LAB-BB84.html">
+   QKD Lab - Instructions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T2E1-TEXT-Intro-to-SPDC-and-HBT.html">
+   Latex Headers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T2E1-LAB-Single-photon-and-HBT.html">
+   Hanbury - Brown Twiss Lab Instructions
   </a>
  </li>
 </ul>
@@ -176,7 +184,19 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="T3E3-LAB-Cavity_QED_sensor.html">
-   LAB – Solid State Spins
+   Cavity-coupled quantum electrodynamic (QED) sensor
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Quantum Computing (QISKIT)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="LAB-IBM-Qiskit-Prelab.html">
+   Problem 1
   </a>
  </li>
 </ul>
@@ -420,7 +440,20 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aim-6-quantum-enhanced-measurement-with-a-noon-state-interferometer">
+  <a class="reference internal nav-link" href="#aim-4-understanding-coincidence-detection-speed-of-light-measurement">
+   Aim 4: Understanding Coincidence Detection – Speed of Light Measurement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aim-5-single-photon-interference-and-noon-state-generation-hong-ou-mandel-effect">
+   Aim 5: Single-Photon Interference and NOON State Generation – Hong Ou Mandel Effect
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus-aim-6-quantum-enhanced-measurement-with-a-noon-state-interferometer">
+   <strong>
+    BONUS
+   </strong>
    Aim 6: Quantum-Enhanced Measurement with a NOON State Interferometer
   </a>
  </li>
@@ -507,7 +540,20 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aim-6-quantum-enhanced-measurement-with-a-noon-state-interferometer">
+  <a class="reference internal nav-link" href="#aim-4-understanding-coincidence-detection-speed-of-light-measurement">
+   Aim 4: Understanding Coincidence Detection – Speed of Light Measurement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aim-5-single-photon-interference-and-noon-state-generation-hong-ou-mandel-effect">
+   Aim 5: Single-Photon Interference and NOON State Generation – Hong Ou Mandel Effect
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus-aim-6-quantum-enhanced-measurement-with-a-noon-state-interferometer">
+   <strong>
+    BONUS
+   </strong>
    Aim 6: Quantum-Enhanced Measurement with a NOON State Interferometer
   </a>
  </li>
@@ -532,7 +578,7 @@ title="Print to PDF"
 <li><p>Explore interference of a photon with itself</p></li>
 <li><p>Use the properties of coincidence detection to measure the speed of light</p></li>
 <li><p>Explore the interference of two single photons: the Hong-Ou-Mandel effect</p></li>
-<li><p>Develop a NOON state interferometer demonstrating supersensitivty to path length changes</p></li>
+<li><p><strong>BONUS:</strong> Develop a NOON state interferometer demonstrating supersensitivty to path length changes</p></li>
 </ol>
 <section id="aim-0-introduction-to-the-quantenkoffer-prelab">
 <h2>Aim 0: Introduction to the Quantenkoffer (PRELAB)<a class="headerlink" href="#aim-0-introduction-to-the-quantenkoffer-prelab" title="Permalink to this headline">#</a></h2>
@@ -651,8 +697,14 @@ title="Print to PDF"
 </section>
 </section>
 </section>
-<section id="aim-6-quantum-enhanced-measurement-with-a-noon-state-interferometer">
-<h2>Aim 6: Quantum-Enhanced Measurement with a NOON State Interferometer<a class="headerlink" href="#aim-6-quantum-enhanced-measurement-with-a-noon-state-interferometer" title="Permalink to this headline">#</a></h2>
+<section id="aim-4-understanding-coincidence-detection-speed-of-light-measurement">
+<h2>Aim 4: Understanding Coincidence Detection – Speed of Light Measurement<a class="headerlink" href="#aim-4-understanding-coincidence-detection-speed-of-light-measurement" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="aim-5-single-photon-interference-and-noon-state-generation-hong-ou-mandel-effect">
+<h2>Aim 5: Single-Photon Interference and NOON State Generation – Hong Ou Mandel Effect<a class="headerlink" href="#aim-5-single-photon-interference-and-noon-state-generation-hong-ou-mandel-effect" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="bonus-aim-6-quantum-enhanced-measurement-with-a-noon-state-interferometer">
+<h2><strong>BONUS</strong> Aim 6: Quantum-Enhanced Measurement with a NOON State Interferometer<a class="headerlink" href="#bonus-aim-6-quantum-enhanced-measurement-with-a-noon-state-interferometer" title="Permalink to this headline">#</a></h2>
 <iframe src="https://drive.google.com/file/d/1DRJjQdnbupAooSxLQuY_es3w9Idbgdeg/preview" width="640" height="480" allow="autoplay"></iframe></section>
 </section>
 
@@ -690,10 +742,10 @@ title="Print to PDF"
             <p class="prev-next-title">TEXT – Interference, Entanglement and Quantum-Enhanced Metrology</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="T2E1-TEXT-Quantum-Key-Distribution.html" title="next page">
+    <a class='right-next' id="next-link" href="T2E1-TEXT-QKD-simulation.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">TEXT – Quantum Key Distribution</p>
+        <p class="prev-next-title">BB84 Lab Write-up</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

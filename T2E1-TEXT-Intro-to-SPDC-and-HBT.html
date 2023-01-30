@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>6.2410 – Laboratory for Quantum Information Science and Engineering &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+    <title>Latex Headers &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,9 +50,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="BASICS – Quantum Optics" href="BASICS-quantum-optics-basics.html" />
+    <link rel="next" title="Hanbury - Brown Twiss Lab Instructions" href="T2E1-LAB-Single-photon-and-HBT.html" />
+    <link rel="prev" title="QKD Lab - Instructions" href="T2E1-LAB-BB84.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -106,8 +109,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     6.2410 – Laboratory for Quantum Information Science and Engineering
                 </a>
             </li>
@@ -151,7 +154,7 @@ const thebe_selector_output = ".output, .cell_output"
   Quantum Key Distribution
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="T2E1-TEXT-QKD-simulation.html">
    BB84 Lab Write-up
@@ -162,8 +165,8 @@ const thebe_selector_output = ".output, .cell_output"
    QKD Lab - Instructions
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="T2E1-TEXT-Intro-to-SPDC-and-HBT.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Latex Headers
   </a>
  </li>
@@ -286,7 +289,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="git@github.mit.edu:pdkeat2/6.2410-lab.git/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."
+        <a href="git@github.mit.edu:pdkeat2/6.2410-lab.git/issues/new?title=Issue%20on%20page%20%2FT2E1-TEXT-Intro-to-SPDC-and-HBT.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -314,7 +317,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/intro.md"
+        <a href="_sources/T2E1-TEXT-Intro-to-SPDC-and-HBT.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -325,7 +328,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -375,14 +378,41 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   6.2410 – Laboratory for Quantum Information Science and Engineering
+   Latex Headers
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#table-of-contents">
-   Table of Contents
+  <a class="reference internal nav-link" href="#introduction-to-single-photons">
+   Introduction to single photons
   </a>
   <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spontaneous-parametric-down-conversion-spdc">
+     Spontaneous Parametric Down-Conversion (SPDC)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hanbury-brown-twiss">
+     Hanbury Brown-Twiss
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#set-up-the-experiment-following-loudon">
+       Set-up the experiment following Loudon
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#second-order-time-coherence">
+     Second order time coherence
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#detection">
+     Detection
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -394,7 +424,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>6.2410 – Laboratory for Quantum Information Science and Engineering</h1>
+                <h1>Latex Headers</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -406,14 +436,41 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   6.2410 – Laboratory for Quantum Information Science and Engineering
+   Latex Headers
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#table-of-contents">
-   Table of Contents
+  <a class="reference internal nav-link" href="#introduction-to-single-photons">
+   Introduction to single photons
   </a>
   <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spontaneous-parametric-down-conversion-spdc">
+     Spontaneous Parametric Down-Conversion (SPDC)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hanbury-brown-twiss">
+     Hanbury Brown-Twiss
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#set-up-the-experiment-following-loudon">
+       Set-up the experiment following Loudon
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#second-order-time-coherence">
+     Second order time coherence
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#detection">
+     Detection
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -426,55 +483,110 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="laboratory-for-quantum-information-science-and-engineering">
-<h1>6.2410 – Laboratory for Quantum Information Science and Engineering<a class="headerlink" href="#laboratory-for-quantum-information-science-and-engineering" title="Permalink to this headline">#</a></h1>
-<p>This is the course website for 6.2410 – Laboratory for Quantum Information Science and Engineering.</p>
-<p><strong>TODO: Add syllabus here!</strong></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="latex-headers">
+<h1>Latex Headers<a class="headerlink" href="#latex-headers" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Ensure proper support for certain latex notation</p></li>
+<li><p>Code below</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\newcommand{\ket}[1]{\left|{#1}\right\rangle}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\bra}[1]{\left\langle{#1}\right|}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\braket}[2]{\left\langle{#1}\middle|{#2}\right\rangle}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\adagger}[0]{\hat{a}^{\dagger}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\ahat}[0]{\hat{a}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\bdagger}[0]{\hat{b}^{\dagger}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\bhat}[0]{\hat{b}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\cdagger}[0]{\hat{c}^{\dagger}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\chat}[0]{\hat{c}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\ddagger}[0]{\hat{d}^{\dagger}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\dhat}[0]{\hat{d}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\edagger}[0]{\hat{e}^{\dagger}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\ehat}[0]{\hat{e}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\fdagger}[0]{\hat{f}^{\dagger}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\fhat}[0]{\hat{f}}\]</div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="table-of-contents">
-<h1>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">#</a></h1>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introductory Material</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="BASICS-quantum-optics-basics.html">BASICS – Quantum Optics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BASICS-quantum-information.html">BASICS – Quantum Information</a></li>
-</ul>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction-to-single-photons">
+<h1>Introduction to single photons<a class="headerlink" href="#introduction-to-single-photons" title="Permalink to this headline">#</a></h1>
+<ol class="simple">
+<li><p>SPDC</p></li>
+<li><p>Hanbury Brown-Twiss &amp; Second order coherence <span class="math notranslate nohighlight">\(g^{(2)}\)</span></p>
+<ol class="simple">
+<li><p>classical</p></li>
+<li><p>quantum</p></li>
+</ol>
+</li>
+<li><p>Single photon interference</p></li>
+</ol>
+<section id="spontaneous-parametric-down-conversion-spdc">
+<h2>Spontaneous Parametric Down-Conversion (SPDC)<a class="headerlink" href="#spontaneous-parametric-down-conversion-spdc" title="Permalink to this headline">#</a></h2>
+<p><strong>Need to find/make some images</strong></p>
+<p><a class="reference external" href="https://doi.org/10.1080/00107514.2018.1488463">Review Article</a>
+First, let’s take a high level overview of what SPDC is. SPDC occurs when a pump photon is converted into 2 photons of less energy. Traditionally, one output photon is called the signal and the other is called the idler. This conversion adheres to energy conservation and momentum conservation. Our system is degenerate in wavelength: both output photons have the same wavelength.</p>
+<ol class="simple">
+<li><p>Energy Conservation
+images from hc photonics
+<img alt="image.png" src="attachment:image.png" /></p></li>
+<li><p>Momentum Conservation
+<img alt="image-2.png" src="attachment:image-2.png" />
+<img alt="image-4.png" src="attachment:image-4.png" /> (image frome review paper)</p></li>
+</ol>
+<p>Recall that momentum is a vector, so the magnitude <strong>and</strong> direction need to be maintained. This is why we see that the signal and idler photons are non-colinear (they travel in different directions): their sum still matches the pump photons.</p>
+<p>Matching the momentum is an essential part of generating SPDC. As you recall, $<span class="math notranslate nohighlight">\(\overrightarrow{k} = \frac{2\pi n}{\lambda}\)</span><span class="math notranslate nohighlight">\( where \)</span>n<span class="math notranslate nohighlight">\(, the index of refraction, is a function of \)</span>\lambda$, the wavelength of the light.</p>
+<ol class="simple">
+<li><p>Different types of SPDC
+SPDC is divided into different types based on the polarization of the pump and signal and idler photons. For our experiment, we’ll only be using type 1 SPDC.
+<img alt="image-5.png" src="attachment:image-5.png" /> (image from HC Photonics)</p></li>
+<li><p>SPDC in quED</p></li>
+</ol>
+<p>(from quTools Manual)
+<img alt="image-3.png" src="attachment:image-3.png" /></p>
+<ol class="simple">
+<li><p>Walk through the math to show how it’s quantum</p></li>
+<li><p>Uses of SPDC</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Video</span>
+<span class="n">Video</span><span class="p">(</span><span class="s2">&quot;testvideo.mov&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interference and Entanglement</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html">TEXT – Interference, Entanglement and Quantum-Enhanced Metrology</a></li>
-<li class="toctree-l1"><a class="reference internal" href="T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html">LAB – Interference, Entanglement and Quantum-Enhanced Metrology</a></li>
-</ul>
 </div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quantum Key Distribution</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="T2E1-TEXT-QKD-simulation.html">BB84 Lab Write-up</a></li>
-<li class="toctree-l1"><a class="reference internal" href="T2E1-LAB-BB84.html">QKD Lab - Instructions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="T2E1-TEXT-Intro-to-SPDC-and-HBT.html">Latex Headers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="T2E1-TEXT-Intro-to-SPDC-and-HBT.html#introduction-to-single-photons">Introduction to single photons</a></li>
-<li class="toctree-l1"><a class="reference internal" href="T2E1-LAB-Single-photon-and-HBT.html">Hanbury - Brown Twiss Lab Instructions</a></li>
-</ul>
+<div class="cell_output docutils container">
+<div class="output text_html"><video src="testvideo.mov" controls  >
+      Your browser does not support the <code>video</code> element.
+    </video></div></div>
 </div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Solid State Spins</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="T3E3-LAB-Cavity_QED_sensor.html">Cavity-coupled quantum electrodynamic (QED) sensor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="T3E3-LAB-Cavity_QED_sensor.html#minimum-detectable-magnetic-field">Minimum detectable magnetic field</a></li>
-<li class="toctree-l1"><a class="reference internal" href="T3E3-LAB-Cavity_QED_sensor.html#lab-aims">Lab aims</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quantum Computing (QISKIT)</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="LAB-IBM-Qiskit-Prelab.html">Problem 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LAB-IBM-Qiskit-Prelab.html#problem-2">Problem 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LAB-IBM-Qiskit-Prelab.html#problem-3">Problem 3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LAB-IBM-Qiskit-Prelab.html#problem-4">Problem 4</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LAB-IBM-Qiskit-Prelab.html#problem-5">Problem 5</a></li>
-</ul>
-</div>
+</section>
+<section id="hanbury-brown-twiss">
+<h2>Hanbury Brown-Twiss<a class="headerlink" href="#hanbury-brown-twiss" title="Permalink to this headline">#</a></h2>
+<p>Following Loudon, let’s walk through the HBT experiment for a single photon.</p>
+<section id="set-up-the-experiment-following-loudon">
+<h3>Set-up the experiment following Loudon<a class="headerlink" href="#set-up-the-experiment-following-loudon" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="second-order-time-coherence">
+<h2>Second order time coherence<a class="headerlink" href="#second-order-time-coherence" title="Permalink to this headline">#</a></h2>
+<p>Work out the quantum and show the results for coherent light and Fock states. Present the results for other light sources.</p>
+<p><a class="reference external" href="https://doi.org/10.1103/PhysRevA.79.035801">HBT experiment with SPDC</a></p>
+</section>
+<section id="detection">
+<h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">#</a></h2>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -504,10 +616,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="BASICS-quantum-optics-basics.html" title="next page">
+    <a class='left-prev' id="prev-link" href="T2E1-LAB-BB84.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">QKD Lab - Instructions</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="T2E1-LAB-Single-photon-and-HBT.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">BASICS – Quantum Optics</p>
+        <p class="prev-next-title">Hanbury - Brown Twiss Lab Instructions</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.2
+    jupytext_version: 1.13.8
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -44,6 +44,8 @@ In this chapter we examine entangled photon pair generation, entangled photon pa
 +++ {"id": "4b595179-c2b9-4d45-819a-5c18c297dfe0"}
 
 ## Single Photon Interference: The Hong-Ou-Mandel Effect
+
+<iframe src="https://drive.google.com/file/d/1EbP7heyjad4oQek8uBg5gI4dMnObpFh_/preview" width="640" height="480" allow="autoplay"></iframe>
 
 Imagine the scenario depicted in {numref}`HOM-setup`.  A nonlinear crystal is used to generate precisely two photons of energy $\hbar\omega$ when excited by a pulse with a photon energy of $2\hbar\omega$.  This process is called spontaneous parametric down-conversion and is a common technique for generating entangled photon pairs. 
 

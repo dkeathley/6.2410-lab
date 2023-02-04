@@ -538,6 +538,32 @@ title="Print to PDF"
 <section id="phase-matching-conditions">
 <h3>Phase Matching Conditions<a class="headerlink" href="#phase-matching-conditions" title="Permalink to this headline">#</a></h3>
 <p>One important feature of SPDC is the fact that it always obeys energy conservation: the energy of a pump photon before SPDC occurs is equal to the sum of the signal and idler photons after SPDC occurs.</p>
+<figure class="align-default" id="energy-conservation">
+<a class="reference internal image-reference" href="https://drive.google.com/file/d/1neT7Zm-jl_A6yGI43xVysIl7POMfipq3/preview"><img alt="https://drive.google.com/file/d/1neT7Zm-jl_A6yGI43xVysIl7POMfipq3/preview" src="https://drive.google.com/file/d/1neT7Zm-jl_A6yGI43xVysIl7POMfipq3/preview" style="width: 800px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text"><a class="reference external" href="https://drive.google.com/file/d/1neT7Zm-jl_A6yGI43xVysIl7POMfipq3/view?usp=sharing">https://drive.google.com/file/d/1neT7Zm-jl_A6yGI43xVysIl7POMfipq3/view?usp=sharing</a></span><a class="headerlink" href="#energy-conservation" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p><img alt="EnergyConservation" src="_images/spdc_energyconsevation.png" />
+(image from HC Photonics)</p>
+<p>Another important feature is that the momentum after SPDC must be the same as the momentum before SPDC to satisfy conservation of momentum.</p>
+<p><img alt="MomentumConservation" src="_images/spdc_momentum.png" />
+(image from Couteau’s review paper</p>
+<p>Recall that momentum is a vector, so the magnitude <strong>and</strong> direction need to be maintained. This is why we see that the signal and idler photons in the quED are non-colinear (they travel in different directions): their sum still matches the pump photons.</p>
+<p>Matching the momentum is an a challening part of generating SPDC. As you recall, $<span class="math notranslate nohighlight">\(\overrightarrow{k} = \frac{2\pi n}{\lambda}\)</span><span class="math notranslate nohighlight">\( where \)</span>n<span class="math notranslate nohighlight">\(, the index of refraction, is a function of \)</span>\lambda$, the wavelength of the light. There’s
+<strong>something about the challenges of matching the indices</strong>
+<img alt="IndexMatching" src="_images/spdc_index.png" />
+(image from HC Photonics)</p>
+</section>
+<section id="types-of-spdc">
+<h3>Types of SPDC<a class="headerlink" href="#types-of-spdc" title="Permalink to this headline">#</a></h3>
+<p><strong>Different types of SPDC</strong>
+<img alt="Types" src="FIGURES%5CquED%5Cspdc_types.png" />
+(image from HC Photonics)</p>
+</section>
+<section id="classical-nonlinear-optics">
+<h3>Classical Nonlinear optics<a class="headerlink" href="#classical-nonlinear-optics" title="Permalink to this headline">#</a></h3>
+<p><strong>Now look very, very briefly at the classical nonlinear optics part</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Video</span>
@@ -548,7 +574,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">/tmp/ipykernel_2624074/3280829218.py</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="nn">/tmp/ipykernel_2624258/3280829218.py</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Video</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">Video</span><span class="p">(</span><span class="s1">&#39;VIDEOS/quED/testvideo.mov&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">540</span><span class="p">)</span>
 
@@ -565,16 +591,6 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="types-of-spdc">
-<h3>Types of SPDC<a class="headerlink" href="#types-of-spdc" title="Permalink to this headline">#</a></h3>
-<p><strong>Different types of SPDC</strong>
-<img alt="Types" src="FIGURES%5CquED%5Cspdc_types.png" />
-(image from HC Photonics)</p>
-</section>
-<section id="classical-nonlinear-optics">
-<h3>Classical Nonlinear optics<a class="headerlink" href="#classical-nonlinear-optics" title="Permalink to this headline">#</a></h3>
-<p><strong>Now look very, very briefly at the classical nonlinear optics part</strong></p>
 </section>
 </section>
 <section id="hanbury-brown-twiss">

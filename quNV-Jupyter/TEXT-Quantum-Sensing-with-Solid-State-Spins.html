@@ -582,10 +582,13 @@ E_{\phi} = -\frac{j\omega\mu_0}{k_c} H_1 J_1(k_c\rho)f(\tilde{z})
 \)</span><span class="math notranslate nohighlight">\(
 where \)</span>k_c=x_{01}/r_d<span class="math notranslate nohighlight">\(, where \)</span>x_{01}<span class="math notranslate nohighlight">\( is the first root of the Bessel function \)</span>J_0(x)=0<span class="math notranslate nohighlight">\( and \)</span>r_d<span class="math notranslate nohighlight">\( is the outer radius of the resonator. \)</span>J_1<span class="math notranslate nohighlight">\( is the Bessel function of the first kind of order 1. \)</span>f(\tilde{z})$ is a factor that gives longitudinal dependence. If you are interested in its exact form, you may consult the Supplement of <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">this paper</a>.</p>
 <p>Crucially, the <span class="math notranslate nohighlight">\(H\)</span> components imply that it is <em>magnetic</em> cavity, with the field profile shown in the figure below:</p>
-<div>
-<img src="../FIGURES/magnetic_cavity.png" width="600"/>
-</div>
-where the black dashed lines mark the outline of the resonator.
+<figure class="align-default" id="magnetic-cavity-fig">
+<a class="reference internal image-reference" href="../_images/magnetic_cavity.png"><img alt="../_images/magnetic_cavity.png" src="../_images/magnetic_cavity.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Magnetic cavity fields.</span><a class="headerlink" href="#magnetic-cavity-fig" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>where the black dashed lines mark the outline of the resonator.</p>
 </section>
 <section id="cavity-resonance-frequency">
 <h3>2.2 Cavity resonance frequency<a class="headerlink" href="#cavity-resonance-frequency" title="Permalink to this headline">#</a></h3>
@@ -601,9 +604,12 @@ where \)</span>\epsilon_r<span class="math notranslate nohighlight">\( is the re
 <section id="inductive-coupling-between-a-microwave-cavity-and-a-loop-coupler">
 <h3>2.3 Inductive coupling between a microwave cavity and a loop coupler<a class="headerlink" href="#inductive-coupling-between-a-microwave-cavity-and-a-loop-coupler" title="Permalink to this headline">#</a></h3>
 <p>From our beloved right-hand rule, you may know that the magnetic field should follow the black arrows in the figure below:</p>
-<div>
-<img src="../FIGURES/magnetic_cavity_RHR.png" width="400"/>
-</div>
+<figure class="align-default" id="magnetic-cavity-rhr-fig">
+<a class="reference internal image-reference" href="../_images/magnetic_cavity_RHR.png"><img alt="../_images/magnetic_cavity_RHR.png" src="../_images/magnetic_cavity_RHR.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Right hand rule.</span><a class="headerlink" href="#magnetic-cavity-rhr-fig" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>How do we experimentally <em>measure</em> the cavity resonance? It’s simple! We can simply use a metallic loop that <em>inductively</em> couples to the magnetic cavity. As such, we call it a loop coupler. The magnetic field exiting out of the cavity in the <span class="math notranslate nohighlight">\(z\)</span> direction (pointing up shown in the figure above) threads through the loop coupler, thereby inducing a current that is measurable. We will leverage this fact and read out the cavity resonance via a <a class="reference external" href="https://en.wikipedia.org/wiki/Network_analyzer_(electrical)">vector network analyzer (VNA)</a>, which you should have already gotten familiar with during the Parkour session.</p>
 </section>
 <section id="quality-factor">
@@ -625,9 +631,12 @@ $<span class="math notranslate nohighlight">\(
 where \)</span>\kappa_c=\kappa_{c0}+\kappa_{c1}<span class="math notranslate nohighlight">\( is the sum of the unloaded (intrinsic) and input port (loop coupler) loss rates, respectively. \)</span>\kappa_s=2/T_2<span class="math notranslate nohighlight">\( is the homogeneous width of the spin resonance where \)</span>T_2<span class="math notranslate nohighlight">\( is the [coherence time](https://en.wikipedia.org/wiki/Relaxation_(NMR)). \)</span>\alpha<span class="math notranslate nohighlight">\( captures the effect of saturation and is beyond the scope of this introductory discussion. \)</span>g<span class="math notranslate nohighlight">\( is the effective coupling strength between the NV centers and the cavity mode. \)</span>\omega<span class="math notranslate nohighlight">\( and \)</span>\omega_s$ are the probe (sent out of the VNA) and the spin resonance frequencies, respectively.</p>
 <p>The derivation can be found in <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">this paper</a>.</p>
 <p>Here we compare the conventional ODMR result (optical-based) and the introduced microwave cavity-based approach by showing you experimental results by <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">Eisenach <em>et al.</em></a>:</p>
-<div>
-<img src="../FIGURES/ODMR_vs_microwave.png" width="600"/>
-</div>
+<figure class="align-default" id="odmr-vs-microwave-fig">
+<a class="reference internal image-reference" href="../_images/ODMR_vs_microwave.png"><img alt="../_images/ODMR_vs_microwave.png" src="../_images/ODMR_vs_microwave.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Experimental results from <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">Eisenach <em>et al.</em></a>.</span><a class="headerlink" href="#odmr-vs-microwave-fig" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Due to coupling with the cavity, the NV centers’ microwave response (blue) exhibits much greater <a class="reference external" href="https://en.wikipedia.org/wiki/Signal-to-noise_ratio">signal-to-noise ratio (SNR)</a> than conventional ODMR (red)!</p>
 <p>In the first portion of the lab, you will use the given formulae for the reflection coefficient and assess how each parameter affects the NV centers’ microwave response.</p>
 </section>

@@ -553,7 +553,7 @@ title="Print to PDF"
 <h3>1.1 Crystallographic structure<a class="headerlink" href="#crystallographic-structure" title="Permalink to this headline">#</a></h3>
 <p>Diamond is a particularly interesting material in the realm of quantum information science. It is an excellent host substrate for optically active quantum emitters due to its wide bandgap (5.5 eV) and large transparency window. Among the many <em>color centers</em> in diamond, the negatively charged NV center is most famous for applications in quantum sensing and communication. It is a defect in the carbon lattice consisting of a substitional nitrogen atom accompanied by a vacancy site (see the left figure below).</p>
 <div>
-<img src="NV_center.png" width="600"/>
+<img src="../FIGURES/NV_center.png" width="600"/>
 </div>
 Figures adapted from quTools, quNV brochure.
 <p>Effectively, NV center is an artificial atom in a solid state environment with well-defined optical transitions. More importantly, NV center’s spin states have energy splitting sensitive to the environment’s magnetic field strength. The greater the magnetic field strength, the greater the splitting. In a way, NV center itself is a <em>magnetic field sensor</em>. One can then readout the spin states (at microwave frequencies) to measure ambient magnetic field.</p>
@@ -581,7 +581,7 @@ E_{\phi} = -\frac{j\omega\mu_0}{k_c} H_1 J_1(k_c\rho)f(\tilde{z})
 where \)</span>k_c=x_{01}/r_d<span class="math notranslate nohighlight">\(, where \)</span>x_{01}<span class="math notranslate nohighlight">\( is the first root of the Bessel function \)</span>J_0(x)=0<span class="math notranslate nohighlight">\( and \)</span>r_d<span class="math notranslate nohighlight">\( is the outer radius of the resonator. \)</span>J_1<span class="math notranslate nohighlight">\( is the Bessel function of the first kind of order 1. \)</span>f(\tilde{z})$ is a factor that gives longitudinal dependence. If you are interested in its exact form, you may consult the Supplement of <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">this paper</a>.</p>
 <p>Crucially, the <span class="math notranslate nohighlight">\(H\)</span> components imply that it is <em>magnetic</em> cavity, with the field profile shown in the figure below:</p>
 <div>
-<img src="magnetic_cavity.png" width="600"/>
+<img src="../FIGURES/magnetic_cavity.png" width="600"/>
 </div>
 where the black dashed lines mark the outline of the resonator.
 </section>
@@ -600,7 +600,7 @@ where \)</span>\epsilon_r<span class="math notranslate nohighlight">\( is the re
 <h3>2.3 Inductive coupling between a microwave cavity and a loop coupler<a class="headerlink" href="#inductive-coupling-between-a-microwave-cavity-and-a-loop-coupler" title="Permalink to this headline">#</a></h3>
 <p>From our beloved right-hand rule, you may know that the magnetic field should follow the black arrows in the figure below:</p>
 <div>
-<img src="magnetic_cavity_RHR.png" width="400"/>
+<img src="../FIGURES/magnetic_cavity_RHR.png" width="400"/>
 </div>
 <p>How do we experimentally <em>measure</em> the cavity resonance? It’s simple! We can simply use a metallic loop that <em>inductively</em> couples to the magnetic cavity. As such, we call it a loop coupler. The magnetic field exiting out of the cavity in the <span class="math notranslate nohighlight">\(z\)</span> direction (pointing up shown in the figure above) threads through the loop coupler, thereby inducing a current that is measurable. We will leverage this fact and read out the cavity resonance via a <a class="reference external" href="https://en.wikipedia.org/wiki/Network_analyzer_(electrical)">vector network analyzer (VNA)</a>, which you should have already gotten familiar with during the Parkour session.</p>
 </section>
@@ -624,7 +624,7 @@ where \)</span>\kappa_c=\kappa_{c0}+\kappa_{c1}<span class="math notranslate noh
 <p>The derivation can be found in <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">this paper</a>.</p>
 <p>Here we compare the conventional ODMR result (optical-based) and the introduced microwave cavity-based approach by showing you experimental results by <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">Eisenach <em>et al.</em></a>:</p>
 <div>
-<img src="ODMR_vs_microwave.png" width="600"/>
+<img src="../FIGURES/ODMR_vs_microwave.png" width="600"/>
 </div>
 <p>Due to coupling with the cavity, the NV centers’ microwave response (blue) exhibits much greater <a class="reference external" href="https://en.wikipedia.org/wiki/Signal-to-noise_ratio">signal-to-noise ratio (SNR)</a> than conventional ODMR (red)!</p>
 <p>In the first portion of the lab, you will use the given formulae for the reflection coefficient and assess how each parameter affects the NV centers’ microwave response.</p>

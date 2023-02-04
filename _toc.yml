@@ -22,11 +22,13 @@ parts:
     chapters:
     - file: T2E1-TEXT-Intro-to-SPDC-and-HBT.ipynb
     - file: T2E1-LAB-Single-photon-and-HBT.ipynb
+    - file: T2E1-TEXT-HBT.ipynb
     - file: T2E1-TEXT-QKD-simulation.ipynb
     - file: T2E1-LAB-BB84.ipynb
   - caption: Solid State Spins
     chapters:
-    - file: T3E3-LAB-Cavity_QED_sensor.ipynb
+    - file: quNV-Jupyter/PARKOUR-Quantum-Sensing-with-Solid-State-Spins.ipynb
+    - file: quNV-Jupyter/TEXT-Quantum-Sensing-with-Solid-State-Spins.ipynb
   - caption: Quantum Computing (QISKIT)
     chapters:
     - file: LAB-IBM-Qiskit-Prelab.ipynb

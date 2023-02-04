@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>TEXT: Introduction to single photons &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+    <title>Latex Headers &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -56,8 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="LAB: Hanbury - Brown Twiss Lab" href="T2E1-LAB-Single-photon-and-HBT.html" />
-    <link rel="prev" title="LAB – Interference, Entanglement and Quantum-Enhanced Metrology" href="T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html" />
+    <link rel="next" title="PRELAB: Quantum-Key Distribution with BB84" href="T2E1-TEXT-QKD-simulation.html" />
+    <link rel="prev" title="LAB: Hanbury - Brown Twiss Lab" href="T2E1-LAB-Single-photon-and-HBT.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -157,8 +157,8 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="T2E1-TEXT-Intro-to-SPDC-and-HBT.html">
    TEXT: Introduction to single photons
   </a>
  </li>
@@ -167,8 +167,8 @@ const thebe_selector_output = ".output, .cell_output"
    LAB: Hanbury - Brown Twiss Lab
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="T2E1-TEXT-HBT.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Latex Headers
   </a>
  </li>
@@ -306,7 +306,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="git@github.mit.edu:pdkeat2/6.2410-lab.git/issues/new?title=Issue%20on%20page%20%2FT2E1-TEXT-Intro-to-SPDC-and-HBT.html&body=Your%20issue%20content%20here."
+        <a href="git@github.mit.edu:pdkeat2/6.2410-lab.git/issues/new?title=Issue%20on%20page%20%2FT2E1-TEXT-HBT.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -334,7 +334,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/T2E1-TEXT-Intro-to-SPDC-and-HBT.ipynb"
+        <a href="_sources/T2E1-TEXT-HBT.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -393,32 +393,66 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#spontaneous-parametric-down-conversion-spdc">
-   Spontaneous Parametric Down-Conversion (SPDC)
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Latex Headers
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hanbury-brown-twiss">
-   Hanbury Brown-Twiss
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-single-photons-with-the-qued">
+   Introduction to single photons with the quED
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#set-up-the-experiment-following-loudon">
-     Set-up the experiment following Loudon
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#single-photon-source-spontaneous-parametric-down-conversion-spdc">
+     Single photon source: Spontaneous Parametric Down-Conversion (SPDC)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#phase-matching-conditions">
+       Phase Matching Conditions
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#types-of-spdc">
+       Types of SPDC
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#classical-nonlinear-optics">
+       Classical Nonlinear optics
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hanbury-brown-twiss">
+     Hanbury Brown-Twiss
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#recall-a-beamsplitter">
+       Recall a beamsplitter
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#coincidence">
+       Coincidence
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#second-order-time-coherence">
+     Second order time coherence
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#detection">
+     Detection
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#second-order-time-coherence">
-   Second order time coherence
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#detection">
-   Detection
-  </a>
  </li>
 </ul>
 
@@ -429,7 +463,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>TEXT: Introduction to single photons</h1>
+                <h1>Latex Headers</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -439,32 +473,66 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#spontaneous-parametric-down-conversion-spdc">
-   Spontaneous Parametric Down-Conversion (SPDC)
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Latex Headers
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hanbury-brown-twiss">
-   Hanbury Brown-Twiss
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-single-photons-with-the-qued">
+   Introduction to single photons with the quED
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#set-up-the-experiment-following-loudon">
-     Set-up the experiment following Loudon
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#single-photon-source-spontaneous-parametric-down-conversion-spdc">
+     Single photon source: Spontaneous Parametric Down-Conversion (SPDC)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#phase-matching-conditions">
+       Phase Matching Conditions
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#types-of-spdc">
+       Types of SPDC
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#classical-nonlinear-optics">
+       Classical Nonlinear optics
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hanbury-brown-twiss">
+     Hanbury Brown-Twiss
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#recall-a-beamsplitter">
+       Recall a beamsplitter
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#coincidence">
+       Coincidence
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#second-order-time-coherence">
+     Second order time coherence
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#detection">
+     Detection
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#second-order-time-coherence">
-   Second order time coherence
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#detection">
-   Detection
-  </a>
  </li>
 </ul>
 
@@ -476,10 +544,51 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="text-introduction-to-single-photons">
-<h1>TEXT: Introduction to single photons<a class="headerlink" href="#text-introduction-to-single-photons" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="latex-headers">
+<h1>Latex Headers<a class="headerlink" href="#latex-headers" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Ensure proper support for certain latex notation</p></li>
+<li><p>Code below</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\newcommand{\ket}[1]{\left|{#1}\right\rangle}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\bra}[1]{\left\langle{#1}\right|}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\braket}[2]{\left\langle{#1}\middle|{#2}\right\rangle}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\adagger}[0]{\hat{a}^{\dagger}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\ahat}[0]{\hat{a}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\bdagger}[0]{\hat{b}^{\dagger}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\bhat}[0]{\hat{b}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\cdagger}[0]{\hat{c}^{\dagger}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\chat}[0]{\hat{c}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\ddagger}[0]{\hat{d}^{\dagger}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\dhat}[0]{\hat{d}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\edagger}[0]{\hat{e}^{\dagger}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\ehat}[0]{\hat{e}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\fdagger}[0]{\hat{f}^{\dagger}}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\fhat}[0]{\hat{f}}\]</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction-to-single-photons-with-the-qued">
+<h1>Introduction to single photons with the quED<a class="headerlink" href="#introduction-to-single-photons-with-the-qued" title="Permalink to this headline">#</a></h1>
+<p>In this text, we’re going to go over some of the basics of working with single photons, especially how they relate to the quED experimental setup. We’ll start with a single photon source, which you’ll be using in the lab. Then we’ll talk about how to detect single photons.</p>
+<p>Next, we’re going to treat photons as indicidual particles, and we’ll show how to verify that a source is indeed producing single photons. You’ll reproduce that experiment in the lab.</p>
+<p>Finally, as time allows, we’ll look at single-photon interference.</p>
 <ol class="simple">
 <li><p>SPDC</p></li>
+<li><p>APD</p></li>
 <li><p>Hanbury Brown-Twiss &amp; Second order coherence <span class="math notranslate nohighlight">\(g^{(2)}\)</span></p>
 <ol class="simple">
 <li><p>classical</p></li>
@@ -488,51 +597,86 @@ title="Print to PDF"
 </li>
 <li><p>Single photon interference</p></li>
 </ol>
-<section id="spontaneous-parametric-down-conversion-spdc">
-<h2>Spontaneous Parametric Down-Conversion (SPDC)<a class="headerlink" href="#spontaneous-parametric-down-conversion-spdc" title="Permalink to this headline">#</a></h2>
-<p><strong>Need to find/make some images</strong></p>
-<p><a class="reference external" href="https://doi.org/10.1080/00107514.2018.1488463">Review Article</a>
-First, let’s take a high level overview of what SPDC is. SPDC occurs when a pump photon is converted into 2 photons of less energy. Traditionally, one output photon is called the signal and the other is called the idler. This conversion adheres to energy conservation and momentum conservation. Our system is degenerate in wavelength: both output photons have the same wavelength.</p>
-<ol class="simple">
-<li><p>Energy Conservation
-images from hc photonics
-<img alt="image.png" src="attachment:image.png" /></p></li>
-<li><p>Momentum Conservation
-<img alt="image-2.png" src="attachment:image-2.png" />
-<img alt="image-4.png" src="attachment:image-4.png" /> (image frome review paper)</p></li>
-</ol>
-<p>Recall that momentum is a vector, so the magnitude <strong>and</strong> direction need to be maintained. This is why we see that the signal and idler photons are non-colinear (they travel in different directions): their sum still matches the pump photons.</p>
-<p>Matching the momentum is an essential part of generating SPDC. As you recall, $<span class="math notranslate nohighlight">\(\overrightarrow{k} = \frac{2\pi n}{\lambda}\)</span><span class="math notranslate nohighlight">\( where \)</span>n<span class="math notranslate nohighlight">\(, the index of refraction, is a function of \)</span>\lambda$, the wavelength of the light.</p>
-<ol class="simple">
-<li><p>Different types of SPDC
-SPDC is divided into different types based on the polarization of the pump and signal and idler photons. For our experiment, we’ll only be using type 1 SPDC.
-<img alt="image-5.png" src="attachment:image-5.png" /> (image from HC Photonics)</p></li>
-<li><p>SPDC in quED</p></li>
-</ol>
-<p>(from quTools Manual)
-<img alt="image-3.png" src="attachment:image-3.png" /></p>
-<ol class="simple">
-<li><p>Walk through the math to show how it’s quantum</p></li>
-<li><p>Uses of SPDC</p></li>
-</ol>
+<section id="single-photon-source-spontaneous-parametric-down-conversion-spdc">
+<h2>Single photon source: Spontaneous Parametric Down-Conversion (SPDC)<a class="headerlink" href="#single-photon-source-spontaneous-parametric-down-conversion-spdc" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://doi.org/10.1080/00107514.2018.1488463">Review Article</a></p>
+<p>First, let’s take a high level overview of what spontaneous parametric down conversio (SPDC) is. SPDC occurs when a pump photon is converted into 2 photons of less energy. Traditionally, one output photon is called the signal and the other is called the idler.</p>
+<section id="phase-matching-conditions">
+<h3>Phase Matching Conditions<a class="headerlink" href="#phase-matching-conditions" title="Permalink to this headline">#</a></h3>
+<p>One important feature of SPDC is the fact that it always obeys energy conservation: the energy of a pump photon before SPDC occurs is equal to the sum of the signal and idler photons after SPDC occurs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Video</span>
-<span class="n">Video</span><span class="p">(</span><span class="s2">&quot;testvideo.mov&quot;</span><span class="p">)</span>
+<span class="n">Video</span><span class="p">(</span><span class="s1">&#39;VIDEOS/quED/testvideo.mov&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">540</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><video src="testvideo.mov" controls  >
-      Your browser does not support the <code>video</code> element.
-    </video></div></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">/tmp/ipykernel_2576377/3280829218.py</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Video</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">Video</span><span class="p">(</span><span class="s1">&#39;VIDEOS/quED/testvideo.mov&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">540</span><span class="p">)</span>
+
+<span class="nn">~/anaconda3/lib/python3.8/site-packages/IPython/core/display.py</span> in <span class="ni">__init__</span><span class="nt">(self, data, url, filename, embed, mimetype, width, height, html_attributes)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1408</span>                 <span class="s2">&quot;Consider passing Video(url=&#39;...&#39;)&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1409</span>             <span class="p">])</span>
+<span class="ne">-&gt; </span><span class="mi">1410</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1411</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1412</span>         <span class="bp">self</span><span class="o">.</span><span class="n">mimetype</span> <span class="o">=</span> <span class="n">mimetype</span>
+
+<span class="ne">ValueError</span>: To embed videos, you must pass embed=True (this may make your notebook files huge)
+<span class="n">Consider</span> <span class="n">passing</span> <span class="n">Video</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;...&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
+</div>
+</div>
+</section>
+<section id="types-of-spdc">
+<h3>Types of SPDC<a class="headerlink" href="#types-of-spdc" title="Permalink to this headline">#</a></h3>
+<p><strong>Different types of SPDC</strong>
+<img alt="Types" src="FIGURES%5CquED%5Cspdc_types.png" />
+(image from HC Photonics)</p>
+</section>
+<section id="classical-nonlinear-optics">
+<h3>Classical Nonlinear optics<a class="headerlink" href="#classical-nonlinear-optics" title="Permalink to this headline">#</a></h3>
+<p><strong>Now look very, very briefly at the classical nonlinear optics part</strong></p>
+</section>
 </section>
 <section id="hanbury-brown-twiss">
 <h2>Hanbury Brown-Twiss<a class="headerlink" href="#hanbury-brown-twiss" title="Permalink to this headline">#</a></h2>
 <p>Following Loudon, let’s walk through the HBT experiment for a single photon.</p>
-<section id="set-up-the-experiment-following-loudon">
-<h3>Set-up the experiment following Loudon<a class="headerlink" href="#set-up-the-experiment-following-loudon" title="Permalink to this headline">#</a></h3>
+<section id="recall-a-beamsplitter">
+<h3>Recall a beamsplitter<a class="headerlink" href="#recall-a-beamsplitter" title="Permalink to this headline">#</a></h3>
+<p>Consider a lossless beamsplitter with indpendent inputs <span class="math notranslate nohighlight">\(\ahat\)</span> and <span class="math notranslate nohighlight">\(\bhat\)</span>. The outputs <span class="math notranslate nohighlight">\(\chat\)</span> and <span class="math notranslate nohighlight">\(\dhat\)</span> are defined as</p>
+<div class="math notranslate nohighlight">
+\[\chat = \mathcal{R}\ahat + \mathcal{T}\bhat\]</div>
+<div class="math notranslate nohighlight">
+\[\dhat = \mathcal{T}\ahat + \mathcal{R}\bhat\]</div>
+<p>where the boundary conditions for the electromagnetic fields are the same classically and in quantum, namely</p>
+<div class="math notranslate nohighlight">
+\[|\mathcal{R}|^2 + |\mathcal{T}|^2 = 1\]</div>
+<div class="math notranslate nohighlight">
+\[\mathcal{R}\mathcal{T}^* + \mathcal{R}^*\mathcal{T} = 0\]</div>
+<p>The assumption is that <span class="math notranslate nohighlight">\(\ahat\)</span> and <span class="math notranslate nohighlight">\(\bhat\)</span> satisfy the boson commutation relations</p>
+<div class="math notranslate nohighlight">
+\[[\ahat,\adagger] = [\bhat,\bdagger] = 1\]</div>
+<p>and that <span class="math notranslate nohighlight">\(\ahat\)</span> and <span class="math notranslate nohighlight">\(\bhat\)</span> are independent fields, ie</p>
+<div class="math notranslate nohighlight">
+\[[\ahat,\bdagger] = [\bhat,\adagger] = 0\]</div>
+<p>You can verify that the outputs follow the same pattern and that the commutation relations are maintained.</p>
+<div class="math notranslate nohighlight">
+\[[\chat,\cdagger] = [\dhat,\ddagger] = 1\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[[\chat,\ddagger] = [\dhat,\cdagger] = 0\]</div>
+</section>
+<section id="coincidence">
+<h3>Coincidence<a class="headerlink" href="#coincidence" title="Permalink to this headline">#</a></h3>
+<p>Now condsider the following case: <span class="math notranslate nohighlight">\(\ahat\)</span> is in a number state with a single photon while <span class="math notranslate nohighlight">\(\bhat\)</span> is in a vaccum state. We want to know what happens at the <span class="math notranslate nohighlight">\(\chat\)</span> and <span class="math notranslate nohighlight">\(\dhat\)</span>. Specifically, we want to know how often we get a photon at both <span class="math notranslate nohighlight">\(\chat\)</span> and <span class="math notranslate nohighlight">\(\dhat\)</span> simultaneously. We call this a <em>coincidence</em> meaning an event where 2 (or more) detection events occur within a short period of time (on the scale of  a few nanoseconds) on 2 separate detectors. Looking at coincidences is an important measurement in quantum optics.</p>
+<p>What is the coincidence of <span class="math notranslate nohighlight">\(\chat\)</span> and <span class="math notranslate nohighlight">\(\dhat\)</span>?</p>
+<div class="math notranslate nohighlight">
+\[\langle n_c n_d\rangle = {}_b\langle0|{}_a\langle1|\hat{n}_c\hat{n}_d|1\rangle_a|0\rangle_b\]</div>
 </section>
 </section>
 <section id="second-order-time-coherence">
@@ -572,17 +716,17 @@ SPDC is divided into different types based on the polarization of the pump and s
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="T2E1-LAB-Single-photon-and-HBT.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">LAB – Interference, Entanglement and Quantum-Enhanced Metrology</p>
+            <p class="prev-next-title">LAB: Hanbury - Brown Twiss Lab</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="T2E1-LAB-Single-photon-and-HBT.html" title="next page">
+    <a class='right-next' id="next-link" href="T2E1-TEXT-QKD-simulation.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">LAB: Hanbury - Brown Twiss Lab</p>
+        <p class="prev-next-title">PRELAB: Quantum-Key Distribution with BB84</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

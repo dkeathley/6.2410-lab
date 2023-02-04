@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>LAB – Interference, Entanglement and Quantum-Enhanced Metrology &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -52,7 +51,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -66,7 +65,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -75,9 +88,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -95,14 +109,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   6.2410 – Laboratory for Quantum Information Science and Engineering
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    6.2410 – Laboratory for Quantum Information Science and Engineering
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Introductory Material
  </span>
@@ -153,6 +168,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="T2E1-TEXT-HBT.html">
+   Latex Headers
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="T2E1-TEXT-QKD-simulation.html">
    PRELAB: Quantum-Key Distribution with BB84
   </a>
@@ -170,8 +190,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="T3E3-LAB-Cavity_QED_sensor.html">
-   LAB: Solid State Spin Laboratory
+  <a class="reference internal" href="quNV-Jupyter/PARKOUR-Quantum-Sensing-with-Solid-State-Spins.html">
+   PARKOUR - Interfacing with the Vector Network Analyzer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="quNV-Jupyter/TEXT-Quantum-Sensing-with-Solid-State-Spins.html">
+   TEXT: Introduction to NV centers in diamond and cavity-based magnetometry
   </a>
  </li>
 </ul>
@@ -194,90 +219,180 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="git@github.mit.edu:pdkeat2/6.2410-lab.git"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="git@github.mit.edu:pdkeat2/6.2410-lab.git/issues/new?title=Issue%20on%20page%20%2FT3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="git@github.mit.edu:pdkeat2/6.2410-lab.git"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="git@github.mit.edu:pdkeat2/6.2410-lab.git/issues/new?title=Issue%20on%20page%20%2FT3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aim-0-introduction-to-the-quantenkoffer-prelab">
    Aim 0: Introduction to the Quantenkoffer (PRELAB)
@@ -361,12 +476,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>LAB – Interference, Entanglement and Quantum-Enhanced Metrology</h1>
@@ -466,11 +580,12 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="lab-interference-entanglement-and-quantum-enhanced-metrology">
-<h1>LAB – Interference, Entanglement and Quantum-Enhanced Metrology<a class="headerlink" href="#lab-interference-entanglement-and-quantum-enhanced-metrology" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-interference-entanglement-and-quantum-enhanced-metrology">
+<h1>LAB – Interference, Entanglement and Quantum-Enhanced Metrology<a class="headerlink" href="#lab-interference-entanglement-and-quantum-enhanced-metrology" title="Permalink to this headline">#</a></h1>
 <p>This lab will: (1) explore the fundamental properties of quantum particles using quantum optics; (2) explore the interactions of quantum particles through interference; and (3) demonstrate how these interactions can be exploited to engineer devices for quantum-enhanced sensing.</p>
 <p>Specific aims are:</p>
 <ol class="simple">
@@ -482,25 +597,27 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Explore the interference of two single photons: the Hong-Ou-Mandel effect</p></li>
 <li><p><strong>BONUS:</strong> Develop a NOON state interferometer demonstrating supersensitivty to path length changes</p></li>
 </ol>
-<div class="section" id="aim-0-introduction-to-the-quantenkoffer-prelab">
-<h2>Aim 0: Introduction to the Quantenkoffer (PRELAB)<a class="headerlink" href="#aim-0-introduction-to-the-quantenkoffer-prelab" title="Permalink to this headline">¶</a></h2>
+<section id="aim-0-introduction-to-the-quantenkoffer-prelab">
+<h2>Aim 0: Introduction to the Quantenkoffer (PRELAB)<a class="headerlink" href="#aim-0-introduction-to-the-quantenkoffer-prelab" title="Permalink to this headline">#</a></h2>
 <p>In this lab you will be using the <a class="reference external" href="https://qutools.com/quantenkoffer_science-kit/">Quantenkoffer</a>.  This instrument will allow us to explore the properties of single- and entangled photons.</p>
 <p>Before the lab, please familiarize yourself with the online materials.  We will also introduce specific materials throughout each of the aims below, but it is best if you familiarize yourself with the equipment ahead of time.</p>
-</div>
-<div class="section" id="aim-1-understand-spdc-generation-of-entangled-photon-pairs">
-<h2>Aim 1: Understand SPDC generation of entangled photon pairs<a class="headerlink" href="#aim-1-understand-spdc-generation-of-entangled-photon-pairs" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="aim-1-understand-spdc-generation-of-entangled-photon-pairs">
+<h2>Aim 1: Understand SPDC generation of entangled photon pairs<a class="headerlink" href="#aim-1-understand-spdc-generation-of-entangled-photon-pairs" title="Permalink to this headline">#</a></h2>
 <p>In this exercise we will explore the spontaneous parametric down-conversion (SPDC) source of the Quantenkoffer.</p>
-<div class="section" id="pre-lab">
-<h3>Pre-Lab<a class="headerlink" href="#pre-lab" title="Permalink to this headline">¶</a></h3>
+<section id="pre-lab">
+<h3>Pre-Lab<a class="headerlink" href="#pre-lab" title="Permalink to this headline">#</a></h3>
 <p>The source is shown in <a class="reference internal" href="#fig-t3e1-lab-spdc-source"><span class="std std-numref">Fig. 11</span></a>.   A useful animation of the source and detailed description is provided on the <a class="reference external" href="https://qutools.com/spdc-animated-source/">QuTools website</a>.</p>
-<div class="figure align-default" id="fig-t3e1-lab-spdc-source">
+<figure class="align-default" id="fig-t3e1-lab-spdc-source">
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/qk-spdc-source.png"><img alt="QK SPDC Source" class="bg-primary mb-1" src="_images/qk-spdc-source.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">A schematic view of the Quantenkoffer’s SPDC source.</span><a class="headerlink" href="#fig-t3e1-lab-spdc-source" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">A schematic view of the Quantenkoffer’s SPDC source.</span><a class="headerlink" href="#fig-t3e1-lab-spdc-source" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Before the lab, please first watch this video demonstration of the source.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VNoJ-0_c6c8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-<div class="section" id="lab-exercise">
-<h3>Lab Exercise<a class="headerlink" href="#lab-exercise" title="Permalink to this headline">¶</a></h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VNoJ-0_c6c8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></section>
+<section id="lab-exercise">
+<h3>Lab Exercise<a class="headerlink" href="#lab-exercise" title="Permalink to this headline">#</a></h3>
 <p>In the followign steps you will learn about the Quantenkoffer SPDC source through the detection of coincidence events.</p>
 <ol class="simple">
 <li><p>After turning the quantenkoffer on, place a periscope on each source port at the left side.  Thes bring up the underlying sources to the surface.</p></li>
@@ -510,31 +627,33 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Now, focusing on coincidence events (A and B), adjust the same mirrors to optimize coincidence counts.  You may note that this results in slightly less  than optimum total counts.  Tha is OK.  What we are doing is ensurin that we optimize for selection of entangled photon pairs for later experiments.</p></li>
 </ol>
 <p>Once you have completed these steps, your setup should look like that in <a class="reference internal" href="#fig-t3e1-lab-spdc-coincidence-setup"><span class="std std-numref">Fig. 12</span></a>.  Typical values might be <span class="math notranslate nohighlight">\(3\times10^5\)</span> total counts in A and B, with <span class="math notranslate nohighlight">\(1.5\times10^4\)</span> coincidence counts.  You should not proceed until you get at least <span class="math notranslate nohighlight">\(1\times10^4\)</span> coincidence counts.</p>
-<div class="figure align-default" id="fig-t3e1-lab-spdc-coincidence-setup">
+<figure class="align-default" id="fig-t3e1-lab-spdc-coincidence-setup">
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/aim1-spdc-coincidence-setup.jpg"><img alt="QK SPDC Coincidences" class="bg-primary mb-1" src="_images/aim1-spdc-coincidence-setup.jpg" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">What your setup should look like for coincidence detection of the SPDC photons.  Note that here there are between 250K to 300K single electron events in each arm with 14K coincidence events.  In the histogram view, you should see a strong peak near 0 seconds.</span><a class="headerlink" href="#fig-t3e1-lab-spdc-coincidence-setup" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">What your setup should look like for coincidence detection of the SPDC photons.  Note that here there are between 250K to 300K single electron events in each arm with 14K coincidence events.  In the histogram view, you should see a strong peak near 0 seconds.</span><a class="headerlink" href="#fig-t3e1-lab-spdc-coincidence-setup" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>What we have been doing is ensuring that we have selected the correct locations of the output cone angles from the SPDC crystal that correspond to photon pair locations.  There are many options for optimizing the counts in either detector A or B from either cone of the SPDC output, but only two relative locations will give truly entangled photon pairs.</p>
-</div>
-</div>
-<div class="section" id="aim-2-demonstration-of-polarization-entanglement">
-<h2>Aim 2: Demonstration of Polarization Entanglement<a class="headerlink" href="#aim-2-demonstration-of-polarization-entanglement" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="prelab">
-<h3>Prelab<a class="headerlink" href="#prelab" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="aim-2-demonstration-of-polarization-entanglement">
+<h2>Aim 2: Demonstration of Polarization Entanglement<a class="headerlink" href="#aim-2-demonstration-of-polarization-entanglement" title="Permalink to this headline">#</a></h2>
+<section id="prelab">
+<h3>Prelab<a class="headerlink" href="#prelab" title="Permalink to this headline">#</a></h3>
 <p>Before the lab, watch the following video related to the concepts we will explore in this part.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/126FD05vltU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-</div>
-<div class="section" id="aim-3-single-photon-interference">
-<h2>Aim 3: Single-Photon Interference<a class="headerlink" href="#aim-3-single-photon-interference" title="Permalink to this headline">¶</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/126FD05vltU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></section>
+</section>
+<section id="aim-3-single-photon-interference">
+<h2>Aim 3: Single-Photon Interference<a class="headerlink" href="#aim-3-single-photon-interference" title="Permalink to this headline">#</a></h2>
 <p>In this ecxercise we will build an interferometer to explore single-photon interference.  We will explore the coherence time of the single photons as well as the concept of interaction free measurement made possible through the wave-particle duality.</p>
-<div class="section" id="id1">
-<h3>Prelab<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<section id="id1">
+<h3>Prelab<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <p>Before the lab, watch the following video related to the concepts we will explore in this part.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4d6d8BB7_n0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-<div class="section" id="id2">
-<h3>Lab Exercise<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="part-1-single-photon-interference">
-<h4>Part 1: Single-Photon Interference<a class="headerlink" href="#part-1-single-photon-interference" title="Permalink to this headline">¶</a></h4>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4d6d8BB7_n0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></section>
+<section id="id2">
+<h3>Lab Exercise<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<section id="part-1-single-photon-interference">
+<h4>Part 1: Single-Photon Interference<a class="headerlink" href="#part-1-single-photon-interference" title="Permalink to this headline">#</a></h4>
 <ol class="simple">
 <li><p>Construct a <a class="reference external" href="https://en.wikipedia.org/wiki/Michelson_interferometer">Michelson interferometer</a> on the quantenkoffer.  There’s technically not a fixed way to do this, but an example configuration is shown in <a class="reference internal" href="#fig-t3e1-lab-michelson-setup"><span class="std std-numref">Fig. 13</span></a>.  The important thing is that we need a motorized wedge in each arm for delay control of each arm. For alignment purposes, use the following procedure.</p>
 <ul class="simple">
@@ -554,10 +673,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ol>
-<div class="figure align-default" id="fig-t3e1-lab-michelson-setup">
+<figure class="align-default" id="fig-t3e1-lab-michelson-setup">
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/aim-3-michelson-setup.jpg"><img alt="QK Michelson Setup" class="bg-primary mb-1" src="_images/aim-3-michelson-setup.jpg" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">The configuration for a Michelson interferometer that we will use to explore single-photon interference in this lab.</span><a class="headerlink" href="#fig-t3e1-lab-michelson-setup" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">The configuration for a Michelson interferometer that we will use to explore single-photon interference in this lab.</span><a class="headerlink" href="#fig-t3e1-lab-michelson-setup" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <ol class="simple">
 <li><p>Look for single-photon interference</p>
 <ul class="simple">
@@ -569,36 +690,40 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ol>
-<div class="figure align-default" id="fig-t3e1-lab-interference-output">
+<figure class="align-default" id="fig-t3e1-lab-interference-output">
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/aim-3-single-photon-interference-scan.jpg"><img alt="QK Michelson Setup" class="bg-primary mb-1" src="_images/aim-3-single-photon-interference-scan.jpg" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Scanning through delay position with a wedge to see single-photon interference at an output port.</span><a class="headerlink" href="#fig-t3e1-lab-interference-output" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="part-2-interaction-free-measurement">
-<h4>Part 2: Interaction-Free Measurement<a class="headerlink" href="#part-2-interaction-free-measurement" title="Permalink to this headline">¶</a></h4>
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Scanning through delay position with a wedge to see single-photon interference at an output port.</span><a class="headerlink" href="#fig-t3e1-lab-interference-output" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="part-2-interaction-free-measurement">
+<h4>Part 2: Interaction-Free Measurement<a class="headerlink" href="#part-2-interaction-free-measurement" title="Permalink to this headline">#</a></h4>
 <p>Now we will use the interferometer to demonstrate the concept of <a class="reference external" href="https://en.wikipedia.org/wiki/Interaction-free_measurement">interaction-free measurement</a>.  For the case of single photons, it is possible to detect the presence of an object in one of the interferometer arms without actually interacting with it.  If the interferometer is aligned on a null, an object placed into one of the arms will casue the signal at the output to increase.  These photons sensed the presence of the object, without being absorbed!</p>
 <ol class="simple">
 <li><p>Use the spinning control knob to jog the wedge to a position such that the interferometer is on a null.</p></li>
 <li><p>Now take an opaque object and slide it in and out of one path of the interferometer.</p></li>
 </ol>
 <p>If done properly, you should see the signal increase each time the object is placed within the beam as shown in <a class="reference internal" href="#fig-t3e1-lab-michelson-ifm"><span class="std std-numref">Fig. 15</span></a>.</p>
-<div class="figure align-default" id="fig-t3e1-lab-michelson-ifm">
+<figure class="align-default" id="fig-t3e1-lab-michelson-ifm">
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/aim-3-single-photon-interference-IFM.jpg"><img alt="QK Michelson Setup" class="bg-primary mb-1" src="_images/aim-3-single-photon-interference-IFM.jpg" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Each time the object is placed in the beam, the signal in channel B increases.  This is an “interaction-free” measurement.</span><a class="headerlink" href="#fig-t3e1-lab-michelson-ifm" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="aim-4-understanding-coincidence-detection-speed-of-light-measurement">
-<h2>Aim 4: Understanding Coincidence Detection – Speed of Light Measurement<a class="headerlink" href="#aim-4-understanding-coincidence-detection-speed-of-light-measurement" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="aim-5-single-photon-interference-and-noon-state-generation-hong-ou-mandel-effect">
-<h2>Aim 5: Single-Photon Interference and NOON State Generation – Hong Ou Mandel Effect<a class="headerlink" href="#aim-5-single-photon-interference-and-noon-state-generation-hong-ou-mandel-effect" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="bonus-aim-6-quantum-enhanced-measurement-with-a-noon-state-interferometer">
-<h2><strong>BONUS</strong> Aim 6: Quantum-Enhanced Measurement with a NOON State Interferometer<a class="headerlink" href="#bonus-aim-6-quantum-enhanced-measurement-with-a-noon-state-interferometer" title="Permalink to this headline">¶</a></h2>
-<iframe src="https://drive.google.com/file/d/1DRJjQdnbupAooSxLQuY_es3w9Idbgdeg/preview" width="640" height="480" allow="autoplay"></iframe></div>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Each time the object is placed in the beam, the signal in channel B increases.  This is an “interaction-free” measurement.</span><a class="headerlink" href="#fig-t3e1-lab-michelson-ifm" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+<section id="aim-4-understanding-coincidence-detection-speed-of-light-measurement">
+<h2>Aim 4: Understanding Coincidence Detection – Speed of Light Measurement<a class="headerlink" href="#aim-4-understanding-coincidence-detection-speed-of-light-measurement" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="aim-5-single-photon-interference-and-noon-state-generation-hong-ou-mandel-effect">
+<h2>Aim 5: Single-Photon Interference and NOON State Generation – Hong Ou Mandel Effect<a class="headerlink" href="#aim-5-single-photon-interference-and-noon-state-generation-hong-ou-mandel-effect" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="bonus-aim-6-quantum-enhanced-measurement-with-a-noon-state-interferometer">
+<h2><strong>BONUS</strong> Aim 6: Quantum-Enhanced Measurement with a NOON State Interferometer<a class="headerlink" href="#bonus-aim-6-quantum-enhanced-measurement-with-a-noon-state-interferometer" title="Permalink to this headline">#</a></h2>
+<iframe src="https://drive.google.com/file/d/1DRJjQdnbupAooSxLQuY_es3w9Idbgdeg/preview" width="640" height="480" allow="autoplay"></iframe></section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -622,9 +747,11 @@ const thebe_selector_output = ".output, .cell_output"
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -640,24 +767,28 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Dirk Englund, Marc Baldo, Donnie Keathley<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Dirk Englund, Marc Baldo, Donnie Keathley<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

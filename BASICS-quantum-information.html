@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>BASICS – Quantum Information &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -52,7 +51,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -66,7 +65,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -75,9 +88,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -95,14 +109,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   6.2410 – Laboratory for Quantum Information Science and Engineering
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    6.2410 – Laboratory for Quantum Information Science and Engineering
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Introductory Material
  </span>
@@ -153,6 +168,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="T2E1-TEXT-HBT.html">
+   Latex Headers
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="T2E1-TEXT-QKD-simulation.html">
    PRELAB: Quantum-Key Distribution with BB84
   </a>
@@ -170,8 +190,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="T3E3-LAB-Cavity_QED_sensor.html">
-   LAB: Solid State Spin Laboratory
+  <a class="reference internal" href="quNV-Jupyter/PARKOUR-Quantum-Sensing-with-Solid-State-Spins.html">
+   PARKOUR - Interfacing with the Vector Network Analyzer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="quNV-Jupyter/TEXT-Quantum-Sensing-with-Solid-State-Spins.html">
+   TEXT: Introduction to NV centers in diamond and cavity-based magnetometry
   </a>
  </li>
 </ul>
@@ -194,90 +219,180 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/BASICS-quantum-information.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="git@github.mit.edu:pdkeat2/6.2410-lab.git"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="git@github.mit.edu:pdkeat2/6.2410-lab.git/issues/new?title=Issue%20on%20page%20%2FBASICS-quantum-information.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="git@github.mit.edu:pdkeat2/6.2410-lab.git"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="git@github.mit.edu:pdkeat2/6.2410-lab.git/issues/new?title=Issue%20on%20page%20%2FBASICS-quantum-information.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/BASICS-quantum-information.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#packages-functions-and-variables">
    Packages, Functions and Variables
@@ -334,12 +449,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>BASICS – Quantum Information</h1>
@@ -412,11 +526,12 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="basics-quantum-information">
-<h1>BASICS – Quantum Information<a class="headerlink" href="#basics-quantum-information" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="basics-quantum-information">
+<h1>BASICS – Quantum Information<a class="headerlink" href="#basics-quantum-information" title="Permalink to this headline">#</a></h1>
 <p>In this chapter we will discuss core concepts in quantum information.  Core principles are explained through the lens of photonic implementations of quantum infromation as this will be how we explore these concepts in the laboratory for this course.  However, you should note that these concepts extend to any quantum information system.</p>
 <p>This recitation will specifically cover the following topics:</p>
 <ol class="simple">
@@ -427,8 +542,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Quantum Cryptography</p></li>
 <li><p>Quantum Key Distribution</p></li>
 </ol>
-<div class="section" id="packages-functions-and-variables">
-<h2>Packages, Functions and Variables<a class="headerlink" href="#packages-functions-and-variables" title="Permalink to this headline">¶</a></h2>
+<section id="packages-functions-and-variables">
+<h2>Packages, Functions and Variables<a class="headerlink" href="#packages-functions-and-variables" title="Permalink to this headline">#</a></h2>
 <p>The following code-block contains the packages, functions and variables needed for the code found later in this notebook.  It must be run first.  Note that if you are running this on your personal computer, you should ensure that all packages needed are installed first (for example the <a class="reference external" href="https://numpy.org/">numpy</a>, <a class="reference external" href="https://scipy.org/">scipy</a>, and <a class="reference external" href="https://matplotlib.org/">matplotlib</a> packages must be installed on your computer along with others).  You can find a launcher link at the top to conveniently run this notebook in Google Colab.</p>
 <p>The code below is hidden by default, but you are encouraged to expand it and study it.  The functions and constants will update as needed during the progression of the course, so you should note what new functions have been and added and study how they work.</p>
 <div class="cell tag_hide_cell docutils container">
@@ -461,9 +576,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="xx-1-quantum-bits-qubits">
-<h2>XX.1 Quantum Bits (qubits)<a class="headerlink" href="#xx-1-quantum-bits-qubits" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="xx-1-quantum-bits-qubits">
+<h2>XX.1 Quantum Bits (qubits)<a class="headerlink" href="#xx-1-quantum-bits-qubits" title="Permalink to this headline">#</a></h2>
 <p>Analogous to the bit, the fundamental unit of information of classical computers, a quantum bit (qubit)
 corresponds to a two level system. However, the qubit can have both values at the same time:</p>
 <p><span class="math notranslate nohighlight">\(\begin{equation}
@@ -482,11 +597,11 @@ of a photon in a particular basis (e.g., linear or circular), the population of 
 <p>These are maximally entangled states. Let’s consider one of these in more detail, say:</p>
 <p><span class="math notranslate nohighlight">\(\begin{equation} \ket{\beta_{00}} = \frac{1}{\sqrt{2}} \big ( \ket{00} + \ket{11} \big ) \end{equation}\)</span></p>
 <p>If we measure the first qubit, we obtain either ‘0’ or ‘1’ with equal probability. If we measure ‘1’, then the state is projected to <span class="math notranslate nohighlight">\(\ket{\psi} = \ket{11}\)</span>; if we measure ‘0’, then the state is projected to <span class="math notranslate nohighlight">\(\ket{\psi} = \ket{00}\)</span>. The measurement outcomes are correlated, even though the two qubits could be a different locations.</p>
-</div>
-<div class="section" id="xx-2-quantum-gates">
-<h2>XX.2 Quantum Gates<a class="headerlink" href="#xx-2-quantum-gates" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="single-qubit-gates">
-<h3>Single Qubit Gates<a class="headerlink" href="#single-qubit-gates" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="xx-2-quantum-gates">
+<h2>XX.2 Quantum Gates<a class="headerlink" href="#xx-2-quantum-gates" title="Permalink to this headline">#</a></h2>
+<section id="single-qubit-gates">
+<h3>Single Qubit Gates<a class="headerlink" href="#single-qubit-gates" title="Permalink to this headline">#</a></h3>
 <ol>
 <li><p>NOT Gate</p>
 <br>
@@ -534,9 +649,9 @@ M_{\text{H}} =
 <p>Photonic implementation: for polarization states, a HWP at <span class="math notranslate nohighlight">\(\theta = 22.5^{\circ}\)</span>; for mode basis states, a beamsplitter.</p>
 </li>
 </ol>
-</div>
-<div class="section" id="two-qubit-gates">
-<h3>Two Qubit Gates<a class="headerlink" href="#two-qubit-gates" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="two-qubit-gates">
+<h3>Two Qubit Gates<a class="headerlink" href="#two-qubit-gates" title="Permalink to this headline">#</a></h3>
 <ol>
 <li><p>Two-qubit CNOT</p>
 <br>
@@ -556,14 +671,14 @@ M_{\text{CN}} =
 <p>Photonic implementation: two single qubit phase gates and two Hadamard gates (see single qubit gates above).</p>
 </li>
 </ol>
-</div>
-</div>
-<div class="section" id="xx-3-quantum-teleportation">
-<h2>XX.3 Quantum Teleportation<a class="headerlink" href="#xx-3-quantum-teleportation" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="xx-3-quantum-teleportation">
+<h2>XX.3 Quantum Teleportation<a class="headerlink" href="#xx-3-quantum-teleportation" title="Permalink to this headline">#</a></h2>
 <p>Quantum teleportation is a technique that allows us to transfer a quantum state without physically moving the system that encodes the state. For instance, suppose Alice has a <span class="math notranslate nohighlight">\(\ket{\psi} = c_0 \ket{0} + c_1 \ket{1}\)</span> encoded in two levels of a Cs atom in her setup in Pasadena, and suppose she wants to transfer this state to Bob’s Cs atom in New York. It would be impractical to move the atom setup from Los Angeles to New York. Furthermore, Alice doesn’t know the state <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> so measuring it would destroy it. Even if she did know the state, it would take infinitely long to transfer the information on the coefficients <span class="math notranslate nohighlight">\(c_0\)</span> and <span class="math notranslate nohighlight">\(c_1\)</span> since they’re continuous variables.</p>
 <p>Alice and Bob can transfer the state if she and Bob also have access to one pair of an entangled state, let’s say the Bell state <span class="math notranslate nohighlight">\(\beta_{00}\)</span> discussed above. The entangled state could consist of two Cs atoms, one in each city.</p>
-<div class="section" id="teleportation-with-cnot">
-<h3>Teleportation With CNOT<a class="headerlink" href="#teleportation-with-cnot" title="Permalink to this headline">¶</a></h3>
+<section id="teleportation-with-cnot">
+<h3>Teleportation With CNOT<a class="headerlink" href="#teleportation-with-cnot" title="Permalink to this headline">#</a></h3>
 <p>The protocol goes as follows. Alice begins with the product state of her state and <span class="math notranslate nohighlight">\(\beta_{00}\)</span>:</p>
 <p><span class="math notranslate nohighlight">\(\begin{array}
  \ket{\psi_i} &amp;= (c_0\ket{0} + c_1\ket{1}) \bigotimes \frac{1}{\sqrt{2}} \big ( \ket{0_A \times 0_B} + \ket{1_A \times 1_B} \big ) \\
@@ -606,9 +721,9 @@ M_{\text{CN}} =
 <p>Now Alice sends Bob the result of her measurement, so that Bob can apply one of four unique single qubit gates to recover the original state <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>.</p>
 <p>Does teleportation violate the Theory of Relativity? No, because the protocol requires that Alice communicates the measurement result to Bob, and this (classical)  communication can’t move faster than the speed of light.</p>
 <p>Teleportation shows that a quantum state can be moved between different physical informations. Quantum teleportation is also crucial for constructing gates that are protected from the environment, using redundant encoding in error correction codes. Quantum teleportation is also crucial for enabling efficient gates in certain quantum computation implementations, such as linear optics quantum computation.</p>
-</div>
-<div class="section" id="teleportation-without-cnot">
-<h3>Teleportation Without CNOT<a class="headerlink" href="#teleportation-without-cnot" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="teleportation-without-cnot">
+<h3>Teleportation Without CNOT<a class="headerlink" href="#teleportation-without-cnot" title="Permalink to this headline">#</a></h3>
 <p>We will consider a slightly different scheme that was used to experimentally implement quantum teleportation between two entangled photons. Assume these are in the state</p>
 <p><span class="math notranslate nohighlight">\(\ket{\psi_{AB}} = \frac{1}{\sqrt{2}} \big ( \ket{0_A \times 0_B} - \ket{1_A \times 1_B} \big )\)</span></p>
 <p>where again A and B are in possition by two Alice and Bob at different locations. Alice again has her state <span class="math notranslate nohighlight">\(\ket{\psi} = c_0\ket{0} + c_1\ket{1}\)</span>, and the full state at the beginning of the protocol is given by</p>
@@ -624,17 +739,17 @@ M_{\text{CN}} =
 <p><span class="math notranslate nohighlight">\(\ket{\Psi^{(\pm)}} = \frac{1}{\sqrt{2}} \big ( \ket{01} \pm \ket{10} \big )\)</span></p>
 <p>The state <span class="math notranslate nohighlight">\(\ket{\psi_1}\)</span> can be written in terms of the four Bell states:</p>
 <p><em>FIXME: SEEMS LIKE THERE IS MATERIAL MISSING HERE…</em></p>
-</div>
-</div>
-<div class="section" id="xx-4-quantum-error-correction">
-<h2>XX.4 Quantum Error Correction<a class="headerlink" href="#xx-4-quantum-error-correction" title="Permalink to this headline">¶</a></h2>
-<div class="margin sidebar">
+</section>
+</section>
+<section id="xx-4-quantum-error-correction">
+<h2>XX.4 Quantum Error Correction<a class="headerlink" href="#xx-4-quantum-error-correction" title="Permalink to this headline">#</a></h2>
+<aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This section follows the discussion by M. A. Nielsen and I. L. Chuang, Quantum Computation and Quantum Information  (Cambridge Univ. Press, Cambridge, 2000), Chapter 10.</p>
 </div>
-</div>
+</aside>
 <p>One of the primary challenges of quantum information processing is dealing with system-environment interactions. Quantum error correcting codes are a way to process quantum information reliably in the presence of noise.  Quantum error correction is a complex subject. Here, we’ll consider just a simple example that protects against bit-flip errors in quantum channels. Bit flip errors is just one class of a range of sources of noise, which also include phase flip errors.</p>
 <p>Let’s first consider an example of consider error correction codes: majority voting with three bits. Suppose you have a classical bit in a noisy channel, where the channel just refers to a path in space or time.  The channel could represent a photon flying from point A to B in a fiber, or a magnetic domain in a hard drive sitting there for some time interval.  Suppose that the noise in the channel causes the bit to flip with some probability p over the duration of the channel. In certain applications, a single bit error could have serious consequences, so we’d like to protect the bit.  We can do this by encoding it in redundant bits. To be specific, let’s copy the single bit into three bits:</p>
 <p><span class="math notranslate nohighlight">\(0 \rightarrow 000\)</span></p>
@@ -718,9 +833,9 @@ p_3 =&amp; \bra{\psi''}P_3\ket{\psi''}
    =&amp; 3 p^2 (1 - p) + p^3 = 3 p^2 - 2 p^3
  \end{eqnarray}\)</span></p>
 <p>just like for the classical error correction code.</p>
-</div>
-<div class="section" id="xx-5-entanglement-based-qkd">
-<h2>XX.5 Entanglement-Based QKD<a class="headerlink" href="#xx-5-entanglement-based-qkd" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="xx-5-entanglement-based-qkd">
+<h2>XX.5 Entanglement-Based QKD<a class="headerlink" href="#xx-5-entanglement-based-qkd" title="Permalink to this headline">#</a></h2>
 <p>Alice and Bob share many entangled photon pairs of the form</p>
 <p><span class="math notranslate nohighlight">\(\ket{\psi} = \frac{\ket{XX} + \ket{YY}}{\sqrt{2}}\)</span></p>
 <p>where <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are two orthogonal states; for example, <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> could refer to the polarization states of a photon.  We can consider another basis,</p>
@@ -739,8 +854,8 @@ p_3 =&amp; \bra{\psi''}P_3\ket{\psi''}
 <p>The message <span class="math notranslate nohighlight">\(U\)</span> should give Bob enough information so that</p>
 <p><span class="math notranslate nohighlight">\(H(X|Y U) \approx 0\)</span></p>
 <p><em>FIXME – CONTINUE FROM HERE</em></p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -764,9 +879,11 @@ p_3 =&amp; \bra{\psi''}P_3\ket{\psi''}
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="BASICS-quantum-optics-basics.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -782,24 +899,28 @@ p_3 =&amp; \bra{\psi''}P_3\ket{\psi''}
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Dirk Englund, Marc Baldo, Donnie Keathley<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Dirk Englund, Marc Baldo, Donnie Keathley<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

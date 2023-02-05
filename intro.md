@@ -1,27 +1,27 @@
 # 6.2410 -- Laboratory for Quantum Information Science and Engineering
 
-This is the course website for 6.2410 -- Laboratory for Quantum Information Science and Engineering.
+This is the course website for the Spring 2023 offering of 6.2410 -- Laboratory for Quantum Information Science and Engineering.
 
 ## Instructors
 
-Dirk R. Englund
-Associate Professor of Electrical Engineering
+Dirk R. Englund <br>
+Associate Professor of Electrical Engineering <br>
 englund@mit.edu, office 36-525
 
-Marc Baldo
-Professor of Electrical Engineering
+Marc Baldo <br>
+Professor of Electrical Engineering <br>
 baldo@mit.edu, office 36-419
 
-Phillip D. Keathley
-Principal Research Scientist, Research Laboratory of Electronics
+Phillip D. Keathley <br>
+Principal Research Scientist, Research Laboratory of Electronics <br>
 pdkeat2@mit.edu, office 36-285
 
 ## Teaching Assistants
 
-Jane Heyes
+Jane Heyes <br>
 jeheyes@mit.edu, office 36-493
 
-Kevin C. Chen
+Kevin C. Chen <br>
 kcchen@mit.edu, office 36-531
 
 ## Catalog Information

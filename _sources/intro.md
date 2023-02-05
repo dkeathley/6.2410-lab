@@ -4,9 +4,9 @@ This is the course website for 6.2410 -- Laboratory for Quantum Information Scie
 
 ## Instructors
 
-Dirk R. Englund
-Associate Professor of Electrical Engineering
-englund@mit.edu, office 36-525
+Dirk R. Englund <br>
+Associate Professor of Electrical Engineering <br>
+englund@mit.edu, office 36-525 <br>
 
 Marc Baldo
 Professor of Electrical Engineering

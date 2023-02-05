@@ -76,7 +76,7 @@ print('The Bloch sphere coordinates are [{0:4.3f}, {1:4.3f}, {2:4.3f}]'
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mQiskitError[0m                               Traceback (most recent call last)
-[0;32m/tmp/ipykernel_2918775/1041644693.py[0m in [0;36m<cell line: 35>[0;34m()[0m
+[0;32m/tmp/ipykernel_2920118/1041644693.py[0m in [0;36m<cell line: 35>[0;34m()[0m
 [1;32m     37[0m     [0;31m# run the circuit with the selected measurement and get the number of samples that output each bit value[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 [1;32m     38[0m     [0mcirc_trans[0m [0;34m=[0m [0mtranspile[0m[0;34m([0m[0mqc[0m[0;34m.[0m[0mcompose[0m[0;34m([0m[0mmeasure_circuit[0m[0;34m)[0m[0;34m,[0m [0msim[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0;32m---> 39[0;31m     [0mcounts[0m [0;34m=[0m [0msim[0m[0;34m.[0m[0mrun[0m[0;34m([0m[0mqc[0m[0;34m.[0m[0mcompose[0m[0;34m([0m[0mcirc_trans[0m[0;34m)[0m[0;34m,[0m [0mshots[0m[0;34m=[0m[0mshots[0m[0;34m)[0m[0;34m.[0m[0mresult[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0mget_counts[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m

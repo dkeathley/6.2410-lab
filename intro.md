@@ -1,6 +1,7 @@
-# 6.2410 -- Laboratory for Quantum Information Science and Engineering
+# 6.2410 -- Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms 
 
-This is the course website for the Spring 2023 offering of 6.2410 -- Laboratory for Quantum Information Science and Engineering.
+
+This is the course website for the Spring 2023 offering of 6.2410 -- Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
 
 ## Instructors
 

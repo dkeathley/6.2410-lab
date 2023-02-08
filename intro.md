@@ -9,10 +9,6 @@ Dirk R. Englund <br>
 Associate Professor of Electrical Engineering <br>
 englund@mit.edu, office 36-525
 
-<!-- Marc Baldo <br>
-Professor of Electrical Engineering <br>
-baldo@mit.edu, office 36-419 -->
-
 Phillip D. Keathley <br>
 Principal Research Scientist, Research Laboratory of Electronics <br>
 pdkeat2@mit.edu, office 36-285

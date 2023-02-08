@@ -4,13 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BASICS – Quantum Optics &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,16 +18,20 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -37,27 +39,24 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="BASICS – Quantum Information" href="BASICS-quantum-information.html" />
-    <link rel="prev" title="6.2410 – Laboratory for Quantum Information Science and Engineering" href="intro.html" />
+    <link rel="next" title="TRAINING: Interfacing with the Vector Network Analyzer" href="quNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.html" />
+    <link rel="prev" title="6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -65,21 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -88,10 +73,9 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -109,15 +93,14 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="intro.html">
-                    6.2410 – Laboratory for Quantum Information Science and Engineering
-                </a>
-            </li>
-        </ul>
-        <p aria-level="2" class="caption" role="heading">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Introductory Material
  </span>
@@ -126,55 +109,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    BASICS – Quantum Optics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="BASICS-quantum-information.html">
-   BASICS – Quantum Information
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Interference and Entanglement
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html">
-   TEXT – Interference, Entanglement and Quantum-Enhanced Metrology
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html">
-   LAB – Interference, Entanglement and Quantum-Enhanced Metrology
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Quantum Information and Quantum Key Distribution
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="T2E1-TEXT-HBT.html">
-   Introduction to single photons with the quED
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="T2E1-LAB-Single-photon-and-HBT.html">
-   LAB: Hanbury - Brown Twiss Lab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="T2E1-TEXT-QKD-simulation.html">
-   PRELAB: Quantum-Key Distribution with BB84
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="T2E1-LAB-BB84.html">
-   LAB: Quantum Key Distribution Lab
   </a>
  </li>
 </ul>
@@ -186,50 +120,18 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="quNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.html">
-   PARKOUR - Interfacing with the Vector Network Analyzer
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="quNV-Jupyter/T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.html">
-   TEXT: Introduction to NV centers in diamond and cavity-based magnetometry
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="quNV-Jupyter/T3E3-LAB-Quantum-Sensing-with-Solid-State-Spins.html">
-   LAB - Quantum Sensing with Solid State Spins
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Quantum Computing (QISKIT)
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="LAB-IBM-Qiskit-Prelab.html">
-   PRELAB: Quantum Computing with Qiskit
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="LAB-IBM-Qiskit.html">
-   LAB: Quantum Computing w/ Qiskit
+   TRAINING: Interfacing with the Vector Network Analyzer
   </a>
  </li>
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -237,162 +139,77 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="git@github.mit.edu:pdkeat2/6.2410-lab.git"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="git@github.mit.edu:pdkeat2/6.2410-lab.git/issues/new?title=Issue%20on%20page%20%2FBASICS-quantum-optics-basics.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/BASICS-quantum-optics-basics.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/BASICS-quantum-optics-basics.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="git@github.mit.edu:pdkeat2/6.2410-lab.git"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="git@github.mit.edu:pdkeat2/6.2410-lab.git/issues/new?title=Issue%20on%20page%20%2FBASICS-quantum-optics-basics.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#optical-modes">
    Optical Modes
@@ -488,11 +305,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>BASICS – Quantum Optics</h1>
@@ -604,44 +422,43 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="basics-quantum-optics">
-<h1>BASICS – Quantum Optics<a class="headerlink" href="#basics-quantum-optics" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="basics-quantum-optics">
+<h1>BASICS – Quantum Optics<a class="headerlink" href="#basics-quantum-optics" title="Permalink to this headline">¶</a></h1>
 <p>This course is about how we can leverage quantum systems as engineers.  As such it is not intended to be a course focused purely on the physics of quantum systems.</p>
 <p>In this course we will focus our attention on how to engineer quantum systems to securely transmit information, perform sensitive measurements, and compute among other things.  This will require us to develop a proficiency in understanding how quantum signals are generated, transmitted, and received.  It will also require us to understand the limitations of measurements, and how to account for noise.</p>
 <p>While we will introduce several quantum engineering platforms in this course, a large number of concepts will be taught through the lens of quantum optics.  This chapter overviews basic concepts in quantum optics that will be drawn on throughout the course.  It should be used as both review and reference material.  For those interested in going deeper than the surface level overview we present here, references are provided at various points.</p>
-<section id="optical-modes">
-<h2>Optical Modes<a class="headerlink" href="#optical-modes" title="Permalink to this headline">#</a></h2>
+<div class="section" id="optical-modes">
+<h2>Optical Modes<a class="headerlink" href="#optical-modes" title="Permalink to this headline">¶</a></h2>
 <p>Often we deal with optical signals whose fields oscillate at a single angular frequency <span class="math notranslate nohighlight">\(\omega\)</span>.  At any given frequency, an optical signal can be written as a summation of modes.  These modes are distinguished by a variety of properties, such as their wave-vector <span class="math notranslate nohighlight">\(\mathbf{k}\)</span> or polarization (e.g. linear horizontal, linear vertical, right-hand circular, etc.).</p>
 <p>In most cases, each input or output signal populates a single mode.</p>
-</section>
-<section id="the-vacuum-state-ket-0">
-<h2>The Vacuum State <span class="math notranslate nohighlight">\(\ket{0}\)</span><a class="headerlink" href="#the-vacuum-state-ket-0" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="the-vacuum-state-ket-0">
+<h2>The Vacuum State <span class="math notranslate nohighlight">\(\ket{0}\)</span><a class="headerlink" href="#the-vacuum-state-ket-0" title="Permalink to this headline">¶</a></h2>
 <p>The vacuum state represents the condition that no photon populates any mode.  This can be expanded as:</p>
 <p><span class="math notranslate nohighlight">\(\ket{0} = \ket{0}_a\ket{0}_b\ldots\ket{0}_m\ket{0}_n\ldots\)</span>,</p>
 <p>where, for example, <span class="math notranslate nohighlight">\(\ket{0}_n\)</span> represents zero photons for mode <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p>Here, we have labeled the modes <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span> for convenience, but it should be noted that there can be infinite number of possible modes.</p>
-</section>
-<section id="photon-number-states-ket-n">
-<h2>Photon Number States: <span class="math notranslate nohighlight">\(\ket{N}\)</span><a class="headerlink" href="#photon-number-states-ket-n" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="photon-number-states-ket-n">
+<h2>Photon Number States: <span class="math notranslate nohighlight">\(\ket{N}\)</span><a class="headerlink" href="#photon-number-states-ket-n" title="Permalink to this headline">¶</a></h2>
 <p>Number states are those that represent a mode populated with a precise number of photons.  Such states are ubiquitous in quantum engineering applications.</p>
 <p>For instance, a single photon in mode <span class="math notranslate nohighlight">\(m\)</span> can be written as:</p>
 <p><span class="math notranslate nohighlight">\(\ket{1}_m = \ket{0}_a\ket{0}_b\ldots\ket{0}_l\ket{1}_m\ket{0}_n\ldots\)</span>.</p>
 <p>Likewise, for N-photons in mode <span class="math notranslate nohighlight">\(m\)</span>:</p>
 <p><span class="math notranslate nohighlight">\(\ket{N}_m = \ket{0}_a\ket{0}_b\ldots\ket{0}_l\ket{N}_m\ket{0}_n\ldots\)</span>.</p>
-</section>
-<section id="the-creation-operator-adagger">
-<h2>The Creation Operator: <span class="math notranslate nohighlight">\(\adagger\)</span><a class="headerlink" href="#the-creation-operator-adagger" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="the-creation-operator-adagger">
+<h2>The Creation Operator: <span class="math notranslate nohighlight">\(\adagger\)</span><a class="headerlink" href="#the-creation-operator-adagger" title="Permalink to this headline">¶</a></h2>
 <p>The creation operator acts to increase the photon number in a particular mode by 1. For instance:</p>
 <p><span class="math notranslate nohighlight">\(\adagger_m \ket{0}_m = \ket{1}_m\)</span></p>
 <p>More generally:</p>
 <p><span class="math notranslate nohighlight">\(\adagger_m \ket{N}_m = \sqrt{N + 1}\ket{N + 1}\)</span></p>
-</section>
-<section id="the-annihilation-operator-ahat">
-<h2>The Annihilation Operator: <span class="math notranslate nohighlight">\(\ahat\)</span><a class="headerlink" href="#the-annihilation-operator-ahat" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="the-annihilation-operator-ahat">
+<h2>The Annihilation Operator: <span class="math notranslate nohighlight">\(\ahat\)</span><a class="headerlink" href="#the-annihilation-operator-ahat" title="Permalink to this headline">¶</a></h2>
 <p>The annihilation operator acts to decrease the photon number in a particular mode by 1.  For instance:</p>
 <div class="math notranslate nohighlight">
 \[\ahat_m \ket{1}_m = \ket{0}_m.\]</div>
@@ -651,26 +468,26 @@ title="Print to PDF"
 <p>Note that:</p>
 <div class="math notranslate nohighlight">
 \[\ahat_m \ket{0}_m = 0.\]</div>
-</section>
-<section id="commutation-relation">
-<h2>Commutation Relation<a class="headerlink" href="#commutation-relation" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="commutation-relation">
+<h2>Commutation Relation<a class="headerlink" href="#commutation-relation" title="Permalink to this headline">¶</a></h2>
 <p>It’s important to note that the annihilation and creation operators <strong>do not</strong> commute.  They have the following commutation relation</p>
 <div class="math notranslate nohighlight">
 \[ [\ahat_m, \adagger_n] \equiv \ahat_m \adagger_n - \adagger_m\ahat_n = \delta_{mn}, \]</div>
 <p>where <span class="math notranslate nohighlight">\(\delta_{mn} = 1\)</span> if <span class="math notranslate nohighlight">\(m = n\)</span> and <span class="math notranslate nohighlight">\(\delta_{mn} = 0\)</span> if <span class="math notranslate nohighlight">\(m \neq n\)</span>.</p>
 <p>This relation can be quite useful, in particular for ensuring operators are in “normal order” which we will describe in detail when reviewing the coherent state below.</p>
-</section>
-<section id="the-number-operator-hat-n-adagger-ahat">
-<h2>The Number Operator: <span class="math notranslate nohighlight">\(\hat{N} = \adagger\ahat\)</span><a class="headerlink" href="#the-number-operator-hat-n-adagger-ahat" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="the-number-operator-hat-n-adagger-ahat">
+<h2>The Number Operator: <span class="math notranslate nohighlight">\(\hat{N} = \adagger\ahat\)</span><a class="headerlink" href="#the-number-operator-hat-n-adagger-ahat" title="Permalink to this headline">¶</a></h2>
 <p>As the name implies, the number operator relates to the number of photons contained within a mode.  It is related to the annihilation and creation operators:</p>
 <p><span class="math notranslate nohighlight">\(\hat{N}_m = \adagger_m\ahat_m\)</span>.</p>
 <p>Often times we are interested in the time-averaged number of photons in a state.  For instance, consider the state $\ket{\psi_m}.  The time averaged number of photons in this state would then be:</p>
 <p><span class="math notranslate nohighlight">\(\bra{\psi}_m\hat{N}_m\ket{\psi}_m\)</span>.</p>
 <p>Using the properties of <span class="math notranslate nohighlight">\(\ahat\)</span> and <span class="math notranslate nohighlight">\(\adagger\)</span>, you can easily show that:</p>
 <p><span class="math notranslate nohighlight">\(\bra{N}_m \hat{N}_m \ket{N}_m = N\)</span>.</p>
-</section>
-<section id="the-field-operators">
-<h2>The Field Operators<a class="headerlink" href="#the-field-operators" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="the-field-operators">
+<h2>The Field Operators<a class="headerlink" href="#the-field-operators" title="Permalink to this headline">¶</a></h2>
 <p>The annihilation and creation operators are also intrinsically related to the electric field of a state.  In fact, they arise as a result of quantizing the electric field.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -687,9 +504,9 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\hat{A}^{(\theta)} = \frac{\ahat e^{-i\theta} + \adagger e^{i\theta}}{2}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat{A}^{(1)} = \hat{A}^{(\theta)}(0)\)</span>, and <span class="math notranslate nohighlight">\(\hat{A}^{(2)} = \hat{A}^{(\theta)}(\pi/2)\)</span></p>
-</section>
-<section id="mean-and-standard-deviation-observables">
-<h2>Mean and Standard Deviation Observables<a class="headerlink" href="#mean-and-standard-deviation-observables" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="mean-and-standard-deviation-observables">
+<h2>Mean and Standard Deviation Observables<a class="headerlink" href="#mean-and-standard-deviation-observables" title="Permalink to this headline">¶</a></h2>
 <p>A general concept of note is the determination of mean and standard deviation of an observable, such as photon number or field value.  As engineers, we are often just as concerned about noise and its reduction as we are about the signal itself.</p>
 <p>The mean of an observable can be found by taking its expectation given the current state of the system <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>.  For example, the mean photon number would be:</p>
 <div class="math notranslate nohighlight">
@@ -702,11 +519,11 @@ title="Print to PDF"
 <p class="admonition-title">Note</p>
 <p>The approach above follows directly from how such values are obtained for random variables in statistics.  For example, see the definitions for <a class="reference external" href="https://en.wikipedia.org/wiki/Standard_deviation">standard deviation</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Variance">variance</a>.</p>
 </div>
-</section>
-<section id="common-state-types-and-their-properties">
-<h2>Common State Types and Their Properties<a class="headerlink" href="#common-state-types-and-their-properties" title="Permalink to this headline">#</a></h2>
-<section id="the-number-state-ket-n">
-<h3>The number state <span class="math notranslate nohighlight">\(\ket{N}\)</span><a class="headerlink" href="#the-number-state-ket-n" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="common-state-types-and-their-properties">
+<h2>Common State Types and Their Properties<a class="headerlink" href="#common-state-types-and-their-properties" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-number-state-ket-n">
+<h3>The number state <span class="math notranslate nohighlight">\(\ket{N}\)</span><a class="headerlink" href="#the-number-state-ket-n" title="Permalink to this headline">¶</a></h3>
 <p>As per its name, the number state contains a well-defined number of photons, such that</p>
 <div class="math notranslate nohighlight">
 \[N = \bra{N}\hat{N}\ket{N}.\]</div>
@@ -769,17 +586,15 @@ title="Print to PDF"
 <img alt="_images/BASICS-quantum-optics-basics_14_1.png" src="_images/BASICS-quantum-optics-basics_14_1.png" />
 </div>
 </div>
-<figure class="align-default" id="fig-number-state-field-representation" style="width: 600px">
+<div class="figure align-default" id="fig-number-state-field-representation" style="width: 600px">
 <div class="cell_output docutils container">
 <img alt="_images/BASICS-quantum-optics-basics_14_0.png" src="_images/BASICS-quantum-optics-basics_14_0.png" />
 </div>
-<figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Field representations for a number state with <span class="math notranslate nohighlight">\(N=4\)</span>.</span><a class="headerlink" href="#fig-number-state-field-representation" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="the-coherent-state-ket-alpha">
-<h3>The coherent state <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span><a class="headerlink" href="#the-coherent-state-ket-alpha" title="Permalink to this headline">#</a></h3>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Field representations for a number state with <span class="math notranslate nohighlight">\(N=4\)</span>.</span><a class="headerlink" href="#fig-number-state-field-representation" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="the-coherent-state-ket-alpha">
+<h3>The coherent state <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span><a class="headerlink" href="#the-coherent-state-ket-alpha" title="Permalink to this headline">¶</a></h3>
 <p>In contrast to number states, classical electromagnetic waves are  described as a collection of plane waves that oscillates smothly in time and space. These plane waves have regions of high and low fields that are well defined as a function of phase.  There are many applications in quantum optics that use such “classical” sources of light (e.g. a continuous-wave laser source), so we need a way to describe it within our quantum framework.  For this purpose, we can use <em>coherent states</em>.</p>
 <p>We denote a coherent state as <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span>, where <span class="math notranslate nohighlight">\(\alpha\)</span> is a complex number whos amplitude relates to the electric field strength, and whos phase relates to the phase offset of the electromagnetic wave.  As with number states, these states can also have other properties, such as polarization and spatial mode.</p>
 <p>An interesting and useful fact is that a coherent state is nothing more than a distribution of number states all added together in a particular way.  For instance, a classical state populating the <span class="math notranslate nohighlight">\(m^\text{th}\)</span> mode is represented as:</p>
@@ -868,17 +683,15 @@ title="Print to PDF"
 <img alt="_images/BASICS-quantum-optics-basics_18_1.png" src="_images/BASICS-quantum-optics-basics_18_1.png" />
 </div>
 </div>
-<figure class="align-default" id="fig-coherent-state-field-representation" style="width: 600px">
+<div class="figure align-default" id="fig-coherent-state-field-representation" style="width: 600px">
 <div class="cell_output docutils container">
 <img alt="_images/BASICS-quantum-optics-basics_18_0.png" src="_images/BASICS-quantum-optics-basics_18_0.png" />
 </div>
-<figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Field representations for a coherent state with <span class="math notranslate nohighlight">\(|\alpha| = 4\)</span>, and <span class="math notranslate nohighlight">\(\varphi = \pi/4\)</span>.</span><a class="headerlink" href="#fig-coherent-state-field-representation" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="squeezed-states">
-<span id="sec-quantum-optics-basics-squeezed-states"></span><h3>Squeezed States<a class="headerlink" href="#squeezed-states" title="Permalink to this headline">#</a></h3>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Field representations for a coherent state with <span class="math notranslate nohighlight">\(|\alpha| = 4\)</span>, and <span class="math notranslate nohighlight">\(\varphi = \pi/4\)</span>.</span><a class="headerlink" href="#fig-coherent-state-field-representation" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="squeezed-states">
+<span id="sec-quantum-optics-basics-squeezed-states"></span><h3>Squeezed States<a class="headerlink" href="#squeezed-states" title="Permalink to this headline">¶</a></h3>
 <p>You might have heard of squeezed states.  Such states exhibit very interesting noise properties.  While there are more rigorous ways to develop notation for generalized squeezed states, lets use a simple example constructured from the vacuum state in addition to a two-photon number state:</p>
 <div class="math notranslate nohighlight">
 \[ \ket{\psi_s} = \sqrt{1 - s^2}\ket{0} - s\ket{2}.\]</div>
@@ -953,14 +766,12 @@ title="Print to PDF"
 <img alt="_images/BASICS-quantum-optics-basics_22_1.png" src="_images/BASICS-quantum-optics-basics_22_1.png" />
 </div>
 </div>
-<figure class="align-default" id="fig-squeezed-state-vs-vac-field-fluctuations" style="width: 600px">
+<div class="figure align-default" id="fig-squeezed-state-vs-vac-field-fluctuations" style="width: 600px">
 <div class="cell_output docutils container">
 <img alt="_images/BASICS-quantum-optics-basics_22_0.png" src="_images/BASICS-quantum-optics-basics_22_0.png" />
 </div>
-<figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Field representations for a vacuum state (red circle) and squeezed state <span class="math notranslate nohighlight">\(\ket{\psi_s} = \sqrt{1 - s^2}\ket{0} - s\ket{2}\)</span> (blue circle) for <span class="math notranslate nohighlight">\(s=0.25\)</span>.</span><a class="headerlink" href="#fig-squeezed-state-vs-vac-field-fluctuations" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Field representations for a vacuum state (red circle) and squeezed state <span class="math notranslate nohighlight">\(\ket{\psi_s} = \sqrt{1 - s^2}\ket{0} - s\ket{2}\)</span> (blue circle) for <span class="math notranslate nohighlight">\(s=0.25\)</span>.</span><a class="headerlink" href="#fig-squeezed-state-vs-vac-field-fluctuations" title="Permalink to this image">¶</a></p>
+</div>
 <p>For <span class="math notranslate nohighlight">\(s = 0\)</span> (the red circle), the state is nothing more than the vacuum state.  However, when <span class="math notranslate nohighlight">\(s = 0.25\)</span> we arrive at the blue ellipse, where the fluctuations along <span class="math notranslate nohighlight">\(A^{(1)}\)</span> have been reduced, while those along <span class="math notranslate nohighlight">\(A^{(2)}\)</span> have been increased.  <strong>As engineers, we can design systems that are only sensitive to the fields in one of the two quadratures (using <a class="reference external" href="https://en.wikipedia.org/wiki/Homodyne_detection">Homodyne detection</a> for example), thus enabling measurements below the noise floor set by the standard quantum limit (SQL, which is represented by the vacuum state here with <span class="math notranslate nohighlight">\(s = 0\)</span>).  We will discuss such measurements in detail.</strong></p>
 <p>One final question of interest for <span class="math notranslate nohighlight">\(\ket{\psi_s}\)</span> is what happens to the noise along the two quadratures <span class="math notranslate nohighlight">\(A^{(1)}\)</span> and <span class="math notranslate nohighlight">\(A^{(2)}\)</span> and how does this noise compare to the standard quantum limit (SQL) as we let <span class="math notranslate nohighlight">\(s\)</span> vary from 0 to 1.</p>
 <div class="cell tag_hide-cell docutils container">
@@ -1002,22 +813,20 @@ title="Print to PDF"
 <img alt="_images/BASICS-quantum-optics-basics_25_1.png" src="_images/BASICS-quantum-optics-basics_25_1.png" />
 </div>
 </div>
-<figure class="align-default" id="fig-squeezed-field-fluctuations" style="width: 600px">
+<div class="figure align-default" id="fig-squeezed-field-fluctuations" style="width: 600px">
 <div class="cell_output docutils container">
 <img alt="_images/BASICS-quantum-optics-basics_25_0.png" src="_images/BASICS-quantum-optics-basics_25_0.png" />
 </div>
-<figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Field fluctuations in each quadrature compared to the SQL.</span><a class="headerlink" href="#fig-squeezed-field-fluctuations" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Field fluctuations in each quadrature compared to the SQL.</span><a class="headerlink" href="#fig-squeezed-field-fluctuations" title="Permalink to this image">¶</a></p>
+</div>
 <p><strong>FIXME: Add in a short note on a generalized squeezer and how you represent it’s creation and annihilation operators.  Also provide a schematic of the system.</strong></p>
-</section>
-<section id="entangled-states">
-<h3>Entangled States<a class="headerlink" href="#entangled-states" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="entangled-states">
+<h3>Entangled States<a class="headerlink" href="#entangled-states" title="Permalink to this headline">¶</a></h3>
 <p><strong>FIXME: Flesh out a simple section getting to the essence of entanglement and a simple demonstration of entangled states.</strong></p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1041,48 +850,42 @@ title="Print to PDF"
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">6.2410 – Laboratory for Quantum Information Science and Engineering</p>
+            <p class="prev-next-title">6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="BASICS-quantum-information.html" title="next page">
+    <a class='right-next' id="next-link" href="quNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">BASICS – Quantum Information</p>
+        <p class="prev-next-title">TRAINING: Interfacing with the Vector Network Analyzer</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Dirk Englund, Marc Baldo, Donnie Keathley<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      By Dirk Englund, Marc Baldo, Donnie Keathley<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

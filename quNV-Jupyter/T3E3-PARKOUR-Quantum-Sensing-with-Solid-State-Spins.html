@@ -4,13 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
-    <title>PARKOUR - Interfacing with the Vector Network Analyzer &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRAINING: Interfacing with the Vector Network Analyzer &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,16 +18,20 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -37,27 +39,23 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="TEXT: Introduction to NV centers in diamond and cavity-based magnetometry" href="T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.html" />
-    <link rel="prev" title="LAB: Quantum Key Distribution Lab" href="../T2E1-LAB-BB84.html" />
+    <link rel="prev" title="BASICS – Quantum Optics" href="../BASICS-quantum-optics-basics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -65,21 +63,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -88,10 +72,9 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -109,15 +92,14 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
-                    6.2410 – Laboratory for Quantum Information Science and Engineering
-                </a>
-            </li>
-        </ul>
-        <p aria-level="2" class="caption" role="heading">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Introductory Material
  </span>
@@ -126,55 +108,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../BASICS-quantum-optics-basics.html">
    BASICS – Quantum Optics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../BASICS-quantum-information.html">
-   BASICS – Quantum Information
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Interference and Entanglement
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html">
-   TEXT – Interference, Entanglement and Quantum-Enhanced Metrology
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html">
-   LAB – Interference, Entanglement and Quantum-Enhanced Metrology
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Quantum Information and Quantum Key Distribution
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../T2E1-TEXT-HBT.html">
-   Introduction to single photons with the quED
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../T2E1-LAB-Single-photon-and-HBT.html">
-   LAB: Hanbury - Brown Twiss Lab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../T2E1-TEXT-QKD-simulation.html">
-   PRELAB: Quantum-Key Distribution with BB84
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../T2E1-LAB-BB84.html">
-   LAB: Quantum Key Distribution Lab
   </a>
  </li>
 </ul>
@@ -186,50 +119,18 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   PARKOUR - Interfacing with the Vector Network Analyzer
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.html">
-   TEXT: Introduction to NV centers in diamond and cavity-based magnetometry
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="T3E3-LAB-Quantum-Sensing-with-Solid-State-Spins.html">
-   LAB - Quantum Sensing with Solid State Spins
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Quantum Computing (QISKIT)
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../LAB-IBM-Qiskit-Prelab.html">
-   PRELAB: Quantum Computing with Qiskit
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../LAB-IBM-Qiskit.html">
-   LAB: Quantum Computing w/ Qiskit
+   TRAINING: Interfacing with the Vector Network Analyzer
   </a>
  </li>
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -237,162 +138,77 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="git@github.mit.edu:pdkeat2/6.2410-lab.git"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="git@github.mit.edu:pdkeat2/6.2410-lab.git/issues/new?title=Issue%20on%20page%20%2FquNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/quNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/quNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="git@github.mit.edu:pdkeat2/6.2410-lab.git"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="git@github.mit.edu:pdkeat2/6.2410-lab.git/issues/new?title=Issue%20on%20page%20%2FquNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#installing-the-vna-gui">
    1. Installing the VNA GUI
@@ -437,14 +253,15 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>PARKOUR - Interfacing with the Vector Network Analyzer</h1>
+                <h1>TRAINING: Interfacing with the Vector Network Analyzer</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -502,30 +319,29 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section id="parkour-interfacing-with-the-vector-network-analyzer">
-<h1>PARKOUR - Interfacing with the Vector Network Analyzer<a class="headerlink" href="#parkour-interfacing-with-the-vector-network-analyzer" title="Permalink to this headline">#</a></h1>
+  <div class="section" id="training-interfacing-with-the-vector-network-analyzer">
+<h1>TRAINING: Interfacing with the Vector Network Analyzer<a class="headerlink" href="#training-interfacing-with-the-vector-network-analyzer" title="Permalink to this headline">¶</a></h1>
 <p>In this exercise, we will practice using Python to communicate with the vector network analyzer (VNA), which allows us to probe the microwave cavity’s frequency response. In short, the VNA acts as both a signal generator and a receiver. Within a defined frequency sweep, <span class="math notranslate nohighlight">\(\omega\in[\omega_1,\omega_2]\)</span>, it sends a signal at frequency <span class="math notranslate nohighlight">\(\omega\)</span> and measures the reflected power off the cavity. When <span class="math notranslate nohighlight">\(\omega\)</span> is resonant with the cavity’s resonance frequency <span class="math notranslate nohighlight">\(\omega_c\)</span>, i.e. <span class="math notranslate nohighlight">\(\omega=\omega_c\)</span>, the reflected power would be minimal. This will be covered in more details in the textbook. For now, we will focus on writing a small piece of code to send commands to the VNA, and collecting the relevant measurement data, <span class="math notranslate nohighlight">\(S_{21}\)</span>.</p>
-<section id="installing-the-vna-gui">
-<h2>1. Installing the VNA GUI<a class="headerlink" href="#installing-the-vna-gui" title="Permalink to this headline">#</a></h2>
+<div class="section" id="installing-the-vna-gui">
+<h2>1. Installing the VNA GUI<a class="headerlink" href="#installing-the-vna-gui" title="Permalink to this headline">¶</a></h2>
 <p>The GUI software for the VNA can be downloaded here: <a class="reference external" href="https://github.com/jankae/LibreVNA/releases">https://github.com/jankae/LibreVNA/releases</a></p>
 <p>You may download either the latest version or pre-release.</p>
 <p>You may also designate one person whose laptop/computer will be installed with the software. However, each person still needs to submit their own code.</p>
-</section>
-<section id="familiarize-with-the-gui">
-<h2>2. Familiarize with the GUI<a class="headerlink" href="#familiarize-with-the-gui" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="familiarize-with-the-gui">
+<h2>2. Familiarize with the GUI<a class="headerlink" href="#familiarize-with-the-gui" title="Permalink to this headline">¶</a></h2>
 <p>Make sure the VNA is USB-connected to your computer. Then, open the LibreVNA-GUI. In the “Device” tab, you should be able to see the VNA’s device ID in “Connect To”. Select the device, and you should be seeing four quadrants, each representing a <a class="reference external" href="https://en.wikipedia.org/wiki/Scattering_parameters">S-parameter</a>. For the experiment you will be running, only <span class="math notranslate nohighlight">\(S_{21}\)</span> is needed. You may enlarge the “S21” screen by dragging its boundaries.</p>
 <p>In the top bar, make sure the “Sweep type” is Frequency. You can define the frequency sweep range by either setting (1) Start and Stop, or (2) Center and Span.</p>
 <p>Right-clicking on the plot and selecting “Axis Setup” allows you to select “Auto” for the axes’ range. This is important if you want to monitor signals with changing amplitudes and/or after you change the frequency sweep range.</p>
 <p><em>Note that Ports 1 &amp; 2 of the VNA are not connected to anything at the moment, so you should just be seeing noise in the “S21” plot.</em></p>
-</section>
-<section id="establish-connection-with-the-vna-via-python">
-<h2>3. Establish connection with the VNA via Python<a class="headerlink" href="#establish-connection-with-the-vna-via-python" title="Permalink to this headline">#</a></h2>
-<section id="download-the-python-file-below-make-sure-it-is-either-in-the-same-directory-as-this-jupyter-notebook-or-modify-the-directory-path-when-importing">
-<h3>3.1 Download the Python file below. Make sure it is either in the same directory as this Jupyter notebook or modify the directory path when importing.<a class="headerlink" href="#download-the-python-file-below-make-sure-it-is-either-in-the-same-directory-as-this-jupyter-notebook-or-modify-the-directory-path-when-importing" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="establish-connection-with-the-vna-via-python">
+<h2>3. Establish connection with the VNA via Python<a class="headerlink" href="#establish-connection-with-the-vna-via-python" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="download-the-python-file-below-make-sure-it-is-either-in-the-same-directory-as-this-jupyter-notebook-or-modify-the-directory-path-when-importing">
+<h3>3.1 Download the Python file below. Make sure it is either in the same directory as this Jupyter notebook or modify the directory path when importing.<a class="headerlink" href="#download-the-python-file-below-make-sure-it-is-either-in-the-same-directory-as-this-jupyter-notebook-or-modify-the-directory-path-when-importing" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">FileLink</span>
@@ -538,9 +354,9 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output text_html">Click here to download: <a href='./libreVNA.py' target='_blank'>./libreVNA.py</a><br></div></div>
 </div>
-</section>
-<section id="next-try-running-the-next-code-block">
-<h3>3.2 Next, try running the next code block.<a class="headerlink" href="#next-try-running-the-next-code-block" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="next-try-running-the-next-code-block">
+<h3>3.2 Next, try running the next code block.<a class="headerlink" href="#next-try-running-the-next-code-block" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># RUN ME</span>
@@ -549,9 +365,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="connecting-to-the-vna">
-<h3>3.3 Connecting to the VNA<a class="headerlink" href="#connecting-to-the-vna" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="connecting-to-the-vna">
+<h3>3.3 Connecting to the VNA<a class="headerlink" href="#connecting-to-the-vna" title="Permalink to this headline">¶</a></h3>
 <p>If the above block runs without an issue, run the next code block to establish connection. After creating a handle to the VNA, you will notice there are two methods to communicate with the device.<code class="docutils literal notranslate"><span class="pre">vna.query(XXX)</span></code> and <code class="docutils literal notranslate"><span class="pre">vna.command(XXX)</span></code>. The former sends a command to the VNA and asks for a response (aka query), and the latter only sends a command. The input <code class="docutils literal notranslate"><span class="pre">XXX</span></code> to either of these methods is a <a class="reference external" href="https://en.wikipedia.org/wiki/Standard_Commands_for_Programmable_Instruments">SCPI</a> (Standard Commands for Programmable Instruments). For a complete of list of SCPI commands for the VNA, consult the Programming Guide below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -592,39 +408,42 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ConnectionRefusedError</span><span class="g g-Whitespace">                    </span>Traceback (most recent call last)
-<span class="nn">~/Dropbox (MIT)/org/PROJECT-ATTACHMENTS/work/JUPYTER-BOOK-6.2410-laboratory-in-quantum-systems-engineering-2022-10-26-06-59/quNV-Jupyter/libreVNA.py</span> in <span class="ni">__init__</span><span class="nt">(self, host, port)</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">72</span>             <span class="bp">self</span><span class="o">.</span><span class="n">sock</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span>         <span class="k">except</span><span class="p">:</span>
+<span class="nn">File ~/Dropbox (MIT)/org/PROJECT-ATTACHMENTS/work/JUPYTER-BOOK-6.2410-laboratory-in-quantum-systems-engineering-2022-10-26-06-59/quNV-Jupyter/libreVNA.py:72,</span> in <span class="ni">libreVNA.__init__</span><span class="nt">(self, host, port)</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">72</span>     <span class="bp">self</span><span class="o">.</span><span class="n">sock</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="k">except</span><span class="p">:</span>
 
 <span class="ne">ConnectionRefusedError</span>: [Errno 111] Connection refused
 
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
 <span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">/tmp/ipykernel_2951225/1465159270.py</span> in <span class="ni">&lt;cell line: 7&gt;</span><span class="nt">()</span>
+<span class="nn">Input In [4],</span> in <span class="ni">&lt;cell line: 7&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># RUN ME</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Establish VNA connection</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># note: remember to communicate with the VNA, the GUI must be running</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> 
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># Create the control instance</span>
 <span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">vna</span> <span class="o">=</span> <span class="n">libreVNA</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="mi">19542</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> 
 <span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># Quick connection check (should print &quot;LibreVNA-GUI&quot;)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="nb">print</span><span class="p">(</span><span class="n">vna</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;*IDN?&quot;</span><span class="p">))</span>
 
-<span class="nn">~/Dropbox (MIT)/org/PROJECT-ATTACHMENTS/work/JUPYTER-BOOK-6.2410-laboratory-in-quantum-systems-engineering-2022-10-26-06-59/quNV-Jupyter/libreVNA.py</span> in <span class="ni">__init__</span><span class="nt">(self, host, port)</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span>             <span class="bp">self</span><span class="o">.</span><span class="n">sock</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span>         <span class="k">except</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">74</span>             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Unable to connect to LibreVNA-GUI. Make sure it is running and the TCP server is enabled.&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span>         <span class="bp">self</span><span class="o">.</span><span class="n">reader</span> <span class="o">=</span> <span class="n">SocketStreamReader</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sock</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">76</span> 
+<span class="nn">File ~/Dropbox (MIT)/org/PROJECT-ATTACHMENTS/work/JUPYTER-BOOK-6.2410-laboratory-in-quantum-systems-engineering-2022-10-26-06-59/quNV-Jupyter/libreVNA.py:74,</span> in <span class="ni">libreVNA.__init__</span><span class="nt">(self, host, port)</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span>     <span class="bp">self</span><span class="o">.</span><span class="n">sock</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="k">except</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">74</span>     <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Unable to connect to LibreVNA-GUI. Make sure it is running and the TCP server is enabled.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span> <span class="bp">self</span><span class="o">.</span><span class="n">reader</span> <span class="o">=</span> <span class="n">SocketStreamReader</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sock</span><span class="p">)</span>
 
 <span class="ne">Exception</span>: Unable to connect to LibreVNA-GUI. Make sure it is running and the TCP server is enabled.
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="setting-the-vna-parameters">
-<h2>4. Setting the VNA parameters<a class="headerlink" href="#setting-the-vna-parameters" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="setting-the-vna-parameters">
+<h2>4. Setting the VNA parameters<a class="headerlink" href="#setting-the-vna-parameters" title="Permalink to this headline">¶</a></h2>
 <p>Write a Python script that does the following:</p>
 <ol class="simple">
 <li><p>Sets the frequency sweep range from 2.93 GHz to 2.95 GHz</p></li>
@@ -639,9 +458,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="grabbing-data-off-the-vna">
-<h2>5. Grabbing data off the VNA<a class="headerlink" href="#grabbing-data-off-the-vna" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="grabbing-data-off-the-vna">
+<h2>5. Grabbing data off the VNA<a class="headerlink" href="#grabbing-data-off-the-vna" title="Permalink to this headline">¶</a></h2>
 <p>Write a Python script that extracts <span class="math notranslate nohighlight">\(S_{21}\)</span> data vector, and plots both the amplitude and phase entries.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -650,8 +469,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -675,48 +494,35 @@ title="Print to PDF"
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../T2E1-LAB-BB84.html" title="previous page">
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../BASICS-quantum-optics-basics.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">LAB: Quantum Key Distribution Lab</p>
+            <p class="prev-next-title">BASICS – Quantum Optics</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">TEXT: Introduction to NV centers in diamond and cavity-based magnetometry</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Dirk Englund, Marc Baldo, Donnie Keathley<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      By Dirk Englund, Marc Baldo, Donnie Keathley<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

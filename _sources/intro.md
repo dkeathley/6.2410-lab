@@ -1,16 +1,13 @@
-# 6.2410 -- Laboratory for Quantum Information Science and Engineering
+# 6.2410 -- Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms 
 
-This is the course website for the Spring 2023 offering of 6.2410 -- Laboratory for Quantum Information Science and Engineering.
+
+This is the course website for the Spring 2023 offering of 6.2410 -- Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
 
 ## Instructors
 
 Dirk R. Englund <br>
 Associate Professor of Electrical Engineering <br>
 englund@mit.edu, office 36-525
-
-<!-- Marc Baldo <br>
-Professor of Electrical Engineering <br>
-baldo@mit.edu, office 36-419 -->
 
 Phillip D. Keathley <br>
 Principal Research Scientist, Research Laboratory of Electronics <br>
@@ -84,7 +81,7 @@ Students will select open-ended design projects following on core material cover
 | 1 | Introduction to “quantum engineering” laboratory. Overview of course & platforms. Basic training on components of each module. |
 | 2-3 | Round 1 Experiment Labs in groups of 3-4; lab report |
 | 4-5 | Round 2 Experiment Labs in groups of 3-4; lab report |
-| 6-7 | Round 1 Experiment Labs in groups of 3-4; lab report | 
+| 6-7 | Round 3 Experiment Labs in groups of 3-4; lab report | 
 | 8-9 | Individual Qiskit Labs + Open-ended design project proposal + presentation |
 | 10-14 | Open-ended design projects leading to final report and presentation |
 

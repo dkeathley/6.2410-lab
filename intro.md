@@ -85,7 +85,7 @@ Students will select open-ended design projects following on core material cover
 | 1 | Introduction to “quantum engineering” laboratory. Overview of course & platforms. Basic training on components of each module. |
 | 2-3 | Round 1 Experiment Labs in groups of 3-4; lab report |
 | 4-5 | Round 2 Experiment Labs in groups of 3-4; lab report |
-| 6-7 | Round 1 Experiment Labs in groups of 3-4; lab report | 
+| 6-7 | Round 3 Experiment Labs in groups of 3-4; lab report | 
 | 8-9 | Individual Qiskit Labs + Open-ended design project proposal + presentation |
 | 10-14 | Open-ended design projects leading to final report and presentation |
 

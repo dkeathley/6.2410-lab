@@ -321,7 +321,7 @@ The last part is interesting as it means that no matter how large alpha is, the 
 
 Again, it we can map out the field representation, which we have done below for a coherent state with $|\alpha| = 4$, and $\varphi = \pi/4$.
 
-**FIXME:  Add in a figure that shows the coherent state as a function of $\theta$ vs. a number state having the same average numer of photons N**.
+[//]: # "FIXME:  Add in a figure that shows the coherent state as a function of $\theta$ vs. a number state having the same average numer of photons N."
 
 ```{code-cell} ipython3
 :tags: [hide-cell]
@@ -515,10 +515,8 @@ Field fluctuations in each quadrature compared to the SQL.
 
 +++
 
-**FIXME: Add in a short note on a generalized squeezer and how you represent it's creation and annihilation operators.  Also provide a schematic of the system.**
+[//]: # "FIXME: Add in a short note on a generalized squeezer and how you represent it's creation and annihilation operators.  Also provide a schematic of the system."
 
 +++
 
-### Entangled States
-
-**FIXME: Flesh out a simple section getting to the essence of entanglement and a simple demonstration of entangled states.**
+[//]: # "FIXME: Flesh out a simple section getting to the essence of entanglement and a simple demonstration of entangled states."

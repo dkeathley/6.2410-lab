@@ -72,7 +72,6 @@ Students will select open-ended design projects following on core material cover
 
 ## Schedule
 
-
 ```{table} Course Schedule
 :name: tbl-course-schedule
 

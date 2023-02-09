@@ -50,7 +50,7 @@ File [0;32m~/Dropbox (MIT)/org/PROJECT-ATTACHMENTS/work/JUPYTER-BOOK-6.2410-lab
 During handling of the above exception, another exception occurred:
 
 [0;31mException[0m                                 Traceback (most recent call last)
-Input [0;32mIn [3][0m, in [0;36m<cell line: 7>[0;34m()[0m
+Input [0;32mIn [2][0m, in [0;36m<cell line: 7>[0;34m()[0m
 [1;32m      1[0m [38;5;66;03m# RUN ME[39;00m
 [1;32m      2[0m 
 [1;32m      3[0m [38;5;66;03m# Establish VNA connection[39;00m

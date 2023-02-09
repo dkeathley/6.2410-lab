@@ -14,9 +14,9 @@ parts:
     chapters:
     - file: BASICS-quantum-optics-basics.ipynb
 #    - file: BASICS-quantum-information.ipynb
-#  - caption: Interference and Entanglement
-#    chapters:
-#    - file: T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.ipynb
+  - caption: Interference and Entanglement
+    chapters:
+    - file: T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.ipynb
 #    - file: T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.ipynb
 #  - caption: Quantum Information and Quantum Key Distribution
 #    chapters:

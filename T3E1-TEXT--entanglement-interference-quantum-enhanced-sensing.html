@@ -392,7 +392,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>Each path is sent through a polarizer and then a detector after which we consider only coincident events.  Let’s now consider the act of measuring the photons after the polarizers in arms <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>.  The polarizer acts to select out only one polarization angle.  Since our incident light has both polarizations, we need to understand how both components are projected onto the polarization axis.</p>
 <div class="figure align-default" id="fig-t3e1-polarizer-projection">
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/T3E1-polarizer-projection.png"><img alt="Polarizer Projection" class="bg-primary mb-1" src="_images/T3E1-polarizer-projection.png" style="width: 400px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/T3E1-polarizer-projection.png"><img alt="Polarizer Projection" class="bg-primary mb-1" src="_images/T3E1-polarizer-projection.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">The horizontal and vertical polarization states are projected onto the polarizer axis denoted by the red line.</span><a class="headerlink" href="#fig-t3e1-polarizer-projection" title="Permalink to this image">¶</a></p>
 </div>
 <p>Consider <a class="reference internal" href="#fig-t3e1-polarizer-projection"><span class="std std-numref">Fig. 7</span></a>.  This shows the polarizer angle in arm <span class="math notranslate nohighlight">\(a\)</span> in relation to the vertical and horizontal polarizations of our input photons.  After the polarizer, the light must be polarized along <span class="math notranslate nohighlight">\(\theta_a\)</span>, and we can write:</p>
@@ -408,7 +408,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h3>Prelab Questions<a class="headerlink" href="#prelab-questions" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><p>Fill in the missing steps above to show that <span class="math notranslate nohighlight">\(P_\text{co} = \frac{1}{2} \cos^2(\theta_a - \theta_b)\)</span>.</p></li>
-<li><p>Make a polar plot of <span class="math notranslate nohighlight">\(P_co\)</span> as a function of <span class="math notranslate nohighlight">\(\theta_a\)</span> for three fixed settings of <span class="math notranslate nohighlight">\(\theta_b\)</span>.  Interpret what the plots are saying.</p></li>
+<li><p>Make a polar plot of <span class="math notranslate nohighlight">\(P_\text{co}\)</span> as a function of <span class="math notranslate nohighlight">\(\theta_a\)</span> for three fixed settings of <span class="math notranslate nohighlight">\(\theta_b\)</span>.  Interpret what the plots are saying.</p></li>
 <li><p>In the lab, our SPDC process generates on the order of 100,000 photon pairs per second.  Is there any chance in our measurements that a neighboring photon might influence our results?  Justify your answer.</p></li>
 <li><p>Describe, from an engineering perspective, one or two examples of how entanglement can be put to use in ways that would not be possible classically.</p></li>
 </ol>
@@ -419,17 +419,17 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Before moving on to multiple-particle interference, let us now consider single-particle interference.  We will also discuss how in this single-particle case one can achieve measurement without interaction.</p>
 <p>Consider the single-photon interferometer as shown in <a class="reference internal" href="#fig-t3e1-single-photon-interferometer"><span class="std std-numref">Fig. 8</span></a></p>
 <div class="figure align-default" id="fig-t3e1-single-photon-interferometer">
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/T3E1-single-photon-interferometer.png"><img alt="Single Photon Interference" class="bg-primary mb-1" src="_images/T3E1-single-photon-interferometer.png" style="width: 400px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/T3E1-single-photon-interferometer.png"><img alt="Single Photon Interference" class="bg-primary mb-1" src="_images/T3E1-single-photon-interferometer.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Interferference of a single photon in a Mach-Zender interferometer.  An optional absorbing object can be placed in one of the paths.</span><a class="headerlink" href="#fig-t3e1-single-photon-interferometer" title="Permalink to this image">¶</a></p>
 </div>
 <p>For dealing with interference here and below, we will track the creation and annihilation operators through the system. For a refresher on how these work, see the <span class="xref myst">BASICS chapter on quantum optics</span>.</p>
 <p>Our strategy is to develop a description of the output state using the creation and annhihilation operators of the input state going to <span class="math notranslate nohighlight">\(a\)</span>.  This then can be used to determine the number of output photons going to the detector for every input photon.</p>
 <p>Taking each path <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span> indificually, we find that for path <span class="math notranslate nohighlight">\(b\)</span> the annihilation operator going  into the second beamsplitter can be written as</p>
 <div class="math notranslate nohighlight">
-\[\bhat = \alpha e^{i\phi_b} \ahat/sqrt{2}\]</div>
+\[\bhat = \alpha e^{i\phi_b} \ahat/\sqrt{2}\]</div>
 <p>Likewise</p>
 <div class="math notranslate nohighlight">
-\[\chat = e^{i\phi_c} \ahat/sqrt{2}\mathrm{.}\]</div>
+\[\chat = e^{i\phi_c} \ahat/\sqrt{2}\mathrm{.}\]</div>
 <p>The phase is the phase accumulated during propagation in each path and scales as <span class="math notranslate nohighlight">\(2\pi l /\lambda\)</span>, where l is the path length in either arm.  The term <span class="math notranslate nohighlight">\(\alpha\)</span> accounts for loss in interaction with the object.  This could in general be a complex amplitude, but here we simply assume it is real noting the amount of absorption in the object (the phase can be wrapped into the total phase in the path).</p>
 <p>We now want to know waht the annihilation operator for <span class="math notranslate nohighlight">\(d\)</span> is going to our detector.  The beamsplitter has the relation that</p>
 <div class="math notranslate nohighlight">
@@ -450,7 +450,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>which reduces to</p>
 <div class="math notranslate nohighlight">
 \[N_d =  \frac{1}{4} \bigg ( 1 + \alpha^2 + 2 \alpha \cos(\Delta\phi) \bigg )\mathrm{.}\]</div>
-<p>Let’s consider two important cases: <span class="math notranslate nohighlight">\(\alpha = 1\)</span> (no object), and <span class="math notranslate nohighlight">\(\alpha = 0\)</span> (opaque object). For <span class="math notranslate nohighlight">\(\alpha = 1\)</span> we have that the probability oscillates sinusoidally with the phase difference <span class="math notranslate nohighlight">\(\Delta\phi\)</span>.  We can control this with a wedge or the movement of one of the mirrors in the lab.  Here we considered perfectly coherent states, but in reality our states have decoherence, so this sinusoidal contrast will disappear outside of the coherence length of the photons – we will measure this!</p>
+<p>Let’s consider two important cases: <span class="math notranslate nohighlight">\(\alpha = 1\)</span> (opaque object), and <span class="math notranslate nohighlight">\(\alpha = 0\)</span> (no object). For <span class="math notranslate nohighlight">\(\alpha = 1\)</span> we have that the probability oscillates sinusoidally with the phase difference <span class="math notranslate nohighlight">\(\Delta\phi\)</span>.  We can control this with a wedge or the movement of one of the mirrors in the lab.  Here we considered perfectly coherent states, but in reality our states have decoherence, so this sinusoidal contrast will disappear outside of the coherence length of the photons – we will measure this!</p>
 <p>It also makes sense that when <span class="math notranslate nohighlight">\(\alpha = 0\)</span> all interference goes away, and we are left with only 1/4 of the photons making it to the detector.  The other 1/4 go to arm <span class="math notranslate nohighlight">\(e\)</span>, and the other half are lost to the object.</p>
 <p>Now for something interesting.  Let’s say that we align our interferometer without an object in place such that you have a minum probability of finding the photons in arm <span class="math notranslate nohighlight">\(d\)</span>.  THat would be for <span class="math notranslate nohighlight">\(\Delta\phi = \pi\)</span> so that no photons are output.  Then you put the object in place – the photon expectation suddenly goes to 1/4.</p>
 <p>In the questions below, you will consider why this is interesting.</p>
@@ -460,7 +460,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Fill in the missing steps to get to the expression for <span class="math notranslate nohighlight">\(\ddagger\dhat\)</span> above.</p></li>
 <li><p>Write the corresponding expression for the number of expected photons exiting path <span class="math notranslate nohighlight">\(e\)</span>.</p></li>
 <li><p>For the example given at the end of the text above, we noted that by placing an absorbing object we see a sudden shift in our photon number expectation.  However, only one photon at a time is going into our interferometer.  When you detect this presence of the object, have you interacted with it?</p></li>
-<li><p>Read about the Elitzur-Vaidman bomb test.  Explain how, when performed photon by photon, this effect could be used for detection with reduced interaction (this can be very important if the object is easily damaged by the particles you are sending to probe its presence).</p></li>
+<li><p>Read about the <a class="reference external" href="https://en.wikipedia.org/wiki/Elitzur%E2%80%93Vaidman_bomb_tester">Elitzur-Vaidman bomb test</a>.  Explain how, when performed photon by photon, this effect could be used for detection with reduced interaction (this can be very important if the object is easily damaged by the particles you are sending to probe its presence).</p></li>
 </ol>
 </div>
 </div>

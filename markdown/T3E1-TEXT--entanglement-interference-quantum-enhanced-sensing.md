@@ -70,7 +70,7 @@ Schematic of an entanglement experiment.
 Each path is sent through a polarizer and then a detector after which we consider only coincident events.  Let's now consider the act of measuring the photons after the polarizers in arms $a$ and $b$.  The polarizer acts to select out only one polarization angle.  Since our incident light has both polarizations, we need to understand how both components are projected onto the polarization axis. 
 
 :::{figure-md} fig-T3E1-polarizer-projection
-<img src="FIGURES/T3E1-polarizer-projection.png" alt="Polarizer Projection" class="bg-primary mb-1" width="400px">
+<img src="FIGURES/T3E1-polarizer-projection.png" alt="Polarizer Projection" class="bg-primary mb-1" width="500px">
 
 The horizontal and vertical polarization states are projected onto the polarizer axis denoted by the red line.
 :::
@@ -94,7 +94,7 @@ In the lab, we will perform this experiment so that you can experience entanglem
 ### Prelab Questions
 
  1. Fill in the missing steps above to show that $P_\text{co} = \frac{1}{2} \cos^2(\theta_a - \theta_b)$.  
- 2. Make a polar plot of $P_co$ as a function of $\theta_a$ for three fixed settings of $\theta_b$.  Interpret what the plots are saying.
+ 2. Make a polar plot of $P_\text{co}$ as a function of $\theta_a$ for three fixed settings of $\theta_b$.  Interpret what the plots are saying.
  3. In the lab, our SPDC process generates on the order of 100,000 photon pairs per second.  Is there any chance in our measurements that a neighboring photon might influence our results?  Justify your answer.
  4. Describe, from an engineering perspective, one or two examples of how entanglement can be put to use in ways that would not be possible classically.  
 
@@ -109,7 +109,7 @@ Before moving on to multiple-particle interference, let us now consider single-p
 Consider the single-photon interferometer as shown in {numref}`fig-T3E1-single-photon-interferometer`
 
 :::{figure-md} fig-T3E1-single-photon-interferometer
-<img src="FIGURES/T3E1-single-photon-interferometer.png" alt="Single Photon Interference" class="bg-primary mb-1" width="400px">
+<img src="FIGURES/T3E1-single-photon-interferometer.png" alt="Single Photon Interference" class="bg-primary mb-1" width="600px">
 
 Interferference of a single photon in a Mach-Zender interferometer.  An optional absorbing object can be placed in one of the paths.
 :::
@@ -120,11 +120,11 @@ Our strategy is to develop a description of the output state using the creation 
 
 Taking each path $b$ and $c$ indificually, we find that for path $b$ the annihilation operator going  into the second beamsplitter can be written as
 
-$$\bhat = \alpha e^{i\phi_b} \ahat/sqrt{2}$$
+$$\bhat = \alpha e^{i\phi_b} \ahat/\sqrt{2}$$
 
 Likewise
 
-$$\chat = e^{i\phi_c} \ahat/sqrt{2}\mathrm{.}$$
+$$\chat = e^{i\phi_c} \ahat/\sqrt{2}\mathrm{.}$$
 
 The phase is the phase accumulated during propagation in each path and scales as $2\pi l /\lambda$, where l is the path length in either arm.  The term $\alpha$ accounts for loss in interaction with the object.  This could in general be a complex amplitude, but here we simply assume it is real noting the amount of absorption in the object (the phase can be wrapped into the total phase in the path).
 
@@ -154,7 +154,7 @@ which reduces to
 
 $$N_d =  \frac{1}{4} \bigg ( 1 + \alpha^2 + 2 \alpha \cos(\Delta\phi) \bigg )\mathrm{.}$$
 
-Let's consider two important cases: $\alpha = 1$ (no object), and $\alpha = 0$ (opaque object). For $\alpha = 1$ we have that the probability oscillates sinusoidally with the phase difference $\Delta\phi$.  We can control this with a wedge or the movement of one of the mirrors in the lab.  Here we considered perfectly coherent states, but in reality our states have decoherence, so this sinusoidal contrast will disappear outside of the coherence length of the photons -- we will measure this!
+Let's consider two important cases: $\alpha = 1$ (opaque object), and $\alpha = 0$ (no object). For $\alpha = 1$ we have that the probability oscillates sinusoidally with the phase difference $\Delta\phi$.  We can control this with a wedge or the movement of one of the mirrors in the lab.  Here we considered perfectly coherent states, but in reality our states have decoherence, so this sinusoidal contrast will disappear outside of the coherence length of the photons -- we will measure this!
 
 It also makes sense that when $\alpha = 0$ all interference goes away, and we are left with only 1/4 of the photons making it to the detector.  The other 1/4 go to arm $e$, and the other half are lost to the object. 
 
@@ -169,7 +169,7 @@ In the questions below, you will consider why this is interesting.
  1. Fill in the missing steps to get to the expression for $\ddagger\dhat$ above.
  2. Write the corresponding expression for the number of expected photons exiting path $e$.  
  3. For the example given at the end of the text above, we noted that by placing an absorbing object we see a sudden shift in our photon number expectation.  However, only one photon at a time is going into our interferometer.  When you detect this presence of the object, have you interacted with it?  
- 4. Read about the Elitzur-Vaidman bomb test.  Explain how, when performed photon by photon, this effect could be used for detection with reduced interaction (this can be very important if the object is easily damaged by the particles you are sending to probe its presence).  
+ 4. Read about the [Elitzur-Vaidman bomb test](https://en.wikipedia.org/wiki/Elitzur%E2%80%93Vaidman_bomb_tester).  Explain how, when performed photon by photon, this effect could be used for detection with reduced interaction (this can be very important if the object is easily damaged by the particles you are sending to probe its presence).  
 
 +++ {"id": "4b595179-c2b9-4d45-819a-5c18c297dfe0"}
 

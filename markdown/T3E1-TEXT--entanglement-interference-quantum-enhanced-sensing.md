@@ -47,6 +47,8 @@ The information and techniques discussed here will not only be useful for your l
 
 ## Entangled Photon Pair Generation and Measurement
 
+<iframe src="https://drive.google.com/file/d/1OvJFfZyYU3RodsB9eTQpItGA3ZKAdu-0/preview" width="640" height="480" allow="autoplay"></iframe>
+
 You will work with entangled photon pairs that are generated using SPDC.  This process is also described in the T2E1 material in more technical detail, and you can also read the information in the [QuED manual](https://drive.google.com/file/d/1CqRNSabbBTxx3_eC80l3JY_pydcolXQg/view?usp=share_link) which is quite helpful.  Here we will stick to the most important aspects important to understanding the emitted photons and how we can use them.  
 
 :::{figure-md} fig-T3E1-spdc
@@ -87,7 +89,7 @@ We leave it as an exercise to show that $P_\text{co} = \frac{1}{2} \cos^2(\theta
 
 Think about what this is saying for a bit.  No matter how far apart your detectors are, by setting the polarization in one arm, you instantly dictate the joint probability which also requires an event at the detector in the other arm and depends on its polarization axis.  This is clasically impossible, and can be verified quantitatively through the measurement of inequalities such as Bell's inequality.
 
-In the lab, we will perform this experiment so that you can experience entanglement for yourself.  
+In the lab, we will perform this experiment so that you can experience entanglement for yourself.
 
 +++
 
@@ -96,7 +98,7 @@ In the lab, we will perform this experiment so that you can experience entanglem
  1. Fill in the missing steps above to show that $P_\text{co} = \frac{1}{2} \cos^2(\theta_a - \theta_b)$.  
  2. Make a polar plot of $P_\text{co}$ as a function of $\theta_a$ for three fixed settings of $\theta_b$.  Interpret what the plots are saying.
  3. In the lab, our SPDC process generates on the order of 100,000 photon pairs per second.  Is there any chance in our measurements that a neighboring photon might influence our results?  Justify your answer.
- 4. Describe, from an engineering perspective, one or two examples of how entanglement can be put to use in ways that would not be possible classically.  
+ 4. Describe, from an engineering perspective, one or two examples of how entanglement can be put to use in ways that would not be possible classically.
 
 +++
 
@@ -169,7 +171,7 @@ In the questions below, you will consider why this is interesting.
  1. Fill in the missing steps to get to the expression for $\ddagger\dhat$ above.
  2. Write the corresponding expression for the number of expected photons exiting path $e$.  
  3. For the example given at the end of the text above, we noted that by placing an absorbing object we see a sudden shift in our photon number expectation.  However, only one photon at a time is going into our interferometer.  When you detect this presence of the object, have you interacted with it?  
- 4. Read about the [Elitzur-Vaidman bomb test](https://en.wikipedia.org/wiki/Elitzur%E2%80%93Vaidman_bomb_tester).  Explain how, when performed photon by photon, this effect could be used for detection with reduced interaction (this can be very important if the object is easily damaged by the particles you are sending to probe its presence).  
+ 4. Read about the [Elitzur-Vaidman bomb test](https://en.wikipedia.org/wiki/Elitzur%E2%80%93Vaidman_bomb_tester).  Explain how, when performed photon by photon, this effect could be used for detection with reduced interaction (this can be very important if the object is easily damaged by the particles you are sending to probe its presence).
 
 +++ {"id": "4b595179-c2b9-4d45-819a-5c18c297dfe0"}
 

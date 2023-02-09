@@ -39,11 +39,76 @@ $$\newcommand{\fhat}[0]{\hat{f}}$$
 
 # TEXT -- Interference, Entanglement and Quantum-Enhanced Metrology
 
-In this chapter we examine entangled photon pair generation, entangled photon pair interference by way of the Hong-Ou-Mandel effect, and entangled multi-photon Fock state interference for quantum-enhanced phase sensing.  Along the way we will discuss basic principles important to a variety of areas in quantum photonics, such as: the interaction of photons with beamsplitters; the interference of photon number states; signal detection and processing methods such as coincidence detection; and how to analyze statistical fluctuations of photon detection events for determining sensitivity and signal to noise ratio in measurements.
+In this chapter we examine entangled photon pair generation, single-photon interference, entangled photon pair interference by way of the Hong-Ou-Mandel effect, and entangled multi-photon Fock state interference for quantum-enhanced phase sensing.  Along the way we will discuss basic principles important to a variety of areas in quantum photonics, such as: the interaction of photons with beamsplitters; the interference of photon number states; signal detection and processing methods such as coincidence detection; and how to analyze statistical fluctuations of photon detection events for determining sensitivity and signal to noise ratio in measurements.
+
+The information and techniques discussed here will not only be useful for your lab exercises, but will be critical tools that you can leverage for your final projets.
+
++++
+
+## Entangled Photon Pair Generation and Measurement
+
+You will work with entangled photon pairs that are generated using SPDC.  This process is also described in the T2E1 material in more technical detail, and you can also read the information in the [QuED manual](https://drive.google.com/file/d/1CqRNSabbBTxx3_eC80l3JY_pydcolXQg/view?usp=share_link) which is quite helpful.  Here we will stick to the most important aspects important to understanding the emitted photons and how we can use them.  
+
+:::{figure-md} fig-T3E1-spdc
+<img src="FIGURES/T3E1-spdc-cone-angles.png" alt="SPDC Cone Angles" class="bg-primary mb-1" width="800px">
+
+Simplified schematic of the SPDC source that you will use in the lab and possible cone angles of the entangled photon pair outputs from the crystal.  
+:::
+
+An SPDC source similar to what you will use is shown in {numref}`fig-T3E1-spdc`.  Note that when excited by the pump that is at a higher energy of $2\hbar\omega$, two photons of energy $\hbar\omega$ are generated in a cone of angles away from the crystal.  In our systems, as shown here, two crystals are stacked together, one generating entangled photons with horizontal polarization, and one with vertical polarization.  This generation process is quantum-coherent, and the state that arises is in a superposition of these photon pairs, and we can write it as
+
+$$ \ket{\psi}  = \frac{1}{\sqrt{2}} \big\lbrace \ket{H}_a\ket{H}_b  + \ket{V}_a\ket{V}_b\big\rbrace$$ 
+
+Where we have taken the top path to be path $a$ and the bottom to be path $b$.  To get a feeling for the entanglement, consider a simple experiment as shown in {numref}`fig-T3E1-entanglement-setup`.  
+
+:::{figure-md} fig-T3E1-entanglement-setup
+<img src="FIGURES/T3E1-entangled-photon-meas-setup.png" alt="Entanglement Setup" class="bg-primary mb-1" width="400px">
+
+Schematic of an entanglement experiment.
+:::
+
+Each path is sent through a polarizer and then a detector after which we consider only coincident events.  Let's now consider the act of measuring the photons after the polarizers in arms $a$ and $b$.  The polarizer acts to select out only one polarization angle.  Since our incident light has both polarizations, we need to understand how both components are projected onto the polarization axis. 
+
+:::{figure-md} fig-T3E1-polarizer-projection
+<img src="FIGURES/T3E1-polarizer-projection.png" alt="Polarizer Projection" class="bg-primary mb-1" width="400px">
+
+How the polarizer projects the states.
+:::
+
+Consider {numref}`fig-T3E1-polarizer-projection`.  This shows the polarizer angle in arm $a$ in relation to the vertical and horizontal polarizations of our input photons.  After the polarizer, the light must be polarized along $\theta_a$, and we can write:
+
+$$\ket{\theta_a} = \cos(\theta_a)\ket{H}_a + \sin(\theta_a)\ket{V}_a$$
+
+The same expression also applies to $\ket{\theta_b}$.  In our measurement, we are considering coincident events that correspond to states $\ket{\theta_a}\ket{\theta_b}$.  To find the probability of detecting such states, we simply project this state onto our input state and take the square magnitude.  The probability of coincidences $P_\text{co}$ is then
+
+$$P_\text{co} = \frac{1}{2} \Big | \bra{\theta_a}\bra{\theta_b} \big\lbrace \ket{H}_a \ket{H}_b + \ket{V}_a \ket{V}_b\big\rbrace \big |^2$$
+
+We leave it as an exercise to show that $P_\text{co} = \frac{1}{2} \cos^2(\theta_a - \theta_b)$.  
+
+Think about what this is saying for a bit.  No matter how far apart your detectors are, by setting the polarization in one arm, you instantly dictate the joint probability which also requires an event at the detector in the other arm and depends on its polarization axis.  This is clasically impossible, and can be verified quantitatively through the measurement of inequalities such as Bell's inequality.
+
+In the lab, we will perform this experiment so that you can experience entanglement for yourself.  
+
++++
+
+### Prelab Questions
+
+ 1. Fill in the missing steps above to show that $P_\text{co} = \frac{1}{2} \cos^2(\theta_a - \theta_b)$.  
+ 2. Make a polar plot of $P_co$ as a function of $\theta_a$ for three fixed settings of $\theta_b$.  Interpret what the plots are saying.
+ 3. In the lab, our SPDC process generates on the order of 100,000 photon pairs per second.  Is there any chance in our measurements that a neighboring photon might influence our results?  Justify your answer.
+ 4. Describe, from an engineering perspective, one or two examples of how entanglement can be put to use in ways that would not be possible classically.  
+
++++
+
+## Single-Photon Interference and Interaction-Free Measurement
+
++++
+
+
 
 +++ {"id": "4b595179-c2b9-4d45-819a-5c18c297dfe0"}
 
-## Single Photon Interference: The Hong-Ou-Mandel Effect
+## Interference of Two Single Photons: The Hong-Ou-Mandel Effect
 
 <iframe src="https://drive.google.com/file/d/1EbP7heyjad4oQek8uBg5gI4dMnObpFh_/preview" width="640" height="480" allow="autoplay"></iframe>
 
@@ -68,13 +133,17 @@ or a single photon input with $0$ delay in port $b$ as
 
 $$ \ket{1; 0}_b.$$
 
-The first number represents the numer of photons, the second the delay.  Finally, the subscript represents the mode.  Given a two-photon input to the system from the crystal with delay along path $a$ of $\tau$, the total input state can be written as
+The first number represents the numer of photons, the second the delay.  Finally, the subscript represents the mode.  Given an entangled two-photon input to the system from the crystal with delay along path $a$ of $\tau$, we have that the input state can be written as
 
 $$\ket{\psi_\text{in}} = \ket{1; \tau}_a\ket{1; 0}_b = \adagger_{\tau}\bdagger_0 \ket{0}$$
+
+It is important here that the state be written as a tensor product as it captures that the two photons are jointly created and entangled which is the case for the photons generated with SPDC.  
 
 ```{note} 
 We have taken a little liberty here to assign creation and annihilation operators for each mode with their mode label.  It's just a bit of shorthand that is very common to make things easier to read if there are only a handful of modes to deal with.
 ```
+
+Now we need to understand how such an entangled state interacts with a beamsplitter. For this we will keep track of the different creation/annihilation operators through the system. 
 
 A beamsplitter has the following relationship between the input and output modes:
 

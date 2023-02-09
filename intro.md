@@ -87,6 +87,8 @@ Students will select open-ended design projects following on core material cover
 
 ```
 
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSqJpPOr5ky9dKWrHegL8xTKbTB703PomWJG05xopQQCgKLfsLCNGbhU3hAINlEuvLNK8T3SCilqLaK/pubhtml?gid=500397444&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+
 # Table of Contents
 
 ```{tableofcontents}

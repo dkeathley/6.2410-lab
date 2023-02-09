@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PARKOUR - Interfacing with the Vector Network Analyzer &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+    <title>TRAINING - Interfacing with the Vector Network Analyzer &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -131,7 +131,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   PARKOUR - Interfacing with the Vector Network Analyzer
+   TRAINING - Interfacing with the Vector Network Analyzer
   </a>
  </li>
 </ul>
@@ -273,7 +273,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>PARKOUR - Interfacing with the Vector Network Analyzer</h1>
+                <h1>TRAINING - Interfacing with the Vector Network Analyzer</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -334,8 +334,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="section" id="parkour-interfacing-with-the-vector-network-analyzer">
-<h1>PARKOUR - Interfacing with the Vector Network Analyzer<a class="headerlink" href="#parkour-interfacing-with-the-vector-network-analyzer" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="training-interfacing-with-the-vector-network-analyzer">
+<h1>TRAINING - Interfacing with the Vector Network Analyzer<a class="headerlink" href="#training-interfacing-with-the-vector-network-analyzer" title="Permalink to this headline">¶</a></h1>
 <p>In this exercise, we will practice using Python to communicate with the vector network analyzer (VNA), which allows us to probe the microwave cavity’s frequency response. In short, the VNA acts as both a signal generator and a receiver. Within a defined frequency sweep, <span class="math notranslate nohighlight">\(\omega\in[\omega_1,\omega_2]\)</span>, it sends a signal at frequency <span class="math notranslate nohighlight">\(\omega\)</span> and measures the reflected power off the cavity. When <span class="math notranslate nohighlight">\(\omega\)</span> is resonant with the cavity’s resonance frequency <span class="math notranslate nohighlight">\(\omega_c\)</span>, i.e. <span class="math notranslate nohighlight">\(\omega=\omega_c\)</span>, the reflected power would be minimal. This will be covered in more details in the textbook. For now, we will focus on writing a small piece of code to send commands to the VNA, and collecting the relevant measurement data, <span class="math notranslate nohighlight">\(S_{21}\)</span>.</p>
 <div class="section" id="installing-the-vna-gui">
 <h2>1. Installing the VNA GUI<a class="headerlink" href="#installing-the-vna-gui" title="Permalink to this headline">¶</a></h2>

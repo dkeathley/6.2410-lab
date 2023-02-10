@@ -284,6 +284,8 @@ We want to emphasize here that we have taken a few liberties with the notation a
 
 ## Quantum Enhanced Sensing with NOON States
 
+<iframe src="https://drive.google.com/file/d/1DDXMLs7zM1zuTzA03w7DcJZp1YPt03Mu/preview" width="640" height="480" allow="autoplay"></iframe>
+
 Notice that when $\tau = 0$ the state takes on an interesting superposition of $N=2$ Fock states.  Such states are called NOON states, so here we would have an $N=2$ NOON state.  It turns out that if we send such states through a subsequent interferometer, we can obtain a quantum advantage in sensitivity to phase shifts.  In this section, we will explore why this is important and how it works.  In the practice problems and exercises, we will also explore limitations to the generalized implementation of this approach and touch on other approaches that are used for similar purposes.  
 
 Before we talk about sensing phase shifts, you might be wondering why someone would want to measure optical phase in the first place?  Typically, it is not the phase shift itself that we are after, but rather the physical change that has caused the phase shift.  A famous example of this is the measurement of gravitational waves using LIGO.  In LIGO, extremely small changes in the path length between two arms of an interferometer are caused by a passing gravitational wave.  This change in path length manifests as a shift in phase of the light that travels down one arm relative to light that travels down the other.  It is just this phase shift that is detected and related to a change in distance.  Similar techniques are used on much smaller scales to stabilize fine movements in stages with nanometer precision.  
@@ -297,8 +299,6 @@ where $\varphi$ is the phase to be measured, and $N_\mathrm{ph}$ is the total nu
 +++ {"id": "caf35967-6267-459a-a1a9-dd34fbbb1f0f"}
 
 ### Analysis of Phase Estimation in an $N=2$ NOON State Interferometer
-
-<iframe src="https://drive.google.com/file/d/1DDXMLs7zM1zuTzA03w7DcJZp1YPt03Mu/preview" width="640" height="480" allow="autoplay"></iframe>
 
 Consider a setup that builds on the HOM setup as shown in Fig. {numref}`NOON-state-interferometer`.
 

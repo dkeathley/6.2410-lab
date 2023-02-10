@@ -524,6 +524,10 @@ const thebe_selector_output = ".output, .cell_output"
 \[\chat = \frac{1}{\sqrt{2}}\ahat + \frac{1}{\sqrt{2}}\bhat\]</div>
 <div class="math notranslate nohighlight">
 \[\dhat = \frac{1}{\sqrt{2}}\ahat - \frac{1}{\sqrt{2}}\bhat\]</div>
+<div class="figure align-default" id="beamsplitter">
+<a class="reference internal image-reference" href="_images/beamsplitter.png"><img alt="_images/beamsplitter.png" src="_images/beamsplitter.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">A beamsplitter.</span><a class="headerlink" href="#beamsplitter" title="Permalink to this image">¶</a></p>
+</div>
 <p>The operators of each field <span class="math notranslate nohighlight">\(\ahat\)</span> and <span class="math notranslate nohighlight">\(\bhat\)</span> satisfy the boson commutation relations</p>
 <div class="math notranslate nohighlight">
 \[[\ahat,\adagger] = \ahat\adagger - \adagger\ahat = [\bhat,\bdagger] = 1\]</div>
@@ -540,6 +544,10 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="hanbury-brown-twiss-hbt-experiment">
 <h3>Hanbury Brown-Twiss (HBT) Experiment<a class="headerlink" href="#hanbury-brown-twiss-hbt-experiment" title="Permalink to this headline">¶</a></h3>
 <p>The Hanbury Brown-Twiss (HBT) experiment was first conducted by astronomers, but it’s now used in quantum optics. The schematic is show below. There’s a 50-50 beamsplitter, and only one input port, <span class="math notranslate nohighlight">\(\ahat\)</span> has light shining in. The other input port, <span class="math notranslate nohighlight">\(\bhat\)</span> is in a vacuum state. The measurement is taken by putting detectors at the output ports <span class="math notranslate nohighlight">\(\chat\)</span> and <span class="math notranslate nohighlight">\(\dhat\)</span> and measuring the singles and coincidences.</p>
+<div class="figure align-default" id="hbtschematic">
+<a class="reference internal image-reference" href="_images/HBT_cartoon.png"><img alt="_images/HBT_cartoon.png" src="_images/HBT_cartoon.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Schematic of the HBT setup.</span><a class="headerlink" href="#hbtschematic" title="Permalink to this image">¶</a></p>
+</div>
 <p>First, let’s look at the experiment in one particular case, when the input light is in the single photon number state.</p>
 </div>
 <div class="section" id="coincidence-with-a-single-photon">
@@ -579,7 +587,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>The result is that the <span class="math notranslate nohighlight">\(\gtwo\)</span> we’re interested in is conditioned on detecting an idler photon in the other arm, as in the image below. That is to say that we only want to look for coincidences between the two signal detectors when there is also a detection event in the idler detector.</p>
 <div class="figure align-default" id="heralded-hbt">
 <a class="reference internal image-reference" href="_images/HBT_heralded.png"><img alt="_images/HBT_heralded.png" src="_images/HBT_heralded.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Image from quTools</span><a class="headerlink" href="#heralded-hbt" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Image from quTools.</span><a class="headerlink" href="#heralded-hbt" title="Permalink to this image">¶</a></p>
 </div>
 <p>The <span class="math notranslate nohighlight">\(\gtwo\)</span> measurement is now conditioned on the idler detection at time <span class="math notranslate nohighlight">\(t_i\)</span>, which we is expressed the following</p>
 <div class="math notranslate nohighlight">

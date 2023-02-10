@@ -452,14 +452,30 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="phase-matching-conditions">
 <h3>Phase Matching Conditions<a class="headerlink" href="#phase-matching-conditions" title="Permalink to this headline">¶</a></h3>
 <p>One important feature of SPDC is the fact that it always obeys energy conservation: the energy of a pump photon before SPDC occurs is equal to the sum of the signal and idler photons after SPDC occurs.</p>
+<div class="figure align-default" id="energyconservation">
+<a class="reference internal image-reference" href="_images/spdc_energyconsevation.png"><img alt="_images/spdc_energyconsevation.png" src="_images/spdc_energyconsevation.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Image from HC Photonics.</span><a class="headerlink" href="#energyconservation" title="Permalink to this image">¶</a></p>
+</div>
 <p>Another important feature is that the momentum after SPDC must be the same as the momentum before SPDC to satisfy conservation of momentum.</p>
+<div class="figure align-default" id="momentumconservation">
+<a class="reference internal image-reference" href="_images/spdc_momentum.png"><img alt="_images/spdc_momentum.png" src="_images/spdc_momentum.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Image from Couteau’s review paper.</span><a class="headerlink" href="#momentumconservation" title="Permalink to this image">¶</a></p>
+</div>
 <p>Recall that momentum is a vector, so the magnitude <strong>and</strong> direction need to be maintained. This is why we see that the signal and idler photons in the quED are non-colinear (they travel in different directions): their sum still matches the pump photons.</p>
 <p>Matching the momentum is an a challening part of generating SPDC. As you recall, $<span class="math notranslate nohighlight">\(\overrightarrow{k} = \frac{2\pi n}{\lambda}\)</span><span class="math notranslate nohighlight">\( where \)</span>n<span class="math notranslate nohighlight">\(, the index of refraction, is a function of \)</span>\lambda$, the wavelength of the light. Choosing a material that has the appropriate index at the relevant wavelengths is challenging and involves looking at the dispersion relation, shown in figure {numref} <code class="docutils literal notranslate"><span class="pre">IndexMatching</span></code>.</p>
+<div class="figure align-default" id="indexmatching">
+<a class="reference internal image-reference" href="_images/spdc_index.png"><img alt="_images/spdc_index.png" src="_images/spdc_index.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Image from HC Photonics</span><a class="headerlink" href="#indexmatching" title="Permalink to this image">¶</a></p>
+</div>
 <p>Additionally,matching the indices requires using different polarization for the photons, leading to different types of SPDC.</p>
+<div class="figure align-default" id="spdctypes">
+<a class="reference internal image-reference" href="_images/spdc_types.png"><img alt="_images/spdc_types.png" src="_images/spdc_types.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">Image from HC Photonics</span><a class="headerlink" href="#spdctypes" title="Permalink to this image">¶</a></p>
+</div>
 <p>Knowing the types of SPDC is important when designing an SPDC source, but it’s also important when <em>using</em> the SPDC source. The quED source is from Type 1 SPDC, as show in figure {numref} <code class="docutils literal notranslate"><span class="pre">quEDSPDCcone</span></code>, an image from the quTools manual for the quED. Look at how the output from the crystal is a series of cones concentric around the pump laser. When collecting the light from the SPDC output, it’s important to make sure that the collection is of matching pairs from the same cone. Practically, the way to achieve that is by maximizing the the coincidence counts and not just the singles.</p>
 <div class="figure align-default" id="quedspdccone">
 <a class="reference internal image-reference" href="_images/manual_SPDC.jpg"><img alt="_images/manual_SPDC.jpg" src="_images/manual_SPDC.jpg" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">image from quED Manual</span><a class="headerlink" href="#quedspdccone" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">Image from quED Manual</span><a class="headerlink" href="#quedspdccone" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="wave-equation">
@@ -490,6 +506,10 @@ const thebe_selector_output = ".output, .cell_output"
 <h3>Detection <a id='apd'></a><a class="headerlink" href="#detection-a-id-apd-a" title="Permalink to this headline">¶</a></h3>
 <p>The detectors in this class will mostly be treated as a black box: you put in some photons, you get out a count of the photons. However, if you’ve never worked with photodetectors, it can be helpful to look briefly at how detectors work.</p>
 <p>Briefly, a photodetector uses a photodiode to generate a photocurrent, which can be amplified or measured directly. The high level understanding is that you shine a light on a device, and the light is absorbed and creates a current. Figure {numref} <code class="docutils literal notranslate"><span class="pre">Detector</span></code> below shows a basic cartoon of the process. A photodiode is a semiconductor device based on a crystal structure. In this type of crystal structure, one region has mobile electrons while another has mobile positive charges, called holes. When an incident photon (energy <span class="math notranslate nohighlight">\(h\nu\)</span>) has enough energy to overcome the bandgap energy <span class="math notranslate nohighlight">\(E_g\)</span>, it can excite an electron and a hole enough that an applied voltage will move the charge carriers. This movement of charge generates a photocurrent.</p>
+<div class="figure align-default" id="detector">
+<a class="reference internal image-reference" href="_images/detector.jpg"><img alt="_images/detector.jpg" src="_images/detector.jpg" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">Image from Saleh and Teich.</span><a class="headerlink" href="#detector" title="Permalink to this image">¶</a></p>
+</div>
 <p>Our particular device are avalanche photodetectors (APD). What makes them special is that they’re designed so that once an incident photon excites an electron and hole, that electron and hole excite an additional electron and hole, which excites an additional electron an hole. This creates an “avalanche” effect and makes it possible to measure single photons.</p>
 </div>
 </div>
@@ -557,6 +577,10 @@ const thebe_selector_output = ".output, .cell_output"
 <h3>Heralded single-photon source<a class="headerlink" href="#heralded-single-photon-source" title="Permalink to this headline">¶</a></h3>
 <p>The set-up we’ll see in the lab, however, isn’t a case with single photons. SPDC is a <em>heralded</em> single photon source. That means that if an idler photon is generated, it’s extremely likely we’ll measure a corresponding signal photon. Due to issues like multiple pair emissions in the crystal and detector-related issues like dark counts and stray light, it’s not a 100% correlation, but the probability is still very high.</p>
 <p>The result is that the <span class="math notranslate nohighlight">\(\gtwo\)</span> we’re interested in is conditioned on detecting an idler photon in the other arm, as in the image below. That is to say that we only want to look for coincidences between the two signal detectors when there is also a detection event in the idler detector.</p>
+<div class="figure align-default" id="heralded-hbt">
+<a class="reference internal image-reference" href="_images/HBT_heralded.png"><img alt="_images/HBT_heralded.png" src="_images/HBT_heralded.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Image from quTools</span><a class="headerlink" href="#heralded-hbt" title="Permalink to this image">¶</a></p>
+</div>
 <p>The <span class="math notranslate nohighlight">\(\gtwo\)</span> measurement is now conditioned on the idler detection at time <span class="math notranslate nohighlight">\(t_i\)</span>, which we is expressed the following</p>
 <div class="math notranslate nohighlight">
 \[\gtwo(t_c,t_d|t_i) = \frac{\langle\hat{n}_c(t_c)\hat{n}_d(t_d)\rangle_{pm}}{\langle\hat{n}_c(t_c)\rangle_{pm}\langle\hat{n}_d(t_d)\rangle_{pm}}\]</div>

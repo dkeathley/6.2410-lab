@@ -93,7 +93,7 @@ In the lab, we will perform this experiment so that you can experience entanglem
 
 +++
 
-### Prelab Questions
+### Prelab 1 Questions
 
  1. Fill in the missing steps above to show that $P_\text{co} = \frac{1}{2} \cos^2(\theta_a - \theta_b)$.  
  2. Make a polar plot of $P_\text{co}$ as a function of $\theta_a$ for three fixed settings of $\theta_b$.  Interpret what the plots are saying.
@@ -168,7 +168,7 @@ In the questions below, you will consider why this is interesting.
 
 +++
 
-### Prelab Questions
+### Prelab 2 Questions
 
  1. Fill in the missing steps to get to the expression for $\ddagger\dhat$ above.
  2. Write the corresponding expression for the number of expected photons exiting path $e$.  

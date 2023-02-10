@@ -14,18 +14,18 @@ parts:
     chapters:
     - file: BASICS-quantum-optics-basics.ipynb
 #    - file: BASICS-quantum-information.ipynb
-  - caption: T3E1: Interference, Entanglement, Quantum-Enhanced Sensing
+  - caption: T3E1 -- Interference, Entanglement, Quantum-Enhanced Sensing
     chapters:
     - file: T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.ipynb
 #    - file: T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.ipynb
-  - caption: T2E1: Quantum Information and Quantum Key Distribution
+  - caption: T2E1 -- Quantum Information and Quantum Key Distribution
     chapters:
     - file: T2E1-TEXT-HBT.ipynb
 #    - file: T2E1-TEXT-Intro-to-SPDC-and-HBT.ipynb
 #    - file: T2E1-LAB-Single-photon-and-HBT.ipynb
 #    - file: T2E1-TEXT-QKD-simulation.ipynb
 #    - file: T2E1-LAB-BB84.ipynb
-  - caption: T3E3: Solid State Spins
+  - caption: T3E3 -- Solid State Spins
     chapters:
     - file: quNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.ipynb
     - file: quNV-Jupyter/T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.ipynb

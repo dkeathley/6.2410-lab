@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>TEXT - Introduction to single photons with the quED &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -64,7 +63,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -73,9 +86,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -93,14 +107,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Introductory Material
  </span>
@@ -150,90 +165,180 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/T2E1-TEXT-HBT.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="git@github.mit.edu:pdkeat2/6.2410-lab.git"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="git@github.mit.edu:pdkeat2/6.2410-lab.git/issues/new?title=Issue%20on%20page%20%2FT2E1-TEXT-HBT.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="git@github.mit.edu:pdkeat2/6.2410-lab.git"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="git@github.mit.edu:pdkeat2/6.2410-lab.git/issues/new?title=Issue%20on%20page%20%2FT2E1-TEXT-HBT.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/T2E1-TEXT-HBT.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#single-photon-source-spontaneous-parametric-down-conversion-spdc-a-id-spdc-a">
    Single photon source: Spontaneous Parametric Down-Conversion (SPDC)
@@ -320,12 +425,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>TEXT - Introduction to single photons with the quED</h1>
@@ -428,11 +532,12 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="text-introduction-to-single-photons-with-the-qued">
-<h1>TEXT - Introduction to single photons with the quED<a class="headerlink" href="#text-introduction-to-single-photons-with-the-qued" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="text-introduction-to-single-photons-with-the-qued">
+<h1>TEXT - Introduction to single photons with the quED<a class="headerlink" href="#text-introduction-to-single-photons-with-the-qued" title="Permalink to this headline">#</a></h1>
 <p>In this text, we’re going to go over some of the basics of working with single photons, especially how they relate to the quED experimental setup. We’ll start with a single photon source, which you’ll be using in the lab. Then we’ll talk about how to detect single photons.</p>
 <p>Next, we’re going to treat photons as indicidual particles, and we’ll show how to verify that a source is indeed producing single photons. You’ll reproduce that experiment in the lab.</p>
 <p>Finally, as time allows, we’ll look at single-photon interference.</p>
@@ -446,40 +551,50 @@ const thebe_selector_output = ".output, .cell_output"
 </ol>
 </li>
 </ol>
-<div class="section" id="single-photon-source-spontaneous-parametric-down-conversion-spdc-a-id-spdc-a">
-<h2>Single photon source: Spontaneous Parametric Down-Conversion (SPDC) <a id='spdc'></a><a class="headerlink" href="#single-photon-source-spontaneous-parametric-down-conversion-spdc-a-id-spdc-a" title="Permalink to this headline">¶</a></h2>
+<section id="single-photon-source-spontaneous-parametric-down-conversion-spdc-a-id-spdc-a">
+<h2>Single photon source: Spontaneous Parametric Down-Conversion (SPDC) <a id='spdc'></a><a class="headerlink" href="#single-photon-source-spontaneous-parametric-down-conversion-spdc-a-id-spdc-a" title="Permalink to this headline">#</a></h2>
 <p>First, let’s take a high level overview of how spontaneous parametric down conversion (SPDC) works. SPDC occurs when a pump photon is converted into 2 photons of less energy. Traditionally, one output photon is called the signal and the other is called the idler.</p>
-<div class="section" id="phase-matching-conditions">
-<h3>Phase Matching Conditions<a class="headerlink" href="#phase-matching-conditions" title="Permalink to this headline">¶</a></h3>
+<section id="phase-matching-conditions">
+<h3>Phase Matching Conditions<a class="headerlink" href="#phase-matching-conditions" title="Permalink to this headline">#</a></h3>
 <p>One important feature of SPDC is the fact that it always obeys energy conservation: the energy of a pump photon before SPDC occurs is equal to the sum of the signal and idler photons after SPDC occurs.</p>
-<div class="figure align-default" id="energyconservation">
+<figure class="align-default" id="energyconservation">
 <a class="reference internal image-reference" href="_images/spdc_energyconsevation.png"><img alt="_images/spdc_energyconsevation.png" src="_images/spdc_energyconsevation.png" style="width: 200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Image from HC Photonics.</span><a class="headerlink" href="#energyconservation" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Image from HC Photonics.</span><a class="headerlink" href="#energyconservation" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Another important feature is that the momentum after SPDC must be the same as the momentum before SPDC to satisfy conservation of momentum.</p>
-<div class="figure align-default" id="momentumconservation">
+<figure class="align-default" id="momentumconservation">
 <a class="reference internal image-reference" href="_images/spdc_momentum.png"><img alt="_images/spdc_momentum.png" src="_images/spdc_momentum.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Image from Couteau’s review paper.</span><a class="headerlink" href="#momentumconservation" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Image from Couteau’s review paper.</span><a class="headerlink" href="#momentumconservation" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Recall that momentum is a vector, so the magnitude <strong>and</strong> direction need to be maintained. This is why we see that the signal and idler photons in the quED are non-colinear (they travel in different directions): their sum still matches the pump photons.</p>
-<p>Matching the momentum is an a challening part of generating SPDC. As you recall, $<span class="math notranslate nohighlight">\(\overrightarrow{k} = \frac{2\pi n}{\lambda}\)</span><span class="math notranslate nohighlight">\( where \)</span>n<span class="math notranslate nohighlight">\(, the index of refraction, is a function of \)</span>\lambda$, the wavelength of the light. Choosing a material that has the appropriate index at the relevant wavelengths is challenging and involves looking at the dispersion relation, shown in figure {numref} <code class="docutils literal notranslate"><span class="pre">IndexMatching</span></code>.</p>
-<div class="figure align-default" id="indexmatching">
+<p>Matching the momentum is an a challening part of generating SPDC. As you recall, <span class="math notranslate nohighlight">\(\overrightarrow{k} = \frac{2\pi n}{\lambda}\)</span> where <span class="math notranslate nohighlight">\(n\)</span>, the index of refraction, is a function of <span class="math notranslate nohighlight">\(\lambda\)</span>, the wavelength of the light. Choosing a material that has the appropriate index at the relevant wavelengths is challenging and involves looking at the dispersion relation, shown in figure <a class="reference internal" href="#indexmatching"><span class="std std-numref">Fig. 17</span></a>.</p>
+<figure class="align-default" id="indexmatching">
 <a class="reference internal image-reference" href="_images/spdc_index.png"><img alt="_images/spdc_index.png" src="_images/spdc_index.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Image from HC Photonics</span><a class="headerlink" href="#indexmatching" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Image from HC Photonics</span><a class="headerlink" href="#indexmatching" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Additionally,matching the indices requires using different polarization for the photons, leading to different types of SPDC.</p>
-<div class="figure align-default" id="spdctypes">
+<figure class="align-default" id="spdctypes">
 <a class="reference internal image-reference" href="_images/spdc_types.png"><img alt="_images/spdc_types.png" src="_images/spdc_types.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">Image from HC Photonics</span><a class="headerlink" href="#spdctypes" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Image from HC Photonics</span><a class="headerlink" href="#spdctypes" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Knowing the types of SPDC is important when designing an SPDC source, but it’s also important when <em>using</em> the SPDC source. The quED source is from Type 1 SPDC, as show in figure {numref} <code class="docutils literal notranslate"><span class="pre">quEDSPDCcone</span></code>, an image from the quTools manual for the quED. Look at how the output from the crystal is a series of cones concentric around the pump laser. When collecting the light from the SPDC output, it’s important to make sure that the collection is of matching pairs from the same cone. Practically, the way to achieve that is by maximizing the the coincidence counts and not just the singles.</p>
-<div class="figure align-default" id="quedspdccone">
+<figure class="align-default" id="quedspdccone">
 <a class="reference internal image-reference" href="_images/manual_SPDC.jpg"><img alt="_images/manual_SPDC.jpg" src="_images/manual_SPDC.jpg" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">Image from quED Manual</span><a class="headerlink" href="#quedspdccone" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="wave-equation">
-<h3>Wave equation<a class="headerlink" href="#wave-equation" title="Permalink to this headline">¶</a></h3>
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Image from quED Manual</span><a class="headerlink" href="#quedspdccone" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="wave-equation">
+<h3>Wave equation<a class="headerlink" href="#wave-equation" title="Permalink to this headline">#</a></h3>
 <p>In terms of the quantum optics, it’s valuable to look at how SPDC can be described mathematically. First, let’s consider the initial state of the system before SPDC occurs. We have a very powerful pump beam, which we express as a number state with <span class="math notranslate nohighlight">\(N_p\)</span> photons. The signal and idler states are both vacuums, which are number states with 0 photons in them. So the initial state is given by</p>
 <div class="math notranslate nohighlight">
 \[|\psi\rangle = |0_s,0_i,N_p\rangle\]</div>
@@ -493,41 +608,45 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="math notranslate nohighlight">
 \[\kappa = \frac{2}{3}\frac{d_{eff}}{\epsilon_0V}\sqrt{\frac{\omega_p\omega_i\omega_s}{2\epsilon_0V}}\]</div>
 <p><span class="math notranslate nohighlight">\(d_{eff}\)</span> is the effective nonlinearity factor of the crystal and is given in (picometers)(Volts)<span class="math notranslate nohighlight">\(^{-1}\)</span>, the permitivity of free space <span class="math notranslate nohighlight">\(\epsilon_0\)</span> is <span class="math notranslate nohighlight">\(8.854e^{-12}\)</span> (Coulombs)(Volt)<span class="math notranslate nohighlight">\(^{-1}\)</span> (meter)<span class="math notranslate nohighlight">\(^{-1}\)</span>.<span class="math notranslate nohighlight">\(V\)</span> is the quantization volume, and the various <span class="math notranslate nohighlight">\(\omega\)</span> are the frequencies of the pump, signal, and idler. This evaluation of <span class="math notranslate nohighlight">\(\kappa\)</span> is simplified, not capturing all ways the different experimental setup can affect the amplitude of the SPDC output. The important part is the proportionality to <span class="math notranslate nohighlight">\(d_{eff}\)</span> which is on the order of <span class="math notranslate nohighlight">\(10^{-12}\)</span> V/m.</p>
-</div>
-<div class="section" id="classical-nonlinear-optics">
-<h3>Classical Nonlinear optics<a class="headerlink" href="#classical-nonlinear-optics" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="classical-nonlinear-optics">
+<h3>Classical Nonlinear optics<a class="headerlink" href="#classical-nonlinear-optics" title="Permalink to this headline">#</a></h3>
 <p>Briefly, SPDC is a fundamentally quantum process: it can’t be described by classical nonlinear optics. In classical nonlinear optics, parametric ampification is the process where you combine a source with frequency <span class="math notranslate nohighlight">\(\omega_p\)</span> and another source frequency with <span class="math notranslate nohighlight">\(\omega_i\)</span> in a nonlinear crystal to generate a field at <span class="math notranslate nohighlight">\(\omega_s = \omega_p - \omega_i\)</span> and amplify the field at <span class="math notranslate nohighlight">\(\omega_i\)</span>. This is similar to SPDC in that you’re generating light at a wavelength longer than the pump, but it’s disimilar in that it <em>requires</em> a non-zero input at <span class="math notranslate nohighlight">\(\omega_i\)</span>. This is what makes SPDC spontaneous: the output at the signal and idler aren’t stimulated by any input because the input is in the vacuum state.</p>
-</div>
-<div class="section" id="further-reading">
-<h3>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="further-reading">
+<h3>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">#</a></h3>
 <p>For a good overview of SPDC with additional details, this <a class="reference external" href="https://doi.org/10.1080/00107514.2018.1488463">Review Article</a> is recommended. Additionally, for more information about designing a system to produce SPDC, the <a class="reference external" href="https://www.hcphotonics.com/ppln-guide-overview">HC Photonics PPLN GUIDE: Overview</a> is very informative. For nonlinear optics, Robert W. Boyd’s <em>Nonlinear Optics</em> is an excellent textbook.</p>
-</div>
-<div class="section" id="detection-a-id-apd-a">
-<h3>Detection <a id='apd'></a><a class="headerlink" href="#detection-a-id-apd-a" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="detection-a-id-apd-a">
+<h3>Detection <a id='apd'></a><a class="headerlink" href="#detection-a-id-apd-a" title="Permalink to this headline">#</a></h3>
 <p>The detectors in this class will mostly be treated as a black box: you put in some photons, you get out a count of the photons. However, if you’ve never worked with photodetectors, it can be helpful to look briefly at how detectors work.</p>
 <p>Briefly, a photodetector uses a photodiode to generate a photocurrent, which can be amplified or measured directly. The high level understanding is that you shine a light on a device, and the light is absorbed and creates a current. Figure {numref} <code class="docutils literal notranslate"><span class="pre">Detector</span></code> below shows a basic cartoon of the process. A photodiode is a semiconductor device based on a crystal structure. In this type of crystal structure, one region has mobile electrons while another has mobile positive charges, called holes. When an incident photon (energy <span class="math notranslate nohighlight">\(h\nu\)</span>) has enough energy to overcome the bandgap energy <span class="math notranslate nohighlight">\(E_g\)</span>, it can excite an electron and a hole enough that an applied voltage will move the charge carriers. This movement of charge generates a photocurrent.</p>
-<div class="figure align-default" id="detector">
+<figure class="align-default" id="detector">
 <a class="reference internal image-reference" href="_images/detector.jpg"><img alt="_images/detector.jpg" src="_images/detector.jpg" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">Image from Saleh and Teich.</span><a class="headerlink" href="#detector" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Image from Saleh and Teich.</span><a class="headerlink" href="#detector" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Our particular device are avalanche photodetectors (APD). What makes them special is that they’re designed so that once an incident photon excites an electron and hole, that electron and hole excite an additional electron and hole, which excites an additional electron an hole. This creates an “avalanche” effect and makes it possible to measure single photons.</p>
-</div>
-</div>
-<div class="section" id="second-order-coherence-gtwo-0-a-id-hbt-a">
-<h2>Second order coherence - <span class="math notranslate nohighlight">\(\gtwo\)</span>(0)<a id='hbt'></a><a class="headerlink" href="#second-order-coherence-gtwo-0-a-id-hbt-a" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="second-order-coherence-gtwo-0-a-id-hbt-a">
+<h2>Second order coherence - <span class="math notranslate nohighlight">\(\gtwo\)</span>(0)<a id='hbt'></a><a class="headerlink" href="#second-order-coherence-gtwo-0-a-id-hbt-a" title="Permalink to this headline">#</a></h2>
 <p>Now that you know more about the source and detectors we have available, let’s look at our first experiment to measure the second order coherence, <span class="math notranslate nohighlight">\(\gtwo\)</span>. <span class="math notranslate nohighlight">\(\gtwo\)</span> is an important parameter when describing a light source, giving us information about how close the actual source is to an ideal.</p>
 <p>Let’s first review the mechanics of a beamsplitter, an essential component in this measurement.</p>
-<div class="section" id="recall-a-beamsplitter">
-<h3>Recall a beamsplitter<a class="headerlink" href="#recall-a-beamsplitter" title="Permalink to this headline">¶</a></h3>
+<section id="recall-a-beamsplitter">
+<h3>Recall a beamsplitter<a class="headerlink" href="#recall-a-beamsplitter" title="Permalink to this headline">#</a></h3>
 <p>Consider a lossless 50/50 beamsplitter with indpendent inputs <span class="math notranslate nohighlight">\(\ahat\)</span> and <span class="math notranslate nohighlight">\(\bhat\)</span>. The outputs <span class="math notranslate nohighlight">\(\chat\)</span> and <span class="math notranslate nohighlight">\(\dhat\)</span> are defined as</p>
 <div class="math notranslate nohighlight">
 \[\chat = \frac{1}{\sqrt{2}}\ahat + \frac{1}{\sqrt{2}}\bhat\]</div>
 <div class="math notranslate nohighlight">
 \[\dhat = \frac{1}{\sqrt{2}}\ahat - \frac{1}{\sqrt{2}}\bhat\]</div>
-<div class="figure align-default" id="beamsplitter">
+<figure class="align-default" id="beamsplitter">
 <a class="reference internal image-reference" href="_images/beamsplitter.png"><img alt="_images/beamsplitter.png" src="_images/beamsplitter.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">A beamsplitter.</span><a class="headerlink" href="#beamsplitter" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">A beamsplitter.</span><a class="headerlink" href="#beamsplitter" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>The operators of each field <span class="math notranslate nohighlight">\(\ahat\)</span> and <span class="math notranslate nohighlight">\(\bhat\)</span> satisfy the boson commutation relations</p>
 <div class="math notranslate nohighlight">
 \[[\ahat,\adagger] = \ahat\adagger - \adagger\ahat = [\bhat,\bdagger] = 1\]</div>
@@ -540,18 +659,20 @@ const thebe_selector_output = ".output, .cell_output"
 <p>and</p>
 <div class="math notranslate nohighlight">
 \[[\chat,\ddagger] = [\dhat,\cdagger] = 0\]</div>
-</div>
-<div class="section" id="hanbury-brown-twiss-hbt-experiment">
-<h3>Hanbury Brown-Twiss (HBT) Experiment<a class="headerlink" href="#hanbury-brown-twiss-hbt-experiment" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="hanbury-brown-twiss-hbt-experiment">
+<h3>Hanbury Brown-Twiss (HBT) Experiment<a class="headerlink" href="#hanbury-brown-twiss-hbt-experiment" title="Permalink to this headline">#</a></h3>
 <p>The Hanbury Brown-Twiss (HBT) experiment was first conducted by astronomers, but it’s now used in quantum optics. The schematic is show below. There’s a 50-50 beamsplitter, and only one input port, <span class="math notranslate nohighlight">\(\ahat\)</span> has light shining in. The other input port, <span class="math notranslate nohighlight">\(\bhat\)</span> is in a vacuum state. The measurement is taken by putting detectors at the output ports <span class="math notranslate nohighlight">\(\chat\)</span> and <span class="math notranslate nohighlight">\(\dhat\)</span> and measuring the singles and coincidences.</p>
-<div class="figure align-default" id="hbtschematic">
+<figure class="align-default" id="hbtschematic">
 <a class="reference internal image-reference" href="_images/HBT_cartoon.png"><img alt="_images/HBT_cartoon.png" src="_images/HBT_cartoon.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Schematic of the HBT setup.</span><a class="headerlink" href="#hbtschematic" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Schematic of the HBT setup.</span><a class="headerlink" href="#hbtschematic" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>First, let’s look at the experiment in one particular case, when the input light is in the single photon number state.</p>
-</div>
-<div class="section" id="coincidence-with-a-single-photon">
-<h3>Coincidence with a single photon<a class="headerlink" href="#coincidence-with-a-single-photon" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="coincidence-with-a-single-photon">
+<h3>Coincidence with a single photon<a class="headerlink" href="#coincidence-with-a-single-photon" title="Permalink to this headline">#</a></h3>
 <p>Specifically, we want to know how often we get a photon at both <span class="math notranslate nohighlight">\(\chat\)</span> and <span class="math notranslate nohighlight">\(\dhat\)</span> simultaneously. We call this a <em>coincidence</em> meaning an event where 2 (or more) detection events occur within a short period of time (on the scale of  a few nanoseconds) on 2 separate detectors. Looking at coincidences is an important measurement in quantum optics.</p>
 <p>What is the coincidence of <span class="math notranslate nohighlight">\(\chat\)</span> and <span class="math notranslate nohighlight">\(\dhat\)</span>?</p>
 <div class="math notranslate nohighlight">
@@ -570,9 +691,9 @@ const thebe_selector_output = ".output, .cell_output"
 \[ = 0 \]</div>
 <p>So we see in the case with a single photon input into a beamsplitter we expect 0 coincidences. Conceptually this makes sense: a single photon can only go through one of 2 paths in the beamsplitter. If we look at both outputs of the beamsplitter at the same time, we should only see a click on one of the outputs.</p>
 <p>The video below works through this math step by step, in case you’d like to see how the operator math can be evaluated.</p>
-<iframe src="https://drive.google.com/file/d/1mwGIT02T_--aJ-tp_Cb0yPVsnxI6hhyQ/preview" width="640" height="480" allow="autoplay"></iframe></div>
-<div class="section" id="second-order-time-coherence">
-<h3>Second order time coherence<a class="headerlink" href="#second-order-time-coherence" title="Permalink to this headline">¶</a></h3>
+<iframe src="https://drive.google.com/file/d/1mwGIT02T_--aJ-tp_Cb0yPVsnxI6hhyQ/preview" width="640" height="480" allow="autoplay"></iframe></section>
+<section id="second-order-time-coherence">
+<h3>Second order time coherence<a class="headerlink" href="#second-order-time-coherence" title="Permalink to this headline">#</a></h3>
 <p>The above exercise is a necessary step for finding the <em>second-order coherence</em>. The most general case assumes the detectors record events at slightly different times, ie the detection time at detector c is <span class="math notranslate nohighlight">\(t_c\)</span> while the detection at detector d is <span class="math notranslate nohighlight">\(t_d\)</span>. This allows us to account for situations where the detectors are slightly different distances away from the beamsplitter.</p>
 <div class="math notranslate nohighlight">
 \[\gtwo(t_c,t_d) = \frac{\langle\hat{n}_c(t_c)\hat{n}_d(t_d)\rangle}{\langle\hat{n}_c(t_c)\rangle\langle\hat{n}_d(t_d)\rangle}\]</div>
@@ -580,15 +701,17 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="math notranslate nohighlight">
 \[\gtwo(0) = \frac{\langle\hat{n}_a(\hat{n}_a -1)\rangle}{\langle\hat{n}_a\rangle^2}\]</div>
 <p>Clearly, for the case of <span class="math notranslate nohighlight">\(\ahat\)</span> being in the <span class="math notranslate nohighlight">\(|1\rangle\)</span> state, we find <span class="math notranslate nohighlight">\(g^{(2)}(0) = 0 \)</span>.</p>
-</div>
-<div class="section" id="heralded-single-photon-source">
-<h3>Heralded single-photon source<a class="headerlink" href="#heralded-single-photon-source" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="heralded-single-photon-source">
+<h3>Heralded single-photon source<a class="headerlink" href="#heralded-single-photon-source" title="Permalink to this headline">#</a></h3>
 <p>The set-up we’ll see in the lab, however, isn’t a case with single photons. SPDC is a <em>heralded</em> single photon source. That means that if an idler photon is generated, it’s extremely likely we’ll measure a corresponding signal photon. Due to issues like multiple pair emissions in the crystal and detector-related issues like dark counts and stray light, it’s not a 100% correlation, but the probability is still very high.</p>
 <p>The result is that the <span class="math notranslate nohighlight">\(\gtwo\)</span> we’re interested in is conditioned on detecting an idler photon in the other arm, as in the image below. That is to say that we only want to look for coincidences between the two signal detectors when there is also a detection event in the idler detector.</p>
-<div class="figure align-default" id="heralded-hbt">
+<figure class="align-default" id="heralded-hbt">
 <a class="reference internal image-reference" href="_images/HBT_heralded.png"><img alt="_images/HBT_heralded.png" src="_images/HBT_heralded.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Image from quTools.</span><a class="headerlink" href="#heralded-hbt" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Image from quTools.</span><a class="headerlink" href="#heralded-hbt" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>The <span class="math notranslate nohighlight">\(\gtwo\)</span> measurement is now conditioned on the idler detection at time <span class="math notranslate nohighlight">\(t_i\)</span>, which we is expressed the following</p>
 <div class="math notranslate nohighlight">
 \[\gtwo(t_c,t_d|t_i) = \frac{\langle\hat{n}_c(t_c)\hat{n}_d(t_d)\rangle_{pm}}{\langle\hat{n}_c(t_c)\rangle_{pm}\langle\hat{n}_d(t_d)\rangle_{pm}}\]</div>
@@ -613,10 +736,10 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="math notranslate nohighlight">
 \[\gtwo(0) = \frac{N_{icd}N_i}{N_{ic}N_{id}}\]</div>
 <p>The video below is a lecture that nicely walks through how you look at the <span class="math notranslate nohighlight">\(\gtwo(0)\)</span> measurement of a heralded source. The relevant part is about 20 minutes long, and it’s based on straighforward probability and developing physical intuition about the HBT experiment.</p>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4zsd31E2n4w?start=635" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-</div>
-<div class="section" id="sources-and-further-reading">
-<h2>Sources and further reading<a class="headerlink" href="#sources-and-further-reading" title="Permalink to this headline">¶</a></h2>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4zsd31E2n4w?start=635" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></section>
+</section>
+<section id="sources-and-further-reading">
+<h2>Sources and further reading<a class="headerlink" href="#sources-and-further-reading" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://doi.org/10.1080/00107514.2018.1488463">Review Article</a></p></li>
 <li><p><a class="reference external" href="https://www.hcphotonics.com/ppln-guide-overview">HC Photonics PPLN GUIDE: Overview</a></p></li>
@@ -632,17 +755,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Fox, <em>Quantum Optics: An Introduction</em></p></li>
 <li><p>Gerry and Knight, <em>Introductory Quantum Optics</em></p></li>
 </ul>
-</div>
-<div class="section" id="pre-lab-questions">
-<h2>Pre-Lab Questions<a class="headerlink" href="#pre-lab-questions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="pre-lab-questions">
+<h2>Pre-Lab Questions<a class="headerlink" href="#pre-lab-questions" title="Permalink to this headline">#</a></h2>
 <p>Before coming to the lab for the HBT experiment, please complete these pre-lab questions and be ready to <em>show your work</em>. If you have questions, ask the instructor before starting the lab.</p>
 <ol class="simple">
 <li><p>What is <span class="math notranslate nohighlight">\(\gtwo(0)\)</span> for a number state with 2 photons? What about with 3 photons? Generalize this to Fock state <span class="math notranslate nohighlight">\(\ket{n}\)</span> with n photons and plot <span class="math notranslate nohighlight">\(\gtwo(0)\)</span> as a function of n.</p></li>
 <li><p>What is <span class="math notranslate nohighlight">\(\gtwo(0)\)</span> for a coherent state <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span>?</p></li>
 <li><p><em>Bonus</em> Consider the case of a 50-50 beamsplitter with inputs <span class="math notranslate nohighlight">\(\ahat\)</span> and <span class="math notranslate nohighlight">\(\bhat\)</span> and outputs <span class="math notranslate nohighlight">\(\chat\)</span> and <span class="math notranslate nohighlight">\(\dhat\)</span>. <span class="math notranslate nohighlight">\(\ahat\)</span> is in the <span class="math notranslate nohighlight">\(\ket{1}\)</span> state while <span class="math notranslate nohighlight">\(\bhat\)</span> is in the vacuum state. Find the variance of the coincidences <span class="math notranslate nohighlight">\(\chat\)</span> and <span class="math notranslate nohighlight">\(\dhat\)</span> where the variance of an operator <span class="math notranslate nohighlight">\(\hat{o}\)</span> is given by  <span class="math notranslate nohighlight">\(\langle(\Delta\hat{o})^2\rangle = \langle\hat{o}^2\rangle -\langle\hat{o}\rangle^2\)</span>.</p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -666,9 +789,11 @@ const thebe_selector_output = ".output, .cell_output"
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -684,24 +809,28 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

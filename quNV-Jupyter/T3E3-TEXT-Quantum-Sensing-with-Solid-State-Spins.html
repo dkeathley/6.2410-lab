@@ -391,6 +391,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#coupling-between-nv-centers-and-microwave-cavity">
    3. Coupling between NV centers and microwave cavity
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pre-lab-questions">
+     Pre-Lab Questions
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -459,6 +466,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#coupling-between-nv-centers-and-microwave-cavity">
    3. Coupling between NV centers and microwave cavity
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pre-lab-questions">
+     Pre-Lab Questions
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -506,12 +520,11 @@ title="Print to PDF"
 <img src="./FIGURES/NV_center.png" width="600"/>
 </div>
  -->
-<figure class="align-default" id="nv-center-fig">
-<a class="reference internal image-reference" href="../_images/NV_center.png"><img alt="../_images/NV_center.png" src="../_images/NV_center.png" style="width: 600px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Figures adapted from quTools, quNV brochure.</span><a class="headerlink" href="#nv-center-fig" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">figure</span><span class="o">-</span><span class="n">md</span><span class="p">}</span> <span class="n">NV</span><span class="o">-</span><span class="n">center</span><span class="o">-</span><span class="n">fig</span>
+<span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;./FIGURES/NV_center.png&quot;</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;600&quot;</span><span class="o">&gt;</span>
+<span class="n">Figures</span> <span class="n">adapted</span> <span class="kn">from</span> <span class="nn">quTools</span><span class="p">,</span> <span class="n">quNV</span> <span class="n">brochure</span><span class="o">.</span>
+</pre></div>
+</div>
 <p>Effectively, NV center is an artificial atom in a solid state environment with well-defined optical transitions. More importantly, NV center’s spin states have energy splitting sensitive to the environment’s magnetic field strength. The greater the magnetic field strength, the greater the splitting. In a way, NV center itself is a <em>magnetic field sensor</em>. One can then readout the spin states (at microwave frequencies) to measure ambient magnetic field.</p>
 </section>
 <section id="level-structure">
@@ -520,12 +533,11 @@ title="Print to PDF"
 <p>On the left-hand-side of the level structure, there are a ground state <span class="math notranslate nohighlight">\(^3\)</span>A and an excited state <span class="math notranslate nohighlight">\(^3\)</span>E. When the NV center decays from <span class="math notranslate nohighlight">\(^3\)</span>E to <span class="math notranslate nohighlight">\(^3\)</span>A, it emits a red photon at 637 nm. The reverse can also occur by shining the NV center with higher-energy (shorter wavelength) light at 532 nm such that it gets pumped from <span class="math notranslate nohighlight">\(^3\)</span>A to <span class="math notranslate nohighlight">\(^3\)</span>E.</p>
 <p>Next, we delve further into the different pathways the NV center can go from <span class="math notranslate nohighlight">\(^3\)</span>A to <span class="math notranslate nohighlight">\(^3\)</span>E. Within <span class="math notranslate nohighlight">\(^3\)</span>A, there exist three hyperfine states: <span class="math notranslate nohighlight">\(m_s=-1,0,+1\)</span>. Under zero magnetic field, the <span class="math notranslate nohighlight">\(m_s=\pm 1\)</span> states are <em>degenerate</em>, meaning they have the same energy. The difference in frequency between <span class="math notranslate nohighlight">\(m_s=0\)</span> and <span class="math notranslate nohighlight">\(m_s=\pm 1\)</span> is <span class="math notranslate nohighlight">\(D=2.87\)</span> GHz (caused by <a class="reference external" href="https://en.wikipedia.org/wiki/Crystal_field_theory">crystal field splitting</a>). If the NV center begins at <span class="math notranslate nohighlight">\(m_s=0\)</span> and is excited to the excited state <span class="math notranslate nohighlight">\(^3\)</span>E via 532 nm pumping, there is a strong probability that it would decay back to <span class="math notranslate nohighlight">\(m_s=0\)</span> within <span class="math notranslate nohighlight">\(^3\)</span>A. However, if it begins at <span class="math notranslate nohighlight">\(m_s=\pm 1\)</span> and is excited to <span class="math notranslate nohighlight">\(^3\)</span>E, it is now more likely to undergo <em>intersystem crossing</em>, which is an another decay pathway that takes the NV center to a metastable <span class="math notranslate nohighlight">\(^1\)</span>A state. Afterwards, it would <em>preferentially decay back to <span class="math notranslate nohighlight">\(m_s=0\)</span></em>. Two crucial take-aways here. One, this intersystem crossing process does not emiter 637 nm photons. Second, it preferentially returns what is initially <span class="math notranslate nohighlight">\(m_s=\pm 1\)</span> to <span class="math notranslate nohighlight">\(m_s=0\)</span>. Therefore, if you continuously pump the NV center with 532 nm light, in <em>steady state</em>, it would likely be in <span class="math notranslate nohighlight">\(m_s=0\)</span>. This mechanism is called spin polarization.</p>
 <p>Let’s consider this continuous pumping (spin polarization) case. We expect the fluorescence intensity, i.e. the number of emitted 637 nm photons, to be constant in steady state. <em>However, when we apply a microwave drive at exactly 2.87 GHz, we start shuffling the state between <span class="math notranslate nohighlight">\(m_s=0\)</span> and <span class="math notranslate nohighlight">\(m_s=\pm 1\)</span> via <a class="reference external" href="https://en.wikipedia.org/wiki/Rabi_cycle">Rabi oscillation</a></em>. In this case, the fluorescence intensity would experience a dip. This phenomenon is called <a class="reference external" href="https://en.wikipedia.org/wiki/Optically_detected_magnetic_resonance">optically detected magnetic resonance (ODMR)</a>.</p>
-<figure class="align-default" id="odmr-fig">
-<a class="reference internal image-reference" href="../_images/ODMR.png"><img alt="../_images/ODMR.png" src="../_images/ODMR.png" style="width: 500px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Optical detected magnetic resonance. Figures adapted from quTools, quNV brochure.</span><a class="headerlink" href="#odmr-fig" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">figure</span><span class="o">-</span><span class="n">md</span><span class="p">}</span> <span class="n">ODMR</span><span class="o">-</span><span class="n">fig</span>
+<span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;./FIGURES/ODMR.png&quot;</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;500&quot;</span><span class="o">&gt;</span>
+<span class="n">Optical</span> <span class="n">detected</span> <span class="n">magnetic</span> <span class="n">resonance</span><span class="o">.</span> <span class="n">Figures</span> <span class="n">adapted</span> <span class="kn">from</span> <span class="nn">quTools</span><span class="p">,</span> <span class="n">quNV</span> <span class="n">brochure</span><span class="o">.</span>
+</pre></div>
+</div>
 <p>Recall previously, we assume there is no applied magnetic field such that <span class="math notranslate nohighlight">\(m_s=-1\)</span> and <span class="math notranslate nohighlight">\(m_s=+1\)</span> states are degenerate. If we do apply magnetic field to the NV center, however, the degeneracy would be broken. <span class="math notranslate nohighlight">\(m_s=-1\)</span> and <span class="math notranslate nohighlight">\(m_s=+1\)</span> states would start splitting apart, and their energy difference grows linearly with the magnetic field strength due to the <a class="reference external" href="https://en.wikipedia.org/wiki/Zeeman_effect">Zeeman effect</a>. Now instead of 2.87 GHz, there would be two microwave frequencies at which the fluorescence intensity would experience a dip (can you see why?). Effectively, by detecting the optical signal coming from the NV center and noting where the changes in the intensity occur, we can extract information about the applied magnetic field. This means the NV center itself acts as a magnetometer!</p>
 <p>HOWEVER, realistically, the change in fluorescence is quite minimal. To make a magnetometer that is practical, we will pursue an alternative approach in this lab. Instead of inferring information about the magnetic field through <em>optical</em> detection, we will attempt <em>microwave</em> detection.</p>
 </section>
@@ -534,34 +546,35 @@ title="Print to PDF"
 <h2>2. Microwave cavity<a class="headerlink" href="#microwave-cavity" title="Permalink to this headline">#</a></h2>
 <section id="cavity-mode-of-a-cylindrical-resonator">
 <h3>2.1 Cavity mode of a cylindrical resonator<a class="headerlink" href="#cavity-mode-of-a-cylindrical-resonator" title="Permalink to this headline">#</a></h3>
-<p>To do so, we need to first understand what a microwave cavity is and how it works. The cavity that we will be using in the experiment is a <a class="reference external" href="https://ieeexplore.ieee.org/document/1126654">cylindrical resonator</a> (you may also recall from your E&amp;M class Chapter 8 in Classical Electrodynamics by J. D. Jackson). The resonator mode of interest is the so-called TE<span class="math notranslate nohighlight">\(_{01\delta}\)</span> mode, which has <span class="math notranslate nohighlight">\(H_z,H_{\rho},\)</span> and <span class="math notranslate nohighlight">\(E_{\phi}\)</span> components in <a class="reference external" href="https://en.wikipedia.org/wiki/Cylindrical_coordinate_system">cylindrical coordinates</a>. Explicitly,
-$<span class="math notranslate nohighlight">\(
-H_z = H_1 J_0(k_c\rho) f(\tilde{z})\\
-H_{\rho} = -\frac{j\beta}{k_c} H_1 J_1(k_c\rho) f'(\tilde{z})\\
-E_{\phi} = -\frac{j\omega\mu_0}{k_c} H_1 J_1(k_c\rho)f(\tilde{z})
-\)</span><span class="math notranslate nohighlight">\(
-where \)</span>k_c=x_{01}/r_d<span class="math notranslate nohighlight">\(, where \)</span>x_{01}<span class="math notranslate nohighlight">\( is the first root of the Bessel function \)</span>J_0(x)=0<span class="math notranslate nohighlight">\( and \)</span>r_d<span class="math notranslate nohighlight">\( is the outer radius of the resonator. \)</span>J_1<span class="math notranslate nohighlight">\( is the Bessel function of the first kind of order 1. \)</span>f(\tilde{z})$ is a factor that gives longitudinal dependence. If you are interested in its exact form, you may consult the Supplement of <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">this paper</a>.</p>
+<p>To do so, we need to first understand what a microwave cavity is and how it works. The cavity that we will be using in the experiment is a <a class="reference external" href="https://ieeexplore.ieee.org/document/1126654">cylindrical resonator</a> (you may also recall from your E&amp;M class Chapter 8 in Classical Electrodynamics by J. D. Jackson). The resonator mode of interest is the so-called TE<span class="math notranslate nohighlight">\(_{01\delta}\)</span> mode, which has <span class="math notranslate nohighlight">\(H_z,H_{\rho},\)</span> and <span class="math notranslate nohighlight">\(E_{\phi}\)</span> components in <a class="reference external" href="https://en.wikipedia.org/wiki/Cylindrical_coordinate_system">cylindrical coordinates</a>. Explicitly,</p>
+<div class="math notranslate nohighlight">
+\[H_z = H_1 J_0(k_c\rho) f(\tilde{z})\]</div>
+<div class="math notranslate nohighlight">
+\[H_{\rho} = -\frac{j\beta}{k_c} H_1 J_1(k_c\rho) f'(\tilde{z})\]</div>
+<div class="math notranslate nohighlight">
+\[E_{\phi} = -\frac{j\omega\mu_0}{k_c} H_1 J_1(k_c\rho)f(\tilde{z})\]</div>
+<p>where <span class="math notranslate nohighlight">\(k_c=x_{01}/r_d\)</span>, where <span class="math notranslate nohighlight">\(x_{01}\)</span> is the first root of the Bessel function <span class="math notranslate nohighlight">\(J_0(x)=0\)</span> and <span class="math notranslate nohighlight">\(r_d\)</span> is the outer radius of the resonator. <span class="math notranslate nohighlight">\(J_1\)</span> is the Bessel function of the first kind of order 1. <span class="math notranslate nohighlight">\(f(\tilde{z})\)</span> is a factor that gives longitudinal dependence. If you are interested in its exact form, you may consult the Supplement of <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">this paper</a>.</p>
 <p>Crucially, the <span class="math notranslate nohighlight">\(H\)</span> components imply that it is <em>magnetic</em> cavity, with the field profile shown in the figure below:</p>
 <!-- <div>
 <img src="magnetic_cavity.png" width="600"/>
 </div> -->
-<figure class="align-default" id="magnetic-cavity-fig">
-<a class="reference internal image-reference" href="../_images/magnetic_cavity.png"><img alt="../_images/magnetic_cavity.png" src="../_images/magnetic_cavity.png" style="width: 600px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Simulation results from <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">Eisenach <em>et al.</em></a></span><a class="headerlink" href="#magnetic-cavity-fig" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">figure</span><span class="o">-</span><span class="n">md</span><span class="p">}</span> <span class="n">magnetic</span><span class="o">-</span><span class="n">cavity</span><span class="o">-</span><span class="n">fig</span>
+<span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;./FIGURES/magnetic_cavity.png&quot;</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;600&quot;</span><span class="o">&gt;</span>
+<span class="n">Simulation</span> <span class="n">results</span> <span class="kn">from</span> <span class="p">[</span><span class="n">Eisenach</span> <span class="n">_et</span> <span class="n">al</span><span class="o">.</span><span class="n">_</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">nature</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">articles</span><span class="o">/</span><span class="n">s41467</span><span class="o">-</span><span class="mi">021</span><span class="o">-</span><span class="mi">21256</span><span class="o">-</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>where the black dashed lines mark the outline of the resonator.</p>
 </section>
 <section id="cavity-resonance-frequency">
 <h3>2.2 Cavity resonance frequency<a class="headerlink" href="#cavity-resonance-frequency" title="Permalink to this headline">#</a></h3>
-<p>The resonance frequency <span class="math notranslate nohighlight">\(\omega_c\)</span> can be calculated by solving the coupled equations:
-$<span class="math notranslate nohighlight">\(
-\zeta \tan\left(\frac{\zeta L}{2}\right) = \zeta_0\\
-\zeta = \sqrt{\epsilon_r \frac{\omega_c^2}{c^2}-\frac{x_{01}^2}{r_d^2}}\\
-\zeta_0 = \sqrt{\frac{x_{01}^2}{r_d^2}-\frac{\omega_c^2}{c^2}}
-\)</span><span class="math notranslate nohighlight">\(
-where \)</span>\epsilon_r<span class="math notranslate nohighlight">\( is the relative dielectric constant and \)</span>x_{01}<span class="math notranslate nohighlight">\( is again the first root of the Bessel function \)</span>J_0(x)=0<span class="math notranslate nohighlight">\(. \)</span>L$ is the length of the resonator.</p>
+<p>The resonance frequency <span class="math notranslate nohighlight">\(\omega_c\)</span> can be calculated by solving the coupled equations:</p>
+<div class="math notranslate nohighlight">
+\[\zeta \tan\left(\frac{\zeta L}{2}\right) = \zeta_0\]</div>
+<div class="math notranslate nohighlight">
+\[\zeta = \sqrt{\epsilon_r \frac{\omega_c^2}{c^2}-\frac{x_{01}^2}{r_d^2}}\]</div>
+<div class="math notranslate nohighlight">
+\[\zeta_0 = \sqrt{\frac{x_{01}^2}{r_d^2}-\frac{\omega_c^2}{c^2}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\epsilon_r\)</span> is the relative dielectric constant and <span class="math notranslate nohighlight">\(x_{01}\)</span> is again the first root of the Bessel function <span class="math notranslate nohighlight">\(J_0(x)=0\)</span>. <span class="math notranslate nohighlight">\(L\)</span> is the length of the resonator.</p>
 <p>For more details on the derivation, you may consult <a class="reference external" href="https://aip.scitation.org/doi/full/10.1063/1.2976033">this paper</a> or the previous <a class="reference external" href="https://ieeexplore.ieee.org/document/1126654">cylindrical resonator</a> reference.</p>
 </section>
 <section id="inductive-coupling-between-a-microwave-cavity-and-a-loop-coupler">
@@ -570,54 +583,61 @@ where \)</span>\epsilon_r<span class="math notranslate nohighlight">\( is the re
 <!-- <div>
 <img src="magnetic_cavity_RHR.png" width="400"/>
 </div> -->
-<figure class="align-default" id="magnetic-cavity-rhr-fig">
-<a class="reference internal image-reference" href="../_images/magnetic_cavity_RHR.png"><img alt="../_images/magnetic_cavity_RHR.png" src="../_images/magnetic_cavity_RHR.png" style="width: 600px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Field components of a cylindrical microwave cavity.</span><a class="headerlink" href="#magnetic-cavity-rhr-fig" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">figure</span><span class="o">-</span><span class="n">md</span><span class="p">}</span> <span class="n">magnetic</span><span class="o">-</span><span class="n">cavity</span><span class="o">-</span><span class="n">RHR</span><span class="o">-</span><span class="n">fig</span>
+<span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;./FIGURES/magnetic_cavity_RHR.png&quot;</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;600&quot;</span><span class="o">&gt;</span>
+<span class="n">Field</span> <span class="n">components</span> <span class="n">of</span> <span class="n">a</span> <span class="n">cylindrical</span> <span class="n">microwave</span> <span class="n">cavity</span><span class="o">.</span>
+</pre></div>
+</div>
 <p>How do we experimentally <em>measure</em> the cavity resonance? It’s simple! We can simply use a metallic loop that <em>inductively</em> couples to the magnetic cavity. As such, we call it a loop coupler. The magnetic field exiting out of the cavity in the <span class="math notranslate nohighlight">\(z\)</span> direction (pointing up shown in the figure above) threads through the loop coupler, thereby inducing a current that is measurable. We will leverage this fact and read out the cavity resonance via a <a class="reference external" href="https://en.wikipedia.org/wiki/Network_analyzer_(electrical)">vector network analyzer (VNA)</a>, which you should have already gotten familiar with during the Parkour session.</p>
 </section>
 <section id="quality-factor">
 <h3>2.4 Quality factor<a class="headerlink" href="#quality-factor" title="Permalink to this headline">#</a></h3>
-<p>One important metric to the quality of a microwave cavity is its <a class="reference external" href="https://en.wikipedia.org/wiki/Q_factor">quality factor</a>, which is defined as:
-$<span class="math notranslate nohighlight">\(
-Q = \omega_d/\kappa_c
-\)</span><span class="math notranslate nohighlight">\(
-where \)</span>\kappa_c<span class="math notranslate nohighlight">\( is the total cavity decay rate (in units of radian-frequency). The higher the \)</span>Q<span class="math notranslate nohighlight">\(, the longer the electric field is &quot;trapped&quot; inside the cavity. Since \)</span>\kappa_c<span class="math notranslate nohighlight">\( is inversely proportional to \)</span>Q<span class="math notranslate nohighlight">\(, higher \)</span>Q$ also corresponds to <em>narrower</em> cavity resonance feature (a dip in reflection for our case) in frequency.</p>
-<p>A cavity’s <span class="math notranslate nohighlight">\(Q\)</span> is also the geometric mean of its intrinsic quality factor <span class="math notranslate nohighlight">\(Q_0\)</span> and quality factors due to <em>leakage</em>. For an instance, if we bring a loop coupler near the microwave cavity, we are artificially introducing a channel into which the energy of the cavity mode can escape. In this case, the loop coupler is a leakage source and introduces its own “quality factor”, <span class="math notranslate nohighlight">\(Q_1\)</span>. Hence,
-$<span class="math notranslate nohighlight">\(
-\frac{1}{Q} = \frac{1}{Q_0}+\frac{1}{Q_1}
-\)</span><span class="math notranslate nohighlight">\(
-Conventionally, when we purposefully introduce a leakage channel, we call the cavity \)</span>Q$ the loaded quality factor.</p>
-<p>It is also often easier to consider in terms of decay rates. We can rewrite the above expression as
-$<span class="math notranslate nohighlight">\(
-\kappa_c = \kappa_{c0}+\kappa_{c1}
-\)</span><span class="math notranslate nohighlight">\(
-where \)</span>\kappa_{c0}<span class="math notranslate nohighlight">\( is the intrinsic cavity loss rate and \)</span>\kappa_{c1}$ is the additional decay rate into the loop coupler.</p>
+<p>One important metric to the quality of a microwave cavity is its <a class="reference external" href="https://en.wikipedia.org/wiki/Q_factor">quality factor</a>, which is defined as:</p>
+<div class="math notranslate nohighlight">
+\[Q = \omega_d/\kappa_c\]</div>
+<p>where <span class="math notranslate nohighlight">\(\kappa_c\)</span> is the total cavity decay rate (in units of radian-frequency). The higher the <span class="math notranslate nohighlight">\(Q\)</span>, the longer the electric field is “trapped” inside the cavity. Since <span class="math notranslate nohighlight">\(\kappa_c\)</span> is inversely proportional to <span class="math notranslate nohighlight">\(Q\)</span>, higher <span class="math notranslate nohighlight">\(Q\)</span> also corresponds to <em>narrower</em> cavity resonance feature (a dip in reflection for our case) in frequency.</p>
+<p>A cavity’s <span class="math notranslate nohighlight">\(Q\)</span> is also the geometric mean of its intrinsic quality factor <span class="math notranslate nohighlight">\(Q_0\)</span> and quality factors due to <em>leakage</em>. For an instance, if we bring a loop coupler near the microwave cavity, we are artificially introducing a channel into which the energy of the cavity mode can escape. In this case, the loop coupler is a leakage source and introduces its own “quality factor”, <span class="math notranslate nohighlight">\(Q_1\)</span>. Hence,</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{Q} = \frac{1}{Q_0}+\frac{1}{Q_1}\]</div>
+<p>Conventionally, when we purposefully introduce a leakage channel, we call the cavity <span class="math notranslate nohighlight">\(Q\)</span> the loaded quality factor.</p>
+<p>It is also often easier to consider in terms of decay rates. We can rewrite the above expression as</p>
+<div class="math notranslate nohighlight">
+\[\kappa_c = \kappa_{c0}+\kappa_{c1}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\kappa_{c0}\)</span> is the intrinsic cavity loss rate and <span class="math notranslate nohighlight">\(\kappa_{c1}\)</span> is the additional decay rate into the loop coupler.</p>
 </section>
 </section>
 <section id="coupling-between-nv-centers-and-microwave-cavity">
 <h2>3. Coupling between NV centers and microwave cavity<a class="headerlink" href="#coupling-between-nv-centers-and-microwave-cavity" title="Permalink to this headline">#</a></h2>
 <p>So far, we have discussed two distinct entities, NV centers in diamond and microwave cavity. In our experiment, we will combine the two systems by simply putting a diamond sample full of NV centers inside the microwave resonator. There are two conditions we must first satisfy in order to observe quantum sensing with solid state spins. One, we need to first excite the entire diamond with 532 nm light, hence spin polarizing an ensemble of NV centers. Second, we need to apply the appropriate amount of magnetic field to shift the energy level of <span class="math notranslate nohighlight">\(m_s=+1\)</span>, such that the frequency difference between <span class="math notranslate nohighlight">\(m_s=+1\)</span> and <span class="math notranslate nohighlight">\(m_s=0\)</span> matches the resonance frequency of the microwave resonator. When the aforementioned conditions are met, we can observe the quantum mechanical response of the coupled system (consisted of NV centers and microwave cavity) by sending a microwave signal and measuring its reflection coefficient. Experimentally, we will have the VNA send microwave pulses across different frequencies down the loop coupler, which returns reflected pulses from the microwave cavity back to the receiving port of the VNA.</p>
-<p>The reflection coefficient <span class="math notranslate nohighlight">\(\Gamma\)</span> is given by:
-$<span class="math notranslate nohighlight">\(
-\Gamma = -1+\frac{\kappa_{c1}}{\frac{\kappa_c}{2}+j(\omega-\omega_c)+\frac{g^2}{\frac{\kappa_s}{2}+j(\omega-\omega_s)+\alpha}}
-\)</span><span class="math notranslate nohighlight">\(
-where \)</span>\kappa_c=\kappa_{c0}+\kappa_{c1}<span class="math notranslate nohighlight">\( is the sum of the unloaded (intrinsic) and input port (loop coupler) loss rates, respectively. \)</span>\kappa_s=2/T_2<span class="math notranslate nohighlight">\( is the homogeneous width of the spin resonance where \)</span>T_2<span class="math notranslate nohighlight">\( is the [coherence time](https://en.wikipedia.org/wiki/Relaxation_(NMR)). \)</span>\alpha<span class="math notranslate nohighlight">\( captures the effect of saturation and is beyond the scope of this introductory discussion. \)</span>g<span class="math notranslate nohighlight">\( is the effective coupling strength between the NV centers and the cavity mode. \)</span>\omega<span class="math notranslate nohighlight">\( and \)</span>\omega_s$ are the probe (sent out of the VNA) and the spin resonance frequencies, respectively. Since there are parameters regarding the NV centers themselves, the <em>quality</em> of the diamond indeed affects the reflection contrast. You will explore different types of diamond in this lab.</p>
+<p>The reflection coefficient <span class="math notranslate nohighlight">\(\Gamma\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[\Gamma = -1+\frac{\kappa_{c1}}{\frac{\kappa_c}{2}+j(\omega-\omega_c)+\frac{g^2}{\frac{\kappa_s}{2}+j(\omega-\omega_s)+\alpha}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\kappa_c=\kappa_{c0}+\kappa_{c1}\)</span> is the sum of the unloaded (intrinsic) and input port (loop coupler) loss rates, respectively. <span class="math notranslate nohighlight">\(\kappa_s=2/T_2\)</span> is the homogeneous width of the spin resonance where <span class="math notranslate nohighlight">\(T_2\)</span> is the <a class="reference external" href="https://en.wikipedia.org/wiki/Relaxation_(NMR)">coherence time</a>. <span class="math notranslate nohighlight">\(\alpha\)</span> captures the effect of saturation and is beyond the scope of this introductory discussion. <span class="math notranslate nohighlight">\(g\)</span> is the effective coupling strength between the NV centers and the cavity mode. <span class="math notranslate nohighlight">\(\omega\)</span> and <span class="math notranslate nohighlight">\(\omega_s\)</span> are the probe (sent out of the VNA) and the spin resonance frequencies, respectively. Since there are parameters regarding the NV centers themselves, the <em>quality</em> of the diamond indeed affects the reflection contrast. You will explore different types of diamond in this lab.</p>
 <p>For those who are interested in deriving the reflection coefficient formulae (via input-output formalism similar to the case in quantum optics), you may consult <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">this paper</a>.</p>
 <p>Here we compare the conventional ODMR result (optical-based) and the introduced microwave cavity-based approach by showing you experimental results by <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">Eisenach <em>et al.</em></a>:</p>
 <!-- <div>
 <img src="ODMR_vs_microwave.png" width="600"/>
 </div> -->
-<figure class="align-default" id="odmr-vs-microwave-fig">
-<a class="reference internal image-reference" href="../_images/ODMR_vs_microwave.png"><img alt="../_images/ODMR_vs_microwave.png" src="../_images/ODMR_vs_microwave.png" style="width: 600px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 28 </span><span class="caption-text">ODMR and microwave readout results from <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">Eisenach <em>et al.</em></a></span><a class="headerlink" href="#odmr-vs-microwave-fig" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">figure</span><span class="o">-</span><span class="n">md</span><span class="p">}</span> <span class="n">ODMR</span><span class="o">-</span><span class="n">vs</span><span class="o">-</span><span class="n">microwave</span><span class="o">-</span><span class="n">fig</span>
+<span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;./FIGURES/ODMR_vs_microwave.png&quot;</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;600&quot;</span><span class="o">&gt;</span>
+<span class="n">ODMR</span> <span class="ow">and</span> <span class="n">microwave</span> <span class="n">readout</span> <span class="n">results</span> <span class="kn">from</span> <span class="p">[</span><span class="n">Eisenach</span> <span class="n">_et</span> <span class="n">al</span><span class="o">.</span><span class="n">_</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">nature</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">articles</span><span class="o">/</span><span class="n">s41467</span><span class="o">-</span><span class="mi">021</span><span class="o">-</span><span class="mi">21256</span><span class="o">-</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>Due to coupling with the cavity, the NV centers’ microwave response (blue) exhibits much greater <a class="reference external" href="https://en.wikipedia.org/wiki/Signal-to-noise_ratio">signal-to-noise ratio (SNR)</a> than conventional ODMR (red)!</p>
 <p>In the first portion of the lab, you will use the given formulae for the reflection coefficient and assess how each parameter affects the NV centers’ microwave response.</p>
+<section id="pre-lab-questions">
+<h3>Pre-Lab Questions<a class="headerlink" href="#pre-lab-questions" title="Permalink to this headline">#</a></h3>
+<p>In the first session of this experiment, you will first be characterizing the microwave cavities by measuring their resonance frequencies and quality factors. Recall that a cavity <span class="math notranslate nohighlight">\(Q\)</span> is defined to be the ratio of its resonance frequency to its decay rate (also known as the cavity <em>linewidth</em>).</p>
+<ol class="simple">
+<li><p>Calculate the <span class="math notranslate nohighlight">\(Q\)</span> of a cavity with resonance frequency at 3 GHz and linewidth of 100 kHz.</p></li>
+<li><p>Typically the cavity linewidth is defined at the <a class="reference external" href="https://en.wikipedia.org/wiki/Full_width_at_half_maximum">full width at half maximum</a>. Insert a cell below and write a Python script plotting a resonance peak centered at 3 GHz with linewidth of 100 kHz. Make the x-axis frequency with a span of 1 MHz and the y-axis normalized cavity transmission. Note that the cavity lineshape is usually <a class="reference external" href="https://mathworld.wolfram.com/LorentzianFunction.html">Lorentzian</a>.</p></li>
+</ol>
+<p>The second part involves characterizing the <a class="reference external" href="https://en.wikipedia.org/wiki/Helmholtz_coil">Helmholtz coil</a> by measuring its generated magnetic field. Recall that due to the Zeeman effect, magnetic field is used to shift the energy (frequency) difference between the <span class="math notranslate nohighlight">\(m_s=0\)</span> and <span class="math notranslate nohighlight">\(m_s=+1\)</span> states of NV centers. Importantly, the correct amount of magnetic field must be applied to ensure the energy difference matches the microwave cavity’s resonance frequency.</p>
+<ol class="simple">
+<li><p>The amount of frequency shift due to magnetic field strength <span class="math notranslate nohighlight">\(B\)</span> is <span class="math notranslate nohighlight">\(\delta f = \mu B\)</span>, where <span class="math notranslate nohighlight">\(\mu = \mu_B g/h\)</span>. <span class="math notranslate nohighlight">\(\mu_B\)</span> is the <a class="reference external" href="https://en.wikipedia.org/wiki/Bohr_magneton">Bohr magneton</a>, <span class="math notranslate nohighlight">\(g\approx 2\)</span> is the Lande factor, and <span class="math notranslate nohighlight">\(h\)</span> is the Planck constant. Calculate <span class="math notranslate nohighlight">\(\mu\)</span> in units of MHz/Gauss. Note the SI unit for magnetic field is Tesla, where 1 Tesla = <span class="math notranslate nohighlight">\(10^4\)</span> Gauss.</p></li>
+<li><p>Calculate the needed magnetic field strength (in Gauss) if the cavity resonance frequency is at 3 GHz. Recall the starting point (due to crystal field splitting) of the energy difference between <span class="math notranslate nohighlight">\(m_s=0\)</span> and <span class="math notranslate nohighlight">\(m_s=+1\)</span> is 2.87 GHz.</p></li>
+</ol>
+</section>
 </section>
 </section>
 

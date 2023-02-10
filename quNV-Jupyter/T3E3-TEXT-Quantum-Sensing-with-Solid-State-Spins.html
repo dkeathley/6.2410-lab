@@ -520,11 +520,12 @@ title="Print to PDF"
 <img src="./FIGURES/NV_center.png" width="600"/>
 </div>
  -->
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">figure</span><span class="o">-</span><span class="n">md</span><span class="p">}</span> <span class="n">NV</span><span class="o">-</span><span class="n">center</span><span class="o">-</span><span class="n">fig</span>
-<span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;./FIGURES/NV_center.png&quot;</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;600&quot;</span><span class="o">&gt;</span>
-<span class="n">Figures</span> <span class="n">adapted</span> <span class="kn">from</span> <span class="nn">quTools</span><span class="p">,</span> <span class="n">quNV</span> <span class="n">brochure</span><span class="o">.</span>
-</pre></div>
-</div>
+<figure class="align-default" id="nv-center-fig">
+<a class="reference internal image-reference" href="../_images/NV_center.png"><img alt="../_images/NV_center.png" src="../_images/NV_center.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Figures adapted from quTools, quNV brochure.</span><a class="headerlink" href="#nv-center-fig" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Effectively, NV center is an artificial atom in a solid state environment with well-defined optical transitions. More importantly, NV center’s spin states have energy splitting sensitive to the environment’s magnetic field strength. The greater the magnetic field strength, the greater the splitting. In a way, NV center itself is a <em>magnetic field sensor</em>. One can then readout the spin states (at microwave frequencies) to measure ambient magnetic field.</p>
 </section>
 <section id="level-structure">
@@ -533,11 +534,12 @@ title="Print to PDF"
 <p>On the left-hand-side of the level structure, there are a ground state <span class="math notranslate nohighlight">\(^3\)</span>A and an excited state <span class="math notranslate nohighlight">\(^3\)</span>E. When the NV center decays from <span class="math notranslate nohighlight">\(^3\)</span>E to <span class="math notranslate nohighlight">\(^3\)</span>A, it emits a red photon at 637 nm. The reverse can also occur by shining the NV center with higher-energy (shorter wavelength) light at 532 nm such that it gets pumped from <span class="math notranslate nohighlight">\(^3\)</span>A to <span class="math notranslate nohighlight">\(^3\)</span>E.</p>
 <p>Next, we delve further into the different pathways the NV center can go from <span class="math notranslate nohighlight">\(^3\)</span>A to <span class="math notranslate nohighlight">\(^3\)</span>E. Within <span class="math notranslate nohighlight">\(^3\)</span>A, there exist three hyperfine states: <span class="math notranslate nohighlight">\(m_s=-1,0,+1\)</span>. Under zero magnetic field, the <span class="math notranslate nohighlight">\(m_s=\pm 1\)</span> states are <em>degenerate</em>, meaning they have the same energy. The difference in frequency between <span class="math notranslate nohighlight">\(m_s=0\)</span> and <span class="math notranslate nohighlight">\(m_s=\pm 1\)</span> is <span class="math notranslate nohighlight">\(D=2.87\)</span> GHz (caused by <a class="reference external" href="https://en.wikipedia.org/wiki/Crystal_field_theory">crystal field splitting</a>). If the NV center begins at <span class="math notranslate nohighlight">\(m_s=0\)</span> and is excited to the excited state <span class="math notranslate nohighlight">\(^3\)</span>E via 532 nm pumping, there is a strong probability that it would decay back to <span class="math notranslate nohighlight">\(m_s=0\)</span> within <span class="math notranslate nohighlight">\(^3\)</span>A. However, if it begins at <span class="math notranslate nohighlight">\(m_s=\pm 1\)</span> and is excited to <span class="math notranslate nohighlight">\(^3\)</span>E, it is now more likely to undergo <em>intersystem crossing</em>, which is an another decay pathway that takes the NV center to a metastable <span class="math notranslate nohighlight">\(^1\)</span>A state. Afterwards, it would <em>preferentially decay back to <span class="math notranslate nohighlight">\(m_s=0\)</span></em>. Two crucial take-aways here. One, this intersystem crossing process does not emiter 637 nm photons. Second, it preferentially returns what is initially <span class="math notranslate nohighlight">\(m_s=\pm 1\)</span> to <span class="math notranslate nohighlight">\(m_s=0\)</span>. Therefore, if you continuously pump the NV center with 532 nm light, in <em>steady state</em>, it would likely be in <span class="math notranslate nohighlight">\(m_s=0\)</span>. This mechanism is called spin polarization.</p>
 <p>Let’s consider this continuous pumping (spin polarization) case. We expect the fluorescence intensity, i.e. the number of emitted 637 nm photons, to be constant in steady state. <em>However, when we apply a microwave drive at exactly 2.87 GHz, we start shuffling the state between <span class="math notranslate nohighlight">\(m_s=0\)</span> and <span class="math notranslate nohighlight">\(m_s=\pm 1\)</span> via <a class="reference external" href="https://en.wikipedia.org/wiki/Rabi_cycle">Rabi oscillation</a></em>. In this case, the fluorescence intensity would experience a dip. This phenomenon is called <a class="reference external" href="https://en.wikipedia.org/wiki/Optically_detected_magnetic_resonance">optically detected magnetic resonance (ODMR)</a>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">figure</span><span class="o">-</span><span class="n">md</span><span class="p">}</span> <span class="n">ODMR</span><span class="o">-</span><span class="n">fig</span>
-<span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;./FIGURES/ODMR.png&quot;</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;500&quot;</span><span class="o">&gt;</span>
-<span class="n">Optical</span> <span class="n">detected</span> <span class="n">magnetic</span> <span class="n">resonance</span><span class="o">.</span> <span class="n">Figures</span> <span class="n">adapted</span> <span class="kn">from</span> <span class="nn">quTools</span><span class="p">,</span> <span class="n">quNV</span> <span class="n">brochure</span><span class="o">.</span>
-</pre></div>
-</div>
+<figure class="align-default" id="odmr-fig">
+<a class="reference internal image-reference" href="../_images/ODMR.png"><img alt="../_images/ODMR.png" src="../_images/ODMR.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Optical detected magnetic resonance. Figures adapted from quTools, quNV brochure.</span><a class="headerlink" href="#odmr-fig" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Recall previously, we assume there is no applied magnetic field such that <span class="math notranslate nohighlight">\(m_s=-1\)</span> and <span class="math notranslate nohighlight">\(m_s=+1\)</span> states are degenerate. If we do apply magnetic field to the NV center, however, the degeneracy would be broken. <span class="math notranslate nohighlight">\(m_s=-1\)</span> and <span class="math notranslate nohighlight">\(m_s=+1\)</span> states would start splitting apart, and their energy difference grows linearly with the magnetic field strength due to the <a class="reference external" href="https://en.wikipedia.org/wiki/Zeeman_effect">Zeeman effect</a>. Now instead of 2.87 GHz, there would be two microwave frequencies at which the fluorescence intensity would experience a dip (can you see why?). Effectively, by detecting the optical signal coming from the NV center and noting where the changes in the intensity occur, we can extract information about the applied magnetic field. This means the NV center itself acts as a magnetometer!</p>
 <p>HOWEVER, realistically, the change in fluorescence is quite minimal. To make a magnetometer that is practical, we will pursue an alternative approach in this lab. Instead of inferring information about the magnetic field through <em>optical</em> detection, we will attempt <em>microwave</em> detection.</p>
 </section>
@@ -558,11 +560,12 @@ title="Print to PDF"
 <!-- <div>
 <img src="magnetic_cavity.png" width="600"/>
 </div> -->
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">figure</span><span class="o">-</span><span class="n">md</span><span class="p">}</span> <span class="n">magnetic</span><span class="o">-</span><span class="n">cavity</span><span class="o">-</span><span class="n">fig</span>
-<span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;./FIGURES/magnetic_cavity.png&quot;</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;600&quot;</span><span class="o">&gt;</span>
-<span class="n">Simulation</span> <span class="n">results</span> <span class="kn">from</span> <span class="p">[</span><span class="n">Eisenach</span> <span class="n">_et</span> <span class="n">al</span><span class="o">.</span><span class="n">_</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">nature</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">articles</span><span class="o">/</span><span class="n">s41467</span><span class="o">-</span><span class="mi">021</span><span class="o">-</span><span class="mi">21256</span><span class="o">-</span><span class="mi">7</span><span class="p">)</span>
-</pre></div>
-</div>
+<figure class="align-default" id="magnetic-cavity-fig">
+<a class="reference internal image-reference" href="../_images/magnetic_cavity.png"><img alt="../_images/magnetic_cavity.png" src="../_images/magnetic_cavity.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Simulation results from <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">Eisenach <em>et al.</em></a></span><a class="headerlink" href="#magnetic-cavity-fig" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>where the black dashed lines mark the outline of the resonator.</p>
 </section>
 <section id="cavity-resonance-frequency">
@@ -618,11 +621,12 @@ title="Print to PDF"
 <!-- <div>
 <img src="ODMR_vs_microwave.png" width="600"/>
 </div> -->
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">figure</span><span class="o">-</span><span class="n">md</span><span class="p">}</span> <span class="n">ODMR</span><span class="o">-</span><span class="n">vs</span><span class="o">-</span><span class="n">microwave</span><span class="o">-</span><span class="n">fig</span>
-<span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;./FIGURES/ODMR_vs_microwave.png&quot;</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;600&quot;</span><span class="o">&gt;</span>
-<span class="n">ODMR</span> <span class="ow">and</span> <span class="n">microwave</span> <span class="n">readout</span> <span class="n">results</span> <span class="kn">from</span> <span class="p">[</span><span class="n">Eisenach</span> <span class="n">_et</span> <span class="n">al</span><span class="o">.</span><span class="n">_</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">nature</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">articles</span><span class="o">/</span><span class="n">s41467</span><span class="o">-</span><span class="mi">021</span><span class="o">-</span><span class="mi">21256</span><span class="o">-</span><span class="mi">7</span><span class="p">)</span>
-</pre></div>
-</div>
+<figure class="align-default" id="odmr-vs-microwave-fig">
+<a class="reference internal image-reference" href="../_images/ODMR_vs_microwave.png"><img alt="../_images/ODMR_vs_microwave.png" src="../_images/ODMR_vs_microwave.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">ODMR and microwave readout results from <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">Eisenach <em>et al.</em></a></span><a class="headerlink" href="#odmr-vs-microwave-fig" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Due to coupling with the cavity, the NV centers’ microwave response (blue) exhibits much greater <a class="reference external" href="https://en.wikipedia.org/wiki/Signal-to-noise_ratio">signal-to-noise ratio (SNR)</a> than conventional ODMR (red)!</p>
 <p>In the first portion of the lab, you will use the given formulae for the reflection coefficient and assess how each parameter affects the NV centers’ microwave response.</p>
 <section id="pre-lab-questions">

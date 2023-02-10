@@ -4,4 +4,4 @@
 jupyter-book build ./
 
 #Push to github pages
-#ghp-import -n -p -f _build/html
+ghp-import -n -p -f _build/html

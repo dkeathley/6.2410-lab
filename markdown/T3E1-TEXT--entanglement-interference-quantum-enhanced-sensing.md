@@ -104,7 +104,7 @@ In the lab, we will perform this experiment so that you can experience entanglem
 
 ## Single-Photon Interference and Interaction-Free Measurement
 
-+++
++++ {"tags": []}
 
 <iframe src="https://drive.google.com/file/d/1MVpfD6w8qPrWElpTsG6HJn-XRTBKQyI-/preview" width="640" height="480" allow="autoplay"></iframe>
 
@@ -162,9 +162,9 @@ Let's consider two important cases: $\alpha = 1$ (opaque object), and $\alpha = 
 
 It also makes sense that when $\alpha = 0$ all interference goes away, and we are left with only 1/4 of the photons making it to the detector.  The other 1/4 go to arm $e$, and the other half are lost to the object. 
 
-Now for something interesting.  Let's say that we align our interferometer without an object in place such that you have a minum probability of finding the photons in arm $d$.  THat would be for $\Delta\phi = \pi$ so that no photons are output.  Then you put the object in place -- the photon expectation suddenly goes to 1/4.  
+Now for something interesting.  Let's say that we align our interferometer without an object in place such that you have a minum probability of finding the photons in arm $d$.  That would be for $\Delta\phi = \pi$ so that no photons are output.  Then you put the object in place -- the photon expectation suddenly goes to 1/4.  You just detected the object without interaction!  This is in fact often referred to as an interaction-free measurement, and has found renewed interest in the context of electron detection where particle energies are high and damage per particle can be significant.    
 
-In the questions below, you will consider why this is interesting.
+In the questions below, you will consider such measurements further.
 
 +++
 

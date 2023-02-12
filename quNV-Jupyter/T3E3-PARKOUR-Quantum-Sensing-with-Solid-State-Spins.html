@@ -129,7 +129,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Interference and Entanglement
+  T3E1 -- Interference, Entanglement, Quantum-Enhanced Sensing
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -141,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Quantum Information and Quantum Key Distribution
+  T2E1 -- Quantum Information and Quantum Key Distribution
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -153,7 +153,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Solid State Spins
+  T3E3 -- Solid State Spins
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -532,7 +532,7 @@ title="Print to PDF"
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
 <span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">/tmp/ipykernel_3806302/1465159270.py</span> in <span class="ni">&lt;cell line: 7&gt;</span><span class="nt">()</span>
+<span class="nn">/tmp/ipykernel_90180/1465159270.py</span> in <span class="ni">&lt;cell line: 7&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> 
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># Create the control instance</span>
 <span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">vna</span> <span class="o">=</span> <span class="n">libreVNA</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="mi">19542</span><span class="p">)</span>
@@ -559,12 +559,25 @@ title="Print to PDF"
 <ol class="simple">
 <li><p>Sets the frequency sweep range from 2.93 GHz to 2.95 GHz</p></li>
 <li><p>Sets the sweep with 51 frequency points</p></li>
-<li><p>Sets the resolution to 1 kHz</p></li>
+<li><p>Sets the <a class="reference external" href="https://en.wikipedia.org/wiki/Intermediate_frequency">intermediate frequency</a> bandwidth to 1 kHz</p></li>
 <li><p>Sets the number of average to 1</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code goes here</span>
+
+<span class="c1"># 1</span>
+<span class="n">vna</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;:VNA:FREQuency:CENTer 2940000000&quot;</span><span class="p">)</span>
+<span class="n">vna</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;:VNA:FREQuency:SPAN 20000000&quot;</span><span class="p">)</span>
+
+<span class="c1"># 2</span>
+<span class="n">vna</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;:VNA:ACQ:POINTS 51&quot;</span><span class="p">)</span>
+
+<span class="c1"># 3</span>
+<span class="n">vna</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;:VNA:ACQ:IFBW 1000&quot;</span><span class="p">)</span>
+
+<span class="c1"># 4</span>
+<span class="n">vna</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;:VNA:ACQ:AVG 1&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -572,10 +585,31 @@ title="Print to PDF"
 </section>
 <section id="grabbing-data-off-the-vna">
 <h2>5. Grabbing data off the VNA<a class="headerlink" href="#grabbing-data-off-the-vna" title="Permalink to this headline">#</a></h2>
-<p>Write a Python script that extracts <span class="math notranslate nohighlight">\(S_{21}\)</span> data vector, and plots both the amplitude and phase entries.</p>
+<p>Write a Python script that extracts <span class="math notranslate nohighlight">\(S_{21}\)</span> data vector, and plots both the amplitude and phase entries. You may find the method <code class="docutils literal notranslate"><span class="pre">vna.parse_VNA_trace_data(...)</span></code> helpful.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code goes here</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># grab the data of trace S21</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">vna</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;:VNA:TRACE:DATA? S21&quot;</span><span class="p">)</span>
+
+<span class="n">S21</span> <span class="o">=</span> <span class="n">vna</span><span class="o">.</span><span class="n">parse_VNA_trace_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">freqs</span> <span class="o">=</span> <span class="n">S21</span><span class="p">[:][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">amp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">S21</span><span class="p">[:][</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">phase</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">S21</span><span class="p">[:][</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># Plot amplitude and phase</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freqs</span><span class="p">,</span><span class="n">amp</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude (a.u.)&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freqs</span><span class="p">,</span><span class="n">phase</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Phase (deg)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

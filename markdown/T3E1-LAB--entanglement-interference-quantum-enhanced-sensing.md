@@ -154,11 +154,11 @@ Far-field alignment.
  
 **AI** Verify that the delay measurement you made makes sense (you will need to make some distance measurements on the board for this).  
 
-+++
++++ {"tags": []}
 
 ## Aim 3: Demonstration of Polarization Entanglement (Day 1)
 
-+++
++++ {"tags": []}
 
 In this lab we will use the quantenkoffer to explore the nature of the polarization-entnagled SPDC photon source.  By making quite simple polarization measurements in each arm of the detector using polarizers, you can get a hands-on feeling for the entangled nature of the source.  While these measurements are simple, the offer a lot to think about.
 
@@ -185,15 +185,15 @@ In this lab we will use the quantenkoffer to explore the nature of the polarizat
 The HWP control is circled in the source control dialog.  Use this to set the polarization angle of the source.
 :::
 
-+++
++++ {"tags": ["remove-cell"]}
 
 ## Aim 3: Single-Photon Interference
 
-+++
++++ {"tags": ["remove-cell"]}
 
 In this ecxercise we will build an interferometer to explore single-photon interference.  We will explore the coherence time of the single photons as well as the concept of interaction free measurement made possible through the wave-particle duality.
 
-+++
++++ {"tags": ["remove-cell"]}
 
 ### Prelab
 
@@ -201,11 +201,11 @@ Before the lab, watch the following video related to the concepts we will explor
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4d6d8BB7_n0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-+++
++++ {"tags": ["remove-cell"]}
 
 ### Lab Exercise
 
-+++
++++ {"tags": ["remove-cell"]}
 
 #### Part 1: Single-Photon Interference
 
@@ -246,7 +246,7 @@ The configuration for a Michelson interferometer that we will use to explore sin
 Scanning through delay position with a wedge to see single-photon interference at an output port.  
 :::
 
-+++
++++ {"tags": ["remove-cell"]}
 
 #### Part 2: Interaction-Free Measurement
 
@@ -263,7 +263,7 @@ If done properly, you should see the signal increase each time the object is pla
 Each time the object is placed in the beam, the signal in channel B increases.  This is an "interaction-free" measurement.
 :::
 
-+++
++++ {"tags": ["remove-cell"]}
 
 ## Aim 5: Single-Photon Interference and NOON State Generation -- Hong Ou Mandel Effect
 

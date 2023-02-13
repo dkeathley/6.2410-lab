@@ -50,7 +50,7 @@ else:
 During handling of the above exception, another exception occurred:
 
 [0;31mException[0m                                 Traceback (most recent call last)
-[0;32m/tmp/ipykernel_204584/1465159270.py[0m in [0;36m<cell line: 7>[0;34m()[0m
+[0;32m/tmp/ipykernel_363545/1465159270.py[0m in [0;36m<cell line: 7>[0;34m()[0m
 [1;32m      5[0m [0;34m[0m[0m
 [1;32m      6[0m [0;31m# Create the control instance[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 7[0;31m [0mvna[0m [0;34m=[0m [0mlibreVNA[0m[0;34m([0m[0;34m'localhost'[0m[0;34m,[0m [0;36m19542[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m

@@ -127,18 +127,17 @@ Given the short duration of the histogram peak in time, we can use it to measure
  3. Using the target block with cross-hairs, align the beam to a separate point at the location you will place a first 45 degree mirror as shown in {numref}`fig-t3e1-lab-speed-of-light-setup`.  After alignment, place the mirror.  
  4. Repeat step (2) at the location of the second 45 degree mirror.
  5. Now add in a second beamsplitter for combining the two paths. 
+ 6. We now need to make sure the two paths are perfectly overlapped.  To do this we need to adjust the beams so that they are overlapped at the beamsplitter *and* at some distant point. Place a card behind the beamsplitter on the quantenkoffer display panel, or just use the display panel surface.  Use the second 45 deg mirror, align the two red beams so they are overlapped (see {numref}`fig-t3e1-lab-sol-near-alignment`)
+ 7. Remove the periscope and project the red beams on a distant target (e.g. a white panel or wall).  Now use the second beamsplitter to align the two beams so they overlap (see {numref}`fig-t3e1-lab-sol-far-alignment`). 
+ 8. Repeat (6) and (7) until no adjustement is needed.
+ 9. In this final part, we now go back to observing the histogram. In the coincidence histogram, you should now see two peaks.  If not, or if one is faint, you can fine adjust the mirror and beamsplitter from (6) and (7) to achieve a balanced two-peak structure (however, this is not strictly needed for this measurement).  10. Using the cursors in the histogram view, determine the temporal spacing of the two peaks and record this value along with the histogram trace.
+ 
  
 :::{figure-md} fig-t3e1-lab-speed-of-light-setup
 <img src="FIGURES/T3E1-LAB-entanglement-interference/aim-2-speed-of-light-setup.jpg" alt="QK Speed of Light" class="bg-primary mb-1" width="800px">
 
 An example speed of light test setup.  Path A has been split into two paths.  The lower path takes a longer distance before recombining at the beamsplitter and being directed to the detector.   
 :::
-
-We now need to make sure the two paths are perfectly overlapped.  To do this we need to adjust the beams so that they are overlapped at the beamsplitter *and* at some distant point.  
-
- 6. Place a card behind the beamsplitter on the quantenkoffer display panel, or just use the display panel surface.  Use the second 45 deg mirror, align the two red beams so they are overlapped (see {numref}`fig-t3e1-lab-sol-near-alignment`)
- 7. Remove the periscope and project the red beams on a distant target (e.g. a white panel or wall).  Now use the second beamsplitter to align the two beams so they overlap (see {numref}`fig-t3e1-lab-sol-far-alignment`). 
- 8. Repeat (6) and (7) until no adjustement is needed.
  
 :::{figure-md} fig-t3e1-lab-sol-near-alignment
 <img src="FIGURES/T3E1-LAB-entanglement-interference/aim-2-speed-of-light-near-alignment.jpg" alt="QK Speed of Light" class="bg-primary mb-1" width="800px">
@@ -152,9 +151,6 @@ Near-field alignment.
 Far-field alignment.
 :::
 
-In this final part, we now go back to observing the histogram.
-
- 9. In the coincidence histogram, you should now see two peaks.  If not, or if one is faint, you can fine adjust the mirror and beamsplitter from (6) and (7) to achieve a balanced two-peak structure (however, this is not strictly needed for this measurement).  10. Using the cursors in the histogram view, determine the temporal spacing of the two peaks and record this value along with the histogram trace.
  
 **AI** Verify that the delay measurement you made makes sense (you will need to make some distance measurements on the board for this).  
 
@@ -168,10 +164,9 @@ In this lab we will use the quantenkoffer to explore the nature of the polarizat
 
 ### Instructions
 
- 1. Watch the following video related to the concepts we will explore in this part, and for a description of the general setup.  
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/126FD05vltU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+ 1. Watch the video above related to the concepts we will explore in this part, and for a description of the general setup.  
  2. Optimize the conicidence count in each arm without any elements on the board as in Aim 0 if needed (e.g. coincidence count lower than 10K counts per second).
  3. Place a polarizer block in each path.
  4. Set up a polar plot dialog on the display panel in one of the quadrants (make sure you leave the three-trace scan for detectors $A$, coincidences, and $B$).  
@@ -180,16 +175,15 @@ In this lab we will use the quantenkoffer to explore the nature of the polarizat
  7. **AIs** Describe the shape of the polar plot you see.  Record several polar plots for two or three discrete values of the polarizer in $A$.  Explain why you see what you see and how it indicates polarization entanglement of the source.  What happens to the coincidence trace when you rotate the polarizer in $A$ manually?  If you switch the polar plot to track the photon number in $B$ what is the shape?  Explain why you observe these two patterns and what it means about the source.
  8. Now tap a source periscope to bring up the source controls.
  9. Adjust the initial source half waveplate to be in the (H)orizontal position (see {numref}`fig-t3e1-lab-entanglement-HWP-control` for the half waveplate control selection).  This causes only vertical photon pairs to be generated in the SPDC source: $\ket{V}_a\ket{V}_b$.  
+ 10. **AIs** Repeat step 7 for this source configuration.
+ 11. **AIs** Adjust the source half waveplate to (V)ertical and repeat (10).  What is the state of the output photons now?  
+ 12. **AI** Explain your results in steps (10) and (11) using the analysis you performed for the prelab and in the context of polarization entanglement.  
  
 :::{figure-md} fig-t3e1-lab-entanglement-HWP-control
 <img src="FIGURES/T3E1-LAB-entanglement-interference/aim-3-entanglement-source-dialog.jpg" alt="QK HWP Angle Adjust" class="bg-primary mb-1" width="800px">
 
 The HWP control is circled in the source control dialog.  Use this to set the polarization angle of the source.
 :::
- 
- 10. **AIs** Repeat step 7 for this source configuration.
- 11. **AIs** Adjust the source half waveplate to (V)ertical and repeat (10).  What is the state of the output photons now?  
- 12. **AI** Explain your results in steps (10) and (11) using the analysis you performed for the prelab and in the context of polarization entanglement.  
 
 +++
 

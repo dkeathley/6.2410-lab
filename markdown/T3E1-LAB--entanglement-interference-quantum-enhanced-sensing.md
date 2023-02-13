@@ -59,7 +59,7 @@ Throughout the labs you will be expected to keep notes.  This is important for b
 
 +++
 
-## Aim 0: Introduction to the Quantenkoffer (Day 1)
+## Aim 1: Introduction to the Quantenkoffer (Day 1)
 
 In this lab you will be using the [Quantenkoffer](https://qutools.com/quantenkoffer_science-kit/).  This instrument will allow us to explore the properties of single photons and pairs of entangled photons. 
 
@@ -67,7 +67,7 @@ Before the lab, we have already introduced you to the system and guided you thro
 
 +++
 
-## Aim 1: Understand SPDC generation of entangled photon pairs (Day 1)
+## Aim 2: Understand SPDC generation of entangled photon pairs (Day 1)
 
 In this exercise we will explore the spontaneous parametric down-conversion (SPDC) source of the Quantenkoffer.
 
@@ -114,7 +114,7 @@ What we have been doing is ensuring that we have selected the correct locations 
 
 +++
 
-## Aim 2: Understanding Coincidence Detection -- Speed of Light Measurement
+## Aim 3: Understanding Coincidence Detection -- Speed of Light Measurement
 
 Given the short duration of the histogram peak in time, we can use it to measure the speed of light.  We can do this by splitting off some photons in one arm so that they travel a longer distance, meaning that some pairs see a longer delay time than the others.  This leads to two histogram peaks.    
 

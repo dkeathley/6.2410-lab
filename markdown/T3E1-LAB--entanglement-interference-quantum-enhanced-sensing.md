@@ -160,7 +160,7 @@ In this final part, we now go back to observing the histogram.
 
 +++
 
-## Aim 3: Demonstration of Polarization Entanglement
+## Aim 3: Demonstration of Polarization Entanglement (Day 1)
 
 +++
 

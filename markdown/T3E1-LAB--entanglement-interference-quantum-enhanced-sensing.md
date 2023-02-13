@@ -41,7 +41,7 @@ $$\newcommand{\fhat}[0]{\hat{f}}$$
 
 +++
 
-This lab will: (1) explore the fundamental properties of quantum particles using quantum optics; (2) explore the interactions of quantum particles through interference; and (3) demonstrate how these interactions can be exploited to engineer devices for quantum-enhanced sensing. 
+This lab will: (1) explore the fundamental properties of quantum particles using quantum optics; (2) explore the interactions of quantum particles through interference; and (3) demonstrate how these interactions can be exploited to engineer devices for quantum-enhanced sensing. In particular we will show how quantum states of light can be engineered to provide improved detection of changes in displacement (for example small physical movements of one object relative to another). 
 
 Specific aims are:
 
@@ -59,7 +59,7 @@ Specific aims are:
 
 In this lab you will be using the [Quantenkoffer](https://qutools.com/quantenkoffer_science-kit/).  This instrument will allow us to explore the properties of single- and entangled photons. 
 
-Before the lab, please familiarize yourself with the online materials.  We will also introduce specific materials throughout each of the aims below, but it is best if you familiarize yourself with the equipment ahead of time.
+Before the lab, we have already introduced you to the system and guided you through the basics of the interface and entangled photon source.  You should also familiarize yourself with the online materials.  
 
 +++
 
@@ -79,7 +79,7 @@ The source is shown in {numref}`fig-t3e1-lab-spdc-source`.   A useful animation 
 A schematic view of the Quantenkoffer's SPDC source.
 :::
 
-Before the lab, please first watch this video demonstration of the source.
+For more information about the source, please watch this video demonstration.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/VNoJ-0_c6c8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -90,20 +90,25 @@ Before the lab, please first watch this video demonstration of the source.
 In the followign steps you will learn about the Quantenkoffer SPDC source through the detection of coincidence events.
 
  1. After turning the quantenkoffer on, place a periscope on each source port at the left side.  Thes bring up the underlying sources to the surface.
- 2. Turn the red HeNe alignment source to full power.  You should now see a red light coming from each arm. This will be used for pre-alignment as it is following almost the same path as the single photon sources which are too weak for your eyes to detect.
- 3. Now place a periscope on the two detector ports.  These send the light down to the single-photon detectors housed under the board. 
+ 2. Now place a periscope on the two detector ports.  These send the light down to the single-photon detectors housed under the board. 
  4. Tap a source perisocope on the left to activate the source view on the control pad.  Adjust the mirrors A1, A2, and B1 and B2 to optimize the count rates on both detectors.
- 5. Now, focusing on coincidence events (A and B), adjust the same mirrors to optimize coincidence counts.  You may note that this results in slightly less  than optimum total counts.  Tha is OK.  What we are doing is ensurin that we optimize for selection of entangled photon pairs for later experiments.
+ 5. Now, focusing on coincidence events (A and B), adjust the same mirrors to optimize coincidence counts.  This might result in slightly less  than optimum total counts.  Tha is OK.  What we are doing is ensuring that we optimize for selection of entangled photon pairs for later experiments.
  
 Once you have completed these steps, your setup should look like that in {numref}`fig-t3e1-lab-spdc-coincidence-setup`.  Typical values might be $3\times10^5$ total counts in A and B, with $1.5\times10^4$ coincidence counts.  You should not proceed until you get at least $1\times10^4$ coincidence counts.  
  
 :::{figure-md} fig-t3e1-lab-spdc-coincidence-setup
 <img src="FIGURES/T3E1-LAB-entanglement-interference/aim1-spdc-coincidence-setup.jpg" alt="QK SPDC Coincidences" class="bg-primary mb-1" width="800px">
 
-What your setup should look like for coincidence detection of the SPDC photons.  Note that here there are between 250K to 300K single electron events in each arm with 14K coincidence events.  In the histogram view, you should see a strong peak near 0 seconds.
+What your setup should look like for coincidence detection of the SPDC photons.  Note that there are between 250K to 300K single electron events in each arm with 14K coincidence events in the image.  In the histogram view, you should see a strong peak near 0 seconds.  This value can be tuned with the APD delay settings.
 :::
 
 What we have been doing is ensuring that we have selected the correct locations of the output cone angles from the SPDC crystal that correspond to photon pair locations.  There are many options for optimizing the counts in either detector A or B from either cone of the SPDC output, but only two relative locations will give truly entangled photon pairs.
+
+Record your count rates and coincidence counts.  What is the ratio? Think through and discuss why the experimental coincidence count rates are lower than the single counts on either detector alone, and how this ratio might be improved through engineering.  
+
++++
+
+## Aim 4: Understanding Coincidence Detection -- Speed of Light Measurement
 
 +++
 
@@ -194,10 +199,6 @@ If done properly, you should see the signal increase each time the object is pla
 
 Each time the object is placed in the beam, the signal in channel B increases.  This is an "interaction-free" measurement.
 :::
-
-+++
-
-## Aim 4: Understanding Coincidence Detection -- Speed of Light Measurement
 
 +++
 

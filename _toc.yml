@@ -21,6 +21,7 @@ parts:
   - caption: T2E1 -- Quantum Information and Quantum Key Distribution
     chapters:
     - file: T2E1-TEXT-HBT.ipynb
+    - file: T2E1-LAB-HBT.ipynb
 #    - file: T2E1-TEXT-Intro-to-SPDC-and-HBT.ipynb
 #    - file: T2E1-LAB-Single-photon-and-HBT.ipynb
 #    - file: T2E1-TEXT-QKD-simulation.ipynb

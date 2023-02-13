@@ -199,7 +199,7 @@ In this ecxercise we will build an interferometer to explore single-photon inter
 
 Before the lab, watch the following video related to the concepts we will explore in this part.  
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4d6d8BB7_n0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/4d6d8BB7_n0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>--~>
 
 +++ {"tags": ["remove-cell"]}
 

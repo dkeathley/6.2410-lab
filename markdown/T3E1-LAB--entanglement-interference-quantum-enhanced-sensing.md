@@ -188,45 +188,43 @@ In this exercise we will use the quantenkoffer to explore the nature of the pola
 The HWP control is circled in the source control dialog.  Use this to set the polarization angle of the source.
 :::
 
-+++ {"tags": ["remove-cell"]}
++++ {"tags": []}
 
-## Aim 3: Single-Photon Interference
+## Aim 4: Single-Photon Interference (Day 2)
 
-+++ {"tags": ["remove-cell"]}
++++ {"tags": []}
 
 In this ecxercise we will build an interferometer to explore single-photon interference.  We will explore the coherence time of the single photons as well as the concept of interaction free measurement made possible through the wave-particle duality.
 
-+++ {"tags": ["remove-cell"]}
++++ {"tags": []}
 
-### Prelab
-
-Before the lab, watch the following video related to the concepts we will explore in this part.  
+Before the lab, work through the prelab materials and watch the following video related to the concepts we will explore in this part.  
 
 <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/4d6d8BB7_n0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>--~>
 
-+++ {"tags": ["remove-cell"]}
++++ {"tags": []}
 
 ### Lab Exercise
 
-+++ {"tags": ["remove-cell"]}
++++ {"tags": []}
 
 #### Part 1: Single-Photon Interference
 
-1. Construct a [Michelson interferometer](https://en.wikipedia.org/wiki/Michelson_interferometer) on the quantenkoffer.  There's technically not a fixed way to do this, but an example configuration is shown in {numref}`fig-t3e1-lab-michelson-setup`.  The important thing is that we need a motorized wedge in each arm for delay control of each arm. For alignment purposes, use the following procedure.
+**Step 1** Construct a [Michelson interferometer](https://en.wikipedia.org/wiki/Michelson_interferometer) on the quantenkoffer.  There's technically not a fixed way to do this, but an example configuration is shown in {numref}`fig-t3e1-lab-michelson-setup`.  The important thing is that we need a motorized wedge in each arm for delay control of each arm. For alignment purposes, use the following procedure.
  
-     - Turn the red reference laser on to full power
-     - Direct the beam from one port to a beamsplitter using a 90 degree mirror
-     - Place a wedge just after the transmitted and reflected arm
-     - Using the alignment target, make sure the transmitted beam is aligned to the target with the 90 degree mirror
-     - Now do the same on the reflected path using the beamsplitter
-     - Place a flat mirror on each arm
-     - Looking at the output of the beamsplitter, you should see two beams.  Make sure both ar aligned to the target just after the beamsplitter
-     - Now let the beam travel to a flat surface further away (e.g. the wall or a board) -- you should see two dots
-     - Overlap the two dots using a slight adjustment of the beamsplitter -- you will notice interference flickering when they overlap
-     - Now direct the beam toward a detector periscope, making sure it is aligned to the target as you go
-     - Optimize the coupling to the detector for the alignment laser
-     - Turn the alignment laser off and repeat this step for the single-photon source
-     - Check that both arms are well aligned, tweaking the end mirror of each arm if necessary, by blocking one at a time and looking at the detector response
+ 1. Turn the red reference laser on to full power
+ 2. Direct the beam from one port to a beamsplitter using a 45 degree mirror
+ 3. Place a wedge just after the transmitted and reflected arm
+ 4. Using the alignment target, make sure the transmitted beam is aligned to the target with the 90 degree mirror
+ 5. Now do the same on the reflected path using the beamsplitter
+ 6. Place a flat mirror on each arm
+ 7. Looking at the output of the beamsplitter, you should see two beams.  Make sure both ar aligned to the target just after the beamsplitter.  If not, use the flat mirrors to align both beams to the target just after the beamsplitter.
+ 8. Now let the beams both travel to a flat surface further away (e.g. the wall or a board) -- you might see two dots
+ 9. Overlap the two dots using a slight adjustment of the beamsplitter -- you will notice interference flickering when they overlap
+ 10. Now direct the beam toward a detector periscope, making sure it is aligned to the target as you go
+ 11. Optimize the coupling to the detector for the alignment laser
+ 12. Turn the alignment laser off and repeat this step for the single-photon source
+ 13. Check that both arms are well aligned, tweaking the end mirror of each arm if necessary, by blocking one at a time and looking at the detector response
  
 :::{figure-md} fig-t3e1-lab-michelson-setup
 <img src="FIGURES/T3E1-LAB-entanglement-interference/aim-3-michelson-setup.jpg" alt="QK Michelson Setup" class="bg-primary mb-1" width="800px">
@@ -234,13 +232,14 @@ Before the lab, watch the following video related to the concepts we will explor
 The configuration for a Michelson interferometer that we will use to explore single-photon interference in this lab. 
 :::
 
- 2. Look for single-photon interference
+**Step 2** Look for single-photon interference
  
-    - Scan throuh the wedge postions on both arms looking for interference at the detector
-    - when found, note the position near the interference on the wedges
-    - Choose a wedge to oscillate, and move it around the interference region
-    - When found, your output should look like that shown in {numref}`fig-t3e1-lab-interference-output`
-    - From this measurement, can you comment on the coherence time of the photons?  How does the interference relate to coherence time?  Explain how you determined a rough estimate of the coherence time.  
+1. Scan throuh the wedge postions on both arms looking for interference at the detector
+2. when found, note the position near the interference on the wedges
+3. Choose a wedge to oscillate, and move it around the interference region
+4. When found, your output should look like that shown in {numref}`fig-t3e1-lab-interference-output`
+
+**AIs** (1) From this measurement, can you comment on the coherence time of the photons?   (2) Explain how the interference relate to coherence time.  (3) Provide a rough estimate of the coherence time. (4) For comparison, record interference of the adjustment laser (to do this, you can attentuate the light using the polarizer elements). Comment on the difference.
     
     
 :::{figure-md} fig-t3e1-lab-interference-output
@@ -249,7 +248,7 @@ The configuration for a Michelson interferometer that we will use to explore sin
 Scanning through delay position with a wedge to see single-photon interference at an output port.  
 :::
 
-+++ {"tags": ["remove-cell"]}
++++ {"tags": []}
 
 #### Part 2: Interaction-Free Measurement
 
@@ -258,7 +257,9 @@ Now we will use the interferometer to demonstrate the concept of [interaction-fr
  1. Use the spinning control knob to jog the wedge to a position such that the interferometer is on a null.
  2. Now take an opaque object and slide it in and out of one path of the interferometer.
  
-If done properly, you should see the signal increase each time the object is placed within the beam as shown in {numref}`fig-t3e1-lab-michelson-IFM`. 
+If done properly, you should see the signal increase each time the object is placed within the beam as shown in {numref}`fig-t3e1-lab-michelson-IFM`.   
+
+**AI** Record the relative count rates for each case (object, no object) and compare to your pre-lab calculations.  Is the effect as pronounced as what you estimated? 
 
 :::{figure-md} fig-t3e1-lab-michelson-IFM
 <img src="FIGURES/T3E1-LAB-entanglement-interference/aim-3-single-photon-interference-IFM.jpg" alt="QK Michelson Setup" class="bg-primary mb-1" width="800px">
@@ -274,6 +275,6 @@ Each time the object is placed in the beam, the signal in channel B increases.  
 
 ## **BONUS** Aim 6: Quantum-Enhanced Measurement with a NOON State Interferometer
 
-+++
++++ {"tags": ["remove-cell"]}
 
 <iframe src="https://drive.google.com/file/d/1DRJjQdnbupAooSxLQuY_es3w9Idbgdeg/preview" width="640" height="480" allow="autoplay"></iframe>

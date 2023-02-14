@@ -137,19 +137,19 @@ Given the short duration of the coincidence histogram peak in time, we can use i
  11. Using the cursors in the histogram view, determine the temporal spacing of the two peaks and record this value along with the histogram trace.
  
 :::{figure-md} fig-t3e1-lab-speed-of-light-setup
-<img src="FIGURES/T3E1-LAB-entanglement-interference/aim-2-speed-of-light-setup.jpg" alt="QK Speed of Light" class="bg-primary mb-1" width="800px">
+<img src="FIGURES/T3E1-LAB-entanglement-interference/aim-2-speed-of-light-setup.jpg" alt="QK Speed of Light" class="bg-primary mb-1" width="600px">
 
 An example speed of light test setup.  Path A has been split into two paths.  The lower path takes a longer distance before recombining at the beamsplitter and being directed to the detector.   
 :::
  
 :::{figure-md} fig-t3e1-lab-sol-near-alignment
-<img src="FIGURES/T3E1-LAB-entanglement-interference/aim-2-speed-of-light-near-alignment.jpg" alt="QK Speed of Light" class="bg-primary mb-1" width="800px">
+<img src="FIGURES/T3E1-LAB-entanglement-interference/aim-2-speed-of-light-near-alignment.jpg" alt="QK Speed of Light" class="bg-primary mb-1" width="500px">
 
 Near-field alignment.  If you see two distinct points, use the second 45 degree mirror to overlap them.
 :::
 
 :::{figure-md} fig-t3e1-lab-sol-far-alignment
-<img src="FIGURES/T3E1-LAB-entanglement-interference/aim-2-speed-of-light-far-alignment.jpg" alt="QK Speed of Light" class="bg-primary mb-1" width="800px">
+<img src="FIGURES/T3E1-LAB-entanglement-interference/aim-2-speed-of-light-far-alignment.jpg" alt="QK Speed of Light" class="bg-primary mb-1" width="500px">
 
 Far-field alignment.  You will see two points that you will need to overlap with the second beamsplitter adjustment.
 :::
@@ -183,7 +183,7 @@ In this exercise we will use the quantenkoffer to explore the nature of the pola
  12. **AI** Explain your results in steps (10) and (11) using the analysis you performed for the prelab and in the context of polarization entanglement.  
  
 :::{figure-md} fig-t3e1-lab-entanglement-HWP-control
-<img src="FIGURES/T3E1-LAB-entanglement-interference/aim-3-entanglement-source-dialog.jpg" alt="QK HWP Angle Adjust" class="bg-primary mb-1" width="800px">
+<img src="FIGURES/T3E1-LAB-entanglement-interference/aim-3-entanglement-source-dialog.jpg" alt="QK HWP Angle Adjust" class="bg-primary mb-1" width="500px">
 
 The HWP control is circled in the source control dialog.  Use this to set the polarization angle of the source.
 :::
@@ -200,7 +200,7 @@ In this ecxercise we will build an interferometer to explore single-photon inter
 
 Before the lab, work through the prelab materials and watch the following video related to the concepts we will explore in this part.  
 
-<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/4d6d8BB7_n0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>--~>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4d6d8BB7_n0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 +++ {"tags": []}
 
@@ -243,7 +243,7 @@ The configuration for a Michelson interferometer that we will use to explore sin
     
     
 :::{figure-md} fig-t3e1-lab-interference-output
-<img src="FIGURES/T3E1-LAB-entanglement-interference/aim-3-single-photon-interference-scan.jpg" alt="QK Michelson Setup" class="bg-primary mb-1" width="800px">
+<img src="FIGURES/T3E1-LAB-entanglement-interference/aim-3-single-photon-interference-scan.jpg" alt="QK Michelson Setup" class="bg-primary mb-1" width="600px">
 
 Scanning through delay position with a wedge to see single-photon interference at an output port.  
 :::
@@ -262,7 +262,7 @@ If done properly, you should see the signal increase each time the object is pla
 **AI** Record the relative count rates for each case (object, no object) and compare to your pre-lab calculations.  Is the effect as pronounced as what you estimated? 
 
 :::{figure-md} fig-t3e1-lab-michelson-IFM
-<img src="FIGURES/T3E1-LAB-entanglement-interference/aim-3-single-photon-interference-IFM.jpg" alt="QK Michelson Setup" class="bg-primary mb-1" width="800px">
+<img src="FIGURES/T3E1-LAB-entanglement-interference/aim-3-single-photon-interference-IFM.jpg" alt="QK Michelson Setup" class="bg-primary mb-1" width="600px">
 
 Each time the object is placed in the beam, the signal in channel B increases.  This is an "interaction-free" measurement.
 :::

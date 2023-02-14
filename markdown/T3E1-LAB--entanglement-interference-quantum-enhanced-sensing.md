@@ -114,7 +114,7 @@ What we have been doing is ensuring that we have selected the correct locations 
 
 +++
 
-## Aim 3: Understanding Coincidence Detection -- Speed of Light Measurement
+## Aim 3: Understanding Coincidence Detection -- Speed of Light Measurement (Day 1)
 
 The purpose of this aim is to think more critically about the histogram and how it is being compiled.  To do this, we will put it to use to measure the speed of light.  In terms of experimental capabilities, you will learn how to align two beams such that they are perfectly overlapped in space after a beam-combiner (i.e. along the exact same line).  We will use this skill a lot as we move forward when aligning interferometers.  
 

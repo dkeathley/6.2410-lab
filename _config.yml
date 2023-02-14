@@ -31,8 +31,8 @@ only_build_toc_files: true
   
 # Information about where the book exists on the web
 repository:
-  url                       : git@github.mit.edu:pdkeat2/6.2410-lab.git  # Online location of your book
-  branch                    : master  # Which branch of the repository should be used when creating links (optional)
+  url                       : https://github.com/dkeathley/S23-6.2410-lab  # Online location of your book
+  branch                    : main  # Which branch of the repository should be used when creating links (optional)
 
 sphinx:
   config:
@@ -58,5 +58,5 @@ sphinx:
   
 launch_buttons:
   binderhub_url: "https://mybinder.org"  # The URL for your BinderHub (e.g., https://mybinder.org)
-  #colab_url: "https://colab.research.google.com"
+  colab_url: "https://colab.research.google.com"
  

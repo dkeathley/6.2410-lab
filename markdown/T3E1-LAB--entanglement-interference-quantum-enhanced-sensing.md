@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.2
+    jupytext_version: 1.13.8
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -63,7 +63,7 @@ Throughout the labs you will be expected to keep notes.  This is important for b
 
 In this lab you will be using the [Quantenkoffer](https://qutools.com/quantenkoffer_science-kit/).  This instrument will allow us to explore the properties of single photons and pairs of entangled photons. 
 
-Before the lab, we have already introduced you to the system and guided you through the basics of the interface and entangled photon source.   Take 10-15 minutes to explore the instrument a bit.  Look through the menus, the differnt options, the different bricks available, etc.  Ask your instructor about things you are confused about.  There is also a manual along with the online materials you can use.  
+Before the lab, we have already introduced you to the system and guided you through the basics of the interface and entangled photon source.   Take 10-15 minutes to explore the instrument a bit.  Look through the menus, the differnt options, the different bricks available, etc.  Ask your instructor about things you are confused about.  There is also a manual along with the online materials you can use.
 
 +++
 
@@ -110,7 +110,7 @@ What we have been doing is ensuring that we have selected the correct locations 
 
 **AI** Record your count rates and coincidence counts.  What is the ratio? Think through and discuss why the experimental coincidence count rates are lower than the single counts on either detector alone, and how this ratio might be improved through engineering.
 
-**AI** What is the duration of the coincidence peak in your histogram window?  Do you think this duration is due to the true coincidence timing window of the photons, or to technical limitations (e.g. detector rise/fall time, or other systematic causes)?  
+**AI** What is the duration of the coincidence peak in your histogram window?  Do you think this duration is due to the true coincidence timing window of the photons, or to technical limitations (e.g. detector rise/fall time, or other systematic causes)?
 
 +++
 
@@ -155,7 +155,7 @@ Far-field alignment.  You will see two points that you will need to overlap with
 :::
 
  
-**AI** Record all information you measured, and verify that the delay measurement you made makes sense (you will need to make some distance measurements on the board for this).  
+**AI** Record all information you measured, and verify that the delay measurement you made makes sense (you will need to make some distance measurements on the board for this).
 
 +++ {"tags": []}
 

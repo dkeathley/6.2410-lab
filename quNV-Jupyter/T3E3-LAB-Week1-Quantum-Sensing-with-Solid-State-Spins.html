@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gtwo": ["g^{(2)}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -636,10 +634,10 @@ const thebe_selector_output = ".output, .cell_output"
 <h4>iv) Generate 2D plots of the cavity reflection coefficient<a class="headerlink" href="#iv-generate-2d-plots-of-the-cavity-reflection-coefficient" title="Permalink to this headline">¶</a></h4>
 <p>Now, use the effective coupling strength <span class="math notranslate nohighlight">\(g\)</span> you computed in the Prelab, generate 2D plots of the following, with the <span class="math notranslate nohighlight">\(x\)</span>-axis being magnetic field strength and <span class="math notranslate nohighlight">\(y\)</span>-axis being frequency:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/In-phase_and_quadrature_components">In-phase</a> component of <span class="math notranslate nohighlight">\(\gamma(\omega)\)</span></p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/In-phase_and_quadrature_components">Quadrature</a> component of <span class="math notranslate nohighlight">\(\gamma(\omega)\)</span></p></li>
-<li><p>Amplitude of <span class="math notranslate nohighlight">\(\gamma(\omega)\)</span></p></li>
-<li><p>Phase of <span class="math notranslate nohighlight">\(\gamma(\omega)\)</span></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/In-phase_and_quadrature_components">In-phase</a> component of <span class="math notranslate nohighlight">\(\Gamma(\omega)\)</span></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/In-phase_and_quadrature_components">Quadrature</a> component of <span class="math notranslate nohighlight">\(\Gamma(\omega)\)</span></p></li>
+<li><p>Amplitude of <span class="math notranslate nohighlight">\(\Gamma(\omega)\)</span></p></li>
+<li><p>Phase of <span class="math notranslate nohighlight">\(\Gamma(\omega)\)</span></p></li>
 </ul>
 <p>Select <span class="math notranslate nohighlight">\(\omega_c,\kappa_c,\kappa_{c1}\)</span> appropriately to ensure you can observe <a class="reference external" href="https://en.wikipedia.org/wiki/Avoided_crossing">avoided crossing</a> similar to what was observed by <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">Eisenach <em>et al.</em></a> (Figure 2).</p>
 <p>You may find using the Python module <code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code> helpful. By creating a widget with scroll bars, you may be able to freely change the parameters without manually typing in different values. Specifically, the <code class="docutils literal notranslate"><span class="pre">interact_manual</span></code> method (see documentation <a class="reference external" href="https://ipywidgets.readthedocs.io/en/stable/examples/Using%20Interact.html?highlight=interact_manual#interact_manual">here</a>).</p>

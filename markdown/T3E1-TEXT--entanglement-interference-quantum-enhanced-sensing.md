@@ -280,6 +280,14 @@ In this case **there would be no coincidence events** (that is, events that woul
 We want to emphasize here that we have taken a few liberties with the notation above.  The approach  used here works in estimating probabilities for the two cases discussed, assuming (1) that each photon pulse is long relative to the central frequency; (2) that the envelope shape and central frequency of each pulse is the same; and (3) that for the delayed case the photons are so far separated in time that there is no overlap between each photon pulse at the input of the beamsplitter. For these cases the states are either perfectly indistinguishible or distinguishable.  A more complete model would actually have to expand each input into the frequency domain and model the interference between each spectral component individually.  However this approach is much more involved.  In the end, both approaches result in the same predictions as discussed above.  
 ```
 
++++
+
+### Prelab 3 Questions
+
+ 1. What happens when the delay is not perfectly zero, but within the coherence time of the photons?  (Look for experimental measurements of HOM and explain in terms of the distinguishability of the states in this intermediate range of delays).  
+ 2. If the delay is fixed to $\tau = 0$, but the input photon states have variable polarization $\ket{\theta_a}\ket{\theta_b}$ what are the output states as a function of the two polarization angles?
+ 3. Would you expect the coincidence dip to go all the way to 0 in experiment?  Why or why not? 
+
 +++ {"id": "pWkSqRv049WB"}
 
 ## Quantum Enhanced Sensing with NOON States
@@ -641,7 +649,7 @@ display(system_set);
 
 +++ {"id": "WEqkDzKhWJM-"}
 
-### Prelab Questions
+### Prelab 4 Questions
 
   1. In practice, we find that imperfections in allignment photon detection prevent the achievement of improved sensitivity beyond what is possible with a classical interferometer.  To account for such imperfections, we can write the propability of coincidences more generally as $P(\varphi) = 
   \eta \big ( 1 - V \cos(N\varphi) \big )/2$ for an $N$ photon number NOON state.  Express the variance of the estimated phase for general $\eta$ and $V$.    

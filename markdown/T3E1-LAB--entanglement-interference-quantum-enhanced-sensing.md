@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.13.8
+    jupytext_version: 1.14.2
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -51,7 +51,8 @@ Specific aims are:
  4. Demonstrate polarization entanglement between two photons
  5. Explore interference of a photon with itself
  6. Explore the interference of two single photons: the Hong-Ou-Mandel effect
- 7. **BONUS:** Develop a NOON state interferometer demonstrating supersensitivty to path length changes
+
+**BONUS/Project Idea** Develop a NOON state interferometer demonstrating supersensitivty to path length changes.  
  
 ```{note} 
 Throughout the labs you will be expected to keep notes.  This is important for both collecting, analyzing, and gathering your own thoughts about observations and data collected.  You will use these notes to develop your final writeup.  You can work together on their collection and in answering questions.  All questions and action items to be addressed in your writeups are marked with **AI** below.  
@@ -159,7 +160,7 @@ Far-field alignment.  You will see two points that you will need to overlap with
 
 +++ {"tags": []}
 
-## Aim 4: Demonstration of Polarization Entanglement (Day 1)
+## Aim 4: Demonstration of Polarization Entanglement (Day 2)
 
 +++ {"tags": []}
 
@@ -181,6 +182,8 @@ In this exercise we will use the quantenkoffer to explore the nature of the pola
  10. **AIs** Repeat the action items in step 7 for this source configuration.
  11. **AIs** Adjust the source half waveplate to (V)ertical and repeat (10).  What is the state of the output photons now?  
  12. **AI** Explain your results in steps (10) and (11) using the analysis you performed for the prelab and in the context of polarization entanglement.  
+ 13. As a final step, add in two quarter waveplates -- on in path $A$ and one in path $B$.  Orient the waveplates to 45 degrees to generate circularly-polarized light.  Ensure your input state is $\ket{H}_a\ket{H}_b$ (vertically-polarized source).  
+ 14. **AIs** (1) Measure the single events in $B$ as a function of rotation of the polarizer in $B$.  (2) Now measure the coincidence coints as a function of rotation of the polarizer in $B$. (3) Check for any dependence on the orientation of the polarizer in $A$. (4) Despite the fact that the single events in $B$ match to that of the entangled case, do you see any sign of entanglement when looking at the coincidences?  Why or why not? (To explain your answer, work the probability of coincidences using the same method in the pre-lab, but now accounting for the input state $\ket{H}_a\ket{H}_b$ and accounting for the quarter waveplates in each arm. Note whether the state before the polarizers is factorizable or not.)  
  
 :::{figure-md} fig-t3e1-lab-entanglement-HWP-control
 <img src="FIGURES/T3E1-LAB-entanglement-interference/aim-3-entanglement-source-dialog.jpg" alt="QK HWP Angle Adjust" class="bg-primary mb-1" width="500px">
@@ -190,7 +193,7 @@ The HWP control is circled in the source control dialog.  Use this to set the po
 
 +++ {"tags": []}
 
-## Aim 5: Single-Photon Interference (Day 2)
+## Aim 5: Single-Photon Interference (Day 3)
 
 +++ {"tags": []}
 
@@ -273,7 +276,7 @@ Each time the object is placed in the beam, the signal in channel B increases.  
 
 +++ {"tags": ["remove-cell"]}
 
-## **BONUS** Aim 6: Quantum-Enhanced Measurement with a NOON State Interferometer
+## **BONUS/Project Idea** Quantum-Enhanced Measurement with a NOON State Interferometer
 
 +++ {"tags": ["remove-cell"]}
 

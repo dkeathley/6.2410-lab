@@ -182,7 +182,7 @@ In this exercise we will use the quantenkoffer to explore the nature of the pola
  10. **AIs** Repeat the action items in step 7 for this source configuration.
  11. **AIs** Adjust the source half waveplate to (V)ertical and repeat (10).  What is the state of the output photons now?  
  12. **AI** Explain your results in steps (10) and (11) using the analysis you performed for the prelab and in the context of polarization entanglement.  
- 13. As a final step, add in two quarter waveplates -- on in path $A$ and one in path $B$.  Orient the waveplates to 45 degrees to generate circularly-polarized light.  Ensure your input state is $\ket{H}_a\ket{H}_b$ (vertically-polarized source).  
+ 13. As a final step, add in two quarter waveplates -- on in path $A$ and one in path $B$.  Orient the waveplates to 45 degrees to generate circularly-polarized light.  Ensure your input state is still $\ket{H}_a\ket{H}_b$ (vertically-polarized source).  
  14. **AIs** (1) Measure the single events in $B$ as a function of rotation of the polarizer in $B$.  (2) Now measure the coincidence coints as a function of rotation of the polarizer in $B$. (3) Check for any dependence on the orientation of the polarizer in $A$. (4) Despite the fact that the single events in $B$ match to that of the entangled case, do you see any sign of entanglement when looking at the coincidences?  Why or why not? (To explain your answer, work the probability of coincidences using the same method in the pre-lab, but now accounting for the input state $\ket{H}_a\ket{H}_b$ and accounting for the quarter waveplates in each arm. Note whether the state before the polarizers is factorizable or not.)  
  
 :::{figure-md} fig-t3e1-lab-entanglement-HWP-control
@@ -272,7 +272,7 @@ Each time the object is placed in the beam, the signal in channel B increases.  
 
 +++ {"tags": ["remove-cell"]}
 
-## Aim 5: Single-Photon Interference and NOON State Generation -- Hong Ou Mandel Effect
+## Aim 5: Single-Photon Interference and NOON State Generation -- Hong Ou Mandel Effect (Day 4)
 
 +++ {"tags": ["remove-cell"]}
 

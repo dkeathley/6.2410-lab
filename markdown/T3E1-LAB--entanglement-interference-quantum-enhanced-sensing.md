@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.2
+    jupytext_version: 1.13.8
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -182,8 +182,11 @@ In this exercise we will use the quantenkoffer to explore the nature of the pola
  10. **AIs** Repeat the action items in step 7 for this source configuration.
  11. **AIs** Adjust the source half waveplate to (V)ertical and repeat (10).  What is the state of the output photons now?  
  12. **AI** Explain your results in steps (10) and (11) using the analysis you performed for the prelab and in the context of polarization entanglement.  
- 13. As a final step, add in two quarter waveplates -- on in path $A$ and one in path $B$.  Orient the waveplates to 45 degrees to generate circularly-polarized light.  Ensure your input state is still $\ket{H}_a\ket{H}_b$ (vertically-polarized source). Note that after $\ket{H}$ interacts with the quarter waveplate it's state transforms to $\frac{1}{\sqrt{2}}\lbrace j\ket{H} + \ket{V}\rbrace$ (to within a phase factor).  
- 14. **AIs** (1) Measure the single events in $B$ as a function of rotation of the polarizer in $B$.  (2) Now measure the coincidence coints as a function of rotation of the polarizer in $B$. (3) Check for any dependence on the orientation of the polarizer in $A$. (4) Despite the fact that the single events in $B$ match to that of the entangled case, do you see any sign of entanglement when looking at the coincidences?  Why or why not? (To explain your answer, work the probability of coincidences using the same method in the pre-lab, but now accounting for the input state $\ket{H}_a\ket{H}_b$ and accounting for the quarter waveplates in each arm. Note whether the state before the polarizers is factorizable or not.)  
+ 13. As a final step add in two half waveplates-- one in path $A$ and one in path $B$, but leave the source such that you only make the $\ket{H}_a\ket{H}_b$ state.  Orient the waveplates to 22.5 degrees.  This then creates equal amounts of $H$ and $V$ polarization -- but is there entanglement?  
+  14. **AIs** (1) Measure the single events in $B$ as a function of rotation of the polarizer in $B$.  (2) Now measure the coincidence coints as a function of rotation of the polarizer in $B$. (3) Check for any dependence on the orientation of the polarizer in $A$. (4) Do you see any sign of entanglement when looking at the coincidences?  Why or why not?  What do you see.  Explain what is going on. (To explain your answer, work the probability of coincidences using the same method in the pre-lab, but now accounting for the input state $\ket{H}_a\ket{H}_b$ and accounting for the half waveplates in each arm.)
+ 15. (Simulation).  Now simulate what would happen if you replaced the half waveplates with quarter waveplates -- one in path $A$ and one in path $B$.  Orient the waveplates to 45 degrees to generate circularly-polarized light.  Note that after $\ket{H}$ interacts with the quarter waveplate it's state transforms to $\frac{1}{\sqrt{2}}\lbrace j\ket{H} + \ket{V}\rbrace$ (to within a phase factor).  
+ 16. **AIs** (1) What would you see for the singles in  path $B$ as a function of rotation of the polarizer in $B$? (2) Whaat about the coincidence coints as a function of rotation of the polarizer in $B$? (3) Would you see any dependence on the orientation of the polarizer in $A$? (4) Despite the fact that the single events in $B$ match to that of the entangled case, is there entanglement?  Why or why not? (To explain your answer, work the probability of coincidences using the same method in the pre-lab, but now accounting for the input state $\ket{H}_a\ket{H}_b$ and accounting for the quarter waveplates in each arm. Note whether the state before the polarizers is factorizable or not.)  
+
  
 :::{figure-md} fig-t3e1-lab-entanglement-HWP-control
 <img src="FIGURES/T3E1-LAB-entanglement-interference/aim-3-entanglement-source-dialog.jpg" alt="QK HWP Angle Adjust" class="bg-primary mb-1" width="500px">

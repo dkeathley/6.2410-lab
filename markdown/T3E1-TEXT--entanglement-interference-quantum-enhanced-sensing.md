@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.2
+    jupytext_version: 1.13.8
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -158,7 +158,7 @@ which reduces to
 
 $$N_d =  \frac{1}{4} \bigg ( 1 + \alpha^2 + 2 \alpha \cos(\Delta\phi) \bigg )\mathrm{.}$$
 
-Let's consider two important cases: $\alpha = 1$ (opaque object), and $\alpha = 0$ (no object). For $\alpha = 1$ we have that the probability oscillates sinusoidally with the phase difference $\Delta\phi$.  We can control this with a wedge or the movement of one of the mirrors in the lab.  Here we considered perfectly coherent states, but in reality our states have decoherence, so this sinusoidal contrast will disappear outside of the coherence length of the photons -- we will measure this!
+Let's consider two important cases: $\alpha = 1$ (no object), and $\alpha = 0$ (opaque object). For $\alpha = 1$ we have that the probability oscillates sinusoidally with the phase difference $\Delta\phi$.  We can control this with a wedge or the movement of one of the mirrors in the lab.  Here we considered perfectly coherent states, but in reality our states have decoherence, so this sinusoidal contrast will disappear outside of the coherence length of the photons -- we will measure this!
 
 It also makes sense that when $\alpha = 0$ all interference goes away, and we are left with only 1/4 of the photons making it to the detector.  The other 1/4 go to arm $e$, and the other half are lost to the object. 
 

@@ -200,7 +200,7 @@ The HWP control is circled in the source control dialog.  Use this to set the po
 
 +++ {"tags": []}
 
-In this ecxercise we will build an interferometer to explore single-photon interference.  We will explore the coherence time of the single photons as well as the concept of interaction free measurement made possible through the wave-particle duality.
+In this ecxercise we will build an interferometer to perform single-photon interference.  We will use these measurements to: (1) better understand the properties of interference in the context of quantum states of light; (2) explore the spectral bandwidth of the photons; and (3) demonstrate the concept of interaction-free measurement made possible through the wave-particle duality.
 
 +++ {"tags": []}
 
@@ -245,8 +245,7 @@ The configuration for a Michelson interferometer that we will use to explore sin
 3. Choose a wedge to oscillate, and move it around the interference region
 4. When found, your output should look like that shown in {numref}`fig-t3e1-lab-interference-output`
 
-**AIs** (1) From this measurement, can you comment on the coherence time of the photons?   (2) Explain how the interference relate to coherence time.  (3) Provide a rough estimate of the coherence time. (4) For comparison, record interference of the adjustment laser (to do this, you can attentuate the light using the polarizer elements). Comment on the difference.
-    
+**AIs** (1) From this measurement, can you determine the frequency bandwidth of the photons? (Note this relates to the inverses of the time delay over which you observe interference). (2) Assuming a central wavelength of 810 nm, then what range of wavelengths do the photons contain based on the bandwidth you calculate?   
     
 :::{figure-md} fig-t3e1-lab-interference-output
 <img src="FIGURES/T3E1-LAB-entanglement-interference/aim-3-single-photon-interference-scan.jpg" alt="QK Michelson Setup" class="bg-primary mb-1" width="600px">

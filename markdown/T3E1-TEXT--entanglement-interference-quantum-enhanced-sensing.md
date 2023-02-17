@@ -87,7 +87,7 @@ $$P_\text{co} = \frac{1}{2} \Big | \bra{\theta_a}\bra{\theta_b} \big\lbrace \ket
 
 We leave it as an exercise to show that $P_\text{co} = \frac{1}{2} \cos^2(\theta_a - \theta_b)$.  
 
-Think about what this is saying for a bit.  No matter how far apart your detectors are, by setting the polarization in one arm, you instantly dictate the joint probability which also requires an event at the detector in the other arm and depends on its polarization axis.  This is clasically impossible, and can be verified quantitatively through the measurement of inequalities such as Bell's inequality.
+Think about what this is saying for a bit.  No matter how far apart your detectors are, by setting the polarization in one arm, you instantly dictate the joint probability which also requires an event at the detector in the other arm and depends on its polarization axis.  While correlations can also exist in classical systems, this specific correlation pattern cannot be explained classically.  It violates Bell's inequality indicating that the input state exhibits quantum entanglement.
 
 In the lab, we will perform this experiment so that you can experience entanglement for yourself.
 

@@ -54,6 +54,10 @@ sphinx:
           "ehat" : ["\\hat{e}"]
           "fdagger" : ["\\hat{f}^{\\dagger}"]
           "fhat" : ["\\hat{f}"]
+          "gdagger" : ["\\hat{g}^{\\dagger}"]
+          "ghat" : ["\\hat{g}"]
+          "hdagger" : ["\\hat{h}^{\\dagger}"]
+          "hhat" : ["\\hat{h}"]
           "gtwo" : ["g^{(2)}"]
   
 launch_buttons:

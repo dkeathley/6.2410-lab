@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.13.8
+    jupytext_version: 1.14.2
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -118,11 +118,17 @@ Consider the single-photon interferometer as shown in {numref}`fig-T3E1-single-p
 Interferference of a single photon in a Mach-Zender interferometer.  An optional absorbing object can be placed in one of the paths.
 :::
 
-For dealing with interference here and below, we will track the creation and annihilation operators through the system. For a refresher on how these work, see the [BASICS chapter on quantum optics](BASICS-quantum-optics-basics.html). 
+For dealing with interference here and below, we will track the annihilation operators through the system. For a refresher on how these work, see the [BASICS chapter on quantum optics](BASICS-quantum-optics-basics.html). 
 
-Our strategy is to develop a description of the output state using the creation and annhihilation operators of the input state going to $a$.  This then can be used to determine the number of output photons going to the detector for every input photon.  
+Our strategy is to develop a description of the annihilation operator of the output state using the annhihilation operators of the input states of the first beamsplitter.  This description can then be used to determine the number of output photons going to the detector based on the input states.  Note that for this problem we consider that only one input of the beasmplitter is excited by a single photon (denoted as $a$).  While a rigorous solution would have to account for all annihilation operators, including that of the vacuum state input to the first beamsplitter, the operators of the vacuum state inputs do not contribute to the average photon number at the detector (however they can contrubute to noise in the photon detection). **Since we are concerned with the photon number for the purposes of this discussion, we drop the operators associated with the vacuum input as a shorthand to simplify the problem.** It is emphasized that you would need to include all input operators in general, which is particularly important if you want to estimate photon number variance at each output.  
 
-Taking each path $b$ and $c$ indificually, we find that for path $b$ the annihilation operator going  into the second beamsplitter can be written as
+```{note}
+For a rigorous solution of the output operators of a Mach-Zender interferometer, see [](./T3E1-EXTRAS--rigorous-solution-MZI.ipynb).
+
+For an interseting discussion of how the vacuum state input contributes to photon fluctuations, and how these fluctuations can be reduced using squeezed light, see the discussion of homodyne detection with squeezed light in [](./T3E1-EXTRAS-interference-2-homodyne-detection.ipynb)
+```
+
+Taking each path $b$ and $c$ indificually, we find that for path $b$ the annihilation operator going  into the second beamsplitter, ignoring the annihilation operator of the empty port, can be written as
 
 $$\bhat = \alpha e^{i\phi_b} \ahat/\sqrt{2}$$
 
@@ -161,7 +167,7 @@ $$N_d =  \frac{1}{4} \bigg ( 1 + \alpha^2 + 2 \alpha \cos(\Delta\phi) \bigg )\ma
 Let's consider two important cases: $\alpha = 1$ (no object), and $\alpha = 0$ (opaque object). For $\alpha = 1$ we have that the probability oscillates sinusoidally with the phase difference $\Delta\phi$.  We can control this with a wedge or the movement of one of the mirrors in the lab.  
 
 ```{note}
-Here we have considered states containing only a single frequency, meaning htat interference would continue indefinitely with delay increasing delay.  However, in reality our states contain a distrubtion of frquencies and exhibit finite coherence times that limit the range of delays over which one sees this interference.  In experiment we will observe that the interference fringes only last over a few wavelengths of delay, largely due to the relatively large bandwidth of frquencies generated in the SPDC process.  
+Here we have considered states containing only a single frequency, meaning that interference would continue indefinitely with delay increasing delay.  However, in reality our states contain a distrubtion of frquencies and exhibit finite coherence times that limit the range of delays over which one sees this interference.  In experiment we will observe that the interference fringes only last over a few wavelengths of delay, largely due to the relatively large bandwidth of frquencies generated in the SPDC process.  
 ```
 
 It also makes sense that when $\alpha = 0$ all interference goes away, and we are left with only 1/4 of the photons making it to the detector.  The other 1/4 go to arm $e$, and the other half are lost to the object. 

@@ -18,6 +18,8 @@ parts:
     chapters:
     - file: T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.ipynb
     - file: T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.ipynb
+    - file: T3E1-EXTRAS--rigorous-solution-MZI.ipynb
+    - file: T3E1-EXTRAS-interference-2-homodyne-detection.ipynb
   - caption: T2E1 -- Quantum Information and Quantum Key Distribution
     chapters:
     - file: T2E1-TEXT-HBT.ipynb

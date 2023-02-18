@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.13.8
+    jupytext_version: 1.14.2
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -166,6 +166,7 @@ where $\hat{A}^{(1)} = \hat{A}^{(\theta)}(0)$, and $\hat{A}^{(2)} = \hat{A}^{(\t
 
 +++
 
+(basics:mean-and-standard-deviation)=
 ## Mean and Standard Deviation Observables
 
 A general concept of note is the determination of mean and standard deviation of an observable, such as photon number or field value.  As engineers, we are often just as concerned about noise and its reduction as we are about the signal itself.

@@ -497,14 +497,14 @@ title="Print to PDF"
 \[\hhat = \frac{\ehat - \fhat}{\sqrt{2}}\mathrm{.}\]</div>
 <p>After substituting everything in we get the final expression for <span class="math notranslate nohighlight">\(\ghat\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\ghat = e^{i\phi_2} e^{i\Delta\phi/2} \bigg \lbrace \ahat \cos(\Delta\phi/2  + i \bhat \sin(\Delta\phi/2) \bigg \rbrace \]</div>
+\[\ghat = e^{i\phi_2} e^{i\Delta\phi/2} \bigg \lbrace \ahat \cos(\Delta\phi/2)  + i \bhat \sin(\Delta\phi/2) \bigg \rbrace \]</div>
 <p>where <span class="math notranslate nohighlight">\(\Delta \phi = \phi_1 - \phi_2\)</span>, the phase difference between the two arms.</p>
 <p>Note that the number operator for <span class="math notranslate nohighlight">\(g\)</span> is then:</p>
 <div class="math notranslate nohighlight">
 \[\gdagger \ghat = \cos^2(\Delta \phi /2)\adagger\ahat + j\adagger\bhat \cos(\Delta\phi/2)\sin(\Delta\phi/2) - j\bdagger\ahat \cos(\Delta\phi/2)\sin(\Delta\phi/2) + \bdagger\bhat \sin^2(\Delta\phi/2)  \mathrm{.}\]</div>
 <p>Given our input state is <span class="math notranslate nohighlight">\(\ket{1}_a \ket{0}_b\)</span>, the photon number is then found by taking:</p>
 <div class="math notranslate nohighlight">
-\[N_g = \bra{0}_b \bra{1}_a \gdagger \ghat \ket{1}_a \ket{0}_b  = \frac{1}{2} ( 1 + \cos(\Delta\phi )\mathrm{.}\]</div>
+\[N_g = \bra{0}_b \bra{1}_a \gdagger \ghat \ket{1}_a \ket{0}_b  = \frac{1}{2} \lbrace 1 + \cos(\Delta\phi ) \rbrace \mathrm{.}\]</div>
 <p>Note that only the terms with <span class="math notranslate nohighlight">\(\adagger \ahat\)</span> have a non-zero contribution – this justifies our neglecting the vacuum-state inputs for calculation of the output photon number.</p>
 <p>However, it we emphasize that you must use this more complete treatment and account for the vacuum-state inputs to accurately predict the quantum noise in systems. For example, the standard deviation of the photon number depends on <span class="math notranslate nohighlight">\(\hat{N}^2\)</span> (see the note in <a class="reference internal" href="BASICS-quantum-optics-basics.html#basics-mean-and-standard-deviation"><span class="std std-ref">Mean and Standard Deviation Observables</span></a>), and the vacuum state inputs can contribute to the expectation <span class="math notranslate nohighlight">\(\left &lt; \hat{N}^2 \right &gt;\)</span>.   As a further example, to see the importance of the vacuum state input in interferometry, please see the use of squeezed vacuum to reduce quantum noise as described in <a class="reference internal" href="T3E1-EXTRAS-interference-2-homodyne-detection.html"><span class="doc std std-doc">EXTRAS – Homodyne Detection</span></a>.</p>
 </section>

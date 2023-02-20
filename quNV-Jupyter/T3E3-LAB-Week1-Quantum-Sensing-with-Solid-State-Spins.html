@@ -54,6 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Aim 3: Achieve strong coupling between NV centers and the microwave resonator" href="T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.html" />
     <link rel="prev" title="TEXT: Introduction to NV centers in diamond and cavity-based magnetometry" href="T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -189,6 +190,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    LAB - Quantum Sensing with Solid State Spins
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.html">
+   Aim 3: Achieve strong coupling between NV centers and the microwave resonator
   </a>
  </li>
 </ul>
@@ -696,9 +702,9 @@ title="Print to PDF"
 <section id="i-estimate-the-cavity-s-resonance-frequency">
 <h4>i) Estimate the cavity’s resonance frequency<a class="headerlink" href="#i-estimate-the-cavity-s-resonance-frequency" title="Permalink to this headline">#</a></h4>
 <p>There are two microwave resonators provided to you. Both of them should have identical geometries, except with slightly different surface qualities. Take one of them and measure its outer radius and length. Use the measured geometry parameters and estimate the cavity’s resonance frequency.</p>
-<p>Can you measure the resonance frequency via the VNA, whose bandwidth covers 100 kHz to 6 GHz?</p>
-<p>What would be the expected resonance frequency if you stack the two resonators on top of another, with their central holes as aligned as possible?</p>
-<p>Can you measure the combined stack’s resonance frequency via the VNA?</p>
+<p><u>Can you measure the resonance frequency via the VNA, whose bandwidth covers 100 kHz to 6 GHz?</u></p>
+<p><u>What would be the expected resonance frequency if you stack the two resonators on top of another, with their central holes as aligned as possible?<u/></p>
+<p><u>Can you measure the combined stack’s resonance frequency via the VNA?<u/></p>
 </section>
 <section id="ii-build-the-rf-circuitry-for-probing-the-cavity-s-resonance-frequency">
 <h4>ii) Build the RF circuitry for probing the cavity’s resonance frequency<a class="headerlink" href="#ii-build-the-rf-circuitry-for-probing-the-cavity-s-resonance-frequency" title="Permalink to this headline">#</a></h4>
@@ -714,8 +720,8 @@ title="Print to PDF"
 </figcaption>
 </figure>
 <p>Mount the loop coupler such that it is directly above the resonator. You should use the <a class="reference external" href="https://www.thorlabs.com/thorproduct.cfm?partnumber=RA90">right-angle clamp</a> to adjust the loop coupler position, as shown in the figure below.</p>
-<p>Open the libreVNA GUI and connect to the device. Make sure you are monitoring the “S21” window. Change the center frequency to what you estimated above for the stacked resonator. Change the span to 20 MHz. By adjusting the position of the loop coupler relative to the resonator, you should be able to observe the cavity resonance dip. Once you have done so, play around with the position of the loop coupler and observe how the cavity’s observed loaded <span class="math notranslate nohighlight">\(Q\)</span> and resonance frequency <span class="math notranslate nohighlight">\(\omega_c\)</span> change. Write down your observations and explanations to these changes as a function of position. In Aim 2, you will need to methodically measure the cavity resonance frequency and quality factor as a function of <span class="math notranslate nohighlight">\(z\)</span>.</p>
-<p>Try repeating the above procedure except now with a thick microscope glass slide in between the two resonators in the resonator stack. Is there a difference in the cavity response from before? Now switch to using a thin microscope glass slide. Any difference now?</p>
+<p>Open the libreVNA GUI and connect to the device. Make sure you are monitoring the “S21” window. Change the center frequency to what you estimated above for the stacked resonator. Change the span to 20 MHz. By adjusting the position of the loop coupler relative to the resonator, you should be able to observe the cavity resonance dip. Once you have done so, play around with the position of the loop coupler and observe how the cavity’s observed loaded <span class="math notranslate nohighlight">\(Q\)</span> and resonance frequency <span class="math notranslate nohighlight">\(\omega_c\)</span> change. <u>Write down your observations and explanations to these changes as a function of position.<u/> In Aim 2, you will need to methodically measure the cavity resonance frequency and quality factor as a function of <span class="math notranslate nohighlight">\(z\)</span>.</p>
+<p>Try repeating the above procedure except now with a thick microscope glass slide in between the two resonators in the resonator stack. <u>Is there a difference in the cavity response from before?<u/> Now switch to using a thin microscope glass slide. <u>Any difference now?<u/></p>
 </section>
 <section id="iv-characterize-the-helmholtz-coil">
 <h4>iv) Characterize the Helmholtz coil<a class="headerlink" href="#iv-characterize-the-helmholtz-coil" title="Permalink to this headline">#</a></h4>
@@ -740,7 +746,7 @@ title="Print to PDF"
 <p><span class="caption-number">Fig. 50 </span><span class="caption-text">Gauss meter.</span><a class="headerlink" href="#gauss-meter-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>What is the intrinsic reading displayed on the Gauss meter? Why is it non-zero?</p>
+<p><u>What is the intrinsic reading displayed on the Gauss meter? Why is it non-zero?<u/></p>
 <p>Set Channel 1’s voltage to 1 V, and click on “Output” on the top right of the front panel of the power supply. Put the Gauss meter’s probe in between the loops and note down the measured magnetic field.</p>
 <p>Estimate the number of loops per coil. You may find this <a class="reference external" href="https://www.notblackmagic.com/bitsnpieces/helmholtz-coil/">Helmholtz coil calculator</a> useful.</p>
 <p>Increase the voltage in increments of 1 V all the way to 20 V, and write down the measured magnetic field for each voltage setting. <em><strong>Please do not set the voltage beyond 20 V without consulting the TA</strong></em></p>
@@ -789,7 +795,7 @@ title="Print to PDF"
 <li><p>Amplitude of <span class="math notranslate nohighlight">\(\Gamma(\omega)\)</span></p></li>
 <li><p>Phase of <span class="math notranslate nohighlight">\(\Gamma(\omega)\)</span></p></li>
 </ul>
-<p>Select <span class="math notranslate nohighlight">\(\omega_c,\kappa_c,\kappa_{c1}\)</span> appropriately to ensure you can observe <a class="reference external" href="https://en.wikipedia.org/wiki/Avoided_crossing">avoided crossing</a> similar to what was observed by <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">Eisenach <em>et al.</em></a> (Figure 2).</p>
+<p>Select <span class="math notranslate nohighlight">\(\omega_c,\kappa_c,\kappa_{c1}\)</span> appropriately to ensure you can observe <a class="reference external" href="https://en.wikipedia.org/wiki/Avoided_crossing">avoided crossing</a> similar to what was observed by <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">Eisenach <em>et al.</em></a> (Figure 2). You may assume <span class="math notranslate nohighlight">\(\alpha=0\)</span>. <span class="math notranslate nohighlight">\(\kappa_s=2/T_2\)</span> where <span class="math notranslate nohighlight">\(T_2\)</span> is the coherence time of the NV centers. You may assume <span class="math notranslate nohighlight">\(T_2=20~\mu\)</span>s.</p>
 <p>You may find using the Python module <code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code> helpful. By creating a widget with scroll bars, you may be able to freely change the parameters without manually typing in different values. Specifically, the <code class="docutils literal notranslate"><span class="pre">interact_manual</span></code> method (see documentation <a class="reference external" href="https://ipywidgets.readthedocs.io/en/stable/examples/Using%20Interact.html?highlight=interact_manual#interact_manual">here</a>).</p>
 <p>If you are done with the simulator and playing with various parameters, please ask the TA to give you a demo on how to handle diamond pieces. For the following sessions, you will be picking up and placing small diamond samples (3mm x 3mm x 0.5mm). It may benefit you to get some practice on handling small diamonds without dropping them.</p>
 <ol class="simple">
@@ -835,6 +841,13 @@ title="Print to PDF"
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">TEXT: Introduction to NV centers in diamond and cavity-based magnetometry</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Aim 3: Achieve strong coupling between NV centers and the microwave resonator</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>

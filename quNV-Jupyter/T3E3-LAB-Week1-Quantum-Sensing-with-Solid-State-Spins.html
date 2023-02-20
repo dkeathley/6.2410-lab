@@ -703,8 +703,8 @@ title="Print to PDF"
 <h4>i) Estimate the cavity’s resonance frequency<a class="headerlink" href="#i-estimate-the-cavity-s-resonance-frequency" title="Permalink to this headline">#</a></h4>
 <p>There are two microwave resonators provided to you. Both of them should have identical geometries, except with slightly different surface qualities. Take one of them and measure its outer radius and length. Use the measured geometry parameters and estimate the cavity’s resonance frequency.</p>
 <p><u>Can you measure the resonance frequency via the VNA, whose bandwidth covers 100 kHz to 6 GHz?</u></p>
-<p><u>What would be the expected resonance frequency if you stack the two resonators on top of another, with their central holes as aligned as possible?<u/></p>
-<p><u>Can you measure the combined stack’s resonance frequency via the VNA?<u/></p>
+<p><u>What would be the expected resonance frequency if you stack the two resonators on top of another, with their central holes as aligned as possible?</u></p>
+<p><u>Can you measure the combined stack’s resonance frequency via the VNA?</u></p>
 </section>
 <section id="ii-build-the-rf-circuitry-for-probing-the-cavity-s-resonance-frequency">
 <h4>ii) Build the RF circuitry for probing the cavity’s resonance frequency<a class="headerlink" href="#ii-build-the-rf-circuitry-for-probing-the-cavity-s-resonance-frequency" title="Permalink to this headline">#</a></h4>
@@ -720,8 +720,8 @@ title="Print to PDF"
 </figcaption>
 </figure>
 <p>Mount the loop coupler such that it is directly above the resonator. You should use the <a class="reference external" href="https://www.thorlabs.com/thorproduct.cfm?partnumber=RA90">right-angle clamp</a> to adjust the loop coupler position, as shown in the figure below.</p>
-<p>Open the libreVNA GUI and connect to the device. Make sure you are monitoring the “S21” window. Change the center frequency to what you estimated above for the stacked resonator. Change the span to 20 MHz. By adjusting the position of the loop coupler relative to the resonator, you should be able to observe the cavity resonance dip. Once you have done so, play around with the position of the loop coupler and observe how the cavity’s observed loaded <span class="math notranslate nohighlight">\(Q\)</span> and resonance frequency <span class="math notranslate nohighlight">\(\omega_c\)</span> change. <u>Write down your observations and explanations to these changes as a function of position.<u/> In Aim 2, you will need to methodically measure the cavity resonance frequency and quality factor as a function of <span class="math notranslate nohighlight">\(z\)</span>.</p>
-<p>Try repeating the above procedure except now with a thick microscope glass slide in between the two resonators in the resonator stack. <u>Is there a difference in the cavity response from before?<u/> Now switch to using a thin microscope glass slide. <u>Any difference now?<u/></p>
+<p>Open the libreVNA GUI and connect to the device. Make sure you are monitoring the “S21” window. Change the center frequency to what you estimated above for the stacked resonator. Change the span to 20 MHz. By adjusting the position of the loop coupler relative to the resonator, you should be able to observe the cavity resonance dip. Once you have done so, play around with the position of the loop coupler and observe how the cavity’s observed loaded <span class="math notranslate nohighlight">\(Q\)</span> and resonance frequency <span class="math notranslate nohighlight">\(\omega_c\)</span> change. <u>Write down your observations and explanations to these changes as a function of position.</u> In Aim 2, you will need to methodically measure the cavity resonance frequency and quality factor as a function of <span class="math notranslate nohighlight">\(z\)</span>.</p>
+<p>Try repeating the above procedure except now with a thick microscope glass slide in between the two resonators in the resonator stack. <u>Is there a difference in the cavity response from before?</u> Now switch to using a thin microscope glass slide. <u>Any difference now?</u></p>
 </section>
 <section id="iv-characterize-the-helmholtz-coil">
 <h4>iv) Characterize the Helmholtz coil<a class="headerlink" href="#iv-characterize-the-helmholtz-coil" title="Permalink to this headline">#</a></h4>
@@ -746,7 +746,7 @@ title="Print to PDF"
 <p><span class="caption-number">Fig. 50 </span><span class="caption-text">Gauss meter.</span><a class="headerlink" href="#gauss-meter-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p><u>What is the intrinsic reading displayed on the Gauss meter? Why is it non-zero?<u/></p>
+<p><u>What is the intrinsic reading displayed on the Gauss meter? Why is it non-zero?</u></p>
 <p>Set Channel 1’s voltage to 1 V, and click on “Output” on the top right of the front panel of the power supply. Put the Gauss meter’s probe in between the loops and note down the measured magnetic field.</p>
 <p>Estimate the number of loops per coil. You may find this <a class="reference external" href="https://www.notblackmagic.com/bitsnpieces/helmholtz-coil/">Helmholtz coil calculator</a> useful.</p>
 <p>Increase the voltage in increments of 1 V all the way to 20 V, and write down the measured magnetic field for each voltage setting. <em><strong>Please do not set the voltage beyond 20 V without consulting the TA</strong></em></p>

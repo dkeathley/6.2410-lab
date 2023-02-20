@@ -137,9 +137,9 @@ Clearly, there is an advantage to having a high intensity coherent state $\ket{\
 
 ## Homodyne Detection with Squeezed Light
 
-We know from {numref}`sec:quantum-optics-basics:squeezed-states` that squeezed light exhibits reduced field fluctuations along a particular quadrature.  We also now know that Homodyne detection can measure the field observable at input port $b$ along any quadratudre defined by the phase of the coherent state $\theta$.  
+We know from the basics section on {ref}`sec:quantum-optics-basics:squeezed-states` that squeezed light exhibits reduced field fluctuations along a particular quadrature.  We also now know that Homodyne detection can measure the field observable at input port $b$ along any quadratudre defined by the phase of the coherent state $\theta$.  
 
-Let us start by referring back to the simplified squeezed state we had discussed in {numref}`sec:quantum-optics-basics:squeezed-states`.  
+Let us start by referring back to the simplified squeezed state we had discussed in the basics section on  {ref}`sec:quantum-optics-basics:squeezed-states`.  
 
 $$ \ket{\psi_s}_b = \sqrt{1 - s^2}\ket{0}_b - s\ket{2}_b.$$
 

@@ -516,7 +516,7 @@ Field fluctuations in each quadrature compared to the SQL.
 
 +++
 
-## The thermal state
+### The thermal state
 
 Another state is the termals state, produced by radiation with random intensity and phase.
 
@@ -524,7 +524,7 @@ The thermal state is a statistical mixture of number states without specific pha
 
 The density operator in terms of the number state are given as
 
-$$\hat{\rho} = \left[1 - exp\left(-\frac{\hbar\omega}{k_BT} \right)\right ]\sum_n exp\left( -\frac{n\hbar\omega}{k_BT} \right )|n\rangle\langle n|$$
+$$\hat{\rho} = \left[1 - \exp\left(-\frac{\hbar\omega}{k_BT} \right)\right ]\sum_n \exp\left( -\frac{n\hbar\omega}{k_BT} \right )|n\rangle\langle n|$$
 
 The mean photon number is given by
 

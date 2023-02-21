@@ -668,7 +668,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">/tmp/ipykernel_3916590/338321062.py</span> in <span class="ni">&lt;cell line: 7&gt;</span><span class="nt">()</span>
+<span class="nn">/tmp/ipykernel_3916919/338321062.py</span> in <span class="ni">&lt;cell line: 7&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># default is 1: how often does Alice send &gt; 1 photon?</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">mu</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># set the mean value (the above text uses lambda instead of mu)</span>
 <span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">prob</span> <span class="o">=</span> <span class="n">gt</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">mu</span><span class="p">)</span>
@@ -685,7 +685,10 @@ title="Print to PDF"
 <section id="encode-bits">
 <h2>Encode bits<a class="headerlink" href="#encode-bits" title="Permalink to this headline">#</a></h2>
 <p>As you recall from your reading, BB84 uses linear polarization to encode bits. The two bases are <span class="math notranslate nohighlight">\(\left[ \H, \V \right]\)</span> (horizontal and vertical) and <span class="math notranslate nohighlight">\(\left[ \D, \AD \right]\)</span> (diagonal and anti-diagonal). For the sake of this lab, the default is that photons in the state <span class="math notranslate nohighlight">\(\H\)</span> or <span class="math notranslate nohighlight">\(\D\)</span> are <code class="docutils literal notranslate"><span class="pre">0</span></code> while photons in <span class="math notranslate nohighlight">\(\V\)</span> or <span class="math notranslate nohighlight">\(\AD\)</span> are <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
-<div class="alert alert-block alert-warning"><b>Implementation Note</b> The default setup with the quED has Bob using a linear polarizer, <b>not</b> a polarizing beamsplitter.</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Implementation Note</strong> The default setup with the quED has Bob using a linear polarizer, <strong>not</strong> a polarizing beamsplitter.</p>
+</div>
 <p><img alt="image.png" src="attachment:image.png" /></p>
 <p>As you can see in the above figure, with the default quED implementation Bob’s terminal is simply a polarizer and a detector. That means that for each bit, Bob has to choose a basis and a value to perform his measurement.</p>
 <p>Consider an example with a lossless system. If Alice sends a bit with value <code class="docutils literal notranslate"><span class="pre">1</span></code> in the <span class="math notranslate nohighlight">\(\left[ \D, \AD \right]\)</span> basis and Bob decides to measure in the <span class="math notranslate nohighlight">\(\left[ \D, \AD \right]\)</span> basis but has his polarizer set to <span class="math notranslate nohighlight">\(\D\)</span> (which is <code class="docutils literal notranslate"><span class="pre">0</span></code>) he won’t get a click. Even though Alice and Bob are using the same basis, they won’t get a bit for their raw key from that photon.</p>
@@ -749,7 +752,10 @@ title="Print to PDF"
 <section id="set-correct-polarization">
 <h3>Set correct polarization<a class="headerlink" href="#set-correct-polarization" title="Permalink to this headline">#</a></h3>
 <p>Unless you want to rotate the half wave plate (HWP) and polarizer manually for every single bit, you’re going to want to make sure you can control polarization optics via a Python script. We’ve provided a basic script for you below, which you can edit as you see fit.</p>
-<div class="alert alert-block alert-warning">Before you test the script, you need to make sure that your HWP and polarizers are lined up where you think they are, ie if you send $0^{\circ}$ to the HWP, how do you know if it's actually at $0^{\circ}$? For the quED set up, you can set the angle to $0^{\circ}$ through the script or the quTools software and then manually rotate the polarization to get the optics where you want them. Ask one of the instruction staff to show you how to do that if you're unfamiliar with it.</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before you test the script, you need to make sure that your HWP and polarizers are lined up where you think they are, ie if you send <span class="math notranslate nohighlight">\(0^{\circ}\)</span> to the HWP, how do you know if it’s actually at <span class="math notranslate nohighlight">\(0^{\circ}\)</span>? For the quED set up, you can set the angle to <span class="math notranslate nohighlight">\(0^{\circ}\)</span> through the script or the quTools software and then manually rotate the polarization to get the optics where you want them. Ask one of the instruction staff to show you how to do that if you’re unfamiliar with it.</p>
+</div>
 </section>
 </section>
 <section id="build-a-model">

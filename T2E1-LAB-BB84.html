@@ -642,6 +642,148 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="take-data">
 <h2>Take data<a class="headerlink" href="#take-data" title="Permalink to this headline">¶</a></h2>
 <p>Now you have all the pieces you need to take data! The cell immediately below this one is ready for you to define a function and get the data you need to create the raw key.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+<span class="kn">from</span> <span class="nn">requests.models</span> <span class="kn">import</span> <span class="n">PreparedRequest</span>
+<span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">html</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1"># User Parameters</span>
+<span class="n">integrationTimeValue</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1"># Integration time in ms, min = 100, max = 10000</span>
+<span class="n">pauseTimeValue</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Pause time for motion in s</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://169.254.69.140:8080/?&#39;</span>
+
+<span class="c1"># Accessible parameters</span>
+<span class="n">diodeCurrent</span> <span class="o">=</span> <span class="s2">&quot;ild&quot;</span>
+<span class="n">motor1</span> <span class="o">=</span> <span class="s2">&quot;pm1&quot;</span>
+<span class="n">motor2</span> <span class="o">=</span> <span class="s2">&quot;pm2&quot;</span>
+<span class="n">integrationTime</span> <span class="o">=</span> <span class="s2">&quot;int&quot;</span>
+<span class="n">countRate</span> <span class="o">=</span> <span class="s2">&quot;cnt&quot;</span>
+<span class="n">moterRef</span> <span class="o">=</span> <span class="s2">&quot;mref&quot;</span>
+
+<span class="k">def</span> <span class="nf">quED_Access</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="n">reply</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="p">[]):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Function that accesses QED via an ethernet connection</span>
+<span class="sd">    Inputs:</span>
+<span class="sd">        url - IP adddress of instrument (find in settings)</span>
+<span class="sd">        action - &#39;set&#39; or &#39;get&#39;</span>
+<span class="sd">        param - the parameter to set or get (see below)</span>
+<span class="sd">        reply - gives response output text, default false, true to debug</span>
+<span class="sd">        value - value to pass in, default is empty</span>
+<span class="sd">    Outputs:</span>
+<span class="sd">        finalData.response.text - raw string response from instrument</span>
+<span class="sd">        finalData.name - name of channel measured</span>
+<span class="sd">        finalData.data - data from measured channel</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">class</span> <span class="nc">finalData</span><span class="p">:</span>
+        <span class="k">pass</span>
+    
+    <span class="c1"># For reading values out</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">==</span> <span class="p">[]):</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;action&#39;</span><span class="p">:</span><span class="n">action</span><span class="p">,</span><span class="s1">&#39;param&#39;</span><span class="p">:</span><span class="n">param</span><span class="p">}</span>
+        <span class="n">req</span> <span class="o">=</span> <span class="n">PreparedRequest</span><span class="p">()</span>
+        <span class="n">req</span><span class="o">.</span><span class="n">prepare_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+    
+    <span class="c1"># For setting values</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;action&#39;</span><span class="p">:</span><span class="n">action</span><span class="p">,</span><span class="s1">&#39;param&#39;</span><span class="p">:</span><span class="n">param</span><span class="p">,</span><span class="s1">&#39;value&#39;</span><span class="p">:</span><span class="n">value</span><span class="p">}</span>
+        <span class="n">req</span> <span class="o">=</span> <span class="n">PreparedRequest</span><span class="p">()</span>
+        <span class="n">req</span><span class="o">.</span><span class="n">prepare_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">reply</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">action</span> <span class="o">==</span> <span class="s1">&#39;set&#39;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;&lt;body&gt;&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;&lt;/body&gt;&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    
+    <span class="c1"># For case where we measure count data</span>
+    <span class="k">if</span> <span class="n">param</span> <span class="o">==</span> <span class="s1">&#39;cnt&#39;</span><span class="p">:</span>
+        <span class="n">rawArray</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;&lt;br&gt;&#39;</span><span class="p">)</span>
+        <span class="n">truncArray</span> <span class="o">=</span> <span class="n">rawArray</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> 
+        <span class="n">numElem</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">truncArray</span><span class="p">)</span>
+        <span class="n">dataArray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">numElem</span><span class="p">)</span>
+        <span class="n">labelArray</span>  <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;0&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numElem</span><span class="p">)]</span>
+
+        <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numElem</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">extractLine</span> <span class="o">=</span> <span class="n">truncArray</span><span class="p">[</span><span class="n">elem</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+            <span class="n">labelArray</span><span class="p">[</span><span class="n">elem</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">extractLine</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">dataArray</span><span class="p">[</span><span class="n">elem</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">extractLine</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="n">finalData</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">labelArray</span>
+        <span class="n">finalData</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">dataArray</span>
+    
+    <span class="n">finalData</span><span class="o">.</span><span class="n">response</span> <span class="o">=</span> <span class="n">response</span>
+    <span class="k">return</span> <span class="n">finalData</span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="n">quED_Access</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;set&#39;</span><span class="p">,</span> <span class="s1">&#39;pm1&#39;</span><span class="p">,</span> <span class="n">reply</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="mi">45</span><span class="p">])</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">quED_Access</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;set&#39;</span><span class="p">,</span> <span class="s1">&#39;pm2&#39;</span><span class="p">,</span> <span class="n">reply</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">22.5</span><span class="p">])</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">quED_Access</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="s1">&#39;cnt&#39;</span><span class="p">,</span> <span class="n">reply</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">output</span><span class="o">.</span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">QKD_exp</span><span class="p">(</span><span class="n">alice_bases</span><span class="p">,</span> <span class="n">bob_bases</span><span class="p">,</span> <span class="n">int_time</span><span class="p">,</span> <span class="n">det_H_index</span><span class="p">,</span> <span class="n">det_V_index</span><span class="p">,</span> <span class="n">num_trials</span><span class="p">):</span>
+
+    <span class="n">detector_H</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">detector_V</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="c1"># Change the integration time</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">quED_Access</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;set&#39;</span><span class="p">,</span> <span class="s1">&#39;int&#39;</span><span class="p">,</span> <span class="n">reply</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="n">int_time</span><span class="p">])</span>
+    
+    <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">alice_bases</span><span class="p">)):</span>
+        <span class="c1">## Preparaing both Alice&#39;s and Bob&#39;s polarization bases</span>
+        <span class="n">alice_basis</span> <span class="o">=</span> <span class="n">alice_bases</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span>
+        <span class="n">bob_basis</span> <span class="o">=</span> <span class="n">bob_bases</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span>
+        <span class="c1"># Rotate Alice&#39;s HWP</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="n">quED_Access</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;set&#39;</span><span class="p">,</span> <span class="s1">&#39;pm1&#39;</span><span class="p">,</span> <span class="n">reply</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="n">alice_basis</span><span class="p">])</span>
+        <span class="c1"># Rotate Bob&#39;s HWP</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="n">quED_Access</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;set&#39;</span><span class="p">,</span> <span class="s1">&#39;pm2&#39;</span><span class="p">,</span> <span class="n">reply</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="n">bob_basis</span><span class="p">])</span>
+        <span class="n">temp_H</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">temp_V</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_trials</span><span class="p">):</span>
+            <span class="c1"># Grab coincidence counts between detector X and Y</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">quED_Access</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="s1">&#39;cnt&#39;</span><span class="p">,</span> <span class="n">reply</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">counts_H</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">det_H_index</span><span class="p">]</span>
+            <span class="n">counts_V</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">det_V_index</span><span class="p">]</span>
+            <span class="n">temp_H</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">counts_H</span><span class="p">)</span>
+            <span class="n">temp_V</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">counts_V</span><span class="p">)</span>
+
+        <span class="n">detector_H</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">temp_H</span><span class="p">))</span>
+        <span class="n">detector_V</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">temp_V</span><span class="p">))</span>
+    
+    <span class="k">return</span> <span class="n">detector_H</span><span class="p">,</span> <span class="n">detector_V</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Setup</span>
+<span class="c1"># some random angles for testing...</span>
+<span class="n">alice_bases</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">22.5</span><span class="p">,</span><span class="mi">45</span><span class="p">])</span>
+<span class="n">bob_bases</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">22.5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">45</span><span class="p">])</span>
+<span class="n">int_time</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># in ms</span>
+<span class="n">det_H_index</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># detector in the transmission path of the PBS</span>
+<span class="n">det_V_index</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># detector in the reflection path of the PBS</span>
+<span class="n">num_trials</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="n">detector_H</span><span class="p">,</span> <span class="n">detector_V</span> <span class="o">=</span> <span class="n">QKD_exp</span><span class="p">(</span><span class="n">alice_bases</span><span class="p">,</span> <span class="n">bob_bases</span><span class="p">,</span> <span class="n">int_time</span><span class="p">,</span> <span class="n">det_H_index</span><span class="p">,</span> <span class="n">det_V_index</span><span class="p">,</span> <span class="n">num_trials</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">detector_H</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">detector_V</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="place-holder-code">
 <h3>Place holder code<a class="headerlink" href="#place-holder-code" title="Permalink to this headline">¶</a></h3>
 <p>For the purposes of debugging, it can be helpful to have a place holder for the experimental data. The cell below simulates taking BB84 data so that you can test other scripts. The code is entirely commented out so that you won’t accidentally run it and develop a conflict with your experimental data. To toggle entire block of code from commented to un-commented, hit <code class="docutils literal notranslate"><span class="pre">ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">\</span></code>.</p>

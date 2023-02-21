@@ -135,4 +135,4 @@ From the derivation in the text, we have that $t = \alpha$, and $r = \sqrt{1 - \
 
 $$N_d = \frac{1}{4}\lbrace 1 + t^2 + 2t\cos(\Delta \phi)\rbrace \mathrm{.}$$
 
-However, as noted earlier, the impact of this absorbing object is effectively to effectively couple in vacuum state which must be accounted for properly when performing analysis of quantum noise limit of the entire setup.
+However, as noted earlier, the impact of this absorbing object is to effectively couple in vacuum state which must be accounted for during analysis of the quantum noise limit of the interferometer.

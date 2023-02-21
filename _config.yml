@@ -59,6 +59,10 @@ sphinx:
           "hdagger" : ["\\hat{h}^{\\dagger}"]
           "hhat" : ["\\hat{h}"]
           "gtwo" : ["g^{(2)}"]
+          "H"    : ["\ket{H}"]
+          "V"    : ["\ket{V}"]
+          "D"    : ["\ket{D}"]
+          "AD"   : ["\ket{AD}"]
   
 launch_buttons:
   binderhub_url: "https://mybinder.org"  # The URL for your BinderHub (e.g., https://mybinder.org)

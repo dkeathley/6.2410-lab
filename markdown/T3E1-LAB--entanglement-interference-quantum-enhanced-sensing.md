@@ -272,9 +272,50 @@ If done properly, you should see the signal increase each time the object is pla
 Each time the object is placed in the beam, the signal in channel B increases.  This is an "interaction-free" measurement.
 :::
 
-+++ {"tags": ["remove-cell"]}
++++ {"tags": []}
 
-## Aim 5: Single-Photon Interference and NOON State Generation -- Hong Ou Mandel Effect (Day 4)
+## Aim 6: Single-Photon Interference and NOON State Generation -- Hong Ou Mandel Effect (Day 4)
+
+In this lab we will interfere two single photons and observe the Hong Our Mandel effect which leads to photon bunching at the two output ports of the interferometer.  The highly entangled output state forms a NOON state that have received interest for their potential application in quantum-enhanced sensing, which you will explore in detail as part of calculations in the post-lab.  
+
+The observation of strong photon bunching through the interference of two single photon states is not trivial.  One significant complication is that the photons must be completely indistinguishable as they interfere on the beamsplitter.  To achieve this, the spatial modes and temporal properties of the photons have to be well-matched.
+
+In our case, both photons come from the same source which help us to ensure matched properties as they are emitted.  To then ensure matched spatial mode profiles, we will interfere the photons within a single-mode fiber beam combiner (similar to a beamsplitter, but achieved in fiber).  Since only the fundamental mode of the fiber can propagate, this ensures perferct matching of the spatial modes of the two photons.
+
+The setup is shown in {numref}`FIXME`.  Follow the following steps for alignment.
+
+**Part 1:** Align the fiber couplers.
+
+The goal of this part is to couple the single-photon sources into two fibers.
+
+ 1. Place a fiber coupler with attached fiber onto the board after the source port of A.  Attach the other end of the fiber to the input port for the detector F (the fiber port on the right of the Quantenkoffer).
+ 2. Using the adjustment laser, use the fiber adjusters to maximize signal into port F (you might have to lower the adjustment laser strength if you saturate).  
+ 3. Now, use the two source mirrors for A to fine-tune and optimize alignment.  
+ 4. When finished with the adjustment laser, you can switch it off and then optimize the single photon input.
+ 5. Repeat steps 1-4 with another fiber coupler and the output of source B.  
+
+**Part 2:** Optimize for coincidence counts.
+
+The goal of this part is to ensure that the two single-photon arms are aligned for optimal coincidence counts.
+
+ 1. Connect one fiber output port directly to F.  
+ 2. Connect the other fiber output port to a fiber coupler.  Place this coupler and a 45 degree mirror to direct it into the detector port for A.  
+ 3. Align the output of this fiber coupler to the detector for A.  You may need the adjustment laser for optimization before switching to the single-photon source.
+ 4. Once detectors A and F have signal, optimize thier coincident cout rate (this shoudl be in the thousands).
+
+**Part 3:** Align the fiber beam splitter.
+
+The fiber beam-splitter component has two free-space arms, one of them with a delay stage.  This is essential as for the HOM interference, you need to adjust the delay to find temporal overlap of the two photons.  The goal of this part is to ensure that the free-space arms are aligned.
+
+ 1. Attach the two single-photon ports to each input arm of the beamsplitter.  
+ 2. The alignment should be close, so attach one of the fiber outputs to detector F and then optimize.  Block one arm at a time and optimize them each individually (minimum alignment should be required here).  
+ 3. When finished, attach the other output of the beamsplitter to the port A fiber coupler (on board).  Fine tune this alignment for maximum detection at detector A.
+
+**Part 4:** Find the HOM dip.
+
+In this step you simply watch the coincidence couts as you scan the fiber delay arm with the interferometer.  Move slowly!  Remember that the bandwidth of your source leads to a small spatial overlap window where you will see an effect (related directly to your single-photon interference measurements).  
+
+**AIs** (1) What is the spatial length over which you see the HOM dip?  (2) How strong is the dip as a percentage of total coincidences when not overlapped?  Why might this contrast not be 100 percent? (3) Be sure to read the section in the text extending this approach to perform N=2 NOON-state interferometry and be sure to complete the post-lab questions.  The experiences gained in this measurement should help inform your answers there with regard to engineering challenges to such approaches.  
 
 +++ {"tags": ["remove-cell"]}
 

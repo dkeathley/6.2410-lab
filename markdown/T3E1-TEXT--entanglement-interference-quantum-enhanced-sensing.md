@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.13.8
+    jupytext_version: 1.14.2
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -300,7 +300,7 @@ We want to emphasize here that we have taken a few liberties with the notation a
 
 +++ {"id": "pWkSqRv049WB"}
 
-## Quantum Enhanced Sensing with NOON States
+## Taking Things Further: Quantum Enhanced Sensing with NOON States
 
 <iframe src="https://drive.google.com/file/d/1DDXMLs7zM1zuTzA03w7DcJZp1YPt03Mu/preview" width="640" height="480" allow="autoplay"></iframe>
 
@@ -659,7 +659,7 @@ display(system_set);
 
 +++ {"id": "WEqkDzKhWJM-"}
 
-### Prelab 4 Questions
+### Post-Lab Questions
 
   1. In practice, we find that imperfections in allignment photon detection prevent the achievement of improved sensitivity beyond what is possible with a classical interferometer.  To account for such imperfections, we can write the propability of coincidences more generally as $P(\varphi) = 
   \eta \big ( 1 - V \cos(N\varphi) \big )/2$ for an $N$ photon number NOON state.  Express the variance of the estimated phase for general $\eta$ and $V$.    

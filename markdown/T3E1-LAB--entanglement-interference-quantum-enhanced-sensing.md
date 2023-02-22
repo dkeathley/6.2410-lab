@@ -282,17 +282,24 @@ The observation of strong photon bunching through the interference of two single
 
 In our case, both photons come from the same source which help us to ensure matched properties as they are emitted.  To then ensure matched spatial mode profiles, we will interfere the photons within a single-mode fiber beam combiner (similar to a beamsplitter, but achieved in fiber).  Since only the fundamental mode of the fiber can propagate, this ensures perferct matching of the spatial modes of the two photons.
 
-The setup is shown in {numref}`FIXME`.  Follow the following steps for alignment.
+The final on-board setup is shown in {numref}`fig-t3e1-hom-lab-setup`.  Follow the following steps for alignment.
+
+:::{figure-md} fig-t3e1-hom-lab-setup
+<img src="FIGURES/T3E1-LAB-entanglement-interference/aim-6-HOM-lab-setup-annotated.png" alt="QK HOM Setup" class="bg-primary mb-1" width="600px">
+
+Final Quantenkoffer setup for the HOM experiment with intputs and outputs labeled.
+:::
 
 **Part 1:** Align the fiber couplers.
 
 The goal of this part is to couple the single-photon sources into two fibers.
 
- 1. Place a fiber coupler with attached fiber onto the board after the source port of A.  Attach the other end of the fiber to the input port for the detector F (the fiber port on the right of the Quantenkoffer).
- 2. Using the adjustment laser, use the fiber adjusters to maximize signal into port F (you might have to lower the adjustment laser strength if you saturate).  
- 3. Now, use the two source mirrors for A to fine-tune and optimize alignment.  
- 4. When finished with the adjustment laser, you can switch it off and then optimize the single photon input.
- 5. Repeat steps 1-4 with another fiber coupler and the output of source B.  
+ 1. Adjust the polarization of the source (see {numref}`fig-t3e1-lab-entanglement-HWP-control`) to be vertical so that only H-polarized photon pairs will be generated.
+ 2. Place a fiber coupler with attached fiber onto the board after the source port of A.  Attach the other end of the fiber to the input port for the detector F (the fiber port on the right of the Quantenkoffer).
+ 3. Using the adjustment laser, use the fiber adjusters to maximize signal into port F (you might have to lower the adjustment laser strength if you saturate).  
+ 4. Now, use the two source mirrors for A to fine-tune and optimize alignment.  
+ 5. When finished with the adjustment laser, you can switch it off and then optimize the single photon input.
+ 6. Repeat steps 1-4 with another fiber coupler and the output of source B.  
 
 **Part 2:** Optimize for coincidence counts.
 
@@ -314,6 +321,10 @@ The fiber beam-splitter component has two free-space arms, one of them with a de
 **Part 4:** Find the HOM dip.
 
 In this step you simply watch the coincidence couts as you scan the fiber delay arm with the interferometer.  Move slowly!  Remember that the bandwidth of your source leads to a small spatial overlap window where you will see an effect (related directly to your single-photon interference measurements).  
+
+Here is a video moving in and out of the HOM dip for reference.
+
+<iframe src="https://drive.google.com/file/d/1aPtqVy__lI1VMfzs_hoZC9tu7Hwfaz7j/preview" width="640" height="480" allow="autoplay"></iframe>
 
 **AIs** (1) What is the spatial length over which you see the HOM dip?  (2) How strong is the dip as a percentage of total coincidences when not overlapped?  Why might this contrast not be 100 percent? (3) Be sure to read the section in the text extending this approach to perform N=2 NOON-state interferometry and be sure to complete the post-lab questions.  The experiences gained in this measurement should help inform your answers there with regard to engineering challenges to such approaches.  
 

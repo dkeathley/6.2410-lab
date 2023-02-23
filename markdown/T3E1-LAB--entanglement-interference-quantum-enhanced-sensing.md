@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.2
+    jupytext_version: 1.13.8
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -274,7 +274,7 @@ Setting for the exposure time found in the control menu for the line-plot readou
 :::{figure-md} fig-t3e1-micrometer-position
 <img src="FIGURES/T3E1-LAB-entanglement-interference/aim-5-mzi-interference-micrometer-setting.png" alt="Micrometer Position" class="bg-primary mb-1" width="300px">
 
-You can read the micrometer position in milimeters (each rotation is 0.25 mm, with a tick size of 10 micron).  The overlap position is usually around 2 mm.  
+You can read the micrometer position in milimeters (each rotation is 0.025 in, with a tick size of .001 in).  The overlap position is usually around 0.2 in.  
 :::
 
 **AIs** (1) From this measurement, can you determine the frequency bandwidth of the photons? (Note this relates to the inverses of the time delay over which you observe interference). (2) Assuming a central wavelength of 810 nm, then what range of wavelengths do the photons contain based on the bandwidth you calculate? (3) Is your interference contrast the same as your calculations indicate it should be from the prelab?    

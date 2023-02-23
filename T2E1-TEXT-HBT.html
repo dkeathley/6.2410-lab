@@ -4,13 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TEXT - Introduction to single photons with the quED (Week 1) &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,16 +18,20 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -37,13 +39,12 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -51,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -65,21 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -88,10 +75,9 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -109,15 +95,14 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="intro.html">
-                    6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
-                </a>
-            </li>
-        </ul>
-        <p aria-level="2" class="caption" role="heading">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Introductory Material
  </span>
@@ -212,17 +197,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -230,209 +210,99 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/T2E1-TEXT-HBT.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/T2E1-TEXT-HBT.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="_static/images/logo_colab.png">
-  </span>
-<span class="headerbtn__text-container">Colab</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/dkeathley/S23-6.2410-lab"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/dkeathley/S23-6.2410-lab/issues/new?title=Issue%20on%20page%20%2FT2E1-TEXT-HBT.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/T2E1-TEXT-HBT.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/T2E1-TEXT-HBT.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/dkeathley/S23-6.2410-lab"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/dkeathley/S23-6.2410-lab/issues/new?title=Issue%20on%20page%20%2FT2E1-TEXT-HBT.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/T2E1-TEXT-HBT.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/T2E1-TEXT-HBT.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#single-photon-source-spontaneous-parametric-down-conversion-spdc-a-id-spdc-a">
    Single photon source: Spontaneous Parametric Down-Conversion (SPDC)
@@ -553,11 +423,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>TEXT - Introduction to single photons with the quED (Week 1)</h1>
@@ -694,12 +565,11 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="text-introduction-to-single-photons-with-the-qued-week-1">
-<h1>TEXT - Introduction to single photons with the quED (Week 1)<a class="headerlink" href="#text-introduction-to-single-photons-with-the-qued-week-1" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="text-introduction-to-single-photons-with-the-qued-week-1">
+<h1>TEXT - Introduction to single photons with the quED (Week 1)<a class="headerlink" href="#text-introduction-to-single-photons-with-the-qued-week-1" title="Permalink to this headline">¶</a></h1>
 <p>In this text, we’re going to go over some of the basics of working with single photons, especially how they relate to the quED experimental setup. We’ll start with a single photon source, which you’ll be using in the lab. Then we’ll talk about how to detect single photons.</p>
 <p>Next, we’re going to treat photons as indicidual particles, and we’ll show how to verify that a source is indeed producing single photons. You’ll reproduce that experiment in the lab.</p>
 <p>Finally, as time allows, we’ll look at single-photon interference.</p>
@@ -713,50 +583,40 @@ title="Print to PDF"
 </ol>
 </li>
 </ol>
-<section id="single-photon-source-spontaneous-parametric-down-conversion-spdc-a-id-spdc-a">
-<h2>Single photon source: Spontaneous Parametric Down-Conversion (SPDC) <a id='spdc'></a><a class="headerlink" href="#single-photon-source-spontaneous-parametric-down-conversion-spdc-a-id-spdc-a" title="Permalink to this headline">#</a></h2>
+<div class="section" id="single-photon-source-spontaneous-parametric-down-conversion-spdc-a-id-spdc-a">
+<h2>Single photon source: Spontaneous Parametric Down-Conversion (SPDC) <a id='spdc'></a><a class="headerlink" href="#single-photon-source-spontaneous-parametric-down-conversion-spdc-a-id-spdc-a" title="Permalink to this headline">¶</a></h2>
 <p>First, let’s take a high level overview of how spontaneous parametric down conversion (SPDC) works. SPDC occurs when a pump photon is converted into 2 photons of less energy. Traditionally, one output photon is called the signal and the other is called the idler.</p>
-<section id="phase-matching-conditions">
-<h3>Phase Matching Conditions<a class="headerlink" href="#phase-matching-conditions" title="Permalink to this headline">#</a></h3>
+<div class="section" id="phase-matching-conditions">
+<h3>Phase Matching Conditions<a class="headerlink" href="#phase-matching-conditions" title="Permalink to this headline">¶</a></h3>
 <p>One important feature of SPDC is the fact that it always obeys energy conservation: the energy of a pump photon before SPDC occurs is equal to the sum of the signal and idler photons after SPDC occurs.</p>
-<figure class="align-default" id="energyconservation">
+<div class="figure align-default" id="energyconservation">
 <a class="reference internal image-reference" href="_images/spdc_energyconsevation.png"><img alt="_images/spdc_energyconsevation.png" src="_images/spdc_energyconsevation.png" style="width: 200px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Image from HC Photonics.</span><a class="headerlink" href="#energyconservation" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">Image from HC Photonics.</span><a class="headerlink" href="#energyconservation" title="Permalink to this image">¶</a></p>
+</div>
 <p>Another important feature is that the momentum after SPDC must be the same as the momentum before SPDC to satisfy conservation of momentum.</p>
-<figure class="align-default" id="momentumconservation">
+<div class="figure align-default" id="momentumconservation">
 <a class="reference internal image-reference" href="_images/spdc_momentum.png"><img alt="_images/spdc_momentum.png" src="_images/spdc_momentum.png" style="width: 300px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 35 </span><span class="caption-text">Image from Couteau’s review paper.</span><a class="headerlink" href="#momentumconservation" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text">Image from Couteau’s review paper.</span><a class="headerlink" href="#momentumconservation" title="Permalink to this image">¶</a></p>
+</div>
 <p>Recall that momentum is a vector, so the magnitude <strong>and</strong> direction need to be maintained. This is why we see that the signal and idler photons in the quED are non-colinear (they travel in different directions): their sum still matches the pump photons.</p>
 <p>Matching the momentum is an a challening part of generating SPDC. As you recall, <span class="math notranslate nohighlight">\(\overrightarrow{k} = \frac{2\pi n}{\lambda}\)</span> where <span class="math notranslate nohighlight">\(n\)</span>, the index of refraction, is a function of <span class="math notranslate nohighlight">\(\lambda\)</span>, the wavelength of the light. Choosing a material that has the appropriate index at the relevant wavelengths is challenging and involves looking at the dispersion relation, shown in figure <a class="reference internal" href="#indexmatching"><span class="std std-numref">Fig. 36</span></a>.</p>
-<figure class="align-default" id="indexmatching">
+<div class="figure align-default" id="indexmatching">
 <a class="reference internal image-reference" href="_images/spdc_index.png"><img alt="_images/spdc_index.png" src="_images/spdc_index.png" style="width: 300px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Image from HC Photonics</span><a class="headerlink" href="#indexmatching" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text">Image from HC Photonics</span><a class="headerlink" href="#indexmatching" title="Permalink to this image">¶</a></p>
+</div>
 <p>Additionally,matching the indices requires using different polarization for the photons, leading to different types of SPDC.</p>
-<figure class="align-default" id="spdctypes">
+<div class="figure align-default" id="spdctypes">
 <a class="reference internal image-reference" href="_images/spdc_types.png"><img alt="_images/spdc_types.png" src="_images/spdc_types.png" style="width: 300px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Image from HC Photonics</span><a class="headerlink" href="#spdctypes" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 37 </span><span class="caption-text">Image from HC Photonics</span><a class="headerlink" href="#spdctypes" title="Permalink to this image">¶</a></p>
+</div>
 <p>Knowing the types of SPDC is important when designing an SPDC source, but it’s also important when <em>using</em> the SPDC source. The quED source is from Type 1 SPDC, as show in figure {numref} <code class="docutils literal notranslate"><span class="pre">quEDSPDCcone</span></code>, an image from the quTools manual for the quED. Look at how the output from the crystal is a series of cones concentric around the pump laser. When collecting the light from the SPDC output, it’s important to make sure that the collection is of matching pairs from the same cone. Practically, the way to achieve that is by maximizing the the coincidence counts and not just the singles.</p>
-<figure class="align-default" id="quedspdccone">
+<div class="figure align-default" id="quedspdccone">
 <a class="reference internal image-reference" href="_images/manual_SPDC.jpg"><img alt="_images/manual_SPDC.jpg" src="_images/manual_SPDC.jpg" style="width: 300px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 38 </span><span class="caption-text">Image from quED Manual</span><a class="headerlink" href="#quedspdccone" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="wave-equation">
-<h3>Wave equation<a class="headerlink" href="#wave-equation" title="Permalink to this headline">#</a></h3>
+<p class="caption"><span class="caption-number">Fig. 38 </span><span class="caption-text">Image from quED Manual</span><a class="headerlink" href="#quedspdccone" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="wave-equation">
+<h3>Wave equation<a class="headerlink" href="#wave-equation" title="Permalink to this headline">¶</a></h3>
 <p>In terms of the quantum optics, it’s valuable to look at how SPDC can be described mathematically. First, let’s consider the initial state of the system before SPDC occurs. We have a very powerful pump beam, which we express as a number state with <span class="math notranslate nohighlight">\(N_p\)</span> photons. The signal and idler states are both vacuums, which are number states with 0 photons in them. So the initial state is given by</p>
 <div class="math notranslate nohighlight">
 \[|\psi\rangle = |0_s,0_i,N_p\rangle\]</div>
@@ -770,45 +630,41 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\kappa = \frac{2}{3}\frac{d_{eff}}{\epsilon_0V}\sqrt{\frac{\omega_p\omega_i\omega_s}{2\epsilon_0V}}\]</div>
 <p><span class="math notranslate nohighlight">\(d_{eff}\)</span> is the effective nonlinearity factor of the crystal and is given in (picometers)(Volts)<span class="math notranslate nohighlight">\(^{-1}\)</span>, the permitivity of free space <span class="math notranslate nohighlight">\(\epsilon_0\)</span> is <span class="math notranslate nohighlight">\(8.854e^{-12}\)</span> (Coulombs)(Volt)<span class="math notranslate nohighlight">\(^{-1}\)</span> (meter)<span class="math notranslate nohighlight">\(^{-1}\)</span>.<span class="math notranslate nohighlight">\(V\)</span> is the quantization volume, and the various <span class="math notranslate nohighlight">\(\omega\)</span> are the frequencies of the pump, signal, and idler. This evaluation of <span class="math notranslate nohighlight">\(\kappa\)</span> is simplified, not capturing all ways the different experimental setup can affect the amplitude of the SPDC output. The important part is the proportionality to <span class="math notranslate nohighlight">\(d_{eff}\)</span> which is on the order of <span class="math notranslate nohighlight">\(1\)</span> pm/V.</p>
-</section>
-<section id="classical-nonlinear-optics">
-<h3>Classical Nonlinear optics<a class="headerlink" href="#classical-nonlinear-optics" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="classical-nonlinear-optics">
+<h3>Classical Nonlinear optics<a class="headerlink" href="#classical-nonlinear-optics" title="Permalink to this headline">¶</a></h3>
 <p>Briefly, SPDC is a fundamentally quantum process: it can’t be described by classical nonlinear optics. In classical nonlinear optics, parametric ampification is the process where you combine a source with frequency <span class="math notranslate nohighlight">\(\omega_p\)</span> and another source frequency with <span class="math notranslate nohighlight">\(\omega_i\)</span> in a nonlinear crystal to generate a field at <span class="math notranslate nohighlight">\(\omega_s = \omega_p - \omega_i\)</span> and amplify the field at <span class="math notranslate nohighlight">\(\omega_i\)</span>. This is similar to SPDC in that you’re generating light at a wavelength longer than the pump, but it’s disimilar in that it <em>requires</em> a non-zero input at <span class="math notranslate nohighlight">\(\omega_i\)</span>. This is what makes SPDC spontaneous: the output at the signal and idler aren’t stimulated by any input because the input is in the vacuum state.</p>
-</section>
-<section id="further-reading">
-<h3>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="further-reading">
+<h3>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h3>
 <p>For a good overview of SPDC with additional details, this <a class="reference external" href="https://doi.org/10.1080/00107514.2018.1488463">Review Article</a> is recommended. Additionally, for more information about designing a system to produce SPDC, the <a class="reference external" href="https://www.hcphotonics.com/ppln-guide-overview">HC Photonics PPLN GUIDE: Overview</a> is very informative. For nonlinear optics, Robert W. Boyd’s <em>Nonlinear Optics</em> is an excellent textbook.</p>
-</section>
-<section id="detection-a-id-apd-a">
-<h3>Detection <a id='apd'></a><a class="headerlink" href="#detection-a-id-apd-a" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="detection-a-id-apd-a">
+<h3>Detection <a id='apd'></a><a class="headerlink" href="#detection-a-id-apd-a" title="Permalink to this headline">¶</a></h3>
 <p>The detectors in this class will mostly be treated as a black box: you put in some photons, you get out a count of the photons. However, if you’ve never worked with photodetectors, it can be helpful to look briefly at how detectors work.</p>
 <p>Briefly, a photodetector uses a photodiode to generate a photocurrent, which can be amplified or measured directly. The high level understanding is that you shine a light on a device, and the light is absorbed and creates a current. Figure {numref} <code class="docutils literal notranslate"><span class="pre">Detector</span></code> below shows a basic cartoon of the process. A photodiode is a semiconductor device based on a crystal structure. In this type of crystal structure, one region has mobile electrons while another has mobile positive charges, called holes. When an incident photon (energy <span class="math notranslate nohighlight">\(h\nu\)</span>) has enough energy to overcome the bandgap energy <span class="math notranslate nohighlight">\(E_g\)</span>, it can excite an electron and a hole enough that an applied voltage will move the charge carriers. This movement of charge generates a photocurrent.</p>
-<figure class="align-default" id="detector">
+<div class="figure align-default" id="detector">
 <a class="reference internal image-reference" href="_images/detector.jpg"><img alt="_images/detector.jpg" src="_images/detector.jpg" style="width: 600px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 39 </span><span class="caption-text">Image from Saleh and Teich.</span><a class="headerlink" href="#detector" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 39 </span><span class="caption-text">Image from Saleh and Teich.</span><a class="headerlink" href="#detector" title="Permalink to this image">¶</a></p>
+</div>
 <p>Our particular device are avalanche photodetectors (APD). What makes them special is that they’re designed so that once an incident photon excites an electron and hole, that electron and hole excite an additional electron and hole, which excites an additional electron an hole. This creates an “avalanche” effect and makes it possible to measure single photons.</p>
-</section>
-</section>
-<section id="second-order-coherence-gtwo-0-a-id-hbt-a">
-<h2>Second order coherence - <span class="math notranslate nohighlight">\(\gtwo\)</span>(0)<a id='hbt'></a><a class="headerlink" href="#second-order-coherence-gtwo-0-a-id-hbt-a" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="second-order-coherence-gtwo-0-a-id-hbt-a">
+<h2>Second order coherence - <span class="math notranslate nohighlight">\(\gtwo\)</span>(0)<a id='hbt'></a><a class="headerlink" href="#second-order-coherence-gtwo-0-a-id-hbt-a" title="Permalink to this headline">¶</a></h2>
 <p>Now that you know more about the source and detectors we have available, let’s look at our first experiment to measure the second order coherence, <span class="math notranslate nohighlight">\(\gtwo\)</span>. <span class="math notranslate nohighlight">\(\gtwo\)</span> is an important parameter when describing a light source, giving us information about how close the actual source is to an ideal.</p>
 <p>Let’s first review the mechanics of a beamsplitter, an essential component in this measurement.</p>
-<section id="recall-a-beamsplitter">
-<h3>Recall a beamsplitter<a class="headerlink" href="#recall-a-beamsplitter" title="Permalink to this headline">#</a></h3>
+<div class="section" id="recall-a-beamsplitter">
+<h3>Recall a beamsplitter<a class="headerlink" href="#recall-a-beamsplitter" title="Permalink to this headline">¶</a></h3>
 <p>Consider a lossless 50/50 beamsplitter with indpendent inputs <span class="math notranslate nohighlight">\(\ahat\)</span> and <span class="math notranslate nohighlight">\(\bhat\)</span>. The outputs <span class="math notranslate nohighlight">\(\chat\)</span> and <span class="math notranslate nohighlight">\(\dhat\)</span> are defined as</p>
 <div class="math notranslate nohighlight">
 \[\chat = \frac{1}{\sqrt{2}}\ahat + \frac{1}{\sqrt{2}}\bhat\]</div>
 <div class="math notranslate nohighlight">
 \[\dhat = \frac{1}{\sqrt{2}}\ahat - \frac{1}{\sqrt{2}}\bhat\]</div>
-<figure class="align-default" id="beamsplitter">
+<div class="figure align-default" id="beamsplitter">
 <a class="reference internal image-reference" href="_images/beamsplitter.png"><img alt="_images/beamsplitter.png" src="_images/beamsplitter.png" style="width: 600px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 40 </span><span class="caption-text">A beamsplitter.</span><a class="headerlink" href="#beamsplitter" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 40 </span><span class="caption-text">A beamsplitter.</span><a class="headerlink" href="#beamsplitter" title="Permalink to this image">¶</a></p>
+</div>
 <p>The operators of each field <span class="math notranslate nohighlight">\(\ahat\)</span> and <span class="math notranslate nohighlight">\(\bhat\)</span> satisfy the boson commutation relations</p>
 <div class="math notranslate nohighlight">
 \[[\ahat,\adagger] = \ahat\adagger - \adagger\ahat = [\bhat,\bdagger] = 1\]</div>
@@ -821,20 +677,18 @@ title="Print to PDF"
 <p>and</p>
 <div class="math notranslate nohighlight">
 \[[\chat,\ddagger] = [\dhat,\cdagger] = 0\]</div>
-</section>
-<section id="hanbury-brown-twiss-hbt-experiment">
-<h3>Hanbury Brown-Twiss (HBT) Experiment<a class="headerlink" href="#hanbury-brown-twiss-hbt-experiment" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="hanbury-brown-twiss-hbt-experiment">
+<h3>Hanbury Brown-Twiss (HBT) Experiment<a class="headerlink" href="#hanbury-brown-twiss-hbt-experiment" title="Permalink to this headline">¶</a></h3>
 <p>The Hanbury Brown-Twiss (HBT) experiment was first conducted by astronomers, but it’s now used in quantum optics. The schematic is show below. There’s a 50-50 beamsplitter, and only one input port, <span class="math notranslate nohighlight">\(\ahat\)</span> has light shining in. The other input port, <span class="math notranslate nohighlight">\(\bhat\)</span> is in a vacuum state. The measurement is taken by putting detectors at the output ports <span class="math notranslate nohighlight">\(\chat\)</span> and <span class="math notranslate nohighlight">\(\dhat\)</span> and measuring the singles and coincidences.</p>
-<figure class="align-default" id="hbtschematic">
+<div class="figure align-default" id="hbtschematic">
 <a class="reference internal image-reference" href="_images/HBT_cartoon.png"><img alt="_images/HBT_cartoon.png" src="_images/HBT_cartoon.png" style="width: 600px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 41 </span><span class="caption-text">Schematic of the HBT setup.</span><a class="headerlink" href="#hbtschematic" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 41 </span><span class="caption-text">Schematic of the HBT setup.</span><a class="headerlink" href="#hbtschematic" title="Permalink to this image">¶</a></p>
+</div>
 <p>First, let’s look at the experiment in one particular case, when the input light is in the single photon number state.</p>
-</section>
-<section id="coincidence-with-a-single-photon">
-<h3>Coincidence with a single photon<a class="headerlink" href="#coincidence-with-a-single-photon" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="coincidence-with-a-single-photon">
+<h3>Coincidence with a single photon<a class="headerlink" href="#coincidence-with-a-single-photon" title="Permalink to this headline">¶</a></h3>
 <p>Specifically, we want to know how often we get a photon at both <span class="math notranslate nohighlight">\(\chat\)</span> and <span class="math notranslate nohighlight">\(\dhat\)</span> simultaneously. We call this a <em>coincidence</em> meaning an event where 2 (or more) detection events occur within a short period of time (on the scale of  a few nanoseconds) on 2 separate detectors. Looking at coincidences is an important measurement in quantum optics.</p>
 <p>What is the coincidence of <span class="math notranslate nohighlight">\(\chat\)</span> and <span class="math notranslate nohighlight">\(\dhat\)</span>?</p>
 <div class="math notranslate nohighlight">
@@ -853,9 +707,9 @@ title="Print to PDF"
 \[ = 0 \]</div>
 <p>So we see in the case with a single photon input into a beamsplitter we expect 0 coincidences. Conceptually this makes sense: a single photon can only go through one of 2 paths in the beamsplitter. If we look at both outputs of the beamsplitter at the same time, we should only see a click on one of the outputs.</p>
 <p>The video below works through this math step by step, in case you’d like to see how the operator math can be evaluated.</p>
-<iframe src="https://drive.google.com/file/d/1mwGIT02T_--aJ-tp_Cb0yPVsnxI6hhyQ/preview" width="640" height="480" allow="autoplay"></iframe></section>
-<section id="second-order-time-coherence">
-<h3>Second order time coherence<a class="headerlink" href="#second-order-time-coherence" title="Permalink to this headline">#</a></h3>
+<iframe src="https://drive.google.com/file/d/1mwGIT02T_--aJ-tp_Cb0yPVsnxI6hhyQ/preview" width="640" height="480" allow="autoplay"></iframe></div>
+<div class="section" id="second-order-time-coherence">
+<h3>Second order time coherence<a class="headerlink" href="#second-order-time-coherence" title="Permalink to this headline">¶</a></h3>
 <p>The above exercise is a necessary step for finding the <em>second-order coherence</em>. The most general case assumes the detectors record events at slightly different times, ie the detection time at detector c is <span class="math notranslate nohighlight">\(t_c\)</span> while the detection at detector d is <span class="math notranslate nohighlight">\(t_d\)</span>. This allows us to account for situations where the detectors are slightly different distances away from the beamsplitter.</p>
 <div class="math notranslate nohighlight">
 \[\gtwo(t_c,t_d) = \frac{\langle\hat{n}_c(t_c)\hat{n}_d(t_d)\rangle}{\langle\hat{n}_c(t_c)\rangle\langle\hat{n}_d(t_d)\rangle}\]</div>
@@ -863,17 +717,15 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\gtwo(0) = \frac{\langle\hat{n}_a(\hat{n}_a -1)\rangle}{\langle\hat{n}_a\rangle^2}\]</div>
 <p>Clearly, for the case of <span class="math notranslate nohighlight">\(\ahat\)</span> being in the <span class="math notranslate nohighlight">\(|1\rangle\)</span> state, we find <span class="math notranslate nohighlight">\(g^{(2)}(0) = 0 \)</span>.</p>
-</section>
-<section id="heralded-single-photon-source">
-<h3>Heralded single-photon source<a class="headerlink" href="#heralded-single-photon-source" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="heralded-single-photon-source">
+<h3>Heralded single-photon source<a class="headerlink" href="#heralded-single-photon-source" title="Permalink to this headline">¶</a></h3>
 <p>The set-up we’ll see in the lab, however, isn’t a case with single photons. SPDC is a <em>heralded</em> single photon source. That means that if an idler photon is generated, it’s extremely likely we’ll measure a corresponding signal photon. Due to issues like multiple pair emissions in the crystal and detector-related issues like dark counts and stray light, it’s not a 100% correlation, but the probability is still very high.</p>
 <p>The result is that the <span class="math notranslate nohighlight">\(\gtwo\)</span> we’re interested in is conditioned on detecting an idler photon in the other arm, as in the image below. That is to say that we only want to look for coincidences between the two signal detectors when there is also a detection event in the idler detector.</p>
-<figure class="align-default" id="heralded-hbt">
+<div class="figure align-default" id="heralded-hbt">
 <a class="reference internal image-reference" href="_images/HBT_heralded.png"><img alt="_images/HBT_heralded.png" src="_images/HBT_heralded.png" style="width: 400px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 42 </span><span class="caption-text">Image from quTools.</span><a class="headerlink" href="#heralded-hbt" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 42 </span><span class="caption-text">Image from quTools.</span><a class="headerlink" href="#heralded-hbt" title="Permalink to this image">¶</a></p>
+</div>
 <p>The <span class="math notranslate nohighlight">\(\gtwo\)</span> measurement is now conditioned on the idler detection at time <span class="math notranslate nohighlight">\(t_i\)</span>, which we is expressed the following</p>
 <div class="math notranslate nohighlight">
 \[\gtwo(t_c,t_d|t_i) = \frac{\langle\hat{n}_c(t_c)\hat{n}_d(t_d)\rangle_{pm}}{\langle\hat{n}_c(t_c)\rangle_{pm}\langle\hat{n}_d(t_d)\rangle_{pm}}\]</div>
@@ -898,10 +750,10 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\gtwo(0) = \frac{N_{icd}N_i}{N_{ic}N_{id}}\]</div>
 <p>The video below is a lecture that nicely walks through how you look at the <span class="math notranslate nohighlight">\(\gtwo(0)\)</span> measurement of a heralded source. The relevant part is about 20 minutes long, and it’s based on straighforward probability and developing physical intuition about the HBT experiment.</p>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4zsd31E2n4w?start=635" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></section>
-</section>
-<section id="simulation-by-qutip">
-<h2>Simulation by QuTip<a class="headerlink" href="#simulation-by-qutip" title="Permalink to this headline">#</a></h2>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4zsd31E2n4w?start=635" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+</div>
+<div class="section" id="simulation-by-qutip">
+<h2>Simulation by QuTip<a class="headerlink" href="#simulation-by-qutip" title="Permalink to this headline">¶</a></h2>
 <p>We can model the SPDC process and squeezed light via the formalism of the degenerate parametric amplifier using QuTip.</p>
 <p>In the following code block, we install and load dependencies.</p>
 <div class="cell tag_hide-output docutils container">
@@ -921,16 +773,18 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: qutip in /home/dkeathley/anaconda3/lib/python3.8/site-packages (4.7.1)
+Requirement already satisfied: scipy&gt;=1.0 in /home/dkeathley/anaconda3/lib/python3.8/site-packages (from qutip) (1.7.3)
+Requirement already satisfied: numpy&gt;=1.16.6 in /home/dkeathley/anaconda3/lib/python3.8/site-packages (from qutip) (1.21.5)
 Requirement already satisfied: packaging in /home/dkeathley/anaconda3/lib/python3.8/site-packages (from qutip) (21.3)
-Requirement already satisfied: numpy&gt;=1.16.6 in /home/dkeathley/anaconda3/lib/python3.8/site-packages (from qutip) (1.23.5)
-Requirement already satisfied: scipy&gt;=1.0 in /home/dkeathley/anaconda3/lib/python3.8/site-packages (from qutip) (1.9.3)
-Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /home/dkeathley/anaconda3/lib/python3.8/site-packages (from packaging-&gt;qutip) (3.0.9)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /home/dkeathley/anaconda3/lib/python3.8/site-packages (from packaging-&gt;qutip) (3.0.4)
 </pre></div>
 </div>
 </div>
 </div>
-<section id="operators-and-hamiltonian">
-<h3>Operators and Hamiltonian<a class="headerlink" href="#operators-and-hamiltonian" title="Permalink to this headline">#</a></h3>
+<div class="section" id="operators-and-hamiltonian">
+<h3>Operators and Hamiltonian<a class="headerlink" href="#operators-and-hamiltonian" title="Permalink to this headline">¶</a></h3>
 <p>In the following code, we set the parameters chi, N1, and N2, which are used to define the system’s operators a, na, b, and nb. These operators represent the annihilation and number operators for two distinct modes of the system.</p>
 <p>The tensor() function is used to create composite operators that act on the joint Hilbert space of the two modes. The destroy() and num() functions create the annihilation and number operators, respectively.</p>
 <p>We obtain the interaction Hamiltonian Hab from the expection of the pump laser field $<span class="math notranslate nohighlight">\(| \alpha_p\rangle = D(\alpha_p) |0\rangle \)</span><span class="math notranslate nohighlight">\( where the displacement operator \)</span><span class="math notranslate nohighlight">\(D(\alpha_p)\)</span><span class="math notranslate nohighlight">\( creates the coherent state in mode p. Let's assume  \)</span><span class="math notranslate nohighlight">\(\alpha_p \in \mathbb{R} \)</span>$ to avoid some math tedium. Then, in the interaction picture,</p>
@@ -995,9 +849,9 @@ H_{ab} &amp;= \langle \alpha_p | H_{abp} | \alpha_p \rangle \\
 </div>
 </div>
 </div>
-</section>
-<section id="initial-state-and-state-evolution">
-<h3>Initial state and state evolution<a class="headerlink" href="#initial-state-and-state-evolution" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="initial-state-and-state-evolution">
+<h3>Initial state and state evolution<a class="headerlink" href="#initial-state-and-state-evolution" title="Permalink to this headline">¶</a></h3>
 <p>In the following, we’ll will:</p>
 <ul class="simple">
 <li><p>initialize the input state psi0 of modes a and b, which are both in the vacuum state</p></li>
@@ -1074,9 +928,9 @@ H_{ab} &amp;= \langle \alpha_p | H_{abp} | \alpha_p \rangle \\
 <img alt="_images/T2E1-TEXT-HBT_20_1.png" src="_images/T2E1-TEXT-HBT_20_1.png" />
 </div>
 </div>
-</section>
-<section id="state-evolution-in-fock-state-basis">
-<h3>State evolution in Fock-state basis<a class="headerlink" href="#state-evolution-in-fock-state-basis" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="state-evolution-in-fock-state-basis">
+<h3>State evolution in Fock-state basis<a class="headerlink" href="#state-evolution-in-fock-state-basis" title="Permalink to this headline">¶</a></h3>
 <p>Next, we will plot the photon distributions of two quantum optical modes a and b at selected times. The time indices are spaced over Ntsamples time steps and are stored in the t_idx_vec list.</p>
 <p>The following subplots show the state evolution (note the plots have shared horizontal and vertical axes). We represent the photon distributions as bar plots on the subplots.</p>
 <div class="cell docutils container">
@@ -1125,15 +979,15 @@ H_{ab} &amp;= \langle \alpha_p | H_{abp} | \alpha_p \rangle \\
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "98477634ea814999911d9a2741d12f1e"}
+{"version_major": 2, "version_minor": 0, "model_id": "2f039a79b100412e9e2b9cc709d339c0"}
 </script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.update_plot(t)&gt;
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="photon-numer-statistics">
-<h3>Photon numer statistics<a class="headerlink" href="#photon-numer-statistics" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="photon-numer-statistics">
+<h3>Photon numer statistics<a class="headerlink" href="#photon-numer-statistics" title="Permalink to this headline">¶</a></h3>
 <p>The following code updates the dictionary “ops_dict” by adding entries for the observables being monitored during the evolution of the system. These observables are the second-order coherence terms of the two harmonic oscillators, represented by the combinations of creation and annihilation operators. With self-evident notation, these are “ad_ad_a_a”, “bd_bd_b_b”, and “ad_a_bd_b”.</p>
 <p>The code then initializes the dictionary “expected_vals_dict” to store the expected values of these observables over time. This is done by creating an array of zeros with length equal to the number of times at which the system is evaluated during its evolution.</p>
 <p>Finally, the code computes the expected values of the observables by iterating over the states in the output of the mesolve function and using the expect function from Qutip to compute the expected values at each time step. These expected values are stored in the corresponding entries of the “expected_vals_dict” dictionary.</p>
@@ -1156,8 +1010,8 @@ H_{ab} &amp;= \langle \alpha_p | H_{abp} | \alpha_p \rangle \\
 </div>
 </div>
 </div>
-<section id="second-order-coherence-functions">
-<h4>Second-order coherence functions<a class="headerlink" href="#second-order-coherence-functions" title="Permalink to this headline">#</a></h4>
+<div class="section" id="second-order-coherence-functions">
+<h4>Second-order coherence functions<a class="headerlink" href="#second-order-coherence-functions" title="Permalink to this headline">¶</a></h4>
 <p>Walls and Milburn, page 79: Classical fields satisfy the Cauchy-Schwartz inequality evaluated at the same time <span class="math notranslate nohighlight">\(t\)</span> on both detectors, i.e., $<span class="math notranslate nohighlight">\( \langle \psi_{out}(t) | a_1^{\dagger} a_1 a_2^{\dagger}  a_2 | \psi_{out}(t) \rangle \leq \langle (a_1^{\dagger})^{2}  (a_1)^{2}  \rangle_t \)</span>$, or equivalently</p>
 <p>$<span class="math notranslate nohighlight">\((g_{12}^{(2)})_{t}^2 \leq (g_{1}^{(2)}g_{2}^{(2)})_{t}\)</span>$.</p>
 <div class="cell docutils container">
@@ -1190,11 +1044,11 @@ H_{ab} &amp;= \langle \alpha_p | H_{abp} | \alpha_p \rangle \\
 <img alt="_images/T2E1-TEXT-HBT_27_0.png" src="_images/T2E1-TEXT-HBT_27_0.png" />
 </div>
 </div>
-</section>
-</section>
-</section>
-<section id="sources-and-further-reading">
-<h2>Sources and further reading<a class="headerlink" href="#sources-and-further-reading" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+</div>
+<div class="section" id="sources-and-further-reading">
+<h2>Sources and further reading<a class="headerlink" href="#sources-and-further-reading" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://doi.org/10.1080/00107514.2018.1488463">Review Article</a></p></li>
 <li><p><a class="reference external" href="https://www.hcphotonics.com/ppln-guide-overview">HC Photonics PPLN GUIDE: Overview</a></p></li>
@@ -1210,21 +1064,21 @@ H_{ab} &amp;= \langle \alpha_p | H_{abp} | \alpha_p \rangle \\
 <li><p>Fox, <em>Quantum Optics: An Introduction</em></p></li>
 <li><p>Gerry and Knight, <em>Introductory Quantum Optics</em></p></li>
 </ul>
-</section>
-<section id="pre-lab-questions">
-<h2>Pre-Lab Questions<a class="headerlink" href="#pre-lab-questions" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="pre-lab-questions">
+<h2>Pre-Lab Questions<a class="headerlink" href="#pre-lab-questions" title="Permalink to this headline">¶</a></h2>
 <p>Before coming to the lab for the HBT experiment, please complete these pre-lab questions and be ready to <em>show your work</em>. If you have questions, ask the instructor before starting the lab.</p>
 <ol class="simple">
 <li><p>What is <span class="math notranslate nohighlight">\(\gtwo(0)\)</span> for a number state with 2 photons? What about with 3 photons? Generalize this to Fock state <span class="math notranslate nohighlight">\(\ket{n}\)</span> with n photons and plot <span class="math notranslate nohighlight">\(\gtwo(0)\)</span> as a function of n.</p></li>
 <li><p>What is <span class="math notranslate nohighlight">\(\gtwo(0)\)</span> for a coherent state <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span>?</p></li>
 <li><p><em>Bonus</em> Consider the case of a 50-50 beamsplitter with inputs <span class="math notranslate nohighlight">\(\ahat\)</span> and <span class="math notranslate nohighlight">\(\bhat\)</span> and outputs <span class="math notranslate nohighlight">\(\chat\)</span> and <span class="math notranslate nohighlight">\(\dhat\)</span>. <span class="math notranslate nohighlight">\(\ahat\)</span> is in the <span class="math notranslate nohighlight">\(\ket{1}\)</span> state while <span class="math notranslate nohighlight">\(\bhat\)</span> is in the vacuum state. Find the variance of the coincidences <span class="math notranslate nohighlight">\(\chat\)</span> and <span class="math notranslate nohighlight">\(\dhat\)</span> where the variance of an operator <span class="math notranslate nohighlight">\(\hat{o}\)</span> is given by  <span class="math notranslate nohighlight">\(\langle(\Delta\hat{o})^2\rangle = \langle\hat{o}^2\rangle -\langle\hat{o}\rangle^2\)</span>.</p></li>
 </ol>
-</section>
-</section>
+</div>
+</div>
 
 
 <script type="application/vnd.jupyter.widget-state+json">
-{"state": {"2a1c866e4cbf4b55818fc6ff1ce0a476": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "cf97bce73e714ad7a8d3d0643bf9168a": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "fb84e44a985a45b18b525d0b47f34c70": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "FloatSliderView", "continuous_update": false, "description": "Time index:", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_2a1c866e4cbf4b55818fc6ff1ce0a476", "max": 500.0, "min": 0.0, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 1.0, "style": "IPY_MODEL_cf97bce73e714ad7a8d3d0643bf9168a", "value": 0.0}}, "97acdda6203b44dba61e33f7ab99b386": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "efdbd38e55a24cd8a3f02e5a05334ca8": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "814efd92d6e2429cb1bf0e2ce08d97f7": {"model_name": "IntSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "IntSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "IntSliderView", "continuous_update": true, "description": "t", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_97acdda6203b44dba61e33f7ab99b386", "max": 999, "min": 0, "orientation": "horizontal", "readout": true, "readout_format": "d", "step": 1, "style": "IPY_MODEL_efdbd38e55a24cd8a3f02e5a05334ca8", "value": 30}}, "753a1f1889ec452891fa8e3a4fb63e3d": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "98477634ea814999911d9a2741d12f1e": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_814efd92d6e2429cb1bf0e2ce08d97f7", "IPY_MODEL_e7dd03c6ff6d49a596fd3219726747fe"], "layout": "IPY_MODEL_753a1f1889ec452891fa8e3a4fb63e3d"}}, "7cc1c587b057412cb30030d6ad6b4d85": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e7dd03c6ff6d49a596fd3219726747fe": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_7cc1c587b057412cb30030d6ad6b4d85", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {}, "data": {"text/plain": "<Figure size 800x500 with 2 Axes>", "image/png": "iVBORw0KGgoAAAANSUhEUgAAAxYAAAHqCAYAAACZcdjsAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9hAAAPYQGoP6dpAAAfW0lEQVR4nO3df5CVhXno8WcBAbVAihAariwSpJojiLgc7dL8qGIxhJDQZDpJp0O5+dXh9mjCMP5Bms5YW1OcJo3JjCuV1NEknVRvpmo7SU1kRmXtUJPjygLXZSyMP6AqQVNhBcsS8Nw/Mu7tXtSFfdh9z+F8PjM743n37OF5Z5Bnvuc9Z09LrVarBQAAQMKoogcAAAAan7AAAADShAUAAJAmLAAAgDRhAQAApAkLAAAgTVgAAABpwgIAAEgbU/QAjeKNN96IF198MSZMmBAtLS1FjwMwZLVaLV577bWYPn16jBrl+aUs+wE4k2R2hLA4SS+++GLMmDGj6DEATpu9e/fG+eefX/QYDc9+AM5EQ9kRwuIkTZgwISIi/sf/ujtGjTtnWP6M/3PTtcPyuAD/XW9vb8yYMaP/3zVyRmI/RNgRwMjI7AhhcZLevLw9atw5w7Y4Jk6cOCyPC/BWvGzn9BiJ/RBhRwAjayg7wotrAQCANGEBAACkCQsAACBNWAAAAGnCAgAASBMWAABAmrAAAADShAUAAJAmLAAAgDRhMYiOjo4olUpRLpeLHgWAOmI/AAwkLAZRqVSip6cnqtVq0aMAUEfsB4CBhAUAAJAmLAAAgDRhAQAApAkLAAAgTVgAAABpwgIAAEgTFgAAQJqwAAAA0oQFAACQJiwAAIA0YQEAAKQJCwAAIE1YAAAAacICAABIExYAAECasAAAANKEBQAAkCYsAACANGEBAACkCQsAACBNWAAAAGnCAgAASBMWAABAmrAAAADShAUAAJAmLAAAgDRhAQAApAkLAAAgTVgAAABpwgIAAEgTFgAAQJqwAAAA0oTFIDo6OqJUKkW5XC56FADqiP0AMJCwGESlUomenp6oVqtFjwJAHbEfAAYSFgAAQJqwAAAA0oQFAACQJiwAAIA0YQEAAKQJCwAAIE1YAAAAacICAABIExYAAECasAAAANKEBQAAkCYsAACANGEBAACkCQsAACBNWAAAAGnCAgAASBMWAABAmrAAAADShAUAAJAmLAAAgDRhAQAApAkLAAAgTVgAAABpwgIAAEgTFgAAQJqwGERHR0eUSqUol8tFjwJAHbEfAAYSFoOoVCrR09MT1Wq16FEAqCP2A8BAwgIAAEgTFgAAQJqwAAAA0oQFAACQJiwAAIA0YQEAAKQJCwAAIE1YAAAAacICAABIExYAAECasAAAANKEBQAAkCYsAACANGEBAACkCQsAACBNWAAAAGnCAgAASBMWAABAmrAAAADShMUgOjo6olQqRblcLnoUAOqI/QAwkLAYRKVSiZ6enqhWq0WPAkAdsR8ABhIWAABAmrAAAADShAUAAJAmLAAAgDRhAQAApAkLAAAgTVgAAABpwgIAAEgTFgAAQJqwAAAA0oQFAACQJiwAAIA0YQEAAKQJCwAAIE1YAAAAacICAABIExaD6OjoiFKpFOVyuehRAKgj9gPAQMJiEJVKJXp6eqJarRY9CgB1xH4AGEhYAAAAacICAABIExYAAECasAAAANKEBQAAkCYsAACANGEBAACkCQsAACBNWAAAAGnCAgAASBMWAABAmrAAAADShAUAAJAmLAAAgDRhMYiOjo4olUpRLpeLHgWAOmI/AAwkLAZRqVSip6cnqtVq0aMAUEfsB4CBhAUAAJAmLAAAgDRhAQAApAkLAAAgTVgAAABpwgIAAEgTFgAAQJqwAAAA0oQFAACQJiwAAIA0YQEAAKQJCwAAIE1YDKKjoyNKpVKUy+WiRwGgjtgPAAMJi0FUKpXo6emJarVa9CgA1BH7AWAgYQEAAKQJCwAAIE1YAAAAacICAABIa6qw+PrXvx6XXHJJzJ07N/7+7/++6HEAqBP2A0DemKIHGCk7duyI73//+9HV1RUREYsXL46PfvSj8a53vavYwQAolP0AcHo0zRWLnTt3xqJFi2L8+PExfvz4uOyyy+LHP/5x0WMBUDD7AeD0qJuw6OzsjOXLl8f06dOjpaUlHnjggRPuc/vtt8esWbNi/Pjx0dbWFo899thJP/7cuXPjkUceiQMHDsSBAwfi4YcfjhdeeOE0ngEAw8F+AGgMdfNSqMOHD8f8+fPjM5/5THzyk5884fv33ntvrFmzJm6//fb47d/+7bjjjjti6dKl0dPTE62trRER0dbWFn19fSf87EMPPRSlUim++MUvxtVXXx2TJk2KcrkcY8bUzekD8DbsB4DG0FKr1WpFD/H/a2lpifvvvz9WrFjRf+zKK6+Myy+/PDZs2NB/7H3ve1+sWLEi1q9ff8p/xuc///n4vd/7vVi2bNlJ3b+3tzcmTZoUM9b87xg17pxT/vNOxnO3nNwsABlv/nt28ODBmDhxYtHjnJJm3Q8RdgQwMjI7om5eCvVOjh49Gl1dXbFkyZIBx5csWRJbtmw56cfZv39/REQ8/fTT8bOf/Syuvfbat71vX19f9Pb2DvgCoL7YDwD1oyGu9b7yyitx/PjxmDZt2oDj06ZNi3379p3046xYsSIOHDgQ5557btx1113veKl7/fr1cdNNNw15ZgCGn/0AUD8aIize1NLSMuB2rVY74dg7OZVnr7785S/H2rVr+2/39vbGjBkzTvrnARg59gNA8RoiLKZMmRKjR48+4dmn/fv3n/As1ekybty4GDdu3LA8NgCnh/0AUD8a4j0WY8eOjba2tti0adOA45s2bYpFixYVNBUARbMfAOpH3VyxOHToUOzevbv/9rPPPhvd3d0xefLkaG1tjbVr18bKlStj4cKF0d7eHhs3bow9e/bE6tWrC5wagOFmPwA0hroJiyeeeCKuuuqq/ttvvn511apVcffdd8enPvWp+MUvfhF/8Rd/ES+99FLMnTs3/uVf/iVmzpxZ1MgAjAD7AaAx1OXnWNQjn2MBnCka+XMs6pHPsQDOJGf851gAAAD1TVgAAABpwgIAAEgTFgAAQJqwAAAA0oQFAACQJiwAAIA0YQEAAKQJCwAAIE1YAAAAacICAABIExYAAECasAAAANKEBQAAkCYsAACANGEBAACkCQsAACBNWAAAAGnCAgAASBMWAABAmrAAAADShAUAAJAmLAAAgDRhAQAApAkLAAAgTVgAAABpwgIAAEgTFgAAQJqwAAAA0oQFAACQJiwAAIA0YQEAAKQJCwAAIE1YAAAAacICAABIExYAAECasAAAANKEBQAAkCYsAACAtDGZH/7lL38Z+/bti9dffz2mTp0akydPPl1zAdDg7AiA5nLKVywOHToUd9xxR/zO7/xOTJo0KS644IIolUoxderUmDlzZnzhC1+IarU6HLMCUOfsCIDmdUphceutt8YFF1wQ3/72t+Pqq6+O++67L7q7u+Ppp5+Of/u3f4sbb7wxjh07Fr/7u78bH/7wh2PXrl3DNTcAdcaOAGhup/RSqC1btsQjjzwS8+bNe8vvX3HFFfHZz342/vZv/zbuvPPO2Lx5c8yZM+e0DApAfbMjAJrbKYXFD37wg5O637hx4+JP/uRPhjQQAI3JjgBobn4rFAAAkDbk3wpVrVZj3bp18fLLL8eFF14Yl112Wf9Xa2vr6ZwRgAZjRwA0nyFfsVi5cmWMHj06Vq9eHe9973tj8+bN8ZnPfCYuuOCCOO+8807njAA0GDsCoPkM+YrF3r1740c/+lHMnj17wPHnn38+uru7s3MB0MDsCIDmM+SwaG9vj//4j/84YWnMnDkzZs6cmR4MgMZlRwA0nyG/FGrt2rXxl3/5l/Gf//mfp3MeAM4AdgRA8xnyFYuPfvSj0dLSEnPmzInly5dHe3t7LFiwIObPnx/jxo07nTMC0GDsCIDmM+Sw2LVrV2zbtq3/65Zbbonnn38+xowZExdffHFs3779dM4JQAOxIwCaz5DDYvbs2TF79uz4xCc+0X+st7c3uru7LQyAJmdHADSfU3qPxZ49e97x+xMnTowPfvCDcd1110VExAsvvDD0yQBoKHYEQHM7pbAol8vxhS98IX72s5+97X0OHjwY3/72t2Pu3Llx3333pQcEoDHYEQDN7ZReCrVz5874q7/6q/jwhz8cZ511VixcuDCmT58e48ePj1dffTV6enriqaeeioULF8bXvva1WLp06XDNDUCdsSMAmltLrVarneoPHTlyJB588MHo7OyM5557Lv7rv/4rpkyZEgsWLIhrr7025s6dOxyzFqq3tzcmTZoUM9b87xg17pxh+TOeu2XZsDwuwH/35r9nBw8ejIkTJ572x2+2HTES+yHCjgBGRmZHDOnN2z//+c9jzJgx8Qd/8AdxxRVXDOUhADhD2REAzemUw+If/uEfYtWqVXHs2LFoaWmJBQsWxIMPPhhTp04djvkAaCB2BEDzOuVP3r7pppvij/7oj2L37t3x8MMPx6hRo2LdunXDMRsADcaOAGhep3zF4plnnomf/OQnMXPmzHjve98b3/ve9+Lyyy+PO++8czjmA6CB2BEAzeuUr1gcO3Yszj777P7bF110Ubzxxhuxb9++0zoYAI3HjgBoXqccFhER3/nOd2LLli1x6NChiIgYM2ZMvP7666d1MAAakx0B0JxO+aVQ73//++Pmm2+O1157LUaNGhWzZs2KI0eOxJ133hnXXHNNtLW1DcuvLwSg/tkRAM3rlMOis7MzIiJ27doVXV1d8eSTT0ZXV1ds2LAh1q9fH6NGjYo5c+bEzp07T/uwANQ3OwKgeQ3pcywiIubMmRNz5syJT3/60/3Hnn322XjiiSdi69atp2U4ABqTHQHQfIYcFm9l1qxZMWvWrPj93//90/mwAJwB7AiAM9uQ3rwNAADw3wkLAAAgTVgAAABpwgIAAEgTFgAAQJqwAAAA0oQFAACQJiwG0dHREaVSKcrlctGjAFBH7AeAgYTFICqVSvT09ES1Wi16FADqiP0AMJCwAAAA0oQFAACQJiwAAIA0YQEAAKQJCwAAIE1YAAAAacICAABIExYAAECasAAAANKEBQAAkCYsAACANGEBAACkCQsAACBNWAAAAGnCAgAASBMWAABAmrAAAADShAUAAJAmLAAAgDRhAQAApAkLAAAgTVgAAABpwgIAAEgTFgAAQJqwAAAA0oQFAACQJiwAAIA0YQEAAKQJCwAAIE1YAAAAacICAABIExYAAECasAAAANKEBQAAkCYsAACANGEBAACkCQsAACBNWAAAAGnCAgAASBMWAABAmrAAAADShAUAAJAmLAAAgDRhAQAApAkLAAAgTVgAAABpwmIQHR0dUSqVolwuFz0KAHXEfgAYSFgMolKpRE9PT1Sr1aJHAaCO2A8AAwkLAAAgTVgAAABpwgIAAEgTFgAAQJqwAAAA0oQFAACQJiwAAIA0YQEAAKQJCwAAIE1YAAAAacICAABIExYAAECasAAAANKEBQAAkCYsAACANGEBAACkCQsAACBNWAAAAGnCAgAASBMWAABAmrAAAADShAUAAJAmLAAAgDRhAQAApAkLAAAgTVgAAABpwgIAAEgTFgAAQJqwAAAA0oQFAACQJiwAAIA0YQEAAKQJi0F0dHREqVSKcrlc9CgA1BH7AWAgYTGISqUSPT09Ua1Wix4FgDpiPwAMJCwAAIA0YQEAAKQJCwAAIE1YAAAAacICAABIExYAAECasAAAANKEBQAAkCYsAACANGEBAACkCQsAACBNWAAAAGnCAgAASBMWAABAmrAAAADShAUAAJAmLAAAgDRhAQAApAkLAAAgTVgAAABpwgIAAEgTFgAAQJqwAAAA0oQFAACQJiwG0dHREaVSKcrlctGjAFBH7AeAgYTFICqVSvT09ES1Wi16FADqiP0AMJCwAAAA0oQFAACQJiwAAIA0YQEAAKQJCwAAIE1YAAAAacICAABIExYAAECasAAAANKEBQAAkCYsAACANGEBAACkCQsAACBNWAAAAGnCAgAASBMWAABAmrAAAADShAUAAJAmLAAAgDRhAQAApAmLQXR0dESpVIpyuVz0KADUEfsBYCBhMYhKpRI9PT1RrVaLHgWAOmI/AAwkLAAAgDRhAQAApAkLAAAgTVgAAABpwgIAAEgTFgAAQJqwAAAA0oQFAACQJiwAAIA0YQEAAKQJCwAAIE1YAAAAacICAABIExYAAECasAAAANKEBQAAkCYsBtHR0RGlUinK5XLRowBQR+wHgIGExSAqlUr09PREtVotehQA6oj9ADCQsAAAANKEBQAAkCYsAACANGEBAACkCQsAACBNWAAAAGnCAgAASBMWAABAmrAAAADShAUAAJAmLAAAgDRhAQAApAkLAAAgTVgAAABpwmIQHR0dUSqVolwuFz0KAHXEfgAYSFgMolKpRE9PT1Sr1aJHAaCO2A8AAwkLAAAgTVgAAABpwgIAAEgTFgAAQJqwAAAA0oQFAACQJiwAAIA0YQEAAKQJCwAAIE1YAAAAacICAABIExYAAECasBhER0dHlEqlKJfLRY8CQB2xHwAGEhaDqFQq0dPTE9VqtehRAKgj9gPAQMICAABIExYAAECasAAAANKEBQAAkNZUYXHrrbfGJZdcEqVSKb74xS9GrVYreiQA6oD9AJDXNGHx8ssvx2233RZdXV2xY8eO6Orqiscff7zosQAomP0AcHqMKXqAkXTs2LE4cuRIRET88pe/jHe/+90FTwRAPbAfAPLq5opFZ2dnLF++PKZPnx4tLS3xwAMPnHCf22+/PWbNmhXjx4+Ptra2eOyxx0768adOnRo33HBDtLa2xvTp0+Oaa66J2bNnn8YzAGA42A8AjaFuwuLw4cMxf/78uO22297y+/fee2+sWbMmvvKVr8TWrVvjAx/4QCxdujT27NnTf5+2traYO3fuCV8vvvhivPrqq/HDH/4wnnvuuXjhhRdiy5Yt0dnZOVKnB8AQ2Q8AjaFuXgq1dOnSWLp06dt+/xvf+EZ87nOfi89//vMREfHNb34zfvKTn8SGDRti/fr1ERHR1dX1tj//gx/8IC688MKYPHlyREQsW7YsHn/88fjgBz/4lvfv6+uLvr6+/tsHDx6MiIg3+l4/tRM7Bb29vcP22ABvevPfmkZ5g7L98Ct2BDASMjuibsLinRw9ejS6urpi3bp1A44vWbIktmzZclKPMWPGjNiyZUscOXIkzjrrrHj00Ufjj//4j9/2/uvXr4+bbrrphOMvbPifpzT7qZj0zWF7aIAT/OIXv4hJkyYVPUZKs+yHCDsCGFlD2RENERavvPJKHD9+PKZNmzbg+LRp02Lfvn0n9Ri/9Vu/FR/5yEdiwYIFMWrUqFi8eHF87GMfe9v7f/nLX461a9f23z5w4EDMnDkz9uzZ0/CL+GT19vbGjBkzYu/evTFx4sSixxkxzrt5zrsZzzniV8+wt7a29j9D38jsh+I06/8/zXjezXjOEc173pkd0RBh8aaWlpYBt2u12gnH3slXv/rV+OpXv3pS9x03blyMGzfuhOOTJk1qqr9cERETJ05sunOOcN7NpBnPOSJi1Ki6eZtdmv1QnGb9/6cZz7sZzzmiec97KDuiIbbKlClTYvTo0Sc8+7R///4TnqUCoHnYDwD1oyHCYuzYsdHW1habNm0acHzTpk2xaNGigqYCoGj2A0D9qJuXQh06dCh2797df/vZZ5+N7u7umDx5crS2tsbatWtj5cqVsXDhwmhvb4+NGzfGnj17YvXq1SMy37hx4+LGG298y8vfZ6pmPOcI591M592M5xzReOdtP9Qn5908592M5xzhvIdy3i21Ovl9g48++mhcddVVJxxftWpV3H333RHxqw9A+uu//ut46aWXYu7cuXHrrbe+7a8DBODMYD8ANIa6CQsAAKBxNcR7LAAAgPomLAAAgDRhAQAApAmLk3D77bfHrFmzYvz48dHW1haPPfZY0SMNu87Ozli+fHlMnz49Wlpa4oEHHih6pGG3fv36KJfLMWHChHj3u98dK1asiKeffrrosYbVhg0b4tJLL+3/8J/29vZ48MEHix5rxK1fvz5aWlpizZo1RY8yrP78z/88WlpaBnz9xm/8RtFjNbxm2xH2Q3Pshwg7IsJ+OFXCYhD33ntvrFmzJr7yla/E1q1b4wMf+EAsXbo09uzZU/Row+rw4cMxf/78uO2224oeZcRs3rw5KpVKPP7447Fp06Y4duxYLFmyJA4fPlz0aMPm/PPPj1tuuSWeeOKJeOKJJ+Lqq6+Oj3/84/HUU08VPdqIqVarsXHjxrj00kuLHmVEXHLJJfHSSy/1f+3YsaPokRpaM+4I+6E59kOEHWE/DGE/1HhHV1xxRW316tUDjl188cW1devWFTTRyIuI2v3331/0GCNu//79tYiobd68uehRRtSv//qv1/7u7/6u6DFGxGuvvVabM2dObdOmTbUPfehDtS996UtFjzSsbrzxxtr8+fOLHuOM0uw7wn5orv1QqzXPjrAfhsYVi3dw9OjR6OrqiiVLlgw4vmTJktiyZUtBUzFSDh48GBERkydPLniSkXH8+PG455574vDhw9He3l70OCOiUqnEsmXL4pprril6lBGza9eumD59esyaNSs+/elPxzPPPFP0SA3LjmhezbYfIppvR9gPQ9sPdfPJ2/XolVdeiePHj8e0adMGHJ82bVrs27evoKkYCbVaLdauXRvvf//7Y+7cuUWPM6x27NgR7e3tceTIkfi1X/u1uP/++6NUKhU91rC755574sknn4xqtVr0KCPmyiuvjO9+97vxm7/5m/Hzn/88br755li0aFE89dRTcd555xU9XsOxI5pTM+2HiObcEfbD0PeDsDgJLS0tA27XarUTjnFmue6662L79u3xr//6r0WPMuwuuuii6O7ujgMHDsQ//uM/xqpVq2Lz5s1n9OLYu3dvfOlLX4qHHnooxo8fX/Q4I2bp0qX9/z1v3rxob2+P2bNnx3e+851Yu3ZtgZM1NjuiuTTTfohovh1hP+T2g7B4B1OmTInRo0ef8MzT/v37T3iGijPH9ddfH//8z/8cnZ2dcf755xc9zrAbO3ZsXHjhhRERsXDhwqhWq/Gtb30r7rjjjoInGz5dXV2xf//+aGtr6z92/Pjx6OzsjNtuuy36+vpi9OjRBU44Ms4999yYN29e7Nq1q+hRGpId0XyabT9ENN+OsB9+Zaj7wXss3sHYsWOjra0tNm3aNOD4pk2bYtGiRQVNxXCp1Wpx3XXXxX333RcPP/xwzJo1q+iRClGr1aKvr6/oMYbV4sWLY8eOHdHd3d3/tXDhwvjDP/zD6O7uboqlERHR19cXO3fujPe85z1Fj9KQ7IjmYT/8P2f6jrAffmWo+8EVi0GsXbs2Vq5cGQsXLoz29vbYuHFj7NmzJ1avXl30aMPq0KFDsXv37v7bzz77bHR3d8fkyZOjtbW1wMmGT6VSie9///vxT//0TzFhwoT+ZyEnTZoUZ599dsHTDY8//dM/jaVLl8aMGTPitddei3vuuSceffTR+PGPf1z0aMNqwoQJJ7w2+txzz43zzjvvjH7N9A033BDLly+P1tbW2L9/f9x8883R29sbq1atKnq0htWMO8J+aI79ENGcO8J+SO6H9O+VagIdHR21mTNn1saOHVu7/PLLm+LXyz3yyCO1iDjha9WqVUWPNmze6nwjonbXXXcVPdqw+exnP9v/d3vq1Km1xYsX1x566KGixypEM/w6wU996lO197znPbWzzjqrNn369NonPvGJ2lNPPVX0WA2v2XaE/dAc+6FWsyPeZD+cvJZarVbLVg4AANDcvMcCAABIExYAAECasAAAANKEBQAAkCYsAACANGEBAACkCQsAACBNWAAAAGnCAgAASBMWUJDdu3dHS0tL/OhHP4rFixfHOeecExdddFH89Kc/LXo0AApkP9CohAUUZNu2bdHS0hJ/8zd/E3/2Z38W27Zti9bW1li3bl3RowFQIPuBRiUsoCDbtm2LSZMmxb333htXXXVVzJkzJ1asWBEvv/xy0aMBUKDB9sMPf/jDuP766wueEk4kLKAg27Zti+XLl8fUqVP7jz3zzDNx4YUXFjgVAEUbbD9s3749FixYUNR48LaEBRRk27Zt0d7ePuDY1q1b47LLLouIiO9973tx5ZVXxrx58+JjH/tYHD16tIApARhpg+2H7du3x86dO6OtrS0uueSS+Pd///cCpoQTCQsowMGDB+P5558/4Rmn7u7u/sXxkY98JH7605/Gjh07YsqUKfHYY48VMCkAI+lk9sP27dujtbU1urq64vrrr49vfOMbBUwKJxIWUIBt27bF6NGjY/78+f3Hnn/++Xj11Vfjsssui1qtFhs3boxyuRzz58+P+++/P8aPH1/gxACMhMH2Q19fXxw9ejQqlUpERFx66aXxyiuvFDUuDDCm6AGgGW3bti0uvvjiOPvss/uPbd26Nd71rnfFBRdcEHfddVfs3r07Ojs74+yzz46ZM2dGqVQqcGIARsJg++HJJ5+MUqkUo0aN6v/epZdeWtS4MEBLrVarFT0EMNANN9wQ73vf++Jzn/tcfOtb34qvf/3rsXfv3qLHAqBgd999d3zta1+L7u7uePXVV2PZsmXx4IMPxpQpU4oeDVyxgHq0cuXK+PjHPx7f/e5340Mf+lDMmzev6JEAqAM7duyIT37yk1Eul+ONN96IW2+9VVRQN1yxAAAA0rx5GwAASBMWAABAmrAAAADShAUAAJAmLAAAgDRhAQAApAkLAAAgTVgAAABpwgIAAEgTFgAAQJqwAAAA0oQFAACQ9n8BdGuLp73TCR0AAAAASUVORK5CYII=\n"}}]}}}, "version_major": 2, "version_minor": 0}
+{"state": {"df7244164db24cdd946b169600e1cc50": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "171b6a02c7d24ecc902f947516a11496": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "4515fa94542c47d48d59cbde38cdf2ac": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "FloatSliderView", "continuous_update": false, "description": "Time index:", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_df7244164db24cdd946b169600e1cc50", "max": 500.0, "min": 0.0, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 1.0, "style": "IPY_MODEL_171b6a02c7d24ecc902f947516a11496", "value": 0.0}}, "14c2eadb431641999c24523a42e2f1dd": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e06b9cc4877a42a18f0c88308691c4a2": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "c0931359848b407e9103a0c4651d686f": {"model_name": "IntSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "IntSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "IntSliderView", "continuous_update": true, "description": "t", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_14c2eadb431641999c24523a42e2f1dd", "max": 999, "min": 0, "orientation": "horizontal", "readout": true, "readout_format": "d", "step": 1, "style": "IPY_MODEL_e06b9cc4877a42a18f0c88308691c4a2", "value": 30}}, "8a3d21924631452f9698796bcca2f549": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2f039a79b100412e9e2b9cc709d339c0": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_c0931359848b407e9103a0c4651d686f", "IPY_MODEL_584a25f4eeaa49c4a38c07484f016834"], "layout": "IPY_MODEL_8a3d21924631452f9698796bcca2f549"}}, "c076072b26df47828950348dce95d9d2": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "584a25f4eeaa49c4a38c07484f016834": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_c076072b26df47828950348dce95d9d2", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {"needs_background": "light"}, "data": {"text/plain": "<Figure size 576x360 with 2 Axes>", "image/png": "iVBORw0KGgoAAAANSUhEUgAAAjgAAAFgCAYAAAC2QAPxAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjUuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/YYfK9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAQ50lEQVR4nO3df6jleV3H8dd75lqTY+5Qag3uhv3YFN2VCtFCihAtf12V6A9XLUFhoizsF5WBrEGlIKSgFmwmZj8USwVHLRXUTPDn5mprq7GE1WC1mG0l9Mt698e90rbs3L2zc879nvs+jwcMzjmcuftW9O1zPuec77e6OwAAk5xYegAAgFUTOADAOAIHABhH4AAA4wgcAGCcnaUHWLeT976id654wGX9jGsfeMWKpoHZbrzxxs939/2XnuOorWLPJHYNHMZh98z4wNm54gE5++yXX9bP+NhLnrSaYWC4qvrrpWdYwir2TGLXwGEcds94iwoAGEfgAADjCBwAYByBAwCMI3AAgHEEDgAwjsABAMYZex2cqtpNsrtz5uzSowBD2TOwucae4HT3+e4+d+LU6aVHAYayZ2BzjQ0cAGB7CRwAYByBAwCMI3AAgHEEDgAwjsABAMYROADAOAIHABhH4AAA4wgcAGAcgQMAjCNwAIBxBA4AMI7AAQDGETgAwDgCBwAYR+AAAOMIHABgHIEDAIwjcACAcQQOADCOwAEAxhE4AMA4O0sPsC5VtZtkd+fM2aVHAYayZ2BzjT3B6e7z3X3uxKnTS48CDGXPwOYaGzgAwPYSOADAOAIHABhH4AAA4wgcAGAcgQMAjCNwAIBxBA4AMI7AAQDGETgAwDgCBwAYR+AAAOMIHABgHIEDAIwjcACAcQQOADCOwAEAxtlZeoB1qardJLs7Z84uPQowlD0Dm2vsCU53n+/ucydOnV56FGAoewY219jAAQC2l8ABAMYROADAOAIHABhH4AAA4wgcAGAcgQMAjCNwAIBxBA4AMI7AAQDGETgAwDgCBwAYR+AAAOPsLD3AulTVbpLdnTNnlx4FGMqegc019gSnu89397kTp04vPQowlD0Dm2ts4AAA20vgAADjCBwAYByBAwCMI3AAgHEEDgAwjsABAMYROADAOAIHABhH4AAA4wgcAGAcN9sEuIfsGdhcY09w3AQPWDd7BjbX2MABALaXwAEAxhE4AMA4AgcAGEfgAADjCBwAYByBAwCMI3AAgHEEDgAwjls1ANxD9gxsrrEnOC6hDqybPQOba2zgAADbS+AAAOMIHABgHIEDAIwjcACAcQQOADCOwAEAxhE4AMA4rmQMcA/ZM7C5xp7guMIosG72DGyusYEDAGwvgQMAjCNwAIBxBA4AMM6xCpyqemhVvbGqfqOqfnDpeYCZ7Bo4/o4scKrqNVV1W1XdfKfnH19Vn6mqW6vqF+7mxzwhySu6+0eT/PDahgWOLbsGSI72OjivTfLKJK/78hNVdTLJq5I8LsmFJB+tqrcmOZnkxXf6889J8jtJrq+qpyT52iOYGTh+Xhu7BrbekQVOd7+/qh50p6cfmeTW7v6rJKmqNyR5ane/OMmTL/Kjnre/rN58sX9WVZ1Lci5JTt73/pc7OnCMHNWusWdgsy19JeMHJvnbOzy+kORRF3vx/tL6xSSnk7z0Yq/r7huS3JAkX3n26l7FoMCxtvJdY8/AZls6cOounrvooujuz2b/b0wAl8CugS2z9LeoLiS56g6Pr0zyuYVmAeaya2DLLB04H01ydVV9Y1V9RZKnJ3nrwjMB89g1sGWO8mvir0/ywSQPrqoLVfXc7v5Skh9P8s4ktyR5Y3d/6qhmAuaxa4DkaL9Fdd1Fnn9Hkncc1RzAbHYNkCz/FhUAwMoJHABgHIEDAIwjcACAcQQOADCOwAEAxhE4AMA4AgcAGEfgAADjCBwAYByBAwCMI3AAgHEEDgAwjsABAMYROADAOAIHABhH4AAA4wgcAGAcgQMAjCNwAIBxBA4AMI7AAQDGETgAwDgCBwAYR+AAAOMIHABgHIEDAIxzyYFTVaer6uQ6hgH4MrsGuBx3GzhVdaKqnlFVb6+q25J8OsnfVdWnquqlVXX1+scEprNrgFU6zAnOe5N8c5IXJPn67r6qux+Q5LuTfCjJS6rqWWucEdgOdg2wMjuHeM1ju/u/7vxkd38hyZuSvKmq7rXyyYBtY9cAK3O3Jzh3tXDuyWsADmLXAKt0mBOcJElVPSbJM5PcnuTmJJ9McnN3/8d6RgO2kV0DrMKhAyfJ7yZ53v6feXiSpyV5WJJvWf1YwBaza4DLdimBc2t3v2X/93+wjmEAYtcAK3Ap18H5k6r6qaqqtU0DYNcAK3ApJzgPS3JNkp+vqhuT3JTkpu72Nyxglewa4LLdbeBUVfWeH9h//FX5vwX0qCR/8OXXrHdUYDK7BlilQ13or6p+oqq+IUm6+9+6+2NJfj/JH1XVbyd59jqHBLaCXQOszGHeonp8kuckeX1VfVOSf0pyKsnJJO9K8rLuvmltEwLbwq4BVuZuA6e7/z3Jryf59f2riN4vyb919+1rng3YInYNsEqHudnms6vq81X1hSSvTvJFCwdYNbsGWKXDfAbnhUkel+QhSf4mya+udSJgW9k1wMoc5jM4/9LdH9///Qur6sPrHAjYWnYNsDKHCZyzVXUuyS1JPp3E3XyBdbBrgJU5TOBcn737wTwzybVJ7lNV70jyiSSf7O7Xr3E+YHvYNcDKHOZbVDfc8XFVXZm9JXRtkicmsXSAy2bXAKt0KbdqSJJ094UkF5K8Y/XjAOyxa4DLcSk32wQAOBYEDgAwjsABAMYROADAOJf8IePjoqp2k+zunDm79CjAUPYMbK6xJzjdfb67z504dXrpUYCh7BnYXGMDBwDYXgIHABhH4AAA4wgcAGAcgQMAjCNwAIBxBA4AMI7AAQDGETgAwDgCBwAYR+AAAOMIHABgHIEDAIwjcACAcQQOADCOwAEAxhE4AMA4AgcAGEfgAADjCBwAYByBAwCMI3AAgHEEDgAwjsABAMYROADAOAIHABhH4AAA4wgcAGAcgQMAjCNwAIBxBA4AMI7AAQDG2Vl6gHWpqt0kuztnzi49CjCUPQOba+wJTnef7+5zJ06dXnoUYCh7BjbX2MABALaXwAEAxhE4AMA4AgcAGEfgAADjCBwAYByBAwCMI3AAgHEEDgAwjsABAMYROADAOAIHABhH4AAA4wgcAGAcgQMAjCNwAIBxBA4AMI7AAQDGETgAwDgCBwAYR+AAAOMIHABgnJ2lB1iXqtpNsrtz5uzSowBD2TOwucae4HT3+e4+d+LU6aVHAYayZ2BzjQ0cAGB7CRwAYByBAwCMI3AAgHEEDgAwjsABAMYROADAOAIHABhH4AAA4wgcAGAcgQMAjCNwAIBxBA4AMI7AAQDGETgAwDgCBwAYR+AAAOPsLD3AulTVbpLdnTNnlx4FGMqegc019gSnu89397kTp04vPQowlD0Dm2ts4AAA20vgAADjCBwAYByBAwCMI3AAgHEEDgAwjsABAMYROADAOAIHABhH4AAA4wgcAGAcgQMAjCNwAIBxBA4AMM7O0gOsS1XtJtndOXN26VGAoewZ2FxjT3C6+3x3nztx6vTSowBD2TOwucYGDgCwvQQOADCOwAEAxhE4AMA4AgcAGEfgAADjCBwAYByBAwCMI3AAgHEEDgAwjsABAMZxs02Ae8iegc019gTHTfCAdbNnYHONDRwAYHsJHABgHIEDAIwjcACAcQQOADCOwAEAxhE4AMA4AgcAGEfgAADjuFUDwD1kz8DmGnuC4xLqwLrZM7C5xgYOALC9BA4AMI7AAQDGETgAwDgCBwAYR+AAAOMIHABgHIEDAIzjSsYA95A9A5tr7AmOK4wC62bPwOYaGzgAwPYSOADAOAIHABhH4AAA4xyrb1FV1TckeWWSzyf5y+5+ycIjAQPZNXD8HdkJTlW9pqpuq6qb7/T846vqM1V1a1X9wt38mG9N8vbufk6Sh65tWODYsmuA5Gjfonptksff8YmqOpnkVUmekL0lcl1VPbSqrq2qt93p1wOSfDzJ06vqPUnee4SzA8fHa2PXwNar7j66f1jVg5K8rbuv2X/8XUle1N3fv//4BUnS3S++yJ//2SQf6e73V9UfdvcPXuR155Kc2394TZKb7+p1G+p+2TsWPy7Mu17Hbd4Hd/dXLz3EUewae+ZImXe9jtu8h9ozS38G54FJ/vYOjy8kedQBr//jJC+qqmck+ezFXtTdNyS5IUmq6mPd/YjLH/VomHe9zLteVfWxpWe4iJXvGnvm6Jh3vY7jvId53dKBU3fx3EWPlLr75iR3eWoDcAC7BrbM0l8Tv5Dkqjs8vjLJ5xaaBZjLroEts3TgfDTJ1VX1jVX1FUmenuStK/5n3LDin7du5l0v867Xps677l2zqf++L8a862Xe9TrUvEf2IeOqen2S783eh5n+Icn13f1bVfXEJC9PcjLJa7r7V45kIGAkuwZIjvhbVAAAR2Hpt6gAAFZubOBc4lVLF3exq69uoqq6qqreW1W3VNWnqur5S890kKo6VVUfqapP7M/7S0vPdBhVdbKqPl5Vb1t6lrtTVZ+tqj+vqps2+Kvia3Gcds1x2jOJXXNUpu6akW9R7V+19C+TPC573574aJLruvsvFh3sAFX1PUm+mOR1X7442aaqqrNJznb3n1XVVye5McnTNvU/36qqJKe7+4tVda8kH0jy/O7+0MKjHaiqfjrJI5Lct7ufvPQ8B6mqzyZ5RHcfp4uFXbbjtmuO055J7JqjMnXXTD3BeWSSW7v7r7r7P5O8IclTF57pQN39/iRfWHqOw+juv+vuP9v//b8muSV7F1LbSL3ni/sP77X/a6PLvqquTPKkJK9eehYOdKx2zXHaM4ldcxQm75qpgXNXVy3d2P9RHGf7l8T/9iQfXniUA+0fwd6U5LYk7+7ujZ43e9/2+bkk/7PwHIfVSd5VVTfu38JgW9g1R8SuWZuXZ+iumRo4l3TVUu6ZqrpPkjcl+cnu/pel5zlId/93d39b9i7w9siq2tjj+ap6cpLbuvvGpWe5BI/u7u/I3s0sn7f/Vsg2sGuOgF2zHtN3zdTAcdXSNdt/f/lNSX6vu9+89DyH1d23J3lf7nS36Q3z6CRP2X+v+Q1JHlNVv7vsSAfr7s/t/+ttSd6SvbdutoFds2Z2zVqN3jVTA+corpC8tfY/SPdbSW7p7l9bep67U1X3r6oz+7//qiSPTfLpRYc6QHe/oLuv7O4HZe+/u+/p7mctPNZFVdXp/Q+ApqpOJ/m+HK87a18Ou2aN7Jr1mr5rRgZOd38pyY8neWf2PpT2xu7+1LJTHWz/6qsfTPLgqrpQVc9deqYDPDrJD2Wv9m/a//XEpYc6wNkk762qT2bv/5De3d0b/3XIY+Trknygqj6R5CNJ3t7df7zwTEfiuO2aY7ZnEruG/++Sds3Ir4kDANtt5AkOALDdBA4AMI7AAQDGETgAwDgCBwAYR+AAAOMIHABgHIHDRqiqt1TVL1fVn1bV31fVY5eeCZjFntkuAodNcU2S27v7u5P8WJJnLjwPMI89s0UEDourqnsnuSLJy/af2kly+2IDAeMctGeq6tULjcUa7Sw9ACR5WJIbu/u/9x8/PPs3UKuq65N8Tfb+1nX9QvMBx99d7pn9m2I+pKpelOQhSa5r9zAawQkOm+CaJDfd4fHDk3yyqh6Y5F7Z+1vWdx79WMAgd7lnknx7kj/s7hcl+efsnfIwgBMcNsG1ST58h8fXZO8E51VJnp/k/kmuWmAuYI6L7ZkfyV7oJMm9u/v2I56LNXE3cTZWVf1Mkvsm+dokn+nuVyw8EjBMVf1mkn9McibJG7r7fYsOxMoIHABgHJ/BAQDGETgAwDgCBwAYR+AAAOMIHABgHIEDAIwjcACAcQQOADDO/wIK7H2QaVWEvgAAAABJRU5ErkJggg==\n"}}]}}}, "version_major": 2, "version_minor": 0}
 </script>
 
 
@@ -1250,11 +1104,9 @@ H_{ab} &amp;= \langle \alpha_p | H_{abp} | \alpha_p \rangle \\
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="T3E1-EXTRAS-interference-2-homodyne-detection.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1270,28 +1122,24 @@ H_{ab} &amp;= \langle \alpha_p | H_{abp} | \alpha_p \rangle \\
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

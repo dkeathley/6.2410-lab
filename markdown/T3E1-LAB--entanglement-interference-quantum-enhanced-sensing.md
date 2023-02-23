@@ -200,7 +200,7 @@ The HWP control is circled in the source control dialog.  Use this to set the po
 
 +++ {"tags": []}
 
-In this ecxercise we will build an interferometer to perform single-photon interference.  We will use these measurements to: (1) better understand the properties of interference in the context of quantum states of light; (2) explore the spectral bandwidth of the photons; and (3) demonstrate the concept of interaction-free measurement made possible through the wave-particle duality.  
+In this ecxercise we will build an interferometer to perform single-photon interference.  We will use these measurements to: (1) better understand the properties of interference in the context of quantum states of light; (2) explore the spectral bandwidth of the photons; and (3) demonstrate the concept of interaction-free measurement made possible through the wave-particle duality.
 
 +++ {"tags": []}
 
@@ -318,9 +318,9 @@ In our case, both photons come from the same source which help us to ensure matc
 The final on-board setup is shown in {numref}`fig-t3e1-hom-lab-setup`.  Follow the following steps for alignment.
 
 :::{figure-md} fig-t3e1-hom-lab-setup
-<img src="FIGURES/T3E1-LAB-entanglement-interference/aim-6-HOM-lab-setup-annotated.png" alt="QK HOM Setup" class="bg-primary mb-1" width="600px">
+<img src="FIGURES/T3E1-LAB-entanglement-interference/aim-6-HOM-lab-setup-annotated.png" alt="QK HOM Setup" class="bg-primary mb-1" width="400px">
 
-Final Quantenkoffer setup for the HOM experiment with outputs to fiber delay-line interferometer labeled.  For the delay line, see {numref}`fig-t3e1-fiber-interferometer`
+Quantenkoffer board setup for the HOM experiment with outputs to fiber delay-line interferometer labeled.  For the delay line, see {numref}`fig-t3e1-fiber-interferometer`
 :::
 
 **Part 1:** Align the fiber couplers.
@@ -359,7 +359,7 @@ Here is a video moving in and out of the HOM dip for reference.
 
 <iframe src="https://drive.google.com/file/d/1aPtqVy__lI1VMfzs_hoZC9tu7Hwfaz7j/preview" width="640" height="480" allow="autoplay"></iframe>
 
-**AIs** (1) What is the spatial length over which you see the HOM dip?  (2) How strong is the dip as a percentage of total coincidences when not overlapped?  Why might this contrast not be 100 percent? (3) Be sure to read the section in the text extending this approach to perform N=2 NOON-state interferometry and be sure to complete the post-lab questions.  The experiences gained in this measurement should help inform your answers there with regard to engineering challenges to such approaches.
+**AIs** (1) What is the spatial length over which you see the HOM dip?  (2) How strong is the dip as a percentage of total coincidences when not overlapped?  Why might this contrast not be 100 percent? (3) Read the section in the text extending this approach to perform N=2 NOON-state interferometry and be sure to complete the post-lab questions.  The experiences gained in this measurement should help inform your answers to this post-lab with regard to engineering challenges involved with generating and using higher-order Fock and NOON states.
 
 +++ {"tags": ["remove-cell"]}
 

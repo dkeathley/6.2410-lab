@@ -17,30 +17,33 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# Estimate the probability of getting more than k photons
-import scipy
-from scipy.stats import poisson
+def correlation_ss_gtt(H, tlist, c_ops, a_op, b_op, c_op, d_op, rho0=None):
+    return mesolve(H, d_op * rho0 * a_op, tlist, c_ops, [b_op * c_op]).expect[0]
 
-k = 1 # default is 1: how often does Alice send > 1 photon?
-mu = 0.5 # set the mean value (the above text uses lambda instead of mu)
-prob = gt(k,mu)
+# calculate the two-time correlation functions
+taulist = np.linspace(0, 40, 40)
+t=5
+rho0 = ket2dm(psi_out.states[t])
 
-def gt(k,mu):
-    xx = 1-poisson.cdf(k=kk, mu=mu)
-    return xx
-print(f"The probability of getting more than {k} photons with mean {mu} is {prob}")
+n_th = background_photons  # bath temperature in terms of excitation number
+c_ops = [sqrt(G1*(1+n_th)) * a, sqrt(G1*n_th) * a.dag()]
+
+
+G2_aa = correlation_ss_gtt(Hab, taulist, c_ops, a.dag(), a, a.dag(), a, rho0=rho0)
+G2_bb = correlation_ss_gtt(Hab, taulist, c_ops, b.dag(), b, b.dag(), b, rho0=rho0)
+G2_ab = correlation_ss_gtt(Hab, taulist, c_ops, a.dag(), b, a, b.dag(), rho0=rho0)
 
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/tmp/ipykernel_798131/338321062.py[0m in [0;36m<cell line: 7>[0;34m()[0m
-[1;32m      5[0m [0mk[0m [0;34m=[0m [0;36m1[0m [0;31m# default is 1: how often does Alice send > 1 photon?[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      6[0m [0mmu[0m [0;34m=[0m [0;36m0.5[0m [0;31m# set the mean value (the above text uses lambda instead of mu)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 7[0;31m [0mprob[0m [0;34m=[0m [0mgt[0m[0;34m([0m[0mk[0m[0;34m,[0m[0mmu[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      8[0m [0;34m[0m[0m
-[1;32m      9[0m [0;32mdef[0m [0mgt[0m[0;34m([0m[0mk[0m[0;34m,[0m[0mmu[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/tmp/ipykernel_798150/2021380601.py[0m in [0;36m<cell line: 10>[0;34m()[0m
+[1;32m      8[0m [0;34m[0m[0m
+[1;32m      9[0m [0mn_th[0m [0;34m=[0m [0mbackground_photons[0m  [0;31m# bath temperature in terms of excitation number[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 10[0;31m [0mc_ops[0m [0;34m=[0m [0;34m[[0m[0msqrt[0m[0;34m([0m[0mG1[0m[0;34m*[0m[0;34m([0m[0;36m1[0m[0;34m+[0m[0mn_th[0m[0;34m)[0m[0;34m)[0m [0;34m*[0m [0ma[0m[0;34m,[0m [0msqrt[0m[0;34m([0m[0mG1[0m[0;34m*[0m[0mn_th[0m[0;34m)[0m [0;34m*[0m [0ma[0m[0;34m.[0m[0mdag[0m[0;34m([0m[0;34m)[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     11[0m [0;34m[0m[0m
+[1;32m     12[0m [0;34m[0m[0m
 
-[0;31mNameError[0m: name 'gt' is not defined
-NameError: name 'gt' is not defined
+[0;31mNameError[0m: name 'G1' is not defined
+NameError: name 'G1' is not defined
 

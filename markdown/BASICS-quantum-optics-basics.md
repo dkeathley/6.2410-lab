@@ -164,7 +164,9 @@ $$\hat{A}^{(\theta)} = \frac{\ahat e^{-i\theta} + \adagger e^{i\theta}}{2}$$
 
 where $\hat{A}^{(1)} = \hat{A}^{(\theta)}(0)$, and $\hat{A}^{(2)} = \hat{A}^{(\theta)}(\pi/2)$
 
-To get a better sense for these operators, let's consider the a classical electric field.  For a single frequency at one point in space, we can write the field as
+### Relating the Field Operators to Classical Electromagnetic Waves
+
+To get a better sense for these operators, let's consider the electric field of a classical light wave.  For a single frequency at one point in space, we can write the field as
 
 $$ E(t) = |\alpha|\cos(\omega_0 t + \varphi) \mathrm{.}$$
 
@@ -182,7 +184,7 @@ where
 
 $$\alpha = |\alpha|e^{i\varphi} = \mathrm{Re} \lbrace \alpha \rbrace + i\mathrm{Im} \lbrace \alpha \rbrace \mathrm{.}$$
 
-This means another set of equally valid parameters to describe the field:
+This means that another set of equally valid parameters to describe the field are:
 
  1. The central frequency $\omega_0$
  2. The in-phase component: $\mathrm{Re} \lbrace \alpha \rbrace$

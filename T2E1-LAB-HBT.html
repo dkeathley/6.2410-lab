@@ -50,8 +50,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -637,11 +635,17 @@ title="Print to PDF"
 <section id="hbt-with-2-fold-coincidence">
 <h2>HBT with 2-fold coincidence<a class="headerlink" href="#hbt-with-2-fold-coincidence" title="Permalink to this headline">#</a></h2>
 <p>Recall that the HBT experiment has the follow schematic:</p>
-<p>We want to set that up with the quED. quTools provides the following cartoon:</p>
 <figure class="align-default" id="hbt-lab">
+<a class="reference internal image-reference" href="_images/HBT_lab.png"><img alt="_images/HBT_lab.png" src="_images/HBT_lab.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 43 </span><span class="caption-text">Setup for HBT measurement.</span><a class="headerlink" href="#hbt-lab" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We want to set that up with the quED. quTools provides the following cartoon:</p>
+<figure class="align-default" id="id1">
 <a class="reference internal image-reference" href="_images/HBT_lab_qutools.png"><img alt="_images/HBT_lab_qutools.png" src="_images/HBT_lab_qutools.png" style="width: 600px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 43 </span><span class="caption-text">Image from quTools of the HBT experiment with quED</span><a class="headerlink" href="#hbt-lab" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 44 </span><span class="caption-text">Image from quTools of the HBT experiment with quED</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>You can read off the singles and coincidences from the quED detection page directly. The detection page will scroll through a time plot, the settings page, and another page that will display a numerical value for the singles and coincidences after each integration time. You can also use the Python wrapper function to read the detected values directly from the quED.</p>
@@ -692,11 +696,17 @@ title="Print to PDF"
 <section id="hbt-for-heralded-source-3-fold-coincidence">
 <h2>HBT for heralded source (3-fold coincidence)<a class="headerlink" href="#hbt-for-heralded-source-3-fold-coincidence" title="Permalink to this headline">#</a></h2>
 <p>As you recall, we want to modify the HBT experiment to look at the HBT experiment with a <em>heralded</em> single photon source, as shown below.</p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="_images/HBT_heralded_lab.png"><img alt="_images/HBT_heralded_lab.png" src="_images/HBT_heralded_lab.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 45 </span><span class="caption-text">Setup for heralded HBT measurement.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>quTools provides a more detailed schematic of how this experiment will look with the quED.</p>
-<figure class="align-default" id="id1">
+<figure class="align-default" id="id3">
 <a class="reference internal image-reference" href="_images/HBT_heralded_lab_qutools.png"><img alt="_images/HBT_heralded_lab_qutools.png" src="_images/HBT_heralded_lab_qutools.png" style="width: 600px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 44 </span><span class="caption-text">Image from quTools of the HBT experiment with heralded source with quED</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 46 </span><span class="caption-text">Image from quTools of the HBT experiment with heralded source with quED</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>You can use the equation from the text to find <span class="math notranslate nohighlight">\(g^{(2)}(0)\)</span> for the heralded source:</p>

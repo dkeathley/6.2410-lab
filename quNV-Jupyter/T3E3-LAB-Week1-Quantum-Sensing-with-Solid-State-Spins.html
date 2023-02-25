@@ -50,8 +50,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -691,7 +689,7 @@ title="Print to PDF"
 <figure class="align-default" id="setup-fig">
 <a class="reference internal image-reference" href="../_images/week1_setup.png"><img alt="../_images/week1_setup.png" src="../_images/week1_setup.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 50 </span><span class="caption-text">(left) Picture of the experimental setup. (right) Diagram depicting the magnetic resonators and diamond placed inside a magnetic shield.</span><a class="headerlink" href="#setup-fig" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 52 </span><span class="caption-text">(left) Picture of the experimental setup. (right) Diagram depicting the magnetic resonators and diamond placed inside a magnetic shield.</span><a class="headerlink" href="#setup-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Not shown in the picture of the setup are the electronics and the RF components needed to probe the microwave cavity. You will be tasked to put together the RF circuitry for running the experiment.</p>
@@ -728,7 +726,7 @@ title="Print to PDF"
 <figure class="align-default" id="resonators-in-shield-fig">
 <a class="reference internal image-reference" href="../_images/week1_resonators_in_shield.png"><img alt="../_images/week1_resonators_in_shield.png" src="../_images/week1_resonators_in_shield.png" style="width: 250px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 51 </span><span class="caption-text">Microwave resonators stacked inside the magnetic shield.</span><a class="headerlink" href="#resonators-in-shield-fig" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 53 </span><span class="caption-text">Microwave resonators stacked inside the magnetic shield.</span><a class="headerlink" href="#resonators-in-shield-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Mount the loop coupler such that it is directly above the resonator. You should use the <a class="reference external" href="https://www.thorlabs.com/thorproduct.cfm?partnumber=RA90">right-angle clamp</a> to adjust the loop coupler position, as shown in the figure below.</p>
@@ -740,7 +738,7 @@ title="Print to PDF"
 <figure class="align-default" id="alligator-clips-fig">
 <a class="reference internal image-reference" href="../_images/week1_alligator_clips.png"><img alt="../_images/week1_alligator_clips.png" src="../_images/week1_alligator_clips.png" style="width: 250px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 52 </span><span class="caption-text">Alligator clips.</span><a class="headerlink" href="#alligator-clips-fig" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 54 </span><span class="caption-text">Alligator clips.</span><a class="headerlink" href="#alligator-clips-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The Helmholtz coil we will be using actually has two coils, each with two electrical leads. Connect the red and black alligator clips to the leads in both coils. Note that red typically indicates the positive end, and black indicates the negative end. There is a correct way of making the connection. Otherwise, you may not be able to generate much magnetic field. Check with the TA if you are unsure.</p>
@@ -748,14 +746,14 @@ title="Print to PDF"
 <figure class="align-default" id="bnct-power-supply-fig">
 <a class="reference internal image-reference" href="../_images/week1_bncT_power_supply.png"><img alt="../_images/week1_bncT_power_supply.png" src="../_images/week1_bncT_power_supply.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 53 </span><span class="caption-text">(left) An adapter for banana plugs and BNC, BNC Tee connector. (right) Rhode &amp; Schwarz power supply, HMP4040.</span><a class="headerlink" href="#bnct-power-supply-fig" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 55 </span><span class="caption-text">(left) An adapter for banana plugs and BNC, BNC Tee connector. (right) Rhode &amp; Schwarz power supply, HMP4040.</span><a class="headerlink" href="#bnct-power-supply-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Next, turn on the Gauss meter.</p>
 <figure class="align-default" id="gauss-meter-fig">
 <a class="reference internal image-reference" href="../_images/week1_gauss_meter.png"><img alt="../_images/week1_gauss_meter.png" src="../_images/week1_gauss_meter.png" style="width: 300px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 54 </span><span class="caption-text">Gauss meter.</span><a class="headerlink" href="#gauss-meter-fig" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 56 </span><span class="caption-text">Gauss meter.</span><a class="headerlink" href="#gauss-meter-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p><u>What is the intrinsic reading displayed on the Gauss meter? Why is it non-zero?</u></p>

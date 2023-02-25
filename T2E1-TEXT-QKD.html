@@ -1,0 +1,822 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>TEXT – QKD (Week 2) &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="LAB – QKD (Week 2)" href="T2E1-LAB-BB84.html" />
+    <link rel="prev" title="LAB – Hanbury Brown - Twiss Lab (Week 1)" href="T2E1-LAB-HBT.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo-ibm.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">6.2410 -- Laboratory for Quantum Information Science and Engineering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introductory Material
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="BASICS-quantum-optics-basics.html">
+   BASICS – Quantum Optics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  T3E1 -- Interference, Entanglement, Quantum-Enhanced Sensing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html">
+   TEXT – Interference, Entanglement and Quantum-Enhanced Metrology
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html">
+   LAB – Interference, Entanglement and Quantum-Enhanced Metrology
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T3E1-EXTRAS--rigorous-solution-MZI.html">
+   EXTRAS – Rigorous Solution of Mach-Zender Interferometer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T3E1-EXTRAS-interference-2-homodyne-detection.html">
+   EXTRAS – Homodyne Detection
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  T2E1 -- Quantum Information and Quantum Key Distribution
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="T2E1-TEXT-HBT.html">
+   TEXT - Introduction to single photons with the quED (Week 1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T2E1-LAB-HBT.html">
+   LAB – Hanbury Brown - Twiss Lab (Week 1)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   TEXT – QKD (Week 2)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T2E1-LAB-BB84.html">
+   LAB – QKD (Week 2)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  T3E3 -- Solid State Spins
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="quNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.html">
+   TRAINING - Interfacing with the Vector Network Analyzer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="quNV-Jupyter/T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.html">
+   TEXT: Introduction to NV centers in diamond and cavity-based magnetometry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="quNV-Jupyter/T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.html">
+   LAB - Quantum Sensing with Solid State Spins (Week 1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="quNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.html">
+   LAB – Quantum Sensing With Solid State Spins (Week 2)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/T2E1-TEXT-QKD.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/T2E1-TEXT-QKD.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/dkeathley/S23-6.2410-lab"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/dkeathley/S23-6.2410-lab/issues/new?title=Issue%20on%20page%20%2FT2E1-TEXT-QKD.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/T2E1-TEXT-QKD.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generating-a-secret-key">
+   Generating a secret key
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#one-time-pad-encryption">
+   One time pad encryption
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#description-of-bb84-protocol">
+   Description of BB84 protocol
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-simulation">
+   Python simulation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-ekert-protocol">
+   Introduction to Ekert protocol
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-lab-questions">
+   Pre-Lab questions
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>TEXT – QKD (Week 2)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generating-a-secret-key">
+   Generating a secret key
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#one-time-pad-encryption">
+   One time pad encryption
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#description-of-bb84-protocol">
+   Description of BB84 protocol
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-simulation">
+   Python simulation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-ekert-protocol">
+   Introduction to Ekert protocol
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-lab-questions">
+   Pre-Lab questions
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="text-qkd-week-2">
+<h1>TEXT – QKD (Week 2)<a class="headerlink" href="#text-qkd-week-2" title="Permalink to this headline">#</a></h1>
+<section id="generating-a-secret-key">
+<h2>Generating a secret key<a class="headerlink" href="#generating-a-secret-key" title="Permalink to this headline">#</a></h2>
+<p>The next step of the experiment will be using the BB84 protocol to generate a secret key. You should be familiar with BB84 from your prsrequisite course, although there are links below to various resources describing the protocol. This text is intended to help you understand what the protocol aims to do and how it works. The pre-lab questions are brief and are located at the bottom of the page.</p>
+<p>This text covers the following topics:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="#One-time-pad-encryption">One time pad encryption</a></p></li>
+<li><p><a class="reference external" href="#Description-of-BB84-protocol">Description of BB84 protocol</a></p></li>
+<li><p><a class="reference external" href="#Python-simulation">Python simulation</a></p></li>
+<li><p><a class="reference external" href="#Introduction-to-Ekert-protocol">Intro to the Ekert protocol</a></p></li>
+<li><p><a class="reference external" href="#Pre-Lab-questions">Pre-Lab questions</a></p></li>
+</ul>
+</section>
+<section id="one-time-pad-encryption">
+<h2>One time pad encryption<a class="headerlink" href="#one-time-pad-encryption" title="Permalink to this headline">#</a></h2>
+<p>One time pad encryption is a perfectly secure means of communicating a message. Alice takes the original message, the raw text, and encrypts it with a pad of random bits the same length as the message, resulting in the ciphertext. Alice transmits the ciphertext through a public channel to Bob. The channel is public because an eavesdropper Eve is able to intercept the entire message. Once Bob receives the ciphertext, he decrypts the ciphertext using the same pad Alice used initially. This allows him to read the original message.</p>
+<p>The benefit of OTP is its security: it’s impossible for an eavesdropper to decode the message.</p>
+<p>The drawbacks are the key distribution. You need a key that’s the same length as the message. Additionally, you need a new key for every message you want to encrypt and send: the protocol is only secure when each pad is used only once.</p>
+<p>Thus, the challenge is generating and distributing a new key for each message. <em>This</em> is the gap that QKD aims to fill.</p>
+<p>The code cell below is designed as a very basic tutorial for how OTP works. Encrypting and decrypting a message is simple: bitwise XOR with the key. If you XOR the raw message with the key, you get the ciphertext. Then if you XOR the cypher test with the key, you get the initial message back.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">LENGTH</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="c1"># Generate a random message</span>
+<span class="n">mess</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="n">LENGTH</span><span class="p">,))</span>
+
+<span class="c1"># Generate a random key</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="n">LENGTH</span><span class="p">,))</span>
+
+<span class="c1"># Generate the ciphertext by performing bitwise XOR on the key and the message</span>
+<span class="n">cypher</span> <span class="o">=</span> <span class="n">mess</span><span class="o">^</span><span class="n">key</span>
+
+<span class="c1"># Recover the original message by performing bitwise XOR on the cypher</span>
+<span class="c1"># and the key</span>
+<span class="n">recover</span> <span class="o">=</span> <span class="n">cypher</span><span class="o">^</span><span class="n">key</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Message: </span><span class="si">% s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">mess</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Key    : </span><span class="si">% s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Now XOR those to get the cyphertext:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cypher : </span><span class="si">% s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">cypher</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;To recover the original message, you XOR the key and the cypher&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Key    : </span><span class="si">% s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cypher : </span><span class="si">% s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">cypher</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The recovered message after decryption is&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Decrypt: </span><span class="si">% s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">recover</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Compare with original message&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Message: </span><span class="si">% s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">mess</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Message: [0 0 0 1 1 1 1 1 0 0]
+Key    : [1 0 0 0 1 0 1 0 1 0]
+Now XOR those to get the cyphertext:
+Cypher : [1 0 0 1 0 1 0 1 1 0]
+To recover the original message, you XOR the key and the cypher
+Key    : [1 0 0 0 1 0 1 0 1 0]
+Cypher : [1 0 0 1 0 1 0 1 1 0]
+The recovered message after decryption is
+Decrypt: [0 0 0 1 1 1 1 1 0 0]
+Compare with original message
+Message: [0 0 0 1 1 1 1 1 0 0]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="description-of-bb84-protocol">
+<h2>Description of BB84 protocol<a class="headerlink" href="#description-of-bb84-protocol" title="Permalink to this headline">#</a></h2>
+<p>BB84 is the first  QKD protocol, so there are a lot of great resources available to describe it. I’ll include a few here. You don’t have to read <em>all</em> of them, but make sure you understand what makes the protocol secure, how it’s related to quantum mechanics, and what the procedure of the protocol is.</p>
+<p>The original <a class="reference external" href="https://www.dropbox.com/s/i251d4hj5xi4pkr/BB84.pdf?dl=0">BB84 paper</a> lays out the protocol in an accessible and concise way. Section III is the most important part of the paper because it’s where the authors walk through the protocol.</p>
+<p>quTools also providesa <a class="reference external" href="https://www.qutools.com/files/quED/quED-QKD-manual.pdf">manual</a> on performing the QKD experiment with the quED. The BB84 protocol is described on pages 8 through 11.</p>
+<p>If you’d prefer to watch a video, there’s a lecture from the University of Waterloo’s Institute of Quantum Computing. Starting from 13:00 to about 21:00 is a walk-through of the QKD protocol.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%HTML</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/ToOLbdrWst4?start=783&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;YouTube video player&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/ToOLbdrWst4?start=783" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div></div>
+</div>
+</section>
+<section id="python-simulation">
+<h2>Python simulation<a class="headerlink" href="#python-simulation" title="Permalink to this headline">#</a></h2>
+<p>The following code simulates a BB84 set-up. This is being provided to you so that you can look at the effects of Eve’s instrusion and the effects of loss. You can set the number of photons Alice sends as NN, the transmission from Alice to Bob as TT, and Eve’s intrustion as FE.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># How many photons does Alice send?</span>
+<span class="n">NN</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="c1"># What is the transmission between Alice and Bob? </span>
+<span class="c1"># Transmission of 1 implies there&#39;s no loss at all</span>
+<span class="c1"># Transmission of 0 implies Eve is blocking the Alice to Bob channel</span>
+<span class="n">TT</span> <span class="o">=</span> <span class="mf">0.9</span>
+
+<span class="c1"># How often does Eve listen in? 0 is never, 1 is always</span>
+<span class="n">FE</span> <span class="o">=</span> <span class="mf">0.1</span>
+
+<span class="c1"># Initialize arrays</span>
+
+<span class="c1"># What bits did Alice&#39;s transmitted message send?</span>
+<span class="n">bits_tx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">NN</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="c1"># What polarization did Alice use?</span>
+<span class="n">pol_tx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">NN</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="c1"># Did the photon make it?</span>
+<span class="n">photon_rx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">NN</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="c1"># Bob&#39;s measurement basis</span>
+<span class="n">pol_rx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">NN</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="c1"># Bob&#39;s received photons</span>
+<span class="n">bits_rx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">NN</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="c1"># Did Eve interefere?</span>
+<span class="n">Eve_rx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">NN</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">Eve_pol</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">NN</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">Eve_bit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">NN</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span>
+
+
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">NN</span><span class="p">):</span>
+    <span class="c1"># Alice generates a random bit to send</span>
+    <span class="n">bit_A</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">bits_tx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">bit_A</span>
+    <span class="c1"># Now she selects a basis</span>
+    <span class="n">bas_A</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">pol_tx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">bas_A</span>
+    
+   <span class="c1"># Now decide if Eve does something</span>
+    <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">FE</span><span class="p">:</span> <span class="c1"># if Eve -DOES- decide to eavesdrop &amp; send</span>
+        <span class="n">Eve_rx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Record that this is an occurence of Eve eavesdropping</span>
+        <span class="n">Eve_bas</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># She randomly selects a basis</span>
+        <span class="n">Eve_pol</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Eve_bas</span>
+        <span class="k">if</span> <span class="n">Eve_bas</span> <span class="o">==</span> <span class="n">bas_A</span><span class="p">:</span> <span class="c1"># If her basis matches Alice&#39;s</span>
+            <span class="n">Eve_bit</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">bit_A</span> <span class="c1"># Then she recovers the bit perfectly</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">Eve_bit</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># otherwise, it&#39;s a coin toss   </span>
+        <span class="n">bit_rx</span> <span class="o">=</span> <span class="n">Eve_bit</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1"># Now the bit Bob receives will be the bit Eve sends</span>
+        <span class="n">bas_rx</span> <span class="o">=</span> <span class="n">Eve_bas</span> <span class="c1"># In the basis that Eve sends</span>
+    <span class="k">else</span><span class="p">:</span> <span class="c1"># If Eve isn&#39;t measuring and sending out photons</span>
+        <span class="n">pho_E</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Mark this as no Eve involvement</span>
+        <span class="n">bit_rx</span> <span class="o">=</span> <span class="n">bit_A</span> <span class="c1"># The bit Bob receives is ths bit Alice sends</span>
+        <span class="n">bas_rx</span> <span class="o">=</span> <span class="n">bas_A</span> <span class="c1"># in the basis in which Alice sent it</span>
+        
+    <span class="c1"># If the photon makes it through the loss channel</span>
+    <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">TT</span><span class="p">:</span>
+        <span class="n">photon_rx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">bas_B</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Bob randomly selects a basis</span>
+        <span class="n">pol_rx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">bas_B</span>
+        <span class="k">if</span> <span class="n">bas_B</span> <span class="o">==</span> <span class="n">bas_rx</span><span class="p">:</span>
+            <span class="n">bit_B</span> <span class="o">=</span> <span class="n">bit_rx</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">bit_B</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">bits_rx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">bit_B</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">photon_rx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="c1"># now do some processing</span>
+
+
+<span class="c1"># First limit ourselves to cases where Alice and Bob used the same bases</span>
+<span class="n">ix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">pol_tx</span> <span class="o">==</span> <span class="n">pol_rx</span><span class="p">)])</span>
+<span class="n">bits_tx_sifted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">bits_tx</span><span class="p">[</span><span class="n">ix</span><span class="p">])</span>
+<span class="n">bits_tx_sifted</span> <span class="o">=</span> <span class="n">bits_tx_sifted</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">bits_rx_sifted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">bits_rx</span><span class="p">[</span><span class="n">ix</span><span class="p">])</span>
+<span class="n">bits_rx_sifted</span> <span class="o">=</span> <span class="n">bits_rx_sifted</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Now look bit error rate (BER)</span>
+<span class="n">errors</span> <span class="o">=</span> <span class="p">(</span><span class="n">bits_tx_sifted</span> <span class="o">!=</span> <span class="n">bits_rx_sifted</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">errors_total</span> <span class="o">=</span> <span class="n">errors</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">usable_key</span> <span class="o">=</span> <span class="n">ix</span><span class="o">.</span><span class="n">size</span> <span class="o">-</span> <span class="n">errors_total</span>
+<span class="n">BER</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">ix</span><span class="o">.</span><span class="n">size</span> <span class="o">*</span> <span class="n">errors</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="c1"># What did Eve get?</span>
+<span class="n">ixe</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">Eve_rx</span> <span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">Eve_pol</span> <span class="o">==</span> <span class="n">pol_tx</span><span class="p">))])</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Alice sent Bob </span><span class="si">% d</span><span class="s2"> bits&quot;</span><span class="o">%</span> <span class="n">NN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bob received </span><span class="si">% d</span><span class="s2"> bits&quot;</span><span class="o">%</span> <span class="n">photon_rx</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;They used the same basis in </span><span class="si">%d</span><span class="s2"> of those bits&quot;</span> <span class="o">%</span><span class="k">ix</span>.size)
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This resulted in a total of </span><span class="si">%d</span><span class="s2"> bits without errors&quot;</span> <span class="o">%</span><span class="k">usable_key</span>)
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The BER was </span><span class="si">%10.2E</span><span class="s2">&quot;</span> <span class="o">%</span><span class="k">BER</span>)
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Eve got </span><span class="si">%d</span><span class="s2"> bits&quot;</span> <span class="o">%</span><span class="k">ixe</span>.size)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alice sent Bob  1000 bits
+Bob received  909 bits
+They used the same basis in 407 of those bits
+This resulted in a total of 396 bits without errors
+The BER was   2.70E-02
+Eve got 48 bits
+</pre></div>
+</div>
+</div>
+</div>
+<p>Based on this code, we see that as Eve listens in more often, she receives more bits of the key <strong>and</strong> Alice and Bob see more errors. Additionally, the loss of the system doesn’t contribute to errors.</p>
+</section>
+<section id="introduction-to-ekert-protocol">
+<h2>Introduction to Ekert protocol<a class="headerlink" href="#introduction-to-ekert-protocol" title="Permalink to this headline">#</a></h2>
+<p>BB84 is possibly the most well-known QKD protocol, but there are others. One important protocol is Ekert 91, which was published in 1991. Its main difference from BB84 is that it relies on the correlation of entangled photons. In this protocol, Alice and Bob each get one photon from a source of entangled photons and then do independent measurements on the polarization of their photon and report back which basis they used - either horizontal-vertical or diagonal-antidiagonal.</p>
+<p>Artur Ekert, who first publised the protocol, has made many YouTube videos on quantum information in general and QKD in particular. He teaches a class whose lecture materials are available online, and the <a class="reference external" href="https://qubit.guide/9-quantum-cryptography.html">QKD lectures</a> are gathered together. For this text, I’ve embedded one short video where Ekert walks through the protocol. You’ll note that he uses X and Z measurements on qubits. This is analogous to measuring the polarization in either the horizontal-vertical or diagonal-antidiagonal basis of linearly polarized photons.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%HTML</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/2ExG7UJgfmQ&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;YouTube video player&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/2ExG7UJgfmQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div></div>
+</div>
+</section>
+<section id="pre-lab-questions">
+<h2>Pre-Lab questions<a class="headerlink" href="#pre-lab-questions" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>What makes B84 secure?</p></li>
+<li><p>When Eve interferes on every bit, what is the resulting BER?</p></li>
+<li><p>Why is it important that Alice only sends Bob 1 photon at a time?</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="T2E1-LAB-HBT.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">LAB – Hanbury Brown - Twiss Lab (Week 1)</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="T2E1-LAB-BB84.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">LAB – QKD (Week 2)</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

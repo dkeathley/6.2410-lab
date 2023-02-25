@@ -1,0 +1,1194 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>BASICS – Quantum Optics &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="TEXT – Interference, Entanglement and Quantum-Enhanced Metrology" href="T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html" />
+    <link rel="prev" title="6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo-ibm.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">6.2410 -- Laboratory for Quantum Information Science and Engineering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introductory Material
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   BASICS – Quantum Optics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  T3E1 -- Interference, Entanglement, Quantum-Enhanced Sensing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html">
+   TEXT – Interference, Entanglement and Quantum-Enhanced Metrology
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html">
+   LAB – Interference, Entanglement and Quantum-Enhanced Metrology
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T3E1-EXTRAS--rigorous-solution-MZI.html">
+   EXTRAS – Rigorous Solution of Mach-Zender Interferometer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T3E1-EXTRAS-interference-2-homodyne-detection.html">
+   EXTRAS – Homodyne Detection
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  T2E1 -- Quantum Information and Quantum Key Distribution
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="T2E1-TEXT-HBT.html">
+   TEXT - Introduction to single photons with the quED (Week 1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T2E1-LAB-HBT.html">
+   LAB – Hanbury Brown - Twiss Lab (Week 1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T2E1-TEXT-QKD.html">
+   TEXT – QKD (Week 2)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="T2E1-LAB-BB84.html">
+   LAB – QKD (Week 2)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  T3E3 -- Solid State Spins
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="quNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.html">
+   TRAINING - Interfacing with the Vector Network Analyzer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="quNV-Jupyter/T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.html">
+   TEXT: Introduction to NV centers in diamond and cavity-based magnetometry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="quNV-Jupyter/T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.html">
+   LAB - Quantum Sensing with Solid State Spins (Week 1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="quNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.html">
+   LAB – Quantum Sensing With Solid State Spins (Week 2)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/BASICS-quantum-optics-basics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/BASICS-quantum-optics-basics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/dkeathley/S23-6.2410-lab"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/dkeathley/S23-6.2410-lab/issues/new?title=Issue%20on%20page%20%2FBASICS-quantum-optics-basics.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/BASICS-quantum-optics-basics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optical-modes">
+   Optical Modes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-vacuum-state-ket-0">
+   The Vacuum State
+   <span class="math notranslate nohighlight">
+    \(\ket{0}\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#photon-number-states-ket-n">
+   Photon Number States:
+   <span class="math notranslate nohighlight">
+    \(\ket{N}\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-creation-operator-adagger">
+   The Creation Operator:
+   <span class="math notranslate nohighlight">
+    \(\adagger\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-annihilation-operator-ahat">
+   The Annihilation Operator:
+   <span class="math notranslate nohighlight">
+    \(\ahat\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commutation-relation">
+   Commutation Relation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-number-operator-hat-n-adagger-ahat">
+   The Number Operator:
+   <span class="math notranslate nohighlight">
+    \(\hat{N} = \adagger\ahat\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-field-operators">
+   The Field Operators
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relating-the-field-operators-to-classical-electromagnetic-waves">
+     Relating the Field Operators to Classical Electromagnetic Waves
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mean-and-standard-deviation-observables">
+   Mean and Standard Deviation Observables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#common-state-types-and-their-properties">
+   Common State Types and Their Properties
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-number-state-ket-n">
+     The number state
+     <span class="math notranslate nohighlight">
+      \(\ket{N}\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-coherent-state-ket-alpha">
+     The coherent state
+     <span class="math notranslate nohighlight">
+      \(\ket{\alpha}\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#squeezed-states">
+     Squeezed States
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-thermal-state">
+     The thermal state
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>BASICS – Quantum Optics</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optical-modes">
+   Optical Modes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-vacuum-state-ket-0">
+   The Vacuum State
+   <span class="math notranslate nohighlight">
+    \(\ket{0}\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#photon-number-states-ket-n">
+   Photon Number States:
+   <span class="math notranslate nohighlight">
+    \(\ket{N}\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-creation-operator-adagger">
+   The Creation Operator:
+   <span class="math notranslate nohighlight">
+    \(\adagger\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-annihilation-operator-ahat">
+   The Annihilation Operator:
+   <span class="math notranslate nohighlight">
+    \(\ahat\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commutation-relation">
+   Commutation Relation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-number-operator-hat-n-adagger-ahat">
+   The Number Operator:
+   <span class="math notranslate nohighlight">
+    \(\hat{N} = \adagger\ahat\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-field-operators">
+   The Field Operators
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relating-the-field-operators-to-classical-electromagnetic-waves">
+     Relating the Field Operators to Classical Electromagnetic Waves
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mean-and-standard-deviation-observables">
+   Mean and Standard Deviation Observables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#common-state-types-and-their-properties">
+   Common State Types and Their Properties
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-number-state-ket-n">
+     The number state
+     <span class="math notranslate nohighlight">
+      \(\ket{N}\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-coherent-state-ket-alpha">
+     The coherent state
+     <span class="math notranslate nohighlight">
+      \(\ket{\alpha}\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#squeezed-states">
+     Squeezed States
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-thermal-state">
+     The thermal state
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="basics-quantum-optics">
+<h1>BASICS – Quantum Optics<a class="headerlink" href="#basics-quantum-optics" title="Permalink to this headline">#</a></h1>
+<p>This course is about how we can leverage quantum systems as engineers.  As such it is not intended to be a course focused purely on the physics of quantum systems.</p>
+<p>In this course we will focus our attention on how to engineer quantum systems to securely transmit information, perform sensitive measurements, and compute among other things.  This will require us to develop a proficiency in understanding how quantum signals are generated, transmitted, and received.  It will also require us to understand the limitations of measurements, and how to account for noise.</p>
+<p>While we will introduce several quantum engineering platforms in this course, a large number of concepts will be taught through the lens of quantum optics.  This chapter overviews basic concepts in quantum optics that will be drawn on throughout the course.  It should be used as both review and reference material.  For those interested in going deeper than the surface level overview we present here, references are provided at various points.</p>
+<section id="optical-modes">
+<h2>Optical Modes<a class="headerlink" href="#optical-modes" title="Permalink to this headline">#</a></h2>
+<p>Often we deal with optical signals whose fields oscillate at a single angular frequency <span class="math notranslate nohighlight">\(\omega\)</span>.  At any given frequency, an optical signal can be written as a summation of modes.  These modes are distinguished by a variety of properties, such as their wave-vector <span class="math notranslate nohighlight">\(\mathbf{k}\)</span> or polarization (e.g. linear horizontal, linear vertical, right-hand circular, etc.).</p>
+<p>In most cases, each input or output signal populates a single mode.</p>
+</section>
+<section id="the-vacuum-state-ket-0">
+<h2>The Vacuum State <span class="math notranslate nohighlight">\(\ket{0}\)</span><a class="headerlink" href="#the-vacuum-state-ket-0" title="Permalink to this headline">#</a></h2>
+<p>The vacuum state represents the condition that no photon populates any mode.  This can be expanded as:</p>
+<p><span class="math notranslate nohighlight">\(\ket{0} = \ket{0}_a\ket{0}_b\ldots\ket{0}_m\ket{0}_n\ldots\)</span>,</p>
+<p>where, for example, <span class="math notranslate nohighlight">\(\ket{0}_n\)</span> represents zero photons for mode <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>Here, we have labeled the modes <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span> for convenience, but it should be noted that there can be infinite number of possible modes.</p>
+</section>
+<section id="photon-number-states-ket-n">
+<h2>Photon Number States: <span class="math notranslate nohighlight">\(\ket{N}\)</span><a class="headerlink" href="#photon-number-states-ket-n" title="Permalink to this headline">#</a></h2>
+<p>Number states are those that represent a mode populated with a precise number of photons.  Such states are ubiquitous in quantum engineering applications.</p>
+<p>For instance, a single photon in mode <span class="math notranslate nohighlight">\(m\)</span> can be written as:</p>
+<p><span class="math notranslate nohighlight">\(\ket{1}_m = \ket{0}_a\ket{0}_b\ldots\ket{0}_l\ket{1}_m\ket{0}_n\ldots\)</span>.</p>
+<p>Likewise, for N-photons in mode <span class="math notranslate nohighlight">\(m\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(\ket{N}_m = \ket{0}_a\ket{0}_b\ldots\ket{0}_l\ket{N}_m\ket{0}_n\ldots\)</span>.</p>
+</section>
+<section id="the-creation-operator-adagger">
+<h2>The Creation Operator: <span class="math notranslate nohighlight">\(\adagger\)</span><a class="headerlink" href="#the-creation-operator-adagger" title="Permalink to this headline">#</a></h2>
+<p>The creation operator acts to increase the photon number in a particular mode by 1. For instance:</p>
+<p><span class="math notranslate nohighlight">\(\adagger_m \ket{0}_m = \ket{1}_m\)</span></p>
+<p>More generally:</p>
+<p><span class="math notranslate nohighlight">\(\adagger_m \ket{N}_m = \sqrt{N + 1}\ket{N + 1}\)</span></p>
+</section>
+<section id="the-annihilation-operator-ahat">
+<h2>The Annihilation Operator: <span class="math notranslate nohighlight">\(\ahat\)</span><a class="headerlink" href="#the-annihilation-operator-ahat" title="Permalink to this headline">#</a></h2>
+<p>The annihilation operator acts to decrease the photon number in a particular mode by 1.  For instance:</p>
+<div class="math notranslate nohighlight">
+\[\ahat_m \ket{1}_m = \ket{0}_m.\]</div>
+<p>More generally:</p>
+<div class="math notranslate nohighlight">
+\[\ahat_m \ket{N}_m = \sqrt{N}\ket{N - 1}.\]</div>
+<p>Note that:</p>
+<div class="math notranslate nohighlight">
+\[\ahat_m \ket{0}_m = 0.\]</div>
+</section>
+<section id="commutation-relation">
+<h2>Commutation Relation<a class="headerlink" href="#commutation-relation" title="Permalink to this headline">#</a></h2>
+<p>It’s important to note that the annihilation and creation operators <strong>do not</strong> commute.  They have the following commutation relation</p>
+<div class="math notranslate nohighlight">
+\[ [\ahat_m, \adagger_n] \equiv \ahat_m \adagger_n - \adagger_m\ahat_n = \delta_{mn}, \]</div>
+<p>where <span class="math notranslate nohighlight">\(\delta_{mn} = 1\)</span> if <span class="math notranslate nohighlight">\(m = n\)</span> and <span class="math notranslate nohighlight">\(\delta_{mn} = 0\)</span> if <span class="math notranslate nohighlight">\(m \neq n\)</span>.</p>
+<p>This relation can be quite useful, in particular for ensuring operators are in “normal order” which we will describe in detail when reviewing the coherent state below.</p>
+</section>
+<section id="the-number-operator-hat-n-adagger-ahat">
+<h2>The Number Operator: <span class="math notranslate nohighlight">\(\hat{N} = \adagger\ahat\)</span><a class="headerlink" href="#the-number-operator-hat-n-adagger-ahat" title="Permalink to this headline">#</a></h2>
+<p>As the name implies, the number operator relates to the number of photons contained within a mode.  It is related to the annihilation and creation operators:</p>
+<p><span class="math notranslate nohighlight">\(\hat{N}_m = \adagger_m\ahat_m\)</span>.</p>
+<p>Often times we are interested in the time-averaged number of photons in a state.  For instance, consider the state $\ket{\psi_m}.  The time averaged number of photons in this state would then be:</p>
+<p><span class="math notranslate nohighlight">\(\bra{\psi}_m\hat{N}_m\ket{\psi}_m\)</span>.</p>
+<p>Using the properties of <span class="math notranslate nohighlight">\(\ahat\)</span> and <span class="math notranslate nohighlight">\(\adagger\)</span>, you can easily show that:</p>
+<p><span class="math notranslate nohighlight">\(\bra{N}_m \hat{N}_m \ket{N}_m = N\)</span>.</p>
+</section>
+<section id="the-field-operators">
+<h2>The Field Operators<a class="headerlink" href="#the-field-operators" title="Permalink to this headline">#</a></h2>
+<p>The annihilation and creation operators are also intrinsically related to the electric field of a state.  In fact, they arise as a result of quantizing the electric field.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The quantization of the electromagnetic field is discussed in many textbooks.  For instance, see the treatment in Ref. <span id="id1">[]</span>.</p>
+</div>
+<p>The operator relating to the “in-phase” component of the electric field is expressed as:</p>
+<div class="math notranslate nohighlight">
+\[\hat{A}^{(1)} = \frac{\ahat + \adagger}{2},\]</div>
+<p>and that relating to the “quadrature” component of the electric field as:</p>
+<div class="math notranslate nohighlight">
+\[\hat{A}^{(2)} = \frac{\ahat - \adagger}{2i}.\]</div>
+<p>Taking the expectation of either <span class="math notranslate nohighlight">\(\hat{A}^{(1)}\)</span> or <span class="math notranslate nohighlight">\(\hat{A}^{(2)}\)</span> provides the time-averaged output of the in-phase and quadrature components of the field respectively.</p>
+<p>Note that it can be useful to define the more general form:</p>
+<div class="math notranslate nohighlight">
+\[\hat{A}^{(\theta)} = \frac{\ahat e^{-i\theta} + \adagger e^{i\theta}}{2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{A}^{(1)} = \hat{A}^{(\theta)}(0)\)</span>, and <span class="math notranslate nohighlight">\(\hat{A}^{(2)} = \hat{A}^{(\theta)}(\pi/2)\)</span></p>
+<section id="relating-the-field-operators-to-classical-electromagnetic-waves">
+<h3>Relating the Field Operators to Classical Electromagnetic Waves<a class="headerlink" href="#relating-the-field-operators-to-classical-electromagnetic-waves" title="Permalink to this headline">#</a></h3>
+<p>To get a better sense for these operators, let’s consider the electric field of a classical light wave.  For a single frequency at one point in space, we can write the field as</p>
+<div class="math notranslate nohighlight">
+\[ E(t) = |\alpha|\cos(\omega_0 t + \varphi) \mathrm{.}\]</div>
+<p>There are three important paramters that describe such a wave:</p>
+<ol class="simple">
+<li><p>The central frequency <span class="math notranslate nohighlight">\(\omega_0\)</span></p></li>
+<li><p>The amplitude <span class="math notranslate nohighlight">\(|\alpha|\)</span></p></li>
+<li><p>The phase offset <span class="math notranslate nohighlight">\(\varphi\)</span></p></li>
+</ol>
+<p>However, by phasor analysis, we can also write the field as</p>
+<div class="math notranslate nohighlight">
+\[E(t) = \mathrm{Re}\lbrace \alpha e^{i\omega_0 t} \rbrace \mathrm{,}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\alpha = |\alpha|e^{i\varphi} = \mathrm{Re} \lbrace \alpha \rbrace + i\mathrm{Im} \lbrace \alpha \rbrace \mathrm{.}\]</div>
+<p>This means that another set of equally valid parameters to describe the field are:</p>
+<ol class="simple">
+<li><p>The central frequency <span class="math notranslate nohighlight">\(\omega_0\)</span></p></li>
+<li><p>The in-phase component: <span class="math notranslate nohighlight">\(\mathrm{Re} \lbrace \alpha \rbrace\)</span></p></li>
+<li><p>The quadrature component: <span class="math notranslate nohighlight">\(\mathrm{Im} \lbrace \alpha \rbrace\)</span></p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more on in-phase and quadrature component representation of waves see the <a class="reference external" href="https://en.wikipedia.org/wiki/In-phase_and_quadrature_components">Wikipedia page</a>.</p>
+</div>
+<p>Note that</p>
+<div class="math notranslate nohighlight">
+\[ \mathrm{Re} \lbrace \alpha \rbrace = \frac{\alpha + \alpha^*}{2} \mathrm{,}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{Im} \lbrace \alpha \rbrace = \frac{\alpha - \alpha^*}{2i} \mathrm{.}\]</div>
+<p>To explicitly demonstrate the relation to the field operators, consider the expectation the in-phase and quadrature field operators with a coherent state:</p>
+<div class="math notranslate nohighlight">
+\[ \bra{\alpha} \frac{\ahat + \adagger}{2} \ket{\alpha} = \frac{\alpha + \alpha^*}{2}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[ \bra{\alpha} \frac{\ahat - \adagger}{2i} \ket{\alpha} = \frac{\alpha - \alpha^*}{2i} \mathrm{.}\]</div>
+<p>This should now fully connect how the quantum field operators relate directly to the in-phase and quadrature representations of a classical electromagnetic wave of a single frequency.  Interferometric measurements using homodyne detection can be performed to directly observe these quantities.</p>
+</section>
+</section>
+<section id="mean-and-standard-deviation-observables">
+<span id="basics-mean-and-standard-deviation"></span><h2>Mean and Standard Deviation Observables<a class="headerlink" href="#mean-and-standard-deviation-observables" title="Permalink to this headline">#</a></h2>
+<p>A general concept of note is the determination of mean and standard deviation of an observable, such as photon number or field value.  As engineers, we are often just as concerned about noise and its reduction as we are about the signal itself.</p>
+<p>The mean of an observable can be found by taking its expectation given the current state of the system <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>.  For example, the mean photon number would be:</p>
+<div class="math notranslate nohighlight">
+\[ N =  \bra{\psi}\hat{N}\ket{\psi}.\]</div>
+<p>The standard deviation <span class="math notranslate nohighlight">\(\Delta N\)</span> is found through the relation:</p>
+<div class="math notranslate nohighlight">
+\[\Delta N = {\bigg \lbrace \bra{\psi} \hat{N}^2 \ket{\psi} - N^2 \bigg \rbrace }^{1/2}.\]</div>
+<p>Calculation of such quantities are very important as they allow us to determine signal-to-noise ratios in our systems that are critical to their real-world operation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The approach above follows directly from how such values are obtained for random variables in statistics.  For example, see the definitions for <a class="reference external" href="https://en.wikipedia.org/wiki/Standard_deviation">standard deviation</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Variance">variance</a>.</p>
+</div>
+</section>
+<section id="common-state-types-and-their-properties">
+<h2>Common State Types and Their Properties<a class="headerlink" href="#common-state-types-and-their-properties" title="Permalink to this headline">#</a></h2>
+<section id="the-number-state-ket-n">
+<h3>The number state <span class="math notranslate nohighlight">\(\ket{N}\)</span><a class="headerlink" href="#the-number-state-ket-n" title="Permalink to this headline">#</a></h3>
+<p>As per its name, the number state contains a well-defined number of photons, such that</p>
+<div class="math notranslate nohighlight">
+\[N = \bra{N}\hat{N}\ket{N}.\]</div>
+<p>The standard deviation of this photon number <span class="math notranslate nohighlight">\(\Delta N = 0\)</span>.</p>
+<p>What can be quite odd about such a state is that despite the fact that the photon number is unrestricted, the average field is always 0.  That is:</p>
+<div class="math notranslate nohighlight">
+\[\langle \hat{A}^{(1)} \rangle = \langle \hat{A}^{(2)} \rangle = 0.\]</div>
+<p>However, the standard deviation of the fields are certainly not zero, with:</p>
+<div class="math notranslate nohighlight">
+\[\Delta A^{(\theta)} = \sqrt{2N + 1}/2.\]</div>
+<p>So, while these states carry a very well-defined amount of photons, and hence energy (<span class="math notranslate nohighlight">\(N\hbar\omega\)</span>), they carry it in fields of increasing variance having an average value of 0.</p>
+<p>A useful way to visualize quantum fields is to make a two-dimensional plot with <span class="math notranslate nohighlight">\(A^{(1)}\)</span> on the <span class="math notranslate nohighlight">\(x\)</span>-axis, and <span class="math notranslate nohighlight">\(A^{(2)}\)</span> on the <span class="math notranslate nohighlight">\(y\)</span>-axis.  In this configuration, <span class="math notranslate nohighlight">\(\theta\)</span> is then the angle going counter-clockwise from the <span class="math notranslate nohighlight">\(x\)</span>-axis.  Then, you mark the region whos center is the mean value of <span class="math notranslate nohighlight">\(A^{(1)}\)</span> and <span class="math notranslate nohighlight">\(A^{(2)}\)</span> of the state, with a width of <span class="math notranslate nohighlight">\(2\Delta A^{(\theta)}\)</span> for each value of <span class="math notranslate nohighlight">\(\theta\)</span>.  This allows a quick visual representation of both the average value and uncertainty of the fields of any given state.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">mpatches</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">delA</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+
+
+<span class="n">A1</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">A2</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+
+
+<span class="c1"># add a circle</span>
+<span class="n">patch</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Ellipse</span><span class="p">((</span><span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">),</span> 
+                         <span class="n">width</span><span class="o">=</span><span class="n">delA</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> 
+                         <span class="n">height</span><span class="o">=</span><span class="n">delA</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> 
+                         <span class="n">ec</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> 
+                         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">,</span>
+                         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">patch</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">5.1</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">5.1</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$A^{(1)}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$A^{(2)}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span> 
+
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;number_state_field_representation&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/BASICS-quantum-optics-basics_14_1.png" src="_images/BASICS-quantum-optics-basics_14_1.png" />
+</div>
+</div>
+<figure class="align-default" id="fig-number-state-field-representation" style="width: 600px">
+<div class="cell_output docutils container">
+<img alt="_images/BASICS-quantum-optics-basics_14_0.png" src="_images/BASICS-quantum-optics-basics_14_0.png" />
+</div>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Field representations for a number state with <span class="math notranslate nohighlight">\(N=4\)</span>.</span><a class="headerlink" href="#fig-number-state-field-representation" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="the-coherent-state-ket-alpha">
+<h3>The coherent state <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span><a class="headerlink" href="#the-coherent-state-ket-alpha" title="Permalink to this headline">#</a></h3>
+<p>In contrast to number states, classical electromagnetic waves are  described as a collection of plane waves that oscillates smothly in time and space. These plane waves have regions of high and low fields that are well defined as a function of phase.  There are many applications in quantum optics that use such “classical” sources of light (e.g. a continuous-wave laser source), so we need a way to describe it within our quantum framework.  For this purpose, we can use <em>coherent states</em>.</p>
+<p>We denote a coherent state as <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span>, where <span class="math notranslate nohighlight">\(\alpha\)</span> is a complex number whos amplitude relates to the electric field strength, and whos phase relates to the phase offset of the electromagnetic wave.  As with number states, these states can also have other properties, such as polarization and spatial mode.</p>
+<p>An interesting and useful fact is that a coherent state is nothing more than a distribution of number states all added together in a particular way.  For instance, a classical state populating the <span class="math notranslate nohighlight">\(m^\text{th}\)</span> mode is represented as:</p>
+<div class="math notranslate nohighlight">
+\[ \ket{\alpha}_m = e^{-|\alpha|^2/2} \sum_n \frac{\alpha^n}{\sqrt{n!}} \ket{n}_m. \]</div>
+<p>We leave it as an exercise to show that</p>
+<div class="math notranslate nohighlight">
+\[ \ahat_m \ket{\alpha}_m = \alpha \ket{\alpha}_m, \]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[ \bra{\alpha}_m \adagger_m = \alpha^* \bra{\alpha}_m.  \]</div>
+<p>This makes working with coherent states very easy, so long as you put all expressions in “normal order”, meaning annihilation operators always come before creation operators when multiplied out.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Remember as we discussed above that quantum operators do not necessarily commute.  In particular, the creation and annihilation operators do not commute.  This means that we cannot simply move the annihilation operators to the left of creation operators.</p>
+<p>So how do we put things in normal order?  We take advantage of the commutation relation</p>
+<div class="math notranslate nohighlight">
+\[ [\ahat, \adagger] = \ahat\adagger - \adagger\ahat = 1. \]</div>
+<p>For example, take</p>
+<div class="math notranslate nohighlight">
+\[\hat{N}^2 = \adagger\ahat\adagger\ahat = \adagger\ahat + \adagger\adagger\ahat\ahat,\]</div>
+<p>where we have used the commutation relation to achieve the final expression in normal order.</p>
+</div>
+<p>By using the relations above along with normal ordering of the annihilation and creation operators, it is easy to then show that the average photon number of a coherent state is</p>
+<div class="math notranslate nohighlight">
+\[ N = |\alpha|^2, \]</div>
+<p>and that the the standard deviation of the photon number is</p>
+<div class="math notranslate nohighlight">
+\[ \Delta N = |\alpha|. \]</div>
+<p>It turns out that the photon number distribution is that of a poisson distribution, which is consistent with such a relation between the mean and standard deviation.</p>
+<p>We can likewise use the above properties to show that</p>
+<div class="math notranslate nohighlight">
+\[ A^{(\theta)} = |\alpha|\cos(\varphi - \theta), \]</div>
+<p>where <span class="math notranslate nohighlight">\(\varphi = \arg{\alpha}\)</span>.  Also,</p>
+<div class="math notranslate nohighlight">
+\[ \Delta A^{(\theta)} = 1/2.\]</div>
+<p>The last part is interesting as it means that no matter how large alpha is, the field fluctuations stay the same, and are the same level as that of a vacuum state.   This is due to the fact that phase is very well defined for a coherent state.  Thus the photon contribution to the field is very well-defined, leaving only the remaining vacuum field fluctuations.  This is in spite of the fact that the number of photons actually varies.  Compare this to a number state where there is no fluctuation in the number of photons, but the field fluctuates heavily on top of the ever-present vacuum fluctuations.</p>
+<p>Again, it we can map out the field representation, which we have done below for a coherent state with <span class="math notranslate nohighlight">\(|\alpha| = 4\)</span>, and <span class="math notranslate nohighlight">\(\varphi = \pi/4\)</span>.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">mpatches</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span>
+<span class="n">delA</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="c1">#Determine projection onto A1 and A2 for center</span>
+<span class="n">A1</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">A2</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+
+<span class="c1"># add a circle</span>
+<span class="n">patch</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Ellipse</span><span class="p">((</span><span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">),</span> 
+                         <span class="n">width</span><span class="o">=</span><span class="n">delA</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> 
+                         <span class="n">height</span><span class="o">=</span><span class="n">delA</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> 
+                         <span class="n">ec</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> 
+                         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">,</span>
+                        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">patch</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">4.1</span><span class="p">,</span> <span class="mf">4.1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">4.1</span><span class="p">,</span> <span class="mf">4.1</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$A^{(1)}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$A^{(2)}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span> 
+
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;coherent_state_field_representation&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/BASICS-quantum-optics-basics_18_1.png" src="_images/BASICS-quantum-optics-basics_18_1.png" />
+</div>
+</div>
+<figure class="align-default" id="fig-coherent-state-field-representation" style="width: 600px">
+<div class="cell_output docutils container">
+<img alt="_images/BASICS-quantum-optics-basics_18_0.png" src="_images/BASICS-quantum-optics-basics_18_0.png" />
+</div>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Field representations for a coherent state with <span class="math notranslate nohighlight">\(|\alpha| = 4\)</span>, and <span class="math notranslate nohighlight">\(\varphi = \pi/4\)</span>.</span><a class="headerlink" href="#fig-coherent-state-field-representation" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="squeezed-states">
+<span id="sec-quantum-optics-basics-squeezed-states"></span><h3>Squeezed States<a class="headerlink" href="#squeezed-states" title="Permalink to this headline">#</a></h3>
+<p>You might have heard of squeezed states.  Such states exhibit very interesting noise properties.  While there are more rigorous ways to develop notation for generalized squeezed states, lets use a simple example constructured from the vacuum state in addition to a two-photon number state:</p>
+<div class="math notranslate nohighlight">
+\[ \ket{\psi_s} = \sqrt{1 - s^2}\ket{0} - s\ket{2}.\]</div>
+<p>Using the properties of number states, you can show that the mean field is</p>
+<div class="math notranslate nohighlight">
+\[ A^{(\theta)} = 0, \]</div>
+<p>and that the standar deviation of the field fluctuations is</p>
+<div class="math notranslate nohighlight">
+\[ \Delta A^{(\theta)} = { \bigg \lbrace 1/4 - s \sqrt{\frac{(1 - s^2)}{2}} \cos(2 \theta) + s^2 \bigg \rbrace  }^{1/2}.\]</div>
+<p>Note that unlike in past cases, the field fluctions are now a function of <span class="math notranslate nohighlight">\(\theta\)</span>.  In fact, they are reduced in one quadrature, while increased in the other quadrature in general.</p>
+<p>It can be useful to look at a field represenatation for a couple of values.  Let’s say <span class="math notranslate nohighlight">\(s = 0.25\)</span> and <span class="math notranslate nohighlight">\(s=0\)</span>.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">mpatches</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+
+
+<span class="n">s</span> <span class="o">=</span> <span class="mf">0.25</span>
+<span class="n">delA1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span> <span class="o">-</span> <span class="n">s</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">delA2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span> <span class="o">+</span> <span class="n">s</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">A1</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">A2</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># add a circle</span>
+<span class="n">patch</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Ellipse</span><span class="p">((</span><span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">),</span> 
+                         <span class="n">width</span><span class="o">=</span><span class="n">delA1</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> 
+                         <span class="n">height</span><span class="o">=</span><span class="n">delA2</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> 
+                         <span class="n">ec</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> 
+                         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">,</span> 
+                         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">patch</span><span class="p">)</span>
+
+
+<span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">delA1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span> <span class="o">-</span> <span class="n">s</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">delA2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span> <span class="o">+</span> <span class="n">s</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">A1</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">A2</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># add a circle</span>
+<span class="n">patch</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Ellipse</span><span class="p">((</span><span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="n">delA1</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">delA2</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:red&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">patch</span><span class="p">)</span>
+
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$A^{(1)}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$A^{(2)}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span> 
+
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;squeezed_state_vs_vac_state_field_representation&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/BASICS-quantum-optics-basics_22_1.png" src="_images/BASICS-quantum-optics-basics_22_1.png" />
+</div>
+</div>
+<figure class="align-default" id="fig-squeezed-state-vs-vac-field-fluctuations" style="width: 600px">
+<div class="cell_output docutils container">
+<img alt="_images/BASICS-quantum-optics-basics_22_0.png" src="_images/BASICS-quantum-optics-basics_22_0.png" />
+</div>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Field representations for a vacuum state (red circle) and squeezed state <span class="math notranslate nohighlight">\(\ket{\psi_s} = \sqrt{1 - s^2}\ket{0} - s\ket{2}\)</span> (blue circle) for <span class="math notranslate nohighlight">\(s=0.25\)</span>.</span><a class="headerlink" href="#fig-squeezed-state-vs-vac-field-fluctuations" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>For <span class="math notranslate nohighlight">\(s = 0\)</span> (the red circle), the state is nothing more than the vacuum state.  However, when <span class="math notranslate nohighlight">\(s = 0.25\)</span> we arrive at the blue ellipse, where the fluctuations along <span class="math notranslate nohighlight">\(A^{(1)}\)</span> have been reduced, while those along <span class="math notranslate nohighlight">\(A^{(2)}\)</span> have been increased.  <strong>As engineers, we can design systems that are only sensitive to the fields in one of the two quadratures (using <a class="reference external" href="https://en.wikipedia.org/wiki/Homodyne_detection">Homodyne detection</a> for example), thus enabling measurements below the noise floor set by the standard quantum limit (SQL, which is represented by the vacuum state here with <span class="math notranslate nohighlight">\(s = 0\)</span>).  We will discuss such measurements in detail.</strong></p>
+<p>One final question of interest for <span class="math notranslate nohighlight">\(\ket{\psi_s}\)</span> is what happens to the noise along the two quadratures <span class="math notranslate nohighlight">\(A^{(1)}\)</span> and <span class="math notranslate nohighlight">\(A^{(2)}\)</span> and how does this noise compare to the standard quantum limit (SQL) as we let <span class="math notranslate nohighlight">\(s\)</span> vary from 0 to 1.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">mpatches</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">delA1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span> <span class="o">-</span> <span class="n">s</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">delA2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span> <span class="o">+</span> <span class="n">s</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">delA1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$\Delta A^{(1)}$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">delA2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$\Delta A^{(2)}$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;SQL&#39;</span><span class="p">)</span>
+    
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.55</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$s$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$\Delta A^{(n)}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;squeezed_field_fluctuations&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/BASICS-quantum-optics-basics_25_1.png" src="_images/BASICS-quantum-optics-basics_25_1.png" />
+</div>
+</div>
+<figure class="align-default" id="fig-squeezed-field-fluctuations" style="width: 600px">
+<div class="cell_output docutils container">
+<img alt="_images/BASICS-quantum-optics-basics_25_0.png" src="_images/BASICS-quantum-optics-basics_25_0.png" />
+</div>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Field fluctuations in each quadrature compared to the SQL.</span><a class="headerlink" href="#fig-squeezed-field-fluctuations" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="the-thermal-state">
+<h3>The thermal state<a class="headerlink" href="#the-thermal-state" title="Permalink to this headline">#</a></h3>
+<p>Another state is the termals state, produced by radiation with random intensity and phase.</p>
+<p>The thermal state is a statistical mixture of number states without specific phase relations between the number states.</p>
+<p>The density operator in terms of the number state are given as</p>
+<div class="math notranslate nohighlight">
+\[\hat{\rho} = \left[1 - \exp\left(-\frac{\hbar\omega}{k_BT} \right)\right ]\sum_n \exp\left( -\frac{n\hbar\omega}{k_BT} \right )|n\rangle\langle n|\]</div>
+<p>The mean photon number is given by</p>
+<div class="math notranslate nohighlight">
+\[\langle n\rangle = Tr \{ \hat{\rho}\hat{n} \} \]</div>
+<p>And the probability of finding the mean photon number n is given by the distribution</p>
+<div class="math notranslate nohighlight">
+\[P(n) = \frac{\langle n \rangle^n}{\left (1 + \langle n \rangle \right ) ^{1+n}}\]</div>
+<p>The photon number variance is given as</p>
+<div class="math notranslate nohighlight">
+\[ \left ( \Delta n\right )^2 = \langle n \rangle ^2 + \langle n \rangle\]</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">6.2410 – Laboratory in Quantum Systems Engineering: <em>Quantum Engineering Platforms</em></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">TEXT – Interference, Entanglement and Quantum-Enhanced Metrology</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -154,7 +154,7 @@ $$\hat{A}^{(1)} = \frac{\adagger + \ahat}{2},$$
 
 and that relating to the "quadrature" component of the electric field as:
 
-$$\hat{A}^{(2)} = \frac{\adagger - \ahat}{2i}.$$
+$$\hat{A}^{(2)} = \frac{\ahat - \adagger}{2i}.$$
 
 Taking the expectation of either $\hat{A}^{(1)}$ or $\hat{A}^{(2)}$ provides the time-averaged output of the in-phase and quadrature components of the field respectively.  
 

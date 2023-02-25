@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.13.8
+    jupytext_version: 1.14.2
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -391,7 +391,7 @@ $$\Delta C_k^2 = k P_\mathrm{co}(\varphi) (1 - P_\mathrm{co}(\varphi))\mathrm{.}
 
 So far so good.  This variance follows directly from the properties of a binomial distribution.  
 
-However, at the end of the day we don't want to know the variation of the number of coincidences, but rather the variation of our measurement of $\varphi$, $\delta \varphi^2$.  To determine $\delta \varphi^2$, we need to convert the variance in coincidence number to a variance in $\varphi$.  This can be estimated by dividing the square of the rate of change of the coincidence number with respect to $\varphi$ evaluated at the mean position of $\varphi_0$. If you think about it for a bit, this makes sense.  It follows from the assumption that the fluctuations in the photon number are relatively small enough that over their range of fluction we can approximate the dependence of the modulation in photon number with $\varphi$ using a first-order Taylor expansion. 
+However, at the end of the day we don't want to know the variation of the number of coincidences, but rather the variation of our measurement of $\varphi$, $\delta \varphi^2$.  To determine $\delta \varphi^2$, we need to convert the variance in coincidence number to a variance in $\varphi$.  This can be estimated by dividing the square of the rate of change of the coincidence number with respect to $\varphi$ evaluated at the mean position of $\varphi_0$. If you think about it for a bit, this makes sense.  It follows from the assumption that the fluctuations in the photon number are relatively small enough that over their range of fluctuation we can approximate the dependence of the modulation in photon number with $\varphi$ using a first-order Taylor expansion. 
 
 If the interferometer is setup such that the mean value of $\varphi$ is $\varphi_0$, we can then estimate the variance in a measurement of $\varphi$ to be 
 
@@ -576,7 +576,7 @@ colab:
   height: 513
 id: 2c213cbb-39d2-4c14-a48b-a4e83b72246a
 outputId: 2560f16d-e7b7-4a76-fc1d-2f10399e6051
-tags: [hide-cell]
+tags: [remove-cell]
 ---
 import numpy as np
 import matplotlib.pyplot as plt

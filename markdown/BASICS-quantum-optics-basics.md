@@ -150,7 +150,7 @@ The quantization of the electromagnetic field is discussed in many textbooks.  F
 
 The operator relating to the "in-phase" component of the electric field is expressed as:
 
-$$\hat{A}^{(1)} = \frac{\adagger + \ahat}{2},$$
+$$\hat{A}^{(1)} = \frac{\ahat + \adagger}{2},$$
 
 and that relating to the "quadrature" component of the electric field as:
 
@@ -210,7 +210,7 @@ and
 
 $$ \bra{\alpha} \frac{\ahat - \adagger}{2i} \ket{\alpha} = \frac{\alpha - \alpha^*}{2i} \mathrm{.}$$
 
-This should now fully connect how the quantum field operators relate directly to the in-phase and quadrature representations of a classical electromagnetic wave of a single frequency.  Interferometric measurements using homodyne detection can be performed to directly observe these quantities.  
+This should now fully connect how the quantum field operators relate directly to the in-phase and quadrature representations of a classical electromagnetic wave of a single frequency.  Interferometric measurements using homodyne detection can be performed to directly observe these quantities.
 
 +++
 
@@ -585,6 +585,14 @@ $$P(n) = \frac{\langle n \rangle^n}{\left (1 + \langle n \rangle \right ) ^{1+n}
 The photon number variance is given as
 
 $$ \left ( \Delta n\right )^2 = \langle n \rangle ^2 + \langle n \rangle$$
+
++++
+
+## References
+
+```{bibliography}
+:filter: docname in docnames
+```
 
 +++
 

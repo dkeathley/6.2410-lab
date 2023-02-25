@@ -9,7 +9,7 @@ logo: FIGURES/logo-ibm.jpg
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: auto #auto or force or cache or 'off'
-  timeout: 500
+  timeout: 30
 
 # Define the name of the latex output file for PDF builds
 latex:

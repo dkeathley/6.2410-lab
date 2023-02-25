@@ -50,8 +50,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -727,6 +725,44 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\hat{A}^{(\theta)} = \frac{\ahat e^{-i\theta} + \adagger e^{i\theta}}{2}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat{A}^{(1)} = \hat{A}^{(\theta)}(0)\)</span>, and <span class="math notranslate nohighlight">\(\hat{A}^{(2)} = \hat{A}^{(\theta)}(\pi/2)\)</span></p>
+<p>To get a better sense for these operators, let’s consider the a classical electric field.  For a single frequency at one point in space, we can write the field as</p>
+<div class="math notranslate nohighlight">
+\[ E(t) = |\alpha|\cos(\omega_0 t + \varphi) \mathrm{.}\]</div>
+<p>There are three important paramters that describe such a wave:</p>
+<ol class="simple">
+<li><p>The central frequency <span class="math notranslate nohighlight">\(\omega_0\)</span></p></li>
+<li><p>The amplitude <span class="math notranslate nohighlight">\(|\alpha|\)</span></p></li>
+<li><p>The phase offset <span class="math notranslate nohighlight">\(\varphi\)</span></p></li>
+</ol>
+<p>However, by phasor analysis, we can also write the field as</p>
+<div class="math notranslate nohighlight">
+\[E(t) = \mathrm{Re}\lbrace \alpha e^{i\omega_0 t} \rbrace \mathrm{,}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\alpha = |\alpha|e^{i\varphi} = \mathrm{Re} \lbrace \alpha \rbrace + i\mathrm{Im} \lbrace \alpha \rbrace \mathrm{.}\]</div>
+<p>This means another set of equally valid parameters to describe the field:</p>
+<ol class="simple">
+<li><p>The central frequency <span class="math notranslate nohighlight">\(\omega_0\)</span></p></li>
+<li><p>The in-phase component: <span class="math notranslate nohighlight">\(\mathrm{Re} \lbrace \alpha \rbrace\)</span></p></li>
+<li><p>The quadrature component: <span class="math notranslate nohighlight">\(\mathrm{Im} \lbrace \alpha \rbrace\)</span></p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more on in-phase and quadrature component representation of waves see the <a class="reference external" href="https://en.wikipedia.org/wiki/In-phase_and_quadrature_components">Wikipedia page</a>.</p>
+</div>
+<p>Note that</p>
+<div class="math notranslate nohighlight">
+\[ \mathrm{Re} \lbrace \alpha \rbrace = \frac{\alpha + \alpha^*}{2} \mathrm{,}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{Im} \lbrace \alpha \rbrace = \frac{\alpha - \alpha^*}{2i} \mathrm{.}\]</div>
+<p>To explicitly demonstrate the relation to the field operators, consider the expectation the in-phase and quadrature field operators with a coherent state:</p>
+<div class="math notranslate nohighlight">
+\[ \bra{\alpha} \frac{\ahat + \adagger}{2} \ket{\alpha} = \frac{\alpha + \alpha^*}{2}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[ \bra{\alpha} \frac{\ahat - \adagger}{2i} \ket{\alpha} = \frac{\alpha - \alpha^*}{2i} \mathrm{.}\]</div>
+<p>This should now fully connect how the quantum field operators relate directly to the in-phase and quadrature representations of a classical electromagnetic wave of a single frequency.  Interferometric measurements using homodyne detection can be performed to directly observe these quantities.</p>
 </section>
 <section id="mean-and-standard-deviation-observables">
 <span id="basics-mean-and-standard-deviation"></span><h2>Mean and Standard Deviation Observables<a class="headerlink" href="#mean-and-standard-deviation-observables" title="Permalink to this headline">#</a></h2>

@@ -164,6 +164,52 @@ $$\hat{A}^{(\theta)} = \frac{\ahat e^{-i\theta} + \adagger e^{i\theta}}{2}$$
 
 where $\hat{A}^{(1)} = \hat{A}^{(\theta)}(0)$, and $\hat{A}^{(2)} = \hat{A}^{(\theta)}(\pi/2)$
 
+To get a better sense for these operators, let's consider the a classical electric field.  For a single frequency at one point in space, we can write the field as
+
+$$ E(t) = |\alpha|\cos(\omega_0 t + \varphi) \mathrm{.}$$
+
+There are three important paramters that describe such a wave:
+
+ 1. The central frequency $\omega_0$
+ 2. The amplitude $|\alpha|$ 
+ 3. The phase offset $\varphi$
+ 
+However, by phasor analysis, we can also write the field as
+
+$$E(t) = \mathrm{Re}\lbrace \alpha e^{i\omega_0 t} \rbrace \mathrm{,}$$
+
+where
+
+$$\alpha = |\alpha|e^{i\varphi} = \mathrm{Re} \lbrace \alpha \rbrace + i\mathrm{Im} \lbrace \alpha \rbrace \mathrm{.}$$
+
+This means another set of equally valid parameters to describe the field:
+
+ 1. The central frequency $\omega_0$
+ 2. The in-phase component: $\mathrm{Re} \lbrace \alpha \rbrace$
+ 3. The quadrature component: $\mathrm{Im} \lbrace \alpha \rbrace$
+ 
+```{note}
+For more on in-phase and quadrature component representation of waves see the [Wikipedia page](https://en.wikipedia.org/wiki/In-phase_and_quadrature_components).
+```
+
+Note that
+
+$$ \mathrm{Re} \lbrace \alpha \rbrace = \frac{\alpha + \alpha^*}{2} \mathrm{,}$$
+
+and
+
+$$\mathrm{Im} \lbrace \alpha \rbrace = \frac{\alpha - \alpha^*}{2i} \mathrm{.}$$
+
+To explicitly demonstrate the relation to the field operators, consider the expectation the in-phase and quadrature field operators with a coherent state:
+
+$$ \bra{\alpha} \frac{\ahat + \adagger}{2} \ket{\alpha} = \frac{\alpha + \alpha^*}{2}$$
+
+and
+
+$$ \bra{\alpha} \frac{\ahat - \adagger}{2i} \ket{\alpha} = \frac{\alpha - \alpha^*}{2i} \mathrm{.}$$
+
+This should now fully connect how the quantum field operators relate directly to the in-phase and quadrature representations of a classical electromagnetic wave of a single frequency.  Interferometric measurements using homodyne detection can be performed to directly observe these quantities.  
+
 +++
 
 (basics:mean-and-standard-deviation)=

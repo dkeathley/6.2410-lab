@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -485,11 +487,11 @@ title="Print to PDF"
 <p>In the course material for the discussion of single-photon interference and the interaction-free measurement, we took a shortcut to calculating the photon number expectation by ignoring the operators of the vacuum state inputs.  This simplifies the problem, but is not a rigorous solution.  A particular shortcoming is that this approach would give incorrect results for calculating the noise properties of the photon number at the detectors as in that case the vacuum state input does matter.</p>
 <section id="complete-solution-without-an-object">
 <h2>Complete solution without an object<a class="headerlink" href="#complete-solution-without-an-object" title="Permalink to this headline">#</a></h2>
-<p>The problem setup is the same, however now we must include all inputs, which slightly modifies our setup as shown in <a class="reference internal" href="#fig-t3e1-single-photon-interferometer-complete"><span class="std std-numref">Fig. 28</span></a>.</p>
+<p>The problem setup is the same, however now we must include all inputs, which slightly modifies our setup as shown in <a class="reference internal" href="#fig-t3e1-single-photon-interferometer-complete"><span class="std std-numref">Fig. 27</span></a>.</p>
 <figure class="align-default" id="fig-t3e1-single-photon-interferometer-complete">
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/T3E1-single-photon-interferometer-complete.png"><img alt="Single Photon Interference" class="bg-primary mb-1" src="_images/T3E1-single-photon-interferometer-complete.png" style="width: 600px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Considering all inputs and outputs for the complete description of the Mach-Zender interferometer.</span><a class="headerlink" href="#fig-t3e1-single-photon-interferometer-complete" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Considering all inputs and outputs for the complete description of the Mach-Zender interferometer.</span><a class="headerlink" href="#fig-t3e1-single-photon-interferometer-complete" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Now we can proceed to find the annihilation operators as before, but with all inputs included.</p>
@@ -526,11 +528,11 @@ title="Print to PDF"
 <section id="accounting-for-the-partial-absorber">
 <h2>Accounting for the partial absorber<a class="headerlink" href="#accounting-for-the-partial-absorber" title="Permalink to this headline">#</a></h2>
 <p>For the partial absorber, again our treatment in the text was adequate for accounting for the outgoing photon number.  However, a rigorous solution requires accounting for the vacuum state here again.</p>
-<p>The partial absorber can in fact be modeled as a beamsplitter with adjustable transmission/reflection with one input being the vacuum state, the other being the input state, and one output going to a perfect absorber, and the other transmitting out.  See <a class="reference internal" href="#fig-t3e1-partial-absorber-model"><span class="std std-numref">Fig. 29</span></a>.</p>
+<p>The partial absorber can in fact be modeled as a beamsplitter with adjustable transmission/reflection with one input being the vacuum state, the other being the input state, and one output going to a perfect absorber, and the other transmitting out.  See <a class="reference internal" href="#fig-t3e1-partial-absorber-model"><span class="std std-numref">Fig. 28</span></a>.</p>
 <figure class="align-default" id="fig-t3e1-partial-absorber-model">
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/T3E1-partial-absorber-model.png"><img alt="Partial Absorber Model" class="bg-primary mb-1" src="_images/T3E1-partial-absorber-model.png" style="width: 600px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Model of a partial absorber using a beamsplitter to account for the vacuum state.</span><a class="headerlink" href="#fig-t3e1-partial-absorber-model" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Model of a partial absorber using a beamsplitter to account for the vacuum state.</span><a class="headerlink" href="#fig-t3e1-partial-absorber-model" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>This model accounts for the vacuum state properly.  Note here the beamsplitter is not a 50:50 beamsplitter to account for the adjustable transmission probability.  The input/output relations are similar, with:</p>

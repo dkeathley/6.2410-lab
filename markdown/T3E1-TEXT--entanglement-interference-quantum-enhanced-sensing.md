@@ -318,6 +318,8 @@ where $\varphi$ is the phase to be measured, and $N_\mathrm{ph}$ is the total nu
 
 ### Analysis of Phase Estimation in an $N=2$ NOON State Interferometer
 
+In this section we explore the use of NOON state interferometers for achieving noise performance beyond the SQL.  For further reading on this topic, please see Refs. {cite:p}`nagataBeatingStandardQuantum2007,okamotoBeatingStandardQuantum2008`.  
+
 Consider a setup that builds on the HOM setup as shown in Fig. {numref}`NOON-state-interferometer`.
 
 :::{figure-md} NOON-state-interferometer
@@ -642,4 +644,4 @@ display(system_set);
 
   3. Derive the output state for $N = 3$ and $N = 4$ NOON state interference (*i.e.* output states $e$ and $f$ given you have  $N = 3$ and $N = 4$ NOON state inputs to the $c$ and $d$ ports in {numref}`NOON-state-interferometer`).  For performing phase-measurmeents with high visibility for $N = 3$ and $N = 4$, what are the requirements on post-selection?  Is a simple coincidence detector still sufficient?     
 
-  4. Discuss the engineering challenges involved for performing the kinds of post selection needed for true quantum-enhanced phase measurements with this approach.
+  4. Discuss the engineering challenges involved with regard to state generation and post selection needed for true quantum-enhanced phase measurements with this approach. (For this question, it may be helpful to consider the challenges faced in the experiments discussed in Refs. {cite:p}`nagataBeatingStandardQuantum2007,okamotoBeatingStandardQuantum2008`.

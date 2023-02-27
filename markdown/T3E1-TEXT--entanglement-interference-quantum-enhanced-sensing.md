@@ -385,7 +385,7 @@ It is at this point that you realize that the output oscillates as $\cos(2\varph
 
 ### Demonstrating Supersensitivity
 
-In most experimental situations we are trying to measure small changes in $\varphi$.  For convenience, let's rewrite our phase as $\varphi = \varphi_0 + \varphi_1$, where $\varphi_1$ is a small change that we are trying to measure on top of a larger offset phase $\varphi_0$.  Let's then imagine that we have some output signal $C(\varphi)$.  For a small enough $\varphi_1$ we can use a Taylor expression to write
+In most experimental situations we are trying to measure small changes in $\varphi$.  For convenience, let's rewrite our phase as $\varphi = \varphi_0 + \varphi_1$, where $\varphi_1$ is a small change that we are trying to measure on top of an offset phase $\varphi_0$.  Let's then imagine that we have some output signal $C(\varphi)$.  For a small enough $\varphi_1$ we can use a Taylor expression to write
 
 $$C(\varphi) \approx C(\varphi_0) + \frac{\mathrm{d} C}{\mathrm{d} \varphi}\bigg|_{\varphi_0} \varphi_1 \mathrm{,}$$
 

@@ -125,11 +125,11 @@ Model of a partial absorber using a beamsplitter to account for the vacuum state
 
 This model accounts for the vacuum state properly.  Note here the beamsplitter is not a 50:50 beamsplitter to account for the adjustable transmission probability.  The input/output relations are similar, with:
 
-$$\chat = \frac{t\ahat + r\bhat}{\sqrt{2}}$$
+$$\chat = t\ahat + r\bhat$$
 
 and
 
-$$\dhat = \frac{r\ahat - t\bhat}{\sqrt{2}}\mathrm{.}$$
+$$\dhat = r\ahat - t\bhat \mathrm{.}$$
 
 From the derivation in the text, we have that $t = \alpha$, and $r = \sqrt{1 - \alpha^2}$.  You can show that with this element in the Mach-Zender interferometer, the output photon number expectation is equivalent to what we derived, with the number of detected photons being
 

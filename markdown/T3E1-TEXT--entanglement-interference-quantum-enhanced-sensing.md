@@ -312,7 +312,7 @@ A limitation to the measurement of interferometric phase shifts is caused by noi
 
 $$\delta \varphi^2_\mathrm{classical} = \frac{1}{N_\mathrm{ph}} \mathrm{.}$$
 
-where $\varphi$ is the phase to be measured, and $N_\mathrm{ph}$ is the total number of photons passing through the interferometer. Here we will present a method for leveraging quantum properties to achieve phase noise performance beyond this standard quantum limit (SQL).  We will also build and study such a quantum-enhanced interferometer in the lab.
+where $\varphi$ is the phase to be measured, and $N_\mathrm{ph}$ is the total number of photons passing through the interferometer. Here we will present a method for leveraging quantum properties to achieve phase noise performance beyond this standard quantum limit (SQL).  This will build upon the generation of NOON states as a result of single-photon interference that you will study in the lab.
 
 +++ {"id": "caf35967-6267-459a-a1a9-dd34fbbb1f0f"}
 
@@ -373,101 +373,71 @@ meaning that we can adjust the probability of coincidence detection from 0 to 10
 
 $$P_\mathrm{co}(\varphi) = \frac{1}{2} - \frac{1}{2}\cos(2\varphi)\mathrm{.}$$
 
-It is at this point that you realize that the output oscillates as $\cos(2\varphi)$.  You can show that a classical interferometer oscillates as $\cos(\varphi)$.  This doubling of the oscillation rate for our NOON state interferometer is due to the reduced deBroglie wavelength of the higher order Fock state inputs!  This faster variation with respect to $\varphi$ provides **superresolution** compared to a classical interferometer.  However, this isn't the entire story.  While **superresolution** is provided by the higher rate of oscillation with $\varphi$, it is not guaranteed that the interferometer provides **supersensitivity**, meaning that it has reduced the smallest possible value of $\varphi$ that can be measured.  To demonstrate that **supersensitivity** is possible requires condiseration of the fundamental fluctuations in the measurement of $\varphi$.  To do this, we must consider the statistical variations of a measurement on $\varphi$.
+It is at this point that you realize that the output oscillates as $\cos(2\varphi)$.  You can show that a classical interferometer oscillates as $\cos(\varphi)$.  This doubling of the oscillation rate for our NOON state interferometer is due to the reduced deBroglie wavelength of the higher order Fock state inputs!  This faster variation with respect to $\varphi$ provides **superresolution** compared to a classical interferometer.  However, this isn't the entire story.  While **superresolution** is provided by the higher rate of oscillation with $\varphi$, it is not guaranteed that the interferometer provides **supersensitivity**, meaning that it has reduced the smallest possible value of $\varphi$ that can be measured.  To demonstrate that **supersensitivity** is possible requires condiseration of the sensitivity of our measurements to small changes in $\varphi$.  To do this, we must consider the statistical variations of the photon number and how they impact our estimation of changes in $\varphi$.  
 
 +++ {"id": "2b34879f-7b24-4ac2-ad25-2ff7749c39ff"}
 
 ### Demonstrating Supersensitivity
 
-At the point of detection we restrict ourselves to only counting coincidence events.  With a perfect detector and measurement setup, we then can consider that at the output we either have a true coincidence, or not.  Our measurment then follows the statistics of a [binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution#Expected_value_and_variance).    
+In most experimental situations we are trying to measure small changes in $\varphi$.  For convenience, let's rewrite our phase as $\varphi = \varphi_0 + \varphi_1$, where $\varphi_1$ is a small change that we are trying to measure on top of a larger offset phase $\varphi_0$.  Let's then imagine that we have some output signal $C(\varphi)$.  For a small enough $\varphi_1$ we can use a Taylor expression to write
 
-If we perform $k$ measurements, we find that the number of coincidence events detected $C_k$ would be
+$$C(\varphi) \approx C(\varphi_0) + \frac{\mathrm{d} C}{\mathrm{d} \varphi}\bigg|_{\varphi_0} \varphi_1 \mathrm{,}$$
 
-$$C_k = k P_\mathrm{co}(\varphi)\mathrm{.}$$
+and from this we have that 
 
-The variance in the number of detected coincidences can be found to be
+$$\varphi_1 \approx \frac{C(\varphi) - C(\varphi_0)}{\frac{\mathrm{d} C}{\mathrm{d} \varphi}\big|_{\varphi_0}}$$
 
-$$\Delta C_k^2 = k P_\mathrm{co}(\varphi) (1 - P_\mathrm{co}(\varphi))\mathrm{.}$$
+For the case of our noon-state interferometer, we might define $C_k(\varphi)$ as the average number of coincidence counts after $k$ incident photon events:  
 
-So far so good.  This variance follows directly from the properties of a binomial distribution.  
+$$C_k(\varphi) = k P_\mathrm{co}(\varphi)\mathrm{.}$$
 
-However, at the end of the day we don't want to know the variation of the number of coincidences, but rather the variation of our measurement of $\varphi$, $\delta \varphi^2$.  To determine $\delta \varphi^2$, we need to convert the variance in coincidence number to a variance in $\varphi$.  This can be estimated by dividing the square of the rate of change of the coincidence number with respect to $\varphi$ evaluated at the mean position of $\varphi_0$. If you think about it for a bit, this makes sense.  It follows from the assumption that the fluctuations in the photon number are relatively small enough that over their range of fluctuation we can approximate the dependence of the modulation in photon number with $\varphi$ using a first-order Taylor expansion. 
-
-If the interferometer is setup such that the mean value of $\varphi$ is $\varphi_0$, we can then estimate the variance in a measurement of $\varphi$ to be 
+While we can use $C_k(\varphi)$ to estimate small changes in phase $\varphi_1$ as discussed above, the next interesting question regards the fundamental limit to the sensitivity of this measurement.  To do that, we must account for the probabilistic nature of the coincident counting process.  Given all technical noise could be removed, the last fundamental source of noise in our estimation of $\varphi_1$ results from fluctuations in $C_k$.    Given that $C_k$ exhibits a variance, the minimum variance in our estimate of $\varphi_1$ from our measurements of $C_k$ would then become
 
 $$\delta \varphi^2 = \Delta C_k^2/(\mathrm{d}C_k/\mathrm{d}\varphi|_{\varphi_0})^2 $$
 
-Going back to our expression for $C_k$, we have that
+where $\Delta C_k^2$ is the variance in the number of detected coincidence events after $k$ trials.  What is the variance of $C_k$?  Given that each event has one of two outcomes (we either measure an event or we do not), the measurement is then analagous to that of a series of weighted coin tossess, and the variance follows the statistics of a [binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution#Expected_value_and_variance). 
 
-$$\frac{\mathrm{d}C_k}{\mathrm{d}\varphi} = k \sin(2\varphi)$$
+For a binomial distribution we have that
 
-Putting it all together we have
+$$\Delta C_k^2 = k P_\mathrm{co}(\varphi) (1 - P_\mathrm{co}(\varphi))\mathrm{.}$$
 
-$$\delta \varphi^2 = (1 + \cos^2(2\varphi))/(4k\sin^2(2\varphi))\mathrm{.}$$
+Let's now consider our $N=2$ NOON state interferometer specifically.  We have that
 
-Let's explore this by plotting it.  In the plot, we set $k = 1$ as we are simply looking for the behavior of the function with respect to $\varphi$.
+$$\bigg | \frac{\mathrm{d}C_k}{\mathrm{d}\varphi} \bigg |^2 = k^2 \sin^2(2\varphi) \mathrm{.}$$
 
-```{code-cell} ipython3
----
-colab:
-  base_uri: https://localhost:8080/
-  height: 513
-id: 2c213cbb-39d2-4c14-a48b-a4e83b72246a
-outputId: 2560f16d-e7b7-4a76-fc1d-2f10399e6051
-tags: [hide-cell]
----
-import numpy as np
-import matplotlib.pyplot as plt
+After feeding this into our expression for the variance of our phase estimation, we find that
 
-phi = np.linspace(0, 2*np.pi, 1000)
+$$\delta \varphi_{2002}^2 = \frac{1 - \cos^2(2\varphi)}{4k\sin^2(2\varphi_0)} = \frac{\sin^2(2\varphi_0 + 2\varphi_1)}{4k\sin^2(2\varphi_0)}\mathrm{.}$$
 
-var_phi = (1 + np.cos(2*phi)**2)/4/np.sin(2*phi)**2
+Given we are assuming sufficiently small $\varphi_1$, we can do another Taylor expansion, finding that
 
-fig = plt.figure()
-fig.set_size_inches(10, 7)
+$$\delta \varphi_{2002}^2 \approx \frac{1}{4k} + \frac{\cos(2\varphi_0)\varphi_1}{k\sin(2\varphi_0)}\mathrm{.}$$
 
-plt.plot(phi/np.pi, var_phi, linewidth = 2)
-plt.xlabel(r'$\varphi/\pi$', fontsize=15)
-plt.ylabel(r'$\delta \varphi^2$', fontsize=15)
-plt.gca().tick_params(labelsize=14)
-plt.ylim(0, 1);
-```
-
-```{code-cell} ipython3
-:id: 244f29bc-77de-449a-bad3-927510c5a4f0
-:outputId: 9c825584-870a-4df2-c76d-b56efbaa481f
-:tags: [remove-cell]
-
-from myst_nb import glue
-glue("var_phi_plot", fig, display=True)
-```
-
-+++ {"id": "e3e102af-b5ec-4e81-b942-d4b0a45f5428"}
-
-```{glue:figure} var_phi_plot
-:figwidth: 600px
-:name: "fig-var-phi-plot"
-
-Plot of $\delta \varphi^2$ as a function of $\varphi$.  We want to operate near the minima, which correspond to regions of highest slope of $C_k$ with respect to $\varphi$.    
-```
+The right hand coefficient on $\varphi_1$ is important as it makes it clear that we want to operate where $\cos(2\varphi_0) = 0$, which is where the probability $P_\text{co} = 1/2$.  This makes sense since this is where we have the maximum slope of $C_k$ and thus the maximum sensitivity to changes in $\varphi$.  An example phase offset point where this happens is $\varphi_0 = \pi/4$ for our $N=2$ NOON-state interferometer, which results in
 
 +++ {"id": "6b4e0700-e561-455d-b20f-fadac2b0c8b7"}
 
-From this we find that the minimum variance occurs when $\varphi = \pi/4$, giving
+$$\delta \varphi^2_{2002} = \frac{1}{4 k} \mathrm{.}$$
 
-$$\delta \varphi^2_{N00N} = \frac{1}{4 k}$$
-
-We can rewrite this with respect to the number of input photons, $N_\mathrm{ph} = 2k$, which becomes
+We can rewrite this result with respect to the number of input photons, $N_\mathrm{ph} = 2k$, which becomes
 
 $$\delta \varphi^2_{N00N} = \frac{1}{2 N_\mathrm{ph}}\mathrm{.}$$
 
-A classical interferometer follows the same statistical pattern, but oscillates as $\cos(\varphi)$ rather than $\cos(2\varphi)$.  If we were to go back through this same derivation, we would find that for a classical interferometer
+A classical interferometer follows the same statistical pattern (also equivalent to an N=1 NOON state at the input), but oscillates as $\cos(\varphi)$ rather than $\cos(2\varphi)$.  If we were to go back through this same derivation, we would find that for a classical interferometer
 
-$$\delta \varphi^2_\mathrm{classical} = \frac{1}{N_\mathrm{ph}} \mathrm{.}$$
+$$\delta \varphi^2_\mathrm{classical} = \frac{1}{N_\mathrm{ph}} \mathrm{,}$$
+
+with an optimal operating point of $\varphi_0 = \pi/2$.  
 
 This means that our $N=2$ NOON state interferometer has improved the fundamental variance of phase measurement by a factor of $2$ compared to a classical interferometer, enabling superresolution.  
 
-In general, larger reductions in variance could be achieved if we could keep increasing the order of the input NOON state.  In the problem set questions below, you will explore extensions to $N = 3$ and $N = 4$ and why this is so technically challenging to accomplish in the real world. However, we emphasize, **these challenges aren't fundamental -- only technological.  Yet another example of why we need quantum engineers.**
+In general, larger reductions in variance could be achieved if we could keep increasing the order of the input NOON state.  One can show that the general result for an $N$-th order NOON state, the minimum variance scales as
+
+$$\delta \varphi^2_\mathrm{NOON} = \frac{1}{N N_\mathrm{ph}} \mathrm{,}$$
+
+with optimal operating points being $\varphi_0 = \pi/(2N)$ (or any other $\varphi_0$ where the probability of detection $P = 1/2$).  
+
+In the post-lab questions below, you will explore extensions to $N = 3$ and $N = 4$ NOON-state interferometers.  In particular you will examine why realization of such interferometers is technically challenging to accomplish in the real world. However, we emphasize that **these challenges aren't fundamental -- only technological.  Yet another example of why we need quantum engineers.**
 
 +++
 
@@ -565,7 +535,7 @@ Comparison of classical and NOON state interferomters.  The plot shows the recor
 
 +++
 
-Note how the modulation is clearly more well defined with higher signal-to-noise ratio as the photon order increases. This is even in-spite of progressively fewer collected events!  
+Note how the modulation is clearly better resolved defined with higher signal-to-noise ratio as the photon order increases. This is even in-spite of progressively fewer collected events!  
 
 You are encouraged to launch this notebook where you will find an interactive version of this code below.  Play with the number of input photons and the phase modulation amplitude and observe how the statistics change.  Note that if you progressively decrease the amplitude of the phase modulation, you will find a value where the modulation is almost impossible to discern for the classical $N=1$ case, but easily discernable for the $N=4$ case.
 
@@ -664,8 +634,8 @@ display(system_set);
   1. In practice, we find that imperfections in allignment photon detection prevent the achievement of improved sensitivity beyond what is possible with a classical interferometer.  To account for such imperfections, we can write the propability of coincidences more generally as $P(\varphi) = 
   \eta \big ( 1 - V \cos(N\varphi) \big )/2$ for an $N$ photon number NOON state.  Express the variance of the estimated phase for general $\eta$ and $V$.    
 
-  2. What are the constraints on $\eta$ and $V$ needed to ensure phase sensitivity beyond that of a classical interferometer? 
+  2. Given $\eta = 1$, what are the constraints on $V$ needed to ensure phase sensitivity beyond that of a classical interferometer? 
 
-  3. Derive the output state fo $N = 3$ and $N = 4$.  For performing phase-measurmeents with high visibility for $N = 3$ and $N = 4$, what are the requirements on post-selection?    
+  3. Derive the output state for $N = 3$ and $N = 4$ NOON state interference.  For performing phase-measurmeents with high visibility for $N = 3$ and $N = 4$, what are the requirements on post-selection?  Is a simple coincidence detector still sufficient?     
 
-  4. Discuss the engineering challenges involved for generating high order NOON states and performing the kinds of post selection needed for true quantum-enhanced phase measurements with this approach.
+  4. Discuss the engineering challenges involved for performing the kinds of post selection needed for true quantum-enhanced phase measurements with this approach.

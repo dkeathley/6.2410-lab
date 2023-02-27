@@ -191,6 +191,8 @@ In the questions below, you will consider such measurements further.
 
 <iframe src="https://drive.google.com/file/d/1EbP7heyjad4oQek8uBg5gI4dMnObpFh_/preview" width="640" height="480" allow="autoplay"></iframe>
 
+We have now examined how a single photon interferes with itself, but how do two single coincident photons interfere with each other at a beamsplitter?  In this section we explore such two-photon interference.  We examine how when the two photons are indistinguishable in every way, the interference can lead to photon bunching and anti-correlation at the output ports.  The outgoing state generated is referred to as a two-photon NOON state of the form $\frac{1}{\sqrt{2}} ( \ket{N}_a\ket{0}_b + \ket{0}_a\ket{N}_b )$.  Pushing beyond this observation, in the text that follows this section we examine how NOON states can generally be used for quantum-enhanced sensing.
+
 Imagine the scenario depicted in {numref}`HOM-setup`.  A nonlinear crystal is used to generate precisely two photons of energy $\hbar\omega$ when excited by a pulse with a photon energy of $2\hbar\omega$.  This process is called spontaneous parametric down-conversion and is a common technique for generating entangled photon pairs. 
 
 The two photons travel away from the crystal along two paths (top and bottom as shown).  They are then brought together and interfere within a beamsplitter.  
@@ -284,10 +286,12 @@ leading to the following map of outcomes at each detector.
 Two different possibilities of detection in port c and d given a zero delay $\tau$ such that the two photons are indistinguishable in every way at the beamsplitter.  Note each pulse now contains two photons, and the probability of each occurance is $1/2$.  
 :::
 
-In this case **there would be no coincidence events** (that is, events that would trigger an output on both detectors).  Either both photons go to $c$ or both to $d$ with equal probability.  This is in comparison to the case when the modes were fully separate in time when the coincidence rate is 50%.  
+In this case **there would be no coincidence events** (that is, events that would trigger an output on both detectors).  Either both photons go to $c$ or both to $d$ with equal probability.  This is in contrast to the case when the modes were fully separate in time when the coincidence rate is 50%.  
+
+Such two-photon interference was first observed by Hong, Ou, and Mandel in 1987 {cite:p}`hongMeasurementSubpicosecondTime1987`.  In their work, they note that such a measurement allows for the measurement of time intervals between photons with sub-picosecond precision.  In the lab, we will also achieve this precision in detecting time-intervals between arriving photon pairs in the observation of HOM interference.   
 
 ```{important}
-We want to emphasize here that we have taken a few liberties with the notation above.  The approach  used here works in estimating probabilities for the two cases discussed, assuming (1) that each photon pulse is long relative to the central frequency; (2) that the envelope shape and central frequency of each pulse is the same; and (3) that for the delayed case the photons are so far separated in time that there is no overlap between each photon pulse at the input of the beamsplitter. For these cases the states are either perfectly indistinguishible or distinguishable.  A more complete model would actually have to expand each input into the frequency domain and model the interference between each spectral component individually.  However this approach is much more involved.  In the end, both approaches result in the same predictions as discussed above.  
+We want to emphasize here that we have taken a few liberties with the notation above.  The approach  used here works in estimating probabilities for the two cases discussed, assuming (1) that each photon pulse is long relative to the central frequency; (2) that the envelope shape and central frequency of each pulse is the same; and (3) that for the delayed case the photons are so far separated in time that there is no overlap between each photon pulse at the input of the beamsplitter. For these cases the states are either perfectly indistinguishible or distinguishable.  A more complete model would actually have to expand each input into the frequency domain and model the interference between each spectral component individually.  However this approach is much more involved (*e.g.* see the treatment in Ref. {cite:p}`branczykHongOuMandelInterference2017`.  In the end, both approaches result in the same predictions as discussed above.  
 ```
 
 +++

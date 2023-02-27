@@ -145,7 +145,7 @@ $\bra{N}_m \hat{N}_m \ket{N}_m = N$.
 The annihilation and creation operators are also intrinsically related to the electric field of a state.  In fact, they arise as a result of quantizing the electric field.  
 
 ```{note}
-The quantization of the electromagnetic field is discussed in many textbooks.  For instance, see the treatment in Ref. {cite:p}`townsendModernApproachQuantum2000`.  
+The quantization of the electromagnetic field is discussed in many textbooks.  For instance, see the treatment in Ref. {cite:p}`townsendModernApproachQuantum2000`, or the more extensive treatment in Ref. {cite:p}`kongElectromagneticWaveTheory2008`.  
 ```
 
 The operator relating to the "in-phase" component of the electric field is expressed as:

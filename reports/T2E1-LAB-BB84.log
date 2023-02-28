@@ -34,12 +34,12 @@ print(f"The probability of getting more than {k} photons with mean {mu} is {prob
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/tmp/ipykernel_2530371/338321062.py[0m in [0;36m<cell line: 7>[0;34m()[0m
-[1;32m      5[0m [0mk[0m [0;34m=[0m [0;36m1[0m [0;31m# default is 1: how often does Alice send > 1 photon?[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      6[0m [0mmu[0m [0;34m=[0m [0;36m0.5[0m [0;31m# set the mean value (the above text uses lambda instead of mu)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 7[0;31m [0mprob[0m [0;34m=[0m [0mgt[0m[0;34m([0m[0mk[0m[0;34m,[0m[0mmu[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      8[0m [0;34m[0m[0m
-[1;32m      9[0m [0;32mdef[0m [0mgt[0m[0;34m([0m[0mk[0m[0;34m,[0m[0mmu[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+Input [0;32mIn [1][0m, in [0;36m<cell line: 7>[0;34m()[0m
+[1;32m      5[0m k [38;5;241m=[39m [38;5;241m1[39m [38;5;66;03m# default is 1: how often does Alice send > 1 photon?[39;00m
+[1;32m      6[0m mu [38;5;241m=[39m [38;5;241m0.5[39m [38;5;66;03m# set the mean value (the above text uses lambda instead of mu)[39;00m
+[0;32m----> 7[0m prob [38;5;241m=[39m [43mgt[49m(k,mu)
+[1;32m      9[0m [38;5;28;01mdef[39;00m [38;5;21mgt[39m(k,mu):
+[1;32m     10[0m     xx [38;5;241m=[39m [38;5;241m1[39m[38;5;241m-[39mpoisson[38;5;241m.[39mcdf(k[38;5;241m=[39mkk, mu[38;5;241m=[39mmu)
 
 [0;31mNameError[0m: name 'gt' is not defined
 NameError: name 'gt' is not defined

@@ -353,7 +353,7 @@ The goal of this part is to couple the single-photon sources into two fibers.
 
 The fiber beam-splitter component has two free-space arms, one of them with a delay stage.  This is essential as for the HOM interference, you need to adjust the delay to find temporal overlap of the two photons.  The goal of this part is to ensure that the free-space arms are aligned.
 
- 1. Attach the two single-photon ports to each input arm of the beamsplitter.  **It is very important that the fibers labeled HOM1 and HOM2 go to the corresponding input ports as the lengths have been calibrated.**
+ 1. Attach the two single-photon ports to each input arm of the beamsplitter.  **It is very important that the fibers labeled HOM1 and HOM2 go to the corresponding input ports as the lengths have been calibrated.**  Be careful not to tug on the fibers as you might misalign the fiber couplers on the board.
  2. Attach the output ports of the fiber beamsplitter to the detector ports for A and B like shown in {numref}`fig-t3e1-fiber-interferometer-connections`.  
  3. Block one arm at a time of the fiber beamsplitter (you can use the edge of one of the gray polarizers to block the beam) and optimize the throughput of the fiber interferometer using the x-y positioning knobs of the input ports.  When both ports are open, you should see between 1-2K coincidences.
 4.  Now we can look for the HOM dip. The optimum delay should be close to a reading of 0.2 inches on the micrometer (see {numref}`fig-t3e1-micrometer-position`).  Each full revolution of the micrometer is 0.025 inches (note there are 25 tick marks as you rotate it around).  With the micrometer at 0.2 inches, scan one of the wedges fully through all posistions looking for the dip.  

@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.13.8
+    jupytext_version: 1.14.2
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -208,6 +208,14 @@ Before the lab, work through the prelab materials and watch the following video 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4d6d8BB7_n0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+```{important}
+Before proceeding to these final labs, you must have received training from the instructional staff regarding fiber handling.  You will be taught how to properly connect, cap, and clean the fibers.  The fibers are sensitive and should be handled with care (especially since we want to detect every photon we can). 
+
+The instructor/TA will also review the fiber-connection layout for the Quantenkoffer and fiber-interferometer setup.  
+
+If at any point you are confused, please ask the staff to help!
+```
+
 +++ {"tags": []}
 
 ### Lab Exercise
@@ -235,12 +243,13 @@ For alignment purposes, use the following procedure.
  3. Place a wedge just after the transmitted and reflected arm
  4. Using the alignment target, make sure the transmitted beam is aligned to the target with the 90 degree mirror
  5. Now do the same on the reflected path using the beamsplitter
- 6. Now place a fiber mount on each arm.  Direct the output of one arm to the detector F input port.  Use the fiber mount to optimize the signal there.
+ 6. Now place a fiber mount on each arm.  Direct the output of one arm to the detector F input port (or optionally, you could use the fiber input port for detectors A or B -- you just need a detector to monitor signal).  Use the fiber mount adjustments to optimize signal.  
  7. Turn the adjustment laser off and then fine tune the single-photon alignment.
- 8. Now repeat 6 and 7 for the ohter arm.
- 9. Attach the output fibers to the corresponding input of the fiber interferometer setup shown in {numref}`fig-t3e1-fiber-interferometer`.  Note the fibers and inputs are labeled HOM1 and HOM2.
- 10. Attach one of the fiber interferometer outputs to port F.  To ensure maximum throughput, block one arm of the fiber interferometer at a time, and tweak the pointing direction of the other input XY mount to optimize output signal.  
- 11. Switch arms and repeat step 10.  
+ 8. Now repeat 6 and 7 for the other arm.
+ 9. At this point, you should see roughly half the total signal (on the order of 100-150 thousand counts per second) in each arm after the beamsplitter.  If not, then it may be that: (1) a fiber head needs cleaning; or (2) you need to fine-tune the alignment.
+ 10. Attach the output fibers to the corresponding input of the fiber interferometer setup shown in {numref}`fig-t3e1-fiber-interferometer`.  Note the fibers and inputs are labeled HOM1 and HOM2. **It is very important that you attach the correct fiber to the correct port here as the fiber lengths have already been carefully compensated.  This will prevent a long search for timing overlap.**
+ 11. Attach one of the fiber interferometer outputs to the fiber going to detector A,and the other going to detector B like shown in {numref}`fig-t3e1-fiber-interferometer-connections`.  To ensure maximum throughput, block one arm of the fiber interferometer at a time (you can use an edge of the gray polarizer cards), and tweak the pointing direction of the other input XY mount to optimize output signal.  
+ 12. Switch arms and repeat step 11.  
  
 :::{figure-md} fig-t3e1-lab-michelson-setup
 <img src="FIGURES/T3E1-LAB-entanglement-interference/aim-5-mzi-qk-board-setup.png" alt="Fiber Interferometer Setup" class="bg-primary mb-1" width="800px">
@@ -254,6 +263,12 @@ The Quantenkoffer board setup fot the single-photon interference measurement.  T
 The fiber interferometer used for aims 5 and 6.  It consists of two inputs and two free-space gaps.  The top input is mounted onto a micrometer delay stage that can be adjusted to find the overlap of the photon wavepackets for observing interference effects.
 :::
 
+:::{figure-md} fig-t3e1-fiber-interferometer-connections
+<img src="FIGURES/T3E1-LAB-entanglement-interference/aim-5-fiber-interferometer-connections.png" alt="Fiber Interferometer Connections" class="bg-primary mb-1" width="600px">
+
+Final connections of the fiber interferometer outputs to the fibers going to detectors A and B. 
+:::
+
 :::{figure-md} fig-t3e1-exposure-time-setting
 <img src="FIGURES/T3E1-LAB-entanglement-interference/aim-5-mzi-exposure-time-adjust.png" alt="Integration Time Setting" class="bg-primary mb-1" width="200px">
 
@@ -264,12 +279,13 @@ Setting for the exposure time found in the control menu for the line-plot readou
 
 **Step 2** Look for single-photon interference
 
-1. Create a single line trace view for detector F.
-2. Using the control menu for the line trace, set the exposure time to a low value of 10-20 ms (see {numref}`fig-t3e1-exposure-time-setting`).  
-3. For each wedge, make sure the position is roughly centered.
-4. Now move the micrometer on the delay stage of the HOM2 input arm while looking for evidence of interference in the F detector output.  You should see a sharp spike when interference is found.  It is typically near 2 mm on the translation stage (see {numref}`fig-t3e1-micrometer-position`).  
-5. Finally, choose a wedge and move it up and down until you see the interference on the screen like that shown in {numref}`fig-t3e1-lab-interference-output`.  When you observe interference, stop the wedge movement and note its position.  
-6. Having noted the position of the wedge, now set it to oscillate around this position. To adjust the max/min oscillating positions, use a one finger swipe on the small control screen to adjust one, and a two-finger swipe on the small control screen to adjust the other. This oscillating movement will create a repetitive trace of the interference on the readout.  
+1. Using the control menu for the three-line output trace view, set the exposure time to a low value of 10-20 ms (see {numref}`fig-t3e1-exposure-time-setting`).  This will help us more quickly find time overlap.  
+2. For each wedge, make sure the position of the wedge is roughly centered.
+3. The optimum delay should be close to a reading of 0.2 inches on the micrometer (see {numref}`fig-t3e1-micrometer-position`).  Each full revolution of the micrometer is 0.025 inches (note there are 25 tick marks as you rotate it around).  With the micrometer at 0.2 inches, scan one of the wedges fully through all posistions looking for interference.  
+4. If you do not observe interference, move the micrometer by roughly one half revoltuion more than 0.2 (0.2125).  Move the wedge through again.  
+5. Keep repeating (5) until you see the interference.  If you do not see it after a while, you might very, very slowly move the micrometer looking for signs of interference.  You might also need to move slightly below 0.2.  Be persistent -- you will find it.  But the key is to take your time and move slowly.  
+6. When you observe interference, stop the wedge movement and note its position.  
+7. Having noted the position of the wedge, you can scan through the interference fringes and record the trace outputs for A and B simultaneously.  An option here is to set the wedge to oscillate around the zero-delay position.  To adjust the max/min oscillating positions, use a one finger swipe on the small control screen to adjust one, and a two-finger swipe on the small control screen to adjust the other. This oscillating movement will create a repetitive trace of the interference on the readout.  
 
 :::{figure-md} fig-t3e1-micrometer-position
 <img src="FIGURES/T3E1-LAB-entanglement-interference/aim-5-mzi-interference-micrometer-setting.png" alt="Micrometer Position" class="bg-primary mb-1" width="300px">
@@ -277,12 +293,12 @@ Setting for the exposure time found in the control menu for the line-plot readou
 You can read the micrometer position in milimeters (each rotation is 0.025 in, with a tick size of .001 in).  The overlap position is usually around 0.2 in.  
 :::
 
-**AIs** (1) From this measurement, can you determine the frequency bandwidth of the photons? (Note this relates to the inverses of the time delay over which you observe interference). (2) Assuming a central wavelength of 810 nm, then what range of wavelengths do the photons contain based on the bandwidth you calculate? (3) Is your interference contrast the same as your calculations indicate it should be from the prelab?    
+**AIs** (1) From this measurement, you can you determine the frequency bandwidth of the photons.  It is related to the inverses of the total time delay over which you observe interference.  Use your measurements to estimate this bandwidth noting precisely how you did it. (2) Assuming a central wavelength of 810 nm, then what range of wavelengths do the photons contain based on the bandwidth you calculate? (3) Discuss the phase relationship between the outputs to detectors A and B and why this makes sense.  (4) Is your interference contrast the same as your calculations indicate it should be from the prelab?  What experimental conditions might be limiting your contrast compared to theory?
     
 :::{figure-md} fig-t3e1-lab-interference-output
 <img src="FIGURES/T3E1-LAB-entanglement-interference/aim-5-mzi-interference-scan.png" alt="QK Michelson Setup" class="bg-primary mb-1" width="600px">
 
-Scanning through delay position with a wedge to see single-photon interference at an output port.  
+Scanning through delay position with a wedge to see single-photon interference at an output port. The interference scan on each output port should look similar to this.  
 :::
 
 +++ {"tags": []}
@@ -292,10 +308,10 @@ Scanning through delay position with a wedge to see single-photon interference a
 Now we will use the interferometer to demonstrate the concept of [interaction-free measurement](https://en.wikipedia.org/wiki/Interaction-free_measurement).  For the case of single photons, it is possible to detect the presence of an object in one of the interferometer arms without actually interacting with it.  If the interferometer is aligned on a null, an object placed into one of the arms will casue the signal at the output to increase.  These photons sensed the presence of the object, without being absorbed!
 
  1. Stop the wedge and move it to a region of large interference.  
- 2. Use the spinning control knob to jog the wedge to a position such that the interferometer is on a null.
+ 2. Use the spinning control knob to jog the wedge to a position such that the interferometer is on a null in one of the ports. 
  3. Now take an opaque object and slide it in and out of one path of the interferometer.
  
-If done properly, you should see the signal increase each time the object is placed within the beam as shown in {numref}`fig-t3e1-lab-michelson-IFM`.   
+If the conditions are quiet enough, you should see the signal increase each time the object is placed within the beam as shown in {numref}`fig-t3e1-lab-michelson-IFM`.  If the interferometer is drifting, you could take a video of the trace observing both detector ports.  This would increase your changes that you observe this effect.  
 
 **AI** Record the relative count rates for each case (object, no object) and compare to your pre-lab calculations.  Is the effect as pronounced as what you estimated?  Discuss practical issues related to this method in practice.
 
@@ -318,7 +334,7 @@ In our case, both photons come from the same source which help us to ensure matc
 The final on-board setup is shown in {numref}`fig-t3e1-hom-lab-setup`.  Follow the following steps for alignment.
 
 :::{figure-md} fig-t3e1-hom-lab-setup
-<img src="FIGURES/T3E1-LAB-entanglement-interference/aim-6-HOM-lab-setup-annotated.png" alt="QK HOM Setup" class="bg-primary mb-1" width="400px">
+<img src="FIGURES/T3E1-LAB-entanglement-interference/aim-6-HOM-lab-setup-annotated.png" alt="QK HOM Setup" class="bg-primary mb-1" width="800px">
 
 Quantenkoffer board setup for the HOM experiment with outputs to fiber delay-line interferometer labeled.  For the delay line, see {numref}`fig-t3e1-fiber-interferometer`
 :::
@@ -328,42 +344,37 @@ Quantenkoffer board setup for the HOM experiment with outputs to fiber delay-lin
 The goal of this part is to couple the single-photon sources into two fibers.
 
  1. Adjust the polarization of the source (see {numref}`fig-t3e1-lab-entanglement-HWP-control`) to be vertical so that only H-polarized photon pairs will be generated.
- 2. Place a fiber coupler with attached fiber onto the board after the source port of A.  Attach the other end of the fiber to the input port for the detector F (the fiber port on the right of the Quantenkoffer).
- 3. Using the adjustment laser, use the fiber adjusters to maximize signal into port F (you might have to lower the adjustment laser strength if you saturate).  
- 4. Now, use the two source mirrors for A to fine-tune and optimize alignment.  
- 5. When finished with the adjustment laser, you can switch it off and then optimize the single photon input.
- 6. Repeat steps 1-5 with another fiber coupler and the output of source B.  
+ 2. Place wedges and fiber couples as shown in {numref}`fig-t3e1-hom-lab-setup`.  Attach the outputs of each fiber directly to the fibers going to detectors A and B. 
+ 3. Use the fiber mount alignment to optimize the coupling of the adjustment laser and then single-photon sources into each arm.  
+ 3. From this point use the on-board source adjustments to optimize the signal and coincidences in A and B just as you would for earlier experiments.  You should again find similar counts -- roughly 300K in each arm, and 10-15K coincidences.  
 
-**Part 2:** Optimize for coincidence counts.
 
-The goal of this part is to ensure that the two single-photon arms are aligned for optimal coincidence counts.
-
- 1. Connect one fiber output port of the fiber setup shown in {numref}`fig-t3e1-fiber-interferometer` to the external fiber going to detector A.  
- 2. Connect the other fiber output port to a fiber coupler.  Place this coupler and a 45 degree mirror to direct it into the detector port for A.  
- 3. Align the output of this fiber coupler to the detector for A.  You may need the adjustment laser for optimization before switching to the single-photon source.
- 4. Once detectors A and F have signal, optimize thier coincident cout rate (this should be in the thousands).
-
-**Part 3:** Align the fiber beam splitter.
+**Part 2:** Align the fiber beam splitter and look for the HOM dip.
 
 The fiber beam-splitter component has two free-space arms, one of them with a delay stage.  This is essential as for the HOM interference, you need to adjust the delay to find temporal overlap of the two photons.  The goal of this part is to ensure that the free-space arms are aligned.
 
- 1. Attach the two single-photon ports to each input arm of the beamsplitter.  
- 2. The alignment should be close, so attach one of the fiber outputs to detector F and then optimize.  Block one arm at a time and optimize them each individually (minimum alignment should be required here).  
- 3. When finished, attach the other output of the beamsplitter to the port A fiber coupler (on board).  Fine tune this alignment for maximum detection at detector A.
-
-**Part 4:** Find the HOM dip.
-
-In this step you simply watch the coincidence couts as you scan the fiber delay arm with the interferometer.  Move slowly!  Remember that the bandwidth of your source leads to a small spatial overlap window where you will see an effect (related directly to your single-photon interference measurements).  
-
-Here is a video moving in and out of the HOM dip for reference.
+ 1. Attach the two single-photon ports to each input arm of the beamsplitter.  **It is very important that the fibers labeled HOM1 and HOM2 go to the corresponding input ports as the lengths have been calibrated.**
+ 2. Attach the output ports of the fiber beamsplitter to the detector ports for A and B like shown in {numref}`fig-t3e1-fiber-interferometer-connections`.  
+ 3. Block one arm at a time of the fiber beamsplitter (you can use the edge of one of the gray polarizers to block the beam) and optimize the throughput of the fiber interferometer using the x-y positioning knobs of the input ports.  When both ports are open, you should see between 1-2K coincidences.
+4.  Now we can look for the HOM dip. The optimum delay should be close to a reading of 0.2 inches on the micrometer (see {numref}`fig-t3e1-micrometer-position`).  Each full revolution of the micrometer is 0.025 inches (note there are 25 tick marks as you rotate it around).  With the micrometer at 0.2 inches, scan one of the wedges fully through all posistions looking for the dip.  
+5. If you do not observe interference, move the micrometer by roughly one half revoltuion more than 0.2 (0.2125).  Move the wedge through again.  
+6. Keep repeating (5) until you see the HOM dip.  If you do not see it after a while, you might very, very slowly move the micrometer looking for signs of the dip.  You might also need to move slightly below 0.2 depending on the exact alignment.  Be persistent -- you will find it.  But the key is to take your time and move slowly.  
+7. When you observe dip, stop the wedge movement and note its position.  
+8. **AI** Finally, move the wedge from one side of the dip to the other.  By stoping the wedge on both sides of the dip right when it vanishes, you can note the rough distance over which you observe the dip. Record this value.  Also record the trace of the dip through a full scan.
+ 
+Here is a video moving in and out of the HOM dip so that you get an idea of the visibility that is achievable.  
 
 <iframe src="https://drive.google.com/file/d/1aPtqVy__lI1VMfzs_hoZC9tu7Hwfaz7j/preview" width="640" height="480" allow="autoplay"></iframe>
 
-**AIs** (1) What is the spatial length over which you see the HOM dip?  (2) How strong is the dip as a percentage of total coincidences when not overlapped?  Why might this contrast not be 100 percent? (3) Read the section in the text extending this approach to perform N=2 NOON-state interferometry and be sure to complete the post-lab questions.  The experiences gained in this measurement should help inform your answers to this post-lab with regard to engineering challenges involved with generating and using higher-order Fock and NOON states.
+**AIs** (1) What is the spatial length over which you see the HOM dip?  What does this correspond to in terms of optical delay?  (Note you have just measured the delay between two single photons with sub-picosecond resolution!)  (2) How strong is the dip as a percentage of total coincidences when not overlapped?  Why might this contrast not be 100 percent?  (3) Returning to the histogram width from aimns 1-3, can you now conclude whether the coincidence timing histogram is electronics limited or photon arrival time limited? (4) Read the section in the text extending this approach to perform N=2 NOON-state interferometry and be sure to complete the post-lab questions.  The experiences gained in this measurement should help inform your answers to this post-lab with regard to engineering challenges involved with generating and using higher-order Fock and NOON states.
 
-+++ {"tags": ["remove-cell"]}
++++ {"tags": []}
 
-## **BONUS/Project Idea** Quantum-Enhanced Measurement with a NOON State Interferometer
+## **Project Idea** Quantum-Enhanced Measurement with a NOON State Interferometer
+
+You might be interested in using the NOON states that you now know how to generate to demonstrate quantum-enhanced sensing (or maybe for some other application).  While challenging, it is possible.  The video below demosntrates superresolution on the Quantenkoffer -- maybe you could demonstrate supersensitvity? 
+
+<iframe src="https://drive.google.com/file/d/1DRJjQdnbupAooSxLQuY_es3w9Idbgdeg/preview" width="640" height="480" allow="autoplay"></iframe>
 
 +++ {"tags": ["remove-cell"]}
 

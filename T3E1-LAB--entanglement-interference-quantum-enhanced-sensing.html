@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -727,7 +725,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p><strong>Part 2:</strong> Align the fiber beam splitter and look for the HOM dip.</p>
 <p>The fiber beam-splitter component has two free-space arms, one of them with a delay stage.  This is essential as for the HOM interference, you need to adjust the delay to find temporal overlap of the two photons.  The goal of this part is to ensure that the free-space arms are aligned.</p>
 <ol class="simple">
-<li><p>Attach the two single-photon ports to each input arm of the beamsplitter.  <strong>It is very important that the fibers labeled HOM1 and HOM2 go to the corresponding input ports as the lengths have been calibrated.</strong></p></li>
+<li><p>Attach the two single-photon ports to each input arm of the beamsplitter.  <strong>It is very important that the fibers labeled HOM1 and HOM2 go to the corresponding input ports as the lengths have been calibrated.</strong>  Be careful not to tug on the fibers as you might misalign the fiber couplers on the board.</p></li>
 <li><p>Attach the output ports of the fiber beamsplitter to the detector ports for A and B like shown in <a class="reference internal" href="#fig-t3e1-fiber-interferometer-connections"><span class="std std-numref">Fig. 22</span></a>.</p></li>
 <li><p>Block one arm at a time of the fiber beamsplitter (you can use the edge of one of the gray polarizers to block the beam) and optimize the throughput of the fiber interferometer using the x-y positioning knobs of the input ports.  When both ports are open, you should see between 1-2K coincidences.</p></li>
 <li><p>Now we can look for the HOM dip. The optimum delay should be close to a reading of 0.2 inches on the micrometer (see <a class="reference internal" href="#fig-t3e1-micrometer-position"><span class="std std-numref">Fig. 24</span></a>).  Each full revolution of the micrometer is 0.025 inches (note there are 25 tick marks as you rotate it around).  With the micrometer at 0.2 inches, scan one of the wedges fully through all posistions looking for the dip.</p></li>

@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -560,7 +558,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <div class="figure align-default" id="setup-fig">
 <a class="reference internal image-reference" href="../_images/week1_setup.png"><img alt="../_images/week1_setup.png" src="../_images/week1_setup.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 52 </span><span class="caption-text">(left) Picture of the experimental setup. (right) Diagram depicting the magnetic resonators and diamond placed inside a magnetic shield.</span><a class="headerlink" href="#setup-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 54 </span><span class="caption-text">(left) Picture of the experimental setup. (right) Diagram depicting the magnetic resonators and diamond placed inside a magnetic shield.</span><a class="headerlink" href="#setup-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p>Not shown in the picture of the setup are the electronics and the RF components needed to probe the microwave cavity. You will be tasked to put together the RF circuitry for running the experiment.</p>
 <p>As mentioned during the demo session, the experiment is based mainly on <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">E. Eisenach et al, Cavity-enhanced microwave readout of a solid-state spin sensor</a>, which you may find to be a valuable reference.</p>
@@ -595,7 +593,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Now with the loop coupler properly connected to the VNA via the circulator, first put on gloves and grab the pair of tweezers. Carefully place the resonator stack inside the magnetic shield on the cavity mount, as shown in the figure below.</p>
 <div class="figure align-default" id="resonators-in-shield-fig">
 <a class="reference internal image-reference" href="../_images/week1_resonators_in_shield.png"><img alt="../_images/week1_resonators_in_shield.png" src="../_images/week1_resonators_in_shield.png" style="width: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 53 </span><span class="caption-text">Microwave resonators stacked inside the magnetic shield.</span><a class="headerlink" href="#resonators-in-shield-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 55 </span><span class="caption-text">Microwave resonators stacked inside the magnetic shield.</span><a class="headerlink" href="#resonators-in-shield-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p>Mount the loop coupler such that it is directly above the resonator. You should use the <a class="reference external" href="https://www.thorlabs.com/thorproduct.cfm?partnumber=RA90">right-angle clamp</a> to adjust the loop coupler position, as shown in the figure below.</p>
 <p>Open the libreVNA GUI and connect to the device. Make sure you are monitoring the “S21” window. Change the center frequency to what you estimated above for the stacked resonator. Change the span to 20 MHz. By adjusting the position of the loop coupler relative to the resonator, you should be able to observe the cavity resonance dip. Once you have done so, play around with the position of the loop coupler and observe how the cavity’s observed loaded <span class="math notranslate nohighlight">\(Q\)</span> and resonance frequency <span class="math notranslate nohighlight">\(\omega_c\)</span> change. <u>Write down your observations and explanations to these changes as a function of position.</u> In Aim 2, you will need to methodically measure the cavity resonance frequency and quality factor as a function of <span class="math notranslate nohighlight">\(z\)</span>.</p>
@@ -605,18 +603,18 @@ const thebe_selector_output = ".output, .cell_output"
 <h4>iv) Characterize the Helmholtz coil<a class="headerlink" href="#iv-characterize-the-helmholtz-coil" title="Permalink to this headline">¶</a></h4>
 <div class="figure align-default" id="alligator-clips-fig">
 <a class="reference internal image-reference" href="../_images/week1_alligator_clips.png"><img alt="../_images/week1_alligator_clips.png" src="../_images/week1_alligator_clips.png" style="width: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 54 </span><span class="caption-text">Alligator clips.</span><a class="headerlink" href="#alligator-clips-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 56 </span><span class="caption-text">Alligator clips.</span><a class="headerlink" href="#alligator-clips-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p>The Helmholtz coil we will be using actually has two coils, each with two electrical leads. Connect the red and black alligator clips to the leads in both coils. Note that red typically indicates the positive end, and black indicates the negative end. There is a correct way of making the connection. Otherwise, you may not be able to generate much magnetic field. Check with the TA if you are unsure.</p>
 <p>After you are done, grab the alligator clips’ BNC cable ends and connect them to a <a class="reference external" href="https://www.digikey.com/en/products/detail/molex/0731485003/1465138?utm_adgroup=Connectors%2C%20Interconnects&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Shopping_Supplier_Molex_0900_Co-op&amp;utm_term=&amp;utm_content=Connectors%2C%20Interconnects&amp;gclid=CjwKCAiAxP2eBhBiEiwA5puhNbxEHfe9gE0oFxSoYIL6urG-hMIu8VkCRfdGRDRMaGn1JRQUZ3Z4ABoCab4QAvD_BwE">BNC-Tee connector</a>. Then, attach the BNC-<a class="reference external" href="https://en.wikipedia.org/wiki/Banana_connector">banana connector</a> adapter to the BNC-Tee connector, and insert the adapter into Channel 1 of the R&amp;S power supply (HMP4040).</p>
 <div class="figure align-default" id="bnct-power-supply-fig">
 <a class="reference internal image-reference" href="../_images/week1_bncT_power_supply.png"><img alt="../_images/week1_bncT_power_supply.png" src="../_images/week1_bncT_power_supply.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 55 </span><span class="caption-text">(left) An adapter for banana plugs and BNC, BNC Tee connector. (right) Rhode &amp; Schwarz power supply, HMP4040.</span><a class="headerlink" href="#bnct-power-supply-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 57 </span><span class="caption-text">(left) An adapter for banana plugs and BNC, BNC Tee connector. (right) Rhode &amp; Schwarz power supply, HMP4040.</span><a class="headerlink" href="#bnct-power-supply-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p>Next, turn on the Gauss meter.</p>
 <div class="figure align-default" id="gauss-meter-fig">
 <a class="reference internal image-reference" href="../_images/week1_gauss_meter.png"><img alt="../_images/week1_gauss_meter.png" src="../_images/week1_gauss_meter.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 56 </span><span class="caption-text">Gauss meter.</span><a class="headerlink" href="#gauss-meter-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 58 </span><span class="caption-text">Gauss meter.</span><a class="headerlink" href="#gauss-meter-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p><u>What is the intrinsic reading displayed on the Gauss meter? Why is it non-zero?</u></p>
 <p>Set Channel 1’s voltage to 1 V, and click on “Output” on the top right of the front panel of the power supply. Put the Gauss meter’s probe in between the loops and note down the measured magnetic field.</p>

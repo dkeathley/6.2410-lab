@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -484,7 +482,7 @@ const thebe_selector_output = ".output, .cell_output"
  -->
 <div class="figure align-default" id="nv-center-fig">
 <a class="reference internal image-reference" href="../_images/NV_center.png"><img alt="../_images/NV_center.png" src="../_images/NV_center.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 47 </span><span class="caption-text">Figures adapted from quTools, quNV brochure.</span><a class="headerlink" href="#nv-center-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 49 </span><span class="caption-text">Figures adapted from quTools, quNV brochure.</span><a class="headerlink" href="#nv-center-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p>Effectively, NV center is an artificial atom in a solid state environment with well-defined optical transitions. More importantly, NV center’s spin states have energy splitting sensitive to the environment’s magnetic field strength. The greater the magnetic field strength, the greater the splitting. In a way, NV center itself is a <em>magnetic field sensor</em>. One can then readout the spin states (at microwave frequencies) to measure ambient magnetic field.</p>
 </div>
@@ -496,7 +494,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Let’s consider this continuous pumping (spin polarization) case. We expect the fluorescence intensity, i.e. the number of emitted 637 nm photons, to be constant in steady state. <em>However, when we apply a microwave drive at exactly 2.87 GHz, we start shuffling the state between <span class="math notranslate nohighlight">\(m_s=0\)</span> and <span class="math notranslate nohighlight">\(m_s=\pm 1\)</span> via <a class="reference external" href="https://en.wikipedia.org/wiki/Rabi_cycle">Rabi oscillation</a></em>. In this case, the fluorescence intensity would experience a dip. This phenomenon is called <a class="reference external" href="https://en.wikipedia.org/wiki/Optically_detected_magnetic_resonance">optically detected magnetic resonance (ODMR)</a>.</p>
 <div class="figure align-default" id="odmr-fig">
 <a class="reference internal image-reference" href="../_images/ODMR.png"><img alt="../_images/ODMR.png" src="../_images/ODMR.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 48 </span><span class="caption-text">Optical detected magnetic resonance. Figures adapted from quTools, quNV brochure.</span><a class="headerlink" href="#odmr-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 50 </span><span class="caption-text">Optical detected magnetic resonance. Figures adapted from quTools, quNV brochure.</span><a class="headerlink" href="#odmr-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p>Recall previously, we assume there is no applied magnetic field such that <span class="math notranslate nohighlight">\(m_s=-1\)</span> and <span class="math notranslate nohighlight">\(m_s=+1\)</span> states are degenerate. If we do apply magnetic field to the NV center, however, the degeneracy would be broken. <span class="math notranslate nohighlight">\(m_s=-1\)</span> and <span class="math notranslate nohighlight">\(m_s=+1\)</span> states would start splitting apart, and their energy difference grows linearly with the magnetic field strength due to the <a class="reference external" href="https://en.wikipedia.org/wiki/Zeeman_effect">Zeeman effect</a>. Now instead of 2.87 GHz, there would be two microwave frequencies at which the fluorescence intensity would experience a dip (can you see why?). Effectively, by detecting the optical signal coming from the NV center and noting where the changes in the intensity occur, we can extract information about the applied magnetic field. This means the NV center itself acts as a magnetometer!</p>
 <p>HOWEVER, realistically, the change in fluorescence is quite minimal. To make a magnetometer that is practical, we will pursue an alternative approach in this lab. Instead of inferring information about the magnetic field through <em>optical</em> detection, we will attempt <em>microwave</em> detection.</p>
@@ -520,7 +518,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div> -->
 <div class="figure align-default" id="magnetic-cavity-fig">
 <a class="reference internal image-reference" href="../_images/magnetic_cavity.png"><img alt="../_images/magnetic_cavity.png" src="../_images/magnetic_cavity.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 49 </span><span class="caption-text">Simulation results from <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">Eisenach <em>et al.</em></a></span><a class="headerlink" href="#magnetic-cavity-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 51 </span><span class="caption-text">Simulation results from <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">Eisenach <em>et al.</em></a></span><a class="headerlink" href="#magnetic-cavity-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p>where the black dashed lines mark the outline of the resonator.</p>
 </div>
@@ -544,7 +542,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div> -->
 <div class="figure align-default" id="magnetic-cavity-rhr-fig">
 <a class="reference internal image-reference" href="../_images/magnetic_cavity_RHR.png"><img alt="../_images/magnetic_cavity_RHR.png" src="../_images/magnetic_cavity_RHR.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 50 </span><span class="caption-text">Field components of a cylindrical microwave cavity.</span><a class="headerlink" href="#magnetic-cavity-rhr-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 52 </span><span class="caption-text">Field components of a cylindrical microwave cavity.</span><a class="headerlink" href="#magnetic-cavity-rhr-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p>How do we experimentally <em>measure</em> the cavity resonance? It’s simple! We can simply use a metallic loop that <em>inductively</em> couples to the magnetic cavity. As such, we call it a loop coupler. The magnetic field exiting out of the cavity in the <span class="math notranslate nohighlight">\(z\)</span> direction (pointing up shown in the figure above) threads through the loop coupler, thereby inducing a current that is measurable. We will leverage this fact and read out the cavity resonance via a <a class="reference external" href="https://en.wikipedia.org/wiki/Network_analyzer_(electrical)">vector network analyzer (VNA)</a>, which you should have already gotten familiar with during the Parkour session.</p>
 </div>
@@ -578,7 +576,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div> -->
 <div class="figure align-default" id="odmr-vs-microwave-fig">
 <a class="reference internal image-reference" href="../_images/ODMR_vs_microwave.png"><img alt="../_images/ODMR_vs_microwave.png" src="../_images/ODMR_vs_microwave.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 51 </span><span class="caption-text">ODMR and microwave readout results from <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">Eisenach <em>et al.</em></a></span><a class="headerlink" href="#odmr-vs-microwave-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 53 </span><span class="caption-text">ODMR and microwave readout results from <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">Eisenach <em>et al.</em></a></span><a class="headerlink" href="#odmr-vs-microwave-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p>Due to coupling with the cavity, the NV centers’ microwave response (blue) exhibits much greater <a class="reference external" href="https://en.wikipedia.org/wiki/Signal-to-noise_ratio">signal-to-noise ratio (SNR)</a> than conventional ODMR (red)!</p>
 <p>In the first portion of the lab, you will use the given formulae for the reflection coefficient and assess how each parameter affects the NV centers’ microwave response.</p>

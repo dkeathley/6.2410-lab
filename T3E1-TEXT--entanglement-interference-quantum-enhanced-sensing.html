@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -566,6 +564,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Here we have considered states containing only a single frequency, meaning that interference would continue indefinitely with increasing delay.  However, in reality our states contain a distrubtion of frequencies and exhibit finite coherence times that limit the range of delays over which one could observe this interference.  In experiment we will find that the interference fringes disappear after several wavelengths of delay.  For our case this is due to the relatively large bandwidth of frquencies generated in the SPDC process.</p>
+<p>The case of a non-zero bandwidth is also treated in <a class="reference internal" href="T3E1-EXTRAS--rigorous-solution-MZI.html"><span class="doc std std-doc">EXTRAS – Rigorous Solution of Mach-Zender Interferometer</span></a>.</p>
 </div>
 <p>It also makes sense that when <span class="math notranslate nohighlight">\(\alpha = 0\)</span> all interference goes away, and we are left with only 1/4 of the photons making it to the detector.  The other 1/4 go to arm <span class="math notranslate nohighlight">\(e\)</span>, and the other half are lost to the object.</p>
 <p>Now for something interesting.  Let’s say that we align our interferometer without an object in place such that you have a minum probability of finding the photons in arm <span class="math notranslate nohighlight">\(d\)</span>.  That would be for <span class="math notranslate nohighlight">\(\Delta\phi = \pi\)</span> so that no photons are output.  Then you put the object in place – the photon expectation suddenly goes to 1/4.  You just detected the object without interaction!  This is in fact often referred to as an interaction-free measurement, and has found renewed interest in the context of electron detection where particle energies are high and damage per particle can be significant.</p>

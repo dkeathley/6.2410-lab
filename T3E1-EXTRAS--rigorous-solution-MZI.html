@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -313,6 +311,11 @@ const thebe_selector_output = ".output, .cell_output"
    Accounting for the partial absorber
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accounting-for-bandwidth">
+   Accounting for Bandwidth
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -341,6 +344,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#accounting-for-the-partial-absorber">
    Accounting for the partial absorber
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accounting-for-bandwidth">
+   Accounting for Bandwidth
   </a>
  </li>
 </ul>
@@ -411,6 +419,116 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="math notranslate nohighlight">
 \[N_d = \frac{1}{4}\lbrace 1 + t^2 + 2t\cos(\Delta \phi)\rbrace \mathrm{.}\]</div>
 <p>However, as noted earlier, the impact of this absorbing object is to effectively couple in vacuum state which must be accounted for during analysis of the quantum noise limit of the interferometer.</p>
+</div>
+<div class="section" id="accounting-for-bandwidth">
+<h2>Accounting for Bandwidth<a class="headerlink" href="#accounting-for-bandwidth" title="Permalink to this headline">¶</a></h2>
+<p>Finally, let us address the issue of the state having a non-zero bandwidth.  Up until now, we have discussed states from the context of a single frequency.  Our results would imply that interference would continue indefinitely as one changes delay.  However, in practice our source states will have a non-zero bandwidth which leads to a finite range of delays over which one would observe interference.  In this section, we will introduce how to account for this bandwidth.</p>
+<p>For the case of a non-zero bandwidth, we can write our single-photon input state as</p>
+<div class="math notranslate nohighlight">
+\[ \ket{\psi_\mathrm{in}} = \int_{-\infty}^\infty \mathrm{d}\omega \phi(\omega) \ket{1;\omega}_a \mathrm{,}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\phi(\omega)\)</span> contains the spectral amplitude and phase distirubtion for each frequency component. Note that by normalization we have that</p>
+<div class="math notranslate nohighlight">
+\[\braket{\psi_\mathrm{in}}{\psi_\mathrm{in}}  = \int_{-\infty}^\infty \mathrm{d}\omega_1 \int_{-\infty}^\infty \mathrm{d}\omega_2 \phi(\omega_2)^{*} \phi(\omega_1) \braket{1;\omega_2}{1;\omega_1}_a \]</div>
+<p>Given orthonormality we have that <span class="math notranslate nohighlight">\(\braket{1;\omega_2}{1;\omega_1}_a = \delta(\omega_2 - \omega_1)\)</span>, which removes the second integral, simplifying everything to</p>
+<div class="math notranslate nohighlight">
+\[\braket{\psi_\mathrm{in}}{\psi_\mathrm{in}}  = \int_{-\infty}^\infty \mathrm{d}\omega_1  |\phi(\omega_1)|^2 = 1\]</div>
+<p>What is this all saying?  Basically, we are saying that we have a probability of 1 of finding a photon over a range of frequncies defined by the distribution <span class="math notranslate nohighlight">\(|\phi(\omega)|^2\)</span>.  While we will always find a photon, we just don’t know for certain what energy it has due to the finite bandwidth of our source.</p>
+<p>Taking this further, we can define the state in terms of the creation operator.</p>
+<div class="math notranslate nohighlight">
+\[ \ket{\psi_\mathrm{in}} = \int_{-\infty}^\infty \mathrm{d}\omega \phi(\omega) \adagger(\omega) \ket{0}_a \mathrm{.}\]</div>
+<p>In this way, we can track the operators through any system in the same way as we already have for the single-frequency states.  Following this method, we can re-express our output state calculated from our earlier analysis of the interferometer now accounting for the non-zero bandwidth:</p>
+<div class="math notranslate nohighlight">
+\[\ket{\psi_\mathrm{out}} = \int_{-\infty}^\infty \mathrm{d}\omega \cos \bigg ( \frac{\omega \Delta l}{2c} \bigg )\phi(\omega) \ket{1;\omega}_a \mathrm{.}\]</div>
+<p>Note that here it is important as we write the phase difference in terms of <span class="math notranslate nohighlight">\(\omega\)</span> and the path length difference <span class="math notranslate nohighlight">\(\Delta l\)</span>.  What is the probability of finding a photon then.  Well, we just take <span class="math notranslate nohighlight">\(\braket{\psi_\mathrm{out}}{\psi_\mathrm{out}}\)</span>, which becomes</p>
+<div class="math notranslate nohighlight">
+\[\braket{\psi_\mathrm{in}}{\psi_\mathrm{in}}  = \int_{-\infty}^\infty \mathrm{d}\omega_1 \int_{-\infty}^\infty \mathrm{d}\omega_2 \phi(\omega_2)^{*} \phi(\omega_1) \cos \bigg ( \frac{\omega_1 \Delta l}{2c} \bigg )\cos \bigg ( \frac{\omega_2 \Delta l}{2c} \bigg )\braket{1;\omega_2}{1;\omega_1}_a \]</div>
+<p>Again, we have that <span class="math notranslate nohighlight">\(\braket{1;\omega_2}{1;\omega_1}_a = \delta(\omega_2 - \omega_1)\)</span>, and after substitution this again gets us back to one integral:</p>
+<div class="math notranslate nohighlight">
+\[\braket{\psi_\mathrm{in}}{\psi_\mathrm{in}}  = \int_{-\infty}^\infty \mathrm{d}\omega_1 |\phi(\omega_1)|^2 \cos \bigg ( \frac{\omega_1 \Delta l}{2c} \bigg )^2 \mathrm{.}\]</div>
+<p>Note that the major difference here is the adddition of the cosine term.  This resuts in an oscillation of the output photon detction probability.  Note that the bandwidth probability distirubution function <span class="math notranslate nohighlight">\(\phi\)</span> then dictates the range of delays over which you see this oscillation in probability.  Importantly, note that that all phase information inside of <span class="math notranslate nohighlight">\(\phi\)</span> is lost as the output is dictated by <span class="math notranslate nohighlight">\(|\phi|^2\)</span> (our interferometer is, after all, only sensitive the phase differences between the two arms, and not to the absolute phase of the incoming state).</p>
+<p>Let’s now numerically explore the single-photon interference accounting for bandwidth.</p>
+<p>We start by taking a Gaussian distribution for <span class="math notranslate nohighlight">\(\phi\)</span>.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># -- Settings -- </span>
+<span class="n">c</span>  <span class="o">=</span> <span class="mi">300</span> <span class="c1">#speed of light in nm/fs</span>
+<span class="n">lambda_0</span> <span class="o">=</span> <span class="mi">810</span> <span class="c1"># central wavelength in nm</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># bandwidth of the photons in petahertz</span>
+<span class="n">omega_0</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">c</span><span class="o">/</span><span class="n">lambda_0</span> <span class="c1">#central frequency of the photons</span>
+
+<span class="c1"># -- Calculations</span>
+
+<span class="c1">#Set up the frequency axis (rad/fs)</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">omega_0</span> <span class="o">-</span> <span class="mi">10</span><span class="o">*</span><span class="n">sigma</span><span class="p">,</span> <span class="n">omega_0</span> <span class="o">+</span> <span class="mi">10</span><span class="o">*</span><span class="n">sigma</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+
+<span class="c1">#Define the initial gaussian frequency distribution</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">omega</span> <span class="o">-</span> <span class="n">omega_0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1">#Ensure it is normalized properly</span>
+<span class="n">norm_factor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">omega</span><span class="p">))</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="n">phi</span><span class="o">/</span><span class="n">norm_factor</span>
+
+<span class="c1">#Plot for visualization</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\phi(\omega)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\omega$ (rad/fs)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\phi(\omega)$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">);</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/T3E1-EXTRAS--rigorous-solution-MZI_10_0.png" src="_images/T3E1-EXTRAS--rigorous-solution-MZI_10_0.png" />
+</div>
+</div>
+<div class="figure align-default" id="t3e1-fig-photon-bandwidth" style="width: 800px">
+<div class="cell_output docutils container">
+<img alt="_images/T3E1-EXTRAS--rigorous-solution-MZI_11_0.png" src="_images/T3E1-EXTRAS--rigorous-solution-MZI_11_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text">Normalized spectral distribution of single-photons.</span><a class="headerlink" href="#t3e1-fig-photon-bandwidth" title="Permalink to this image">¶</a></p>
+</div>
+<p>Next, we define the path length difference and perform the integral for each choice of delay.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#-- Settings -- </span>
+
+<span class="c1">#Define the delay length (in nm)</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">10e3</span><span class="p">,</span> <span class="mf">10e3</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="c1">#Path length difference to scan over</span>
+
+<span class="c1"># -- Calculations -- </span>
+
+<span class="c1">#Set up vector for output probabilities</span>
+<span class="n">P_out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1">#Probability of seeing a photon at the output</span>
+
+<span class="c1">#Now calculate output probability for each delay</span>
+<span class="k">for</span> <span class="n">cc</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">l</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+
+    <span class="n">P_out</span><span class="p">[</span><span class="n">cc</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega</span><span class="o">*</span><span class="n">l</span><span class="p">[</span><span class="n">cc</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">c</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">omega</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">P_out</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;delay length (nm)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;photon detection probability&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">);</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/T3E1-EXTRAS--rigorous-solution-MZI_14_0.png" src="_images/T3E1-EXTRAS--rigorous-solution-MZI_14_0.png" />
+</div>
+</div>
+<div class="figure align-default" id="t3e1-fig-photon-bandwidth-interference" style="width: 800px">
+<div class="cell_output docutils container">
+<img alt="_images/T3E1-EXTRAS--rigorous-solution-MZI_15_0.png" src="_images/T3E1-EXTRAS--rigorous-solution-MZI_15_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">Normalized spectral distribution of single-photons.</span><a class="headerlink" href="#t3e1-fig-photon-bandwidth-interference" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 </div>
 

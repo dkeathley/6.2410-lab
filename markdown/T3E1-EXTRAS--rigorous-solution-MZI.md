@@ -103,7 +103,7 @@ $$N_g = \bra{0}_b \bra{1}_a \gdagger \ghat \ket{1}_a \ket{0}_b  = \frac{1}{2} \l
 
 Note that only the terms with $\adagger \ahat$ have a non-zero contribution -- this justifies our neglecting the vacuum-state inputs for calculation of the output photon number.
 
-However, it we emphasize that you must use this more complete treatment and account for the vacuum-state inputs to accurately predict the quantum noise in systems. For example, the standard deviation of the photon number depends on $\hat{N}^2$ (see the note in {ref}`basics:mean-and-standard-deviation`), and the vacuum state inputs can contribute to the expectation $\left < \hat{N}^2 \right >$.   As a further example, to see the importance of the vacuum state input in interferometry, please see the use of squeezed vacuum to reduce quantum noise as described in [](./T3E1-EXTRAS-interference-2-homodyne-detection.ipynb). 
+However, it we emphasize that you must use this more complete treatment and account for the vacuum-state inputs to accurately predict the quantum noise in systems. For example, the standard deviation of the photon number depends on $\hat{N}^2$ (see the note in {ref}`basics:mean-and-standard-deviation`), and the vacuum state inputs can contribute to the expectation $\left < \hat{N}^2 \right >$.   As a further example, to see the importance of the vacuum state input in interferometry, please see the use of squeezed vacuum to reduce quantum noise as described in [](./T3E1-EXTRAS-interference-2-homodyne-detection.ipynb).
 
 +++
 
@@ -178,7 +178,7 @@ Note that the major difference here is the adddition of the cosine term.  This r
 
 Let's now numerically explore the single-photon interference accounting for bandwidth.  
 
-We start by taking a Gaussian distribution for $\phi$. 
+We start by taking a Gaussian distribution for $\phi$.
 
 ```{code-cell} ipython3
 :tags: [hide-output]
@@ -237,6 +237,8 @@ Normalized spectral distribution of single-photons.
 Next, we define the path length difference and perform the integral for each choice of delay.
 
 ```{code-cell} ipython3
+:tags: [hide-output]
+
 #-- Settings -- 
 
 #Define the delay length (in nm)

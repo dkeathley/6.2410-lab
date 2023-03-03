@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.13.8
+    jupytext_version: 1.14.2
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -168,11 +168,11 @@ $$\ket{\psi_\mathrm{out}} = \int_{-\infty}^\infty \mathrm{d}\omega \cos \bigg ( 
 Note that here it is important as we write the phase difference in terms of $\omega$ and the path length difference $\Delta l$.  What is the probability of finding a photon then.  Well, we just take $\braket{\psi_\mathrm{out}}{\psi_\mathrm{out}}$, which becomes
 
 
-$$\braket{\psi_\mathrm{in}}{\psi_\mathrm{in}}  = \int_{-\infty}^\infty \mathrm{d}\omega_1 \int_{-\infty}^\infty \mathrm{d}\omega_2 \phi(\omega_2)^{*} \phi(\omega_1) \cos \bigg ( \frac{\omega_1 \Delta l}{2c} \bigg )\cos \bigg ( \frac{\omega_2 \Delta l}{2c} \bigg )\braket{1;\omega_2}{1;\omega_1}_a $$
+$$\braket{\psi_\mathrm{out}}{\psi_\mathrm{out}}  = \int_{-\infty}^\infty \mathrm{d}\omega_1 \int_{-\infty}^\infty \mathrm{d}\omega_2 \phi(\omega_2)^{*} \phi(\omega_1) \cos \bigg ( \frac{\omega_1 \Delta l}{2c} \bigg )\cos \bigg ( \frac{\omega_2 \Delta l}{2c} \bigg )\braket{1;\omega_2}{1;\omega_1}_a $$
 
 Again, we have that $\braket{1;\omega_2}{1;\omega_1}_a = \delta(\omega_2 - \omega_1)$, and after substitution this again gets us back to one integral:
 
-$$\braket{\psi_\mathrm{in}}{\psi_\mathrm{in}}  = \int_{-\infty}^\infty \mathrm{d}\omega_1 |\phi(\omega_1)|^2 \cos \bigg ( \frac{\omega_1 \Delta l}{2c} \bigg )^2 \mathrm{.}$$
+$$\braket{\psi_\mathrm{out}}{\psi_\mathrm{out}}  = \int_{-\infty}^\infty \mathrm{d}\omega_1 |\phi(\omega_1)|^2 \cos \bigg ( \frac{\omega_1 \Delta l}{2c} \bigg )^2 \mathrm{.}$$
 
 Note that the major difference here is the adddition of the cosine term.  This resuts in an oscillation of the output photon detction probability.  Note that the bandwidth probability distirubution function $\phi$ then dictates the range of delays over which you see this oscillation in probability.  Importantly, note that that all phase information inside of $\phi$ is lost as the output is dictated by $|\phi|^2$ (our interferometer is, after all, only sensitive the phase differences between the two arms, and not to the absolute phase of the incoming state).  
 

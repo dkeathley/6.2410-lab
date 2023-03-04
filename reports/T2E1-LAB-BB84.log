@@ -34,7 +34,7 @@ print(f"The probability of getting more than {k} photons with mean {mu} is {prob
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/tmp/ipykernel_3597451/338321062.py[0m in [0;36m<cell line: 7>[0;34m()[0m
+[0;32m/tmp/ipykernel_176313/338321062.py[0m in [0;36m<cell line: 7>[0;34m()[0m
 [1;32m      5[0m [0mk[0m [0;34m=[0m [0;36m1[0m [0;31m# default is 1: how often does Alice send > 1 photon?[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      6[0m [0mmu[0m [0;34m=[0m [0;36m0.5[0m [0;31m# set the mean value (the above text uses lambda instead of mu)[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 7[0;31m [0mprob[0m [0;34m=[0m [0mgt[0m[0;34m([0m[0mk[0m[0;34m,[0m[0mmu[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m

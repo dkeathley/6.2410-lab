@@ -277,5 +277,5 @@ glue("t3e1-fig-photon-bandwidth-interference", fig, display=True)
 :figwidth: 800px
 :name: "t3e1-fig-photon-bandwidth-interference"
 
-Normalized spectral distribution of single-photons.
+Single-photon interference as a funciton of delay with finite bandwidth.  
 ```

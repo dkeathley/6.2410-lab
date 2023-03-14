@@ -4,13 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EXTRAS – Homodyne Detection &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,16 +18,20 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -37,13 +39,12 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -51,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -65,21 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -88,10 +75,9 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -109,15 +95,14 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="intro.html">
-                    6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
-                </a>
-            </li>
-        </ul>
-        <p aria-level="2" class="caption" role="heading">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Introductory Material
  </span>
@@ -168,11 +153,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="T2E1-LAB-HBT.html">
-   LAB – Hanbury Brown - Twiss Lab (Week 1)
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="T2E1-TEXT-QKD.html">
    TEXT – QKD (Week 2)
   </a>
@@ -212,17 +192,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -230,209 +205,99 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/T3E1-EXTRAS-interference-2-homodyne-detection.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/T3E1-EXTRAS-interference-2-homodyne-detection.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="_static/images/logo_colab.png">
-  </span>
-<span class="headerbtn__text-container">Colab</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/dkeathley/S23-6.2410-lab"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/dkeathley/S23-6.2410-lab/issues/new?title=Issue%20on%20page%20%2FT3E1-EXTRAS-interference-2-homodyne-detection.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/T3E1-EXTRAS-interference-2-homodyne-detection.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/T3E1-EXTRAS-interference-2-homodyne-detection.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/dkeathley/S23-6.2410-lab"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/dkeathley/S23-6.2410-lab/issues/new?title=Issue%20on%20page%20%2FT3E1-EXTRAS-interference-2-homodyne-detection.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/T3E1-EXTRAS-interference-2-homodyne-detection.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/T3E1-EXTRAS-interference-2-homodyne-detection.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#homodyne-detection">
    Homodyne Detection
@@ -450,11 +315,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>EXTRAS – Homodyne Detection</h1>
@@ -488,22 +354,19 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="extras-homodyne-detection">
-<h1>EXTRAS – Homodyne Detection<a class="headerlink" href="#extras-homodyne-detection" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="extras-homodyne-detection">
+<h1>EXTRAS – Homodyne Detection<a class="headerlink" href="#extras-homodyne-detection" title="Permalink to this headline">¶</a></h1>
 <p>In Part 1 we explored single-photon interference and the Hong-Ou-Mandel effect.  Here in Part 2 we build on several of the core concepts introduced in Part 1, such as beam-combining and interference, to explore homodyne detection of quantum fields.  We will then show how one can use homodyne detection in combination with squeezed states to make distance measurements with extremely high sensitivity.</p>
-<section id="homodyne-detection">
-<h2>Homodyne Detection<a class="headerlink" href="#homodyne-detection" title="Permalink to this headline">#</a></h2>
+<div class="section" id="homodyne-detection">
+<h2>Homodyne Detection<a class="headerlink" href="#homodyne-detection" title="Permalink to this headline">¶</a></h2>
 <p>Let’s consider a configuration in <a class="reference internal" href="#homodyne-detection-setup"><span class="std std-numref">Fig. 32</span></a>.  This is similar to the one used to demonstrate the Hong-Ou-Mandel effect, but with a few key changes.  First, we can drive on input of the beamsplitter with a coherent state <span class="math notranslate nohighlight">\(\ket{\alpha}_a\)</span>.  Second, we let the second input be an arbitrary state <span class="math notranslate nohighlight">\(\ket{\psi}_b\)</span>.  Third, instead of examining coincidence events, we rather examine the subtraction of the photocurrents between ports <span class="math notranslate nohighlight">\(d\)</span> and <span class="math notranslate nohighlight">\(c\)</span>. This configuration is shown pictorally below.</p>
-<figure class="align-default" id="homodyne-detection-setup">
+<div class="figure align-default" id="homodyne-detection-setup">
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/homodyne-detection-setup.png"><img alt="homodyne-detection-setup" class="bg-primary mb-1" src="_images/homodyne-detection-setup.png" style="width: 400px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Experimental setup for homodyne detection.</span><a class="headerlink" href="#homodyne-detection-setup" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">Experimental setup for homodyne detection.</span><a class="headerlink" href="#homodyne-detection-setup" title="Permalink to this image">¶</a></p>
+</div>
 <p>Given all inputs have the same frequency, this scheme is referred to as a balanced homodyne detection scheme.  It allows us to measure the field observable <span class="math notranslate nohighlight">\(B^{(\theta)}\)</span> of the state <span class="math notranslate nohighlight">\(\ket{\psi}_b\)</span>.  Let’s see how.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -558,9 +421,9 @@ title="Print to PDF"
 <p class="admonition-title">Note</p>
 <p>Clearly, there is an advantage to having a high intensity coherent state <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span>.  However, one should note that there are technical limitations here, in particular is detector saturation.  As with any photodetection scheme, there is a limit to the average photon rate that can be detected by a given detector.  There are also bandwidth limitations to be considered.  These traditional limitations of optoelectronics still apply and must be considered.  As with all quantum engineering, there is still plenty of classical engineering to be taken into account!</p>
 </div>
-</section>
-<section id="homodyne-detection-with-squeezed-light">
-<h2>Homodyne Detection with Squeezed Light<a class="headerlink" href="#homodyne-detection-with-squeezed-light" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="homodyne-detection-with-squeezed-light">
+<h2>Homodyne Detection with Squeezed Light<a class="headerlink" href="#homodyne-detection-with-squeezed-light" title="Permalink to this headline">¶</a></h2>
 <p>We know from the basics section on <a class="reference internal" href="BASICS-quantum-optics-basics.html#sec-quantum-optics-basics-squeezed-states"><span class="std std-ref">Squeezed States</span></a> that squeezed light exhibits reduced field fluctuations along a particular quadrature.  We also now know that Homodyne detection can measure the field observable at input port <span class="math notranslate nohighlight">\(b\)</span> along any quadratudre defined by the phase of the coherent state <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
 <p>Let us start by referring back to the simplified squeezed state we had discussed in the basics section on  <a class="reference internal" href="BASICS-quantum-optics-basics.html#sec-quantum-optics-basics-squeezed-states"><span class="std std-ref">Squeezed States</span></a>.</p>
 <div class="math notranslate nohighlight">
@@ -613,25 +476,21 @@ title="Print to PDF"
 <img alt="_images/T3E1-EXTRAS-interference-2-homodyne-detection_7_1.png" src="_images/T3E1-EXTRAS-interference-2-homodyne-detection_7_1.png" />
 </div>
 </div>
-<figure class="align-default" id="fig-homodyne-noise-squeezed-state" style="width: 600px">
+<div class="figure align-default" id="fig-homodyne-noise-squeezed-state" style="width: 600px">
 <div class="cell_output docutils container">
 <img alt="_images/T3E1-EXTRAS-interference-2-homodyne-detection_7_0.png" src="_images/T3E1-EXTRAS-interference-2-homodyne-detection_7_0.png" />
 </div>
-<figcaption>
-<p><span class="caption-number">Fig. 33 </span><span class="caption-text">Noise of the differential output signal <span class="math notranslate nohighlight">\(\Delta I\)</span> as we scan <span class="math notranslate nohighlight">\(\theta\)</span>.  Note that depending on the value of <span class="math notranslate nohighlight">\(\theta\)</span> with the squeezed state input, the noise can be either significantly increased or decreased compared to the case of no input to port <span class="math notranslate nohighlight">\(b\)</span> (i.e. pure vacuum state input corresponding to <span class="math notranslate nohighlight">\(s = 0\)</span>).</span><a class="headerlink" href="#fig-homodyne-noise-squeezed-state" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">Noise of the differential output signal <span class="math notranslate nohighlight">\(\Delta I\)</span> as we scan <span class="math notranslate nohighlight">\(\theta\)</span>.  Note that depending on the value of <span class="math notranslate nohighlight">\(\theta\)</span> with the squeezed state input, the noise can be either significantly increased or decreased compared to the case of no input to port <span class="math notranslate nohighlight">\(b\)</span> (i.e. pure vacuum state input corresponding to <span class="math notranslate nohighlight">\(s = 0\)</span>).</span><a class="headerlink" href="#fig-homodyne-noise-squeezed-state" title="Permalink to this image">¶</a></p>
+</div>
 <p>Now we have shown that the noise at the output of a Homodyne detector can be reduced by injection of a squeezed state.  In the next section we examine how we can put this to use for quantum-enhanced measurements of mirror displacement.</p>
-</section>
-<section id="quantum-enhanced-displacement-measurements">
-<h2>Quantum-Enhanced Displacement Measurements<a class="headerlink" href="#quantum-enhanced-displacement-measurements" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="quantum-enhanced-displacement-measurements">
+<h2>Quantum-Enhanced Displacement Measurements<a class="headerlink" href="#quantum-enhanced-displacement-measurements" title="Permalink to this headline">¶</a></h2>
 <p>Myriad precision instruments use laser-based interferometers to characterize ultra-small changes in the displacement of an object.  For example, precision stages sometimes use laser-based interferometers to obtain nanometer-level precision in their movement.  A rather famous example of precision displacement measurements is for LIGO, where kilometer-scale interferometers are used to measure changes in path lengths that measure just fractions of the width of one atom.  This marvel of measurements was made possible through incredible engineering which included the use of quantum-enhanced measurement techniques based on homodyne detection with squeezed states.</p>
-<figure class="align-default" id="displacement-meas-setup">
+<div class="figure align-default" id="displacement-meas-setup">
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/displacement-meas-setup.png"><img alt="displacement-meas-setup" class="bg-primary mb-1" src="_images/displacement-meas-setup.png" style="width: 800px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Experimental setup for a quantum-enhanced displacment measurement.</span><a class="headerlink" href="#displacement-meas-setup" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">Experimental setup for a quantum-enhanced displacment measurement.</span><a class="headerlink" href="#displacement-meas-setup" title="Permalink to this image">¶</a></p>
+</div>
 <p>In <a class="reference internal" href="#displacement-meas-setup"><span class="std std-numref">Fig. 34</span></a> we show how one can couple an interferometer to a homodyne detector for precision displacement measurements.  There are three key inputs to this system:</p>
 <ol class="simple">
 <li><p>A coherent state probe: <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span></p></li>
@@ -694,17 +553,15 @@ title="Print to PDF"
 <img alt="_images/T3E1-EXTRAS-interference-2-homodyne-detection_11_1.png" src="_images/T3E1-EXTRAS-interference-2-homodyne-detection_11_1.png" />
 </div>
 </div>
-<figure class="align-default" id="fig-displacement-lod-squeezed-state" style="width: 600px">
+<div class="figure align-default" id="fig-displacement-lod-squeezed-state" style="width: 600px">
 <div class="cell_output docutils container">
 <img alt="_images/T3E1-EXTRAS-interference-2-homodyne-detection_11_0.png" src="_images/T3E1-EXTRAS-interference-2-homodyne-detection_11_0.png" />
 </div>
-<figcaption>
-<p><span class="caption-number">Fig. 35 </span><span class="caption-text">Signal to noise ratio of the homodyne output from an interferometer for measuremetn of displacement <span class="math notranslate nohighlight">\(\delta\)</span> both with squeezing (<span class="math notranslate nohighlight">\(s = 0.3\)</span>) and without (<span class="math notranslate nohighlight">\(s = 0\)</span>).  Clearly, a squeezed state reduces the limits of detection beyond what is capable with purely classical input states. This reduction can be further enhanced with states exhibiting larger amounts of squeezing than what we used here for this example.</span><a class="headerlink" href="#fig-displacement-lod-squeezed-state" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text">Signal to noise ratio of the homodyne output from an interferometer for measuremetn of displacement <span class="math notranslate nohighlight">\(\delta\)</span> both with squeezing (<span class="math notranslate nohighlight">\(s = 0.3\)</span>) and without (<span class="math notranslate nohighlight">\(s = 0\)</span>).  Clearly, a squeezed state reduces the limits of detection beyond what is capable with purely classical input states. This reduction can be further enhanced with states exhibiting larger amounts of squeezing than what we used here for this example.</span><a class="headerlink" href="#fig-displacement-lod-squeezed-state" title="Permalink to this image">¶</a></p>
+</div>
 <p>By using advanced methods that produce squeezed states with much higher levels of squeezing than our toy state here, this can be even further improved.   As with all other examples, though, one must ensure that quantum fluctuations are the dominant source of noise.  <strong>The limit in real life can often be set by thermal, mechanical, and other technical noise taht is not quantum in nature.</strong>  There must also be significant engineering introduced to reduce these noise factors.</p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -728,11 +585,9 @@ title="Print to PDF"
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="T3E1-EXTRAS--rigorous-solution-MZI.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -748,28 +603,24 @@ title="Print to PDF"
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

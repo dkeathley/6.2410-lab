@@ -36,6 +36,9 @@ parts:
     - file: quNV-Jupyter/T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.ipynb
     - file: quNV-Jupyter/T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.ipynb
     - file: quNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.ipynb
+  - caption: Final Projects
+    - file: FINAL-PROJECTS.ipynb
+    
 #  - caption: Quantum Computing (QISKIT)
 #    chapters:
 #    - file: LAB-IBM-Qiskit-Prelab.ipynb

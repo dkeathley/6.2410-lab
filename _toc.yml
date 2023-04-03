@@ -8,7 +8,6 @@ root: intro
 options:
   numbered: true
   
-
 parts:
   - caption: Introductory Material
     chapters:
@@ -26,21 +25,17 @@ parts:
     - file: T2E1-LAB-HBT.ipynb
     - file: T2E1-TEXT-QKD.ipynb
     - file: T2E1-LAB-BB84.ipynb
-#    - file: T2E1-TEXT-Intro-to-SPDC-and-HBT.ipynb
-#    - file: T2E1-LAB-Single-photon-and-HBT.ipynb
-#    - file: T2E1-TEXT-QKD-simulation.ipynb
-#    - file: T2E1-LAB-BB84.ipynb
   - caption: T3E3 -- Solid State Spins
     chapters:
     - file: quNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.ipynb
     - file: quNV-Jupyter/T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.ipynb
     - file: quNV-Jupyter/T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.ipynb
     - file: quNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.ipynb
+  - caption: T1E2 -- Quantum Computing w/ IBM Qiskit (OPTIONAL)
+    chapters:
+    - file: T1E2-LAB-IBM-Qiskit-Prelab.ipynb
+    - file: T1E2-LAB-IBM-Qiskit.ipynb
+    - file: T1E2-LAB-IBM-Qiskit-Solutions.ipynb
   - caption: Final Projects
     chapters:
     - file: FINAL-PROJECTS.ipynb
-    
-#  - caption: Quantum Computing (QISKIT)
-#    chapters:
-#    - file: LAB-IBM-Qiskit-Prelab.ipynb
-#    - file: LAB-IBM-Qiskit.ipynb

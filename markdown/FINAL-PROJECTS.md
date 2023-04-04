@@ -53,7 +53,7 @@ As the proposal and project phases conclude, we will share links here to all fin
 
 Please see written guidelines for the project proposals [here (Google Doc)](https://docs.google.com/document/d/1ftvYF-KIGi2gkzeMgGQJRtE252eFyHcWcFFTZP-jn3M/edit#).  In the document you will also find suggested topics for final projects that we will discuss in class.
 
-### Proposal Development Slides with Suggestions
+### Proposal Development Slides with Suggested Topics
 
 Please see the slides introducing the proposal development process along with suggested topics as discussed in class [here (Google Slides)](https://docs.google.com/presentation/d/1ST1wsKs1KmI9-RUzv8aG9F8pNdpm1jXalQ1gz-MLefc/edit#slide=id.g22a3ce6831a_2_12).
 

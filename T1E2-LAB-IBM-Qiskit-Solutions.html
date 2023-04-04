@@ -581,120 +581,21 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">MissingOptionalLibraryError</span><span class="g g-Whitespace">               </span>Traceback (most recent call last)
-<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">## Test the function</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">for</span> <span class="n">inp</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">]:</span>
-<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">qc</span><span class="p">,</span> <span class="n">out</span> <span class="o">=</span> <span class="n">NOT</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;NOT with input&#39;</span><span class="p">,</span><span class="n">inp</span><span class="p">,</span><span class="s1">&#39;gives output&#39;</span><span class="p">,</span><span class="n">out</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">display</span><span class="p">(</span><span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">())</span>
-
-<span class="nn">Input In [2],</span> in <span class="ni">NOT</span><span class="nt">(inp)</span>
-<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="c1"># Finally, we extract the |0⟩/|1⟩ output of the qubit and encode it in the bit c[0]</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">32</span> <span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s1">&#39;mpl&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="c1"># We&#39;ll run the program on a simulator</span>
-<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="n">backend</span> <span class="o">=</span> <span class="n">Aer</span><span class="o">.</span><span class="n">get_backend</span><span class="p">(</span><span class="s1">&#39;aer_simulator&#39;</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.8/site-packages/qiskit/circuit/quantumcircuit.py:1892,</span> in <span class="ni">QuantumCircuit.draw</span><span class="nt">(self, output, scale, filename, style, interactive, plot_barriers, reverse_bits, justify, vertical_compression, idle_wires, with_layout, fold, ax, initial_state, cregbundle, wire_order)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1889</span> <span class="c1"># pylint: disable=cyclic-import</span>
-<span class="g g-Whitespace">   </span><span class="mi">1890</span> <span class="kn">from</span> <span class="nn">qiskit.visualization</span> <span class="kn">import</span> <span class="n">circuit_drawer</span>
-<span class="ne">-&gt; </span><span class="mi">1892</span> <span class="k">return</span> <span class="n">circuit_drawer</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1893</span>     <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1894</span>     <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1895</span>     <span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1896</span>     <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1897</span>     <span class="n">output</span><span class="o">=</span><span class="n">output</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1898</span>     <span class="n">interactive</span><span class="o">=</span><span class="n">interactive</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1899</span>     <span class="n">plot_barriers</span><span class="o">=</span><span class="n">plot_barriers</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1900</span>     <span class="n">reverse_bits</span><span class="o">=</span><span class="n">reverse_bits</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1901</span>     <span class="n">justify</span><span class="o">=</span><span class="n">justify</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1902</span>     <span class="n">vertical_compression</span><span class="o">=</span><span class="n">vertical_compression</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1903</span>     <span class="n">idle_wires</span><span class="o">=</span><span class="n">idle_wires</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1904</span>     <span class="n">with_layout</span><span class="o">=</span><span class="n">with_layout</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1905</span>     <span class="n">fold</span><span class="o">=</span><span class="n">fold</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1906</span>     <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1907</span>     <span class="n">initial_state</span><span class="o">=</span><span class="n">initial_state</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1908</span>     <span class="n">cregbundle</span><span class="o">=</span><span class="n">cregbundle</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1909</span>     <span class="n">wire_order</span><span class="o">=</span><span class="n">wire_order</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1910</span> <span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.8/site-packages/qiskit/visualization/circuit/circuit_visualization.py:274,</span> in <span class="ni">circuit_drawer</span><span class="nt">(circuit, scale, filename, style, output, interactive, plot_barriers, reverse_bits, justify, vertical_compression, idle_wires, with_layout, fold, ax, initial_state, cregbundle, wire_order)</span>
-<span class="g g-Whitespace">    </span><span class="mi">259</span>     <span class="k">return</span> <span class="n">_generate_latex_source</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">260</span>         <span class="n">circuit</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">261</span>         <span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">271</span>         <span class="n">wire_order</span><span class="o">=</span><span class="n">wire_order</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">272</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">273</span> <span class="k">elif</span> <span class="n">output</span> <span class="o">==</span> <span class="s2">&quot;mpl&quot;</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">274</span>     <span class="n">image</span> <span class="o">=</span> <span class="n">_matplotlib_circuit_drawer</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">275</span>         <span class="n">circuit</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">276</span>         <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">277</span>         <span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">278</span>         <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">279</span>         <span class="n">plot_barriers</span><span class="o">=</span><span class="n">plot_barriers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">280</span>         <span class="n">reverse_bits</span><span class="o">=</span><span class="n">reverse_bits</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">281</span>         <span class="n">justify</span><span class="o">=</span><span class="n">justify</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">282</span>         <span class="n">idle_wires</span><span class="o">=</span><span class="n">idle_wires</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">283</span>         <span class="n">with_layout</span><span class="o">=</span><span class="n">with_layout</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">284</span>         <span class="n">fold</span><span class="o">=</span><span class="n">fold</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">285</span>         <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">286</span>         <span class="n">initial_state</span><span class="o">=</span><span class="n">initial_state</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">287</span>         <span class="n">cregbundle</span><span class="o">=</span><span class="n">cregbundle</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">288</span>         <span class="n">wire_order</span><span class="o">=</span><span class="n">wire_order</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">289</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">290</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">291</span>     <span class="k">raise</span> <span class="n">VisualizationError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">292</span>         <span class="s2">&quot;Invalid output type </span><span class="si">%s</span><span class="s2"> selected. The only valid choices &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">293</span>         <span class="s2">&quot;are text, latex, latex_source, and mpl&quot;</span> <span class="o">%</span> <span class="n">output</span>
-<span class="g g-Whitespace">    </span><span class="mi">294</span>     <span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.8/site-packages/qiskit/visualization/circuit/circuit_visualization.py:653,</span> in <span class="ni">_matplotlib_circuit_drawer</span><span class="nt">(circuit, scale, filename, style, plot_barriers, reverse_bits, justify, idle_wires, with_layout, fold, ax, initial_state, cregbundle, wire_order)</span>
-<span class="g g-Whitespace">    </span><span class="mi">650</span> <span class="k">if</span> <span class="n">fold</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">651</span>     <span class="n">fold</span> <span class="o">=</span> <span class="mi">25</span>
-<span class="ne">--&gt; </span><span class="mi">653</span> <span class="n">qcd</span> <span class="o">=</span> <span class="n">_matplotlib</span><span class="o">.</span><span class="n">MatplotlibDrawer</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">654</span>     <span class="n">qubits</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">655</span>     <span class="n">clbits</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">656</span>     <span class="n">nodes</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">657</span>     <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">658</span>     <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">659</span>     <span class="n">reverse_bits</span><span class="o">=</span><span class="n">reverse_bits</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">660</span>     <span class="n">plot_barriers</span><span class="o">=</span><span class="n">plot_barriers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">661</span>     <span class="n">layout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">662</span>     <span class="n">fold</span><span class="o">=</span><span class="n">fold</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">663</span>     <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">664</span>     <span class="n">initial_state</span><span class="o">=</span><span class="n">initial_state</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">665</span>     <span class="n">cregbundle</span><span class="o">=</span><span class="n">cregbundle</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">666</span>     <span class="n">global_phase</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">667</span>     <span class="n">calibrations</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">668</span>     <span class="n">qregs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">669</span>     <span class="n">cregs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">670</span>     <span class="n">with_layout</span><span class="o">=</span><span class="n">with_layout</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">671</span>     <span class="n">circuit</span><span class="o">=</span><span class="n">circuit</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">672</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">673</span> <span class="k">return</span> <span class="n">qcd</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.8/site-packages/qiskit/utils/classtools.py:111,</span> in <span class="ni">_WrappedMethod.__get__.&lt;locals&gt;.out</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">method</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span> <span class="k">def</span> <span class="nf">out</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">110</span>     <span class="k">for</span> <span class="n">callback</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_before</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">111</span>         <span class="n">callback</span><span class="o">.</span><span class="fm">__get__</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">objtype</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span>     <span class="n">retval</span> <span class="o">=</span> <span class="n">method</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span>     <span class="k">for</span> <span class="n">callback</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_after</span><span class="p">:</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.8/site-packages/qiskit/utils/lazy_tester.py:39,</span> in <span class="ni">_RequireNow.__call__</span><span class="nt">(self, *_args, **_kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">38</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">_args</span><span class="p">,</span> <span class="o">**</span><span class="n">_kwargs</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">39</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_tester</span><span class="o">.</span><span class="n">require_now</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_feature</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.8/site-packages/qiskit/utils/lazy_tester.py:223,</span> in <span class="ni">LazyDependencyManager.require_now</span><span class="nt">(self, feature)</span>
-<span class="g g-Whitespace">    </span><span class="mi">221</span> <span class="k">if</span> <span class="bp">self</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">222</span>     <span class="k">return</span>
-<span class="ne">--&gt; </span><span class="mi">223</span> <span class="k">raise</span> <span class="n">MissingOptionalLibraryError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">224</span>     <span class="n">libname</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">feature</span><span class="p">,</span> <span class="n">pip_install</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_install</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_msg</span>
-<span class="g g-Whitespace">    </span><span class="mi">225</span> <span class="p">)</span>
-
-<span class="ne">MissingOptionalLibraryError</span>: &quot;The &#39;pylatexenc&#39; library is required to use &#39;MatplotlibDrawer&#39;. You can install it with &#39;pip install pylatexenc&#39;.&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NOT with input 0 gives output 1
+</pre></div>
+</div>
+<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">           ░ ┌───┐ ░ ┌─┐
+  q: ─|0>──░─┤ X ├─░─┤M├
+           ░ └───┘ ░ └╥┘
+c: 1/═════════════════╩═
+                      0 </pre></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NOT with input 1 gives output 0
+</pre></div>
+</div>
+<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">          ┌───┐ ░ ┌───┐ ░ ┌─┐
+  q: ─|0>─┤ X ├─░─┤ X ├─░─┤M├
+          └───┘ ░ └───┘ ░ └╥┘
+c: 1/══════════════════════╩═
+                           0 </pre></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1129,7 +1030,10 @@ q_1: ─|0>───────░───■──┤ X ├──■───
 q_2: ─|0>───────░─┤ X ├─────┤ X ├─░─┤M├
                 ░ └───┘     └───┘ ░ └╥┘
 c: 1/════════════════════════════════╩═
-                                     0 </pre></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OR with inputs 1 1 gives output 1
+                                     0 </pre></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OR with inputs
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1 1 gives output 1
 </pre></div>
 </div>
 <div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">          ┌───┐ ░                 ░    
@@ -1230,7 +1134,7 @@ c: 1/═════════════════════════
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;qiskit.circuit.instructionset.InstructionSet at 0x7f7ed36c4790&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;qiskit.circuit.instructionset.InstructionSet at 0x7f47229e7bb0&gt;
 </pre></div>
 </div>
 </div>
@@ -1287,7 +1191,7 @@ c: 1/═════════════════════════
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The Bloch sphere coordinates are [-0.690, 0.094, -0.717]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The Bloch sphere coordinates are [-0.096, -0.655, 0.750]
 </pre></div>
 </div>
 </div>
@@ -1380,7 +1284,7 @@ Sing &amp;= \frac{1}{\sqrt2} (|10\rangle - |01\rangle)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;qiskit.circuit.instructionset.InstructionSet at 0x7f7ed5d30690&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;qiskit.circuit.instructionset.InstructionSet at 0x7f4715a48eb0&gt;
 </pre></div>
 </div>
 </div>
@@ -1528,7 +1432,7 @@ Energy expectation value of the state Sing : -4.410e-06 eV
 \[\begin{split}
 |\psi\rangle =
 \begin{bmatrix}
-0.16175 + 0.21926i &amp; 0.78702 - 0.5535i  \\
+0.0910581907 + 0.2568668832 i &amp; 0.0953507143 - 0.9574111194 i  \\
  \end{bmatrix}
 \end{split}\]</div>
 <img alt="_images/T1E2-LAB-IBM-Qiskit-Solutions_48_1.png" src="_images/T1E2-LAB-IBM-Qiskit-Solutions_48_1.png" />
@@ -1563,13 +1467,13 @@ Energy expectation value of the state Sing : -4.410e-06 eV
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">     ┌────────────────────────────────────────┐      ░    ┌───┐┌─┐ ░      »
-q_0: ┤ init(0.16175+0.21926j,0.78702-0.5535j) ├──────░──■─┤ H ├┤M├─░──────»
-     └────────────────────────────────────────┘┌───┐ ░  │ └───┘└╥┘ ░ ┌───┐»
-q_1: ───────────────────|0>────────────────────┤ H ├─░──■───────╫──░─┤ H ├»
-                                               └───┘ ░          ║  ░ └───┘»
-c: 1/═══════════════════════════════════════════════════════════╩═════════»
-                                                                0         »
+<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">     ┌───────────────────────────────────────────┐      ░    ┌───┐┌─┐ ░      »
+q_0: ┤ init(0.091058+0.25687j,0.095351-0.95741j) ├──────░──■─┤ H ├┤M├─░──────»
+     └───────────────────────────────────────────┘┌───┐ ░  │ └───┘└╥┘ ░ ┌───┐»
+q_1: ─────────────────────|0>─────────────────────┤ H ├─░──■───────╫──░─┤ H ├»
+                                                  └───┘ ░          ║  ░ └───┘»
+c: 1/══════════════════════════════════════════════════════════════╩═════════»
+                                                                   0         »
 «                
 «q_0: ───────────
 «        ┌───┐   
@@ -1836,7 +1740,7 @@ c: 4/═════════════════════════
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Probability of success within accuracy 0.25: 0.94515
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Probability of success within accuracy 0.25: 0.9455
 Threshold probability: 0.75
 </pre></div>
 </div>
@@ -1997,7 +1901,7 @@ Calculated: [3, 7, 15, 31, 63, 127]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Success probabilities: [0.9575, 0.98225, 0.99065, 0.9957, 0.99825, 0.99885]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Success probabilities: [0.9553, 0.9817, 0.9919, 0.99685, 0.99835, 0.99895]
 </pre></div>
 </div>
 </div>
@@ -2124,10 +2028,10 @@ The line plot in the left panel shows the minimum success probability to estimat
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Statevector([7.07106781e-01+0.j        , 0.00000000e+00+0.j        ,
-             0.00000000e+00+0.j        , 0.00000000e+00+0.j        ,
-             0.00000000e+00+0.j        , 0.00000000e+00+0.j        ,
-             0.00000000e+00+0.j        , 1.11022302e-16+0.70710678j],
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Statevector([0.70710678+0.j        , 0.        +0.j        ,
+             0.        +0.j        , 0.        +0.j        ,
+             0.        +0.j        , 0.        +0.j        ,
+             0.        +0.j        , 0.        +0.70710678j],
             dims=(2, 2, 2))
 </pre></div>
 </div>
@@ -2181,7 +2085,33 @@ The line plot in the left panel shows the minimum success probability to estimat
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of auxiliary qubits ( / syndrome bits): 2
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="nn">Input In [44],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Execute this cell to add the extra registers</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">k</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;number of auxiliary qubits ( / syndrome bits): &#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">qc_3qx</span><span class="o">.</span><span class="n">add_register</span><span class="p">(</span><span class="n">QuantumRegister</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s1">&#39;auxiliary&#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">qc_3qx</span><span class="o">.</span><span class="n">add_register</span><span class="p">(</span><span class="n">ClassicalRegister</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s1">&#39;syndrome&#39;</span><span class="p">))</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.8/site-packages/ipykernel/kernelbase.py:1072,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1065</span> <span class="sd">&quot;&quot;&quot;Forward raw_input to frontends</span>
+<span class="g g-Whitespace">   </span><span class="mi">1066</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1067</span><span class="sd"> Raises</span>
+<span class="g g-Whitespace">   </span><span class="mi">1068</span><span class="sd"> ------</span>
+<span class="g g-Whitespace">   </span><span class="mi">1069</span><span class="sd"> StdinNotImplementedError if active frontend doesn&#39;t support stdin.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1070</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1071</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1072</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1073</span>         <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1074</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1075</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1076</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1077</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1078</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1079</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1080</span> <span class="p">)</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
 </div>
 </div>

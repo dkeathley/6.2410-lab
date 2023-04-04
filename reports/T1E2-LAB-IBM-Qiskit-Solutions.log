@@ -17,127 +17,39 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-## Test the function
-for inp in ['0', '1']:
-    qc, out = NOT(inp)
-    print('NOT with input',inp,'gives output',out)
-    display(qc.draw())
-    print('\n')
+# Execute this cell to add the extra registers
+
+k = int(input('number of auxiliary qubits ( / syndrome bits): '))
+qc_3qx.add_register(QuantumRegister(k, 'auxiliary'))
+qc_3qx.add_register(ClassicalRegister(k, 'syndrome'))
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mMissingOptionalLibraryError[0m               Traceback (most recent call last)
-Input [0;32mIn [3][0m, in [0;36m<cell line: 2>[0;34m()[0m
-[1;32m      1[0m [38;5;66;03m## Test the function[39;00m
-[1;32m      2[0m [38;5;28;01mfor[39;00m inp [38;5;129;01min[39;00m [[38;5;124m'[39m[38;5;124m0[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124m1[39m[38;5;124m'[39m]:
-[0;32m----> 3[0m     qc, out [38;5;241m=[39m [43mNOT[49m[43m([49m[43minp[49m[43m)[49m
-[1;32m      4[0m     [38;5;28mprint[39m([38;5;124m'[39m[38;5;124mNOT with input[39m[38;5;124m'[39m,inp,[38;5;124m'[39m[38;5;124mgives output[39m[38;5;124m'[39m,out)
-[1;32m      5[0m     display(qc[38;5;241m.[39mdraw())
+[0;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
+Input [0;32mIn [44][0m, in [0;36m<cell line: 3>[0;34m()[0m
+[1;32m      1[0m [38;5;66;03m# Execute this cell to add the extra registers[39;00m
+[0;32m----> 3[0m k [38;5;241m=[39m [38;5;28mint[39m([38;5;28;43minput[39;49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mnumber of auxiliary qubits ( / syndrome bits): [39;49m[38;5;124;43m'[39;49m[43m)[49m)
+[1;32m      4[0m qc_3qx[38;5;241m.[39madd_register(QuantumRegister(k, [38;5;124m'[39m[38;5;124mauxiliary[39m[38;5;124m'[39m))
+[1;32m      5[0m qc_3qx[38;5;241m.[39madd_register(ClassicalRegister(k, [38;5;124m'[39m[38;5;124msyndrome[39m[38;5;124m'[39m))
 
-Input [0;32mIn [2][0m, in [0;36mNOT[0;34m(inp)[0m
-[1;32m     30[0m [38;5;66;03m# Finally, we extract the |0⟩/|1⟩ output of the qubit and encode it in the bit c[0][39;00m
-[1;32m     31[0m qc[38;5;241m.[39mmeasure([38;5;241m0[39m,[38;5;241m0[39m)
-[0;32m---> 32[0m [43mqc[49m[38;5;241;43m.[39;49m[43mdraw[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mmpl[39;49m[38;5;124;43m'[39;49m[43m)[49m
-[1;32m     34[0m [38;5;66;03m# We'll run the program on a simulator[39;00m
-[1;32m     35[0m backend [38;5;241m=[39m Aer[38;5;241m.[39mget_backend([38;5;124m'[39m[38;5;124maer_simulator[39m[38;5;124m'[39m)
+File [0;32m~/anaconda3/lib/python3.8/site-packages/ipykernel/kernelbase.py:1072[0m, in [0;36mKernel.raw_input[0;34m(self, prompt)[0m
+[1;32m   1065[0m [38;5;124;03m"""Forward raw_input to frontends[39;00m
+[1;32m   1066[0m 
+[1;32m   1067[0m [38;5;124;03mRaises[39;00m
+[1;32m   1068[0m [38;5;124;03m------[39;00m
+[1;32m   1069[0m [38;5;124;03mStdinNotImplementedError if active frontend doesn't support stdin.[39;00m
+[1;32m   1070[0m [38;5;124;03m"""[39;00m
+[1;32m   1071[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m[38;5;241m.[39m_allow_stdin:
+[0;32m-> 1072[0m     [38;5;28;01mraise[39;00m StdinNotImplementedError(
+[1;32m   1073[0m         [38;5;124m"[39m[38;5;124mraw_input was called, but this frontend does not support input requests.[39m[38;5;124m"[39m
+[1;32m   1074[0m     )
+[1;32m   1075[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_input_request(
+[1;32m   1076[0m     [38;5;28mstr[39m(prompt),
+[1;32m   1077[0m     [38;5;28mself[39m[38;5;241m.[39m_parent_ident[[38;5;124m"[39m[38;5;124mshell[39m[38;5;124m"[39m],
+[1;32m   1078[0m     [38;5;28mself[39m[38;5;241m.[39mget_parent([38;5;124m"[39m[38;5;124mshell[39m[38;5;124m"[39m),
+[1;32m   1079[0m     password[38;5;241m=[39m[38;5;28;01mFalse[39;00m,
+[1;32m   1080[0m )
 
-File [0;32m~/anaconda3/lib/python3.8/site-packages/qiskit/circuit/quantumcircuit.py:1892[0m, in [0;36mQuantumCircuit.draw[0;34m(self, output, scale, filename, style, interactive, plot_barriers, reverse_bits, justify, vertical_compression, idle_wires, with_layout, fold, ax, initial_state, cregbundle, wire_order)[0m
-[1;32m   1889[0m [38;5;66;03m# pylint: disable=cyclic-import[39;00m
-[1;32m   1890[0m [38;5;28;01mfrom[39;00m [38;5;21;01mqiskit[39;00m[38;5;21;01m.[39;00m[38;5;21;01mvisualization[39;00m [38;5;28;01mimport[39;00m circuit_drawer
-[0;32m-> 1892[0m [38;5;28;01mreturn[39;00m [43mcircuit_drawer[49m[43m([49m
-[1;32m   1893[0m [43m    [49m[38;5;28;43mself[39;49m[43m,[49m
-[1;32m   1894[0m [43m    [49m[43mscale[49m[38;5;241;43m=[39;49m[43mscale[49m[43m,[49m
-[1;32m   1895[0m [43m    [49m[43mfilename[49m[38;5;241;43m=[39;49m[43mfilename[49m[43m,[49m
-[1;32m   1896[0m [43m    [49m[43mstyle[49m[38;5;241;43m=[39;49m[43mstyle[49m[43m,[49m
-[1;32m   1897[0m [43m    [49m[43moutput[49m[38;5;241;43m=[39;49m[43moutput[49m[43m,[49m
-[1;32m   1898[0m [43m    [49m[43minteractive[49m[38;5;241;43m=[39;49m[43minteractive[49m[43m,[49m
-[1;32m   1899[0m [43m    [49m[43mplot_barriers[49m[38;5;241;43m=[39;49m[43mplot_barriers[49m[43m,[49m
-[1;32m   1900[0m [43m    [49m[43mreverse_bits[49m[38;5;241;43m=[39;49m[43mreverse_bits[49m[43m,[49m
-[1;32m   1901[0m [43m    [49m[43mjustify[49m[38;5;241;43m=[39;49m[43mjustify[49m[43m,[49m
-[1;32m   1902[0m [43m    [49m[43mvertical_compression[49m[38;5;241;43m=[39;49m[43mvertical_compression[49m[43m,[49m
-[1;32m   1903[0m [43m    [49m[43midle_wires[49m[38;5;241;43m=[39;49m[43midle_wires[49m[43m,[49m
-[1;32m   1904[0m [43m    [49m[43mwith_layout[49m[38;5;241;43m=[39;49m[43mwith_layout[49m[43m,[49m
-[1;32m   1905[0m [43m    [49m[43mfold[49m[38;5;241;43m=[39;49m[43mfold[49m[43m,[49m
-[1;32m   1906[0m [43m    [49m[43max[49m[38;5;241;43m=[39;49m[43max[49m[43m,[49m
-[1;32m   1907[0m [43m    [49m[43minitial_state[49m[38;5;241;43m=[39;49m[43minitial_state[49m[43m,[49m
-[1;32m   1908[0m [43m    [49m[43mcregbundle[49m[38;5;241;43m=[39;49m[43mcregbundle[49m[43m,[49m
-[1;32m   1909[0m [43m    [49m[43mwire_order[49m[38;5;241;43m=[39;49m[43mwire_order[49m[43m,[49m
-[1;32m   1910[0m [43m[49m[43m)[49m
-
-File [0;32m~/anaconda3/lib/python3.8/site-packages/qiskit/visualization/circuit/circuit_visualization.py:274[0m, in [0;36mcircuit_drawer[0;34m(circuit, scale, filename, style, output, interactive, plot_barriers, reverse_bits, justify, vertical_compression, idle_wires, with_layout, fold, ax, initial_state, cregbundle, wire_order)[0m
-[1;32m    259[0m     [38;5;28;01mreturn[39;00m _generate_latex_source(
-[1;32m    260[0m         circuit,
-[1;32m    261[0m         filename[38;5;241m=[39mfilename,
-[0;32m   (...)[0m
-[1;32m    271[0m         wire_order[38;5;241m=[39mwire_order,
-[1;32m    272[0m     )
-[1;32m    273[0m [38;5;28;01melif[39;00m output [38;5;241m==[39m [38;5;124m"[39m[38;5;124mmpl[39m[38;5;124m"[39m:
-[0;32m--> 274[0m     image [38;5;241m=[39m [43m_matplotlib_circuit_drawer[49m[43m([49m
-[1;32m    275[0m [43m        [49m[43mcircuit[49m[43m,[49m
-[1;32m    276[0m [43m        [49m[43mscale[49m[38;5;241;43m=[39;49m[43mscale[49m[43m,[49m
-[1;32m    277[0m [43m        [49m[43mfilename[49m[38;5;241;43m=[39;49m[43mfilename[49m[43m,[49m
-[1;32m    278[0m [43m        [49m[43mstyle[49m[38;5;241;43m=[39;49m[43mstyle[49m[43m,[49m
-[1;32m    279[0m [43m        [49m[43mplot_barriers[49m[38;5;241;43m=[39;49m[43mplot_barriers[49m[43m,[49m
-[1;32m    280[0m [43m        [49m[43mreverse_bits[49m[38;5;241;43m=[39;49m[43mreverse_bits[49m[43m,[49m
-[1;32m    281[0m [43m        [49m[43mjustify[49m[38;5;241;43m=[39;49m[43mjustify[49m[43m,[49m
-[1;32m    282[0m [43m        [49m[43midle_wires[49m[38;5;241;43m=[39;49m[43midle_wires[49m[43m,[49m
-[1;32m    283[0m [43m        [49m[43mwith_layout[49m[38;5;241;43m=[39;49m[43mwith_layout[49m[43m,[49m
-[1;32m    284[0m [43m        [49m[43mfold[49m[38;5;241;43m=[39;49m[43mfold[49m[43m,[49m
-[1;32m    285[0m [43m        [49m[43max[49m[38;5;241;43m=[39;49m[43max[49m[43m,[49m
-[1;32m    286[0m [43m        [49m[43minitial_state[49m[38;5;241;43m=[39;49m[43minitial_state[49m[43m,[49m
-[1;32m    287[0m [43m        [49m[43mcregbundle[49m[38;5;241;43m=[39;49m[43mcregbundle[49m[43m,[49m
-[1;32m    288[0m [43m        [49m[43mwire_order[49m[38;5;241;43m=[39;49m[43mwire_order[49m[43m,[49m
-[1;32m    289[0m [43m    [49m[43m)[49m
-[1;32m    290[0m [38;5;28;01melse[39;00m:
-[1;32m    291[0m     [38;5;28;01mraise[39;00m VisualizationError(
-[1;32m    292[0m         [38;5;124m"[39m[38;5;124mInvalid output type [39m[38;5;132;01m%s[39;00m[38;5;124m selected. The only valid choices [39m[38;5;124m"[39m
-[1;32m    293[0m         [38;5;124m"[39m[38;5;124mare text, latex, latex_source, and mpl[39m[38;5;124m"[39m [38;5;241m%[39m output
-[1;32m    294[0m     )
-
-File [0;32m~/anaconda3/lib/python3.8/site-packages/qiskit/visualization/circuit/circuit_visualization.py:653[0m, in [0;36m_matplotlib_circuit_drawer[0;34m(circuit, scale, filename, style, plot_barriers, reverse_bits, justify, idle_wires, with_layout, fold, ax, initial_state, cregbundle, wire_order)[0m
-[1;32m    650[0m [38;5;28;01mif[39;00m fold [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
-[1;32m    651[0m     fold [38;5;241m=[39m [38;5;241m25[39m
-[0;32m--> 653[0m qcd [38;5;241m=[39m [43m_matplotlib[49m[38;5;241;43m.[39;49m[43mMatplotlibDrawer[49m[43m([49m
-[1;32m    654[0m [43m    [49m[43mqubits[49m[43m,[49m
-[1;32m    655[0m [43m    [49m[43mclbits[49m[43m,[49m
-[1;32m    656[0m [43m    [49m[43mnodes[49m[43m,[49m
-[1;32m    657[0m [43m    [49m[43mscale[49m[38;5;241;43m=[39;49m[43mscale[49m[43m,[49m
-[1;32m    658[0m [43m    [49m[43mstyle[49m[38;5;241;43m=[39;49m[43mstyle[49m[43m,[49m
-[1;32m    659[0m [43m    [49m[43mreverse_bits[49m[38;5;241;43m=[39;49m[43mreverse_bits[49m[43m,[49m
-[1;32m    660[0m [43m    [49m[43mplot_barriers[49m[38;5;241;43m=[39;49m[43mplot_barriers[49m[43m,[49m
-[1;32m    661[0m [43m    [49m[43mlayout[49m[38;5;241;43m=[39;49m[38;5;28;43;01mNone[39;49;00m[43m,[49m
-[1;32m    662[0m [43m    [49m[43mfold[49m[38;5;241;43m=[39;49m[43mfold[49m[43m,[49m
-[1;32m    663[0m [43m    [49m[43max[49m[38;5;241;43m=[39;49m[43max[49m[43m,[49m
-[1;32m    664[0m [43m    [49m[43minitial_state[49m[38;5;241;43m=[39;49m[43minitial_state[49m[43m,[49m
-[1;32m    665[0m [43m    [49m[43mcregbundle[49m[38;5;241;43m=[39;49m[43mcregbundle[49m[43m,[49m
-[1;32m    666[0m [43m    [49m[43mglobal_phase[49m[38;5;241;43m=[39;49m[38;5;28;43;01mNone[39;49;00m[43m,[49m
-[1;32m    667[0m [43m    [49m[43mcalibrations[49m[38;5;241;43m=[39;49m[38;5;28;43;01mNone[39;49;00m[43m,[49m
-[1;32m    668[0m [43m    [49m[43mqregs[49m[38;5;241;43m=[39;49m[38;5;28;43;01mNone[39;49;00m[43m,[49m
-[1;32m    669[0m [43m    [49m[43mcregs[49m[38;5;241;43m=[39;49m[38;5;28;43;01mNone[39;49;00m[43m,[49m
-[1;32m    670[0m [43m    [49m[43mwith_layout[49m[38;5;241;43m=[39;49m[43mwith_layout[49m[43m,[49m
-[1;32m    671[0m [43m    [49m[43mcircuit[49m[38;5;241;43m=[39;49m[43mcircuit[49m[43m,[49m
-[1;32m    672[0m [43m[49m[43m)[49m
-[1;32m    673[0m [38;5;28;01mreturn[39;00m qcd[38;5;241m.[39mdraw(filename)
-
-File [0;32m~/anaconda3/lib/python3.8/site-packages/qiskit/utils/classtools.py:111[0m, in [0;36m_WrappedMethod.__get__.<locals>.out[0;34m(*args, **kwargs)[0m
-[1;32m    108[0m [38;5;129m@functools[39m[38;5;241m.[39mwraps(method)
-[1;32m    109[0m [38;5;28;01mdef[39;00m [38;5;21mout[39m([38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs):
-[1;32m    110[0m     [38;5;28;01mfor[39;00m callback [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39m_before:
-[0;32m--> 111[0m         [43mcallback[49m[38;5;241;43m.[39;49m[38;5;21;43m__get__[39;49m[43m([49m[43mobj[49m[43m,[49m[43m [49m[43mobjtype[49m[43m)[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
-[1;32m    112[0m     retval [38;5;241m=[39m method([38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs)
-[1;32m    113[0m     [38;5;28;01mfor[39;00m callback [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39m_after:
-
-File [0;32m~/anaconda3/lib/python3.8/site-packages/qiskit/utils/lazy_tester.py:39[0m, in [0;36m_RequireNow.__call__[0;34m(self, *_args, **_kwargs)[0m
-[1;32m     38[0m [38;5;28;01mdef[39;00m [38;5;21m__call__[39m([38;5;28mself[39m, [38;5;241m*[39m_args, [38;5;241m*[39m[38;5;241m*[39m_kwargs):
-[0;32m---> 39[0m     [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_tester[49m[38;5;241;43m.[39;49m[43mrequire_now[49m[43m([49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_feature[49m[43m)[49m
-
-File [0;32m~/anaconda3/lib/python3.8/site-packages/qiskit/utils/lazy_tester.py:223[0m, in [0;36mLazyDependencyManager.require_now[0;34m(self, feature)[0m
-[1;32m    221[0m [38;5;28;01mif[39;00m [38;5;28mself[39m:
-[1;32m    222[0m     [38;5;28;01mreturn[39;00m
-[0;32m--> 223[0m [38;5;28;01mraise[39;00m MissingOptionalLibraryError(
-[1;32m    224[0m     libname[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39m_name, name[38;5;241m=[39mfeature, pip_install[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39m_install, msg[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39m_msg
-[1;32m    225[0m )
-
-[0;31mMissingOptionalLibraryError[0m: "The 'pylatexenc' library is required to use 'MatplotlibDrawer'. You can install it with 'pip install pylatexenc'."
-MissingOptionalLibraryError: "The 'pylatexenc' library is required to use 'MatplotlibDrawer'. You can install it with 'pip install pylatexenc'."
+[0;31mStdinNotImplementedError[0m: raw_input was called, but this frontend does not support input requests.
+StdinNotImplementedError: raw_input was called, but this frontend does not support input requests.
 

@@ -39,3 +39,6 @@ parts:
   - caption: Final Projects
     chapters:
     - file: FINAL-PROJECTS.ipynb
+  - caption: Other Resources
+    chapters:
+     - file: OTHER-quantum-monte-carlo-simulation-spin-entanglement-repeaters.ipynb

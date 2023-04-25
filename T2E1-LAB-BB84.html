@@ -227,6 +227,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Other Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="OTHER-quantum-monte-carlo-simulation-spin-entanglement-repeaters.html">
+   Entanglement Distribution by Quantum Repeaters: Exploration by Quantum Monte Carlo Simulation
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -754,174 +766,6 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">output</span> <span class="o">=</span> <span class="n">quED_Access</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;set&#39;</span><span class="p">,</span> <span class="s1">&#39;pm2&#39;</span><span class="p">,</span> <span class="n">reply</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">22.5</span><span class="p">])</span>
 <span class="n">output</span> <span class="o">=</span> <span class="n">quED_Access</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="s1">&#39;cnt&#39;</span><span class="p">,</span> <span class="n">reply</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
 <span class="n">output</span><span class="o">.</span><span class="n">data</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 79&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">76</span>     <span class="n">finalData</span><span class="o">.</span><span class="n">response</span> <span class="o">=</span> <span class="n">response</span>
-<span class="g g-Whitespace">     </span><span class="mi">77</span>     <span class="k">return</span> <span class="n">finalData</span>
-<span class="ne">---&gt; </span><span class="mi">79</span> <span class="n">output</span> <span class="o">=</span> <span class="n">quED_Access</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;set&#39;</span><span class="p">,</span> <span class="s1">&#39;pm1&#39;</span><span class="p">,</span> <span class="n">reply</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="mi">45</span><span class="p">])</span>
-<span class="g g-Whitespace">     </span><span class="mi">80</span> <span class="n">output</span> <span class="o">=</span> <span class="n">quED_Access</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;set&#39;</span><span class="p">,</span> <span class="s1">&#39;pm2&#39;</span><span class="p">,</span> <span class="n">reply</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">22.5</span><span class="p">])</span>
-<span class="g g-Whitespace">     </span><span class="mi">81</span> <span class="n">output</span> <span class="o">=</span> <span class="n">quED_Access</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="s1">&#39;cnt&#39;</span><span class="p">,</span> <span class="n">reply</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
-
-<span class="nn">Input In [3],</span> in <span class="ni">quED_Access</span><span class="nt">(url, action, param, reply, value)</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span>     <span class="n">req</span> <span class="o">=</span> <span class="n">PreparedRequest</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span>     <span class="n">req</span><span class="o">.</span><span class="n">prepare_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">52</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">54</span> <span class="k">if</span> <span class="n">reply</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">55</span>     <span class="k">if</span> <span class="n">action</span> <span class="o">==</span> <span class="s1">&#39;set&#39;</span><span class="p">:</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.8/site-packages/requests/api.py:75,</span> in <span class="ni">get</span><span class="nt">(url, params, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">64</span> <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">65</span>     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Sends a GET request.</span>
-<span class="g g-Whitespace">     </span><span class="mi">66</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">67</span><span class="sd">     :param url: URL for the new :class:`Request` object.</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span><span class="sd">     :rtype: requests.Response</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">75</span>     <span class="k">return</span> <span class="n">request</span><span class="p">(</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.8/site-packages/requests/api.py:61,</span> in <span class="ni">request</span><span class="nt">(method, url, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">57</span> <span class="c1"># By using the &#39;with&#39; statement we are sure the session is closed, thus we</span>
-<span class="g g-Whitespace">     </span><span class="mi">58</span> <span class="c1"># avoid leaving sockets open which can trigger a ResourceWarning in some</span>
-<span class="g g-Whitespace">     </span><span class="mi">59</span> <span class="c1"># cases, and look like a memory leak in others.</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span> <span class="k">with</span> <span class="n">sessions</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">61</span>     <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.8/site-packages/requests/sessions.py:529,</span> in <span class="ni">Session.request</span><span class="nt">(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)</span>
-<span class="g g-Whitespace">    </span><span class="mi">524</span> <span class="n">send_kwargs</span> <span class="o">=</span> <span class="p">{</span>
-<span class="g g-Whitespace">    </span><span class="mi">525</span>     <span class="s1">&#39;timeout&#39;</span><span class="p">:</span> <span class="n">timeout</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">526</span>     <span class="s1">&#39;allow_redirects&#39;</span><span class="p">:</span> <span class="n">allow_redirects</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">527</span> <span class="p">}</span>
-<span class="g g-Whitespace">    </span><span class="mi">528</span> <span class="n">send_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">529</span> <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">prep</span><span class="p">,</span> <span class="o">**</span><span class="n">send_kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">531</span> <span class="k">return</span> <span class="n">resp</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.8/site-packages/requests/sessions.py:645,</span> in <span class="ni">Session.send</span><span class="nt">(self, request, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">642</span> <span class="n">start</span> <span class="o">=</span> <span class="n">preferred_clock</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">644</span> <span class="c1"># Send the request</span>
-<span class="ne">--&gt; </span><span class="mi">645</span> <span class="n">r</span> <span class="o">=</span> <span class="n">adapter</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">647</span> <span class="c1"># Total elapsed time of the request (approximately)</span>
-<span class="g g-Whitespace">    </span><span class="mi">648</span> <span class="n">elapsed</span> <span class="o">=</span> <span class="n">preferred_clock</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.8/site-packages/requests/adapters.py:440,</span> in <span class="ni">HTTPAdapter.send</span><span class="nt">(self, request, stream, timeout, verify, cert, proxies)</span>
-<span class="g g-Whitespace">    </span><span class="mi">438</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">439</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">chunked</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">440</span>         <span class="n">resp</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">441</span>             <span class="n">method</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">442</span>             <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">443</span>             <span class="n">body</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">444</span>             <span class="n">headers</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">445</span>             <span class="n">redirect</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">446</span>             <span class="n">assert_same_host</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">447</span>             <span class="n">preload_content</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">448</span>             <span class="n">decode_content</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">449</span>             <span class="n">retries</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_retries</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">450</span>             <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span>
-<span class="g g-Whitespace">    </span><span class="mi">451</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">453</span>     <span class="c1"># Send the request.</span>
-<span class="g g-Whitespace">    </span><span class="mi">454</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">455</span>         <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="s1">&#39;proxy_pool&#39;</span><span class="p">):</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.8/site-packages/urllib3/connectionpool.py:703,</span> in <span class="ni">HTTPConnectionPool.urlopen</span><span class="nt">(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, **response_kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">700</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_proxy</span><span class="p">(</span><span class="n">conn</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="c1"># Make the request on the httplib connection object.</span>
-<span class="ne">--&gt; </span><span class="mi">703</span> <span class="n">httplib_response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_request</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">704</span>     <span class="n">conn</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">705</span>     <span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">706</span>     <span class="n">url</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">707</span>     <span class="n">timeout</span><span class="o">=</span><span class="n">timeout_obj</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">708</span>     <span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">709</span>     <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">710</span>     <span class="n">chunked</span><span class="o">=</span><span class="n">chunked</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">711</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">713</span> <span class="c1"># If we&#39;re going to release the connection in ``finally:``, then</span>
-<span class="g g-Whitespace">    </span><span class="mi">714</span> <span class="c1"># the response doesn&#39;t need to know about the connection. Otherwise</span>
-<span class="g g-Whitespace">    </span><span class="mi">715</span> <span class="c1"># it will also try to release it and we&#39;ll have a double-release</span>
-<span class="g g-Whitespace">    </span><span class="mi">716</span> <span class="c1"># mess.</span>
-<span class="g g-Whitespace">    </span><span class="mi">717</span> <span class="n">response_conn</span> <span class="o">=</span> <span class="n">conn</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">release_conn</span> <span class="k">else</span> <span class="kc">None</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.8/site-packages/urllib3/connectionpool.py:398,</span> in <span class="ni">HTTPConnectionPool._make_request</span><span class="nt">(self, conn, method, url, timeout, chunked, **httplib_request_kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">396</span>         <span class="n">conn</span><span class="o">.</span><span class="n">request_chunked</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">httplib_request_kw</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">397</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">398</span>         <span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">httplib_request_kw</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">400</span> <span class="c1"># We are swallowing BrokenPipeError (errno.EPIPE) since the server is</span>
-<span class="g g-Whitespace">    </span><span class="mi">401</span> <span class="c1"># legitimately able to close the connection after sending a valid response.</span>
-<span class="g g-Whitespace">    </span><span class="mi">402</span> <span class="c1"># With this behaviour, the received response is still readable.</span>
-<span class="g g-Whitespace">    </span><span class="mi">403</span> <span class="k">except</span> <span class="ne">BrokenPipeError</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">404</span>     <span class="c1"># Python 3</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.8/site-packages/urllib3/connection.py:239,</span> in <span class="ni">HTTPConnection.request</span><span class="nt">(self, method, url, body, headers)</span>
-<span class="g g-Whitespace">    </span><span class="mi">237</span> <span class="k">if</span> <span class="s2">&quot;user-agent&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="n">six</span><span class="o">.</span><span class="n">ensure_str</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">headers</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="n">headers</span><span class="p">[</span><span class="s2">&quot;User-Agent&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_get_default_user_agent</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">239</span> <span class="nb">super</span><span class="p">(</span><span class="n">HTTPConnection</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.8/http/client.py:1256,</span> in <span class="ni">HTTPConnection.request</span><span class="nt">(self, method, url, body, headers, encode_chunked)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1253</span> <span class="k">def</span> <span class="nf">request</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{},</span> <span class="o">*</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1254</span>             <span class="n">encode_chunked</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1255</span>     <span class="sd">&quot;&quot;&quot;Send a complete request to the server.&quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1256</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">encode_chunked</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.8/http/client.py:1302,</span> in <span class="ni">HTTPConnection._send_request</span><span class="nt">(self, method, url, body, headers, encode_chunked)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1298</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1299</span>     <span class="c1"># RFC 2616 Section 3.7.1 says that text default has a</span>
-<span class="g g-Whitespace">   </span><span class="mi">1300</span>     <span class="c1"># default charset of iso-8859-1.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1301</span>     <span class="n">body</span> <span class="o">=</span> <span class="n">_encode</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="s1">&#39;body&#39;</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1302</span> <span class="bp">self</span><span class="o">.</span><span class="n">endheaders</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">encode_chunked</span><span class="o">=</span><span class="n">encode_chunked</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.8/http/client.py:1251,</span> in <span class="ni">HTTPConnection.endheaders</span><span class="nt">(self, message_body, encode_chunked)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1249</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1250</span>     <span class="k">raise</span> <span class="n">CannotSendHeader</span><span class="p">()</span>
-<span class="ne">-&gt; </span><span class="mi">1251</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_output</span><span class="p">(</span><span class="n">message_body</span><span class="p">,</span> <span class="n">encode_chunked</span><span class="o">=</span><span class="n">encode_chunked</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.8/http/client.py:1011,</span> in <span class="ni">HTTPConnection._send_output</span><span class="nt">(self, message_body, encode_chunked)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1009</span> <span class="n">msg</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1010</span> <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_buffer</span><span class="p">[:]</span>
-<span class="ne">-&gt; </span><span class="mi">1011</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="k">if</span> <span class="n">message_body</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1014</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1015</span>     <span class="c1"># create a consistent interface to message_body</span>
-<span class="g g-Whitespace">   </span><span class="mi">1016</span>     <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">message_body</span><span class="p">,</span> <span class="s1">&#39;read&#39;</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1017</span>         <span class="c1"># Let file-like take precedence over byte-like.  This</span>
-<span class="g g-Whitespace">   </span><span class="mi">1018</span>         <span class="c1"># is needed to allow the current position of mmap&#39;ed</span>
-<span class="g g-Whitespace">   </span><span class="mi">1019</span>         <span class="c1"># files to be taken into account.</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.8/http/client.py:951,</span> in <span class="ni">HTTPConnection.send</span><span class="nt">(self, data)</span>
-<span class="g g-Whitespace">    </span><span class="mi">949</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sock</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">950</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">auto_open</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">951</span>         <span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">952</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">953</span>         <span class="k">raise</span> <span class="n">NotConnected</span><span class="p">()</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.8/site-packages/urllib3/connection.py:205,</span> in <span class="ni">HTTPConnection.connect</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">204</span> <span class="k">def</span> <span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">205</span>     <span class="n">conn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_new_conn</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">206</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_conn</span><span class="p">(</span><span class="n">conn</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.8/site-packages/urllib3/connection.py:174,</span> in <span class="ni">HTTPConnection._new_conn</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">171</span>     <span class="n">extra_kw</span><span class="p">[</span><span class="s2">&quot;socket_options&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">socket_options</span>
-<span class="g g-Whitespace">    </span><span class="mi">173</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">174</span>     <span class="n">conn</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">create_connection</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">175</span>         <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dns_host</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">,</span> <span class="o">**</span><span class="n">extra_kw</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">178</span> <span class="k">except</span> <span class="n">SocketTimeout</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">179</span>     <span class="k">raise</span> <span class="n">ConnectTimeoutError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">180</span>         <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span>         <span class="s2">&quot;Connection to </span><span class="si">%s</span><span class="s2"> timed out. (connect timeout=</span><span class="si">%s</span><span class="s2">)&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">182</span>         <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">183</span>     <span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.8/site-packages/urllib3/util/connection.py:85,</span> in <span class="ni">create_connection</span><span class="nt">(address, timeout, source_address, socket_options)</span>
-<span class="g g-Whitespace">     </span><span class="mi">83</span>     <span class="k">if</span> <span class="n">source_address</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">84</span>         <span class="n">sock</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">source_address</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">85</span>     <span class="n">sock</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">sa</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">86</span>     <span class="k">return</span> <span class="n">sock</span>
-<span class="g g-Whitespace">     </span><span class="mi">88</span> <span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">error</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>

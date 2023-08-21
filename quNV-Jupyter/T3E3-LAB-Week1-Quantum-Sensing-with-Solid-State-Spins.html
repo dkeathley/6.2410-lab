@@ -1,417 +1,342 @@
-
 <!DOCTYPE html>
-
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LAB - Quantum Sensing with Solid State Spins (Week 1) &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
-
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-
-    
-      
-
-    
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
-
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LAB - Quantum Sensing with Solid State Spins (Week 1) — 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+<link href="../_static/css/theme.css" rel="stylesheet"/>
+<link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" rel="stylesheet" type="text/css"/>
+<link href="../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/mystnb.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-thebe.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" rel="stylesheet" type="text/css"/>
+<link as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload"/>
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/clipboard.min.js"></script>
+<script src="../_static/copybutton.js"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="../_static/togglebutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="LAB – Quantum Sensing With Solid State Spins (Week 2)" href="T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.html" />
-    <link rel="prev" title="TEXT: Introduction to NV centers in diamond and cavity-based magnetometry" href="T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
-  </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
+<script async="async" src="../_static/sphinx-thebe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+<script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+<script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.html" rel="next" title="LAB – Quantum Sensing With Solid State Spins (Week 2)"/>
+<link href="T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.html" rel="prev" title="TEXT: Introduction to NV centers in diamond and cavity-based magnetometry"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<link href="../_static/css/chattutor.css" rel="stylesheet" type="text/css"/></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<div class="container-xl">
+<div class="row">
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
-      
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
-      <img src="../_static/logo-ibm.jpg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">6.2410 -- Laboratory for Quantum Information Science and Engineering</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
+<div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+<!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+<img alt="logo" class="logo" src="../_static/logo-ibm.jpg"/>
+<h1 class="site-logo" id="site-title">6.2410 -- Laboratory for Quantum Information Science and Engineering</h1>
+</a>
+</div><form action="../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search this book..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search this book..." type="search"/>
+</form><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../intro.html">
    6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
   </a>
- </li>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
+<span class="caption-text">
   Introductory Material
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../BASICS-quantum-optics-basics.html">
+<li class="toctree-l1">
+<a class="reference internal" href="../BASICS-quantum-optics-basics.html">
    BASICS – Quantum Optics
   </a>
- </li>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
+<span class="caption-text">
   T3E1 -- Interference, Entanglement, Quantum-Enhanced Sensing
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html">
+<li class="toctree-l1">
+<a class="reference internal" href="../T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html">
    TEXT – Interference, Entanglement and Quantum-Enhanced Metrology
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html">
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html">
    LAB – Interference, Entanglement and Quantum-Enhanced Metrology
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../T3E1-EXTRAS--rigorous-solution-MZI.html">
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../T3E1-EXTRAS--rigorous-solution-MZI.html">
    EXTRAS – Rigorous Solution of Mach-Zender Interferometer
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../T3E1-EXTRAS-interference-2-homodyne-detection.html">
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../T3E1-EXTRAS-interference-2-homodyne-detection.html">
    EXTRAS – Homodyne Detection
   </a>
- </li>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
+<span class="caption-text">
   T2E1 -- Quantum Information and Quantum Key Distribution
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../T2E1-TEXT-HBT.html">
+<li class="toctree-l1">
+<a class="reference internal" href="../T2E1-TEXT-HBT.html">
    TEXT - Introduction to single photons with the quED (Week 1)
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../T2E1-LAB-HBT.html">
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../T2E1-LAB-HBT.html">
    LAB – Hanbury Brown - Twiss Lab (Week 1)
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../T2E1-TEXT-QKD.html">
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../T2E1-TEXT-QKD.html">
    TEXT – QKD (Week 2)
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../T2E1-LAB-BB84.html">
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../T2E1-LAB-BB84.html">
    LAB – QKD (Week 2)
   </a>
- </li>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
+<span class="caption-text">
   T3E3 -- Solid State Spins
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.html">
+<li class="toctree-l1">
+<a class="reference internal" href="T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.html">
    TRAINING - Interfacing with the Vector Network Analyzer
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.html">
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.html">
    TEXT: Introduction to NV centers in diamond and cavity-based magnetometry
   </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+</li>
+<li class="toctree-l1 current active">
+<a class="current reference internal" href="#">
    LAB - Quantum Sensing with Solid State Spins (Week 1)
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.html">
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.html">
    LAB – Quantum Sensing With Solid State Spins (Week 2)
   </a>
- </li>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
+<span class="caption-text">
   T1E2 -- Quantum Computing w/ IBM Qiskit (OPTIONAL)
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../T1E2-LAB-IBM-Qiskit-Prelab.html">
+<li class="toctree-l1">
+<a class="reference internal" href="../T1E2-LAB-IBM-Qiskit-Prelab.html">
    PRELAB –Intro to IBM Qiskit
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../T1E2-LAB-IBM-Qiskit.html">
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../T1E2-LAB-IBM-Qiskit.html">
    LAB – Quantum Computing w/ Qiskit
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../T1E2-LAB-IBM-Qiskit-Solutions.html">
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../T1E2-LAB-IBM-Qiskit-Solutions.html">
    SOLUTIONS – Quantum Computing with Qiskit
   </a>
- </li>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
+<span class="caption-text">
   Final Projects
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../FINAL-PROJECTS.html">
+<li class="toctree-l1">
+<a class="reference internal" href="../FINAL-PROJECTS.html">
    Final Design Project
   </a>
- </li>
+</li>
 </ul>
-
-    </div>
+<p aria-level="2" class="caption" role="heading">
+<span class="caption-text">
+  Other Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../OTHER-quantum-monte-carlo-simulation-spin-entanglement-repeaters.html">
+   Entanglement Distribution by Quantum Repeaters: Exploration by Quantum Monte Carlo Simulation
+  </a>
+</li>
+</ul>
+</div>
 </nav> <!-- To handle the deprecated key -->
-
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
-
 </div>
-
-
-          
-
-
-          
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
+<div class="topbar container-xl fixed-top">
+<div class="topbar-contents row">
+<div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+<div class="col pl-md-4 topbar-main">
+<button aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" class="navbar-toggler ml-0" data-placement="bottom" data-target=".site-navigation" data-toggle="collapse" id="navbar-toggler" title="Toggle navigation" type="button">
+<i class="fas fa-bars"></i>
+<i class="fas fa-arrow-left"></i>
+<i class="fas fa-arrow-up"></i>
+</button>
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/quNV-Jupyter/T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
+<button aria-label="Download this page" class="btn btn-secondary topbarbtn" id="dropdown-buttons-trigger"><i class="fas fa-download"></i></button>
+<div class="dropdown-buttons">
+<!-- ipynb file if we had a myst markdown file -->
+<!-- Download raw file -->
+<a class="dropdown-buttons" href="../_sources/quNV-Jupyter/T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.ipynb"><button class="btn btn-secondary topbarbtn" data-placement="left" data-toggle="tooltip" title="Download source file" type="button">.ipynb</button></a>
+<!-- Download PDF via print -->
+<button class="btn btn-secondary topbarbtn" data-placement="left" data-toggle="tooltip" id="download-print" onclick="printPdf(this)" title="Print to PDF" type="button">.pdf</button>
 </div>
-
-            <!-- Source interaction buttons -->
-
+</div>
+<!-- Source interaction buttons -->
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/dkeathley/S23-6.2410-lab"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/dkeathley/S23-6.2410-lab/issues/new?title=Issue%20on%20page%20%2FquNV-Jupyter/T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
+<button aria-label="Connect with source repository" class="btn btn-secondary topbarbtn" id="dropdown-buttons-trigger"><i class="fab fa-github"></i></button>
+<div class="dropdown-buttons sourcebuttons">
+<a class="repository-button" href="https://github.com/dkeathley/S23-6.2410-lab"><button class="btn btn-secondary topbarbtn" data-placement="left" data-toggle="tooltip" title="Source repository" type="button"><i class="fab fa-github"></i>repository</button></a>
+<a class="issues-button" href="https://github.com/dkeathley/S23-6.2410-lab/issues/new?title=Issue%20on%20page%20%2FquNV-Jupyter/T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.html&amp;body=Your%20issue%20content%20here."><button class="btn btn-secondary topbarbtn" data-placement="left" data-toggle="tooltip" title="Open an issue" type="button"><i class="fas fa-lightbulb"></i>open issue</button></a>
 </div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
+</div>
+<!-- Full screen (wrap in <a> to have style consistency -->
+<a class="full-screen-button"><button aria-label="Fullscreen mode" class="btn btn-secondary topbarbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode" type="button"><i class="fas fa-expand"></i></button></a>
+<!-- Launch buttons -->
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/quNV-Jupyter/T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/quNV-Jupyter/T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
+<button aria-label="Launch interactive content" class="btn btn-secondary topbarbtn" id="dropdown-buttons-trigger"><i class="fas fa-rocket"></i></button>
+<div class="dropdown-buttons">
+<a class="binder-button" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/quNV-Jupyter/T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.ipynb"><button class="btn btn-secondary topbarbtn" data-placement="left" data-toggle="tooltip" title="Launch Binder" type="button"><img alt="Interact on binder" class="binder-button-logo" src="../_static/images/logo_binder.svg"/>Binder</button></a>
+<a class="colab-button" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/quNV-Jupyter/T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.ipynb"><button class="btn btn-secondary topbarbtn" data-placement="left" data-toggle="tooltip" title="Launch Colab" type="button"><img alt="Interact on Colab" class="colab-button-logo" src="../_static/images/logo_colab.png"/>Colab</button></a>
 </div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+</div>
+</div>
+<!-- Table of contents -->
+<div class="d-none d-md-block col-md-2 bd-toc show noprint">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aim-0-understand-the-optical-setup">
+<nav aria-label="Page" id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#aim-0-understand-the-optical-setup">
    Aim 0: Understand the optical setup
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#prelab">
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#prelab">
      Prelab
     </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aim-1-characterize-the-microwave-cavities-and-the-helmholtz-coil">
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#aim-1-characterize-the-microwave-cavities-and-the-helmholtz-coil">
    Aim 1: Characterize the microwave cavities and the Helmholtz coil
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lab-exercise">
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#lab-exercise">
      Lab Exercise
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#u-for-the-following-steps-please-take-extra-care-when-handling-the-microwave-cavities-and-the-loop-coupler-u">
-     <u>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#u-for-the-following-steps-please-take-extra-care-when-handling-the-microwave-cavities-and-the-loop-coupler-u">
+<u>
       For the following steps, please take extra care when handling the microwave cavities and the loop coupler!
      </u>
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#i-estimate-the-cavity-s-resonance-frequency">
+</a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#i-estimate-the-cavity-s-resonance-frequency">
        i) Estimate the cavity’s resonance frequency
       </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ii-build-the-rf-circuitry-for-probing-the-cavity-s-resonance-frequency">
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#ii-build-the-rf-circuitry-for-probing-the-cavity-s-resonance-frequency">
        ii) Build the RF circuitry for probing the cavity’s resonance frequency
       </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#iii-measure-the-microwave-resonator-s-frequency">
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#iii-measure-the-microwave-resonator-s-frequency">
        iii) Measure the microwave resonator’s frequency
       </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#iv-characterize-the-helmholtz-coil">
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#iv-characterize-the-helmholtz-coil">
        iv) Characterize the Helmholtz coil
       </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aim-2-simulate-strong-coupling-between-nv-centers-and-the-microwave-resonator">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#aim-2-simulate-strong-coupling-between-nv-centers-and-the-microwave-resonator">
    Aim 2: Simulate strong coupling between NV centers and the microwave resonator
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#id1">
      Prelab
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#id2">
      Lab Exercise
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#i-estimate-the-microwave-cavity-s-intrinsic-quality-factor">
+<ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#i-estimate-the-microwave-cavity-s-intrinsic-quality-factor">
        i) Estimate the microwave cavity’s intrinsic quality factor
       </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ii-plot-the-frequency-difference-between-m-s-0-and-m-s-1-states-as-a-function-of-magnetic-field-in-gauss">
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#ii-plot-the-frequency-difference-between-m-s-0-and-m-s-1-states-as-a-function-of-magnetic-field-in-gauss">
        ii) Plot the frequency difference between
        <span class="math notranslate nohighlight">
         \(m_s=0\)
@@ -422,116 +347,114 @@ const thebe_selector_output = ".output, .cell_output"
        </span>
        states as a function of magnetic field (in Gauss)
       </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#iii-generate-a-1d-plot-of-the-cavity-reflection-coefficient">
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#iii-generate-a-1d-plot-of-the-cavity-reflection-coefficient">
        iii) Generate a 1D plot of the cavity reflection coefficient
       </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#iv-generate-2d-plots-of-the-cavity-reflection-coefficient">
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#iv-generate-2d-plots-of-the-cavity-reflection-coefficient">
        iv) Generate 2D plots of the cavity reflection coefficient
       </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
+</li>
 </ul>
-
-            </nav>
-        </div>
-    </div>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>LAB - Quantum Sensing with Solid State Spins (Week 1)</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aim-0-understand-the-optical-setup">
+</div>
+</div>
+<div class="row" id="main-content">
+<div class="col-12 col-md-9 pl-md-3 pr-md-0">
+<!-- Table of contents that is only displayed when printing the page -->
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>LAB - Quantum Sensing with Solid State Spins (Week 1)</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#aim-0-understand-the-optical-setup">
    Aim 0: Understand the optical setup
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#prelab">
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#prelab">
      Prelab
     </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aim-1-characterize-the-microwave-cavities-and-the-helmholtz-coil">
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#aim-1-characterize-the-microwave-cavities-and-the-helmholtz-coil">
    Aim 1: Characterize the microwave cavities and the Helmholtz coil
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lab-exercise">
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#lab-exercise">
      Lab Exercise
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#u-for-the-following-steps-please-take-extra-care-when-handling-the-microwave-cavities-and-the-loop-coupler-u">
-     <u>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#u-for-the-following-steps-please-take-extra-care-when-handling-the-microwave-cavities-and-the-loop-coupler-u">
+<u>
       For the following steps, please take extra care when handling the microwave cavities and the loop coupler!
      </u>
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#i-estimate-the-cavity-s-resonance-frequency">
+</a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#i-estimate-the-cavity-s-resonance-frequency">
        i) Estimate the cavity’s resonance frequency
       </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ii-build-the-rf-circuitry-for-probing-the-cavity-s-resonance-frequency">
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#ii-build-the-rf-circuitry-for-probing-the-cavity-s-resonance-frequency">
        ii) Build the RF circuitry for probing the cavity’s resonance frequency
       </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#iii-measure-the-microwave-resonator-s-frequency">
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#iii-measure-the-microwave-resonator-s-frequency">
        iii) Measure the microwave resonator’s frequency
       </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#iv-characterize-the-helmholtz-coil">
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#iv-characterize-the-helmholtz-coil">
        iv) Characterize the Helmholtz coil
       </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aim-2-simulate-strong-coupling-between-nv-centers-and-the-microwave-resonator">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#aim-2-simulate-strong-coupling-between-nv-centers-and-the-microwave-resonator">
    Aim 2: Simulate strong coupling between NV centers and the microwave resonator
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#id1">
      Prelab
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#id2">
      Lab Exercise
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#i-estimate-the-microwave-cavity-s-intrinsic-quality-factor">
+<ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#i-estimate-the-microwave-cavity-s-intrinsic-quality-factor">
        i) Estimate the microwave cavity’s intrinsic quality factor
       </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ii-plot-the-frequency-difference-between-m-s-0-and-m-s-1-states-as-a-function-of-magnetic-field-in-gauss">
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#ii-plot-the-frequency-difference-between-m-s-0-and-m-s-1-states-as-a-function-of-magnetic-field-in-gauss">
        ii) Plot the frequency difference between
        <span class="math notranslate nohighlight">
         \(m_s=0\)
@@ -542,31 +465,28 @@ const thebe_selector_output = ".output, .cell_output"
        </span>
        states as a function of magnetic field (in Gauss)
       </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#iii-generate-a-1d-plot-of-the-cavity-reflection-coefficient">
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#iii-generate-a-1d-plot-of-the-cavity-reflection-coefficient">
        iii) Generate a 1D plot of the cavity reflection coefficient
       </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#iv-generate-2d-plots-of-the-cavity-reflection-coefficient">
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#iv-generate-2d-plots-of-the-cavity-reflection-coefficient">
        iv) Generate 2D plots of the cavity reflection coefficient
       </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
+</li>
 </ul>
-
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="lab-quantum-sensing-with-solid-state-spins-week-1">
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div>
+<div class="tex2jax_ignore mathjax_ignore section" id="lab-quantum-sensing-with-solid-state-spins-week-1">
 <h1>LAB - Quantum Sensing with Solid State Spins (Week 1)<a class="headerlink" href="#lab-quantum-sensing-with-solid-state-spins-week-1" title="Permalink to this headline">¶</a></h1>
 <p>In this lab, you will explore using RF electronics to probe the microwave cavities and coupling the cavities to NV centers in diamond to enable quantum magnetometry.</p>
 <p>Specific aims are:</p>
@@ -593,7 +513,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>cavity mounts (PTFE disks)</p></li>
 </ul>
 <div class="figure align-default" id="setup-fig">
-<a class="reference internal image-reference" href="../_images/week1_setup.png"><img alt="../_images/week1_setup.png" src="../_images/week1_setup.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../_images/week1_setup.png"><img alt="../_images/week1_setup.png" src="../_images/week1_setup.png" style="width: 800px;"/></a>
 <p class="caption"><span class="caption-number">Fig. 54 </span><span class="caption-text">(left) Picture of the experimental setup. (right) Diagram depicting the magnetic resonators and diamond placed inside a magnetic shield.</span><a class="headerlink" href="#setup-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p>Not shown in the picture of the setup are the electronics and the RF components needed to probe the microwave cavity. You will be tasked to put together the RF circuitry for running the experiment.</p>
@@ -628,7 +548,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h4>iii) Measure the microwave resonator’s frequency<a class="headerlink" href="#iii-measure-the-microwave-resonator-s-frequency" title="Permalink to this headline">¶</a></h4>
 <p>Now with the loop coupler properly connected to the VNA via the circulator, first put on gloves and grab the pair of tweezers. Carefully place the resonator stack inside the magnetic shield on the cavity mount, as shown in the figure below.</p>
 <div class="figure align-default" id="resonators-in-shield-fig">
-<a class="reference internal image-reference" href="../_images/week1_resonators_in_shield.png"><img alt="../_images/week1_resonators_in_shield.png" src="../_images/week1_resonators_in_shield.png" style="width: 250px;" /></a>
+<a class="reference internal image-reference" href="../_images/week1_resonators_in_shield.png"><img alt="../_images/week1_resonators_in_shield.png" src="../_images/week1_resonators_in_shield.png" style="width: 250px;"/></a>
 <p class="caption"><span class="caption-number">Fig. 55 </span><span class="caption-text">Microwave resonators stacked inside the magnetic shield.</span><a class="headerlink" href="#resonators-in-shield-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p>Mount the loop coupler such that it is directly above the resonator. You should use the <a class="reference external" href="https://www.thorlabs.com/thorproduct.cfm?partnumber=RA90">right-angle clamp</a> to adjust the loop coupler position, as shown in the figure below.</p>
@@ -638,18 +558,18 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="iv-characterize-the-helmholtz-coil">
 <h4>iv) Characterize the Helmholtz coil<a class="headerlink" href="#iv-characterize-the-helmholtz-coil" title="Permalink to this headline">¶</a></h4>
 <div class="figure align-default" id="alligator-clips-fig">
-<a class="reference internal image-reference" href="../_images/week1_alligator_clips.png"><img alt="../_images/week1_alligator_clips.png" src="../_images/week1_alligator_clips.png" style="width: 250px;" /></a>
+<a class="reference internal image-reference" href="../_images/week1_alligator_clips.png"><img alt="../_images/week1_alligator_clips.png" src="../_images/week1_alligator_clips.png" style="width: 250px;"/></a>
 <p class="caption"><span class="caption-number">Fig. 56 </span><span class="caption-text">Alligator clips.</span><a class="headerlink" href="#alligator-clips-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p>The Helmholtz coil we will be using actually has two coils, each with two electrical leads. Connect the red and black alligator clips to the leads in both coils. Note that red typically indicates the positive end, and black indicates the negative end. There is a correct way of making the connection. Otherwise, you may not be able to generate much magnetic field. Check with the TA if you are unsure.</p>
 <p>After you are done, grab the alligator clips’ BNC cable ends and connect them to a <a class="reference external" href="https://www.digikey.com/en/products/detail/molex/0731485003/1465138?utm_adgroup=Connectors%2C%20Interconnects&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Shopping_Supplier_Molex_0900_Co-op&amp;utm_term=&amp;utm_content=Connectors%2C%20Interconnects&amp;gclid=CjwKCAiAxP2eBhBiEiwA5puhNbxEHfe9gE0oFxSoYIL6urG-hMIu8VkCRfdGRDRMaGn1JRQUZ3Z4ABoCab4QAvD_BwE">BNC-Tee connector</a>. Then, attach the BNC-<a class="reference external" href="https://en.wikipedia.org/wiki/Banana_connector">banana connector</a> adapter to the BNC-Tee connector, and insert the adapter into Channel 1 of the R&amp;S power supply (HMP4040).</p>
 <div class="figure align-default" id="bnct-power-supply-fig">
-<a class="reference internal image-reference" href="../_images/week1_bncT_power_supply.png"><img alt="../_images/week1_bncT_power_supply.png" src="../_images/week1_bncT_power_supply.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../_images/week1_bncT_power_supply.png"><img alt="../_images/week1_bncT_power_supply.png" src="../_images/week1_bncT_power_supply.png" style="width: 800px;"/></a>
 <p class="caption"><span class="caption-number">Fig. 57 </span><span class="caption-text">(left) An adapter for banana plugs and BNC, BNC Tee connector. (right) Rhode &amp; Schwarz power supply, HMP4040.</span><a class="headerlink" href="#bnct-power-supply-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p>Next, turn on the Gauss meter.</p>
 <div class="figure align-default" id="gauss-meter-fig">
-<a class="reference internal image-reference" href="../_images/week1_gauss_meter.png"><img alt="../_images/week1_gauss_meter.png" src="../_images/week1_gauss_meter.png" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="../_images/week1_gauss_meter.png"><img alt="../_images/week1_gauss_meter.png" src="../_images/week1_gauss_meter.png" style="width: 300px;"/></a>
 <p class="caption"><span class="caption-number">Fig. 58 </span><span class="caption-text">Gauss meter.</span><a class="headerlink" href="#gauss-meter-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p><u>What is the intrinsic reading displayed on the Gauss meter? Why is it non-zero?</u></p>
@@ -713,8 +633,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-
-    <script type="text/x-thebe-config">
+<script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
@@ -732,46 +651,79 @@ const thebe_selector_output = ".output, .cell_output"
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
-
-              </div>
-              
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">TEXT: Introduction to NV centers in diamond and cavity-based magnetometry</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">LAB – Quantum Sensing With Solid State Spins (Week 2)</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<script>kernelName = 'python3'</script>
 </div>
-            
-        </div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">TEXT: Introduction to NV centers in diamond and cavity-based magnetometry</p>
+</div>
+</a>
+<a class="right-next" href="T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">LAB – Quantum Sensing With Solid State Spins (Week 2)</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</div>
+<html><body><div>
+<div class="msger-expand">
+<div class="msger-header-title">
+<i class="fas fa-comment-alt"></i> ChatTutor
     </div>
-    <footer class="footer">
-  <p>
+<div class="msger-header-options">
+<span><i class="fas fa-solid fa-caret-up"></i></span>
+</div>
+</div>
+<div class="msger minimized">
+<header class="msger-header">
+<div class="msger-header-title">
+<i class="fas fa-comment-alt"></i> ChatTutor
+        </div>
+<div class="msger-header-options">
+<span><i class="fas fa-solid fa-window-minimize msger-minimize"></i></span>
+</div>
+</header>
+<main class="msger-chat">
+<div class="msg left-msg">
+<div class="msg-img" style="background-image: url(https://static.thenounproject.com/png/2216285-200.png)"></div>
+<div class="msg-bubble">
+<div class="msg-info">
+<div class="msg-info-name">ChatTutor</div>
+</div>
+<div class="msg-text">
+            Welcome to ChatTutor, feel free to ask any questions about this lesson.
+        </div>
+</div>
+</div>
+<div class="clear-btn-container">
+<button class="clear-btn">
+          Clear conversation
+        </button>
+</div>
+</main>
+<form class="msger-inputarea">
+<input class="msger-input" placeholder="Enter your message..." type="text"/>
+<button class="msger-send-btn" type="submit">Send</button>
+</form>
+</div>
+</div></body></html></div>
+<footer class="footer">
+<p>
     
       By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen<br/>
     
-        &copy; Copyright 2021.<br/>
-  </p>
+        © Copyright 2021.<br/>
+</p>
 </footer>
 </main>
-
-
-      </div>
-    </div>
-  
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-
-  </body>
+</div>
+</div>
+<script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<script src="../_static/js/chattutor.js"></script></body>
 </html>

@@ -1,97 +1,38 @@
 Traceback (most recent call last):
-  File "/home/dkeathley/anaconda3/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
     executenb(
-  File "/home/dkeathley/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 1204, in execute
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nbclient/client.py", line 1204, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/home/dkeathley/anaconda3/lib/python3.8/site-packages/nbclient/util.py", line 84, in wrapped
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nbclient/util.py", line 84, in wrapped
     return just_run(coro(*args, **kwargs))
-  File "/home/dkeathley/anaconda3/lib/python3.8/site-packages/nbclient/util.py", line 62, in just_run
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nbclient/util.py", line 62, in just_run
     return loop.run_until_complete(coro)
-  File "/home/dkeathley/anaconda3/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
     return future.result()
-  File "/home/dkeathley/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 663, in async_execute
+           ^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nbclient/client.py", line 663, in async_execute
     await self.async_execute_cell(
-  File "/home/dkeathley/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 965, in async_execute_cell
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nbclient/client.py", line 965, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/home/dkeathley/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# z measurement of qubit 0
-measure_z = QuantumCircuit(1,1)
-measure_z.measure(0,0)
-
-
-# x measurement of qubit 0
-measure_x = QuantumCircuit(1,1)
-
-##################################################
-# your code goes here
-
-
-
-
-
-
-##################################################
-
-# y measurement of qubit 0
-measure_y = QuantumCircuit(1,1)
-
-##################################################
-# your code goes here
-
-
-
-
-
-
-##################################################
-
-shots = 2**14 # number of samples used for statistics
-sim = Aer.get_backend('aer_simulator')
-bloch_vector_measure = []
-for measure_circuit in [measure_x, measure_y, measure_z]:
-    
-    # run the circuit with the selected measurement and get the number of samples that output each bit value
-    circ_trans = transpile(qc.compose(measure_circuit), sim)
-    counts = sim.run(qc.compose(circ_trans), shots=shots).result().get_counts()
-
-    # calculate the probabilities for each bit value
-    probs = {}
-    for output in ['0','1']:
-        if output in counts:
-            probs[output] = counts[output]/shots
-        else:
-            probs[output] = 0
-            
-    bloch_vector_measure.append( probs['0'] -  probs['1'] )
-
-# normalizing the Bloch sphere vector
-bloch_vector = bloch_vector_measure/la.norm(bloch_vector_measure)
-
-print('The Bloch sphere coordinates are [{0:4.3f}, {1:4.3f}, {2:4.3f}]'
-      .format(*bloch_vector))    
+from qiskit import *
+from qiskit.visualization import plot_histogram
+import numpy as np
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mQiskitError[0m                               Traceback (most recent call last)
-Input [0;32mIn [14][0m, in [0;36m<cell line: 35>[0;34m()[0m
-[1;32m     35[0m [38;5;28;01mfor[39;00m measure_circuit [38;5;129;01min[39;00m [measure_x, measure_y, measure_z]:
-[1;32m     36[0m     
-[1;32m     37[0m     [38;5;66;03m# run the circuit with the selected measurement and get the number of samples that output each bit value[39;00m
-[1;32m     38[0m     circ_trans [38;5;241m=[39m transpile(qc[38;5;241m.[39mcompose(measure_circuit), sim)
-[0;32m---> 39[0m     counts [38;5;241m=[39m [43msim[49m[38;5;241;43m.[39;49m[43mrun[49m[43m([49m[43mqc[49m[38;5;241;43m.[39;49m[43mcompose[49m[43m([49m[43mcirc_trans[49m[43m)[49m[43m,[49m[43m [49m[43mshots[49m[38;5;241;43m=[39;49m[43mshots[49m[43m)[49m[38;5;241;43m.[39;49m[43mresult[49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mget_counts[49m[43m([49m[43m)[49m
-[1;32m     41[0m     [38;5;66;03m# calculate the probabilities for each bit value[39;00m
-[1;32m     42[0m     probs [38;5;241m=[39m {}
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn[1], line 1[0m
+[0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mqiskit[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
+[1;32m      2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mqiskit[39;00m[38;5;21;01m.[39;00m[38;5;21;01mvisualization[39;00m [38;5;28;01mimport[39;00m plot_histogram
+[1;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
 
-File [0;32m~/anaconda3/lib/python3.8/site-packages/qiskit/result/result.py:289[0m, in [0;36mResult.get_counts[0;34m(self, experiment)[0m
-[1;32m    287[0m         dict_list[38;5;241m.[39mappend(statevector[38;5;241m.[39mStatevector(vec)[38;5;241m.[39mprobabilities_dict(decimals[38;5;241m=[39m[38;5;241m15[39m))
-[1;32m    288[0m     [38;5;28;01melse[39;00m:
-[0;32m--> 289[0m         [38;5;28;01mraise[39;00m QiskitError([38;5;124mf[39m[38;5;124m'[39m[38;5;124mNo counts for experiment [39m[38;5;124m"[39m[38;5;132;01m{[39;00m[38;5;28mrepr[39m(key)[38;5;132;01m}[39;00m[38;5;124m"[39m[38;5;124m'[39m)
-[1;32m    291[0m [38;5;66;03m# Return first item of dict_list if size is 1[39;00m
-[1;32m    292[0m [38;5;28;01mif[39;00m [38;5;28mlen[39m(dict_list) [38;5;241m==[39m [38;5;241m1[39m:
-
-[0;31mQiskitError[0m: 'No counts for experiment "0"'
-QiskitError: 'No counts for experiment "0"'
+[0;31mModuleNotFoundError[0m: No module named 'qiskit'
+ModuleNotFoundError: No module named 'qiskit'
 

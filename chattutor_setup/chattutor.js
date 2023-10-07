@@ -412,7 +412,7 @@ function queryGPT() {
     "collection": "MIT62410lab"
   }
   // if (embed_mode) args.from_doc = original_file
-    url = new URL('https://beta-chattutor-git-nbqjgewnea-uc.a.run.app/ask')
+    url = new URL('https://chattutor-git-nbqjgewnea-uc.a.run.app/ask')
   fetch(url, {
     method: 'POST',
     headers: {

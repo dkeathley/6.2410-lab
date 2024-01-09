@@ -409,7 +409,7 @@ function loadConversationFromLocalStorage() {
 function queryGPT() {
   const args = {
     "conversation": conversation,
-    "collection": "MIT62410lab"
+    "collection": "PR4JIT"
   }
   // if (embed_mode) args.from_doc = original_file
     url = new URL('https://chattutor-git-nbqjgewnea-uc.a.run.app/ask')

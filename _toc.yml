@@ -31,14 +31,13 @@ parts:
     - file: quNV-Jupyter/T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.ipynb
     - file: quNV-Jupyter/T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.ipynb
     - file: quNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.ipynb
-  - caption: T1E2 -- Quantum Computing w/ IBM Qiskit (OPTIONAL)
+  - caption: T1:3E2 -- Quantum Computation Lab (COMING SOON)
     chapters:
-    - file: T1E2-LAB-IBM-Qiskit-Prelab.ipynb
-    - file: T1E2-LAB-IBM-Qiskit.ipynb
-    - file: T1E2-LAB-IBM-Qiskit-Solutions.ipynb
+    -file: T1-3E2-Quantum-Computation-Lab.md
   - caption: Final Projects
     chapters:
     - file: FINAL-PROJECTS.ipynb
-  - caption: Other Resources
-    chapters:
-     - file: OTHER-quantum-monte-carlo-simulation-spin-entanglement-repeaters.ipynb
+
+  #- caption: Other Resources
+  #  chapters:
+  #   - file: OTHER-quantum-monte-carlo-simulation-spin-entanglement-repeaters.ipynb

@@ -47,7 +47,9 @@ Each module will include: (1) lecture notes and materials as well as pre-lab que
 
 The second half of the semester is dedicated to open-ended final project activities (6 weeks).  Final project activities are broken into three phases: (1) proposal; (2) project work; (3) final report.   The proposal phase occurs over 2 weeks, and the final project work and report take up the remaining 4 weeks.  The final project must be within the broader area of quantum engineering and quantum technologies, and should build upon the material, skills, and technologies covered by the prepared lab activities from the first half of the course.  The educational purpose of the final project is to build technical expertise and broader contextual understanding from project conceptualization through to completion. 
 
-This course is a CI-M course, and the communication-intensive component centers around proposal pitches (oral and written) as well as final report development (again both oral and written). Feedback will be provided by instructors throughout this process, with the opportunity for revision in the proposal phase. The communication-intensive component is integral to the class.  Not only does it provide skill development in communication activities relevant to real-world project development and communication, but it also serves as the primary means to determine the quality of the final project and level of technical understanding.
+## CI-M
+
+This course is a CI-M course, and the communication-intensive components center around: (1) lab summaries; (2) proposal pitches (oral and written); as well as (3) final reports (again both oral and written). Feedback will be provided by instructors throughout this process, with the opportunity for revision in the proposal phase. The communication-intensive component is integral to the class.  Not only does it provide skill development in communication activities relevant to real-world project development and communication, but it also serves as the primary means to determine the quality of the final project and level of technical understanding.
 
 
 ## Course Materials

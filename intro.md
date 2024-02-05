@@ -19,7 +19,14 @@ Isaac Harris <br>
 ibwharri@mit.edu, office 36-531
 
 Max Aalto <br>
-maxaalto@mit.edu, office 36-531
+maxaalto@mit.edu
+
+Hanfeng Wang <br>
+hanfengw@mit.edu, office 36-533
+
+## Collaborators
+
+We gratefully acknowledge assistance and contributions from QuTools in the development of lab modules and experiments, with particular input from Björn Habrich, Valentin Habrich, and Nico Klein.  
 
 ## Catalog Information
 

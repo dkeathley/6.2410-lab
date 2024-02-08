@@ -49,7 +49,7 @@
  * Usually true for jupyter books
  */
 const RUN_LOCALLY               = false;
-const TEST_MODE                 = true;
+const TEST_MODE                 = false;
 const IS_STATIC                 = true;
 
 const EMBEDDING_COLLECTION_NAME = "MIT62410labbarosandu";

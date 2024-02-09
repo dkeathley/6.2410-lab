@@ -1,0 +1,823 @@
+
+<!DOCTYPE html>
+
+<html data-content_root="./" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>TEXT – Interference, Entanglement and Quantum-Enhanced Metrology — 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet"/>
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet"/>
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet"/>
+<link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="_static/styles/sphinx-book-theme.css?v=384b581d" rel="stylesheet" type="text/css"/>
+<link href="_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
+<link href="_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="_static/sphinx-thebe.css?v=4fa983c6" rel="stylesheet" type="text/css"/>
+<link href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" rel="preload"/>
+<link as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" rel="preload"/>
+<script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/documentation_options.js?v=9eb32ce0"></script>
+<script src="_static/doctools.js?v=888ff710"></script>
+<script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="_static/copybutton.js?v=f281be69"></script>
+<script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="_static/togglebutton.js?v=4a39c7ea"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script src="_static/design-tabs.js?v=36754332"></script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+<script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+<script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+<script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing';</script>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html" rel="next" title="LAB – Interference, Entanglement and Quantum-Enhanced Metrology"/>
+<link href="BASICS-quantum-optics-basics.html" rel="prev" title="BASICS – Quantum Optics"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+<link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/></head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
+<a class="skip-link" href="#main-content" id="pst-skip-link">Skip to main content</a>
+<div id="pst-scroll-pixel-helper"></div>
+<button class="btn rounded-pill" id="pst-back-to-top" type="button">
+<i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<header class="bd-header navbar navbar-expand-lg bd-navbar">
+</header>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item">
+<a class="navbar-brand logo" href="intro.html">
+<img alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home" class="logo__image only-light" src="_static/logo-ibm.jpg"/>
+<script>document.write(`<img src="_static/logo-ibm.jpg" class="logo__image only-dark" alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home"/>`);</script>
+</a></div>
+<div class="sidebar-primary-item">
+<script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links bd-docs-nav">
+<div class="bd-toc-item navbar-nav active">
+<ul class="nav bd-sidenav bd-sidenav__home-link">
+<li class="toctree-l1">
+<a class="reference internal" href="intro.html">
+                    6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
+                </a>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introductory Material</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="BASICS-quantum-optics-basics.html">BASICS – Quantum Optics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T3E1 -- Interference, Entanglement, Quantum-Enhanced Sensing</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">TEXT – Interference, Entanglement and Quantum-Enhanced Metrology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html">LAB – Interference, Entanglement and Quantum-Enhanced Metrology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T3E1-EXTRAS--rigorous-solution-MZI.html">EXTRAS – Rigorous Solution of Mach-Zender Interferometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T3E1-EXTRAS-interference-2-homodyne-detection.html">EXTRAS – Homodyne Detection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T2E1 -- Quantum Information and Quantum Key Distribution</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T2E1-TEXT-HBT.html">TEXT - Introduction to single photons with the quED (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2E1-LAB-HBT.html">LAB – Hanbury Brown - Twiss Lab (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2E1-TEXT-QKD.html">TEXT – QKD (Week 2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2E1-LAB-BB84.html">LAB – QKD (Week 2)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T3E3 -- Solid State Spins</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.html">TRAINING - Interfacing with the Vector Network Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.html">TEXT: Introduction to NV centers in diamond and cavity-based magnetometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.html">LAB - Quantum Sensing with Solid State Spins (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.html">LAB – Quantum Sensing With Solid State Spins (Week 2)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T1:3E2 -- Quantum Computation Lab (COMING SOON)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T1-3E2-Quantum-Computation-Lab.html">T1:3E2 – Quantum Computation Lab</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Final Projects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="FINAL-PROJECTS.html">Final Design Project</a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content">
+<div class="sbt-scroll-pixel-helper"></div>
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__primary" title="Toggle primary sidebar">
+<span class="fa-solid fa-bars"></span>
+</label></div>
+</div>
+<div class="header-article-items__end">
+<div class="header-article-item">
+<div class="article-header-buttons">
+<div class="dropdown dropdown-launch-buttons">
+<button aria-expanded="false" aria-label="Launch interactive content" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fas fa-rocket"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.ipynb" target="_blank" title="Launch onBinder">
+<span class="btn__icon-container">
+<img src="_static/images/logo_binder.svg"/>
+</span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.ipynb" target="_blank" title="Launch onColab">
+<span class="btn__icon-container">
+<img src="_static/images/logo_colab.png"/>
+</span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="dropdown dropdown-source-buttons">
+<button aria-expanded="false" aria-label="Source repositories" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fab fa-github"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm btn-source-repository-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://github.com/dkeathley/S23-6.2410-lab" target="_blank" title="Source repository">
+<span class="btn__icon-container">
+<i class="fab fa-github"></i>
+</span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+<li><a class="btn btn-sm btn-source-issues-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://github.com/dkeathley/S23-6.2410-lab/issues/new?title=Issue%20on%20page%20%2FT3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html&amp;body=Your%20issue%20content%20here." target="_blank" title="Open an issue">
+<span class="btn__icon-container">
+<i class="fas fa-lightbulb"></i>
+</span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="dropdown dropdown-download-buttons">
+<button aria-expanded="false" aria-label="Download this page" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fas fa-download"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm btn-download-source-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="_sources/T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.ipynb" target="_blank" title="Download source file">
+<span class="btn__icon-container">
+<i class="fas fa-file"></i>
+</span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+<li>
+<button class="btn btn-sm btn-download-pdf-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" onclick="window.print()" title="Print to PDF">
+<span class="btn__icon-container">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+</ul>
+</div>
+<button class="btn btn-sm btn-fullscreen-button" data-bs-placement="bottom" data-bs-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
+<span class="btn__icon-container">
+<i class="fas fa-expand"></i>
+</span>
+</button>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__secondary" title="Toggle secondary sidebar">
+<span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+</div>
+</div>
+</div>
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>TEXT – Interference, Entanglement and Quantum-Enhanced Metrology</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entangled-photon-pair-generation-and-measurement">Entangled Photon Pair Generation and Measurement</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prelab-1-questions">Prelab 1 Questions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-photon-interference-and-interaction-free-measurement">Single-Photon Interference and Interaction-Free Measurement</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prelab-2-questions">Prelab 2 Questions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interference-of-two-single-photons-the-hong-ou-mandel-effect">Interference of Two Single Photons: The Hong-Ou-Mandel Effect</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prelab-3-questions">Prelab 3 Questions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taking-things-further-quantum-enhanced-sensing-with-noon-states">Taking Things Further: Quantum Enhanced Sensing with NOON States</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-phase-estimation-in-an-n-2-noon-state-interferometer">Analysis of Phase Estimation in an <span class="math notranslate nohighlight">\(N=2\)</span> NOON State Interferometer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demonstrating-supersensitivity">Demonstrating Supersensitivity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-experiments">Numerical Experiments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#post-lab-questions">Post-Lab Questions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article">
+<section class="tex2jax_ignore mathjax_ignore" id="text-interference-entanglement-and-quantum-enhanced-metrology">
+<h1>TEXT – Interference, Entanglement and Quantum-Enhanced Metrology<a class="headerlink" href="#text-interference-entanglement-and-quantum-enhanced-metrology" title="Link to this heading">#</a></h1>
+<p>In this chapter we examine entangled photon pair generation, single-photon interference, entangled photon pair interference by way of the Hong-Ou-Mandel effect, and entangled multi-photon Fock state interference for quantum-enhanced phase sensing.  Along the way we will discuss basic principles important to a variety of areas in quantum photonics, such as: the interaction of photons with beamsplitters; the interference of photon number states; signal detection and processing methods such as coincidence detection; and how to analyze statistical fluctuations of photon detection events for determining sensitivity and signal to noise ratio in measurements.</p>
+<p>The information and techniques discussed here will not only be useful for your lab exercises, but will be critical tools that you can leverage for your final projets.</p>
+<section id="entangled-photon-pair-generation-and-measurement">
+<h2>Entangled Photon Pair Generation and Measurement<a class="headerlink" href="#entangled-photon-pair-generation-and-measurement" title="Link to this heading">#</a></h2>
+<iframe allow="autoplay" height="480" src="https://drive.google.com/file/d/1OvJFfZyYU3RodsB9eTQpItGA3ZKAdu-0/preview" width="640"></iframe>
+<p>You will work with entangled photon pairs that are generated using SPDC.  This process is also described in the T2E1 material in more technical detail, and you can also read the information in the <a class="reference external" href="https://drive.google.com/file/d/1CqRNSabbBTxx3_eC80l3JY_pydcolXQg/view?usp=share_link">QuED manual</a> which is quite helpful.  Here we will stick to the most important aspects important to understanding the emitted photons and how we can use them.</p>
+<figure class="align-default" id="fig-t3e1-spdc">
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/T3E1-spdc-cone-angles.png"><img alt="SPDC Cone Angles" class="bg-primary mb-1" src="_images/T3E1-spdc-cone-angles.png" style="width: 800px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Simplified schematic of the SPDC source that you will use in the lab and possible cone angles of the entangled photon pair outputs from the crystal.</span><a class="headerlink" href="#fig-t3e1-spdc" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>An SPDC source similar to what you will use is shown in <a class="reference internal" href="#fig-t3e1-spdc"><span class="std std-numref">Fig. 5</span></a>.  Note that when excited by the pump that is at a higher energy of <span class="math notranslate nohighlight">\(2\hbar\omega\)</span>, two photons of energy <span class="math notranslate nohighlight">\(\hbar\omega\)</span> are generated in a cone of angles away from the crystal.  In our systems, as shown here, two crystals are stacked together, one generating entangled photons with horizontal polarization, and one with vertical polarization.  This generation process is quantum-coherent, and the state that arises is in a superposition of these photon pairs, and we can write it as</p>
+<div class="math notranslate nohighlight">
+\[ \ket{\psi}  = \frac{1}{\sqrt{2}} \big\lbrace \ket{H}_a\ket{H}_b  + \ket{V}_a\ket{V}_b\big\rbrace\]</div>
+<p>Where we have taken the top path to be path <span class="math notranslate nohighlight">\(a\)</span> and the bottom to be path <span class="math notranslate nohighlight">\(b\)</span>.  To get a feeling for the entanglement, consider a simple experiment as shown in <a class="reference internal" href="#fig-t3e1-entanglement-setup"><span class="std std-numref">Fig. 6</span></a>.</p>
+<figure class="align-default" id="fig-t3e1-entanglement-setup">
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/T3E1-entangled-photon-meas-setup.png"><img alt="Entanglement Setup" class="bg-primary mb-1" src="_images/T3E1-entangled-photon-meas-setup.png" style="width: 400px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Schematic of an entanglement experiment.</span><a class="headerlink" href="#fig-t3e1-entanglement-setup" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Each path is sent through a polarizer and then a detector after which we consider only coincident events.  Let’s now consider the act of measuring the photons after the polarizers in arms <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>.  The polarizer acts to select out only one polarization angle.  Since our incident light has both polarizations, we need to understand how both components are projected onto the polarization axis.</p>
+<figure class="align-default" id="fig-t3e1-polarizer-projection">
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/T3E1-polarizer-projection.png"><img alt="Polarizer Projection" class="bg-primary mb-1" src="_images/T3E1-polarizer-projection.png" style="width: 500px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">The horizontal and vertical polarization states are projected onto the polarizer axis denoted by the red line.</span><a class="headerlink" href="#fig-t3e1-polarizer-projection" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Consider <a class="reference internal" href="#fig-t3e1-polarizer-projection"><span class="std std-numref">Fig. 7</span></a>.  This shows the polarizer angle in arm <span class="math notranslate nohighlight">\(a\)</span> in relation to the vertical and horizontal polarizations of our input photons.  After the polarizer, the light must be polarized along <span class="math notranslate nohighlight">\(\theta_a\)</span>, and we can write:</p>
+<div class="math notranslate nohighlight">
+\[\ket{\theta_a} = \cos(\theta_a)\ket{H}_a + \sin(\theta_a)\ket{V}_a\]</div>
+<p>The same expression also applies to <span class="math notranslate nohighlight">\(\ket{\theta_b}\)</span>.  In our measurement, we are considering coincident events that correspond to states <span class="math notranslate nohighlight">\(\ket{\theta_a}\ket{\theta_b}\)</span>.  To find the probability of detecting such states, we simply project this state onto our input state and take the square magnitude.  The probability of coincidences <span class="math notranslate nohighlight">\(P_\text{co}\)</span> is then</p>
+<div class="math notranslate nohighlight">
+\[P_\text{co} = \frac{1}{2} \Big | \bra{\theta_a}\bra{\theta_b} \big\lbrace \ket{H}_a \ket{H}_b + \ket{V}_a \ket{V}_b\big\rbrace \big |^2\]</div>
+<p>We leave it as an exercise to show that <span class="math notranslate nohighlight">\(P_\text{co} = \frac{1}{2} \cos^2(\theta_a - \theta_b)\)</span>.</p>
+<p>Think about what this is saying for a bit.  No matter how far apart your detectors are, by setting the polarization in one arm, you instantly dictate the joint probability which also requires an event at the detector in the other arm and depends on its polarization axis.  While correlations can also exist in classical systems, this specific correlation pattern cannot be explained classically.  It violates Bell’s inequality indicating that the input state exhibits quantum entanglement.</p>
+<p>In the lab, we will perform this experiment so that you can experience entanglement for yourself.</p>
+<section id="prelab-1-questions">
+<h3>Prelab 1 Questions<a class="headerlink" href="#prelab-1-questions" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Fill in the missing steps above to show that <span class="math notranslate nohighlight">\(P_\text{co} = \frac{1}{2} \cos^2(\theta_a - \theta_b)\)</span>.</p></li>
+<li><p>Make a polar plot of <span class="math notranslate nohighlight">\(P_\text{co}\)</span> as a function of <span class="math notranslate nohighlight">\(\theta_a\)</span> for three fixed settings of <span class="math notranslate nohighlight">\(\theta_b\)</span>.  Interpret what the plots are saying.</p></li>
+<li><p>In the lab, our SPDC process generates on the order of 100,000 photon pairs per second.  Is there any chance in our measurements that a neighboring photon might influence our results?  Justify your answer.</p></li>
+<li><p>Describe, from an engineering perspective, why entanglement is important.  Provide examples.</p></li>
+</ol>
+</section>
+</section>
+<section id="single-photon-interference-and-interaction-free-measurement">
+<h2>Single-Photon Interference and Interaction-Free Measurement<a class="headerlink" href="#single-photon-interference-and-interaction-free-measurement" title="Link to this heading">#</a></h2>
+<iframe allow="autoplay" height="480" src="https://drive.google.com/file/d/1MVpfD6w8qPrWElpTsG6HJn-XRTBKQyI-/preview" width="640"></iframe>
+<p>Before moving on to multiple-particle interference, let us now consider single-particle interference.  We will also discuss how in this single-particle case one can achieve measurement without interaction.</p>
+<p>Consider the single-photon interferometer as shown in <a class="reference internal" href="#fig-t3e1-single-photon-interferometer"><span class="std std-numref">Fig. 8</span></a></p>
+<figure class="align-default" id="fig-t3e1-single-photon-interferometer">
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/T3E1-single-photon-interferometer.png"><img alt="Single Photon Interference" class="bg-primary mb-1" src="_images/T3E1-single-photon-interferometer.png" style="width: 600px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Interferference of a single photon in a Mach-Zender interferometer.  An optional absorbing object can be placed in one of the paths.</span><a class="headerlink" href="#fig-t3e1-single-photon-interferometer" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>For dealing with interference here and below, we will track the annihilation operators through the system. For a refresher on how these work, see the <a class="reference internal" href="#BASICS-quantum-optics-basics.html"><span class="xref myst">BASICS chapter on quantum optics</span></a>.</p>
+<p>Our strategy is to develop a description of the annihilation operator of the output state using the annhihilation operators of the input states of the first beamsplitter.  This description can then be used to determine the number of output photons going to the detector based on the input states.  Note that for this problem we consider that only one input of the beasmplitter is excited by a single photon (denoted as <span class="math notranslate nohighlight">\(a\)</span>).  While a rigorous solution would have to account for all annihilation operators, including that of the vacuum state input to the first beamsplitter, the operators of the vacuum state inputs do not contribute to the average photon number at the detector (however they can contrubute to noise in the photon detection). <strong>Since we are concerned with the photon number for the purposes of this discussion, we drop the operators associated with the vacuum input as a shorthand to simplify the problem here. It is emphasized that you would need to include all input operators to describe the input and output states completely, or to calculate detection noise properties for a general set of input states.  See the note below for further reading.</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For a rigorous solution of the output operators of a Mach-Zender interferometer, see <a class="reference internal" href="T3E1-EXTRAS--rigorous-solution-MZI.html"><span class="std std-doc">EXTRAS – Rigorous Solution of Mach-Zender Interferometer</span></a>.</p>
+<p>For an interseting discussion of how the vacuum state input contributes to photon fluctuations, and how these fluctuations can be reduced using squeezed light, see the discussion of homodyne detection with squeezed light in <a class="reference internal" href="T3E1-EXTRAS-interference-2-homodyne-detection.html"><span class="std std-doc">EXTRAS – Homodyne Detection</span></a></p>
+</div>
+<p>Taking each path <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span> indificually, we find that for path <span class="math notranslate nohighlight">\(b\)</span> the annihilation operator going  into the second beamsplitter, ignoring the annihilation operator of the empty port, can be written as</p>
+<div class="math notranslate nohighlight">
+\[\bhat = \alpha e^{i\phi_b} \ahat/\sqrt{2}\]</div>
+<p>Likewise</p>
+<div class="math notranslate nohighlight">
+\[\chat = e^{i\phi_c} \ahat/\sqrt{2}\mathrm{.}\]</div>
+<p>The phase is the phase accumulated during propagation in each path and scales as <span class="math notranslate nohighlight">\(2\pi l /\lambda\)</span>, where l is the path length in either arm.  The term <span class="math notranslate nohighlight">\(\alpha\)</span> accounts for loss in interaction with the object.  This could in general be a complex amplitude, but here we simply assume it is real noting the amount of absorption in the object (the phase can be wrapped into the total phase in the path).</p>
+<p>We now want to know waht the annihilation operator for <span class="math notranslate nohighlight">\(d\)</span> is going to our detector.  The beamsplitter has the relation that</p>
+<div class="math notranslate nohighlight">
+\[\dhat = \frac{1}{\sqrt{2}} ( \bhat + \chat )\]</div>
+<p>and likewise</p>
+<div class="math notranslate nohighlight">
+\[\ehat = \frac{1}{\sqrt{2}} ( \bhat - \chat )\]</div>
+<p>Let’s focus on path <span class="math notranslate nohighlight">\(d\)</span> and find the number of photons going there.  The photon number operator is given by <span class="math notranslate nohighlight">\(\ddagger \dhat\)</span>.  We can now express this as</p>
+<div class="math notranslate nohighlight">
+\[\ddagger\dhat = \frac{1}{4} ( \adagger\ahat + \alpha e^{-i\Delta\phi} \adagger \ahat + \alpha e^{i\Delta\phi} \adagger\ahat + \alpha^2 \adagger\ahat )\]</div>
+<p>where we have that <span class="math notranslate nohighlight">\(\Delta\phi\)</span> is the phase difference betwen the paths <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span>.  We leave this as an exercise to show.</p>
+<p>Reducing this we find that</p>
+<div class="math notranslate nohighlight">
+\[\ddagger\dhat = \frac{1}{4} \bigg ( 1 + \alpha^2 + 2 \alpha \cos(\Delta\phi) \bigg ) \adagger\ahat\]</div>
+<p>So now, we finish by finding the photon number expectation at the output <span class="math notranslate nohighlight">\(N_d\)</span> for a single photon in <span class="math notranslate nohighlight">\(a\)</span> at the input.</p>
+<div class="math notranslate nohighlight">
+\[N_d = \bra{1}_a \frac{1}{4} \bigg ( 1 + \alpha^2 + 2 \alpha \cos(\Delta\phi) \bigg ) \adagger\ahat \ket{1}_a\]</div>
+<p>which reduces to</p>
+<div class="math notranslate nohighlight">
+\[N_d =  \frac{1}{4} \bigg ( 1 + \alpha^2 + 2 \alpha \cos(\Delta\phi) \bigg )\mathrm{.}\]</div>
+<p>Let’s consider two important cases: <span class="math notranslate nohighlight">\(\alpha = 1\)</span> (no object), and <span class="math notranslate nohighlight">\(\alpha = 0\)</span> (opaque object). For <span class="math notranslate nohighlight">\(\alpha = 1\)</span> we have that the probability oscillates sinusoidally with the phase difference <span class="math notranslate nohighlight">\(\Delta\phi\)</span>.  We can control this with a wedge or the movement of one of the mirrors in the lab.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here we have considered states containing only a single frequency, meaning that interference would continue indefinitely with increasing delay.  However, in reality our states contain a distrubtion of frequencies and exhibit finite coherence times that limit the range of delays over which one could observe this interference.  In experiment we will find that the interference fringes disappear after several wavelengths of delay.  For our case this is due to the relatively large bandwidth of frquencies generated in the SPDC process.</p>
+<p>The case of a non-zero bandwidth is also treated in <a class="reference internal" href="T3E1-EXTRAS--rigorous-solution-MZI.html"><span class="std std-doc">EXTRAS – Rigorous Solution of Mach-Zender Interferometer</span></a>.</p>
+</div>
+<p>It also makes sense that when <span class="math notranslate nohighlight">\(\alpha = 0\)</span> all interference goes away, and we are left with only 1/4 of the photons making it to the detector.  The other 1/4 go to arm <span class="math notranslate nohighlight">\(e\)</span>, and the other half are lost to the object.</p>
+<p>Now for something interesting.  Let’s say that we align our interferometer without an object in place such that you have a minum probability of finding the photons in arm <span class="math notranslate nohighlight">\(d\)</span>.  That would be for <span class="math notranslate nohighlight">\(\Delta\phi = \pi\)</span> so that no photons are output.  Then you put the object in place – the photon expectation suddenly goes to 1/4.  You just detected the object without interaction!  This is in fact often referred to as an interaction-free measurement, and has found renewed interest in the context of electron detection where particle energies are high and damage per particle can be significant.</p>
+<p>In the questions below, you will consider such measurements further.</p>
+<section id="prelab-2-questions">
+<h3>Prelab 2 Questions<a class="headerlink" href="#prelab-2-questions" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Fill in the missing steps to get to the expression for <span class="math notranslate nohighlight">\(\ddagger\dhat\)</span> above.</p></li>
+<li><p>Write the corresponding expression for the number of expected photons exiting path <span class="math notranslate nohighlight">\(e\)</span>.</p></li>
+<li><p>Discuss the interaction-free measurement in the context of a translucent object (<span class="math notranslate nohighlight">\(0 &lt; \alpha &lt; 1\)</span>).</p></li>
+<li><p>Read about the <a class="reference external" href="https://en.wikipedia.org/wiki/Elitzur%E2%80%93Vaidman_bomb_tester">Elitzur-Vaidman bomb test</a>.  Explain how, when performed photon by photon and with a detector at ports <span class="math notranslate nohighlight">\(d\)</span> and <span class="math notranslate nohighlight">\(e\)</span> a probability of detection without interaction can approach 33 percent.  Justify your answer.</p></li>
+<li><p>Read <a class="reference internal" href="T3E1-EXTRAS--rigorous-solution-MZI.html"><span class="std std-doc">EXTRAS – Rigorous Solution of Mach-Zender Interferometer</span></a>.  Using the rigorous solution of the operator describing the output port to the detector, calculate the variance in the output for <span class="math notranslate nohighlight">\(\alpha = 0\)</span>, <span class="math notranslate nohighlight">\(\Delta N = \left &lt; \hat{N}^2 \right &gt; - \left &lt; \hat{N} \right &gt;^2\)</span>.  Note that at the output you have either a detection event or not – this is like a coint toss which follows a binomial distribution with variance <span class="math notranslate nohighlight">\(P(1-P)\)</span>, where <span class="math notranslate nohighlight">\(P\)</span> is the probability of detection.  Does your variance calculated using the operators make sense based on this?</p></li>
+</ol>
+</section>
+</section>
+<section id="interference-of-two-single-photons-the-hong-ou-mandel-effect">
+<h2>Interference of Two Single Photons: The Hong-Ou-Mandel Effect<a class="headerlink" href="#interference-of-two-single-photons-the-hong-ou-mandel-effect" title="Link to this heading">#</a></h2>
+<iframe allow="autoplay" height="480" src="https://drive.google.com/file/d/1EbP7heyjad4oQek8uBg5gI4dMnObpFh_/preview" width="640"></iframe>
+<p>We have now examined how a single photon interferes with itself, but how do two single coincident photons interfere with each other at a beamsplitter?  In this section we explore such two-photon interference.  We examine how when the two photons are indistinguishable in every way, the interference can lead to photon bunching and anti-correlation at the output ports.  The outgoing state generated is referred to as a two-photon NOON state of the form <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{2}} ( \ket{N}_a\ket{0}_b + \ket{0}_a\ket{N}_b )\)</span>.  Pushing beyond this observation, in the text that follows this section we examine how NOON states can generally be used for quantum-enhanced sensing.</p>
+<p>Imagine the scenario depicted in <a class="reference internal" href="#hom-setup"><span class="std std-numref">Fig. 9</span></a>.  A nonlinear crystal is used to generate precisely two photons of energy <span class="math notranslate nohighlight">\(\hbar\omega\)</span> when excited by a pulse with a photon energy of <span class="math notranslate nohighlight">\(2\hbar\omega\)</span>.  This process is called spontaneous parametric down-conversion and is a common technique for generating entangled photon pairs.</p>
+<p>The two photons travel away from the crystal along two paths (top and bottom as shown).  They are then brought together and interfere within a beamsplitter.</p>
+<figure class="align-default" id="hom-setup">
+<a class="bg-primary mb-1 reference internal image-reference" href="https://drive.google.com/uc?export=view&amp;id=1amZRBEKAn8JTkZXHi7SUlqqTjZfi2tXc"><img alt="HOM-setup" class="bg-primary mb-1" src="https://drive.google.com/uc?export=view&amp;id=1amZRBEKAn8JTkZXHi7SUlqqTjZfi2tXc" style="width: 800px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Experimental setup for studying the HOM effect.</span><a class="headerlink" href="#hom-setup" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we break down all the different possibilities that could happen, one would be that both photons output in <span class="math notranslate nohighlight">\(c\)</span>, another would be that both photons output in <span class="math notranslate nohighlight">\(d\)</span>, and a final possibility would be that one photon outputs to <span class="math notranslate nohighlight">\(c\)</span> while the other outputs to <span class="math notranslate nohighlight">\(d\)</span>.   One interesting question to ask is whether the delay has any influence over these possibilities?</p>
+<p>Lets model this system.  Imagine that the input signals are pulsed.  In this case we could for instance represent a single photon input with delay <span class="math notranslate nohighlight">\(\tau\)</span> in port <span class="math notranslate nohighlight">\(a\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[ \ket{1; \tau}_a, \]</div>
+<p>or a single photon input with <span class="math notranslate nohighlight">\(0\)</span> delay in port <span class="math notranslate nohighlight">\(b\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[ \ket{1; 0}_b.\]</div>
+<p>The first number represents the numer of photons, the second the delay.  Finally, the subscript represents the mode.  Given an entangled two-photon input to the system from the crystal with delay along path <span class="math notranslate nohighlight">\(a\)</span> of <span class="math notranslate nohighlight">\(\tau\)</span>, we have that the input state can be written as</p>
+<div class="math notranslate nohighlight">
+\[\ket{\psi_\text{in}} = \ket{1; \tau}_a\ket{1; 0}_b = \adagger_{\tau}\bdagger_0 \ket{0}\]</div>
+<p>It is important here that the state be written as a tensor product as it captures that the two photons are jointly created and entangled which is the case for the photons generated with SPDC.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We have taken a little liberty here to assign creation and annihilation operators for each mode with their mode label.  It’s just a bit of shorthand that is very common to make things easier to read if there are only a handful of modes to deal with.</p>
+</div>
+<p>Now we need to understand how such an entangled state interacts with a beamsplitter. For this we will keep track of the different creation/annihilation operators through the system.</p>
+<p>A beamsplitter has the following relationship between the input and output modes:</p>
+<div class="math notranslate nohighlight">
+\[\adagger_\tau \rightarrow \frac{\cdagger_\tau + \ddagger_\tau}{\sqrt{2}},\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\bhat_0 \rightarrow \frac{\chat_0 - \dhat_0}{\sqrt{2}},\]</div>
+<p>thus, the output state becomes</p>
+<div class="math notranslate nohighlight">
+\[ 
+\ket{\psi_\text{out}} = \frac{1}{2}
+\bigg \lbrace 
+\chat_\tau \chat - \chat_\tau \dhat + 
+\dhat_\tau \chat - \dhat_\tau \dhat
+\bigg \rbrace
+\]</div>
+<p>Let’s start for the case of <span class="math notranslate nohighlight">\(\tau \neq 0\)</span>.  In this case we  have that</p>
+<div class="math notranslate nohighlight">
+\[
+\ket{\psi_\text{out}} = 
+\frac{1}{2}
+\bigg\lbrace
+\ket{1;\tau}_c\ket{1;0}_c - 
+\ket{1;\tau}_c\ket{1;0}_d + 
+\ket{1;0}_c\ket{1;\tau}_d -
+\ket{1;\tau}_d\ket{1;0})_d
+\bigg\rbrace.
+\]</div>
+<p>Remember that probabilities of outcomes are related to <span class="math notranslate nohighlight">\(\braket{\psi_\mathrm{out}}{\psi_\mathrm{out}}\)</span>, thus we can make the following map of outcomes at each detector.</p>
+<figure class="align-default" id="hom-possibilities-w-tau">
+<a class="bg-primary mb-1 reference internal image-reference" href="https://drive.google.com/uc?export=view&amp;id=1sRjwvkQuXH4L5q9mrOIiP2TysdWnx54_"><img alt="HOM-w-tau" class="bg-primary mb-1" src="https://drive.google.com/uc?export=view&amp;id=1sRjwvkQuXH4L5q9mrOIiP2TysdWnx54_" style="width: 500px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Four different possibilities of detection in port c and d given a non-zero delay <span class="math notranslate nohighlight">\(\tau\)</span>.</span><a class="headerlink" href="#hom-possibilities-w-tau" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>All possibilities we oultined above happen with equal probability.</p>
+<p>However, for <span class="math notranslate nohighlight">\(\tau = 0\)</span> we have something very interesting, and a bit unintuitive.  In this case we have</p>
+<div class="math notranslate nohighlight">
+\[
+\ket{\psi_\text{out}} = 
+\frac{\sqrt{2}}{2}
+\bigg\lbrace
+\ket{2;0}_c -
+\ket{2;0}_d
+\bigg\rbrace
+\]</div>
+<p>leading to the following map of outcomes at each detector.</p>
+<figure class="align-default" id="hom-possibilities-wo-tau">
+<a class="bg-primary mb-1 reference internal image-reference" href="https://drive.google.com/uc?export=view&amp;id=1flZvEwgcemSbJuNBVVW8DBaGF-AVNtLS"><img alt="HOM-w-tau" class="bg-primary mb-1" src="https://drive.google.com/uc?export=view&amp;id=1flZvEwgcemSbJuNBVVW8DBaGF-AVNtLS" style="width: 500px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Two different possibilities of detection in port c and d given a zero delay <span class="math notranslate nohighlight">\(\tau\)</span> such that the two photons are indistinguishable in every way at the beamsplitter.  Note each pulse now contains two photons, and the probability of each occurance is <span class="math notranslate nohighlight">\(1/2\)</span>.</span><a class="headerlink" href="#hom-possibilities-wo-tau" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In this case <strong>there would be no coincidence events</strong> (that is, events that would trigger an output on both detectors).  Either both photons go to <span class="math notranslate nohighlight">\(c\)</span> or both to <span class="math notranslate nohighlight">\(d\)</span> with equal probability.  This is in contrast to the case when the modes were fully separate in time when the coincidence rate is 50%.</p>
+<p>Such two-photon interference was first observed by Hong, Ou, and Mandel in 1987 <span id="id1">[<a class="reference internal" href="#id10" title="C. K. Hong, Z. Y. Ou, and L. Mandel. Measurement of subpicosecond time intervals between two photons by interference. Physical Review Letters, 59(18):2044–2046, November 1987. Publisher: American Physical Society. URL: https://link.aps.org/doi/10.1103/PhysRevLett.59.2044 (visited on 2022-07-13), doi:10.1103/PhysRevLett.59.2044.">HOM87</a>]</span>.  In their work, they note that such a measurement allows for the measurement of time intervals between photons with sub-picosecond precision.  In the lab, we will also achieve this precision in detecting time-intervals between arriving photon pairs in the observation of HOM interference.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>We want to emphasize here that we have taken a few liberties with the notation above.  The approach  used here works in estimating probabilities for the two cases discussed, assuming (1) that each photon pulse is long relative to the central frequency; (2) that the envelope shape and central frequency of each pulse is the same; and (3) that for the delayed case the photons are so far separated in time that there is no overlap between each photon pulse at the input of the beamsplitter. For these cases the states are either perfectly indistinguishible or distinguishable.  A more complete model would actually have to expand each input into the frequency domain and model the interference between each spectral component individually.  However this approach is much more involved (<em>e.g.</em> see the treatment in Ref. <span id="id2">[<a class="reference internal" href="#id9" title="Agata M. Brańczyk. Hong-Ou-Mandel Interference. October 2017. arXiv:1711.00080 [quant-ph]. URL: http://arxiv.org/abs/1711.00080 (visited on 2022-07-04), doi:10.48550/arXiv.1711.00080.">Bra17</a>]</span>.  In the end, both approaches result in the same predictions as discussed above.</p>
+</div>
+<section id="prelab-3-questions">
+<h3>Prelab 3 Questions<a class="headerlink" href="#prelab-3-questions" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>What happens to the coincidence count rate when the delay is not perfectly zero such that the photon wavepackets are only partially overlapped in time? (Look for experimental measurements of HOM and explain the data over this intermediate delay range in terms of the distinguishability of the states).</p></li>
+<li><p>If the delay is fixed to <span class="math notranslate nohighlight">\(\tau = 0\)</span>, but the input photon states have variable polarization <span class="math notranslate nohighlight">\(\ket{\theta_a}\ket{\theta_b}\)</span> what are the output states as a function of the two polarization angles <span class="math notranslate nohighlight">\(\theta_a\)</span> and <span class="math notranslate nohighlight">\(\theta_b\)</span>?</p></li>
+<li><p>Would you expect the coincidence dip to go all the way to 0 in experiment?  Why or why not?</p></li>
+</ol>
+</section>
+</section>
+<section id="taking-things-further-quantum-enhanced-sensing-with-noon-states">
+<h2>Taking Things Further: Quantum Enhanced Sensing with NOON States<a class="headerlink" href="#taking-things-further-quantum-enhanced-sensing-with-noon-states" title="Link to this heading">#</a></h2>
+<iframe allow="autoplay" height="480" src="https://drive.google.com/file/d/1DDXMLs7zM1zuTzA03w7DcJZp1YPt03Mu/preview" width="640"></iframe>
+<p>Notice that when <span class="math notranslate nohighlight">\(\tau = 0\)</span> the state takes on an interesting superposition of <span class="math notranslate nohighlight">\(N=2\)</span> Fock states.  Such states are called NOON states, so here we would have an <span class="math notranslate nohighlight">\(N=2\)</span> NOON state.  It turns out that if we send such states through a subsequent interferometer, we can obtain a quantum advantage in sensitivity to phase shifts.  In this section, we will explore why this is important and how it works.  In the practice problems and exercises, we will also explore limitations to the generalized implementation of this approach and touch on other approaches that are used for similar purposes.</p>
+<p>Before we talk about sensing phase shifts, you might be wondering why someone would want to measure optical phase in the first place?  Typically, it is not the phase shift itself that we are after, but rather the physical change that has caused the phase shift.  A famous example of this is the measurement of gravitational waves using LIGO.  In LIGO, extremely small changes in the path length between two arms of an interferometer are caused by a passing gravitational wave.  This change in path length manifests as a shift in phase of the light that travels down one arm relative to light that travels down the other.  It is just this phase shift that is detected and related to a change in distance.  Similar techniques are used on much smaller scales to stabilize fine movements in stages with nanometer precision.</p>
+<p>A limitation to the measurement of interferometric phase shifts is caused by noise in the system and at the optical readout.  Given we can make a stable enough interferometer, and obtain low enough noise in the detector readout, the measurement noise will eventually be limited by fundamental fluctuations in the photon signal.  In a classical interferometer, this fundamental photon noise results in a variance in the phase estimation of</p>
+<div class="math notranslate nohighlight">
+\[\delta \varphi^2_\mathrm{classical} = \frac{1}{N_\mathrm{ph}} \mathrm{.}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\varphi\)</span> is the phase to be measured, and <span class="math notranslate nohighlight">\(N_\mathrm{ph}\)</span> is the total number of photons passing through the interferometer. Here we will present a method for leveraging quantum properties to achieve phase noise performance beyond this standard quantum limit (SQL).  This will build upon the generation of NOON states as a result of single-photon interference that you will study in the lab.</p>
+<section id="analysis-of-phase-estimation-in-an-n-2-noon-state-interferometer">
+<h3>Analysis of Phase Estimation in an <span class="math notranslate nohighlight">\(N=2\)</span> NOON State Interferometer<a class="headerlink" href="#analysis-of-phase-estimation-in-an-n-2-noon-state-interferometer" title="Link to this heading">#</a></h3>
+<p>In this section we explore the use of NOON state interferometers for achieving noise performance beyond the SQL.  For further reading on this topic, please see Refs. <span id="id3">[<a class="reference internal" href="#id7" title="Tomohisa Nagata, Ryo Okamoto, Jeremy L. O'Brien, Keiji Sasaki, and Shigeki Takeuchi. Beating the Standard Quantum Limit with Four-Entangled Photons. Science, 316(5825):726–729, May 2007. Publisher: American Association for the Advancement of Science Section: Report. URL: https://science.sciencemag.org/content/316/5825/726 (visited on 2020-11-12), doi:10.1126/science.1138007.">NOOBrien+07</a>, <a class="reference internal" href="#id8" title="Ryo Okamoto, Holger F. Hofmann, Tomohisa Nagata, Jeremy L. O'Brien, Keiji Sasaki, and Shigeki Takeuchi. Beating the standard quantum limit: phase super-sensitivity of\$\less\$i\$\greater\$N\$\less\$/i\$\greater\$-photon interferometers. New Journal of Physics, 10(7):073033, July 2008. Publisher: IOP Publishing. URL: https://doi.org/10.1088/1367-2630/10/7/073033 (visited on 2022-08-05), doi:10.1088/1367-2630/10/7/073033.">OHN+08</a>]</span>.</p>
+<p>Consider a setup that builds on the HOM setup as shown in Fig. <a class="reference internal" href="#noon-state-interferometer"><span class="std std-numref">Fig. 12</span></a>.</p>
+<figure class="align-default" id="noon-state-interferometer">
+<a class="bg-primary mb-1 reference internal image-reference" href="https://drive.google.com/uc?export=view&amp;id=1D8Js9o1wj5yNmsOUZ_kYn-EG7h_l8T31"><img alt="NOON-state-interferometer" class="bg-primary mb-1" src="https://drive.google.com/uc?export=view&amp;id=1D8Js9o1wj5yNmsOUZ_kYn-EG7h_l8T31" style="width: 800px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">A <span class="math notranslate nohighlight">\(N=2\)</span> NOON state interferometer.</span><a class="headerlink" href="#noon-state-interferometer" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Here we consider only the case for <span class="math notranslate nohighlight">\(\tau = 0\)</span>, and have simplified our notation for the states to reflect that.</p>
+<p>An important thing to observe here is that for path c, the two-photon state collects twice the amount of phase <span class="math notranslate nohighlight">\(\varphi\)</span> when going through the phase plate.  This is a critical aspect that enables superresolution of the instrument for measurements of <span class="math notranslate nohighlight">\(\varphi\)</span>.  Furthermore, due to the entangled nature of the NOON state, there is also supersensitivity from reduced statistical fluctuations in the measurement of <span class="math notranslate nohighlight">\(\varphi\)</span>.  We will explore both of these aspects below.</p>
+<p>First, lets consider the output state after the second interferometer.  Similar to our analysis above, we find that</p>
+<div class="math notranslate nohighlight">
+\[ \chat \rightarrow (\ehat + \fhat)/\sqrt{2} \]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[ \dhat \rightarrow (\ehat - \fhat)/\sqrt{2} \]</div>
+<p>Then we know that</p>
+<div class="math notranslate nohighlight">
+\[\ket{\psi_\mathrm{in}} = \frac{ \big ( \cdagger \cdagger e^{i2\varphi} + \ddagger\ddagger \big ) \ket{0}}{2}\]</div>
+<p>After substitution, we find that</p>
+<div class="math notranslate nohighlight">
+\[\cdagger\cdagger \rightarrow \frac{1}{2}(\edagger + \fdagger)(\edagger + \fdagger)
+     = \frac{1}{2}(\edagger\edagger + 2\edagger\fdagger + \fdagger\fdagger)\]</div>
+<p>Likewise</p>
+<div class="math notranslate nohighlight">
+\[\ddagger\ddagger \rightarrow \frac{1}{2}(\edagger - \fdagger)(\edagger - \fdagger)
+     = \frac{1}{2}(\edagger\edagger - 2\edagger\fdagger + \fdagger\fdagger)\]</div>
+<p>Meaning that</p>
+<div class="math notranslate nohighlight">
+\[\ket{\psi_\mathrm{out}} = \frac{1}{4} \bigg \lbrace (\edagger\edagger + 2\edagger\fdagger + \fdagger\fdagger)e^{j2\varphi} + (\edagger\edagger - 2\edagger\fdagger + \fdagger\fdagger) \bigg\rbrace \ket{0}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may be wondering where the phase accumulation of <span class="math notranslate nohighlight">\(2\varphi\)</span> came from.  We can represent a phase shift by evolution of the operator <span class="math notranslate nohighlight">\(\ahat \rightarrow \bhat = \ahat e^{i\varphi}\)</span>  This means that <span class="math notranslate nohighlight">\(\ahat = \bhat e^{-i\varphi}\)</span>.  Thus, we have that <span class="math notranslate nohighlight">\(\ket{2}_a = \frac{1}{\sqrt{2}}\adagger\adagger \ket{0} = \frac{1}{\sqrt{2}}e^{2i\varphi} \bdagger\bdagger \ket{0} = e^{2i\varphi} \ket{2}_b\)</span>.</p>
+</div>
+<p>Note that there are terms multiplied by <span class="math notranslate nohighlight">\(e^{j2\varphi} \pm 1 = e^{j\varphi}(e^{j\varphi} \pm e^{-j\varphi})\)</span>. The reason this is important is because they can be expressed as multiples of <span class="math notranslate nohighlight">\(\sin\)</span> and <span class="math notranslate nohighlight">\(\cos\)</span> since <span class="math notranslate nohighlight">\(e^{j\varphi} + e^{-j\varphi} = 2\cos{\varphi}\)</span> and <span class="math notranslate nohighlight">\(e^{j\varphi} - e^{-j\varphi} = 2j\sin{\varphi}\)</span>.  Using this property and rearranging the terms in <span class="math notranslate nohighlight">\(\ket{\psi}_\mathrm{out}\)</span> above we find that</p>
+<div class="math notranslate nohighlight">
+\[\ket{\psi_\mathrm{out}} = \frac{e^{j\varphi}}{2} \bigg \lbrace \cos({\varphi})(\edagger\edagger + \fdagger\fdagger) + j\sin({\varphi})\edagger\fdagger \bigg \rbrace \ket{0}\mathrm{.}\]</div>
+<p>After applying all of the creation operators, we finally arrive at the output state</p>
+<div class="math notranslate nohighlight">
+\[\ket{\psi_\mathrm{out}} = \frac{e^{i\varphi}}{\sqrt{2}}\cos({\varphi})(\ket{2}_e
+ + \ket{2}_f) + ie^{i\varphi}\sin({\varphi})\ket{1}_e\ket{1}_f \mathrm{.}\]</div>
+<p>Let’s take a moment to evaluate this.  Similar to the output of our HOM experiment, we have various possibilities of coincidence detection or the separate detection of either a <span class="math notranslate nohighlight">\(\ket{2}_e\)</span> or <span class="math notranslate nohighlight">\(\ket{2}_f\)</span> state.  However, there is now the added consideration that these outcomes depend on <span class="math notranslate nohighlight">\(\varphi\)</span>.  This is good as that is precisely what we want to detect.  If we restrict ourselves to only looking at coincidence outputs in <span class="math notranslate nohighlight">\(e\)</span> and <span class="math notranslate nohighlight">\(f\)</span>, we then find that they occur with probability</p>
+<div class="math notranslate nohighlight">
+\[P_\mathrm{co}(\varphi) = \sin^2{\varphi}\]</div>
+<p>meaning that we can adjust the probability of coincidence detection from 0 to 100% by simply adjusting <span class="math notranslate nohighlight">\(\varphi\)</span> from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(\pi/2\)</span>.  It is convenient to get rid of the <span class="math notranslate nohighlight">\(\sin^2\)</span> term using a trigonetric identity</p>
+<div class="math notranslate nohighlight">
+\[P_\mathrm{co}(\varphi) = \frac{1}{2} - \frac{1}{2}\cos(2\varphi)\mathrm{.}\]</div>
+<p>It is at this point that you realize that the output oscillates as <span class="math notranslate nohighlight">\(\cos(2\varphi)\)</span>.  You can show that a classical interferometer oscillates as <span class="math notranslate nohighlight">\(\cos(\varphi)\)</span>.  This doubling of the oscillation rate for our NOON state interferometer is due to the reduced deBroglie wavelength of the higher order Fock state inputs!  This faster variation with respect to <span class="math notranslate nohighlight">\(\varphi\)</span> provides <strong>superresolution</strong> compared to a classical interferometer.  However, this isn’t the entire story.  While <strong>superresolution</strong> is provided by the higher rate of oscillation with <span class="math notranslate nohighlight">\(\varphi\)</span>, it is not guaranteed that the interferometer provides <strong>supersensitivity</strong>, meaning that it has reduced the smallest possible value of <span class="math notranslate nohighlight">\(\varphi\)</span> that can be measured.  To demonstrate that <strong>supersensitivity</strong> is possible requires condiseration of the sensitivity of our measurements to small changes in <span class="math notranslate nohighlight">\(\varphi\)</span>.  To do this, we must consider the statistical variations of the photon number and how they impact our estimation of changes in <span class="math notranslate nohighlight">\(\varphi\)</span>.</p>
+</section>
+<section id="demonstrating-supersensitivity">
+<h3>Demonstrating Supersensitivity<a class="headerlink" href="#demonstrating-supersensitivity" title="Link to this heading">#</a></h3>
+<p>In most experimental situations we are trying to measure small changes in <span class="math notranslate nohighlight">\(\varphi\)</span>.  For convenience, let’s rewrite our phase as <span class="math notranslate nohighlight">\(\varphi = \varphi_0 + \varphi_1\)</span>, where <span class="math notranslate nohighlight">\(\varphi_1\)</span> is a small change that we are trying to measure on top of an offset phase <span class="math notranslate nohighlight">\(\varphi_0\)</span>.  Let’s then imagine that we have some output signal <span class="math notranslate nohighlight">\(C(\varphi)\)</span>.  For a small enough <span class="math notranslate nohighlight">\(\varphi_1\)</span> we can use a Taylor expression to write</p>
+<div class="math notranslate nohighlight">
+\[C(\varphi) \approx C(\varphi_0) + \frac{\mathrm{d} C}{\mathrm{d} \varphi}\bigg|_{\varphi_0} \varphi_1 \mathrm{,}\]</div>
+<p>and from this we have that</p>
+<div class="math notranslate nohighlight">
+\[\varphi_1 \approx \frac{C(\varphi) - C(\varphi_0)}{\frac{\mathrm{d} C}{\mathrm{d} \varphi}\big|_{\varphi_0}}\]</div>
+<p>For the case of our noon-state interferometer, we might define <span class="math notranslate nohighlight">\(C_k(\varphi)\)</span> as the average number of coincidence counts after <span class="math notranslate nohighlight">\(k\)</span> incident photon events:</p>
+<div class="math notranslate nohighlight">
+\[C_k(\varphi) = k P_\mathrm{co}(\varphi)\mathrm{.}\]</div>
+<p>While we can use <span class="math notranslate nohighlight">\(C_k(\varphi)\)</span> to estimate small changes in phase <span class="math notranslate nohighlight">\(\varphi_1\)</span> as discussed above, the next interesting question regards the fundamental limit to the sensitivity of this measurement.  To do that, we must account for the probabilistic nature of the coincident counting process.  Given all technical noise could be removed, the last fundamental source of noise in our estimation of <span class="math notranslate nohighlight">\(\varphi_1\)</span> results from fluctuations in <span class="math notranslate nohighlight">\(C_k\)</span>.    Given that <span class="math notranslate nohighlight">\(C_k\)</span> exhibits a variance, the minimum variance in our estimate of <span class="math notranslate nohighlight">\(\varphi_1\)</span> from our measurements of <span class="math notranslate nohighlight">\(C_k\)</span> would then become</p>
+<div class="math notranslate nohighlight">
+\[\delta \varphi^2 = \Delta C_k^2/(\mathrm{d}C_k/\mathrm{d}\varphi|_{\varphi_0})^2 \]</div>
+<p>where <span class="math notranslate nohighlight">\(\Delta C_k^2\)</span> is the variance in the number of detected coincidence events after <span class="math notranslate nohighlight">\(k\)</span> trials.  What is the variance of <span class="math notranslate nohighlight">\(C_k\)</span>?  Given that each event has one of two outcomes (we either measure an event or we do not), the measurement is then analagous to that of a series of weighted coin tossess, and the variance follows the statistics of a <a class="reference external" href="https://en.wikipedia.org/wiki/Binomial_distribution#Expected_value_and_variance">binomial distribution</a>.</p>
+<p>For a binomial distribution we have that</p>
+<div class="math notranslate nohighlight">
+\[\Delta C_k^2 = k P_\mathrm{co}(\varphi) (1 - P_\mathrm{co}(\varphi))\mathrm{.}\]</div>
+<p>Let’s now consider our <span class="math notranslate nohighlight">\(N=2\)</span> NOON state interferometer specifically.  We have that</p>
+<div class="math notranslate nohighlight">
+\[\bigg | \frac{\mathrm{d}C_k}{\mathrm{d}\varphi} \bigg |^2 = k^2 \sin^2(2\varphi) \mathrm{.}\]</div>
+<p>After feeding this into our expression for the variance of our phase estimation, we find that</p>
+<div class="math notranslate nohighlight">
+\[\delta \varphi_{2002}^2 = \frac{1 - \cos^2(2\varphi)}{4k\sin^2(2\varphi_0)} = \frac{\sin^2(2\varphi_0 + 2\varphi_1)}{4k\sin^2(2\varphi_0)}\mathrm{.}\]</div>
+<p>Given we are assuming sufficiently small <span class="math notranslate nohighlight">\(\varphi_1\)</span>, we can do another Taylor expansion, finding that</p>
+<div class="math notranslate nohighlight">
+\[\delta \varphi_{2002}^2 \approx \frac{1}{4k} + \frac{\cos(2\varphi_0)\varphi_1}{k\sin(2\varphi_0)}\mathrm{.}\]</div>
+<p>The right hand coefficient on <span class="math notranslate nohighlight">\(\varphi_1\)</span> is important as it makes it clear that we want to operate where <span class="math notranslate nohighlight">\(\cos(2\varphi_0) = 0\)</span>, which is where the probability <span class="math notranslate nohighlight">\(P_\text{co} = 1/2\)</span>.  This makes sense since this is where we have the maximum slope of <span class="math notranslate nohighlight">\(C_k\)</span> and thus the maximum sensitivity to changes in <span class="math notranslate nohighlight">\(\varphi\)</span>.  An example phase offset point where this happens is <span class="math notranslate nohighlight">\(\varphi_0 = \pi/4\)</span> for our <span class="math notranslate nohighlight">\(N=2\)</span> NOON-state interferometer, which results in</p>
+<div class="math notranslate nohighlight">
+\[\delta \varphi^2_{2002} = \frac{1}{4 k} \mathrm{.}\]</div>
+<p>We can rewrite this result with respect to the number of input photons, <span class="math notranslate nohighlight">\(N_\mathrm{ph} = 2k\)</span>, which becomes</p>
+<div class="math notranslate nohighlight">
+\[\delta \varphi^2_{N00N} = \frac{1}{2 N_\mathrm{ph}}\mathrm{.}\]</div>
+<p>A classical interferometer follows the same statistical pattern (also equivalent to an N=1 NOON state at the input), but oscillates as <span class="math notranslate nohighlight">\(\cos(\varphi)\)</span> rather than <span class="math notranslate nohighlight">\(\cos(2\varphi)\)</span>.  If we were to go back through this same derivation, we would find that for a classical interferometer</p>
+<div class="math notranslate nohighlight">
+\[\delta \varphi^2_\mathrm{classical} = \frac{1}{N_\mathrm{ph}} \mathrm{,}\]</div>
+<p>with an optimal operating point of <span class="math notranslate nohighlight">\(\varphi_0 = \pi/2\)</span>.</p>
+<p>This means that our <span class="math notranslate nohighlight">\(N=2\)</span> NOON state interferometer has improved the fundamental variance of phase measurement by a factor of <span class="math notranslate nohighlight">\(2\)</span> compared to a classical interferometer, enabling superresolution.</p>
+<p>In general, larger reductions in variance could be achieved if we could keep increasing the order of the input NOON state.  One can show that the general result for an <span class="math notranslate nohighlight">\(N\)</span>-th order NOON state, the minimum variance scales as</p>
+<div class="math notranslate nohighlight">
+\[\delta \varphi^2_\mathrm{NOON} = \frac{1}{N N_\mathrm{ph}} \mathrm{,}\]</div>
+<p>with optimal operating points being <span class="math notranslate nohighlight">\(\varphi_0 = \pi/(2N)\)</span> (or any other <span class="math notranslate nohighlight">\(\varphi_0\)</span> where the probability of detection <span class="math notranslate nohighlight">\(P = 1/2\)</span>).</p>
+<p>In the post-lab questions below, you will explore extensions to <span class="math notranslate nohighlight">\(N = 3\)</span> and <span class="math notranslate nohighlight">\(N = 4\)</span> NOON-state interferometers.  In particular you will examine why realization of such interferometers is technically challenging to accomplish in the real world. However, we emphasize that <strong>these challenges aren’t fundamental – only technological.  Yet another example of why we need quantum engineers.</strong></p>
+</section>
+<section id="numerical-experiments">
+<h3>Numerical Experiments<a class="headerlink" href="#numerical-experiments" title="Link to this heading">#</a></h3>
+<p>In this section we explore a numerical experiment that accounts for the photon detection statistics of a classical interferometer and NOON-state interferometry.  The goal of this is to compare the noise performance of phase detection for each case.</p>
+<p>For such numerical experiments we just need to understand the probability of detection.  In general, the probability of detection goes as</p>
+<div class="math notranslate nohighlight">
+\[P_\text{NOON} = \sin^2(\varphi N/2)\mathrm{.}\]</div>
+<p>Note that if we set <span class="math notranslate nohighlight">\(N=1\)</span> this probability is that of a classical interferometer.  Also, it is important to consider that at the input you require <span class="math notranslate nohighlight">\(N\)</span> photons.  We need to consider this input photon number so that we make a fair comparison of the output statistics considering the same number of photons.</p>
+<p>At the output, we have statistics that follow a binomial distribution.  We either detect the desired event with probability <span class="math notranslate nohighlight">\(P\)</span>, or we down with probability <span class="math notranslate nohighlight">\(1-P\)</span>.  Most scientific programming environments can simulate such binomial statistics.  Using <code class="docutils literal notranslate"><span class="pre">numpy</span></code> we can call <code class="docutils literal notranslate"><span class="pre">numpy.random.binomial(n,</span> <span class="pre">P)</span></code> where <code class="docutils literal notranslate"><span class="pre">n</span></code> is the number of trials and <code class="docutils literal notranslate"><span class="pre">P</span></code> is the probability of detecting the desired outcome.</p>
+<p>In the following, we simulate the cases for <span class="math notranslate nohighlight">\(N=1\)</span> <span class="math notranslate nohighlight">\(N=2\)</span>, and <span class="math notranslate nohighlight">\(N=4\)</span> considering a fixed input of <span class="math notranslate nohighlight">\(N_\mathrm{ph}\)</span> photons.  To see the sensitivity to <span class="math notranslate nohighlight">\(\varphi\)</span> we consider that it is modulating in time such that</p>
+<div class="math notranslate nohighlight">
+\[\varphi = \varphi_0 + \delta\varphi \sin (2\pi f t)\mathrm{.}\]</div>
+<p>This is rather arbitrary for visualization, and we look over a period of 1 second with <span class="math notranslate nohighlight">\(f=4\)</span> Hz. We consider <span class="math notranslate nohighlight">\(\delta\varphi = 0.05\)</span>.  The value of <span class="math notranslate nohighlight">\(\varphi_0\)</span> is chosen for each case to put the probability at the highest slope where <span class="math notranslate nohighlight">\(P=0.5\)</span>.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span>
+
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+
+<span class="n">del_phi_0</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">N_ph</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">f</span>
+<span class="n">del_phi</span> <span class="o">=</span> <span class="n">del_phi_0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">omega</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">phi_cl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">phi_2002</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span>
+<span class="n">phi_4004</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">8</span>
+
+<span class="n">P_cl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">((</span><span class="n">phi_cl</span> <span class="o">+</span> <span class="n">del_phi</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">P_2002</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi_2002</span> <span class="o">+</span> <span class="n">del_phi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">P_4004</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">phi_4004</span> <span class="o">+</span> <span class="n">del_phi</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">N_cl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">N_ph</span><span class="p">,</span> <span class="n">P_cl</span><span class="p">)</span>
+<span class="n">N_2002</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">N_ph</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">P_2002</span><span class="p">)</span>
+<span class="n">N_4004</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">N_ph</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="n">P_4004</span><span class="p">)</span>
+
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">ax3</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">N_cl</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">);</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Counts'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'1001 (Classical)'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">N_2002</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Time (s)'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'2002'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="n">ax3</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">N_4004</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">);</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'4004'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<img alt="_images/fd1fbf27fd243b99cc453a1b163680c0a87f4a825fe9789e6b5f8961a1de2261.png" src="_images/fd1fbf27fd243b99cc453a1b163680c0a87f4a825fe9789e6b5f8961a1de2261.png"/>
+</div>
+</details>
+</div>
+<figure class="align-default" id="fig-noon-classical-comparison" style="width: 800px">
+<img alt="_images/fd1fbf27fd243b99cc453a1b163680c0a87f4a825fe9789e6b5f8961a1de2261.png" src="_images/fd1fbf27fd243b99cc453a1b163680c0a87f4a825fe9789e6b5f8961a1de2261.png"/>
+<figcaption>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Comparison of classical and NOON state interferomters.  The plot shows the recorded number of counts (photon counts for the classical case, or multiphoton events in the NOON state cases) for a fixed number of 1000 photons input to each interferomter.  The phase is modulated sinusoidally in time with an amplitude of 0.05 radians and frequency of 4 Hz.  Note the improved noise performance of the NOON-state interferometers.  If you reduce the phase modulation amplitude, you will notice that the NOON state interferometers can resolve phase modulations of lower amplitude than the classical interferometer.</span><a class="headerlink" href="#fig-noon-classical-comparison" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note how the modulation is clearly better resolved defined with higher signal-to-noise ratio as the photon order increases. This is even in-spite of progressively fewer collected events!</p>
+<p>You are encouraged to launch this notebook where you will find an interactive version of this code below.  Play with the number of input photons and the phase modulation amplitude and observe how the statistics change.  Note that if you progressively decrease the amplitude of the phase modulation, you will find a value where the modulation is almost impossible to discern for the classical <span class="math notranslate nohighlight">\(N=1\)</span> case, but easily discernable for the <span class="math notranslate nohighlight">\(N=4\)</span> case.</p>
+</section>
+<section id="post-lab-questions">
+<h3>Post-Lab Questions<a class="headerlink" href="#post-lab-questions" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>In practice, we find that imperfections in allignment photon detection prevent the achievement of improved sensitivity beyond what is possible with a classical interferometer.  To account for such imperfections, we can write the propability of coincidences more generally as <span class="math notranslate nohighlight">\(P(\varphi) = 
+\eta \big ( 1 - V \cos(N\varphi) \big )/2\)</span> for an <span class="math notranslate nohighlight">\(N\)</span> photon number NOON state.  Express the variance of the estimated phase for general <span class="math notranslate nohighlight">\(\eta\)</span> and <span class="math notranslate nohighlight">\(V\)</span>.</p></li>
+<li><p>Given <span class="math notranslate nohighlight">\(\eta = 1\)</span>, what are the constraints on <span class="math notranslate nohighlight">\(V\)</span> needed to ensure phase sensitivity beyond that of a classical interferometer?</p></li>
+<li><p>Derive the output state for <span class="math notranslate nohighlight">\(N = 3\)</span> and <span class="math notranslate nohighlight">\(N = 4\)</span> NOON state interference (<em>i.e.</em> output states <span class="math notranslate nohighlight">\(e\)</span> and <span class="math notranslate nohighlight">\(f\)</span> given you have  <span class="math notranslate nohighlight">\(N = 3\)</span> and <span class="math notranslate nohighlight">\(N = 4\)</span> NOON state inputs to the <span class="math notranslate nohighlight">\(c\)</span> and <span class="math notranslate nohighlight">\(d\)</span> ports in <a class="reference internal" href="#noon-state-interferometer"><span class="std std-numref">Fig. 12</span></a>).  For performing phase-measurmeents with high visibility for <span class="math notranslate nohighlight">\(N = 3\)</span> and <span class="math notranslate nohighlight">\(N = 4\)</span>, what are the requirements on post-selection?  Is a simple coincidence detector still sufficient?</p></li>
+<li><p>Discuss the engineering challenges involved with regard to state generation and post selection needed for true quantum-enhanced phase measurements with this approach. (For this question, it may be helpful to consider the challenges faced in the experiments discussed in Refs. <span id="id4">[<a class="reference internal" href="#id7" title="Tomohisa Nagata, Ryo Okamoto, Jeremy L. O'Brien, Keiji Sasaki, and Shigeki Takeuchi. Beating the Standard Quantum Limit with Four-Entangled Photons. Science, 316(5825):726–729, May 2007. Publisher: American Association for the Advancement of Science Section: Report. URL: https://science.sciencemag.org/content/316/5825/726 (visited on 2020-11-12), doi:10.1126/science.1138007.">NOOBrien+07</a>, <a class="reference internal" href="#id8" title="Ryo Okamoto, Holger F. Hofmann, Tomohisa Nagata, Jeremy L. O'Brien, Keiji Sasaki, and Shigeki Takeuchi. Beating the standard quantum limit: phase super-sensitivity of\$\less\$i\$\greater\$N\$\less\$/i\$\greater\$-photon interferometers. New Journal of Physics, 10(7):073033, July 2008. Publisher: IOP Publishing. URL: https://doi.org/10.1088/1367-2630/10/7/073033 (visited on 2022-08-05), doi:10.1088/1367-2630/10/7/073033.">OHN+08</a>]</span>.</p></li>
+</ol>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id5">
+<div class="citation-list" role="list">
+<div class="citation" id="id9" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a href="#id2" role="doc-backlink">Bra17</a><span class="fn-bracket">]</span></span>
+<p>Agata M. Brańczyk. Hong-Ou-Mandel Interference. October 2017. arXiv:1711.00080 [quant-ph]. URL: <a class="reference external" href="http://arxiv.org/abs/1711.00080">http://arxiv.org/abs/1711.00080</a> (visited on 2022-07-04), <a class="reference external" href="https://doi.org/10.48550/arXiv.1711.00080">doi:10.48550/arXiv.1711.00080</a>.</p>
+</div>
+<div class="citation" id="id10" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a href="#id1" role="doc-backlink">HOM87</a><span class="fn-bracket">]</span></span>
+<p>C. K. Hong, Z. Y. Ou, and L. Mandel. Measurement of subpicosecond time intervals between two photons by interference. <em>Physical Review Letters</em>, 59(18):2044–2046, November 1987. Publisher: American Physical Society. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRevLett.59.2044">https://link.aps.org/doi/10.1103/PhysRevLett.59.2044</a> (visited on 2022-07-13), <a class="reference external" href="https://doi.org/10.1103/PhysRevLett.59.2044">doi:10.1103/PhysRevLett.59.2044</a>.</p>
+</div>
+<div class="citation" id="id7" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>NOOBrien+07<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a href="#id3" role="doc-backlink">1</a>,<a href="#id4" role="doc-backlink">2</a>)</span>
+<p>Tomohisa Nagata, Ryo Okamoto, Jeremy L. O'Brien, Keiji Sasaki, and Shigeki Takeuchi. Beating the Standard Quantum Limit with Four-Entangled Photons. <em>Science</em>, 316(5825):726–729, May 2007. Publisher: American Association for the Advancement of Science Section: Report. URL: <a class="reference external" href="https://science.sciencemag.org/content/316/5825/726">https://science.sciencemag.org/content/316/5825/726</a> (visited on 2020-11-12), <a class="reference external" href="https://doi.org/10.1126/science.1138007">doi:10.1126/science.1138007</a>.</p>
+</div>
+<div class="citation" id="id8" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>OHN+08<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a href="#id3" role="doc-backlink">1</a>,<a href="#id4" role="doc-backlink">2</a>)</span>
+<p>Ryo Okamoto, Holger F. Hofmann, Tomohisa Nagata, Jeremy L. O'Brien, Keiji Sasaki, and Shigeki Takeuchi. Beating the standard quantum limit: phase super-sensitivity of\$\less\$i\$\greater\$N\$\less\$/i\$\greater\$-photon interferometers. <em>New Journal of Physics</em>, 10(7):073033, July 2008. Publisher: IOP Publishing. URL: <a class="reference external" href="https://doi.org/10.1088/1367-2630/10/7/073033">https://doi.org/10.1088/1367-2630/10/7/073033</a> (visited on 2022-08-05), <a class="reference external" href="https://doi.org/10.1088/1367-2630/10/7/073033">doi:10.1088/1367-2630/10/7/073033</a>.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+<script>kernelName = 'python3'</script>
+</article>
+<footer class="prev-next-footer">
+<div class="prev-next-area">
+<a class="left-prev" href="BASICS-quantum-optics-basics.html" title="previous page">
+<i class="fa-solid fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">BASICS – Quantum Optics</p>
+</div>
+</a>
+<a class="right-next" href="T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">LAB – Interference, Entanglement and Quantum-Enhanced Metrology</p>
+</div>
+<i class="fa-solid fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> Contents
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entangled-photon-pair-generation-and-measurement">Entangled Photon Pair Generation and Measurement</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prelab-1-questions">Prelab 1 Questions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-photon-interference-and-interaction-free-measurement">Single-Photon Interference and Interaction-Free Measurement</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prelab-2-questions">Prelab 2 Questions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interference-of-two-single-photons-the-hong-ou-mandel-effect">Interference of Two Single Photons: The Hong-Ou-Mandel Effect</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prelab-3-questions">Prelab 3 Questions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taking-things-further-quantum-enhanced-sensing-with-noon-states">Taking Things Further: Quantum Enhanced Sensing with NOON States</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-phase-estimation-in-an-n-2-noon-state-interferometer">Analysis of Phase Estimation in an <span class="math notranslate nohighlight">\(N=2\)</span> NOON State Interferometer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demonstrating-supersensitivity">Demonstrating Supersensitivity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-experiments">Numerical Experiments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#post-lab-questions">Post-Lab Questions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+</nav></div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+<div class="bd-footer-content__inner container">
+<div class="footer-item">
+<p class="component-author">
+By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
+</p>
+</div>
+<div class="footer-item">
+<p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+</p>
+</div>
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+</div>
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+<footer class="bd-footer">
+</footer>
+<script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script></body>
+</html>

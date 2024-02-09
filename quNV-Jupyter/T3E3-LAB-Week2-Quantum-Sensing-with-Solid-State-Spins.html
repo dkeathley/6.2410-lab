@@ -1,0 +1,555 @@
+
+<!DOCTYPE html>
+
+<html data-content_root="../" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>LAB – Quantum Sensing With Solid State Spins (Week 2) — 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet"/>
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet"/>
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet"/>
+<link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="../_static/styles/sphinx-book-theme.css?v=384b581d" rel="stylesheet" type="text/css"/>
+<link href="../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
+<link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-thebe.css?v=4fa983c6" rel="stylesheet" type="text/css"/>
+<link href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" rel="preload"/>
+<link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" rel="preload"/>
+<script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+<script src="../_static/doctools.js?v=888ff710"></script>
+<script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="../_static/copybutton.js?v=f281be69"></script>
+<script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script src="../_static/design-tabs.js?v=36754332"></script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+<script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+<script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+<script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'quNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins';</script>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="../T1-3E2-Quantum-Computation-Lab.html" rel="next" title="T1:3E2 – Quantum Computation Lab"/>
+<link href="T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.html" rel="prev" title="LAB - Quantum Sensing with Solid State Spins (Week 1)"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+<link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/></head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
+<a class="skip-link" href="#main-content" id="pst-skip-link">Skip to main content</a>
+<div id="pst-scroll-pixel-helper"></div>
+<button class="btn rounded-pill" id="pst-back-to-top" type="button">
+<i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<header class="bd-header navbar navbar-expand-lg bd-navbar">
+</header>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item">
+<a class="navbar-brand logo" href="../intro.html">
+<img alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home" class="logo__image only-light" src="../_static/logo-ibm.jpg"/>
+<script>document.write(`<img src="../_static/logo-ibm.jpg" class="logo__image only-dark" alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home"/>`);</script>
+</a></div>
+<div class="sidebar-primary-item">
+<script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links bd-docs-nav">
+<div class="bd-toc-item navbar-nav active">
+<ul class="nav bd-sidenav bd-sidenav__home-link">
+<li class="toctree-l1">
+<a class="reference internal" href="../intro.html">
+                    6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
+                </a>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introductory Material</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../BASICS-quantum-optics-basics.html">BASICS – Quantum Optics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T3E1 -- Interference, Entanglement, Quantum-Enhanced Sensing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html">TEXT – Interference, Entanglement and Quantum-Enhanced Metrology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html">LAB – Interference, Entanglement and Quantum-Enhanced Metrology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../T3E1-EXTRAS--rigorous-solution-MZI.html">EXTRAS – Rigorous Solution of Mach-Zender Interferometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../T3E1-EXTRAS-interference-2-homodyne-detection.html">EXTRAS – Homodyne Detection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T2E1 -- Quantum Information and Quantum Key Distribution</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../T2E1-TEXT-HBT.html">TEXT - Introduction to single photons with the quED (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../T2E1-LAB-HBT.html">LAB – Hanbury Brown - Twiss Lab (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../T2E1-TEXT-QKD.html">TEXT – QKD (Week 2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../T2E1-LAB-BB84.html">LAB – QKD (Week 2)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T3E3 -- Solid State Spins</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.html">TRAINING - Interfacing with the Vector Network Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.html">TEXT: Introduction to NV centers in diamond and cavity-based magnetometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.html">LAB - Quantum Sensing with Solid State Spins (Week 1)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">LAB – Quantum Sensing With Solid State Spins (Week 2)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T1:3E2 -- Quantum Computation Lab (COMING SOON)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../T1-3E2-Quantum-Computation-Lab.html">T1:3E2 – Quantum Computation Lab</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Final Projects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../FINAL-PROJECTS.html">Final Design Project</a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content">
+<div class="sbt-scroll-pixel-helper"></div>
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__primary" title="Toggle primary sidebar">
+<span class="fa-solid fa-bars"></span>
+</label></div>
+</div>
+<div class="header-article-items__end">
+<div class="header-article-item">
+<div class="article-header-buttons">
+<div class="dropdown dropdown-launch-buttons">
+<button aria-expanded="false" aria-label="Launch interactive content" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fas fa-rocket"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/quNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.ipynb" target="_blank" title="Launch onBinder">
+<span class="btn__icon-container">
+<img src="../_static/images/logo_binder.svg"/>
+</span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/quNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.ipynb" target="_blank" title="Launch onColab">
+<span class="btn__icon-container">
+<img src="../_static/images/logo_colab.png"/>
+</span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="dropdown dropdown-source-buttons">
+<button aria-expanded="false" aria-label="Source repositories" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fab fa-github"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm btn-source-repository-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://github.com/dkeathley/S23-6.2410-lab" target="_blank" title="Source repository">
+<span class="btn__icon-container">
+<i class="fab fa-github"></i>
+</span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+<li><a class="btn btn-sm btn-source-issues-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://github.com/dkeathley/S23-6.2410-lab/issues/new?title=Issue%20on%20page%20%2FquNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.html&amp;body=Your%20issue%20content%20here." target="_blank" title="Open an issue">
+<span class="btn__icon-container">
+<i class="fas fa-lightbulb"></i>
+</span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="dropdown dropdown-download-buttons">
+<button aria-expanded="false" aria-label="Download this page" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fas fa-download"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm btn-download-source-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="../_sources/quNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.ipynb" target="_blank" title="Download source file">
+<span class="btn__icon-container">
+<i class="fas fa-file"></i>
+</span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+<li>
+<button class="btn btn-sm btn-download-pdf-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" onclick="window.print()" title="Print to PDF">
+<span class="btn__icon-container">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+</ul>
+</div>
+<button class="btn btn-sm btn-fullscreen-button" data-bs-placement="bottom" data-bs-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
+<span class="btn__icon-container">
+<i class="fas fa-expand"></i>
+</span>
+</button>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__secondary" title="Toggle secondary sidebar">
+<span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+</div>
+</div>
+</div>
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>LAB – Quantum Sensing With Solid State Spins (Week 2)</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aim-3-achieve-strong-coupling-between-nv-centers-and-the-microwave-resonator">Aim 3: Achieve strong coupling between NV centers and the microwave resonator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prelab">Prelab</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#laser-safety">Laser safety</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-with-hyperfine-transitions">Simulation with hyperfine transitions</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-exercise">Lab Exercise</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#i-interface-with-the-power-supply">i) Interface with the power supply</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-aligning-the-laser-to-excite-the-diamond">ii) Aligning the laser to excite the diamond</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-stack-everything-together">iii) Stack everything together!</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-realign-the-laser-to-excite-the-diamond">iv) Realign the laser to excite the diamond</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#v-optimize-the-position-of-the-loop-coupler">v) Optimize the position of the loop coupler</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vi-write-an-experimental-sequence-to-produce-a-2d-map-of-frequency-vs-magnetic-field">vi) Write an experimental sequence to produce a 2D map of frequency vs magnetic field</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vii-run-the-experimental-sequence-and-determine-if-you-have-achieved-strong-coupling">vii) Run the experimental sequence and determine if you have achieved strong coupling</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#viii-estimate-the-sensitivity">viii) Estimate the sensitivity</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article">
+<section class="tex2jax_ignore mathjax_ignore" id="lab-quantum-sensing-with-solid-state-spins-week-2">
+<h1>LAB – Quantum Sensing With Solid State Spins (Week 2)<a class="headerlink" href="#lab-quantum-sensing-with-solid-state-spins-week-2" title="Link to this heading">#</a></h1>
+<section id="aim-3-achieve-strong-coupling-between-nv-centers-and-the-microwave-resonator">
+<h2>Aim 3: Achieve strong coupling between NV centers and the microwave resonator<a class="headerlink" href="#aim-3-achieve-strong-coupling-between-nv-centers-and-the-microwave-resonator" title="Link to this heading">#</a></h2>
+<section id="prelab">
+<h3>Prelab<a class="headerlink" href="#prelab" title="Link to this heading">#</a></h3>
+<section id="laser-safety">
+<h4>Laser safety<a class="headerlink" href="#laser-safety" title="Link to this heading">#</a></h4>
+<p>In this week, you will be running experiments with a free-space 532nm laser that goes up to <strong>3W</strong>. Given that this is a <a class="reference external" href="https://www.lasersafetyfacts.com/laserclasses.html">class 4</a> laser, you must first undergo proper laser safety training.</p>
+<p>In addition to the training session conducted by MIT EHS, we strongly urge you to read through the Laser Safety page <a class="reference external" href="https://ehs.mit.edu/radiological-program/laser-safety/">here</a>.</p>
+<p>The teaching staff will also supply laser safety glasses (<a class="reference external" href="https://www.thorlabs.com/thorproduct.cfm?partnumber=LG12">LG12 from Thorlabs</a> with OD7 at 532<span class="math notranslate nohighlight">\(~\)</span>nm). You must be wearing these during the alignment step (step ii in Lab Exercise below) and during the experimental sequence (step vii).</p>
+<p><strong>If you have any questions or concerns regarding laser safety, do not hesitate to reach out to the teaching staff and MIT EHS (contact Judith Reilly, <a class="reference external" href="mailto:jmreilly%40mit.edu">jmreilly<span>@</span>mit<span>.</span>edu</a>).</strong></p>
+</section>
+<section id="simulation-with-hyperfine-transitions">
+<h4>Simulation with hyperfine transitions<a class="headerlink" href="#simulation-with-hyperfine-transitions" title="Link to this heading">#</a></h4>
+<p>In the previous session, you were able to simulate avoided crossing for a single hyperfine transition. Since NV centers in the diamond(s) that you will be using in the Lab Exercise parimarily constitute N-14 isotope, which is spin-1, you should expect to see <em>3</em> hyperfine transitions.</p>
+<figure class="align-default" id="hyperfine-transitions-fig">
+<a class="reference internal image-reference" href="../_images/hyperfine_transitions.png"><img alt="../_images/hyperfine_transitions.png" src="../_images/hyperfine_transitions.png" style="width: 400px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 59 </span><span class="caption-text">Ground-state energy level structure of a single NV center. Left: electron spin levels. The solid black arrow depicts optical electron spin polarization to the <span class="math notranslate nohighlight">\(m_S\)</span> = 0 state. Right: coupled electron-nuclear spin levels in the <span class="math notranslate nohighlight">\(|m_S\rangle\)</span> = +1  electronic spin state. Solid red arrows show
+nuclear spin preserving transitions (<span class="math notranslate nohighlight">\(1_+, 2_+\)</span>, and <span class="math notranslate nohighlight">\(3_+\)</span>). Dashed green arrows show nuclear spin exchanging transitions (<span class="math notranslate nohighlight">\(a_+, b_+, c_+,\)</span> and <span class="math notranslate nohighlight">\(d_+\)</span>). Figure adapted from <a class="reference external" href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.103.L140102">Huillery et al.</a>.</span><a class="headerlink" href="#hyperfine-transitions-fig" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Please write a Python script that shows the 2D reflection spectra for 3 hyperfine transitions, spaced 2 MHz apart.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Your code goes here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="lab-exercise">
+<h3>Lab Exercise<a class="headerlink" href="#lab-exercise" title="Link to this heading">#</a></h3>
+<section id="i-interface-with-the-power-supply">
+<h4>i) Interface with the power supply<a class="headerlink" href="#i-interface-with-the-power-supply" title="Link to this heading">#</a></h4>
+<p>Similar to interfacing with the VNA during T3E3-TRAINING, you will also need to be able to control the power supply via Python. First, install the packages <code class="docutils literal notranslate"><span class="pre">qcodes</span></code>, <code class="docutils literal notranslate"><span class="pre">qcodes_contrib_drivers</span></code>, and <code class="docutils literal notranslate"><span class="pre">pyserial</span></code>. Then, connect the power supply’s USB port to the laptop. Run the following cell to determine which serial port it occupies.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">serial.tools.list_ports</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">serial</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">list_ports</span><span class="o">.</span><span class="n">comports</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">serial.tools.list_ports</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">serial</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">list_ports</span><span class="o">.</span><span class="n">comports</span><span class="p">()))</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named 'serial'
+</pre></div>
+</div>
+</div>
+</div>
+<p>Alternatively, you can also run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">serial.tools.list_ports</span></code> directly in terminal.</p>
+<p>Following the example shown <a class="reference external" href="https://qcodes.github.io/Qcodes_contrib_drivers/examples/Rohde_Schwarz_HMP4040.html">here</a>, make sure you can set Channel 1’s voltage and turn Channel 1’s output on/off via Python commands.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Your code goes here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ii-aligning-the-laser-to-excite-the-diamond">
+<h4>ii) Aligning the laser to excite the diamond<a class="headerlink" href="#ii-aligning-the-laser-to-excite-the-diamond" title="Link to this heading">#</a></h4>
+<p>Inside the magnetic shield, there should be a 3D printed component with a thick microscope glass slide (square-ish).</p>
+<figure class="align-default" id="d-printed-mount-fig">
+<a class="reference internal image-reference" href="../_images/week2_3d_printed_mount.png"><img alt="../_images/week2_3d_printed_mount.png" src="../_images/week2_3d_printed_mount.png" style="width: 300px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 60 </span><span class="caption-text">3D-printed mount for diamond samples.</span><a class="headerlink" href="#d-printed-mount-fig" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Place a purple diamond on the glass slide close to the center. At this point, call your TA over to the station to turn on the laser (heavily attenuated such that the optical power is much less than 3 W). <em><strong>Please wear proper laser safety glasses now.</strong></em></p>
+<p>A 561<span class="math notranslate nohighlight">\(~\)</span>nm <a class="reference external" href="https://www.iridian.ca/learning_center/light-notes/basics-long-pass-filters/">optical longpass filter</a> will be placed to contain the 532<span class="math notranslate nohighlight">\(~\)</span>nm laser light. Your TA will then align the laser light to ensure it is incident on the diamond by turning the knobs of the 45-degree mirror at the bottom of the cage (see picture below).</p>
+<figure class="align-default" id="mirror-knobs-fig">
+<a class="reference internal image-reference" href="../_images/week2_mirror_knobs.png"><img alt="../_images/week2_mirror_knobs.png" src="../_images/week2_mirror_knobs.png" style="width: 300px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 61 </span><span class="caption-text">The 45-degree kinematic mirror mount with two knobs used for aligning the laser beam with respect to the diamond samples.</span><a class="headerlink" href="#mirror-knobs-fig" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Upon incidence, still with your laser safety glasses on, you should be able to see <em>fluorescence</em> emanating from the diamond. The fluorescence stems from the atomic transitions between the ground and excited states of the triplet manifold <span class="math notranslate nohighlight">\(^3 E \leftrightarrow ^3 A\)</span> in NV centers’ level structure. Recall from T3E3-TEXT that the <em>direct</em> emission from the exited state to the ground state corresponds to 637<span class="math notranslate nohighlight">\(~\)</span>nm. <u>If instead of a 561<span class="math notranslate nohighlight">\(~\)</span>nm longpass filter, we have a 638<span class="math notranslate nohighlight">\(~\)</span>nm optical longpass filter in place. Will you still be able to observe fluorescence? Why or why not?</u> You may find the photoluminescence spectrum below helpful.</p>
+<figure class="align-default" id="nv-spectrum-fig">
+<a class="reference internal image-reference" href="../_images/week2_nv_spectrum.png"><img alt="../_images/week2_nv_spectrum.png" src="../_images/week2_nv_spectrum.png" style="width: 500px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 62 </span><span class="caption-text">NV center’s photoluminescence spectrum. Figure adapted froom <a class="reference external" href="https://www.science.org/doi/10.1126/science.276.5321.2012">Gruber <em>et al.</em></a>.</span><a class="headerlink" href="#nv-spectrum-fig" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now, the TA will turn off the laser and remove the longpass filter. Put the purple diamond back inside its original container. Again, with the pair of tweezers, grab the <em>non-purple</em> diamond and place it on the glass slide close to the center. Ask the TA to put the longpass filter back on top of the magnetic shield and turn on the laser again. <em><strong>Please make sure again you are wearing proper laser safety glasses.</strong></em> The TA will once again align the laser light to be incident on the diamond. <u>Are you able to observe any fluorescence? Explain why or why not? </u></p>
+<p>The TA will turn off the laser once again.</p>
+</section>
+<section id="iii-stack-everything-together">
+<h4>iii) Stack everything together!<a class="headerlink" href="#iii-stack-everything-together" title="Link to this heading">#</a></h4>
+<p>Recall from Aim 1, you had to stack the microwave resonators inside the magnetic shield. This time, you will stack even more things with your now seasoned tweezer skills.</p>
+<p>The diagram shown below is a reference to what you will be stacking:</p>
+<figure class="align-default" id="stack-fig">
+<a class="reference internal image-reference" href="../_images/week2_stack.png"><img alt="../_images/week2_stack.png" src="../_images/week2_stack.png" style="width: 700px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 63 </span><span class="caption-text">Diagram depicting a combined stack of the magnetic resonators and a diamond sample placed inside a magnetic shield.</span><a class="headerlink" href="#stack-fig" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>You need to first remove the 3D printed component with the glass slide, and replace it with a custom-machined PTFE (Teflon) disk on the <a class="reference external" href="https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=1535">retaining ring</a> inside the magnetic shield. Then, place one of the resonators (let’s call it resonator 1) on top of the PTFE disk, which should have a divet that (sort of) fits the microwave cavity. Next, put a thin microscope slide on top of resonator 1 in place of the “heat sink wafer”.</p>
+<p>Put the other resonator (call it resonator 2) on top of the thin glass slide. Try to <em>align resonator 2 to resonator 1</em> laterally.</p>
+<p>Finally, use the pair of tweezers and “drop” the diamond inside resonator 2 (central hole). You should have the diamond standing on its thin side that is 0.5<span class="math notranslate nohighlight">\(~\)</span>mm thick. A good trick is to use the tweezers to nudge it to a standing position after dropping it into resonator 2. See the picture below for reference. Let the TA know if you are having troubles.</p>
+<figure class="align-default" id="diamond-in-cavity-fig">
+<a class="reference internal image-reference" href="../_images/week2_diamond_in_cavity.png"><img alt="../_images/week2_diamond_in_cavity.png" src="../_images/week2_diamond_in_cavity.png" style="width: 300px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 64 </span><span class="caption-text">Example of a microwave cavity with diamond samples placed inside, each diamond standing vertically on its thin side (0.5<span class="math notranslate nohighlight">\(~\)</span>mm).</span><a class="headerlink" href="#diamond-in-cavity-fig" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="iv-realign-the-laser-to-excite-the-diamond">
+<h4>iv) Realign the laser to excite the diamond<a class="headerlink" href="#iv-realign-the-laser-to-excite-the-diamond" title="Link to this heading">#</a></h4>
+<p>We will now repeat step (ii). Let the TA know you are ready to turn on the laser and align the laser beam for you. <strong>Again, please wear your laser safety glasses now.</strong> This time, the attenuated laser beam is incident on the diamond <em>through the holes of the resonators</em>. You should still be able to “see” fluorescence from NV centers.</p>
+</section>
+<section id="v-optimize-the-position-of-the-loop-coupler">
+<h4>v) Optimize the position of the loop coupler<a class="headerlink" href="#v-optimize-the-position-of-the-loop-coupler" title="Link to this heading">#</a></h4>
+<p>In order to see avoided-crossing, you want to maximize the effective <em>cooperativity</em> of the spin-cavity system. The cooperativity <span class="math notranslate nohighlight">\(C\)</span> scales with <span class="math notranslate nohighlight">\(1/\kappa_c\)</span>. In other words, we must ensure the quality factor is as high as possible, <em>while keeping the loop coupler sufficiently close to be able to probe to cavity’s frequency response</em>. Do your best to optimize the position of the loop coupler by changing its <span class="math notranslate nohighlight">\(z\)</span> coordinate to achieve the highest quality factor, i.e. smallest cavity linewidth. Unfortunately, its <span class="math notranslate nohighlight">\(x,y\)</span> positions will be fixed by the iris, which is intended as both an additional magnetic shield and laser block. Hence, you may need to adjust the <em>tilt</em> slightly in addition to <span class="math notranslate nohighlight">\(z\)</span>.</p>
+<figure class="align-default" id="iris-adjust-fig">
+<a class="reference internal image-reference" href="../_images/week2_iris_adjust.png"><img alt="../_images/week2_iris_adjust.png" src="../_images/week2_iris_adjust.png" style="width: 600px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 65 </span><span class="caption-text">(left) Picture of an iris wrapping around the looper coupler. (right) Diagram showing the degrees of freedom for optimizing the loop coupler’s position.</span><a class="headerlink" href="#iris-adjust-fig" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Be sure to avoid knocking over the resonator stack with the diamond that you have carefully constructed while optimizing the loop coupler’s position.</p>
+</section>
+<section id="vi-write-an-experimental-sequence-to-produce-a-2d-map-of-frequency-vs-magnetic-field">
+<h4>vi) Write an experimental sequence to produce a 2D map of frequency vs magnetic field<a class="headerlink" href="#vi-write-an-experimental-sequence-to-produce-a-2d-map-of-frequency-vs-magnetic-field" title="Link to this heading">#</a></h4>
+<p>From T3E3-TRAINING, you were able to interface with the VNA via Python. And from part (i), you were able to interface with the power supply, which effectively drives the Helmholtz coil and thereby the amount of the mangetic field being generated.</p>
+<p>Below, please write an experiment sequence that performs a 2D sweep over both frequency and magnetic field. The sweep over frequency is essentially done for you by the VNA. Your task here will be to grab a trace off the VNA (with carefully defined frequency center and span corresponding to the cavity signal), and sweep over a range of voltages. The voltage range, i.e. the sweeping range of the magnetic field strength, should cover the required field strength to shift the NV centers’ resonance to match the cavity resonance. This was calculated by you in Aim 1’s Prelab.</p>
+<p><strong>Importantly, for each magnetic field strength, you should obtain an <em>average</em> of a frequency trace.</strong> In your script, please also compute the variance of each point.</p>
+<p>You should run a pseudo-experiment without the laser on to make sure the experimental sequence runs smoothly. Please also check that you can generate a 2D map of your acquired “data”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Your code goes here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="vii-run-the-experimental-sequence-and-determine-if-you-have-achieved-strong-coupling">
+<h4>vii) Run the experimental sequence and determine if you have achieved strong coupling<a class="headerlink" href="#vii-run-the-experimental-sequence-and-determine-if-you-have-achieved-strong-coupling" title="Link to this heading">#</a></h4>
+<p>Now, it is time to reproduce the avoided-crossing data you have seen in the demo and in your simulation results from Aim 2!</p>
+<p>Call your TA over when you have reached this step. <strong>Remeber to put on your laser safety glasses.</strong> After your TA closes the iris (if you have not done so already) and places the foam (an additional laser block) above it, the laser will be turned on to its max power. At this point, run the experimental sequence you have scripted.</p>
+<p>If the cavity quality factor is narrow enough, and the coupling strength between NV centers and the microwave resonator is sufficiently strong, the spin-cavity system should achieve strong coupling. In this case,
+your 2D map should contain “kinks” at each of the three hyperfine transitions.</p>
+<p>If you are having troubles, discuss with your teammates about ways to increase the coupling strength, SNR, …etc. Consult with your TA afterwards.</p>
+<p>Once you have obtained data exhibiting strong coupling, try increasing the number of VNA traces being averaged over per each magnetic field strength to see if the contrast improves further.</p>
+</section>
+<section id="viii-estimate-the-sensitivity">
+<h4>viii) Estimate the sensitivity<a class="headerlink" href="#viii-estimate-the-sensitivity" title="Link to this heading">#</a></h4>
+<p>With your acquired data, please estimate the maximal magnetic field sensitivity you have achieved. The phase noise of the spectrum analyzer in the VNA is measured to be <a class="reference external" href="https://github.com/jankae/LibreVNA/blob/master/Documentation/UserManual/specsheet.pdf">-103<span class="math notranslate nohighlight">\(~\)</span>dBc/Hz </a> at 1<span class="math notranslate nohighlight">\(~\)</span>GHz (for simplicity, we will assume the noise level is the same for our frequencies).</p>
+<p>You should:</p>
+<ul class="simple">
+<li><p>First, convert the phase noise <span class="math notranslate nohighlight">\(d\phi\)</span> to <span class="math notranslate nohighlight">\(V_{\text{rms}}/\sqrt{\text{Hz}}\)</span>. For this, you will need to obtain the input power from either the libreVNA GUI or use the Python interface.</p></li>
+<li><p>Second, re-plot the 2D data for <span class="math notranslate nohighlight">\(dV/dB\)</span>, where <span class="math notranslate nohighlight">\(B\)</span> is the magnetic field strength and <span class="math notranslate nohighlight">\(V\)</span> is the r.m.s. voltage <span class="math notranslate nohighlight">\(V_{\text{rms}}\)</span>. Note that the data you extract from the VNA via Python is in dBm (power).</p></li>
+<li><p>Third, find the maximum <span class="math notranslate nohighlight">\(dV/dB\)</span> and compute <span class="math notranslate nohighlight">\(d\phi/(dV/dB)_{\text{max}}\)</span> in pT/<span class="math notranslate nohighlight">\(\sqrt{\text{Hz}}\)</span>. This would be your maximum magnetic field sensitivity, assuming your noise floor is limited mainly by the VNA’s phase noise.</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+<script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./quNV-Jupyter"
+        },
+        predefinedOutput: true
+    }
+    </script>
+<script>kernelName = 'python3'</script>
+</article>
+<footer class="prev-next-footer">
+<div class="prev-next-area">
+<a class="left-prev" href="T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.html" title="previous page">
+<i class="fa-solid fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">LAB - Quantum Sensing with Solid State Spins (Week 1)</p>
+</div>
+</a>
+<a class="right-next" href="../T1-3E2-Quantum-Computation-Lab.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">T1:3E2 – Quantum Computation Lab</p>
+</div>
+<i class="fa-solid fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> Contents
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aim-3-achieve-strong-coupling-between-nv-centers-and-the-microwave-resonator">Aim 3: Achieve strong coupling between NV centers and the microwave resonator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prelab">Prelab</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#laser-safety">Laser safety</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-with-hyperfine-transitions">Simulation with hyperfine transitions</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-exercise">Lab Exercise</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#i-interface-with-the-power-supply">i) Interface with the power supply</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-aligning-the-laser-to-excite-the-diamond">ii) Aligning the laser to excite the diamond</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-stack-everything-together">iii) Stack everything together!</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-realign-the-laser-to-excite-the-diamond">iv) Realign the laser to excite the diamond</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#v-optimize-the-position-of-the-loop-coupler">v) Optimize the position of the loop coupler</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vi-write-an-experimental-sequence-to-produce-a-2d-map-of-frequency-vs-magnetic-field">vi) Write an experimental sequence to produce a 2D map of frequency vs magnetic field</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vii-run-the-experimental-sequence-and-determine-if-you-have-achieved-strong-coupling">vii) Run the experimental sequence and determine if you have achieved strong coupling</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#viii-estimate-the-sensitivity">viii) Estimate the sensitivity</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav></div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+<div class="bd-footer-content__inner container">
+<div class="footer-item">
+<p class="component-author">
+By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
+</p>
+</div>
+<div class="footer-item">
+<p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+</p>
+</div>
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+</div>
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+<footer class="bd-footer">
+</footer>
+<script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script></body>
+</html>

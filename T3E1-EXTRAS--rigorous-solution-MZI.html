@@ -1,0 +1,545 @@
+
+<!DOCTYPE html>
+
+<html data-content_root="./" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>EXTRAS – Rigorous Solution of Mach-Zender Interferometer — 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet"/>
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet"/>
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet"/>
+<link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="_static/styles/sphinx-book-theme.css?v=384b581d" rel="stylesheet" type="text/css"/>
+<link href="_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
+<link href="_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="_static/sphinx-thebe.css?v=4fa983c6" rel="stylesheet" type="text/css"/>
+<link href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" rel="preload"/>
+<link as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" rel="preload"/>
+<script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/documentation_options.js?v=9eb32ce0"></script>
+<script src="_static/doctools.js?v=888ff710"></script>
+<script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="_static/copybutton.js?v=f281be69"></script>
+<script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="_static/togglebutton.js?v=4a39c7ea"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script src="_static/design-tabs.js?v=36754332"></script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+<script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+<script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+<script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'T3E1-EXTRAS--rigorous-solution-MZI';</script>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="T3E1-EXTRAS-interference-2-homodyne-detection.html" rel="next" title="EXTRAS – Homodyne Detection"/>
+<link href="T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html" rel="prev" title="LAB – Interference, Entanglement and Quantum-Enhanced Metrology"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+<link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/></head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
+<a class="skip-link" href="#main-content" id="pst-skip-link">Skip to main content</a>
+<div id="pst-scroll-pixel-helper"></div>
+<button class="btn rounded-pill" id="pst-back-to-top" type="button">
+<i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<header class="bd-header navbar navbar-expand-lg bd-navbar">
+</header>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item">
+<a class="navbar-brand logo" href="intro.html">
+<img alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home" class="logo__image only-light" src="_static/logo-ibm.jpg"/>
+<script>document.write(`<img src="_static/logo-ibm.jpg" class="logo__image only-dark" alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home"/>`);</script>
+</a></div>
+<div class="sidebar-primary-item">
+<script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links bd-docs-nav">
+<div class="bd-toc-item navbar-nav active">
+<ul class="nav bd-sidenav bd-sidenav__home-link">
+<li class="toctree-l1">
+<a class="reference internal" href="intro.html">
+                    6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
+                </a>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introductory Material</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="BASICS-quantum-optics-basics.html">BASICS – Quantum Optics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T3E1 -- Interference, Entanglement, Quantum-Enhanced Sensing</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html">TEXT – Interference, Entanglement and Quantum-Enhanced Metrology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html">LAB – Interference, Entanglement and Quantum-Enhanced Metrology</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">EXTRAS – Rigorous Solution of Mach-Zender Interferometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T3E1-EXTRAS-interference-2-homodyne-detection.html">EXTRAS – Homodyne Detection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T2E1 -- Quantum Information and Quantum Key Distribution</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T2E1-TEXT-HBT.html">TEXT - Introduction to single photons with the quED (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2E1-LAB-HBT.html">LAB – Hanbury Brown - Twiss Lab (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2E1-TEXT-QKD.html">TEXT – QKD (Week 2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2E1-LAB-BB84.html">LAB – QKD (Week 2)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T3E3 -- Solid State Spins</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.html">TRAINING - Interfacing with the Vector Network Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.html">TEXT: Introduction to NV centers in diamond and cavity-based magnetometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.html">LAB - Quantum Sensing with Solid State Spins (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.html">LAB – Quantum Sensing With Solid State Spins (Week 2)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T1:3E2 -- Quantum Computation Lab (COMING SOON)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T1-3E2-Quantum-Computation-Lab.html">T1:3E2 – Quantum Computation Lab</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Final Projects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="FINAL-PROJECTS.html">Final Design Project</a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content">
+<div class="sbt-scroll-pixel-helper"></div>
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__primary" title="Toggle primary sidebar">
+<span class="fa-solid fa-bars"></span>
+</label></div>
+</div>
+<div class="header-article-items__end">
+<div class="header-article-item">
+<div class="article-header-buttons">
+<div class="dropdown dropdown-launch-buttons">
+<button aria-expanded="false" aria-label="Launch interactive content" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fas fa-rocket"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/T3E1-EXTRAS--rigorous-solution-MZI.ipynb" target="_blank" title="Launch onBinder">
+<span class="btn__icon-container">
+<img src="_static/images/logo_binder.svg"/>
+</span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/T3E1-EXTRAS--rigorous-solution-MZI.ipynb" target="_blank" title="Launch onColab">
+<span class="btn__icon-container">
+<img src="_static/images/logo_colab.png"/>
+</span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="dropdown dropdown-source-buttons">
+<button aria-expanded="false" aria-label="Source repositories" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fab fa-github"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm btn-source-repository-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://github.com/dkeathley/S23-6.2410-lab" target="_blank" title="Source repository">
+<span class="btn__icon-container">
+<i class="fab fa-github"></i>
+</span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+<li><a class="btn btn-sm btn-source-issues-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://github.com/dkeathley/S23-6.2410-lab/issues/new?title=Issue%20on%20page%20%2FT3E1-EXTRAS--rigorous-solution-MZI.html&amp;body=Your%20issue%20content%20here." target="_blank" title="Open an issue">
+<span class="btn__icon-container">
+<i class="fas fa-lightbulb"></i>
+</span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="dropdown dropdown-download-buttons">
+<button aria-expanded="false" aria-label="Download this page" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fas fa-download"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm btn-download-source-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="_sources/T3E1-EXTRAS--rigorous-solution-MZI.ipynb" target="_blank" title="Download source file">
+<span class="btn__icon-container">
+<i class="fas fa-file"></i>
+</span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+<li>
+<button class="btn btn-sm btn-download-pdf-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" onclick="window.print()" title="Print to PDF">
+<span class="btn__icon-container">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+</ul>
+</div>
+<button class="btn btn-sm btn-fullscreen-button" data-bs-placement="bottom" data-bs-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
+<span class="btn__icon-container">
+<i class="fas fa-expand"></i>
+</span>
+</button>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__secondary" title="Toggle secondary sidebar">
+<span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+</div>
+</div>
+</div>
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>EXTRAS – Rigorous Solution of Mach-Zender Interferometer</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-solution-without-an-object">Complete solution without an object</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accounting-for-the-partial-absorber">Accounting for the partial absorber</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accounting-for-bandwidth">Accounting for Bandwidth</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article">
+<section class="tex2jax_ignore mathjax_ignore" id="extras-rigorous-solution-of-mach-zender-interferometer">
+<h1>EXTRAS – Rigorous Solution of Mach-Zender Interferometer<a class="headerlink" href="#extras-rigorous-solution-of-mach-zender-interferometer" title="Link to this heading">#</a></h1>
+<p>In the course material for the discussion of single-photon interference and the interaction-free measurement, we took a shortcut to calculating the photon number expectation by ignoring the operators of the vacuum state inputs.  This simplifies the problem, but is not a rigorous solution.  A particular shortcoming is that this approach would give incorrect results for calculating the noise properties of the photon number at the detectors as in that case the vacuum state input does matter.</p>
+<section id="complete-solution-without-an-object">
+<h2>Complete solution without an object<a class="headerlink" href="#complete-solution-without-an-object" title="Link to this heading">#</a></h2>
+<p>The problem setup is the same, however now we must include all inputs, which slightly modifies our setup as shown in <a class="reference internal" href="#fig-t3e1-single-photon-interferometer-complete"><span class="std std-numref">Fig. 28</span></a>.</p>
+<figure class="align-default" id="fig-t3e1-single-photon-interferometer-complete">
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/T3E1-single-photon-interferometer-complete.png"><img alt="Single Photon Interference" class="bg-primary mb-1" src="_images/T3E1-single-photon-interferometer-complete.png" style="width: 600px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Considering all inputs and outputs for the complete description of the Mach-Zender interferometer.</span><a class="headerlink" href="#fig-t3e1-single-photon-interferometer-complete" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now we can proceed to find the annihilation operators as before, but with all inputs included.</p>
+<div class="math notranslate nohighlight">
+\[\chat = \frac{\ahat + \bhat}{\sqrt{2}}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\dhat = \frac{\ahat - \bhat}{\sqrt{2}}\mathrm{.}\]</div>
+<p>We then account for propagation over paths <span class="math notranslate nohighlight">\(l_1\)</span> and <span class="math notranslate nohighlight">\(l_2\)</span> which lead to a phase shift of <span class="math notranslate nohighlight">\(\phi_n = 2 \pi l_n/\lambda\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\ehat = \dhat e^{i\phi_2}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\fhat = \chat e^{i\phi_1}\mathrm{.}\]</div>
+<p>From here, we account for the fact that at the second beamsplitter we have</p>
+<div class="math notranslate nohighlight">
+\[\ghat = \frac{\ehat + \fhat}{\sqrt{2}}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\hhat = \frac{\ehat - \fhat}{\sqrt{2}}\mathrm{.}\]</div>
+<p>After substituting everything in we get the final expression for <span class="math notranslate nohighlight">\(\ghat\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\ghat = e^{i\phi_2} e^{i\Delta\phi/2} \bigg \lbrace \ahat \cos(\Delta\phi/2)  + i \bhat \sin(\Delta\phi/2) \bigg \rbrace \]</div>
+<p>where <span class="math notranslate nohighlight">\(\Delta \phi = \phi_1 - \phi_2\)</span>, the phase difference between the two arms.</p>
+<p>Note that the number operator for <span class="math notranslate nohighlight">\(g\)</span> is then:</p>
+<div class="math notranslate nohighlight">
+\[\gdagger \ghat = \cos^2(\Delta \phi /2)\adagger\ahat + j\adagger\bhat \cos(\Delta\phi/2)\sin(\Delta\phi/2) - j\bdagger\ahat \cos(\Delta\phi/2)\sin(\Delta\phi/2) + \bdagger\bhat \sin^2(\Delta\phi/2)  \mathrm{.}\]</div>
+<p>Given our input state is <span class="math notranslate nohighlight">\(\ket{1}_a \ket{0}_b\)</span>, the photon number is then found by taking:</p>
+<div class="math notranslate nohighlight">
+\[N_g = \bra{0}_b \bra{1}_a \gdagger \ghat \ket{1}_a \ket{0}_b  = \frac{1}{2} \lbrace 1 + \cos(\Delta\phi ) \rbrace \mathrm{.}\]</div>
+<p>Note that only the terms with <span class="math notranslate nohighlight">\(\adagger \ahat\)</span> have a non-zero contribution – this justifies our neglecting the vacuum-state inputs for calculation of the output photon number.</p>
+<p>However, it we emphasize that you must use this more complete treatment and account for the vacuum-state inputs to accurately predict the quantum noise in systems. For example, the standard deviation of the photon number depends on <span class="math notranslate nohighlight">\(\hat{N}^2\)</span> (see the note in <a class="reference internal" href="BASICS-quantum-optics-basics.html#basics-mean-and-standard-deviation"><span class="std std-ref">Mean and Standard Deviation Observables</span></a>), and the vacuum state inputs can contribute to the expectation <span class="math notranslate nohighlight">\(\left &lt; \hat{N}^2 \right &gt;\)</span>.   As a further example, to see the importance of the vacuum state input in interferometry, please see the use of squeezed vacuum to reduce quantum noise as described in <a class="reference internal" href="T3E1-EXTRAS-interference-2-homodyne-detection.html"><span class="std std-doc">EXTRAS – Homodyne Detection</span></a>.</p>
+</section>
+<section id="accounting-for-the-partial-absorber">
+<h2>Accounting for the partial absorber<a class="headerlink" href="#accounting-for-the-partial-absorber" title="Link to this heading">#</a></h2>
+<p>For the partial absorber, again our treatment in the text was adequate for accounting for the outgoing photon number.  However, a rigorous solution requires accounting for the vacuum state here again.</p>
+<p>The partial absorber can in fact be modeled as a beamsplitter with adjustable transmission/reflection with one input being the vacuum state, the other being the input state, and one output going to a perfect absorber, and the other transmitting out.  See <a class="reference internal" href="#fig-t3e1-partial-absorber-model"><span class="std std-numref">Fig. 29</span></a>.</p>
+<figure class="align-default" id="fig-t3e1-partial-absorber-model">
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/T3E1-partial-absorber-model.png"><img alt="Partial Absorber Model" class="bg-primary mb-1" src="_images/T3E1-partial-absorber-model.png" style="width: 600px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Model of a partial absorber using a beamsplitter to account for the vacuum state.</span><a class="headerlink" href="#fig-t3e1-partial-absorber-model" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This model accounts for the vacuum state properly.  Note here the beamsplitter is not a 50:50 beamsplitter to account for the adjustable transmission probability.  The input/output relations are similar, with:</p>
+<div class="math notranslate nohighlight">
+\[\chat = t\ahat + r\bhat\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\dhat = r\ahat - t\bhat \mathrm{.}\]</div>
+<p>From the derivation in the text, we have that <span class="math notranslate nohighlight">\(t = \alpha\)</span>, and <span class="math notranslate nohighlight">\(r = \sqrt{1 - \alpha^2}\)</span>.  You can show that with this element in the Mach-Zender interferometer, the output photon number expectation is equivalent to what we derived, with the number of detected photons being</p>
+<div class="math notranslate nohighlight">
+\[N_d = \frac{1}{4}\lbrace 1 + t^2 + 2t\cos(\Delta \phi)\rbrace \mathrm{.}\]</div>
+<p>However, as noted earlier, the impact of this absorbing object is to effectively couple in vacuum state which must be accounted for during analysis of the quantum noise limit of the interferometer.</p>
+</section>
+<section id="accounting-for-bandwidth">
+<h2>Accounting for Bandwidth<a class="headerlink" href="#accounting-for-bandwidth" title="Link to this heading">#</a></h2>
+<p>Finally, let us address the issue of the state having a non-zero bandwidth.  Up until now, we have discussed states from the context of a single frequency.  Our results would imply that interference would continue indefinitely as one changes delay.  However, in practice our source states will have a non-zero bandwidth which leads to a finite range of delays over which one would observe interference.  In this section, we will introduce how to account for this bandwidth.</p>
+<p>For the case of a non-zero bandwidth, we can write our single-photon input state as</p>
+<div class="math notranslate nohighlight">
+\[ \ket{\psi_\mathrm{in}} = \int_{-\infty}^\infty \mathrm{d}\omega \phi(\omega) \ket{1;\omega}_a \mathrm{,}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\phi(\omega)\)</span> contains the spectral amplitude and phase distirubtion for each frequency component. Note that by normalization we have that</p>
+<div class="math notranslate nohighlight">
+\[\braket{\psi_\mathrm{in}}{\psi_\mathrm{in}}  = \int_{-\infty}^\infty \mathrm{d}\omega_1 \int_{-\infty}^\infty \mathrm{d}\omega_2 \phi(\omega_2)^{*} \phi(\omega_1) \braket{1;\omega_2}{1;\omega_1}_a \]</div>
+<p>Given orthonormality we have that <span class="math notranslate nohighlight">\(\braket{1;\omega_2}{1;\omega_1}_a = \delta(\omega_2 - \omega_1)\)</span>, which removes the second integral, simplifying everything to</p>
+<div class="math notranslate nohighlight">
+\[\braket{\psi_\mathrm{in}}{\psi_\mathrm{in}}  = \int_{-\infty}^\infty \mathrm{d}\omega_1  |\phi(\omega_1)|^2 = 1\]</div>
+<p>What is this all saying?  Basically, we are saying that we have a probability of 1 of finding a photon over a range of frequncies defined by the distribution <span class="math notranslate nohighlight">\(|\phi(\omega)|^2\)</span>.  While we will always find a photon, we just don’t know for certain what energy it has due to the finite bandwidth of our source.</p>
+<p>Taking this further, we can define the state in terms of the creation operator.</p>
+<div class="math notranslate nohighlight">
+\[ \ket{\psi_\mathrm{in}} = \int_{-\infty}^\infty \mathrm{d}\omega \phi(\omega) \adagger(\omega) \ket{0}_a \mathrm{.}\]</div>
+<p>In this way, we can track the operators through any system in the same way as we already have for the single-frequency states.  Following this method, we can re-express our output state calculated from our earlier analysis of the interferometer now accounting for the non-zero bandwidth:</p>
+<div class="math notranslate nohighlight">
+\[\ket{\psi_\mathrm{out}} = \int_{-\infty}^\infty \mathrm{d}\omega \cos \bigg ( \frac{\omega \Delta l}{2c} \bigg )\phi(\omega) \ket{1;\omega}_a \mathrm{.}\]</div>
+<p>Note that here it is important as we write the phase difference in terms of <span class="math notranslate nohighlight">\(\omega\)</span> and the path length difference <span class="math notranslate nohighlight">\(\Delta l\)</span>.  What is the probability of finding a photon then.  Well, we just take <span class="math notranslate nohighlight">\(\braket{\psi_\mathrm{out}}{\psi_\mathrm{out}}\)</span>, which becomes</p>
+<div class="math notranslate nohighlight">
+\[\braket{\psi_\mathrm{out}}{\psi_\mathrm{out}}  = \int_{-\infty}^\infty \mathrm{d}\omega_1 \int_{-\infty}^\infty \mathrm{d}\omega_2 \phi(\omega_2)^{*} \phi(\omega_1) \cos \bigg ( \frac{\omega_1 \Delta l}{2c} \bigg )\cos \bigg ( \frac{\omega_2 \Delta l}{2c} \bigg )\braket{1;\omega_2}{1;\omega_1}_a \]</div>
+<p>Again, we have that <span class="math notranslate nohighlight">\(\braket{1;\omega_2}{1;\omega_1}_a = \delta(\omega_2 - \omega_1)\)</span>, and after substitution this again gets us back to one integral:</p>
+<div class="math notranslate nohighlight">
+\[\braket{\psi_\mathrm{out}}{\psi_\mathrm{out}}  = \int_{-\infty}^\infty \mathrm{d}\omega_1 |\phi(\omega_1)|^2 \cos \bigg ( \frac{\omega_1 \Delta l}{2c} \bigg )^2 \mathrm{.}\]</div>
+<p>Note that the major difference here is the adddition of the cosine term.  This resuts in an oscillation of the output photon detction probability.  Note that the bandwidth probability distirubution function <span class="math notranslate nohighlight">\(\phi\)</span> then dictates the range of delays over which you see this oscillation in probability.  Importantly, note that that all phase information inside of <span class="math notranslate nohighlight">\(\phi\)</span> is lost as the output is dictated by <span class="math notranslate nohighlight">\(|\phi|^2\)</span> (our interferometer is, after all, only sensitive the phase differences between the two arms, and not to the absolute phase of the incoming state).</p>
+<p>Let’s now numerically explore the single-photon interference accounting for bandwidth.</p>
+<p>We start by taking a Gaussian distribution for <span class="math notranslate nohighlight">\(\phi\)</span>.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># -- Settings -- </span>
+<span class="n">c</span>  <span class="o">=</span> <span class="mi">300</span> <span class="c1">#speed of light in nm/fs</span>
+<span class="n">lambda_0</span> <span class="o">=</span> <span class="mi">810</span> <span class="c1"># central wavelength in nm</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># bandwidth of the photons in petahertz</span>
+<span class="n">omega_0</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">c</span><span class="o">/</span><span class="n">lambda_0</span> <span class="c1">#central frequency of the photons</span>
+
+<span class="c1"># -- Calculations</span>
+
+<span class="c1">#Set up the frequency axis (rad/fs)</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">omega_0</span> <span class="o">-</span> <span class="mi">10</span><span class="o">*</span><span class="n">sigma</span><span class="p">,</span> <span class="n">omega_0</span> <span class="o">+</span> <span class="mi">10</span><span class="o">*</span><span class="n">sigma</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+
+<span class="c1">#Define the initial gaussian frequency distribution</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">omega</span> <span class="o">-</span> <span class="n">omega_0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1">#Ensure it is normalized properly</span>
+<span class="n">norm_factor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">omega</span><span class="p">))</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="n">phi</span><span class="o">/</span><span class="n">norm_factor</span>
+
+<span class="c1">#Plot for visualization</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">'$\phi(\omega)$'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$\omega$ (rad/fs)'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$\phi(\omega)$'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">);</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<img alt="_images/249ae6d080707c1f00cacbbd3bd57c0e32329f2459de61f802730f09b16a0873.png" src="_images/249ae6d080707c1f00cacbbd3bd57c0e32329f2459de61f802730f09b16a0873.png"/>
+</div>
+</details>
+</div>
+<figure class="align-default" id="t3e1-fig-photon-bandwidth" style="width: 800px">
+<img alt="_images/249ae6d080707c1f00cacbbd3bd57c0e32329f2459de61f802730f09b16a0873.png" src="_images/249ae6d080707c1f00cacbbd3bd57c0e32329f2459de61f802730f09b16a0873.png"/>
+<figcaption>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text">Normalized spectral distribution of single-photons.</span><a class="headerlink" href="#t3e1-fig-photon-bandwidth" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Next, we define the path length difference and perform the integral for each choice of delay.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#-- Settings -- </span>
+
+<span class="c1">#Define the delay length (in nm)</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">10e3</span><span class="p">,</span> <span class="mf">10e3</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="c1">#Path length difference to scan over</span>
+
+<span class="c1"># -- Calculations -- </span>
+
+<span class="c1">#Set up vector for output probabilities</span>
+<span class="n">P_out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1">#Probability of seeing a photon at the output</span>
+
+<span class="c1">#Now calculate output probability for each delay</span>
+<span class="k">for</span> <span class="n">cc</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">l</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+
+    <span class="n">P_out</span><span class="p">[</span><span class="n">cc</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega</span><span class="o">*</span><span class="n">l</span><span class="p">[</span><span class="n">cc</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">c</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">omega</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">P_out</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'delay length (nm)'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'photon detection probability'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">);</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<img alt="_images/aaaf5553f1de28a5b6ce5ac23d0310dadd82dc2a7c9b9186eff4c595fab91fa1.png" src="_images/aaaf5553f1de28a5b6ce5ac23d0310dadd82dc2a7c9b9186eff4c595fab91fa1.png"/>
+</div>
+</details>
+</div>
+<figure class="align-default" id="t3e1-fig-photon-bandwidth-interference" style="width: 800px">
+<img alt="_images/aaaf5553f1de28a5b6ce5ac23d0310dadd82dc2a7c9b9186eff4c595fab91fa1.png" src="_images/aaaf5553f1de28a5b6ce5ac23d0310dadd82dc2a7c9b9186eff4c595fab91fa1.png"/>
+<figcaption>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Single-photon interference as a funciton of delay with finite bandwidth.</span><a class="headerlink" href="#t3e1-fig-photon-bandwidth-interference" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+<script>kernelName = 'python3'</script>
+</article>
+<footer class="prev-next-footer">
+<div class="prev-next-area">
+<a class="left-prev" href="T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html" title="previous page">
+<i class="fa-solid fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">LAB – Interference, Entanglement and Quantum-Enhanced Metrology</p>
+</div>
+</a>
+<a class="right-next" href="T3E1-EXTRAS-interference-2-homodyne-detection.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">EXTRAS – Homodyne Detection</p>
+</div>
+<i class="fa-solid fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> Contents
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-solution-without-an-object">Complete solution without an object</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accounting-for-the-partial-absorber">Accounting for the partial absorber</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accounting-for-bandwidth">Accounting for Bandwidth</a></li>
+</ul>
+</nav></div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+<div class="bd-footer-content__inner container">
+<div class="footer-item">
+<p class="component-author">
+By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
+</p>
+</div>
+<div class="footer-item">
+<p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+</p>
+</div>
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+</div>
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+<footer class="bd-footer">
+</footer>
+<script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script></body>
+</html>

@@ -52,8 +52,8 @@ const RUN_LOCALLY               = false;
 const TEST_MODE                 = false;
 const IS_STATIC                 = true;
 
-const EMBEDDING_COLLECTION_NAME = "MIT62410labbarosandu";
-const COURSE_URL                = "https://barosandu.github.io"
+const EMBEDDING_COLLECTION_NAME = "mitlab62410_updated";
+const COURSE_URL                = "https://dkeathley.github.io/6.2410-lab"
 /**
  * --------------- TESTING CONFIGS ----------------
  * ChatTutor can be embedded on default applications

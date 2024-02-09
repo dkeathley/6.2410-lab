@@ -1,0 +1,565 @@
+
+<!DOCTYPE html>
+
+<html data-content_root="./" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>LAB – Hanbury Brown - Twiss Lab (Week 1) — 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet"/>
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet"/>
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet"/>
+<link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="_static/styles/sphinx-book-theme.css?v=384b581d" rel="stylesheet" type="text/css"/>
+<link href="_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
+<link href="_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="_static/sphinx-thebe.css?v=4fa983c6" rel="stylesheet" type="text/css"/>
+<link href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" rel="preload"/>
+<link as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" rel="preload"/>
+<script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/documentation_options.js?v=9eb32ce0"></script>
+<script src="_static/doctools.js?v=888ff710"></script>
+<script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="_static/copybutton.js?v=f281be69"></script>
+<script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="_static/togglebutton.js?v=4a39c7ea"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script src="_static/design-tabs.js?v=36754332"></script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+<script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+<script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+<script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'T2E1-LAB-HBT';</script>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="T2E1-TEXT-QKD.html" rel="next" title="TEXT – QKD (Week 2)"/>
+<link href="T2E1-TEXT-HBT.html" rel="prev" title="TEXT - Introduction to single photons with the quED (Week 1)"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+<link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/></head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
+<a class="skip-link" href="#main-content" id="pst-skip-link">Skip to main content</a>
+<div id="pst-scroll-pixel-helper"></div>
+<button class="btn rounded-pill" id="pst-back-to-top" type="button">
+<i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<header class="bd-header navbar navbar-expand-lg bd-navbar">
+</header>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item">
+<a class="navbar-brand logo" href="intro.html">
+<img alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home" class="logo__image only-light" src="_static/logo-ibm.jpg"/>
+<script>document.write(`<img src="_static/logo-ibm.jpg" class="logo__image only-dark" alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home"/>`);</script>
+</a></div>
+<div class="sidebar-primary-item">
+<script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links bd-docs-nav">
+<div class="bd-toc-item navbar-nav active">
+<ul class="nav bd-sidenav bd-sidenav__home-link">
+<li class="toctree-l1">
+<a class="reference internal" href="intro.html">
+                    6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
+                </a>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introductory Material</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="BASICS-quantum-optics-basics.html">BASICS – Quantum Optics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T3E1 -- Interference, Entanglement, Quantum-Enhanced Sensing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html">TEXT – Interference, Entanglement and Quantum-Enhanced Metrology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html">LAB – Interference, Entanglement and Quantum-Enhanced Metrology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T3E1-EXTRAS--rigorous-solution-MZI.html">EXTRAS – Rigorous Solution of Mach-Zender Interferometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T3E1-EXTRAS-interference-2-homodyne-detection.html">EXTRAS – Homodyne Detection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T2E1 -- Quantum Information and Quantum Key Distribution</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T2E1-TEXT-HBT.html">TEXT - Introduction to single photons with the quED (Week 1)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">LAB – Hanbury Brown - Twiss Lab (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2E1-TEXT-QKD.html">TEXT – QKD (Week 2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2E1-LAB-BB84.html">LAB – QKD (Week 2)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T3E3 -- Solid State Spins</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.html">TRAINING - Interfacing with the Vector Network Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.html">TEXT: Introduction to NV centers in diamond and cavity-based magnetometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.html">LAB - Quantum Sensing with Solid State Spins (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.html">LAB – Quantum Sensing With Solid State Spins (Week 2)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T1:3E2 -- Quantum Computation Lab (COMING SOON)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T1-3E2-Quantum-Computation-Lab.html">T1:3E2 – Quantum Computation Lab</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Final Projects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="FINAL-PROJECTS.html">Final Design Project</a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content">
+<div class="sbt-scroll-pixel-helper"></div>
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__primary" title="Toggle primary sidebar">
+<span class="fa-solid fa-bars"></span>
+</label></div>
+</div>
+<div class="header-article-items__end">
+<div class="header-article-item">
+<div class="article-header-buttons">
+<div class="dropdown dropdown-launch-buttons">
+<button aria-expanded="false" aria-label="Launch interactive content" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fas fa-rocket"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/T2E1-LAB-HBT.ipynb" target="_blank" title="Launch onBinder">
+<span class="btn__icon-container">
+<img src="_static/images/logo_binder.svg"/>
+</span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/T2E1-LAB-HBT.ipynb" target="_blank" title="Launch onColab">
+<span class="btn__icon-container">
+<img src="_static/images/logo_colab.png"/>
+</span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="dropdown dropdown-source-buttons">
+<button aria-expanded="false" aria-label="Source repositories" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fab fa-github"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm btn-source-repository-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://github.com/dkeathley/S23-6.2410-lab" target="_blank" title="Source repository">
+<span class="btn__icon-container">
+<i class="fab fa-github"></i>
+</span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+<li><a class="btn btn-sm btn-source-issues-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://github.com/dkeathley/S23-6.2410-lab/issues/new?title=Issue%20on%20page%20%2FT2E1-LAB-HBT.html&amp;body=Your%20issue%20content%20here." target="_blank" title="Open an issue">
+<span class="btn__icon-container">
+<i class="fas fa-lightbulb"></i>
+</span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="dropdown dropdown-download-buttons">
+<button aria-expanded="false" aria-label="Download this page" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fas fa-download"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm btn-download-source-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="_sources/T2E1-LAB-HBT.ipynb" target="_blank" title="Download source file">
+<span class="btn__icon-container">
+<i class="fas fa-file"></i>
+</span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+<li>
+<button class="btn btn-sm btn-download-pdf-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" onclick="window.print()" title="Print to PDF">
+<span class="btn__icon-container">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+</ul>
+</div>
+<button class="btn btn-sm btn-fullscreen-button" data-bs-placement="bottom" data-bs-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
+<span class="btn__icon-container">
+<i class="fas fa-expand"></i>
+</span>
+</button>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__secondary" title="Toggle secondary sidebar">
+<span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+</div>
+</div>
+</div>
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>LAB – Hanbury Brown - Twiss Lab (Week 1)</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-this-lab">Goals for this lab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimate-coincidence-count-for-uncorrelated-sources">Estimate coincidence count for uncorrelated sources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qued-power-up">quED power up</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-low-counts">Troubleshooting low counts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hbt-with-2-fold-coincidence">HBT with 2-fold coincidence</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-g-2-0-from-experimental-data">Calculating <span class="math notranslate nohighlight">\(g^{(2)}(0)\)</span> from experimental data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hbt-for-heralded-source-3-fold-coincidence">HBT for heralded source (3-fold coincidence)</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article">
+<section class="tex2jax_ignore mathjax_ignore" id="lab-hanbury-brown-twiss-lab-week-1">
+<h1>LAB – Hanbury Brown - Twiss Lab (Week 1)<a class="headerlink" href="#lab-hanbury-brown-twiss-lab-week-1" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>In this lab we’re going to perform the Hanbury Brown - Twiss (HBT) experiment with the quED set-up. We want to perform the measurements and also understand what they mean in terms of the calculations. This entire lab will take less than 2 sessions of the course, and it will help prepare you for performing the QKD protocol over the following 2 sessions.</p>
+<p>This write-up will cover a few topics:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#Goals-for-this-lab"><span class="xref myst">Lab Goals</span></a> are your guidance for what this experiment will accomplish. Your write-up should address all of these.</p></li>
+<li><p><a class="reference internal" href="#Estimate-coincidence-count-for-uncorrelated-sources"><span class="xref myst">Coincidence Estimate</span></a> is an important calculation to do so you can make sure you’re measuring what you expect. It will also be an example of relating a measured experimental to a theoretical calculation.</p></li>
+<li><p><a class="reference internal" href="#quED-power-up"><span class="xref myst">quED power up</span></a> describes how to turn on the quED to begin taking data.</p></li>
+<li><p><a class="reference internal" href="#HBT-with-2-fold-coincidence"><span class="xref myst">Experimental set-up: 2-fold</span></a> gives an overview on how to perform the 2-fold experiment. There is a <a class="reference internal" href="#g2code2fold"><span class="xref myst">Python cell</span></a> for you to input your experimental measurements and find <span class="math notranslate nohighlight">\(g^{(2)}(0)\)</span></p></li>
+<li><p><a class="reference internal" href="#HBT-for-heralded-source-(3-fold-coincidence)"><span class="xref myst">Experimental set-up: 3-fold</span></a> gives an overview on how to perform the 3-fold experiment. There is a <a class="reference internal" href="#g2code3fold"><span class="xref myst">Python cell</span></a> for you to input your experimental measurements and find <span class="math notranslate nohighlight">\(g^{(2)}(0)\)</span></p></li>
+</ul>
+<p>We’ll be following the quTools manual, which you can find online here: <a class="reference external" href="https://www.qutools.com/files/quED/quED-HBT/quED-HBT-manual.pdf">https://www.qutools.com/files/quED/quED-HBT/quED-HBT-manual.pdf</a></p>
+</section>
+<section id="goals-for-this-lab">
+<h2>Goals for this lab<a class="headerlink" href="#goals-for-this-lab" title="Link to this heading">#</a></h2>
+<p>In this lab, we have a few goals:</p>
+<ol class="arabic simple">
+<li><p>Measure <span class="math notranslate nohighlight">\(g^{(2)}(0)\)</span> for the SPDC output in the heralded and un-heralded regimes. You will need to take enough points to find both an average and a standard deviation. How did you choose which integration time to use?</p></li>
+<li><p>Compare <span class="math notranslate nohighlight">\(g^{(2)}(0)\)</span> measurements for different pump laser currents: 10 mA, 25 mA, and 40 mA. Again, make sure you take enough data points to find the variance.</p></li>
+<li><p>Compare your experimental results with what you calculated. How did your calculations match your measurements? Why do you think they were different?</p></li>
+<li><p>Use the <span class="math notranslate nohighlight">\(g^{(2)}(0)\)</span> measurements to categorize when the SPDC output counts as a single photon source. Consider whether you would classify the light source as being in a number state, coherent state, or thermal state.</p></li>
+</ol>
+<p>Keep in mind that you will need to address all of these points above in your 2-3 page write-up at the end of this T2E1 lab sequence.  It is then important we address these issues properly during lab time. Also remember that everyone is expected to keep notes during the lab, and you should include collected data, code, and analysis in those notes.  The instructions you’re reading right now are meant to guide you through taking the data and looking at some of the data analysis.</p>
+</section>
+<section id="estimate-coincidence-count-for-uncorrelated-sources">
+<h2>Estimate coincidence count for uncorrelated sources<a class="headerlink" href="#estimate-coincidence-count-for-uncorrelated-sources" title="Link to this heading">#</a></h2>
+<p>If I said I have two sources of light that are totally independent, what would you estimate the coincidences to be? You have access to the following values:</p>
+<ul class="simple">
+<li><p>The singles count of each source of light (read off the quCR)</p></li>
+<li><p>The coincidence window (30 ns)</p></li>
+<li><p>Integration time (set on quCR)</p></li>
+</ul>
+<p>Use the next cell to evaluate your estimate of coincidents.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">S1</span> <span class="o">=</span> <span class="mf">5E4</span> <span class="c1"># units cps</span>
+<span class="n">S2</span> <span class="o">=</span> <span class="mf">5E4</span> <span class="c1"># units cps</span>
+<span class="n">cw</span> <span class="o">=</span> <span class="mf">30E-9</span> <span class="c1"># set by qutools as 30 ns</span>
+<span class="n">inttime</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># default to 1 second</span>
+
+<span class="k">def</span> <span class="nf">accidentals</span><span class="p">(</span><span class="n">S1</span><span class="p">,</span><span class="n">S2</span><span class="p">,</span><span class="n">cw</span><span class="p">,</span><span class="n">inttime</span><span class="p">):</span>
+    <span class="n">it</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    
+    <span class="k">return</span> <span class="n">it</span>
+
+<span class="n">it</span> <span class="o">=</span> <span class="n">accidentals</span><span class="p">(</span><span class="n">S1</span><span class="p">,</span><span class="n">S2</span><span class="p">,</span><span class="n">cw</span><span class="p">,</span><span class="n">inttime</span><span class="p">)</span>
+
+<span class="s1">'Coincidences: </span><span class="si">{:.3e}</span><span class="s1"> with singles </span><span class="si">{:.3e}</span><span class="s1"> and </span><span class="si">{:.3e}</span><span class="s1"> after </span><span class="si">{:.1f}</span><span class="s1"> seconds'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="n">S1</span><span class="p">,</span> <span class="n">S2</span><span class="p">,</span> <span class="n">inttime</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'Coincidences: -1.000e+00 with singles 5.000e+04 and 5.000e+04 after 1.0 seconds'
+</pre></div>
+</div>
+</div>
+</div>
+<p>Does your estimate match what you see? You can use the light collected from the overhead lamps as uncorrelated light.</p>
+</section>
+<section id="qued-power-up">
+<h2>quED power up<a class="headerlink" href="#qued-power-up" title="Link to this heading">#</a></h2>
+<p>If the screen is dark on the quED, flip the plastic switch on the bottom left corner of the front panel.</p>
+<p>To turn on the laser, verify that the set current is 0 mA. Then press the button to the right of the screen on the front panel. It will light up when the laser is active.</p>
+<p>Now, verify the laser is in CW mode and turn the pump current to 35 - 40 mA.</p>
+<p>Next, check the singles counts. You should see about 100,000 cps from the signal and the idler. The coincidence counts should be on the order of 5,000 to 10,000.</p>
+<section id="troubleshooting-low-counts">
+<h3>Troubleshooting low counts<a class="headerlink" href="#troubleshooting-low-counts" title="Link to this heading">#</a></h3>
+<p>If you see fewer counts - say 20% below the maximum - try adjusting the mounts with the lenses that collect the SPDC output light into fibers.</p>
+<p>If that doesn’t work <strong>or</strong> you see severely reduced counts, try walking the beam using the mounts with the mirrors. If this is your first time aligning the quED this way, ask an instructor to help.</p>
+<p>If that doesn’t work, ask an instructor to show you the full alignment procedure. You’ll use a fiber fault finder to back propagate into the box with the source.</p>
+</section>
+</section>
+<section id="hbt-with-2-fold-coincidence">
+<h2>HBT with 2-fold coincidence<a class="headerlink" href="#hbt-with-2-fold-coincidence" title="Link to this heading">#</a></h2>
+<p>Recall that the HBT experiment has the follow schematic:</p>
+<figure class="align-default" id="hbt-lab">
+<a class="reference internal image-reference" href="_images/HBT_lab.png"><img alt="_images/HBT_lab.png" src="_images/HBT_lab.png" style="width: 600px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 45 </span><span class="caption-text">Setup for HBT measurement.</span><a class="headerlink" href="#hbt-lab" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We want to set that up with the quED. quTools provides the following cartoon:</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="_images/HBT_lab_qutools.png"><img alt="_images/HBT_lab_qutools.png" src="_images/HBT_lab_qutools.png" style="width: 600px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 46 </span><span class="caption-text">Image from quTools of the HBT experiment with quED</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>You can read off the singles and coincidences from the quED detection page directly. The detection page will scroll through a time plot, the settings page, and another page that will display a numerical value for the singles and coincidences after each integration time. You can also use the Python wrapper function to read the detected values directly from the quED.</p>
+<section id="calculating-g-2-0-from-experimental-data">
+<h3>Calculating <span class="math notranslate nohighlight">\(g^{(2)}(0)\)</span> from experimental data<a class="headerlink" href="#calculating-g-2-0-from-experimental-data" title="Link to this heading">#</a></h3>
+<p>Recall that the equation for <span class="math notranslate nohighlight">\(g^{(2)}(0)\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[g^{(2)}(0) = \frac{\langle\hat{n}_1\hat{n}_2\rangle}{\langle\hat{n}_1\rangle\langle\hat{n}_2\rangle}\]</div>
+<p>You’ll note that this equation has nothing to do with the coincidence window <span class="math notranslate nohighlight">\(\Delta_w\)</span>, but consider the following thought experiment. Keeping integration time <span class="math notranslate nohighlight">\(T\)</span> constant, you look at coincidences <span class="math notranslate nohighlight">\(\langle\hat{n}_1\hat{n}_2\rangle\)</span> using an infinitely long coincidence window and then you perform the same measurement at an infinitely small but still nonzero coincidence window. Do you expect to see more coincidences on the long or short window? Thus, coincidence windows do matter in terms of scaling for <span class="math notranslate nohighlight">\(g^{(2)}(0)\)</span>.</p>
+<p>For this reason, we want to look at the calculation in a slightly different way. Specifically, consider that the calculation asks for the expected value of the coincidences and singles. What we measure are the rates, <span class="math notranslate nohighlight">\(R_i\)</span> of the singles and coincidences, expressed in counts per second (cps). That means that to find a probability, <span class="math notranslate nohighlight">\(p_i\)</span>, within a given coincidence time, <span class="math notranslate nohighlight">\(\Delta_w\)</span>, we need to consider</p>
+<div class="math notranslate nohighlight">
+\[p_i = R_i\Delta_w\]</div>
+<p>We can consider the cases were <span class="math notranslate nohighlight">\(i\)</span> refers to <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(2\)</span>, and <span class="math notranslate nohighlight">\(12\)</span>, so if we want to look at the expected value in terms of the measured values, we want to evaluate</p>
+<div class="math notranslate nohighlight">
+\[g^{(2)}(0) = \frac{R_{12}}{R_1R_2\Delta_w}\]</div>
+<p>The next cell is provided for you to input your own code to calculate <span class="math notranslate nohighlight">\(g^{(2)}(0)\)</span> from your experimental values. <a id="g2code2fold"></a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use this cell to plug in your measured data and get a value for g2</span>
+
+<span class="n">S1</span> <span class="o">=</span> <span class="mf">5E4</span> <span class="c1"># singles in detector 1 - cps</span>
+<span class="n">S2</span> <span class="o">=</span> <span class="mf">5E4</span> <span class="c1"># singles in detector 2 - cps</span>
+<span class="n">cw</span> <span class="o">=</span> <span class="mf">30E-9</span> <span class="c1"># coincidence window set by qutools as 30 ns</span>
+
+<span class="n">coincidences</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># coincidences between 1 and 2 per second</span>
+<span class="n">inttime</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># integrationd time: default to 1 second</span>
+
+<span class="k">def</span> <span class="nf">g2twofold</span><span class="p">(</span><span class="n">S1</span><span class="p">,</span><span class="n">S2</span><span class="p">,</span><span class="n">cw</span><span class="p">,</span> <span class="n">coincidences</span><span class="p">,</span> <span class="n">inttime</span><span class="p">):</span>
+    <span class="n">it</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+    
+    <span class="k">return</span> <span class="n">it</span>
+
+<span class="n">it</span> <span class="o">=</span> <span class="n">g2twofold</span><span class="p">(</span><span class="n">S1</span><span class="p">,</span><span class="n">S2</span><span class="p">,</span><span class="n">cw</span><span class="p">,</span> <span class="n">coincidences</span><span class="p">,</span> <span class="n">inttime</span><span class="p">)</span>
+
+<span class="s1">'G2: </span><span class="si">{:.3e}</span><span class="s1"> with coincidences </span><span class="si">{:.3e}</span><span class="s1">; singles </span><span class="si">{:.3e}</span><span class="s1"> and </span><span class="si">{:.3e}</span><span class="s1"> after </span><span class="si">{:.1f}</span><span class="s1"> seconds'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="n">coincidences</span><span class="p">,</span> <span class="n">S1</span><span class="p">,</span> <span class="n">S2</span><span class="p">,</span> <span class="n">inttime</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'G2: -5.000e+00 with coincidences 1.000e+01; singles 5.000e+04 and 5.000e+04 after 1.0 seconds'
+</pre></div>
+</div>
+</div>
+</div>
+<p>Remember to take enough measurements to find the average and the standard deviation. Also, look at the effect of changing the integration time and comment in your write-up about how that affects the calculated <span class="math notranslate nohighlight">\(g^{(2)}(0)\)</span>. How does <span class="math notranslate nohighlight">\(g^{(2)}(0)\)</span> change with different pump currents? Would you describe this configuration as a single photon source?</p>
+</section>
+</section>
+<section id="hbt-for-heralded-source-3-fold-coincidence">
+<h2>HBT for heralded source (3-fold coincidence)<a class="headerlink" href="#hbt-for-heralded-source-3-fold-coincidence" title="Link to this heading">#</a></h2>
+<p>As you recall, we want to modify the HBT experiment to look at the HBT experiment with a <em>heralded</em> single photon source, as shown below.</p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="_images/HBT_heralded_lab.png"><img alt="_images/HBT_heralded_lab.png" src="_images/HBT_heralded_lab.png" style="width: 600px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 47 </span><span class="caption-text">Setup for heralded HBT measurement.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>quTools provides a more detailed schematic of how this experiment will look with the quED.</p>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="_images/HBT_heralded_lab_qutools.png"><img alt="_images/HBT_heralded_lab_qutools.png" src="_images/HBT_heralded_lab_qutools.png" style="width: 600px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 48 </span><span class="caption-text">Image from quTools of the HBT experiment with heralded source with quED</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>You can use the equation from the text to find <span class="math notranslate nohighlight">\(g^{(2)}(0)\)</span> for the heralded source:</p>
+<div class="math notranslate nohighlight">
+\[g^{(2)}(0) = \frac{N_{012}N_0}{N_{01}N_{02}}\]</div>
+<p>Again, the next cell is provided for you to input your own code so you can caluclate your <span class="math notranslate nohighlight">\(g^{(2)}(0)\)</span> as you collect data. <a id="g2code3fold"></a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use this cell to plug in your measured data and get a value for g2</span>
+
+<span class="n">N012</span> <span class="o">=</span> <span class="mf">1E5</span> <span class="c1"># 3-fold coincidences</span>
+<span class="n">N0</span> <span class="o">=</span> <span class="mf">5E4</span> <span class="c1"># singles in detector 0 - cps</span>
+<span class="n">N01</span> <span class="o">=</span> <span class="mf">5E4</span> <span class="c1"># 2-fold coincidences</span>
+<span class="n">N02</span> <span class="o">=</span> <span class="mf">30E-9</span> <span class="c1"># 2-fold coincidences</span>
+
+
+<span class="n">inttime</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># integrationd time: default to 1 second</span>
+
+<span class="k">def</span> <span class="nf">g2threefold</span><span class="p">(</span><span class="n">N012</span><span class="p">,</span><span class="n">N0</span><span class="p">,</span><span class="n">N01</span><span class="p">,</span><span class="n">N02</span><span class="p">,</span><span class="n">inttime</span><span class="p">):</span>
+    <span class="n">it</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span>
+    
+    <span class="k">return</span> <span class="n">it</span>
+
+<span class="n">it</span> <span class="o">=</span> <span class="n">g2threefold</span><span class="p">(</span><span class="n">N012</span><span class="p">,</span><span class="n">N0</span><span class="p">,</span><span class="n">N01</span><span class="p">,</span><span class="n">N02</span><span class="p">,</span><span class="n">inttime</span><span class="p">)</span>
+
+<span class="s1">'G2: </span><span class="si">{:.3e}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'G2: -5.000e-01'
+</pre></div>
+</div>
+</div>
+</div>
+<p>Again, don’t forget to explore how <span class="math notranslate nohighlight">\(g^{(2)}(0)\)</span> changes when you change your pump current. Remember to see how integration time affects your measurements, and find the mean and standard deviation.</p>
+</section>
+</section>
+<script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+<script>kernelName = 'python3'</script>
+</article>
+<footer class="prev-next-footer">
+<div class="prev-next-area">
+<a class="left-prev" href="T2E1-TEXT-HBT.html" title="previous page">
+<i class="fa-solid fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">TEXT - Introduction to single photons with the quED (Week 1)</p>
+</div>
+</a>
+<a class="right-next" href="T2E1-TEXT-QKD.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">TEXT – QKD (Week 2)</p>
+</div>
+<i class="fa-solid fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> Contents
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-this-lab">Goals for this lab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimate-coincidence-count-for-uncorrelated-sources">Estimate coincidence count for uncorrelated sources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qued-power-up">quED power up</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-low-counts">Troubleshooting low counts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hbt-with-2-fold-coincidence">HBT with 2-fold coincidence</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-g-2-0-from-experimental-data">Calculating <span class="math notranslate nohighlight">\(g^{(2)}(0)\)</span> from experimental data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hbt-for-heralded-source-3-fold-coincidence">HBT for heralded source (3-fold coincidence)</a></li>
+</ul>
+</nav></div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+<div class="bd-footer-content__inner container">
+<div class="footer-item">
+<p class="component-author">
+By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
+</p>
+</div>
+<div class="footer-item">
+<p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+</p>
+</div>
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+</div>
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+<footer class="bd-footer">
+</footer>
+<script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script></body>
+</html>

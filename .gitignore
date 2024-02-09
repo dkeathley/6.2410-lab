@@ -16,7 +16,6 @@ DATA/
 *.mat
 
 # Ignore the build folder
-_build/*
 
 # Distribution / packaging
 .Python

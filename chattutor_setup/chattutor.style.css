@@ -34,10 +34,23 @@
 
 }
 
+/*.allchattutor * {*/
+/*    all: revert;*/
+/*}*/
+
 .allchattutor {
     font-family: 'Rethink Sans', sans-serif !important;
     font-size: medium;
 }
+
+/*.allchattutor {*/
+/*    pointer-events: none;*/
+/*}*/
+
+.embed-open {
+    pointer-events: none;
+}
+
 
 .allchattutor .msg {
     display: flex;
@@ -69,7 +82,7 @@
 
 .allchattutor .msg-context-doc {
     border: 1px solid rgba(245, 222, 179, 0);
-    border-radius: 4px;
+    border-radius: 10px;
     background-color: rgba(183, 130, 242, 1) !important;
 }
 
@@ -126,17 +139,17 @@
     width: 100vw;
     text-wrap: wrap;
     opacity: 1;
-    border-radius: 4px;
+    border-radius: 10px;
     color: var(--msg-input-color);
 }
 
-a {
+.allchattutor a {
     color: var(--msg-input-color);
 
 }
 
 .allchattutor .arxiv-info {
-    border-radius: 4px;
+    border-radius: 10px;
     color: var(--msg-input-color);
 
     transition: all 0.2s ease;
@@ -180,7 +193,7 @@ a {
     background-color: var(--right-msg-bg);
     color: var(--msg-input-color);
     border: 1px solid var(--msg-input-color);
-    border-radius: 4px;
+    border-radius: 10px;
     border-bottom-left-radius: 0px;
     overflow: hidden;
 }
@@ -262,7 +275,7 @@ html {
     height: calc(100% - 50px);
     /*background: var(--msger-bg);*/
 
-    border-radius: 4px;
+    border-radius: 10px;
     position: relative;
 }
 
@@ -275,9 +288,31 @@ html {
     margin: 25px 10px;
     height: calc(100% - 50px);
     /*background: var(--msger-bg);*/
-    border-radius: 4px;
+    border-radius: 10px;
     position: relative;
 }
+
+.scp-error {
+    margin-left: 15px;
+    background-color: darkred;
+    color: white;
+    max-width: 500px;
+    padding: 10px;
+    font-size: small;
+    transition: all 0.2s ease;
+    transform: scale(0%);
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 10px;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #560000 0 -3px 0 inset;
+    display: none;
+}
+
+.scp-error-show {
+    transform: scale(100%);
+    opacity: 100%;
+}
+
 
 .allchattutor .msger-header {
     display: flex;
@@ -298,10 +333,10 @@ html {
     flex: 1;
     overflow-y: scroll;
     padding: var(--msg-chat-padding);
-    border-radius: 4px;
+    border-radius: 10px;
     margin-bottom: 20px;
     background-color: #FCFCFD;
-    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, var(--msg-input-bg) 0 -3px 0 inset;
     border: var(--border)
 
 }
@@ -425,8 +460,8 @@ html {
     padding: 10px;
     border-top: var(--border);
     background: var(--msg-input-area-bg);
-    border-radius: 4px;
-    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    border-radius: 10px;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, var(--msg-input-bg) 0 -3px 0 inset;
     border: var(--border)
 }
 
@@ -457,7 +492,7 @@ html {
     padding: 10px;
     border-top: var(--border);
     background: var(--msg-input-area-bg);
-    border-radius: 4px;
+    border-radius: 10px;
     box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
     border: var(--border);
     flex-direction: column;
@@ -483,8 +518,8 @@ html {
     padding: 10px;
     border-top: var(--border);
     background: var(--msg-input-area-bg);
-    border-radius: 4px;
-    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    border-radius: 10px;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, var(--msg-input-bg) 0 -3px 0 inset;
     border: var(--border);
     flex-direction: column;
     width: 400px;
@@ -571,13 +606,17 @@ html {
 .allchattutor .msger-header-title {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     margin-top: 3px;
 }
 
+.msger-header-title {
+    margin-left: 7px !important;
+}
+
 .allchattutor .msger-header-title * {
-    margin-right: 10px;
+    margin-right: 7px;
 }
 
 
@@ -700,7 +739,7 @@ html {
     position: fixed;
     bottom: 10px;
     right: 10px;
-    border-radius: 4px;
+    border-radius: 10px;
 
 }
 
@@ -828,6 +867,10 @@ select {
     color: var(--left-msg-txt);
 }
 
+.msg-bubble p {
+    color: var(--left-msg-txt) !important;
+}
+
 .allchattutor .link-button {
     height: 40px;
     background-color: white;
@@ -835,7 +878,7 @@ select {
     padding-right: 10px;
     padding-left: 10px;
     margin: 10px;
-    border-radius: 4px;
+    border-radius: 10px;
     border: none !important;
     transition: all 0.2s ease;
 }
@@ -918,7 +961,7 @@ select {
     background-color: var(--msg-chat-bg);
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     transition: all 0.05s ease;
-    border-radius: 4px;
+    border-radius: 10px;
     color: var(--msg-input-color);
     display: flex;
     flex-direction: column;
@@ -969,11 +1012,32 @@ select {
 }
 
 .allchattutor .embed {
+    /* stop window from resizing upwards */
     bottom: 0 !important;
     right: 0 !important;
     position: fixed !important;
-    width: 500px !important;
-    margin-right: 50px !important;
+    max-width: 500px !important;
+    margin: 50px;
+    pointer-events: none !important;
+}
+
+.allchattutor .embed-open {
+    /* stop window from resizing upwards */
+    bottom: 0 !important;
+    right: 0 !important;
+    position: fixed !important;
+    max-width: 500px !important;
+    margin: 50px;
+}
+
+
+
+.embed .embed-chattutor-window {
+    pointer-events: none !important;
+}
+
+.embed-open .embed-chattutor-window {
+    pointer-events: fill !important;
 }
 
 /* CSS */
@@ -981,7 +1045,7 @@ select {
     align-items: center;
     appearance: none;
     background-color: #FCFCFD;
-    border-radius: 4px;
+    border-radius: 10px;
     border-width: 0;
     box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
     box-sizing: border-box;
@@ -1022,21 +1086,16 @@ select {
     transform: translateY(2px);
 }
 
-.allchattutor .embed .embed-chattutor-window {
+.allchattutor .embed .embed-chattutor-window .msger {
     transition: all 0.2s ease;
-    transform: scale(0%);
     opacity: 0;
+    transform: scale(0%);
+    transform-origin: center;
 }
 
-.allchattutor .embed.embed-open .embed-chattutor-window {
-    transform: scale(100%);
+.allchattutor .embed.embed-open .embed-chattutor-window .msger {
     opacity: 1;
-}
-
-.allchattutor .embed .embed-chattutor-window {
-    transition: all 0.2s ease;
-    transform: scale(0%);
-    opacity: 0;
+    transform: scale(100%);
 }
 
 .allchattutor .embed.embed-open #chattutor-toggler {
@@ -1049,13 +1108,11 @@ select {
     right: 20px;
 }
 
-.allchattutor .btn {
-    background-color: white !important;
-    color: #282828;
-    float: right;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-}
+/*.allchattutor .btn {*/
+/*    float: right;*/
+/*    padding-top: 0 !important;*/
+/*    padding-bottom: 0 !important;*/
+/*}*/
 
 .allchattutor .message-header-title {
     display: flex;
@@ -1074,29 +1131,54 @@ select {
 .allchattutor .msger-header {
     background-color: var(--body-bg);
     /* transform: translateX(10px); */
-    border-radius: 4px !important;
-
+    border-radius: 10px !important;
     position: absolute !important;
     cursor: move;
     user-select: none;
 }
 
 .allchattutor .msger-chat {
-    width: 500px;
+    max-width: 500px;
 }
 
 .allchattutor .msger-header-title {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start !important;
     align-items: center;
     width: 100%;
 }
 
 .close-embed {
+    margin: 0;
     padding: 5px !important;
-    border-radius: 2px !important;
-    border: 1px solid crimson !important;
-    color: crimson !important;
-    background-color: transparent !important;
+    border: 1px solid darkred !important;
+    color: black !important;
+    background-color: crimson !important;
+    pointer-events: fill;
+    width: 15px !important;
+    height: 15px !important;
+    border-radius: 50%;
 }
+
+#themeBtn {
+    margin: 0;
+    padding: 5px !important;
+    border: 1px solid dodgerblue !important;
+    background-color: lightskyblue !important;
+    pointer-events: fill;
+    color: black;
+    width: 15px !important;
+    height: 15px !important;
+    border-radius: 50%;
+}
+
+.close-embed:hover {
+    background-color: crimson !important;
+    color: black !important;
+}
+
+#chattutor-toggler {
+    pointer-events: fill;
+}
+

@@ -4,7 +4,7 @@
 jupyter-book build ./
 
 #Inject the chattutor code into the html
-python ./chattutor_setup/install.py
+#python ./chattutor_setup/install.py
 
 #Push to github pages
 ghp-import -n -p -f _build/html

@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.13.8
+    jupytext_version: 1.15.2
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -104,7 +104,7 @@ In the lab, we will perform this experiment so that you can experience entanglem
 
 ## Single-Photon Interference and Interaction-Free Measurement
 
-+++ {"tags": []}
++++
 
 <iframe src="https://drive.google.com/file/d/1MVpfD6w8qPrWElpTsG6HJn-XRTBKQyI-/preview" width="640" height="480" allow="autoplay"></iframe>
 

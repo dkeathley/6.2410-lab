@@ -43,7 +43,7 @@ In this chapter we examine entangled photon pair generation, single-photon inter
 
 The information and techniques discussed here will not only be useful for your lab exercises, but will be critical tools that you can leverage for your final projets.
 
-+++
++++ {"user_expressions": []}
 
 ## Entangled Photon Pair Generation and Measurement
 
@@ -188,7 +188,7 @@ In the questions below, you will consider such measurements further.
  4. Read about the [Elitzur-Vaidman bomb test](https://en.wikipedia.org/wiki/Elitzur%E2%80%93Vaidman_bomb_tester).  Explain how, when performed photon by photon and with a detector at ports $d$ and $e$ a probability of detection without interaction can approach 33 percent.  Justify your answer.
  5. Read [](./T3E1-EXTRAS--rigorous-solution-MZI.ipynb).  Using the rigorous solution of the operator describing the output port to the detector, calculate the variance in the output for $\alpha = 0$, $\Delta N = \left < \hat{N}^2 \right > - \left < \hat{N} \right >^2$.  Note that at the output you have either a detection event or not -- this is like a coint toss which follows a binomial distribution with variance $P(1-P)$, where $P$ is the probability of detection.  Does your variance calculated using the operators make sense based on this?
 
-+++ {"id": "4b595179-c2b9-4d45-819a-5c18c297dfe0"}
++++ {"id": "4b595179-c2b9-4d45-819a-5c18c297dfe0", "user_expressions": []}
 
 ## Interference of Two Single Photons: The Hong-Ou-Mandel Effect
 
@@ -201,7 +201,7 @@ Imagine the scenario depicted in {numref}`HOM-setup`.  A nonlinear crystal is us
 The two photons travel away from the crystal along two paths (top and bottom as shown).  They are then brought together and interfere within a beamsplitter.  
 
 :::{figure-md} HOM-setup
-<img src="https://drive.google.com/uc?export=view&id=1amZRBEKAn8JTkZXHi7SUlqqTjZfi2tXc" alt="HOM-setup" class="bg-primary mb-1" width="800px">
+<img src="FIGURES/HOM-setup.png" alt="HOM-setup" class="bg-primary mb-1" width="800px">
 
 Experimental setup for studying the HOM effect.  
 :::
@@ -263,7 +263,7 @@ $$
 Remember that probabilities of outcomes are related to $\braket{\psi_\mathrm{out}}{\psi_\mathrm{out}}$, thus we can make the following map of outcomes at each detector.
 
 :::{figure-md} HOM-possibilities-w-tau
-<img src="https://drive.google.com/uc?export=view&id=1sRjwvkQuXH4L5q9mrOIiP2TysdWnx54_" alt="HOM-w-tau" class="bg-primary mb-1" width="500px">
+<img src="FIGURES/HOM-possibilities-w-tau.png" alt="HOM-w-tau" class="bg-primary mb-1" width="500px">
 
 Four different possibilities of detection in port c and d given a non-zero delay $\tau$.  
 :::
@@ -284,7 +284,7 @@ $$
 leading to the following map of outcomes at each detector.
 
 :::{figure-md} HOM-possibilities-wo-tau
-<img src="https://drive.google.com/uc?export=view&id=1flZvEwgcemSbJuNBVVW8DBaGF-AVNtLS" alt="HOM-w-tau" class="bg-primary mb-1" width="500px">
+<img src="FIGURES/HOM-possibilities-wo-tau.png" alt="HOM-w-tau" class="bg-primary mb-1" width="500px">
 
 Two different possibilities of detection in port c and d given a zero delay $\tau$ such that the two photons are indistinguishable in every way at the beamsplitter.  Note each pulse now contains two photons, and the probability of each occurance is $1/2$.  
 :::
@@ -321,7 +321,7 @@ $$\delta \varphi^2_\mathrm{classical} = \frac{1}{N_\mathrm{ph}} \mathrm{.}$$
 
 where $\varphi$ is the phase to be measured, and $N_\mathrm{ph}$ is the total number of photons passing through the interferometer. Here we will present a method for leveraging quantum properties to achieve phase noise performance beyond this standard quantum limit (SQL).  This will build upon the generation of NOON states as a result of single-photon interference that you will study in the lab.
 
-+++ {"id": "caf35967-6267-459a-a1a9-dd34fbbb1f0f"}
++++ {"id": "caf35967-6267-459a-a1a9-dd34fbbb1f0f", "user_expressions": []}
 
 ### Analysis of Phase Estimation in an $N=2$ NOON State Interferometer
 
@@ -329,8 +329,10 @@ In this section we explore the use of NOON state interferometers for achieving n
 
 Consider a setup that builds on the HOM setup as shown in Fig. {numref}`NOON-state-interferometer`.
 
++++ {"user_expressions": []}
+
 :::{figure-md} NOON-state-interferometer
-<img src="https://drive.google.com/uc?export=view&id=1D8Js9o1wj5yNmsOUZ_kYn-EG7h_l8T31" alt="NOON-state-interferometer" class="bg-primary mb-1" width="800px">
+<img src="FIGURES/NOON-state-interferometer.png" alt="NOON-state-interferometer" class="bg-primary mb-1" width="800px">
 
 A $N=2$ NOON state interferometer.
 :::

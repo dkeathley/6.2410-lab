@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.2
+    jupytext_version: 1.15.2
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -310,11 +310,11 @@ glue("number_state_field_representation", fig, display=False)
 Field representations for a number state with $N=4$.
 ```
 
-+++ {"tags": []}
++++
 
 ### The coherent state $\ket{\alpha}$
 
-+++
++++ {"user_expressions": []}
 
 In contrast to number states, classical electromagnetic waves are  described as a collection of plane waves that oscillates smothly in time and space. These plane waves have regions of high and low fields that are well defined as a function of phase.  There are many applications in quantum optics that use such "classical" sources of light (e.g. a continuous-wave laser source), so we need a way to describe it within our quantum framework.  For this purpose, we can use *coherent states*.    
 
@@ -332,7 +332,7 @@ and
 
 $$ \bra{\alpha}_m \adagger_m = \alpha^* \bra{\alpha}_m.  $$
 
-This makes working with coherent states very easy, so long as you put all expressions in "normal order", meaning annihilation operators always come before creation operators when multiplied out.
+This makes working with coherent states very easy, so long as you put all expressions in "normal order", meaning creation operators are all on the left of annihilation operators in the product.
 
 ```{important}
 Remember as we discussed above that quantum operators do not necessarily commute.  In particular, the creation and annihilation operators do not commute.  This means that we cannot simply move the annihilation operators to the left of creation operators.  
@@ -424,7 +424,7 @@ glue("coherent_state_field_representation", fig, display=False)
 Field representations for a coherent state with $|\alpha| = 4$, and $\varphi = \pi/4$.
 ```
 
-+++ {"tags": []}
++++
 
 (sec:quantum-optics-basics:squeezed-states)=
 ### Squeezed States

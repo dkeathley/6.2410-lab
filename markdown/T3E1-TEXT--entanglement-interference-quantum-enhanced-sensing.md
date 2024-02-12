@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-+++ {"id": "glYBmb6VwOSN", "tags": ["remove-cell"]}
++++ {"id": "glYBmb6VwOSN", "tags": ["remove-cell"], "user_expressions": []}
 
 # Latex Headers
 
@@ -104,7 +104,7 @@ In the lab, we will perform this experiment so that you can experience entanglem
 
 ## Single-Photon Interference and Interaction-Free Measurement
 
-+++
++++ {"user_expressions": []}
 
 <iframe src="https://drive.google.com/file/d/1MVpfD6w8qPrWElpTsG6HJn-XRTBKQyI-/preview" width="640" height="480" allow="autoplay"></iframe>
 
@@ -128,7 +128,7 @@ For a rigorous solution of the output operators of a Mach-Zender interferometer,
 For an interseting discussion of how the vacuum state input contributes to photon fluctuations, and how these fluctuations can be reduced using squeezed light, see the discussion of homodyne detection with squeezed light in [](./T3E1-EXTRAS-interference-2-homodyne-detection.ipynb)
 ```
 
-Taking each path $b$ and $c$ indificually, we find that for path $b$ the annihilation operator going  into the second beamsplitter, ignoring the annihilation operator of the empty port, can be written as
+Taking each path $b$ and $c$ individually, we find that for path $b$ the annihilation operator going  into the second beamsplitter, ignoring the annihilation operator of the empty port, can be written as
 
 $$\bhat = \alpha e^{i\phi_b} \ahat/\sqrt{2}$$
 
@@ -231,7 +231,7 @@ Now we need to understand how such an entangled state interacts with a beamsplit
 
 A beamsplitter has the following relationship between the input and output modes:
 
-$$\adagger_\tau \rightarrow \frac{\cdagger_\tau + \ddagger_\tau}{\sqrt{2}},$$
+$$\ahat_\tau \rightarrow \frac{\chat_\tau + \dhat_\tau}{\sqrt{2}},$$
 
 and
 
@@ -242,9 +242,9 @@ thus, the output state becomes
 $$ 
 \ket{\psi_\text{out}} = \frac{1}{2}
 \bigg \lbrace 
-\chat_\tau \chat - \chat_\tau \dhat + 
-\dhat_\tau \chat - \dhat_\tau \dhat
-\bigg \rbrace
+\cdagger_\tau \cdagger_0 - \cdagger_\tau \ddagger_0 + 
+\ddagger_\tau \cdagger_0 - \ddagger_\tau \ddagger_0
+\bigg \rbrace \ket{0}
 $$
 
 Let's start for the case of $\tau \neq 0$.  In this case we  have that

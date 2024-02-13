@@ -108,6 +108,8 @@ In the lab, we will perform this experiment so that you can experience entanglem
 
 In the following text we discuss single photon interference.  We start with an examination of photon number transmission through an interferometer.  We discuss this result in the context of an interaction-free measurement.  We then discuss measurement noise in the photon number detection at the interferometer with a partial absorber, and the role of the vacuum state inputs and their impact on this noise.  Finally we discuss the concept of photon frequency bandwidth and the impact that has on the nature of the interference.
 
+Beyond the lecture videos provided below, an excellent lecture on single-photon interference can also be found [here](https://www.youtube.com/watch?v=xawBQ42AFHE).
+
 +++ {"user_expressions": []}
 
 ### Single-Photon Transmission Through an Interferometer and Interaction-Free Measurements

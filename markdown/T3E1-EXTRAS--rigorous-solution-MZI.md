@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.2
+    jupytext_version: 1.15.2
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -53,7 +53,7 @@ In the course material for the discussion of single-photon interference and the 
 
 The problem setup is the same, however now we must include all inputs, which slightly modifies our setup as shown in {numref}`fig-T3E1-single-photon-interferometer-complete`.
 
-+++ {"tags": []}
++++
 
 :::{figure-md} fig-T3E1-single-photon-interferometer-complete
 <img src="FIGURES/T3E1-single-photon-interferometer-complete.png" alt="Single Photon Interference" class="bg-primary mb-1" width="600px">
@@ -113,7 +113,7 @@ For the partial absorber, again our treatment in the text was adequate for accou
 
 The partial absorber can in fact be modeled as a beamsplitter with adjustable transmission/reflection with one input being the vacuum state, the other being the input state, and one output going to a perfect absorber, and the other transmitting out.  See {numref}`fig-T3E1-partial-absorber-model`.
 
-+++ {"tags": []}
++++
 
 :::{figure-md} fig-T3E1-partial-absorber-model
 <img src="FIGURES/T3E1-partial-absorber-model.png" alt="Partial Absorber Model" class="bg-primary mb-1" width="600px">
@@ -137,7 +137,7 @@ $$N_d = \frac{1}{4}\lbrace 1 + t^2 + 2t\cos(\Delta \phi)\rbrace \mathrm{.}$$
 
 However, as noted earlier, the impact of this absorbing object is to effectively couple in vacuum state which must be accounted for during analysis of the quantum noise limit of the interferometer.
 
-+++ {"tags": []}
++++
 
 ## Accounting for Bandwidth
 

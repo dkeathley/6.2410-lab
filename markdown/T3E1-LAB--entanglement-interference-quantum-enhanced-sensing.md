@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.13.8
+    jupytext_version: 1.15.2
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -55,7 +55,7 @@ Specific aims are:
 **BONUS/Project Idea** Develop a NOON state interferometer demonstrating supersensitivty to path length changes.  
  
 ```{note} 
-Throughout the labs you will be expected to keep notes.  This is important for both collecting, analyzing, and gathering your own thoughts about observations and data collected.  You will use these notes to develop your final writeup.  You can work together on their collection and in answering questions.  All questions and action items to be addressed in your writeups are marked with **AI** below.  
+Throughout the labs you will be expected to keep notes.  This is important for both collecting, analyzing, and gathering your own thoughts about observations and data collected.  You will use these notes to develop your final writeup.  You can work together on their collection and in answering questions.  All questions and action items to be addressed in your writeups are marked with **ACTION ITEM** below.  
 ```
 
 +++
@@ -88,7 +88,7 @@ For more information about the source, you can read about SPDC generation [here]
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/VNoJ-0_c6c8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-+++ {"tags": []}
++++
 
 ### Lab Exercise
 
@@ -109,9 +109,9 @@ What your setup should look like for coincidence detection of the SPDC photons. 
 
 What we have been doing is ensuring that we have selected the correct locations of the output cone angles from the SPDC crystal that correspond to photon pair locations (read more about the SPDC generation [here](https://en.wikipedia.org/wiki/Spontaneous_parametric_down-conversion)).  There are many options for optimizing the counts in detector A or B from either cone of the SPDC output, but only two relative locations will give true pairs of entangled photons. 
 
-**AI** Record your count rates and coincidence counts.  What is the ratio? Think through and discuss why the experimental coincidence count rates are lower than the single counts on either detector alone, and how this ratio might be improved through engineering.
+**ACTION ITEM** Record your count rates and coincidence counts.  What is the ratio? Think through and discuss why the experimental coincidence count rates are lower than the single counts on either detector alone, and how this ratio might be improved through engineering.
 
-**AI** What is the duration of the coincidence peak in your histogram window?  Do you think this duration is due to the true coincidence timing window of the photons, or to technical limitations (e.g. detector rise/fall time, or other systematic causes)?
+**ACTION ITEM** What is the duration of the coincidence peak in your histogram window?  Do you think this duration is due to the true coincidence timing window of the photons, or to technical limitations (e.g. detector rise/fall time, or other systematic causes)?
 
 +++
 
@@ -121,7 +121,7 @@ The purpose of this aim is to think more critically about the histogram and how 
 
 Given the short duration of the coincidence histogram peak in time, we can use it to measure the speed of light as the photons travel across the board.  We can do this by splitting off some photons in one arm so that they travel a longer distance than the other -- those photons then  experience a longer delay time before making it to the detector.  Thus, when looking for coincidences, we now will find a double-peaked histogram.   
 
-**AI** Based on the histogram peak duration you measured, how much spatial distance between photons would you need in order to discern two peaks?
+**ACTION ITEM** Based on the histogram peak duration you measured, how much spatial distance between photons would you need in order to discern two peaks?
 
 ### Instructions
 
@@ -156,13 +156,13 @@ Far-field alignment.  You will see two points that you will need to overlap with
 :::
 
  
-**AI** Record all information you measured, and verify that the delay measurement you made makes sense (you will need to make some distance measurements on the board for this).
+**ACTION ITEM** Record all information you measured, and verify that the delay measurement you made makes sense (you will need to make some distance measurements on the board for this).
 
-+++ {"tags": []}
++++
 
 ## Aim 4: Demonstration of Polarization Entanglement (Day 2)
 
-+++ {"tags": []}
++++
 
 In this exercise we will use the quantenkoffer to explore the nature of the polarization-entnagled SPDC photon source.  By making quite simple polarization measurements in each arm of the detector using polarizers, you can get a hands-on feeling for the entangled nature of the source.  While these measurements are simple, they offer a lot to think about.
 
@@ -176,16 +176,16 @@ In this exercise we will use the quantenkoffer to explore the nature of the pola
  4. Set up a polar plot dialog on the display panel in one of the display quadrants (make sure you leave the triple line plot showing counts on detectors $A$, coincidences, and $B$).  
  5. In the polar plot setting, set it to track the coincidence count rate in detectors $A$ and $B$ as a function of the polarizer rotation (note when you select the polarizer element, you will need to use the up-arrow to select the on-board polarizer in $B$).
  6. Tap the polarizer in $B$ and activate its rotation.  You should now see the coincidence count rate in detectors $A$ and $B$ as a function of the polarizer rotation in $B$.  
- 7. **AIs** (1) Describe the shape of the polar plot you see.  (2) Record several polar plots for two or three discrete values of the polarizer in $A$. (3) Explain why you see what you see and how it indicates polarization entanglement of the source (compare to your pre-lab). (4) What happens to the coincidence trace when you rotate the polarizer in $A$ manually? (5) If you add another polar plot to track the total photon count rate in $B$ as a function of the polarizer angle in $B$ what is the shape?  (6) Explain why you observe these two patterns. Think about this last question in the context of the source state and how it evolves through the system and is eventually detected. Hint: what would a $\ket{H}_a\ket{H}_b$ state look like after absorption of the $H$-polarized photon in $B$?     
+ 7. **ACTION ITEMs** (1) Describe the shape of the polar plot you see.  (2) Record several polar plots for two or three discrete values of the polarizer in $A$. (3) Explain why you see what you see and how it indicates polarization entanglement of the source (compare to your pre-lab). (4) What happens to the coincidence trace when you rotate the polarizer in $A$ manually? (5) If you add another polar plot to track the total photon count rate in $B$ as a function of the polarizer angle in $B$ what is the shape?  (6) Explain why you observe these two patterns. Think about this last question in the context of the source state and how it evolves through the system and is eventually detected. Hint: what would a $\ket{H}_a\ket{H}_b$ state look like after absorption of the $H$-polarized photon in $B$?     
  8. Now tap a source periscope to bring up the source controls.
  9. Adjust the initial source half waveplate to be in the (H)orizontal position (see {numref}`fig-t3e1-lab-entanglement-HWP-control` for the half waveplate control selection).  This causes only vertical photon pairs to be generated in the SPDC source: $\ket{V}_a\ket{V}_b$.  
- 10. **AIs** Repeat the action items in step 7 for this source configuration.
- 11. **AIs** Adjust the source half waveplate to (V)ertical.  What is the state of the output photons now?  Repeat (10).
- 12. **AI** Explain your results in steps (10) and (11) using analytical analysis similar to what you performed for the prelab, and in the context of polarization entanglement.
+ 10. **ACTION ITEMs** Repeat the action items in step 7 for this source configuration.
+ 11. **ACTION ITEMs** Adjust the source half waveplate to (V)ertical.  What is the state of the output photons now?  Repeat (10).
+ 12. **ACTION ITEM** Explain your results in steps (10) and (11) using analytical analysis similar to what you performed for the prelab, and in the context of polarization entanglement.
  13. As a final step add in two half waveplates before the polarizers in both paths $A$ and $B$.  Leave the source vertically-polarized such that you only generate the $\ket{H}_a\ket{H}_b$ state.  Orient the half waveplates each to 22.5 degrees.  This creates equal amounts of $H$ and $V$ polarization components in each arm -- but is there polarization entanglement?  
-  14. **AIs** (1) Measure the total photon count rate in $B$ as a function of rotation of the polarizer in $B$.  (2) Now measure the coincidence count rate as a function of rotation of the polarizer in $B$. (3) Check for any dependence on the orientation of the polarizer in $A$. (4) Do you see any sign of polarization entanglement when looking at the coincidences?  Why or why not?  What do you see?  Explain what is going on. (To explain your answer, calculate the probability of coincidences using the same method in the pre-lab, but now accounting for the input state $\ket{H}_a\ket{H}_b$ and accounting for the half waveplates in each arm.  Note that a half waveplate at 22.5 degrees converts $\ket{H}$ into $\frac{1}{\sqrt{2}} \lbrace \ket{H} + \ket{V} \rbrace$ to within a constant phase factor.)
+  14. **ACTION ITEMs** (1) Measure the total photon count rate in $B$ as a function of rotation of the polarizer in $B$.  (2) Now measure the coincidence count rate as a function of rotation of the polarizer in $B$. (3) Check for any dependence on the orientation of the polarizer in $A$. (4) Do you see any sign of polarization entanglement when looking at the coincidences?  Why or why not?  What do you see?  Explain what is going on. (To explain your answer, calculate the probability of coincidences using the same method in the pre-lab, but now accounting for the input state $\ket{H}_a\ket{H}_b$ and accounting for the half waveplates in each arm.  Note that a half waveplate at 22.5 degrees converts $\ket{H}$ into $\frac{1}{\sqrt{2}} \lbrace \ket{H} + \ket{V} \rbrace$ to within a constant phase factor.)
  15. (Calculation/Simulation). This step and the next will be calculation/simulation.  Calculate/simulate what would happen if you replaced the half waveplates with quarter waveplates -- one in path $A$ and one in path $B$.  Take that the waveplates are oriented at 45 degrees to generate circularly-polarized light.  Note that after $\ket{H}$ interacts with the quarter waveplate it's state transforms to $\frac{1}{\sqrt{2}}\lbrace j\ket{H} + \ket{V}\rbrace$ (to within a constant phase factor).  
- 16. **AIs** Based on our calculations/simulation in step 15 with a quarter waveplate added to each arm: (1) What would you see for the total photon count rate in $B$ as a function of rotation of the polarizer in $B$? (2) What about the coincidence count rate as a function of rotation of the polarizer in $B$? (3) Would you see any dependence on the orientation of the polarizer in $A$? (4) Despite the fact that the total photon count rate in $B$ matches to that of the polarization-entangled case, is there polarization entanglement?  Why or why not? (To explain your answer, work the probability of coincidences using the same method in the pre-lab, but now accounting for the input state $\ket{H}_a\ket{H}_b$ and accounting for the quarter waveplates in each arm. Note whether the state before the polarizers is factorizable or not.)  
+ 16. **ACTION ITEMs** Based on our calculations/simulation in step 15 with a quarter waveplate added to each arm: (1) What would you see for the total photon count rate in $B$ as a function of rotation of the polarizer in $B$? (2) What about the coincidence count rate as a function of rotation of the polarizer in $B$? (3) Would you see any dependence on the orientation of the polarizer in $A$? (4) Despite the fact that the total photon count rate in $B$ matches to that of the polarization-entangled case, is there polarization entanglement?  Why or why not? (To explain your answer, work the probability of coincidences using the same method in the pre-lab, but now accounting for the input state $\ket{H}_a\ket{H}_b$ and accounting for the quarter waveplates in each arm. Note whether the state before the polarizers is factorizable or not.)  
 
  
 :::{figure-md} fig-t3e1-lab-entanglement-HWP-control
@@ -194,15 +194,15 @@ In this exercise we will use the quantenkoffer to explore the nature of the pola
 The HWP control is circled in the source control dialog.  Use this to set the polarization angle of the source.
 :::
 
-+++ {"tags": []}
++++
 
 ## Aim 5: Single-Photon Interference (Day 3)
 
-+++ {"tags": []}
++++
 
 In this ecxercise we will build an interferometer to perform single-photon interference.  We will use these measurements to: (1) better understand the properties of interference in the context of quantum states of light; (2) explore the spectral bandwidth of the photons; and (3) demonstrate the concept of interaction-free measurement made possible through the wave-particle duality.
 
-+++ {"tags": []}
++++
 
 Before the lab, work through the prelab materials and watch the following video related to the concepts we will explore in this part.  
 
@@ -216,7 +216,7 @@ The instructor/TA will also review the fiber-connection layout for the Quantenko
 If at any point you are confused, please ask the staff to help!
 ```
 
-+++ {"tags": []}
++++
 
 ### Lab Exercise
 
@@ -228,7 +228,7 @@ For these last two lab exercises the instruction staff have modified the quanten
 We will be working with fiber-couplings, and there will be a brief discussion at the beginning of the lab about proper handling of fibers so that they are not damaged and remain clean.
 ```
 
-+++ {"tags": []}
++++
 
 #### Part 1: Single-Photon Interference
 
@@ -293,7 +293,7 @@ Setting for the exposure time found in the control menu for the line-plot readou
 You can read the micrometer position in milimeters (each rotation is 0.025 in, with a tick size of .001 in).  The overlap position is usually around 0.2 in.  
 :::
 
-**AIs** (1) From this measurement, you can you determine the frequency bandwidth of the photons.  It is related to the inverses of the total time delay over which you observe interference.  Use your measurements to estimate this bandwidth noting precisely how you did it. (2) Assuming a central wavelength of 810 nm, then what range of wavelengths do the photons contain based on the bandwidth you calculate? (3) Discuss the phase relationship between the outputs to detectors A and B and why this makes sense.  (4) Is your interference contrast the same as your calculations indicate it should be from the prelab?  What experimental conditions might be limiting your contrast compared to theory?
+**ACTION ITEMs** (1) From this measurement, you can you determine the frequency bandwidth of the photons.  It is related to the inverses of the total time delay over which you observe interference.  Use your measurements to estimate this bandwidth noting precisely how you did it. (2) Assuming a central wavelength of 810 nm, then what range of wavelengths do the photons contain based on the bandwidth you calculate? (3) Discuss the phase relationship between the outputs to detectors A and B and why this makes sense.  (4) Is your interference contrast the same as your calculations indicate it should be from the prelab?  What experimental conditions might be limiting your contrast compared to theory?
     
 :::{figure-md} fig-t3e1-lab-interference-output
 <img src="FIGURES/T3E1-LAB-entanglement-interference/aim-5-mzi-interference-scan.png" alt="QK Michelson Setup" class="bg-primary mb-1" width="600px">
@@ -301,7 +301,7 @@ You can read the micrometer position in milimeters (each rotation is 0.025 in, w
 Scanning through delay position with a wedge to see single-photon interference at an output port. The interference scan on each output port should look similar to this.  
 :::
 
-+++ {"tags": []}
++++
 
 #### Part 2: Interaction-Free Measurement
 
@@ -313,7 +313,7 @@ Now we will use the interferometer to demonstrate the concept of [interaction-fr
  
 If the conditions are right, and the vibrations in the interferometer low enough, you should see the signal increase each time the object is placed within the beam as shown in {numref}`fig-t3e1-lab-michelson-IFM`.  If the interferometer is drifting, you could take a video of the trace observing both detector ports.  This would increase your changes that you observe this effect.  
 
-**AI** Record the relative count rates for each case (object, no object) and compare to your pre-lab calculations.  Is the effect as pronounced as what you estimated?  Discuss practical issues related to this method in practice.
+**ACTION ITEM** Record the relative count rates for each case (object, no object) and compare to your pre-lab calculations.  Is the effect as pronounced as what you estimated?  Discuss practical issues related to this method in practice.
 
 :::{figure-md} fig-t3e1-lab-michelson-IFM
 <img src="FIGURES/T3E1-LAB-entanglement-interference/aim-3-single-photon-interference-IFM.jpg" alt="QK Michelson Setup" class="bg-primary mb-1" width="600px">
@@ -321,7 +321,7 @@ If the conditions are right, and the vibrations in the interferometer low enough
 Each time the object is placed in the beam, the signal in channel B increases.  This is an "interaction-free" measurement.
 :::
 
-+++ {"tags": []}
++++
 
 ## Aim 6: Interference of Two Photons and NOON State Generation -- Hong Ou Mandel Effect (Day 4)
 
@@ -360,7 +360,7 @@ The fiber beam-splitter component has two free-space arms, one of them with a de
 5. If you do not observe interference, move the micrometer by roughly one half revoltuion more than 0.2 (0.2125).  Move the wedge through again.  
 6. Keep repeating (5) until you see the HOM dip.  If you do not see it after a while, you might very, very slowly move the micrometer looking for signs of the dip.  You might also need to move slightly below 0.2 depending on the exact alignment.  Be persistent -- you will find it.  But the key is to take your time and move slowly.  **Note: The dip is not always as pronounced as in the video below.  To ensure a dip you see is real, move back and forth over it and make sure it is persistent.** 
 7. When you observe dip, stop the wedge movement and note its position. If you need better statistics, you can increase the exposure time of the trace and further reduce the speed of the wedge. 
-8. **AI** (1) Record the trace of the dip through a full scan.  (2) Move the wedge from one side of the dip to the other.  By stoping the wedge on both sides of the dip right when it vanishes, you can note the rough distance over which you observe the dip. Record this distance. Measure it several times to get some statistics and a good sense of this distance. 
+8. **ACTION ITEM** (1) Record the trace of the dip through a full scan.  (2) Move the wedge from one side of the dip to the other.  By stoping the wedge on both sides of the dip right when it vanishes, you can note the rough distance over which you observe the dip. Record this distance. Measure it several times to get some statistics and a good sense of this distance. 
 
 ```{note}
 To improve the noise of your trace, you can optimize the coincidence timing and window.  Observe the histogram of coincidences, and use the timing and coincidence window controls inside the detector settings to reduce to the minimum possible coincidence window so that you have the best signal to noise ratio.
@@ -370,9 +370,9 @@ Here is a video moving in and out of the HOM dip so that you get an idea of the 
 
 <iframe src="https://drive.google.com/file/d/1aPtqVy__lI1VMfzs_hoZC9tu7Hwfaz7j/preview" width="640" height="480" allow="autoplay"></iframe>
 
-**AIs** (1) What is the spatial length over which you see the HOM dip?  What does this correspond to in terms of optical delay?  (Note you have just measured the delay between two single photons with sub-picosecond resolution!)  (2) How strong is the dip as a percentage of total coincidences when not overlapped?  Why might this contrast not be 100 percent?  (3) Returning to the histogram width from aimns 1-3, can you now conclude whether the coincidence timing histogram is electronics limited or photon arrival time limited? (4) Read the section in the text extending this approach to perform N=2 NOON-state interferometry and be sure to complete the post-lab questions.  The experiences gained in this measurement should help inform your answers to this post-lab with regard to engineering challenges involved with generating and using higher-order Fock and NOON states.
+**ACTION ITEMs** (1) What is the spatial length over which you see the HOM dip?  What does this correspond to in terms of optical delay?  (Note you have just measured the delay between two single photons with sub-picosecond resolution!)  (2) How strong is the dip as a percentage of total coincidences when not overlapped?  Why might this contrast not be 100 percent?  (3) Returning to the histogram width from aimns 1-3, can you now conclude whether the coincidence timing histogram is electronics limited or photon arrival time limited? (4) Read the section in the text extending this approach to perform N=2 NOON-state interferometry and be sure to complete the post-lab questions.  The experiences gained in this measurement should help inform your answers to this post-lab with regard to engineering challenges involved with generating and using higher-order Fock and NOON states.
 
-+++ {"tags": []}
++++
 
 ## **Project Idea** Quantum-Enhanced Measurement with a NOON State Interferometer
 

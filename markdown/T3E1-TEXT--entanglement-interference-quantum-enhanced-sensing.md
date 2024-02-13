@@ -427,7 +427,7 @@ glue("t3e1-fig-photon-bandwidth-interference", fig, display=True)
 Single-photon interference as a funciton of delay with finite bandwidth.  
 ```
 
-+++
++++ {"user_expressions": []}
 
 ### Prelab 2 Questions
 
@@ -435,7 +435,7 @@ Single-photon interference as a funciton of delay with finite bandwidth.
  2. Write the corresponding expression for the number of expected photons exiting path $e$.  
  3. Discuss the interaction-free measurement in the context of a translucent object ($0 < \alpha < 1$).
  4. Read about the [Elitzur-Vaidman bomb test](https://en.wikipedia.org/wiki/Elitzur%E2%80%93Vaidman_bomb_tester).  Explain how, when performed photon by photon and with a detector at ports $d$ and $e$ a probability of detection without interaction can approach 33 percent.  Justify your answer.
- 5. Read [](./T3E1-EXTRAS--rigorous-solution-MZI.ipynb).  Using the rigorous solution of the operator describing the output port to the detector, calculate the variance in the output for $\alpha = 0$, $\Delta N = \left < \hat{N}^2 \right > - \left < \hat{N} \right >^2$.  Note that at the output you have either a detection event or not -- this is like a coint toss which follows a binomial distribution with variance $P(1-P)$, where $P$ is the probability of detection.  Does your variance calculated using the operators make sense based on this?
+ 5. Using the rigorous solution of the operator describing the output port to the detector, calculate the variance in the output for $\alpha = 0$, $\Delta N = \left < \hat{N}^2 \right > - \left < \hat{N} \right >^2$.  Note that at the output you have either a detection event or not -- this is like a coint toss which follows a binomial distribution with variance $P(1-P)$, where $P$ is the probability of detection.  Does your variance calculated using the operators make sense based on this?
 
 +++ {"id": "4b595179-c2b9-4d45-819a-5c18c297dfe0", "user_expressions": []}
 

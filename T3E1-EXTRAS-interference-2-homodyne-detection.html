@@ -1,0 +1,579 @@
+
+<!DOCTYPE html>
+
+<html data-content_root="./" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>EXTRAS – Homodyne Detection — 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet"/>
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet"/>
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet"/>
+<link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="_static/styles/sphinx-book-theme.css?v=384b581d" rel="stylesheet" type="text/css"/>
+<link href="_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
+<link href="_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="_static/sphinx-thebe.css?v=4fa983c6" rel="stylesheet" type="text/css"/>
+<link href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" rel="preload"/>
+<link as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" rel="preload"/>
+<script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/documentation_options.js?v=9eb32ce0"></script>
+<script src="_static/doctools.js?v=888ff710"></script>
+<script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="_static/copybutton.js?v=f281be69"></script>
+<script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="_static/togglebutton.js?v=4a39c7ea"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script src="_static/design-tabs.js?v=36754332"></script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+<script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+<script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+<script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'T3E1-EXTRAS-interference-2-homodyne-detection';</script>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="T2E1-TEXT-HBT.html" rel="next" title="TEXT - Introduction to single photons with the quED (Week 1)"/>
+<link href="T3E1-EXTRAS--rigorous-solution-MZI.html" rel="prev" title="EXTRAS – Rigorous Solution of Mach-Zender Interferometer"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+<link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/></head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
+<a class="skip-link" href="#main-content" id="pst-skip-link">Skip to main content</a>
+<div id="pst-scroll-pixel-helper"></div>
+<button class="btn rounded-pill" id="pst-back-to-top" type="button">
+<i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<header class="bd-header navbar navbar-expand-lg bd-navbar">
+</header>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item">
+<a class="navbar-brand logo" href="intro.html">
+<img alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home" class="logo__image only-light" src="_static/logo-ibm.jpg"/>
+<script>document.write(`<img src="_static/logo-ibm.jpg" class="logo__image only-dark" alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home"/>`);</script>
+</a></div>
+<div class="sidebar-primary-item">
+<script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links bd-docs-nav">
+<div class="bd-toc-item navbar-nav active">
+<ul class="nav bd-sidenav bd-sidenav__home-link">
+<li class="toctree-l1">
+<a class="reference internal" href="intro.html">
+                    6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
+                </a>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introductory Material</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="BASICS-quantum-optics-basics.html">BASICS – Quantum Optics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T3E1 -- Interference, Entanglement, Quantum-Enhanced Sensing</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html">TEXT – Interference, Entanglement and Quantum-Enhanced Metrology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html">LAB – Interference, Entanglement and Quantum-Enhanced Metrology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T3E1-EXTRAS--rigorous-solution-MZI.html">EXTRAS – Rigorous Solution of Mach-Zender Interferometer</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">EXTRAS – Homodyne Detection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T2E1 -- Quantum Information and Quantum Key Distribution</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T2E1-TEXT-HBT.html">TEXT - Introduction to single photons with the quED (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2E1-LAB-HBT.html">LAB – Hanbury Brown - Twiss Lab (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2E1-TEXT-QKD.html">TEXT – QKD (Week 2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2E1-LAB-BB84.html">LAB – QKD (Week 2)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T3E3 -- Solid State Spins</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.html">TRAINING - Interfacing with the Vector Network Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.html">TEXT: Introduction to NV centers in diamond and cavity-based magnetometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.html">LAB - Quantum Sensing with Solid State Spins (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.html">LAB – Quantum Sensing With Solid State Spins (Week 2)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T1:3E2 -- Quantum Computation Lab (COMING SOON)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T1-3E2-Quantum-Computation-Lab.html">T1:3E2 – Quantum Computation Lab</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Final Projects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="FINAL-PROJECTS.html">Final Design Project</a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content">
+<div class="sbt-scroll-pixel-helper"></div>
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__primary" title="Toggle primary sidebar">
+<span class="fa-solid fa-bars"></span>
+</label></div>
+</div>
+<div class="header-article-items__end">
+<div class="header-article-item">
+<div class="article-header-buttons">
+<div class="dropdown dropdown-launch-buttons">
+<button aria-expanded="false" aria-label="Launch interactive content" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fas fa-rocket"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/T3E1-EXTRAS-interference-2-homodyne-detection.ipynb" target="_blank" title="Launch onBinder">
+<span class="btn__icon-container">
+<img src="_static/images/logo_binder.svg"/>
+</span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/T3E1-EXTRAS-interference-2-homodyne-detection.ipynb" target="_blank" title="Launch onColab">
+<span class="btn__icon-container">
+<img src="_static/images/logo_colab.png"/>
+</span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="dropdown dropdown-source-buttons">
+<button aria-expanded="false" aria-label="Source repositories" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fab fa-github"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm btn-source-repository-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://github.com/dkeathley/S23-6.2410-lab" target="_blank" title="Source repository">
+<span class="btn__icon-container">
+<i class="fab fa-github"></i>
+</span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+<li><a class="btn btn-sm btn-source-issues-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://github.com/dkeathley/S23-6.2410-lab/issues/new?title=Issue%20on%20page%20%2FT3E1-EXTRAS-interference-2-homodyne-detection.html&amp;body=Your%20issue%20content%20here." target="_blank" title="Open an issue">
+<span class="btn__icon-container">
+<i class="fas fa-lightbulb"></i>
+</span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="dropdown dropdown-download-buttons">
+<button aria-expanded="false" aria-label="Download this page" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fas fa-download"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm btn-download-source-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="_sources/T3E1-EXTRAS-interference-2-homodyne-detection.ipynb" target="_blank" title="Download source file">
+<span class="btn__icon-container">
+<i class="fas fa-file"></i>
+</span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+<li>
+<button class="btn btn-sm btn-download-pdf-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" onclick="window.print()" title="Print to PDF">
+<span class="btn__icon-container">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+</ul>
+</div>
+<button class="btn btn-sm btn-fullscreen-button" data-bs-placement="bottom" data-bs-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
+<span class="btn__icon-container">
+<i class="fas fa-expand"></i>
+</span>
+</button>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__secondary" title="Toggle secondary sidebar">
+<span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+</div>
+</div>
+</div>
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>EXTRAS – Homodyne Detection</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homodyne-detection">Homodyne Detection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homodyne-detection-with-squeezed-light">Homodyne Detection with Squeezed Light</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-enhanced-displacement-measurements">Quantum-Enhanced Displacement Measurements</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article">
+<section class="tex2jax_ignore mathjax_ignore" id="extras-homodyne-detection">
+<h1>EXTRAS – Homodyne Detection<a class="headerlink" href="#extras-homodyne-detection" title="Link to this heading">#</a></h1>
+<p>In Part 1 we explored single-photon interference and the Hong-Ou-Mandel effect.  Here in Part 2 we build on several of the core concepts introduced in Part 1, such as beam-combining and interference, to explore homodyne detection of quantum fields.  We will then show how one can use homodyne detection in combination with squeezed states to make distance measurements with extremely high sensitivity.</p>
+<section id="homodyne-detection">
+<h2>Homodyne Detection<a class="headerlink" href="#homodyne-detection" title="Link to this heading">#</a></h2>
+<p>Let’s consider a configuration in <a class="reference internal" href="#homodyne-detection-setup"><span class="std std-numref">Fig. 32</span></a>.  This is similar to the one used to demonstrate the Hong-Ou-Mandel effect, but with a few key changes.  First, we can drive on input of the beamsplitter with a coherent state <span class="math notranslate nohighlight">\(\ket{\alpha}_a\)</span>.  Second, we let the second input be an arbitrary state <span class="math notranslate nohighlight">\(\ket{\psi}_b\)</span>.  Third, instead of examining coincidence events, we rather examine the subtraction of the photocurrents between ports <span class="math notranslate nohighlight">\(d\)</span> and <span class="math notranslate nohighlight">\(c\)</span>. This configuration is shown pictorally below.</p>
+<figure class="align-default" id="homodyne-detection-setup">
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/homodyne-detection-setup.png"><img alt="homodyne-detection-setup" class="bg-primary mb-1" src="_images/homodyne-detection-setup.png" style="width: 400px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Experimental setup for homodyne detection.</span><a class="headerlink" href="#homodyne-detection-setup" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Given all inputs have the same frequency, this scheme is referred to as a balanced homodyne detection scheme.  It allows us to measure the field observable <span class="math notranslate nohighlight">\(B^{(\theta)}\)</span> of the state <span class="math notranslate nohighlight">\(\ket{\psi}_b\)</span>.  Let’s see how.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that we have again used the convention of labeling all operators with the letter corresponding to the mode label for convenience and clarity.  Thus <span class="math notranslate nohighlight">\(B^{(\theta)}\)</span> corresponds to the average observed field of the state in port <span class="math notranslate nohighlight">\(b\)</span>.</p>
+</div>
+<p>First note that as a result of the beamsplitter</p>
+<div class="math notranslate nohighlight">
+\[ \chat = \frac{\ahat + \bhat}{\sqrt{2}} \]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[ \dhat = \frac{\ahat - \bhat}{\sqrt{2}}. \]</div>
+<p>We then find that we can use these relations to define an operator that represents the difference current between the detector in path <span class="math notranslate nohighlight">\(d\)</span> and the one in path <span class="math notranslate nohighlight">\(c\)</span>.  We can do this by assuming that the detectors are 100% efficient, and thus the current would be directly proportional to the number of photons incident on each one.</p>
+<div class="math notranslate nohighlight">
+\[ 
+\hat{I}(\theta) \propto \hat{N}_c - \hat{N}_d = 
+\frac{1}{2} 
+\bigg \lbrace 
+(\adagger + \bdagger)(\ahat + \bhat) - 
+(\adagger - \bdagger)(\ahat - \bhat) 
+\bigg \rbrace
+\]</div>
+<p>After a bit of simplfication, we find that</p>
+<div class="math notranslate nohighlight">
+\[ \hat{I}(\theta) \propto \adagger\bhat + \bdagger\ahat. \]</div>
+<p>If we then take the input state to be <span class="math notranslate nohighlight">\(\ket{\alpha}_a\ket{\psi}_b\)</span>, we have that the average current is expressed as</p>
+<div class="math notranslate nohighlight">
+\[ I(\theta) \propto \bra{\psi}_b \bra{\alpha}_a \adagger \bhat + \ahat \bdagger \ket{\alpha}_a \ket{\psi}_b = |\alpha|\bra{\psi}_b \bhat e^{-i\theta} + \bdagger e^{i\theta} \ket{\psi}_b \]</div>
+<p>where we have taken <span class="math notranslate nohighlight">\(\alpha = |\alpha|e^{-i\theta}\)</span>.</p>
+<p>Note that this means that</p>
+<div class="math notranslate nohighlight">
+\[ I(\theta) \propto 2 |\alpha|B^{(\theta)}, \]</div>
+<p>meaning that the measured current can be directly related to the field in B in the quadrature defined by <span class="math notranslate nohighlight">\(\theta\)</span>.  One can simply scan the phase <span class="math notranslate nohighlight">\(\alpha\)</span> (for example by inserting a wedge into the path of <span class="math notranslate nohighlight">\(a\)</span>) to measure the average field in in <span class="math notranslate nohighlight">\(b\)</span> for all relative phase delays.</p>
+<p>Beyond mapping the average field, we can also examine the noise.  To do this, we then need something to correspond to <span class="math notranslate nohighlight">\(\hat{I}^2\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\hat{I}^2(\theta) \propto (\adagger \bhat + \bdagger \ahat)^2.  \]</div>
+<p>Again, after some algebra, we wind up finding that</p>
+<div class="math notranslate nohighlight">
+\[ \langle \hat{I}^2(\theta) \rangle 
+\propto 
+|\alpha|^2 \bra{\psi}_b e^{i 2 \theta}\bhat\bhat + 1 + 2\bdagger\bhat + \bdagger\bdagger e^{-i2\theta} \ket{\psi_b} + N_b, \]</div>
+<p>but, note, this is nothing more than</p>
+<div class="math notranslate nohighlight">
+\[ \langle \hat{I}^2(\theta) \rangle 
+\propto 
+4 |\alpha|^2 {\hat{B}^{(\theta)}}^2 + N_b\]</div>
+<p>Then remember that the noise is simply defined by the standard deviation of the output current, which is</p>
+<div class="math notranslate nohighlight">
+\[ \Delta I(\theta) = \langle \hat{I}^2 \rangle - I^2 \propto 4 |\alpha|^2 \Delta B^{(\theta)}  + N_b \]</div>
+<p>This is a really interesting set of results, so let’s think about them a bit.  Basically, the signal <span class="math notranslate nohighlight">\(I\)</span> is related directly to the field observable of the state in port <span class="math notranslate nohighlight">\(b\)</span> for any quadrature defined by <span class="math notranslate nohighlight">\(\theta\)</span>.  In fact this state information has been enhanced by a factor of <span class="math notranslate nohighlight">\(2|\alpha|\)</span> due to the large field of the coherent state.  The the noise of the differential current is simply the noise of the field observable of the state in port <span class="math notranslate nohighlight">\(b\)</span> enhanced by a factor of <span class="math notranslate nohighlight">\(4|\alpha|^2\)</span>, with an extra contribution of <span class="math notranslate nohighlight">\(N_b\)</span>, the number of photons in the state in port <span class="math notranslate nohighlight">\(b\)</span>.  Note that if we are dealing with few-photon states, then this extra portion <span class="math notranslate nohighlight">\(N_b\)</span> can be safely ignored.  This means, <strong>balanced homodyne detection provides all information about the fields in port <span class="math notranslate nohighlight">\(b\)</span></strong>.</p>
+<p>Let’s see what happens when we inject a squeezed state into port <span class="math notranslate nohighlight">\(b\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Clearly, there is an advantage to having a high intensity coherent state <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span>.  However, one should note that there are technical limitations here, in particular is detector saturation.  As with any photodetection scheme, there is a limit to the average photon rate that can be detected by a given detector.  There are also bandwidth limitations to be considered.  These traditional limitations of optoelectronics still apply and must be considered.  As with all quantum engineering, there is still plenty of classical engineering to be taken into account!</p>
+</div>
+</section>
+<section id="homodyne-detection-with-squeezed-light">
+<h2>Homodyne Detection with Squeezed Light<a class="headerlink" href="#homodyne-detection-with-squeezed-light" title="Link to this heading">#</a></h2>
+<p>We know from the basics section on <a class="reference internal" href="BASICS-quantum-optics-basics.html#sec-quantum-optics-basics-squeezed-states"><span class="std std-ref">Squeezed States</span></a> that squeezed light exhibits reduced field fluctuations along a particular quadrature.  We also now know that Homodyne detection can measure the field observable at input port <span class="math notranslate nohighlight">\(b\)</span> along any quadratudre defined by the phase of the coherent state <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<p>Let us start by referring back to the simplified squeezed state we had discussed in the basics section on  <a class="reference internal" href="BASICS-quantum-optics-basics.html#sec-quantum-optics-basics-squeezed-states"><span class="std std-ref">Squeezed States</span></a>.</p>
+<div class="math notranslate nohighlight">
+\[ \ket{\psi_s}_b = \sqrt{1 - s^2}\ket{0}_b - s\ket{2}_b.\]</div>
+<p>From our prior analysis we know that the average field is zero for this squeezed state, thus</p>
+<div class="math notranslate nohighlight">
+\[ I(\theta) \propto 2 |\alpha| B^{(\theta)} = 0,\]</div>
+<p>and that the current noise can be expressed as</p>
+<div class="math notranslate nohighlight">
+\[ \Delta I(\theta) \propto 4 |\alpha|^2 {\hat{B}^{(\theta)}}^2 + N_b
+\]</div>
+<p>which, for our squeezed state is</p>
+<div class="math notranslate nohighlight">
+\[  \Delta I(\theta) = 4 |\alpha|^2 { \bigg \lbrace 1/4 - s \sqrt{\frac{(1 - s^2)}{2}} \cos(2 \theta) + s^2 \bigg \rbrace  }^{1/2} + N_b \]</div>
+<p>As noted above, for a large enough <span class="math notranslate nohighlight">\(|\alpha|\)</span>, we can ignore <span class="math notranslate nohighlight">\(N_b\)</span> here.</p>
+<p>Let’s now plot <span class="math notranslate nohighlight">\(\Delta I(\theta)\)</span> given <span class="math notranslate nohighlight">\(s = 0.3\)</span> (squeezed state) and <span class="math notranslate nohighlight">\(s = 0.0\)</span> (vacuum state – no input).</p>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">mpatches</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+
+
+<span class="n">s</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">delA</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span> <span class="o">-</span> <span class="n">s</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">theta</span><span class="p">)</span> <span class="o">+</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">delA</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"s = 0.3"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"black"</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">"--"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"s = 0"</span><span class="p">)</span>
+
+<span class="c1">#ax.set_ylim(0, 1.55)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$\theta$'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$\Delta I$($\theta$)'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    
+<span class="c1">#plt.gca().set_aspect('equal')</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s2">"homodyne_noise_squeezed_state"</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/66e149fb2ed033899771380eb0fd18373a9be996591546d79ba7bc4ca3a05ec4.png" src="_images/66e149fb2ed033899771380eb0fd18373a9be996591546d79ba7bc4ca3a05ec4.png">
+</img></div>
+</details>
+</div>
+<figure class="align-default" id="fig-homodyne-noise-squeezed-state" style="width: 600px">
+<img alt="_images/66e149fb2ed033899771380eb0fd18373a9be996591546d79ba7bc4ca3a05ec4.png" src="_images/66e149fb2ed033899771380eb0fd18373a9be996591546d79ba7bc4ca3a05ec4.png"/>
+<figcaption>
+<p><span class="caption-number">Fig. 33 </span><span class="caption-text">Noise of the differential output signal <span class="math notranslate nohighlight">\(\Delta I\)</span> as we scan <span class="math notranslate nohighlight">\(\theta\)</span>.  Note that depending on the value of <span class="math notranslate nohighlight">\(\theta\)</span> with the squeezed state input, the noise can be either significantly increased or decreased compared to the case of no input to port <span class="math notranslate nohighlight">\(b\)</span> (i.e. pure vacuum state input corresponding to <span class="math notranslate nohighlight">\(s = 0\)</span>).</span><a class="headerlink" href="#fig-homodyne-noise-squeezed-state" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now we have shown that the noise at the output of a Homodyne detector can be reduced by injection of a squeezed state.  In the next section we examine how we can put this to use for quantum-enhanced measurements of mirror displacement.</p>
+</section>
+<section id="quantum-enhanced-displacement-measurements">
+<h2>Quantum-Enhanced Displacement Measurements<a class="headerlink" href="#quantum-enhanced-displacement-measurements" title="Link to this heading">#</a></h2>
+<p>Myriad precision instruments use laser-based interferometers to characterize ultra-small changes in the displacement of an object.  For example, precision stages sometimes use laser-based interferometers to obtain nanometer-level precision in their movement.  A rather famous example of precision displacement measurements is for LIGO, where kilometer-scale interferometers are used to measure changes in path lengths that measure just fractions of the width of one atom.  This marvel of measurements was made possible through incredible engineering which included the use of quantum-enhanced measurement techniques based on homodyne detection with squeezed states.</p>
+<figure class="align-default" id="displacement-meas-setup">
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/displacement-meas-setup.png"><img alt="displacement-meas-setup" class="bg-primary mb-1" src="_images/displacement-meas-setup.png" style="width: 800px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Experimental setup for a quantum-enhanced displacment measurement.</span><a class="headerlink" href="#displacement-meas-setup" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In <a class="reference internal" href="#displacement-meas-setup"><span class="std std-numref">Fig. 34</span></a> we show how one can couple an interferometer to a homodyne detector for precision displacement measurements.  There are three key inputs to this system:</p>
+<ol class="arabic simple">
+<li><p>A coherent state probe: <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span></p></li>
+<li><p>A squeezed state input: <span class="math notranslate nohighlight">\(\ket{\psi_s}\)</span>, and</p></li>
+<li><p>A coherent state local oscillator reference: <span class="math notranslate nohighlight">\(\ket{\beta}\)</span></p></li>
+</ol>
+<p>If the path length difference between the two arms changes by a distance of <span class="math notranslate nohighlight">\(\delta\)</span>, then this induces a phase change <span class="math notranslate nohighlight">\(\theta = 2 \pi \delta/\lambda\)</span>, where <span class="math notranslate nohighlight">\(\lambda\)</span> is the wavelength of the light being used (we have assumed all three input states are of the same central wavelength).  With a bit of effort (which we will go through in detail in the example and problem set questions at the end of this chapter), we find that the measured output current.  Assuming <span class="math notranslate nohighlight">\(\delta\)</span> is very small (much less than one wavelength), and for appropriate phase selection of the probe state <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span>, the current can be approximated as</p>
+<div class="math notranslate nohighlight">
+\[ I \propto \frac{2\pi\delta |\alpha| |\beta|}{\lambda}\]</div>
+<p>To see the general effect of squeezing, we can inject our example squeezed state into the system</p>
+<div class="math notranslate nohighlight">
+\[ \ket{\psi_s} = \sqrt{1 - s^2} \ket{0} - s \ket{2},\]</div>
+<p>resulting in the following approximate noise current (assuming large <span class="math notranslate nohighlight">\(\beta\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[ \Delta I^2 \propto |\beta|^2 (1 + 4s^2 - 2 s \sqrt{2(1-s^2)} \cos(2\phi - 2\pi \delta/\lambda).\]</div>
+<p>This then leads to a signal to noise ratio of</p>
+<div class="math notranslate nohighlight">
+\[ \text{SNR} = \frac{I^2}{\Delta I^2} = \frac{4 \pi^2 \delta^2 |\alpha|^2}{\lambda^2 (1 + 4s^2 - 2 s \sqrt{2(1-s^2)} \cos(2\phi - 2\pi \delta/\lambda)} \]</div>
+<p>As for the simplified case of heterodyne detection of a squeezed state discussed above, the injection of a squeezed state into an interferometer for displacement measurement also has the effect of reducing the background noise. This noise reduction occurs <strong>so long as the homodyne detector is measuring the displacement along the appropriate quadrature where the noise has been reduced.</strong>  This is achieved by setting <span class="math notranslate nohighlight">\(\phi = 0\)</span>, where <span class="math notranslate nohighlight">\(\phi\)</span> is the phase of <span class="math notranslate nohighlight">\(\ket{\beta}\)</span>.</p>
+<p>From a measurement perspective, we are interested in the value of <span class="math notranslate nohighlight">\(\delta\)</span> where <span class="math notranslate nohighlight">\(\text{SNR} &gt; 1\)</span>.  This value becomes an important metric for the lower limit of detection of the system.  So, again, let’s pick the values of <span class="math notranslate nohighlight">\(s = 0\)</span> and <span class="math notranslate nohighlight">\(s = 0.3\)</span> as comparison points for the SNR as a function of <span class="math notranslate nohighlight">\(\delta\)</span>.  We assume a wavelength of 600 nm, and a probe photon rate of 100 photons per second.</p>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">mpatches</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+
+
+<span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">alpha2</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="mi">600</span>
+<span class="n">SNR_vac</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">delta</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">alpha2</span><span class="o">/</span><span class="p">(</span><span class="n">y0</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="n">s</span><span class="p">))</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">SNR_sqz</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">delta</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">alpha2</span><span class="o">/</span><span class="p">(</span><span class="n">y0</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="n">s</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span> <span class="n">SNR_vac</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"s = 0.0"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span> <span class="n">SNR_sqz</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"s = 0.3"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"black"</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">"--"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"SNR = 1"</span><span class="p">)</span>
+
+<span class="c1">#ax.set_ylim(0, 1.55)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$\delta$ (nm)'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'SNR'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    
+<span class="c1">#plt.gca().set_aspect('equal')</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s2">"displacement_LOD_squeezed_state"</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ff06787dd681559eb50e1a528a8addec88ad21930a4dc317587286219ea9a853.png" src="_images/ff06787dd681559eb50e1a528a8addec88ad21930a4dc317587286219ea9a853.png"/>
+</div>
+</details>
+</div>
+<figure class="align-default" id="fig-displacement-lod-squeezed-state" style="width: 600px">
+<img alt="_images/ff06787dd681559eb50e1a528a8addec88ad21930a4dc317587286219ea9a853.png" src="_images/ff06787dd681559eb50e1a528a8addec88ad21930a4dc317587286219ea9a853.png"/>
+<figcaption>
+<p><span class="caption-number">Fig. 35 </span><span class="caption-text">Signal to noise ratio of the homodyne output from an interferometer for measuremetn of displacement <span class="math notranslate nohighlight">\(\delta\)</span> both with squeezing (<span class="math notranslate nohighlight">\(s = 0.3\)</span>) and without (<span class="math notranslate nohighlight">\(s = 0\)</span>).  Clearly, a squeezed state reduces the limits of detection beyond what is capable with purely classical input states. This reduction can be further enhanced with states exhibiting larger amounts of squeezing than what we used here for this example.</span><a class="headerlink" href="#fig-displacement-lod-squeezed-state" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>By using advanced methods that produce squeezed states with much higher levels of squeezing than our toy state here, this can be even further improved.   As with all other examples, though, one must ensure that quantum fluctuations are the dominant source of noise.  <strong>The limit in real life can often be set by thermal, mechanical, and other technical noise taht is not quantum in nature.</strong>  There must also be significant engineering introduced to reduce these noise factors.</p>
+</section>
+</section>
+<script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+<script>kernelName = 'python3'</script>
+</article>
+<footer class="prev-next-footer">
+<div class="prev-next-area">
+<a class="left-prev" href="T3E1-EXTRAS--rigorous-solution-MZI.html" title="previous page">
+<i class="fa-solid fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">EXTRAS – Rigorous Solution of Mach-Zender Interferometer</p>
+</div>
+</a>
+<a class="right-next" href="T2E1-TEXT-HBT.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">TEXT - Introduction to single photons with the quED (Week 1)</p>
+</div>
+<i class="fa-solid fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> Contents
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homodyne-detection">Homodyne Detection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homodyne-detection-with-squeezed-light">Homodyne Detection with Squeezed Light</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-enhanced-displacement-measurements">Quantum-Enhanced Displacement Measurements</a></li>
+</ul>
+</nav></div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+<div class="bd-footer-content__inner container">
+<div class="footer-item">
+<p class="component-author">
+By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
+</p>
+</div>
+<div class="footer-item">
+<p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+</p>
+</div>
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+</div>
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+<footer class="bd-footer">
+</footer>
+<script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script></body>
+</html>

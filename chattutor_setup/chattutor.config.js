@@ -48,11 +48,11 @@
  * file, false if ran on a server, either local or online
  * Usually true for jupyter books
  */
-const RUN_LOCALLY               = false;
+const RUN_LOCALLY               = true;
 const TEST_MODE                 = false;
 const IS_STATIC                 = true;
 
-const EMBEDDING_COLLECTION_NAME = "mitlab62410_updated";
+const EMBEDDING_COLLECTION_NAME = "dkeathley_mit_course";
 const COURSE_URL                = "https://dkeathley.github.io/6.2410-lab"
 /**
  * --------------- TESTING CONFIGS ----------------

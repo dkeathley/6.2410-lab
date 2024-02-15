@@ -43,7 +43,7 @@ In this chapter we examine entangled photon pair generation, single-photon inter
 
 The information and techniques discussed here will not only be useful for your lab exercises, but will be critical tools that you can leverage for your final projets.
 
-+++ {"user_expressions": []}
++++
 
 ## Entangled Photon Pair Generation and Measurement
 

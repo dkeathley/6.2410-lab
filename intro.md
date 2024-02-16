@@ -63,6 +63,17 @@ This course is a CI-M course, and the communication-intensive components center 
 
 The course provides an online text (this website) lecture notes and other resources.  Suggested references and content for further reading and viewing are provided where relevant.
 
+## ChatTutor
+
+The course website implements an AI tool based on an open-source project called [ChatTutor](https://github.com/ChatTutor/chattutor).  This is intended to provide yet another resource for engaging with the course material.  It has contextual awareness of the course materials on the course website, in addition to interfacing with ChatGPT.  You are welcome to try the tool, understanding it is still between an alpha and beta product.  In fact, we would love to have your feedback on how it works! 
+
+Some things you should be aware of:
+
+ 1. The ChatTutor interfaces with ChatGPT, so your prompts will be shared with OpenAI as a result.
+ 2. There is a possibility that anonymized usage reports will be used for continual development of the tool.
+ 3. LLMs can be faulty.
+     4. Use of ChatTutor is of course optional.
+
 ## Grading
 
 The grading will be based on:

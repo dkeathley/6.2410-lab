@@ -439,6 +439,7 @@ Single-photon interference as a funciton of delay with finite bandwidth.
 
 +++ {"id": "4b595179-c2b9-4d45-819a-5c18c297dfe0", "user_expressions": []}
 
+(content:t3e1:HOM)=
 ## Interference of Two Single Photons: The Hong-Ou-Mandel Effect
 
 <iframe src="https://drive.google.com/file/d/1EbP7heyjad4oQek8uBg5gI4dMnObpFh_/preview" width="640" height="480" allow="autoplay"></iframe>

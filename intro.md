@@ -72,7 +72,7 @@ Some things you should be aware of:
  1. The ChatTutor interfaces with ChatGPT, so your prompts will be shared with OpenAI as a result.
  2. There is a possibility that anonymized usage reports will be used for continual development of the tool.
  3. LLMs can be faulty.
-     4. Use of ChatTutor is of course optional.
+ 4. Use of ChatTutor is of course optional.
 
 ## Grading
 

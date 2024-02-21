@@ -37,11 +37,18 @@ $$\newcommand{\fhat}[0]{\hat{f}}$$
 
 +++ {"id": "bcdff4e6-8251-4c63-9061-40ac42497a11"}
 
+(content-t3e1-entanglement-interference-text)=
 # TEXT -- Interference, Entanglement and Quantum-Enhanced Metrology
 
 In this chapter we examine entangled photon pair generation, single-photon interference, entangled photon pair interference by way of the Hong-Ou-Mandel effect, and entangled multi-photon Fock state interference for quantum-enhanced phase sensing.  Along the way we will discuss basic principles important to a variety of areas in quantum photonics, such as: the interaction of photons with beamsplitters; the interference of photon number states; signal detection and processing methods such as coincidence detection; and how to analyze statistical fluctuations of photon detection events for determining sensitivity and signal to noise ratio in measurements.
 
 The information and techniques discussed here will not only be useful for your lab exercises, but will be critical tools that you can leverage for your final projets.
+
++++
+
+## Pre- and Post-Labs
+
+This lab has three pre-labs and one post-lab.  The pre-labs are due at the start of lab sessions 1-3.  The post-lab can be turned in with your final summary report.  
 
 +++
 

@@ -60,6 +60,12 @@ Throughout the labs you will be expected to keep notes.  This is important for b
 
 +++
 
+## Pre- and Post-Labs
+
+This lab has three pre-labs and one post-lab.  The pre-labs are due at the start of days 1-3.  The post-lab can be turned in with your final summary report.  See the [text](content-t3e1-entanglement-interference-text) for more details.
+
++++
+
 ## Aim 1: Introduction to the Quantenkoffer (Day 1)
 
 In this lab you will be using the [Quantenkoffer](https://qutools.com/quantenkoffer_science-kit/).  This instrument will allow us to explore the properties of single photons and pairs of entangled photons. 
@@ -303,7 +309,9 @@ Scanning through delay position with a wedge to see single-photon interference a
 
 +++
 
-#### Part 2: Interaction-Free Measurement
+#### Part 2: Interaction-Free Measurement (Optional)
+
+**This part is optional as it is difficult to perform in the lab space with people moving around.  You need to be careful to ensure quiet conditions. Even though the experiment is optional, please give it a shot and still address the action item.**
 
 Now we will use the interferometer to demonstrate the concept of [interaction-free measurement](https://en.wikipedia.org/wiki/Interaction-free_measurement).  For the case of single photons, it is possible to detect the presence of an object in one of the interferometer arms without actually interacting with it.  If the interferometer is aligned on a null, an object placed into one of the arms will casue the signal at the output to increase.  These photons sensed the presence of the object, without being absorbed!
 

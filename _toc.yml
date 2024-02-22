@@ -38,6 +38,9 @@ parts:
   - caption: Final Projects
     chapters:
     - file: FINAL-PROJECTS.ipynb
+  - caption: Templates
+    chapters:
+    - file: TEMPLATE-6.2410-summary-report.ipynb
 
   #- caption: Other Resources
   #  chapters:

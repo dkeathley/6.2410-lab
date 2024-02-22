@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.14.2
+    jupytext_version: 1.15.2
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -46,9 +46,10 @@ display(HTML("<style>.jp-MarkdownCell .jp-Cell-inputWrapper { width: "+str(width
 display(HTML("<style>.jp-Cell-outputWrapper { width: "+str(width)+"% !important;  margin: 0 auto; }</style>"))
 ```
 
+(content-t3e1-extras-homodyne-detection)=
 # EXTRAS -- Homodyne Detection
 
-In Part 1 we explored single-photon interference and the Hong-Ou-Mandel effect.  Here in Part 2 we build on several of the core concepts introduced in Part 1, such as beam-combining and interference, to explore homodyne detection of quantum fields.  We will then show how one can use homodyne detection in combination with squeezed states to make distance measurements with extremely high sensitivity.
+In the lab we explored single-photon interference and the Hong-Ou-Mandel effect.  Here we build on several of the core concepts introduced in the lab, such as beam-combining and interference, to explore homodyne detection of quantum fields.  We will then show how one can use homodyne detection in combination with squeezed states to make distance measurements with extremely high sensitivity.
 
 +++
 

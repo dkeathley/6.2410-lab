@@ -40,8 +40,4 @@ parts:
     - file: FINAL-PROJECTS.ipynb
   - caption: Templates
     chapters:
-    - file: TEMPLATE-6.2410-summary-report.ipynb
-
-  #- caption: Other Resources
-  #  chapters:
-  #   - file: OTHER-quantum-monte-carlo-simulation-spin-entanglement-repeaters.ipynb
+    - file: TEMPLATES/TEMPLATE-6.2410-summary-report.ipynb

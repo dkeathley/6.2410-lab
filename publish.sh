@@ -7,5 +7,5 @@ jupyter-book build ./
 python ./chattutor_setup/install.py
 
 #Push to github pages
-ghp-import -n -p -f _build/html
+ghp-import -n -p -f -b master _build/html
 

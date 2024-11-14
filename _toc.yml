@@ -41,3 +41,6 @@ parts:
   - caption: Templates
     chapters:
     - file: TEMPLATES/TEMPLATE-6.2410-summary-report.ipynb
+  - caption: MIT Bosch Digital Twin
+    chapters:
+    - file: Cavity_QED_Sensor_Bosch.ipynb

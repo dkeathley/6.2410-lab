@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html data-content_root="../" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Activity 3: SPDC Simulation by QuTip — 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+<!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+<noscript>
+<style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+</noscript>
+<!-- Loaded before other Sphinx assets -->
+<link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet"/>
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet"/>
+<link href="../_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="../_static/styles/sphinx-book-theme.css?v=a3416100" rel="stylesheet" type="text/css"/>
+<link href="../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
+<link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-thebe.css?v=4fa983c6" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
+<!-- So that users can add custom icons -->
+<script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" rel="preload"/>
+<link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" rel="preload"/>
+<script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+<script src="../_static/doctools.js?v=9a2dae69"></script>
+<script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="../_static/copybutton.js?v=f281be69"></script>
+<script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script src="../_static/design-tabs.js?v=f930bc37"></script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+<script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+<script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+<script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script type="application/vnd.jupyter.widget-state+json">{"state": {"8c905b062e954e748d7b429d30866163": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "00d8b24b65f8499d87d747d7351cc8cc": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "156c23f4493a4406a4a75201bd017417": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "FloatSliderView", "behavior": "drag-tap", "continuous_update": false, "description": "Time index:", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_8c905b062e954e748d7b429d30866163", "max": 500.0, "min": 0.0, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 1.0, "style": "IPY_MODEL_00d8b24b65f8499d87d747d7351cc8cc", "tabbable": null, "tooltip": null, "value": 0.0}}, "d49f687814ec45c9bd7c0b28c3bb608a": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2fe03b851dae4f2cb1fbcb23faf0d075": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "0b1f6e79f91e48c08463c1faf00aa968": {"model_name": "IntSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "IntSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "IntSliderView", "behavior": "drag-tap", "continuous_update": true, "description": "t", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_d49f687814ec45c9bd7c0b28c3bb608a", "max": 999, "min": 0, "orientation": "horizontal", "readout": true, "readout_format": "d", "step": 1, "style": "IPY_MODEL_2fe03b851dae4f2cb1fbcb23faf0d075", "tabbable": null, "tooltip": null, "value": 30}}, "dffda32ceda14faa82c808d3bc2a521e": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3892ac5adad242d3b200a386cca66e0a": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_0b1f6e79f91e48c08463c1faf00aa968", "IPY_MODEL_f28247f886fe4682b211dcd9543b53c1"], "layout": "IPY_MODEL_dffda32ceda14faa82c808d3bc2a521e", "tabbable": null, "tooltip": null}}, "0f96672d82984be597cc9b432e84d502": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f28247f886fe4682b211dcd9543b53c1": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_0f96672d82984be597cc9b432e84d502", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {}, "data": {"text/plain": "<Figure size 800x500 with 2 Axes>", "image/png": "iVBORw0KGgoAAAANSUhEUgAAAxYAAAHqCAYAAACZcdjsAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAA9hAAAPYQGoP6dpAAAfXUlEQVR4nO3dfZDVhXno8WcBAbWwKUJouLJIkGqOIOJytEvzUsViCCGhyXSSTody89bh9mjCMP5Bms5YW1OcJo3JjCuV1NEknVRvpmo7SU1kRmXtUJPjygLXZSyML1CVoKmAYIGA5/6RcW/3rrqwD7u/czifz8yZ8fz27OH5zSDPfM9rS61WqwUAAEDCqKIHAAAAGp+wAAAA0oQFAACQJiwAAIA0YQEAAKQJCwAAIE1YAAAAacICAABIG1P0AI3ijTfeiBdffDEmTJgQLS0tRY8DMGS1Wi1ee+21mDZtWowa5fGlLPsBOJNkdoSwOEkvvvhiTJ8+vegxAE6bPXv2xPnnn1/0GA3PfgDOREPZEcLiJE2YMCEiIv7H/7o7Ro07Z1j+jP9z07XDcr8A/93Bgwdj+vTpff+ukTMS+yHCjgBGRmZHCIuT9ObT26PGnTNsi2PixInDcr8Ab8XLdk6PkdgPEXYEMLKGsiO8uBYAAEgTFgAAQJqwAAAA0oQFAACQJiwAAIA0YQEAAKQJCwAAIE1YAAAAacICAABIExaD6OzsjFKpFOVyuehRAKgj9gNAf8JiEJVKJXp7e6NarRY9CgB1xH4A6E9YAAAAacICAABIExYAAECasAAAANKEBQAAkCYsAACANGEBAACkCQsAACBNWAAAAGnCAgAASBMWAABAmrAAAADShAUAAJAmLAAAgDRhAQAApAkLAAAgTVgAAABpwgIAAEgTFgAAQJqwAAAA0oQFAACQJiwAAIA0YQEAAKQJCwAAIE1YAAAAacICAABIExYAAECasAAAANKEBQAAkCYsAACANGEBAACkCQsAACBNWAyis7MzSqVSlMvlokcBoI7YDwD9CYtBVCqV6O3tjWq1WvQoANQR+wGgP2EBAACkCQsAACBNWAAAAGnCAgAASBMWAABAmrAAAADShAUAAJAmLAAAgDRhAQAApAkLAAAgTVgAAABpwgIAAEgTFgAAQJqwAAAA0oQFAACQJiwAAIA0YQEAAKQJCwAAIE1YAAAAacICAABIExYAAECasAAAANKEBQAAkCYsAACANGEBAACkCYtBdHZ2RqlUinK5XPQoANQR+wGgP2ExiEqlEr29vVGtVoseBYA6Yj8A9CcsAACANGEBAACkCQsAACBNWAAAAGnCAgAASBMWAABAmrAAAADShAUAAJAmLAAAgDRhAQAApAkLAAAgTVgAAABpwgIAAEgTFgAAQJqwAAAA0oQFAACQJiwAAIA0YQEAAKQJCwAAIE1YDKKzszNKpVKUy+WiRwGgjtgPAP0Ji0FUKpXo7e2NarVa9CgA1BH7AaA/YQEAAKQJCwAAIE1YAAAAacICAABIExYAAECasAAAANKEBQAAkCYsAACANGEBAACkCQsAACBNWAAAAGnCAgAASBMWAABAmrAAAADShAUAAJAmLAAAgDRhMYjOzs4olUpRLpeLHgWAOmI/APQnLAZRqVSit7c3qtVq0aMAUEfsB4D+hAUAAJAmLAAAgDRhAQAApAkLAAAgTVgAAABpwgIAAEgTFgAAQJqwAAAA0oQFAACQJiwAAIA0YQEAAKQJCwAAIE1YAAAAacICAABIExaD6OzsjFKpFOVyuehRAKgj9gNAf8JiEJVKJXp7e6NarRY9CgB1xH4A6E9YAAAAacICAABIExYAAECasAAAANKEBQAAkCYsAACANGEBAACkCQsAACBNWAAAAGnCAgAASBMWAABAmrAAAADShMUgOjs7o1QqRblcLnoUAOqI/QDQn7AYRKVSid7e3qhWq0WPAkAdsR8A+hMWAABAmrAAAADShAUAAJAmLAAAgLSmCouvf/3rcckll8ScOXPi7//+74seB4A6YT8A5I0peoCRsn379vj+978f3d3dERGxaNGi+OhHPxrvete7ih0MgELZDwCnR9M8Y7Fjx45YuHBhjB8/PsaPHx+XXXZZ/PjHPy56LAAKZj8AnB51ExZdXV2xbNmymDZtWrS0tMQDDzww4Da33357zJw5M8aPHx/t7e3x2GOPnfT9z5kzJx555JHYv39/7N+/Px5++OF44YUXTuMZADAc7AeAxlA3L4U6fPhwzJs3Lz7zmc/EJz/5yQE/v/fee2P16tVx++23x2//9m/HHXfcEUuWLIne3t5oa2uLiIj29vY4evTogN996KGHolQqxRe/+MW4+uqro7W1NcrlcowZUzenD8DbsB8AGkNLrVarFT3E/6+lpSXu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"}}], "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}</script>
+<script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'simulation-modules/T1_3E2_spdc_simulation_by_qutip';</script>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="../FINAL-PROJECTS.html" rel="next" title="Final Design Project"/>
+<link href="T1-3E3-Activity-Compuational_HOM.html" rel="prev" title="Activity 2 – Two-photon (HOM) interference simulation"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+<meta content="" name="docsearch:version"/>
+<link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/></head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
+<div class="skip-link d-print-none" id="pst-skip-link"><a href="#main-content">Skip to main content</a></div>
+<div id="pst-scroll-pixel-helper"></div>
+<button class="btn rounded-pill" id="pst-back-to-top" type="button">
+<i class="fa-solid fa-arrow-up"></i>Back to top</button>
+<dialog id="pst-search-dialog">
+<form action="../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+</dialog>
+<div class="pst-async-banner-revealer d-none">
+<aside aria-label="Version warning" class="d-none d-print-none" id="bd-header-version-warning"></aside>
+</div>
+<header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+</header>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<dialog id="pst-primary-sidebar-modal"></dialog>
+<div class="bd-sidebar-primary bd-sidebar" id="pst-primary-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item">
+<a class="navbar-brand logo" href="../intro.html">
+<img alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home" class="logo__image only-light" src="../_static/logo-ibm.jpg"/>
+<img alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home" class="logo__image only-dark pst-js-only" src="../_static/logo-ibm.jpg"/>
+</a></div>
+<div class="sidebar-primary-item">
+<button aria-label="Search" class="btn search-button-field search-button__button pst-js-only" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Search">
+<i class="fa-solid fa-magnifying-glass"></i>
+<span class="search-button__default-text">Search</span>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links bd-docs-nav">
+<div class="bd-toc-item navbar-nav active">
+<ul class="nav bd-sidenav bd-sidenav__home-link">
+<li class="toctree-l1">
+<a class="reference internal" href="../intro.html">
+                    6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
+                </a>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introductory Material</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../BASICS-quantum-optics-basics.html">BASICS – Quantum Optics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T3E1 -- Interference, Entanglement, Quantum-Enhanced Sensing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html">TEXT – Interference, Entanglement and Quantum-Enhanced Metrology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html">LAB – Interference, Entanglement and Quantum-Enhanced Metrology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../T3E1-EXTRAS-interference-2-homodyne-detection.html">EXTRAS – Homodyne Detection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T2E1 -- Quantum Information and Quantum Key Distribution</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../T2E1-TEXT-HBT.html">TEXT - Introduction to single photons with the quED (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../T2E1-LAB-HBT.html">LAB – Hanbury Brown - Twiss Lab (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../T2E1-TEXT-QKD.html">TEXT – QKD (Week 2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../T2E1-LAB-BB84.html">LAB – QKD (Week 2)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T3E3 -- Solid State Spins</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../quNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.html">TRAINING - Interfacing with the Vector Network Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quNV-Jupyter/T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.html">TEXT: Introduction to NV centers in diamond and cavity-based magnetometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quNV-Jupyter/T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.html">LAB - Quantum Sensing with Solid State Spins (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.html">LAB – Quantum Sensing With Solid State Spins (Week 2)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T1:3E2 -- Quantum Simulation Lab</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T1-3E3-Activity-Cavity_QED_sensor.html">Activity 1: Solid State Spis – Cavity QED Digital Twin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T1-3E3-Activity-Compuational_HOM.html">Activity 2 – Two-photon (HOM) interference simulation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Activity 3: SPDC Simulation by QuTip</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Final Projects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../FINAL-PROJECTS.html">Final Design Project</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Templates</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../TEMPLATES/TEMPLATE-6.2410-summary-report.html">Summary Report Template</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">MIT Bosch Digital Twin</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Cavity_QED_Sensor_Bosch.html">LAB: Solid State Spin Laboratory</a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content" role="main">
+<div class="sbt-scroll-pixel-helper"></div>
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle primary sidebar">
+<span class="fa-solid fa-bars"></span>
+</button></div>
+</div>
+<div class="header-article-items__end">
+<div class="header-article-item">
+<div class="article-header-buttons">
+<div class="dropdown dropdown-launch-buttons">
+<button aria-expanded="false" aria-label="Launch interactive content" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fas fa-rocket"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/simulation-modules/T1_3E2_spdc_simulation_by_qutip.ipynb" target="_blank" title="Launch on Binder">
+<span class="btn__icon-container">
+<img alt="Binder logo" src="../_static/images/logo_binder.svg"/>
+</span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/simulation-modules/T1_3E2_spdc_simulation_by_qutip.ipynb" target="_blank" title="Launch on Colab">
+<span class="btn__icon-container">
+<img alt="Colab logo" src="../_static/images/logo_colab.png"/>
+</span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="dropdown dropdown-source-buttons">
+<button aria-expanded="false" aria-label="Source repositories" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fab fa-github"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm btn-source-repository-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://github.com/dkeathley/S23-6.2410-lab" target="_blank" title="Source repository">
+<span class="btn__icon-container">
+<i class="fab fa-github"></i>
+</span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+<li><a class="btn btn-sm btn-source-issues-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://github.com/dkeathley/S23-6.2410-lab/issues/new?title=Issue%20on%20page%20%2Fsimulation-modules/T1_3E2_spdc_simulation_by_qutip.html&amp;body=Your%20issue%20content%20here." target="_blank" title="Open an issue">
+<span class="btn__icon-container">
+<i class="fas fa-lightbulb"></i>
+</span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="dropdown dropdown-download-buttons">
+<button aria-expanded="false" aria-label="Download this page" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fas fa-download"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm btn-download-source-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="../_sources/simulation-modules/T1_3E2_spdc_simulation_by_qutip.ipynb" target="_blank" title="Download source file">
+<span class="btn__icon-container">
+<i class="fas fa-file"></i>
+</span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+<li>
+<button class="btn btn-sm btn-download-pdf-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" onclick="window.print()" title="Print to PDF">
+<span class="btn__icon-container">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+</ul>
+</div>
+<button class="btn btn-sm btn-fullscreen-button" data-bs-placement="bottom" data-bs-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
+<span class="btn__icon-container">
+<i class="fas fa-expand"></i>
+</span>
+</button>
+<button aria-label="Color mode" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" data-bs-placement="bottom" data-bs-title="Color mode" data-bs-toggle="tooltip">
+<i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+<i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+<i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+</button>
+<button aria-label="Search" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Search">
+<i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle secondary sidebar">
+<span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+</div>
+</div>
+</div>
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>Activity 3: SPDC Simulation by QuTip</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports-and-headers">Imports and Headers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-and-hamiltonian">Operators and Hamiltonian</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prelab-exercises">Prelab Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-time-dependent-problem-in-qutip">Simulate Time-Dependent Problem in QuTiP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-state-and-state-evolution">Initial state and state evolution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#state-evolution">State evolution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-coherence">Second-order coherence</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-degenerate-spdc-and-squeezing">Bonus: Degenerate SPDC and Squeezing</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article">
+<section class="tex2jax_ignore mathjax_ignore" id="activity-3-spdc-simulation-by-qutip">
+<h1>Activity 3: SPDC Simulation by QuTip<a class="headerlink" href="#activity-3-spdc-simulation-by-qutip" title="Link to this heading">#</a></h1>
+<p>Quantum optics relies on a reliable source of single photons and entangled photon pairs.  A typical source of these photons is spontaneous parametric down-conversion (SPDC) within a nonlinear crystal.  For example, all of the quantum optics experimental lab modules in this class rely on SPDC.</p>
+<p>In this activity, we will simulate the SPDC process and the quantum states of light it generates.  We will do this through the formalism of the degenerate parametric amplifier.</p>
+<p>Specific aims of this activity are:</p>
+<ul class="simple">
+<li><p>Enrich your understanding of the SPDC process.</p></li>
+<li><p>Develop a realistic model of an SPDC source that could be further extended and used in the context of device and technology simulation and design.</p></li>
+</ul>
+<section id="imports-and-headers">
+<h2>Imports and Headers<a class="headerlink" href="#imports-and-headers" title="Link to this heading">#</a></h2>
+<p>Install qutip if needed and import tools for the simulations performed throughout this activity.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Install qutip</span>
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>qutip
+
+<span class="c1">#Import qutip functions</span>
+<span class="kn">from</span> <span class="nn">qutip</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1">#Matplotlib tools for plotting</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
+
+<span class="c1">#Numpy for numerics</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: qutip in /Users/johnrich/anaconda3/lib/python3.11/site-packages (5.0.4)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.22 in /Users/johnrich/anaconda3/lib/python3.11/site-packages (from qutip) (1.24.3)
+Requirement already satisfied: scipy&gt;=1.9 in /Users/johnrich/anaconda3/lib/python3.11/site-packages (from qutip) (1.11.1)
+Requirement already satisfied: packaging in /Users/johnrich/anaconda3/lib/python3.11/site-packages (from qutip) (23.1)
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<section id="operators-and-hamiltonian">
+<span id="content-t1-3-e2-spdc"></span><h3>Operators and Hamiltonian<a class="headerlink" href="#operators-and-hamiltonian" title="Link to this heading">#</a></h3>
+<p>If you have not read it yet, please read the introduction to how SPDC is physically generated in the <a class="reference internal" href="../T2E1-TEXT-HBT.html#content-t2e1-intro-single-photons"><span class="std std-ref">text</span></a> for the T2E1 lab module.</p>
+<p>The SPDC process works by driving a nonlinear crystal with strong light at a pump frequency <span class="math notranslate nohighlight">\(\omega_p\)</span>.  One photon of the pump light is then spontaneously converted into two photons <span class="math notranslate nohighlight">\(\omega_s\)</span> and <span class="math notranslate nohighlight">\(\omega_i\)</span>, which refer to the signal and idler modes respectively.  This naming convention was developed to describe parametric amplfiers where one wanted to amplify a weak signal using a strong pump.  Energy conservation requires that this also corresponds with the growth of an idler wave, and you have that <span class="math notranslate nohighlight">\(\omega_p = \omega_s + \omega_i\)</span>.  In the SPDC process we are concerned with the spontaneous generation of the signal and idler.  These occupy modes as <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> respectively.</p>
+<p>The parametric amplification occurs due to a nonlinear coupling between the fields of the pump, signal, and idler waves.  The coefficient describing the strength of this coupling is the nonlinear coefficient <span class="math notranslate nohighlight">\(\chi_2\)</span>, which is in general complex, but given freedom in choice of phase, we take it as a positive real number here.</p>
+<p>The coupling Hamiltonian for the SPDC process can be represented as</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H} = i\hbar( \chi_2 \hat{p} \hat{a}^\dagger \hat{b}^\dagger - \chi_2 \hat{p}^\dagger \hat{a} \hat{b})\mbox{,}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(p\)</span> represents the pump mode.  The left part describes the loss of one pump photon resulting in the increase of one photon in modes <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> (the signal and idler).  The right part represents back conversion from signal and idler to a pump photon.</p>
+<p>Given a strong coherent state pump, we can represent its operator with a complex number <span class="math notranslate nohighlight">\(\alpha_p\)</span> corresponding to its amplitude.  Doing this  we have the Hamiltonian we want to solve for this exercise as</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+\hat{H}_{ab} = i \hbar \frac{\chi}{2} (\hat{a}^{\dagger} \hat{b}^{\dagger} - \hat{a} \hat{b})
+\end{aligned}
+\]</div>
+<p>where we define</p>
+<div class="math notranslate nohighlight">
+\[
+\chi \equiv 2 \chi_2 |\alpha_p|.
+\]</div>
+<p>Note that we use the liberty of setting the pump phase arbitrarily, and define it by the amplitude <span class="math notranslate nohighlight">\(|\alpha_p|\)</span>.</p>
+</section>
+</section>
+<section id="prelab-exercises">
+<h2>Prelab Exercises<a class="headerlink" href="#prelab-exercises" title="Link to this heading">#</a></h2>
+<p>0a. Show that <span class="math notranslate nohighlight">\(\frac{d\hat{a}}{dt} = \frac{\chi}{2}\hat{b}^{\dagger}\)</span>, and  <span class="math notranslate nohighlight">\(\frac{d\hat{b}^{\dagger}}{dt} = \frac{\chi}{2}\hat{a}\)</span>. (Hint: use the fact that <span class="math notranslate nohighlight">\(\frac{d\hat{a}}{dt} = \frac{i}{\hbar}[\hat{H}, \hat{a}]\)</span> for any operator <span class="math notranslate nohighlight">\(\hat{a}\)</span>).</p>
+<p>0b.  The above coupled differential equation has the solutions <span class="math notranslate nohighlight">\(\hat{a}(T) = \cosh (\chi T/2) \hat{a}(0) + \sinh(\chi T/2) \hat{b}^\dagger (0)\)</span> and <span class="math notranslate nohighlight">\(\hat{b}^\dagger(T) = \sinh (\chi T/2) \hat{a}(0) + \cosh(\chi T/2) \hat{b}^\dagger (0)\)</span> at time <span class="math notranslate nohighlight">\(T\)</span> given the initial operators at time <span class="math notranslate nohighlight">\(0\)</span>. Derive the output photon number in <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> at a time <span class="math notranslate nohighlight">\(T\)</span>.  (Hints: Start with the vacuum state and apply the number operator; you should get something with <span class="math notranslate nohighlight">\(\sinh^2\)</span>).</p>
+</section>
+<section id="simulate-time-dependent-problem-in-qutip">
+<h2>Simulate Time-Dependent Problem in QuTiP<a class="headerlink" href="#simulate-time-dependent-problem-in-qutip" title="Link to this heading">#</a></h2>
+<p>In the following code we define the needed creation and annihilation operators as well as the Hamiltonian of the system to solve.  The <code class="docutils literal notranslate"><span class="pre">tensor()</span></code> function is used to create composite operators that act on the joint Hilbert space of the two modes <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>. The <code class="docutils literal notranslate"><span class="pre">destroy()</span></code> and <code class="docutils literal notranslate"><span class="pre">num()</span></code> functions create the annihilation and number operators, respectively.</p>
+<p>Note that a difference between the following code and the equations above is that we factor out the <span class="math notranslate nohighlight">\(\hbar\)</span> term from the Hamiltonian.  By default, the unit of time in Qutip is set to be dimensionless, so <span class="math notranslate nohighlight">\(\hbar\)</span> is used to convert between dimensionless time and physical time.  In other words, the units in QuTiP are such that <span class="math notranslate nohighlight">\(\hbar = 1\)</span>.</p>
+<p>For the coupling term <span class="math notranslate nohighlight">\(\chi\)</span> we have selected a value that, in combination with the phase-matching bandwidth (provided below), results in a photon generation rate similar to what you see in the lab experiments. This will be described further in Exercise 1 where you calculate the photon pair generation rate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Constants</span>
+<span class="n">hbar</span><span class="o">=</span><span class="mf">6.67e-34</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">)</span> <span class="c1">#Planck's reduced constant</span>
+<span class="n">eps0</span><span class="o">=</span><span class="mf">8.85e-12</span> <span class="c1"># permittivity of free space</span>
+<span class="n">c</span><span class="o">=</span><span class="mf">2.99792458e8</span> <span class="c1"># speed of light</span>
+
+<span class="c1">#User Parameters</span>
+<span class="n">phase_matching_bandwidth</span><span class="o">=</span><span class="mf">1e13</span> <span class="c1"># approximate in Hz (you can make this consisten with experimental measurement)</span>
+<span class="n">chi</span><span class="o">=</span><span class="mf">1e-6</span> <span class="c1">#Defines strength of nonlinearity, driven by peak pump field strength and chi2</span>
+<span class="n">N1</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1">#Number of photon orders in Fock state basis for a</span>
+<span class="n">N2</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1">#Number of photon orders in Fock state basis for b</span>
+
+<span class="c1">#presentation parameters</span>
+<span class="n">plot_fontsize</span><span class="o">=</span><span class="mi">12</span>
+
+<span class="c1"># definitions of operators</span>
+<span class="c1"># -- we define the operators through tensor products...</span>
+<span class="c1"># -- two quantum objects per tensor product as we have</span>
+<span class="c1"># -- two modes we are simulating here, a and b</span>
+<span class="n">a</span>  <span class="o">=</span> <span class="n">tensor</span><span class="p">(</span><span class="n">destroy</span><span class="p">(</span><span class="n">N1</span><span class="p">),</span> <span class="n">qeye</span><span class="p">(</span><span class="n">N2</span><span class="p">))</span>
+<span class="n">na</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">(</span><span class="n">num</span><span class="p">(</span><span class="n">N1</span><span class="p">),</span>     <span class="n">qeye</span><span class="p">(</span><span class="n">N2</span><span class="p">))</span>
+<span class="n">b</span>  <span class="o">=</span> <span class="n">tensor</span><span class="p">(</span><span class="n">qeye</span><span class="p">(</span><span class="n">N1</span><span class="p">),</span>    <span class="n">destroy</span><span class="p">(</span><span class="n">N2</span><span class="p">))</span>
+<span class="n">nb</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">(</span><span class="n">qeye</span><span class="p">(</span><span class="n">N1</span><span class="p">),</span>    <span class="n">num</span><span class="p">(</span><span class="n">N2</span><span class="p">))</span>
+
+<span class="c1">#Now we define the coupling Hamiltonian as in the text above:</span>
+<span class="n">H0</span> <span class="o">=</span> <span class="mi">0</span><span class="o">*</span><span class="n">a</span> <span class="c1"># interaction Hamiltonian before the 3-wave mixing (used for calculating initial state)</span>
+<span class="n">Hab</span> <span class="o">=</span>  <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">chi</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span> <span class="o">*</span> <span class="n">b</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span> <span class="o">-</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="initial-state-and-state-evolution">
+<h2>Initial state and state evolution<a class="headerlink" href="#initial-state-and-state-evolution" title="Link to this heading">#</a></h2>
+<p>In the following, we initialize/define:</p>
+<ul class="simple">
+<li><p>input state <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> of modes a and b, which are both in the vacuum state</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tlist</span></code>: a list of times that specifies the times at which the system should be evaluated during the evolution. In the example, tlist is created using the numpy function linspace, which generates an array of evenly spaced values over a specified interval.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c_ops</span></code>: a list of collapse operators that describe the sources of decoherence and dissipation in the system. Collapse operators represent the interactions of the system with its environment that cause transitions between the energy eigenstates of the system.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">e_ops</span></code>: a python list storing observables. Here, the e_ops list is empty, which means that there are no observables being monitored during the evolution of the system.</p></li>
+</ul>
+<p>We then use the function mesolve from the Qutip library to solve the <a class="reference external" href="https://https://en.wikipedia.org/wiki/Quantum_master_equation">quantum master equation </a> to find the time evolution of the system. The function takes as input the Hamiltonian <code class="docutils literal notranslate"><span class="pre">Hab</span></code>, the initial state <code class="docutils literal notranslate"><span class="pre">psi0</span></code>, the list of times <code class="docutils literal notranslate"><span class="pre">tlist</span></code>, the list of collapse operators <code class="docutils literal notranslate"><span class="pre">c_ops</span></code>, and the list of observables <code class="docutils literal notranslate"><span class="pre">e_ops</span></code>. The function returns an object output that contains information about the time evolution of the system, such as the states of the system at each time in <code class="docutils literal notranslate"><span class="pre">tlist</span></code>.</p>
+<p>In the example, the <code class="docutils literal notranslate"><span class="pre">c_ops</span></code> list is empty, which means that there are no sources of decoherence or dissipation in the system. As a result, the evolution of the system is purely unitary and described by the Hamiltonian <span class="math notranslate nohighlight">\(H_{ab}\)</span>.</p>
+<p>The following code uses a python dictionary data structure to conveniently store operators and expected values. In anticipation of correlation values to be considered below, we’re including those in our dictionary as well.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># System Definition:</span>
+
+<span class="c1"># Initial State</span>
+<span class="c1"># -- start in the ground (vacuum) state</span>
+<span class="n">psi0</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">(</span><span class="n">basis</span><span class="p">(</span><span class="n">N1</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">basis</span><span class="p">(</span><span class="n">N2</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># initial state in the vacuum: |0&gt;|0&gt;</span>
+
+<span class="n">c_ops</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># c_ops is a list of collapse operators that describe the sources of</span>
+            <span class="c1"># decoherence and dissipation in the system. Collapse operators represent</span>
+            <span class="c1"># the interactions of the system with its environment that cause</span>
+            <span class="c1"># transitions between the energy eigenstates of the system.</span>
+
+
+<span class="n">tlist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="c1"># tlist is a list of times that specifies the</span>
+                                   <span class="c1"># times at which the system should be evaluated</span>
+                                   <span class="c1"># during the evolution. In the example, tlist</span>
+                                   <span class="c1"># is created using the numpy function linspace,</span>
+                                   <span class="c1"># which generates an array of evenly spaced</span>
+                                   <span class="c1"># values over a specified interval.</span>
+
+<span class="n">e_ops</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># e_ops is a python list storing observables. Here, the e_ops list is</span>
+           <span class="c1"># empty, which means that there are no observables being monitored</span>
+           <span class="c1"># during the evolution of the system</span>
+
+<span class="c1"># -- Solve Quantum Master Equation --</span>
+<span class="n">psi_out</span> <span class="o">=</span> <span class="n">mesolve</span><span class="p">(</span><span class="n">Hab</span><span class="p">,</span> <span class="n">psi0</span><span class="p">,</span> <span class="n">tlist</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="n">e_ops</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Link to this heading">#</a></h3>
+<p>1a. Verify the Hermiticity of the Hamiltonian.</p>
+<p>1b. Define operator objects for the number operators <span class="math notranslate nohighlight">\(\hat{N}\)</span> in <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, as well as the operator for <span class="math notranslate nohighlight">\(\hat{N}^2\)</span> for <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>.</p>
+<p>1c. Use the <code class="docutils literal notranslate"><span class="pre">expect()</span></code> function to evaluate the expectation of the photon number in <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> for all of the output states, provided by <code class="docutils literal notranslate"><span class="pre">phi_out.states</span></code>.  You should have <code class="docutils literal notranslate"><span class="pre">1000</span></code> output states, one for each point in time in <code class="docutils literal notranslate"><span class="pre">tlist</span></code>.  Plot the growth of the photon number as a function of time.  Does it makes sense? (Compare directly to your expected expression from the pre-lab).</p>
+<p>1d. Now calculate the standard deviation of the photon number in <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>.  Explain the nature of the growth of the standard deviation.  Does it also match expectations?  Explain why this growth behavior make sense?</p>
+<p>1e. The photon rate can be expressed as the phase-matching bandwidth times the photon number which provies the output photons per second.  Given the maximum value at the final time in the interaction, what is the photon emission rate?  How does this compare to the incident pump photon rate assuming a pump wavelength of 400 nm and power of 10 mW?</p>
+<p>The code block below gets you started.  If needed, a refresher on photon number operators and photon number statistics is provided in <a class="reference internal" href="../BASICS-quantum-optics-basics.html#content-basics-quantum-optics"><span class="std std-ref">BASICS – Quantum Optics</span></a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">na</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span><span class="o">*</span><span class="n">a</span> <span class="c1">#number operator for mod a</span>
+<span class="n">e_na</span> <span class="o">=</span> <span class="n">expect</span><span class="p">(</span><span class="n">na</span><span class="p">,</span> <span class="n">psi_out</span><span class="o">.</span><span class="n">states</span><span class="p">)</span>
+
+<span class="c1">#... your code here to finish the exercise ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="state-evolution">
+<h2>State evolution<a class="headerlink" href="#state-evolution" title="Link to this heading">#</a></h2>
+<p>Next, we will plot the photon distributions of two quantum optical modes a and b at selected times.</p>
+<p>The time indices are spaced over the number of time steps in <code class="docutils literal notranslate"><span class="pre">tlist</span></code>.</p>
+<p>The following subplots show the state evolution (note the plots have shared horizontal and vertical axes). We represent the photon distributions as bar plots on the subplots.</p>
+<p>Only single-photon pairs in <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are generated at a non-neglibile rate (but are still far fewer than the number of incident pump photons), with neglible amounts of higher order Fock state generation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+
+<span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="mi">5</span>
+
+<span class="k">def</span> <span class="nf">update_plot</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    <span class="n">psia</span> <span class="o">=</span> <span class="n">ptrace</span><span class="p">(</span><span class="n">psi_out</span><span class="o">.</span><span class="n">states</span><span class="p">[</span><span class="n">t</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">psib</span> <span class="o">=</span> <span class="n">ptrace</span><span class="p">(</span><span class="n">psi_out</span><span class="o">.</span><span class="n">states</span><span class="p">[</span><span class="n">t</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">bar_vals_a</span> <span class="o">=</span> <span class="n">real</span><span class="p">(</span><span class="n">psia</span><span class="o">.</span><span class="n">diag</span><span class="p">())</span>
+    <span class="n">bar_vals_b</span> <span class="o">=</span> <span class="n">real</span><span class="p">(</span><span class="n">psib</span><span class="o">.</span><span class="n">diag</span><span class="p">())</span>
+<span class="c1">#    max_val = max(bar_vals_a.max(), bar_vals_b.max())</span>
+    <span class="n">max_val</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">bar_vals_a</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">bar_vals_b</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="c1"># ignore first entry P(0) which is always gonna be large</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">N1</span><span class="p">),</span> <span class="n">bar_vals_a</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">N2</span><span class="p">),</span> <span class="n">bar_vals_b</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'$P(n)$'</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'$P(n)$'</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'$n_a$'</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'$n_b$'</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">'log'</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">'log'</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="mi">10</span><span class="o">**-</span><span class="mi">8</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="n">bar_vals_a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mf">1.2</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="mi">10</span><span class="o">**-</span><span class="mi">8</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="n">bar_vals_a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mf">1.2</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">)</span>
+
+    <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="n">t_selector</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="n">floor</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tlist</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span>
+    <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">'Time index:'</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="c1">#display(t_selector)</span>
+<span class="n">widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">update_plot</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">tlist</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">30</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "3892ac5adad242d3b200a386cca66e0a"}</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.update_plot(t)&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Link to this heading">#</a></h3>
+<p>2a. Increase the coupling term, <span class="math notranslate nohighlight">\(\chi\)</span> and redo the above state visualization.  What happens in terms of the photon number distribution when <span class="math notranslate nohighlight">\(\chi\)</span> becomes large?  Does the analytical solution still hold?</p>
+</section>
+</section>
+<section id="second-order-coherence">
+<h2>Second-order coherence<a class="headerlink" href="#second-order-coherence" title="Link to this heading">#</a></h2>
+<p>Here we examine the generated photon statistics further by looking at the second order correlation function of photons in the outgoing modes <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>. Note that second order coherence of single and heralded single-photons using SPDC is explored further in the <a class="reference internal" href="../T2E1-TEXT-HBT.html#content-t2e1-intro-single-photons"><span class="std std-ref">T2E1 lab</span></a> through the use of a HBT measurement.</p>
+<p>Classical fields satisfy the Cauchy-Schwarz inequality evaluated at the same time <span class="math notranslate nohighlight">\(t\)</span> on both detectors (Walls and Milburn, page 79).  This can be expressed with respect to the second order correlation functions of the output state at time <span class="math notranslate nohighlight">\(t\)</span> as:</p>
+<div class="math notranslate nohighlight">
+\[(g^{(2)}_{ab})^2 \leq g^{(2)}_{aa} g^{(2)}_{bb}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[g^{(2)}_{ab} = \frac{\langle \hat{a}^\dagger \hat{a} \hat{b}^\dagger \hat{b} \rangle}{\langle \hat{a}^\dagger \hat{a} \rangle \langle \hat{b}^\dagger \hat{b}\rangle} \]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[g^{(2)}_{aa} = \frac{\langle \hat{a}^\dagger \hat{a}^\dagger \hat{a} \hat{a} \rangle}{\langle \hat{a}^\dagger \hat{a} \rangle ^2} \]</div>
+<p>and likewise for <span class="math notranslate nohighlight">\(g^{(2)}_{bb}\)</span>.</p>
+<p>In the following you will explore this inequality further.</p>
+<section id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Link to this heading">#</a></h3>
+<p>3a. Using the same procedure as for the photon number expectation calculations, now calculate and plot the second order correlation functions for <span class="math notranslate nohighlight">\(g^{(2)}_{aa}\)</span>, <span class="math notranslate nohighlight">\(g^{(2)}_{bb}\)</span>, and <span class="math notranslate nohighlight">\(g^{(2)}_{ab}\)</span>.</p>
+<p>3b. Is the Cauchy-Schwarz inequality broken?</p>
+<p>3c. You should find that the photon correlations of the fields produced from a vacuum passing through the parametric amplifier are not just strongly nonclassical but actually saturate the bound on the maximum allowed by quantum mechanics.  Discuss why this makes SPDC a valuable resource from the context of quantum technologies.</p>
+</section>
+</section>
+<section id="bonus-degenerate-spdc-and-squeezing">
+<h2>Bonus: Degenerate SPDC and Squeezing<a class="headerlink" href="#bonus-degenerate-spdc-and-squeezing" title="Link to this heading">#</a></h2>
+<p>Two-photon states generated by degenerate SPDC sources (<em>i.e.</em> SPDC sources where the signal and idler share a single output mode) exhibit squeezing (see <a class="reference internal" href="../BASICS-quantum-optics-basics.html#sec-quantum-optics-basics-squeezed-states"><span class="std std-ref">Squeezed States</span></a>).  In fact, similar processes to what you are modeling are used to generate bright squeezed light that is enabling ultra-precise interferometric measurements.  To see how squeezed states can be used to reduce the readout noise of an interferometer, see <a class="reference internal" href="../T3E1-EXTRAS-interference-2-homodyne-detection.html#content-t3e1-extras-homodyne-detection"><span class="std std-ref">EXTRAS – Homodyne Detection</span></a>.</p>
+<p><strong>Ba.</strong> Implement a degenerate SPDC where both photons emitted into a single mode. This is decribed by the Hamiltonain</p>
+<div class="math notranslate nohighlight">
+\[\hat{H}_{aa} = i \hbar \frac{\chi}{2} (\hat{a}^{\dagger2} - \hat{a}^2)\]</div>
+<p>Use the same settings as above for the non-degenerate SPDC generation (i.e. same <code class="docutils literal notranslate"><span class="pre">chi</span></code>, <code class="docutils literal notranslate"><span class="pre">tlist</span></code>, etc).</p>
+<p><strong>Bb.</strong> Calculate and visualize the Wigner function of the output state using QuTiP (<code class="docutils literal notranslate"><span class="pre">qutip.Wigner</span></code>).  The Wigner function helps visualize the field distribution of the outgoing state along the in-phase and quadrature planes.</p>
+<p><strong>Bc.</strong> Now increase the nonlinearity setting <code class="docutils literal notranslate"><span class="pre">chi=5e-4</span></code>.  Plot the Wigner function again.  What is the difference? Do you see the halmarks of squeezing?</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Wigner function example you can use:</span>
+
+<span class="n">xvec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">W_out</span> <span class="o">=</span> <span class="n">qutip</span><span class="o">.</span><span class="n">wigner</span><span class="p">(</span><span class="n">psi_out</span><span class="o">.</span><span class="n">states</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">xvec</span><span class="p">,</span> <span class="n">xvec</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xvec</span><span class="p">,</span> <span class="n">xvec</span><span class="p">,</span> <span class="n">W_out</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x1384be190&gt;
+</pre></div>
+</div>
+<img alt="../_images/40dfb21e802b995eb309b84ef245ef4c51a3507b939b95bc894a494a6cc5e42c.png" src="../_images/40dfb21e802b995eb309b84ef245ef4c51a3507b939b95bc894a494a6cc5e42c.png"/>
+</div>
+</details>
+</div>
+</section>
+</section>
+<script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./simulation-modules"
+        },
+        predefinedOutput: true
+    }
+    </script>
+<script>kernelName = 'python3'</script>
+</article>
+<footer class="prev-next-footer d-print-none">
+<div class="prev-next-area">
+<a class="left-prev" href="T1-3E3-Activity-Compuational_HOM.html" title="previous page">
+<i class="fa-solid fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Activity 2 – Two-photon (HOM) interference simulation</p>
+</div>
+</a>
+<a class="right-next" href="../FINAL-PROJECTS.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Final Design Project</p>
+</div>
+<i class="fa-solid fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+<dialog id="pst-secondary-sidebar-modal"></dialog>
+<div class="bd-sidebar-secondary bd-toc" id="pst-secondary-sidebar"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> Contents
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports-and-headers">Imports and Headers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-and-hamiltonian">Operators and Hamiltonian</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prelab-exercises">Prelab Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-time-dependent-problem-in-qutip">Simulate Time-Dependent Problem in QuTiP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-state-and-state-evolution">Initial state and state evolution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#state-evolution">State evolution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-coherence">Second-order coherence</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-degenerate-spdc-and-squeezing">Bonus: Degenerate SPDC and Squeezing</a></li>
+</ul>
+</nav></div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+<div class="bd-footer-content__inner container">
+<div class="footer-item">
+<p class="component-author">
+By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
+</p>
+</div>
+<div class="footer-item">
+<p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+</p>
+</div>
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+</div>
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script defer="" src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer="" src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+<footer class="bd-footer">
+</footer>
+<script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script></body>
+</html>

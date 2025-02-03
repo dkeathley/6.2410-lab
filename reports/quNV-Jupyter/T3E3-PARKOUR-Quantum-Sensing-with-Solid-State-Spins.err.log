@@ -44,7 +44,7 @@ else:
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mConnectionRefusedError[0m                    Traceback (most recent call last)
-File [0;32m~/Dropbox (MIT)/org/PROJECT-ATTACHMENTS/work/JUPYTER-BOOK-6.2410-laboratory-in-quantum-systems-engineering-2022-10-26-06-59/quNV-Jupyter/libreVNA.py:72[0m, in [0;36mlibreVNA.__init__[0;34m(self, host, port)[0m
+File [0;32m~/MIT Dropbox/Phillip Keathley/org/PROJECT-ATTACHMENTS/work/JUPYTER-BOOK-6.2410-laboratory-in-quantum-systems-engineering-2022-10-26-06-59/quNV-Jupyter/libreVNA.py:72[0m, in [0;36mlibreVNA.__init__[0;34m(self, host, port)[0m
 [1;32m     71[0m [38;5;28;01mtry[39;00m:
 [0;32m---> 72[0m     [38;5;28mself[39m[38;5;241m.[39msock[38;5;241m.[39mconnect((host, port))
 [1;32m     73[0m [38;5;28;01mexcept[39;00m:
@@ -65,7 +65,7 @@ Cell [0;32mIn[2], line 7[0m
 [1;32m      9[0m [38;5;66;03m# Quick connection check (should print "LibreVNA-GUI")[39;00m
 [1;32m     10[0m [38;5;28mprint[39m(vna[38;5;241m.[39mquery([38;5;124m"[39m[38;5;124m*IDN?[39m[38;5;124m"[39m))
 
-File [0;32m~/Dropbox (MIT)/org/PROJECT-ATTACHMENTS/work/JUPYTER-BOOK-6.2410-laboratory-in-quantum-systems-engineering-2022-10-26-06-59/quNV-Jupyter/libreVNA.py:74[0m, in [0;36mlibreVNA.__init__[0;34m(self, host, port)[0m
+File [0;32m~/MIT Dropbox/Phillip Keathley/org/PROJECT-ATTACHMENTS/work/JUPYTER-BOOK-6.2410-laboratory-in-quantum-systems-engineering-2022-10-26-06-59/quNV-Jupyter/libreVNA.py:74[0m, in [0;36mlibreVNA.__init__[0;34m(self, host, port)[0m
 [1;32m     72[0m     [38;5;28mself[39m[38;5;241m.[39msock[38;5;241m.[39mconnect((host, port))
 [1;32m     73[0m [38;5;28;01mexcept[39;00m:
 [0;32m---> 74[0m     [38;5;28;01mraise[39;00m [38;5;167;01mException[39;00m([38;5;124m"[39m[38;5;124mUnable to connect to LibreVNA-GUI. Make sure it is running and the TCP server is enabled.[39m[38;5;124m"[39m)

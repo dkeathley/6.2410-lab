@@ -1,7 +1,7 @@
 # 6.2410 -- Laboratory in Quantum Systems Engineering: *Quantum Engineering Platforms*
 
 
-This is the course website for the Spring 2024 offering of 6.2410 -- Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
+This is the course website for the Spring 2025 offering of 6.2410 -- Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
 
 ## Instructors
 
@@ -15,14 +15,14 @@ pdkeat2@mit.edu, office 36-285
 
 ## Teaching Assistants
 
-Isaac Harris <br>
-ibwharri@mit.edu, office 36-531
+Malick Sere <br>
+msere@mit.edu
+
+Vetri Vel <br>
+vetri@mit.edu
 
 Max Aalto <br>
 maxaalto@mit.edu
-
-Hanfeng Wang <br>
-hanfengw@mit.edu, office 36-533
 
 ## Collaborators
 

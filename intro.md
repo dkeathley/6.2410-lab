@@ -39,7 +39,7 @@ We gratefully acknowledge assistance and contributions from [QuTools](https://qu
 **Laboratory Location:** 38-633
 
 **Laboratory Meeting Times:**
-  - Section 01: MW 10-12
+  - Section 01: MF 10:30-12:30
   - Section 02: TR 1-3
 
 **Office hours:** TBA

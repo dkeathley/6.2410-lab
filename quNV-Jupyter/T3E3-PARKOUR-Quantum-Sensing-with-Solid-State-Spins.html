@@ -58,7 +58,7 @@ const thebe_selector_output = ".output, .cell_output"
 <link href="../T2E1-LAB-BB84.html" rel="prev" title="LAB – QKD (Week 2)"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="en" name="docsearch:language"/>
-<link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/></head>
+<link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/></head>
 <body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <div id="pst-scroll-pixel-helper"></div>
@@ -317,8 +317,8 @@ document.write(`
 <h3>3.3 Connecting to the VNA<a class="headerlink" href="#connecting-to-the-vna" title="Permalink to this heading">#</a></h3>
 <p>If the above block runs without an issue, run the next code block to establish connection. After creating a handle to the VNA, you will notice there are two methods to communicate with the device.<code class="docutils literal notranslate"><span class="pre">vna.query(XXX)</span></code> and <code class="docutils literal notranslate"><span class="pre">vna.command(XXX)</span></code>. The former sends a command to the VNA and asks for a response (aka query), and the latter only sends a command. The input <code class="docutils literal notranslate"><span class="pre">XXX</span></code> to either of these methods is a <a class="reference external" href="https://en.wikipedia.org/wiki/Standard_Commands_for_Programmable_Instruments">SCPI</a> (Standard Commands for Programmable Instruments). For a complete of list of SCPI commands for the VNA, consult the Programming Guide below:</p>
 <p>Click <a class="reference external" href="https://drive.google.com/file/d/1GpGNjROYpluPD1voHh7sdNY6kIebRYhF/view?usp=share_link">here</a> to download.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># RUN ME</span>
 
 <span class="c1"># Establish VNA connection</span>
@@ -341,6 +341,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ConnectionRefusedError</span><span class="g g-Whitespace">                    </span>Traceback (most recent call last)
@@ -375,6 +380,7 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </section>
 </section>
@@ -530,5 +536,5 @@ By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
 <script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 <footer class="bd-footer">
 </footer>
-<script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script></body>
+<script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script></body>
 </html>

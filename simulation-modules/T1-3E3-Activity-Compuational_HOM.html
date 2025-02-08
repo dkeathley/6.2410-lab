@@ -323,7 +323,7 @@ Requirement already satisfied: packaging in /home/dkeathley/anaconda3/lib/python
 <section id="single-atom-decay">
 <h2>1. Single atom decay<a class="headerlink" href="#single-atom-decay" title="Permalink to this heading">#</a></h2>
 <p>We will start off by looking at the statistics of photons from a emitter which has a spin-1/2 ground state: <span class="math notranslate nohighlight">\(|g_\downarrow\rangle\)</span> &amp; <span class="math notranslate nohighlight">\(|g_\uparrow\rangle\)</span>, and an optically excited state <span class="math notranslate nohighlight">\(|e\rangle\)</span>. We can represent these emitter states in QuTip with:</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Na</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># number of atomic levels</span>
 <span class="n">ground_down</span> <span class="o">=</span> <span class="n">basis</span><span class="p">(</span><span class="n">Na</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># |g_down&gt;</span>
@@ -341,7 +341,7 @@ Requirement already satisfied: packaging in /home/dkeathley/anaconda3/lib/python
 \[\hat{H}/\hbar = g\left( \hat{a}\hat{\sigma}_{+}+\text{h.c.} \right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat{\sigma}_{+} = |e\rangle\langle g_\downarrow|\)</span>.</p>
 <p>In QuTip, this translates to</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># Although Fock space fore cavity is infinite, we don't have infinite memory in our computer, so we simulate a maximum occupancy of 5 photons in the cavity</span>
 <span class="n">g0</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># coupling strength (Rabi frequency of vacuum field)</span>
@@ -354,7 +354,7 @@ Requirement already satisfied: packaging in /home/dkeathley/anaconda3/lib/python
 </div>
 </div>
 <p>We next need to model the decay of the EM mode into the detector. This will be done using collapse operators that represent incoherent processes. In QuTip, this looks like:</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c_ops</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Set of collapse operators</span>
 <span class="n">e_ops</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">(</span><span class="n">qeye</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">qeye</span><span class="p">(</span><span class="n">Na</span><span class="p">)</span> <span class="p">)</span>
@@ -368,8 +368,8 @@ Requirement already satisfied: packaging in /home/dkeathley/anaconda3/lib/python
 </div>
 </div>
 <p>Finally, we can run the simulation. We will use the <a class="reference external" href="https://qutip.org/docs/latest/guide/dynamics/dynamics-monte.html">quantum Monte-Carlo method</a> to solve the incoherent processes:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define simulation parameters</span>
 <span class="n">numb</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1"># numbers of trajectories</span>
 <span class="n">time_scale</span><span class="o">=</span><span class="mi">200</span>
@@ -386,41 +386,47 @@ Requirement already satisfied: packaging in /home/dkeathley/anaconda3/lib/python
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.0%. Run time:   0.53s. Est. time left: 00:00:00:04
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.0%. Run time:   0.50s. Est. time left: 00:00:00:04
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20.0%. Run time:   0.80s. Est. time left: 00:00:00:03
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20.0%. Run time:   0.73s. Est. time left: 00:00:00:02
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30.0%. Run time:   1.11s. Est. time left: 00:00:00:02
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30.0%. Run time:   1.02s. Est. time left: 00:00:00:02
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40.0%. Run time:   1.36s. Est. time left: 00:00:00:02
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40.0%. Run time:   1.34s. Est. time left: 00:00:00:02
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.0%. Run time:   1.66s. Est. time left: 00:00:00:01
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.0%. Run time:   1.62s. Est. time left: 00:00:00:01
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60.0%. Run time:   2.04s. Est. time left: 00:00:00:01
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60.0%. Run time:   1.92s. Est. time left: 00:00:00:01
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>70.0%. Run time:   2.30s. Est. time left: 00:00:00:00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>70.0%. Run time:   2.20s. Est. time left: 00:00:00:00
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>80.0%. Run time:   2.54s. Est. time left: 00:00:00:00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>80.0%. Run time:   2.50s. Est. time left: 00:00:00:00
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>90.0%. Run time:   2.78s. Est. time left: 00:00:00:00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>90.0%. Run time:   2.76s. Est. time left: 00:00:00:00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100.0%. Run time:   2.98s. Est. time left: 00:00:00:00
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total run time:   2.99s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total run time:   3.00s
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </section>
 <section id="questions">
@@ -450,7 +456,7 @@ or
 <p>where <span class="math notranslate nohighlight">\(P_s\left(t\right)\)</span> is the Rabi frequency of the excitation pulse. For simplicity, let’s assume identical Rabi frequencies, excitation pulses of system A and B as <span class="math notranslate nohighlight">\(\Omega\)</span> and <span class="math notranslate nohighlight">\(P\left(t\right)\)</span>.</p>
 <p><strong>Step 3:</strong> Count the clicks that occur at detector <span class="math notranslate nohighlight">\(D_1\)</span> or <span class="math notranslate nohighlight">\(D_2\)</span>, which are placed after a beam-splitter. Note that the beam-splitter mixes the A and B photon modes, such that it measures <span class="math notranslate nohighlight">\((\hat{a}_A+\hat{a}_B)/\sqrt{2}\)</span> and <span class="math notranslate nohighlight">\((\hat{a}_A-\hat{a}_B)/\sqrt{2}\)</span>.</p>
 <p>In the following, we provide the codes to simulate the HOM interferometer.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here, let's choose the basis of state as |photon_A, spin_A, photon_B, spin_B&gt;</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># Set where to truncate Fock state of cavity</span>
@@ -462,7 +468,7 @@ or
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_A</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">(</span><span class="n">destroy</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">qeye</span><span class="p">(</span><span class="n">Na</span><span class="p">),</span> <span class="n">qeye</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">qeye</span><span class="p">(</span><span class="n">Na</span><span class="p">))</span> <span class="c1"># annihiliation operator of system A</span>
 <span class="n">a_B</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">(</span><span class="n">qeye</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">qeye</span><span class="p">(</span><span class="n">Na</span><span class="p">),</span> <span class="n">destroy</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">qeye</span><span class="p">(</span><span class="n">Na</span><span class="p">))</span> <span class="c1"># annihiliation operator of system B</span>
@@ -472,7 +478,7 @@ or
 </div>
 </div>
 <p>We would also like to include some more realistic loss processes, such as cavity loss and non-radiative decay. We can include these through some additional collapse operators</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c_ops</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Set of collapse operators</span>
 <span class="n">e_ops</span> <span class="o">=</span> <span class="p">[]</span>
@@ -491,7 +497,7 @@ or
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numb</span><span class="o">=</span><span class="mi">200</span> <span class="c1"># numbers of trajectories (affects runtime)</span>
 <span class="n">time_scale</span><span class="o">=</span><span class="mi">200</span>
@@ -526,49 +532,55 @@ or
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Step 2</span>
 <span class="n">H</span> <span class="o">=</span> <span class="p">[</span><span class="n">H0</span><span class="p">,[</span><span class="n">H1_A</span><span class="p">,</span> <span class="n">excite_pulse_A</span><span class="p">],[</span><span class="n">H1_B</span><span class="p">,</span> <span class="n">excite_pulse_B</span><span class="p">]]</span>
 <span class="n">output</span> <span class="o">=</span> <span class="n">mcsolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">psi0</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="p">[],</span> <span class="n">ntraj</span> <span class="o">=</span> <span class="n">numb</span><span class="p">,</span> <span class="n">progress_bar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.0%. Run time:   0.18s. Est. time left: 00:00:00:01
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.0%. Run time:   0.22s. Est. time left: 00:00:00:01
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20.0%. Run time:   0.26s. Est. time left: 00:00:00:01
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20.0%. Run time:   0.30s. Est. time left: 00:00:00:01
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30.0%. Run time:   0.34s. Est. time left: 00:00:00:00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30.0%. Run time:   0.38s. Est. time left: 00:00:00:00
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40.0%. Run time:   0.42s. Est. time left: 00:00:00:00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40.0%. Run time:   0.48s. Est. time left: 00:00:00:00
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.0%. Run time:   0.51s. Est. time left: 00:00:00:00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.0%. Run time:   0.59s. Est. time left: 00:00:00:00
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60.0%. Run time:   0.59s. Est. time left: 00:00:00:00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60.0%. Run time:   0.71s. Est. time left: 00:00:00:00
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>70.0%. Run time:   0.67s. Est. time left: 00:00:00:00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>70.0%. Run time:   0.80s. Est. time left: 00:00:00:00
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>80.0%. Run time:   0.76s. Est. time left: 00:00:00:00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>80.0%. Run time:   0.89s. Est. time left: 00:00:00:00
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>90.0%. Run time:   0.84s. Est. time left: 00:00:00:00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>90.0%. Run time:   0.98s. Est. time left: 00:00:00:00
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100.0%. Run time:   0.91s. Est. time left: 00:00:00:00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100.0%. Run time:   1.05s. Est. time left: 00:00:00:00
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total run time:   0.92s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total run time:   1.06s
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </section>
 <section id="id1">

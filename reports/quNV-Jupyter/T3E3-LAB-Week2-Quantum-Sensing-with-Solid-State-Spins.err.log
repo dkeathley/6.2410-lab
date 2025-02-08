@@ -22,15 +22,18 @@ Traceback (most recent call last):
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
 import serial.tools.list_ports
-print(list(serial.tools.list_ports.comports()))
+ports = serial.tools.list_ports.comports()
 
+for port, desc, hwid in sorted(ports):
+        print("{}: {} [{}]".format(port, desc, hwid))
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
 Cell [0;32mIn[2], line 1[0m
 [0;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mserial[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtools[39;00m[38;5;21;01m.[39;00m[38;5;21;01mlist_ports[39;00m
-[1;32m      2[0m [38;5;28mprint[39m([38;5;28mlist[39m(serial[38;5;241m.[39mtools[38;5;241m.[39mlist_ports[38;5;241m.[39mcomports()))
+[1;32m      2[0m ports [38;5;241m=[39m serial[38;5;241m.[39mtools[38;5;241m.[39mlist_ports[38;5;241m.[39mcomports()
+[1;32m      4[0m [38;5;28;01mfor[39;00m port, desc, hwid [38;5;129;01min[39;00m [38;5;28msorted[39m(ports):
 
 [0;31mModuleNotFoundError[0m: No module named 'serial'
 ModuleNotFoundError: No module named 'serial'

@@ -61,7 +61,11 @@ This course is a CI-M course, and the communication-intensive components center 
 
 ## Course Materials
 
-The course provides an online text (this website) lecture notes and other resources.  Suggested references and content for further reading and viewing are provided where relevant.
+The course provides an online text (this website).  
+
+You can also refer to the [textbook for 6.2400](https://drive.google.com/file/d/1Ij5HzBRk8MmgjmGK3zJxFSqblDMYZY0I/view?usp=sharing) as a great resource.
+
+Other suggested references and content for further reading and viewing are provided as citations where relevant.
 
 ## ChatTutor
 

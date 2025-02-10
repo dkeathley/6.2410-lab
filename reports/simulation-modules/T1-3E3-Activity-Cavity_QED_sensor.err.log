@@ -5,7 +5,7 @@ Traceback (most recent call last):
   File "/home/dkeathley/anaconda3/lib/python3.11/site-packages/nbclient/util.py", line 96, in ensure_async
     result = await obj
              ^^^^^^^^^
-  File "/home/dkeathley/anaconda3/lib/python3.11/site-packages/jupyter_client/channels.py", line 230, in get_msg
+  File "/home/dkeathley/anaconda3/lib/python3.11/site-packages/jupyter_client/channels.py", line 315, in get_msg
     raise Empty
 _queue.Empty
 
@@ -41,6 +41,6 @@ Here is a preview of the cell contents:
 -------------------
 ['import numpy as np', 'import matplotlib.pyplot as plt', '', '# Constants and Parameters', 'Gamma = 330e3  # Inhomogeneous linewidth']
 ...
-['', "plt.xlabel(r'$(\\omega_s-\\omega_c)/(2\\pi)$ (MHz)')", "plt.ylabel(r'$(\\omega_d-\\omega_c)/(2\\pi)$ (MHz)')", '', 'plt.show()']
+["plt.xlabel(r'$(\\omega_s-\\omega_c)/(2\\pi)$ (MHz)', fontsize=14)", "plt.ylabel(r'$(\\omega_d-\\omega_c)/(2\\pi)$ (MHz)', fontsize=14)", "plt.title(r'$|\\Gamma|^2$', fontsize=14)", '', 'plt.show()']
 -------------------
 

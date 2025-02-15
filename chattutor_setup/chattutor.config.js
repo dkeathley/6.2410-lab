@@ -52,7 +52,7 @@ const RUN_LOCALLY = false;
 const TEST_MODE = false;
 const IS_STATIC = true;
 
-const EMBEDDING_COLLECTION_NAME = "dkeathley_mit_course";
+const EMBEDDING_COLLECTION_NAME = "D8N13K3A1342BBN";
 const COURSE_URL = "https://dkeathley.github.io/6.2410-lab";
 /**
  * --------------- TESTING CONFIGS ----------------

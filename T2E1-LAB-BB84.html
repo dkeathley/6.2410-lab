@@ -328,6 +328,10 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[P(k) = e^{-\lambda}\frac{\lambda^k}{k!}\]</div>
 <p>We can adjust <span class="math notranslate nohighlight">\(\lambda\)</span> by adjusting the laser current and the pulse duration for the pump laser.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Implementation Note</strong> You need to play with the repetition rate, laser current, and pulse duration to ensure that you are only sending around 1 photon per transmission event.  Otherwise your protocol will be vulnerable to eavesdropping and would not be a true implementation of BB84.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estimate the probability of getting more than k photons</span>

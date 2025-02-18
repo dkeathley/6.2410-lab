@@ -99,6 +99,7 @@ def quED_Access(url, action, param, reply = 0, value = []):
     finalData.response = response
     return finalData
 
+#-- Some examples using this code below...
 output = quED_Access(url, 'set', 'pm1', reply = 1, value = [45])
 output = quED_Access(url, 'set', 'pm2', reply = 1, value = [-22.5])
 output = quED_Access(url, 'get', 'cnt', reply = 0)

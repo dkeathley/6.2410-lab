@@ -305,8 +305,8 @@ document.write(`
 <section id="ii-interface-with-the-power-supply">
 <h4>ii) Interface with the power supply<a class="headerlink" href="#ii-interface-with-the-power-supply" title="Permalink to this heading">#</a></h4>
 <p>Similar to interfacing with the VNA during T3E3-TRAINING, you will also need to be able to control the power supply via Python. First, install the packages <code class="docutils literal notranslate"><span class="pre">qcodes</span></code>, <code class="docutils literal notranslate"><span class="pre">qcodes_contrib_drivers</span></code>, and <code class="docutils literal notranslate"><span class="pre">pyserial</span></code>. Then, ensure the power supply’s USB port is connected to the computer. Run the following cell to determine which serial port it occupies.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">serial.tools.list_ports</span>
 <span class="n">ports</span> <span class="o">=</span> <span class="n">serial</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">list_ports</span><span class="o">.</span><span class="n">comports</span><span class="p">()</span>
 
@@ -315,6 +315,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
@@ -327,6 +332,7 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>Alternatively, you can also run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">serial.tools.list_ports</span></code> directly in terminal.</p>
 <p>Following the example shown <a class="reference external" href="https://qcodes.github.io/Qcodes_contrib_drivers/examples/Rohde_Schwarz_HMP4040.html">here</a>, make sure you can set Channel 1’s voltage and turn Channel 1’s output on/off via Python commands.</p>

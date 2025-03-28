@@ -48,8 +48,8 @@
  * file, false if ran on a server, either local or online
  * Usually true for jupyter books
  */
-const RUN_LOCALLY = true; // false
-const TEST_MODE = true; // false 
+const RUN_LOCALLY = false; // false
+const TEST_MODE = false; // false 
 const IS_STATIC = true;
 const CHATTUTOR_BASE_URL = "https://chattutor-95445301833.us-central1.run.app"; // = false;
 

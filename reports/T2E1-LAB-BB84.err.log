@@ -1,0 +1,87 @@
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/opt/homebrew/lib/python3.11/site-packages/nbclient/client.py", line 1269, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/nbclient/util.py", line 85, in wrapped
+    return just_run(coro(*args, **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/nbclient/util.py", line 60, in just_run
+    return loop.run_until_complete(coro)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.9/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/nbclient/client.py", line 707, in async_execute
+    await self.async_execute_cell(
+  File "/opt/homebrew/lib/python3.11/site-packages/nbclient/client.py", line 1025, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/homebrew/lib/python3.11/site-packages/nbclient/client.py", line 919, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Import necessary Libraries
+
+# Generate the basis and bit values for each bit from Alice and Bob
+
+import numpy as np
+import random
+import matplotlib.pyplot as plt
+
+LENGTH = 10;
+
+# Are we using PBS and 2 detectors? The default is False
+PBS  = False
+
+# Assign bit valuess
+bH = 0
+bV = 1
+bD = 0
+bA = 1
+
+# Initialize the random bases for Alice and Bob. Let 0 be HV and 1 be AD
+basis_Alice = np.zeros((LENGTH))
+basis_Bob = np.zeros((LENGTH))
+
+# Now initialize the bit values for Alice
+bits_Alice = np.zeros((LENGTH))
+bits_Bob = np.zeros((LENGTH)) 
+
+# Now set the correct values for Alice and Bob's rotation
+angles_Alice = np.zeros((LENGTH))
+angles_Bob = np.zeros((LENGTH))
+for x in range (LENGTH):
+    basis_Alice[x] = random.randint(0,1)
+    basis_Bob[x] = random.randint(0,1)
+    bits_Alice[x] = random.randint(0,1)
+    bits_Bob[x] = random.randint(0,1)
+    angles_Alice[x] = 22.5*basis_Alice[x] - 45*bits_Alice[x]
+    if PBS:
+        angles_Bob[x] = 22.5*basis_Bob[x] # this will rotate Bob's HWP as needed. You'll measure from 2 detectors
+    else:
+        angles_Bob[x] = 45*basis_Bob[x] - 90*bits_Bob[x] # this will tells us how to rotate the linear polarizer
+
+# print('Alices Basis :',basis_Alice)
+# print('Alices Bits  :',bits_Alice)
+# print("Alices Angles: %s" %(angles_Alice))
+# print('Bob basis: ', basis_Bob)
+# print('Bob bits:  ',bits_Bob)
+# print('Bob angles:',angles_Bob)
+
+
+
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn[2], line 7[0m
+[1;32m      5[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mnumpy[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mnp[39;00m
+[1;32m      6[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mrandom[39;00m
+[0;32m----> 7[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mplt[39;00m
+[1;32m      9[0m LENGTH [38;5;241m=[39m [38;5;241m10[39m;
+[1;32m     11[0m [38;5;66;03m# Are we using PBS and 2 detectors? The default is False[39;00m
+
+[0;31mModuleNotFoundError[0m: No module named 'matplotlib'
+ModuleNotFoundError: No module named 'matplotlib'
+

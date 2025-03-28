@@ -2,8 +2,8 @@
 
 From the root folder of the app run:
 ```sh
-jupyter-book build --all book
-python3 ./book/chattutor_setup/install.py # adding the chattutor script to all the html files
+jupyter-book build --all ./
+python3 ./chattutor_setup/install.py # adding the chattutor script to all the html files
 ```
 
 CORS needs to allow the url to make requests!!
@@ -18,6 +18,7 @@ Checkout chattutor.config.js
 - Run the following commands to build the notebook and to add chattutor
 one in venv (checkout main README for info on that)
 ```sh
-jupyter-book build --all book
-python3 ./book/chattutor_setup/install.py # adding the chattutor script to all the html files
+jupyter-book build --all ./
+python3 ./chattutor_setup/install.py # adding the chattutor script to all the html files
+cd _build/html; python -m http.server 5001; cd -
 ```

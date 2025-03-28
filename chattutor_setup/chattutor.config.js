@@ -52,7 +52,6 @@ const RUN_LOCALLY = false; // false
 const TEST_MODE = false; // false 
 const IS_STATIC = true;
 const CHATTUTOR_BASE_URL = "https://chattutor-95445301833.us-central1.run.app"; // = false;
-alert("Please enter the authorization key.");
 
 const AUTHORIZATION_KEY = prompt("Enter the AX authorization key:");
 

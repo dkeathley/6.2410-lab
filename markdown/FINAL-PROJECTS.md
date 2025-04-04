@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.13.8
+    jupytext_version: 1.15.2
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -39,7 +39,7 @@ $$\newcommand{\ghat}[0]{\hat{g}}$$
 $$\newcommand{\hdagger}[0]{\hat{h}^{\dagger}}$$
 $$\newcommand{\hhat}[0]{\hat{h}}$$
 
-+++ {"id": "bcdff4e6-8251-4c63-9061-40ac42497a11"}
++++ {"id": "bcdff4e6-8251-4c63-9061-40ac42497a11", "user_expressions": []}
 
 # Final Design Project
 
@@ -55,8 +55,6 @@ Please see written guidelines for the project proposals [here (Google Doc)](http
 
 ### Proposal Development Slides with Suggested Topics
 
-Please see the slides introducing the proposal development process along with suggested topics as discussed in class [here (Google Slides)](https://docs.google.com/presentation/d/1ST1wsKs1KmI9-RUzv8aG9F8pNdpm1jXalQ1gz-MLefc/edit#slide=id.g22a3ce6831a_2_12).
-
-We will also be updating the list of suggested projects in the coming day or two, and the suggestions will be listed here on this website as well.
+Please see the slides introducing the proposal development process along with suggested topics as discussed in class [here (Google Slides)](https://docs.google.com/presentation/d/1C8hdm718UBnfFvcLTmpZ5YWXimkQ5MN3rkLMlJ1zCEM/edit?usp=sharing).
 
 **Your group is by no means restricted to these suggested topics.**  The key deliverable is a viable proposal that you pitch, revise, and then get approved by the instructional staff before commencing work on your final project.

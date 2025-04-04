@@ -42,7 +42,7 @@ We gratefully acknowledge assistance and contributions from [QuTools](https://qu
   - Section 01: MF 10:30-12:30
   - Section 02: TR 1-3
 
-**Office hours:** TBA
+**Office hours:** By Appointment
 
 ## Overview
 
@@ -87,6 +87,10 @@ The grading will be based on:
   - Pre-lab questions -- 10%
   - Open-ended design lab proposal and presentation -- 15% 
   - Open-ended design laboratory (final report and presentation) -- 40%
+  
+## Late Submission Policy
+
+Submissions are due by the posted due date.  Late submissions will be penalized at a rate of 5 points per day late down to half credit.  
 
 ## Open-Ended Design Project
 

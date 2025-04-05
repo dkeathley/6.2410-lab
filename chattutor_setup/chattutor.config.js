@@ -53,7 +53,7 @@ const TEST_MODE = false; // false
 const IS_STATIC = true;
 const CHATTUTOR_BASE_URL = "https://chattutor-95445301833.us-central1.run.app"; // = false;
 
-const AUTHORIZATION_KEY = prompt("Enter the AX authorization key:");
+const AUTHORIZATION_KEY = "PLACEHOLDER";
 
 console.log("Stored AUTHORIZATION_KEY:", AUTHORIZATION_KEY);
 const EMBEDDING_COLLECTION_NAME = "MIT62410Dirk";

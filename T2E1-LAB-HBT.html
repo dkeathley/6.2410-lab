@@ -26,7 +26,7 @@
 <link href="_static/styles/sphinx-book-theme.css?v=a3416100" rel="stylesheet" type="text/css"/>
 <link href="_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
 <link href="_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
-<link href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" rel="stylesheet" type="text/css"/>
 <link href="_static/sphinx-thebe.css?v=4fa983c6" rel="stylesheet" type="text/css"/>
 <link href="_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
 <!-- So that users can add custom icons -->
@@ -265,6 +265,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimate-coincidence-count-for-uncorrelated-sources">Estimate coincidence count for uncorrelated sources</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qued-power-up">quED power up</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-low-counts">Troubleshooting low counts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automating-data-collection">Automating Data Collection</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day1-hbt-with-2-fold-coincidence">Day1: HBT with 2-fold coincidence</a><ul class="nav section-nav flex-column">
@@ -353,6 +354,118 @@
 <p>If you see fewer counts - say 20% below the maximum - try adjusting the mounts with the lenses that collect the SPDC output light into fibers.</p>
 <p>If that doesn’t work <strong>or</strong> you see severely reduced counts, try walking the beam using the mounts with the mirrors. If this is your first time aligning the quED this way, ask an instructor to help.</p>
 <p>If that doesn’t work, ask an instructor to show you the full alignment procedure. You’ll use a fiber fault finder to back propagate into the box with the source.</p>
+</section>
+<section id="automating-data-collection">
+<h3>Automating Data Collection<a class="headerlink" href="#automating-data-collection" title="Link to this heading">#</a></h3>
+<p>You are encouraged to automate the collection of final data.  You can do this by using the function quED_Acess defined in the code block below.  The URL for the device can be found on the VNC client (just the IP address of the instrument).  An example running this funciton to get the counts is provided.  You should be able to see how this function works by simply playing around with it for a bit.</p>
+<p>It is recommended you first take some data to get a feel for what needs to be collected, and then you can automate all of the recommended parameter sweeps to reduce your manual effort and get better statistics.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">urllib.request</span><span class="w"> </span><span class="kn">import</span> <span class="n">urlopen</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">requests.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">PreparedRequest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">lxml</span><span class="w"> </span><span class="kn">import</span> <span class="n">html</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="c1"># User Parameters</span>
+<span class="n">integrationTimeValue</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1"># Integration time in ms, min = 100, max = 10000</span>
+<span class="n">pauseTimeValue</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Pause time for motion in s</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">'http://169.254.69.140:8080/?'</span>
+
+<span class="c1"># Accessible parameters</span>
+<span class="n">diodeCurrent</span> <span class="o">=</span> <span class="s2">"ild"</span>
+<span class="n">motor1</span> <span class="o">=</span> <span class="s2">"pm1"</span>
+<span class="n">motor2</span> <span class="o">=</span> <span class="s2">"pm2"</span>
+<span class="n">integrationTime</span> <span class="o">=</span> <span class="s2">"int"</span>
+<span class="n">countRate</span> <span class="o">=</span> <span class="s2">"cnt"</span>
+<span class="n">moterRef</span> <span class="o">=</span> <span class="s2">"mref"</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">quED_Access</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="n">reply</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="p">[]):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Function that accesses QED via an ethernet connection</span>
+<span class="sd">    Inputs:</span>
+<span class="sd">        url - IP adddress of instrument (find in settings)</span>
+<span class="sd">        action - 'set' or 'get'</span>
+<span class="sd">        param - the parameter to set or get (see below)</span>
+<span class="sd">        reply - gives response output text, default false, true to debug</span>
+<span class="sd">        value - value to pass in, default is empty</span>
+<span class="sd">    Outputs:</span>
+<span class="sd">        finalData.response.text - raw string response from instrument</span>
+<span class="sd">        finalData.name - name of channel measured</span>
+<span class="sd">        finalData.data - data from measured channel</span>
+<span class="sd">    """</span>
+    
+    <span class="k">class</span><span class="w"> </span><span class="nc">finalData</span><span class="p">:</span>
+        <span class="k">pass</span>
+    
+    <span class="c1"># For reading values out</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">==</span> <span class="p">[]):</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'action'</span><span class="p">:</span><span class="n">action</span><span class="p">,</span><span class="s1">'param'</span><span class="p">:</span><span class="n">param</span><span class="p">}</span>
+        <span class="n">req</span> <span class="o">=</span> <span class="n">PreparedRequest</span><span class="p">()</span>
+        <span class="n">req</span><span class="o">.</span><span class="n">prepare_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+    
+    <span class="c1"># For setting values</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'action'</span><span class="p">:</span><span class="n">action</span><span class="p">,</span><span class="s1">'param'</span><span class="p">:</span><span class="n">param</span><span class="p">,</span><span class="s1">'value'</span><span class="p">:</span><span class="n">value</span><span class="p">}</span>
+        <span class="n">req</span> <span class="o">=</span> <span class="n">PreparedRequest</span><span class="p">()</span>
+        <span class="n">req</span><span class="o">.</span><span class="n">prepare_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">reply</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">action</span> <span class="o">==</span> <span class="s1">'set'</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"&lt;body&gt;"</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"&lt;/body&gt;"</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    
+    <span class="c1"># For case where we measure count data</span>
+    <span class="k">if</span> <span class="n">param</span> <span class="o">==</span> <span class="s1">'cnt'</span><span class="p">:</span>
+        <span class="n">rawArray</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'&lt;br&gt;'</span><span class="p">)</span>
+        <span class="n">truncArray</span> <span class="o">=</span> <span class="n">rawArray</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> 
+        <span class="n">numElem</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">truncArray</span><span class="p">)</span>
+        <span class="n">dataArray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">numElem</span><span class="p">)</span>
+        <span class="n">labelArray</span>  <span class="o">=</span> <span class="p">[</span><span class="s1">'0'</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numElem</span><span class="p">)]</span>
+
+        <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numElem</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">extractLine</span> <span class="o">=</span> <span class="n">truncArray</span><span class="p">[</span><span class="n">elem</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">':'</span><span class="p">)</span>
+            <span class="n">labelArray</span><span class="p">[</span><span class="n">elem</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">extractLine</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">dataArray</span><span class="p">[</span><span class="n">elem</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">extractLine</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="n">finalData</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">labelArray</span>
+        <span class="n">finalData</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">dataArray</span>
+    
+    <span class="n">finalData</span><span class="o">.</span><span class="n">response</span> <span class="o">=</span> <span class="n">response</span>
+    <span class="k">return</span> <span class="n">finalData</span>
+
+<span class="c1">#-- Some examples using this code below...</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">quED_Access</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s1">'get'</span><span class="p">,</span> <span class="s1">'cnt'</span><span class="p">,</span> <span class="n">reply</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">output</span><span class="o">.</span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">urllib.request</span><span class="w"> </span><span class="kn">import</span> <span class="n">urlopen</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">requests.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">PreparedRequest</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span><span class="w"> </span><span class="nn">lxml</span><span class="w"> </span><span class="kn">import</span> <span class="n">html</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named 'lxml'
+</pre></div>
+</div>
+</div>
+</details>
+</div>
 </section>
 </section>
 <section id="day1-hbt-with-2-fold-coincidence">
@@ -520,6 +633,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimate-coincidence-count-for-uncorrelated-sources">Estimate coincidence count for uncorrelated sources</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qued-power-up">quED power up</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-low-counts">Troubleshooting low counts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automating-data-collection">Automating Data Collection</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day1-hbt-with-2-fold-coincidence">Day1: HBT with 2-fold coincidence</a><ul class="nav section-nav flex-column">

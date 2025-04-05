@@ -26,7 +26,7 @@
 <link href="_static/styles/sphinx-book-theme.css?v=a3416100" rel="stylesheet" type="text/css"/>
 <link href="_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
 <link href="_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
-<link href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" rel="stylesheet" type="text/css"/>
 <link href="_static/sphinx-thebe.css?v=4fa983c6" rel="stylesheet" type="text/css"/>
 <link href="_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
 <!-- So that users can add custom icons -->
@@ -273,10 +273,7 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-a-model">Build a model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-data">Take data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#place-holder-code">Place holder code</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-data">Take data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bit-sifting">Bit sifting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-reconciliation-error-correction">Information Reconciliation/Error Correction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#privacy-amplification">Privacy Amplification</a></li>
@@ -329,7 +326,12 @@
 <div class="math notranslate nohighlight">
 \[P(k) = e^{-\lambda}\frac{\lambda^k}{k!}\]</div>
 <p>We can adjust <span class="math notranslate nohighlight">\(\lambda\)</span> by adjusting the laser current and the pulse duration for the pump laser.</p>
-<div class='cell tag_"hide-input" docutils container'>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Implementation Note</strong> You need to play with the repetition rate, laser current, and pulse duration to ensure that you are only sending around 1 photon per transmission event.  Otherwise your protocol will be vulnerable to eavesdropping and would not be a true implementation of BB84.</p>
+<p><strong>Important</strong> When switching to pulsed mode the repetition rate shown might not be what is set on the instrument.  You should hit enter in that box to send the setting to the instrument and ensure what you see is what is actually being used!</p>
+</div>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estimate the probability of getting more than k photons</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">scipy</span>
@@ -350,15 +352,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Estimate the probability of getting more than k photons</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">scipy</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">poisson</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">def</span><span class="w"> </span><span class="nf">gt</span><span class="p">(</span><span class="n">kk</span><span class="p">,</span><span class="n">mu</span><span class="p">):</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named 'scipy'
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The probability of getting more than 1 photons with mean 0.5 is 0.09020401043104986
 </pre></div>
 </div>
 </div>
@@ -371,6 +365,11 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>Implementation Note</strong> The default setup with the quED has Bob using a linear polarizer, <strong>not</strong> a polarizing beamsplitter.</p>
+<p>Keep this in mind while modifying the code below!</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Implementation Note</strong> Note in the example code provided there is a way to implement integration over multiple trials.  This integration violates the assumptions of BB84 (do you see why?) and should only be used for debugging the system. (Integration reduces errors so you can check that your polarizer and HWP settings are indeed working as you expect them to.)</p>
 </div>
 <figure class="align-default" id="bb84-setup">
 <a class="reference internal image-reference" href="_images/qued-bb84-setup.png"><img alt="_images/qued-bb84-setup.png" src="_images/qued-bb84-setup.png" style="width: 600px;"/></a>
@@ -435,6 +434,20 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">LENGTH</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="c1"># Are we using PBS and 2 detectors? The default is False</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named 'matplotlib'
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="set-correct-polarization">
@@ -460,8 +473,8 @@
 <section id="take-data">
 <h2>Take data<a class="headerlink" href="#take-data" title="Link to this heading">#</a></h2>
 <p>Now you have all the pieces you need to take data! The cell immediately below this one is ready for you to define a function and get the data you need to create the raw key.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">urllib.request</span><span class="w"> </span><span class="kn">import</span> <span class="n">urlopen</span>
@@ -540,6 +553,7 @@
     <span class="n">finalData</span><span class="o">.</span><span class="n">response</span> <span class="o">=</span> <span class="n">response</span>
     <span class="k">return</span> <span class="n">finalData</span>
 
+<span class="c1">#-- Some examples using this code below...</span>
 <span class="n">output</span> <span class="o">=</span> <span class="n">quED_Access</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s1">'set'</span><span class="p">,</span> <span class="s1">'pm1'</span><span class="p">,</span> <span class="n">reply</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="mi">45</span><span class="p">])</span>
 <span class="n">output</span> <span class="o">=</span> <span class="n">quED_Access</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s1">'set'</span><span class="p">,</span> <span class="s1">'pm2'</span><span class="p">,</span> <span class="n">reply</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">22.5</span><span class="p">])</span>
 <span class="n">output</span> <span class="o">=</span> <span class="n">quED_Access</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s1">'get'</span><span class="p">,</span> <span class="s1">'cnt'</span><span class="p">,</span> <span class="n">reply</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
@@ -547,7 +561,29 @@
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">urllib.request</span><span class="w"> </span><span class="kn">import</span> <span class="n">urlopen</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">requests.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">PreparedRequest</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span><span class="w"> </span><span class="nn">lxml</span><span class="w"> </span><span class="kn">import</span> <span class="n">html</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named 'lxml'
+</pre></div>
 </div>
+</div>
+</details>
+</div>
+<p>The following code was set up for running a QKD experiment and is provided to you for convenience.  It assumes that Bob has access to two detectors from a combination of his own half waveplate and polarizing beamsplitter – however in your case this has been simplified to just a polarizer.  The experiment still works, but what are the consequences?  <strong>Discuss this in your lab writeup.</strong></p>
+<p><strong>You need to modify this code for it to work for you!</strong>  First of all, you need to take into account your particular setup with only a polarizer.  Second, you might consider if a delay is needed to ensure the moving elements get to where they need to be before a measurement takes place (you can try if this is necessary or not).  Third, if there is an offset in angles you found in calibration, you will want to account for this somehow.  Basically, take this as an example, but you are responsible for developing it into the final, working version.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">QKD_exp</span><span class="p">(</span><span class="n">alice_bases</span><span class="p">,</span> <span class="n">bob_bases</span><span class="p">,</span> <span class="n">int_time</span><span class="p">,</span> <span class="n">det_H_index</span><span class="p">,</span> <span class="n">det_V_index</span><span class="p">,</span> <span class="n">num_trials</span><span class="p">):</span>
@@ -584,6 +620,7 @@
 </div>
 </div>
 </div>
+<p>Below is some convenience code you can modify for testing that things are working as planned.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Setup</span>
@@ -602,50 +639,6 @@
 </div>
 </div>
 </div>
-<section id="place-holder-code">
-<h3>Place holder code<a class="headerlink" href="#place-holder-code" title="Link to this heading">#</a></h3>
-<p>For the purposes of debugging, it can be helpful to have a place holder for the experimental data. The cell below simulates taking BB84 data so that you can test other scripts. The code is entirely commented out so that you won’t accidentally run it and develop a conflict with your experimental data. To toggle entire block of code from commented to un-commented, hit <code class="docutils literal notranslate"><span class="pre">ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">\</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # Place holder for actual data gathering</span>
-<span class="c1"># TT = 1.0 # set a value for transmission through system, loss, etc.</span>
-
-<span class="c1"># detH = []</span>
-<span class="c1"># detV = []</span>
-
-<span class="c1"># for x in range(LENGTH):</span>
-<span class="c1">#     angle = angles_Alice[x]</span>
-<span class="c1">#     if random.random() &lt;= TT:</span>
-<span class="c1">#         if PBS:</span>
-<span class="c1">#             if angle == 0 or abs(angle) == 45:</span>
-<span class="c1">#                 if angles_Bob[x] == 0:</span>
-<span class="c1">#                     detH.append(int(angle == 0))</span>
-<span class="c1">#                     detV.append(int(angle == 45))</span>
-<span class="c1">#             else: # Alice is in D or A basis</span>
-<span class="c1">#                 if angles_Bob[x] == 22.5: # Bob is also in D or A basis</span>
-<span class="c1">#                     detH.append(int(angle &lt; 0))</span>
-<span class="c1">#                     detV.append(int(angle &gt; 0))</span>
-<span class="c1">#             Hval = random.randint(0,1)</span>
-<span class="c1">#             detH.append(Hval)</span>
-<span class="c1">#             Vval = 1 - Hval</span>
-<span class="c1">#             detV.append(1 - Hval)</span>
-<span class="c1">#         else:</span>
-<span class="c1">#             if angle*2 == angles_Bob[x]:</span>
-<span class="c1">#                 detH.append(1)</span>
-<span class="c1">#             else:</span>
-<span class="c1">#                 detH.append(0)</span>
-<span class="c1">#             detV.append(-1)</span>
-<span class="c1">#     else:</span>
-<span class="c1">#         detH.append(-1)</span>
-<span class="c1">#         detV.append(-1) </span>
-<span class="c1"># # print(detH)</span>
-<span class="c1"># # print(detV)</span>
-<span class="c1"># # print(bits_Alice ==)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 </section>
 <section id="bit-sifting">
 <h2>Bit sifting<a class="headerlink" href="#bit-sifting" title="Link to this heading">#</a></h2>
@@ -657,45 +650,6 @@
 and then discard any bits that don’t meet both criteria.</p></li>
 </ol>
 <p>As before, some code is provided below to get you started.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Bob_all</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">Al_all</span> <span class="o">=</span> <span class="p">[]</span>
-
-
-<span class="n">detH</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">detH</span><span class="p">)</span>
-<span class="n">detV</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">detV</span><span class="p">)</span>
-<span class="c1"># find cases where Bob gets exactly 1 click</span>
-<span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">detH</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">^</span> <span class="p">(</span><span class="n">detV</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> 
-<span class="c1"># returns array indices where Bob gets exactly 1 click</span>
-<span class="n">ix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">mask</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span> 
-<span class="c1"># find raw key length</span>
-<span class="n">rkl</span> <span class="o">=</span> <span class="n">ix</span><span class="o">.</span><span class="n">size</span> 
-
-<span class="c1"># look for cases where Alice and Bob have the same basis</span>
-<span class="k">if</span> <span class="n">PBS</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">'Jane needs to write this code'</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rkl</span><span class="p">):</span>
-        <span class="n">nn</span> <span class="o">=</span> <span class="n">ix</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
-        <span class="n">AA</span> <span class="o">=</span> <span class="n">angles_Alice</span><span class="p">[</span><span class="n">nn</span><span class="p">]</span>
-        <span class="n">AB</span> <span class="o">=</span> <span class="n">angles_Bob</span><span class="p">[</span><span class="n">nn</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">AA</span><span class="o">*</span><span class="mi">2</span> <span class="o">==</span> <span class="n">AB</span><span class="p">:</span>
-            <span class="n">Al_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bits_Alice</span><span class="p">[</span><span class="n">nn</span><span class="p">])</span>
-            <span class="n">Bob_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bits_Bob</span><span class="p">[</span><span class="n">nn</span><span class="p">])</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="n">Al_all</span> <span class="o">==</span> <span class="n">Bob_all</span><span class="p">)</span>
-<span class="c1"># print(Bob_all)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="information-reconciliation-error-correction">
 <h2>Information Reconciliation/Error Correction<a class="headerlink" href="#information-reconciliation-error-correction" title="Link to this heading">#</a></h2>
@@ -950,10 +904,7 @@ So, following pg 184 from “Error Correction for Quantum Key Distribution” in
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-a-model">Build a model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-data">Take data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#place-holder-code">Place holder code</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-data">Take data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bit-sifting">Bit sifting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-reconciliation-error-correction">Information Reconciliation/Error Correction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#privacy-amplification">Privacy Amplification</a></li>

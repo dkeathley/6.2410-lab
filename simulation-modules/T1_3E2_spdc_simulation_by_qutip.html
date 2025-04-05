@@ -26,7 +26,7 @@
 <link href="../_static/styles/sphinx-book-theme.css?v=a3416100" rel="stylesheet" type="text/css"/>
 <link href="../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
 <link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
-<link href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" rel="stylesheet" type="text/css"/>
 <link href="../_static/sphinx-thebe.css?v=4fa983c6" rel="stylesheet" type="text/css"/>
 <link href="../_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
 <!-- So that users can add custom icons -->
@@ -323,10 +323,10 @@
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: qutip in /Users/adrianariton/Desktop/Adi/Faculta/An3/AX/ax_new/venv/lib/python3.13/site-packages (5.1.1)
-Requirement already satisfied: numpy&gt;=1.22 in /Users/adrianariton/Desktop/Adi/Faculta/An3/AX/ax_new/venv/lib/python3.13/site-packages (from qutip) (2.2.3)
-Requirement already satisfied: scipy&gt;=1.9 in /Users/adrianariton/Desktop/Adi/Faculta/An3/AX/ax_new/venv/lib/python3.13/site-packages (from qutip) (1.15.1)
-Requirement already satisfied: packaging in /Users/adrianariton/Desktop/Adi/Faculta/An3/AX/ax_new/venv/lib/python3.13/site-packages (from qutip) (24.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: qutip in /Users/adrianariton/Desktop/Adi/Faculta/An3/MIT/dkeatley/venv/lib/python3.13/site-packages (5.1.1)
+Requirement already satisfied: numpy&gt;=1.22 in /Users/adrianariton/Desktop/Adi/Faculta/An3/MIT/dkeatley/venv/lib/python3.13/site-packages (from qutip) (2.2.4)
+Requirement already satisfied: scipy&gt;=1.9 in /Users/adrianariton/Desktop/Adi/Faculta/An3/MIT/dkeatley/venv/lib/python3.13/site-packages (from qutip) (1.15.2)
+Requirement already satisfied: packaging in /Users/adrianariton/Desktop/Adi/Faculta/An3/MIT/dkeatley/venv/lib/python3.13/site-packages (from qutip) (24.2)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class="-Color -Color-Bold">[</span><span class="-Color -Color-Blue">notice</span><span class="-Color -Color-Bold">]</span> A new release of pip is available: <span class="-Color -Color-Red">24.3.1</span> -&gt; <span class="-Color -Color-Green">25.0.1</span>
@@ -471,7 +471,6 @@ Requirement already satisfied: packaging in /Users/adrianariton/Desktop/Adi/Facu
 </ul>
 <p>We then use the function mesolve from the Qutip library to solve the <a class="reference external" href="https://https://en.wikipedia.org/wiki/Quantum_master_equation">quantum master equation </a> to find the time evolution of the system. The function takes as input the Hamiltonian <code class="docutils literal notranslate"><span class="pre">Hab</span></code>, the initial state <code class="docutils literal notranslate"><span class="pre">psi0</span></code>, the list of times <code class="docutils literal notranslate"><span class="pre">tlist</span></code>, the list of collapse operators <code class="docutils literal notranslate"><span class="pre">c_ops</span></code>, and the list of observables <code class="docutils literal notranslate"><span class="pre">e_ops</span></code>. The function returns an object output that contains information about the time evolution of the system, such as the states of the system at each time in <code class="docutils literal notranslate"><span class="pre">tlist</span></code>.</p>
 <p>In the example, the <code class="docutils literal notranslate"><span class="pre">c_ops</span></code> list is empty, which means that there are no sources of decoherence or dissipation in the system. As a result, the evolution of the system is purely unitary and described by the Hamiltonian <span class="math notranslate nohighlight">\(H_{ab}\)</span>.</p>
-<p>The following code uses a python dictionary data structure to conveniently store operators and expected values. In anticipation of correlation values to be considered below, we’re including those in our dictionary as well.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># System Definition:</span>
@@ -485,7 +484,7 @@ Requirement already satisfied: packaging in /Users/adrianariton/Desktop/Adi/Facu
             <span class="c1"># the interactions of the system with its environment that cause</span>
             <span class="c1"># transitions between the energy eigenstates of the system.</span>
 
-<span class="n">tlist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="c1"># tlist is a list of times that specifies the</span>
+<span class="n">tlist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">1001</span><span class="p">)</span> <span class="c1"># tlist is a list of times that specifies the</span>
                                    <span class="c1"># times at which the system should be evaluated</span>
                                    <span class="c1"># during the evolution. In the example, tlist</span>
                                    <span class="c1"># is created using the numpy function linspace,</span>
@@ -512,17 +511,9 @@ Requirement already satisfied: packaging in /Users/adrianariton/Desktop/Adi/Facu
 <h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Link to this heading">#</a></h3>
 <p>1a. Verify the Hermiticity of the Hamiltonian.</p>
 <p>1b. Define operator objects for the number operators <span class="math notranslate nohighlight">\(\hat{N}\)</span> in <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, as well as the operator for <span class="math notranslate nohighlight">\(\hat{N}^2\)</span> for <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>.</p>
-<p>The code block below gets you started.  If needed, a refresher on photon number operators and photon number statistics is provided in <a class="reference internal" href="../BASICS-quantum-optics-basics.html#content-basics-quantum-optics"><span class="std std-ref">BASICS – Quantum Optics</span></a>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">na</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span><span class="o">*</span><span class="n">a</span> <span class="c1"># number operator for mode a</span>
-<span class="n">e_na</span> <span class="o">=</span> <span class="n">expect</span><span class="p">(</span><span class="n">na</span><span class="p">,</span> <span class="n">psi_out</span><span class="o">.</span><span class="n">states</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>1c. Use the <code class="docutils literal notranslate"><span class="pre">expect()</span></code> function to evaluate the expectation of the photon number in <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> for all of the output states, provided by <code class="docutils literal notranslate"><span class="pre">phi_out.states</span></code>.  You should have <code class="docutils literal notranslate"><span class="pre">1000</span></code> output states, one for each point in time in <code class="docutils literal notranslate"><span class="pre">tlist</span></code>.  Plot the growth of the photon number as a function of time.  Does it makes sense? (Compare directly to your expected expression from the pre-lab).</p>
-<p>1d. Now calculate the standard deviation of the photon number in <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>.  Explain the nature of the growth of the standard deviation.  Does it also match expectations?  Explain why this growth behavior make sense?</p>
+<p>The code block below gets you started.  If needed, a refresher on photon number operators and photon number statistics is provided in <a class="reference internal" href="../BASICS-quantum-optics-basics.html#content-basics-quantum-optics"><span class="std std-ref">BASICS – Quantum Optics</span></a>.</p>
+<p>1d. Now calculate the standard deviation of the photon number in <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>.  Explain the nature of the growth of the standard deviation.  Does it also match theory?  Explain why this growth behavior make sense.</p>
 <p>1e. The photon rate (output photons per second) can be expressed as the phase-matching bandwidth times the photon number.  Given the maximum value at the final time in the interaction, what is the photon emission rate?  How does this compare to the incident pump photon rate assuming a pump wavelength of 400 nm and power of 10 mW?</p>
 </section>
 </section>
@@ -562,22 +553,21 @@ Requirement already satisfied: packaging in /Users/adrianariton/Desktop/Adi/Facu
 
     <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 
-<span class="n">t_selector</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span>
+<span class="n">t_selector</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span>
     <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-    <span class="nb">max</span><span class="o">=</span><span class="n">floor</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tlist</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span>
+    <span class="nb">max</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">tlist</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>
     <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-    <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
     <span class="n">description</span><span class="o">=</span><span class="s1">'Time index:'</span><span class="p">,</span>
-    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span>
-<span class="p">)</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="c1">#display(t_selector)</span>
-<span class="n">widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">update_plot</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">tlist</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">30</span><span class="p">))</span>
+<span class="n">widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">update_plot</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">t_selector</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "2cf6ed9f364242f894a67946b4f8448d"}</script><div class="output text_html"><div style="max-width:800px; border: 1px solid var(--colab-border-color);"><style>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "60c1162d10dc456f9f22444804ce0de8"}</script><div class="output text_html"><div style="max-width:800px; border: 1px solid var(--colab-border-color);"><style>
       pre.function-repr-contents {
         overflow-x: auto;
         padding: 8px 12px;
@@ -591,8 +581,7 @@ Requirement already satisfied: packaging in /Users/adrianariton/Desktop/Adi/Facu
     </style>
 <pre style="white-space: initial; background:
          var(--colab-secondary-surface-color); padding: 8px 12px;
-         border-bottom: 1px solid var(--colab-border-color);"><b>update_plot</b><br/>def update_plot(t)</pre><pre class="function-repr-contents function-repr-contents-collapsed" style=""><a class="filepath" href="#" style="display:none">/content/&lt;ipython-input-41-9c351fcdfb7e&gt;</a>&lt;no docstring&gt;</pre></div></div><img alt="../_images/4cb3b42b9d7e6cdf468a3f1c1b52b8a0d808f69d9b61c05c04fabb44c2364458.png" src="../_images/4cb3b42b9d7e6cdf468a3f1c1b52b8a0d808f69d9b61c05c04fabb44c2364458.png">
-</img></div>
+         border-bottom: 1px solid var(--colab-border-color);"><b>update_plot</b><br/>def update_plot(t)</pre><pre class="function-repr-contents function-repr-contents-collapsed" style=""><a class="filepath" href="#" style="display:none">/content/&lt;ipython-input-15-b008fbc64c30&gt;</a>&lt;no docstring&gt;</pre></div></div></div>
 </div>
 <section id="exercise-2">
 <h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Link to this heading">#</a></h3>
@@ -618,9 +607,9 @@ Requirement already satisfied: packaging in /Users/adrianariton/Desktop/Adi/Facu
 <h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Link to this heading">#</a></h3>
 <p>3a. Using the same procedure as for the photon number expectation calculations, now calculate and plot the second order correlation functions for <span class="math notranslate nohighlight">\(g^{(2)}_{aa}\)</span>, <span class="math notranslate nohighlight">\(g^{(2)}_{bb}\)</span>, and <span class="math notranslate nohighlight">\(g^{(2)}_{ab}\)</span>.</p>
 <p>3b. Is the Cauchy-Schwarz inequality broken?</p>
-<p>3c. You should find that the photon correlations of the fields produced from a vacuum passing through the parametric amplifier are not just strongly nonclassical but actually saturate the bound on the maximum allowed by quantum mechanics.</p>
+<p>3c. You should find that the photon correlations of the fields produced from a vacuum passing through the parametric amplifier are strongly nonclassical. It turns out they saturate the bound by quantum mechanics.</p>
 <p>Hint: Think about <span class="math notranslate nohighlight">\(\langle \hat{a}^\dagger \hat{a} \hat{b}^\dagger \hat{b} \rangle\)</span> vs <span class="math notranslate nohighlight">\(\langle \hat{a}^\dagger \hat{a}\rangle\)</span> for the states that SPDC generates.</p>
-<p>Discuss why this makes SPDC a valuable resource from the context of quantum technologies.</p>
+<p>Discuss why this makes SPDC a valuable resource in the context of quantum technologies.</p>
 </section>
 </section>
 <section id="bonus-degenerate-spdc-and-squeezing">

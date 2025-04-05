@@ -1,5 +1,5 @@
 Traceback (most recent call last):
-  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/AX/ax_new/venv/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/MIT/dkeatley/venv/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
     ~~~~~~~~~^
         nb,
@@ -9,22 +9,22 @@ Traceback (most recent call last):
         ^^^^^^^^^
     )
     ^
-  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/AX/ax_new/venv/lib/python3.13/site-packages/nbclient/client.py", line 1319, in execute
+  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/MIT/dkeatley/venv/lib/python3.13/site-packages/nbclient/client.py", line 1319, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/AX/ax_new/venv/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/MIT/dkeatley/venv/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
-  File "/opt/homebrew/Cellar/python@3.13/3.13.1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py", line 720, in run_until_complete
+  File "/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
     return future.result()
            ~~~~~~~~~~~~~^^
-  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/AX/ax_new/venv/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
+  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/MIT/dkeatley/venv/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
     await self.async_execute_cell(
         cell, index, execution_count=self.code_cells_executed + 1
     )
-  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/AX/ax_new/venv/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/MIT/dkeatley/venv/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/AX/ax_new/venv/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/MIT/dkeatley/venv/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
@@ -36,48 +36,45 @@ import matplotlib.pyplot as plt
 
 ----- stdout -----
 Collecting qutip
------ stdout -----
-  Downloading qutip-5.1.1-cp313-cp313-macosx_11_0_arm64.whl.metadata (9.2 kB)
+  Using cached qutip-5.1.1-cp313-cp313-macosx_11_0_arm64.whl.metadata (9.2 kB)
 ----- stdout -----
 Collecting numpy>=1.22 (from qutip)
 ----- stdout -----
-  Downloading numpy-2.2.3-cp313-cp313-macosx_14_0_arm64.whl.metadata (62 kB)
+  Downloading numpy-2.2.4-cp313-cp313-macosx_14_0_arm64.whl.metadata (62 kB)
 ----- stdout -----
 Collecting scipy>=1.9 (from qutip)
-  Downloading scipy-1.15.1-cp313-cp313-macosx_14_0_arm64.whl.metadata (61 kB)
 ----- stdout -----
-Requirement already satisfied: packaging in /Users/adrianariton/Desktop/Adi/Faculta/An3/AX/ax_new/venv/lib/python3.13/site-packages (from qutip) (24.2)
-Downloading qutip-5.1.1-cp313-cp313-macosx_11_0_arm64.whl (10.0 MB)
-[?25l   [38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/10.0 MB[0m [31m?[0m eta [36m-:--:--[0m
+  Downloading scipy-1.15.2-cp313-cp313-macosx_14_0_arm64.whl.metadata (61 kB)
 ----- stdout -----
-[2K   [38;2;249;38;114m━━━━━━━━━━━[0m[38;2;249;38;114m╸[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m2.9/10.0 MB[0m [31m17.1 MB/s[0m eta [36m0:00:01[0m
+Requirement already satisfied: packaging in /Users/adrianariton/Desktop/Adi/Faculta/An3/MIT/dkeatley/venv/lib/python3.13/site-packages (from qutip) (24.2)
+Using cached qutip-5.1.1-cp313-cp313-macosx_11_0_arm64.whl (10.0 MB)
 ----- stdout -----
-[2K   [38;2;249;38;114m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━[0m [32m8.1/10.0 MB[0m [31m22.1 MB/s[0m eta [36m0:00:01[0m
------ stdout -----
-[2K   [38;2;114;156;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m10.0/10.0 MB[0m [31m21.6 MB/s[0m eta [36m0:00:00[0m
-[?25hDownloading numpy-2.2.3-cp313-cp313-macosx_14_0_arm64.whl (5.1 MB)
+Downloading numpy-2.2.4-cp313-cp313-macosx_14_0_arm64.whl (5.1 MB)
 [?25l   [38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/5.1 MB[0m [31m?[0m eta [36m-:--:--[0m
 ----- stdout -----
-[2K   [38;2;249;38;114m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;2;249;38;114m╸[0m[38;5;237m━━━━━[0m [32m4.5/5.1 MB[0m [31m25.7 MB/s[0m eta [36m0:00:01[0m
+[2K   [38;2;249;38;114m━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;2;249;38;114m╸[0m[38;5;237m━━━━━━━━━━━[0m [32m3.7/5.1 MB[0m [31m20.3 MB/s[0m eta [36m0:00:01[0m
 ----- stdout -----
-[2K   [38;2;114;156;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m5.1/5.1 MB[0m [31m21.8 MB/s[0m eta [36m0:00:00[0m
-[?25hDownloading scipy-1.15.1-cp313-cp313-macosx_14_0_arm64.whl (24.8 MB)
-[?25l   [38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/24.8 MB[0m [31m?[0m eta [36m-:--:--[0m
+[2K   [38;2;114;156;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m5.1/5.1 MB[0m [31m20.9 MB/s[0m eta [36m0:00:00[0m
+[?25h
 ----- stdout -----
-[2K   [38;2;249;38;114m━━━━━━[0m[38;2;249;38;114m╸[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m4.2/24.8 MB[0m [31m26.4 MB/s[0m eta [36m0:00:01[0m
+Downloading scipy-1.15.2-cp313-cp313-macosx_14_0_arm64.whl (22.4 MB)
+[?25l   [38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/22.4 MB[0m [31m?[0m eta [36m-:--:--[0m
 ----- stdout -----
-[2K   [38;2;249;38;114m━━━━━━━━━━━━━━[0m[38;2;249;38;114m╸[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m9.2/24.8 MB[0m [31m23.9 MB/s[0m eta [36m0:00:01[0m
+[2K   [38;2;249;38;114m━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m4.7/22.4 MB[0m [31m23.3 MB/s[0m eta [36m0:00:01[0m
 ----- stdout -----
-[2K   [38;2;249;38;114m━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;2;249;38;114m╸[0m[38;5;237m━━━━━━━━━━━━━━━[0m [32m15.5/24.8 MB[0m [31m26.5 MB/s[0m eta [36m0:00:01[0m
+[2K   [38;2;249;38;114m━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━[0m [32m10.2/22.4 MB[0m [31m25.8 MB/s[0m eta [36m0:00:01[0m
 ----- stdout -----
-[2K   [38;2;249;38;114m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━[0m [32m21.2/24.8 MB[0m [31m27.0 MB/s[0m eta [36m0:00:01[0m
+[2K   [38;2;249;38;114m━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━[0m [32m15.2/22.4 MB[0m [31m25.4 MB/s[0m eta [36m0:00:01[0m
 ----- stdout -----
-[2K   [38;2;114;156;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m24.8/24.8 MB[0m [31m27.5 MB/s[0m eta [36m0:00:00[0m
+[2K   [38;2;249;38;114m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━[0m [32m20.2/22.4 MB[0m [31m24.9 MB/s[0m eta [36m0:00:01[0m
+----- stdout -----
+[2K   [38;2;114;156;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m22.4/22.4 MB[0m [31m24.0 MB/s[0m eta [36m0:00:00[0m
 [?25h
 ----- stdout -----
 Installing collected packages: numpy, scipy, qutip
 ----- stdout -----
-Successfully installed numpy-2.2.3 qutip-5.1.1 scipy-1.15.1
+Successfully installed numpy-2.2.4 qutip-5.1.1 scipy-1.15.2
+----- stdout -----
 
 [1m[[0m[34;49mnotice[0m[1;39;49m][0m[39;49m A new release of pip is available: [0m[31;49m24.3.1[0m[39;49m -> [0m[32;49m25.0.1[0m
 [1m[[0m[34;49mnotice[0m[1;39;49m][0m[39;49m To update, run: [0m[32;49mpip install --upgrade pip[0m

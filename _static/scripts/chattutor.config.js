@@ -48,11 +48,15 @@
  * file, false if ran on a server, either local or online
  * Usually true for jupyter books
  */
-const RUN_LOCALLY = false;
-const TEST_MODE = false;
+const RUN_LOCALLY = false; // false
+const TEST_MODE = false; // false 
 const IS_STATIC = true;
+const CHATTUTOR_BASE_URL = "https://chattutor-95445301833.us-central1.run.app"; // = false;
 
-const EMBEDDING_COLLECTION_NAME = "D8N13K3A1342BBN";
+const AUTHORIZATION_KEY = "PLACEHOLDER";
+
+console.log("Stored AUTHORIZATION_KEY:", AUTHORIZATION_KEY);
+const EMBEDDING_COLLECTION_NAME = "MIT62410Dirk";
 const COURSE_URL = "https://dkeathley.github.io/6.2410-lab";
 /**
  * --------------- TESTING CONFIGS ----------------

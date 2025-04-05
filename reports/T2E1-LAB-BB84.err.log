@@ -1,5 +1,5 @@
 Traceback (most recent call last):
-  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/AX/ax_new/venv/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/MIT/dkeatley/venv/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
     ~~~~~~~~~^
         nb,
@@ -9,50 +9,86 @@ Traceback (most recent call last):
         ^^^^^^^^^
     )
     ^
-  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/AX/ax_new/venv/lib/python3.13/site-packages/nbclient/client.py", line 1319, in execute
+  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/MIT/dkeatley/venv/lib/python3.13/site-packages/nbclient/client.py", line 1319, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/AX/ax_new/venv/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/MIT/dkeatley/venv/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
-  File "/opt/homebrew/Cellar/python@3.13/3.13.1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py", line 720, in run_until_complete
+  File "/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
     return future.result()
            ~~~~~~~~~~~~~^^
-  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/AX/ax_new/venv/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
+  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/MIT/dkeatley/venv/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
     await self.async_execute_cell(
         cell, index, execution_count=self.code_cells_executed + 1
     )
-  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/AX/ax_new/venv/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/MIT/dkeatley/venv/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/AX/ax_new/venv/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/MIT/dkeatley/venv/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# Estimate the probability of getting more than k photons
-import scipy
-from scipy.stats import poisson
+# Import necessary Libraries
+
+# Generate the basis and bit values for each bit from Alice and Bob
+
+import numpy as np
+import random
+import matplotlib.pyplot as plt
+
+LENGTH = 10;
+
+# Are we using PBS and 2 detectors? The default is False
+PBS  = False
+
+# Assign bit valuess
+bH = 0
+bV = 1
+bD = 0
+bA = 1
+
+# Initialize the random bases for Alice and Bob. Let 0 be HV and 1 be AD
+basis_Alice = np.zeros((LENGTH))
+basis_Bob = np.zeros((LENGTH))
+
+# Now initialize the bit values for Alice
+bits_Alice = np.zeros((LENGTH))
+bits_Bob = np.zeros((LENGTH)) 
+
+# Now set the correct values for Alice and Bob's rotation
+angles_Alice = np.zeros((LENGTH))
+angles_Bob = np.zeros((LENGTH))
+for x in range (LENGTH):
+    basis_Alice[x] = random.randint(0,1)
+    basis_Bob[x] = random.randint(0,1)
+    bits_Alice[x] = random.randint(0,1)
+    bits_Bob[x] = random.randint(0,1)
+    angles_Alice[x] = 22.5*basis_Alice[x] - 45*bits_Alice[x]
+    if PBS:
+        angles_Bob[x] = 22.5*basis_Bob[x] # this will rotate Bob's HWP as needed. You'll measure from 2 detectors
+    else:
+        angles_Bob[x] = 45*basis_Bob[x] - 90*bits_Bob[x] # this will tells us how to rotate the linear polarizer
+
+# print('Alices Basis :',basis_Alice)
+# print('Alices Bits  :',bits_Alice)
+# print("Alices Angles: %s" %(angles_Alice))
+# print('Bob basis: ', basis_Bob)
+# print('Bob bits:  ',bits_Bob)
+# print('Bob angles:',angles_Bob)
 
 
 
-def gt(kk,mu):
-    xx = 1-poisson.cdf(k=kk, mu=mu)
-    return xx
-
-k = 1 # default is 1: how often does Alice send > 1 photon?
-mu = 0.5 # set the mean value (the above text uses lambda instead of mu)
-prob = gt(k,mu)
-
-print(f"The probability of getting more than {k} photons with mean {mu} is {prob}")
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[1], line 2[0m
-[1;32m      1[0m [38;5;66;03m# Estimate the probability of getting more than k photons[39;00m
-[0;32m----> 2[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mscipy[39;00m
-[1;32m      3[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mscipy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mstats[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m poisson
-[1;32m      7[0m [38;5;28;01mdef[39;00m[38;5;250m [39m[38;5;21mgt[39m(kk,mu):
+Cell [0;32mIn[2], line 7[0m
+[1;32m      5[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mnumpy[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mnp[39;00m
+[1;32m      6[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mrandom[39;00m
+[0;32m----> 7[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mplt[39;00m
+[1;32m      9[0m LENGTH [38;5;241m=[39m [38;5;241m10[39m;
+[1;32m     11[0m [38;5;66;03m# Are we using PBS and 2 detectors? The default is False[39;00m
 
-[0;31mModuleNotFoundError[0m: No module named 'scipy'
+[0;31mModuleNotFoundError[0m: No module named 'matplotlib'
 

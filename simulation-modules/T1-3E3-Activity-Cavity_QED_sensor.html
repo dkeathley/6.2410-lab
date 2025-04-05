@@ -26,7 +26,7 @@
 <link href="../_static/styles/sphinx-book-theme.css?v=a3416100" rel="stylesheet" type="text/css"/>
 <link href="../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
 <link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
-<link href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" rel="stylesheet" type="text/css"/>
 <link href="../_static/sphinx-thebe.css?v=4fa983c6" rel="stylesheet" type="text/css"/>
 <link href="../_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
 <!-- So that users can add custom icons -->
@@ -264,6 +264,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cavity-coupled-quantum-electrodynamic-qed-sensor">Cavity-coupled quantum electrodynamic (QED) sensor</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regime">Linear Regime</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nonlinear-regime">Nonlinear Regime</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#noise-model">Noise Model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-detectable-magnetic-field">Minimum detectable magnetic field</a></li>
@@ -413,12 +414,13 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">HBox</span><span class="p">,</span> <span class="n">VBox</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named 'numpy'
+<span class="ne">ModuleNotFoundError</span>: No module named 'matplotlib'
 </pre></div>
 </div>
 </div>
@@ -488,6 +490,9 @@
 <img alt="../_images/2aa0b52fbf3fd009ef95cdaa7f624596e0864755ce0ad4a80fcf2d91541e95ea.png" src="../_images/2aa0b52fbf3fd009ef95cdaa7f624596e0864755ce0ad4a80fcf2d91541e95ea.png"/>
 </div>
 </div>
+</section>
+<section id="noise-model">
+<h2>Noise Model<a class="headerlink" href="#noise-model" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">length</span> <span class="o">=</span> <span class="mi">2000000</span>  <span class="c1"># Length of the signal</span>
@@ -627,8 +632,8 @@
 </section>
 <section id="exercise-2">
 <h2>Exercise 2:<a class="headerlink" href="#exercise-2" title="Link to this heading">#</a></h2>
-<p>Now assume we have a test field <span class="math notranslate nohighlight">\(B_t\)</span>, could you generate a <span class="math notranslate nohighlight">\(B_t\)</span> in the digital twin? Decrease the amplitude and see what is the minimum test field <span class="math notranslate nohighlight">\(B_t\)</span> you can measure in the digital twin.</p>
-<p>Hint: Look at how the quadrature component of <span class="math notranslate nohighlight">\(\Gamma\)</span> changes with magnetic field (which changes the spin frequency to be slightly different from the cavity frequency). When is this change larger than the average noise?</p>
+<p>Now assume we have a test field <span class="math notranslate nohighlight">\(B_t\)</span>. Could you emulate <span class="math notranslate nohighlight">\(B_t\)</span> in the digital twin? Approximate the minimum test field <span class="math notranslate nohighlight">\(B_t\)</span> you can measure in the digital twin (choose some noise level).</p>
+<p>Hint: Look at how the inphase and quadrature components of <span class="math notranslate nohighlight">\(\Gamma\)</span> change with magnetic field (which shifts the spin frequency). Which component of <span class="math notranslate nohighlight">\(\Gamma\)</span> is more sensitive to magnetic field near zero detuning? When does the change in underlying signal outweigh noise?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Add your code here</span>
@@ -749,6 +754,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cavity-coupled-quantum-electrodynamic-qed-sensor">Cavity-coupled quantum electrodynamic (QED) sensor</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regime">Linear Regime</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nonlinear-regime">Nonlinear Regime</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#noise-model">Noise Model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-detectable-magnetic-field">Minimum detectable magnetic field</a></li>

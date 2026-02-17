@@ -1,55 +1,54 @@
 
 <!DOCTYPE html>
 
-<html data-content_root="../" lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
 <title>TRAINING - Interfacing with the Vector Network Analyzer — 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
 <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
-<!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-<noscript>
-<style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-</noscript>
 <!-- Loaded before other Sphinx assets -->
-<link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet"/>
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet"/>
-<link href="../_static/pygments.css?v=03e43079" rel="stylesheet" type="text/css"/>
-<link href="../_static/styles/sphinx-book-theme.css?v=a3416100" rel="stylesheet" type="text/css"/>
-<link href="../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
-<link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
-<link href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" rel="stylesheet" type="text/css"/>
-<link href="../_static/sphinx-thebe.css?v=4fa983c6" rel="stylesheet" type="text/css"/>
-<link href="../_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
-<!-- So that users can add custom icons -->
-<script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+<link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" rel="stylesheet" type="text/css"/>
+<link href="../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-thebe.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" rel="stylesheet" type="text/css"/>
 <!-- Pre-loaded scripts that we'll load fully later -->
-<link as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" rel="preload"/>
-<link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" rel="preload"/>
-<script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-<script src="../_static/doctools.js?v=9a2dae69"></script>
-<script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-<script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-<script src="../_static/copybutton.js?v=f281be69"></script>
-<script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+<link as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" rel="preload"/>
+<link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" rel="preload"/>
+<script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/clipboard.min.js"></script>
+<script src="../_static/copybutton.js"></script>
+<script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
 <script>let toggleHintShow = 'Click to show';</script>
 <script>let toggleHintHide = 'Click to hide';</script>
 <script>let toggleOpenOnPrint = 'true';</script>
-<script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+<script src="../_static/togglebutton.js"></script>
 <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-<script src="../_static/design-tabs.js?v=36754332"></script>
-<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-<script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+<script src="../_static/design-tabs.js"></script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+<script async="async" src="../_static/sphinx-thebe.js"></script>
 <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
 <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>DOCUMENTATION_OPTIONS.pagename = 'quNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins';</script>
@@ -59,44 +58,41 @@
 <link href="../T2E1-LAB-BB84.html" rel="prev" title="LAB – QKD (Week 2)"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="en" name="docsearch:language"/>
-<meta content="" name="docsearch:version"/>
-<link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/></head>
+<link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/></head>
 <body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
-<div class="skip-link d-print-none" id="pst-skip-link"><a href="#main-content">Skip to main content</a></div>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <div id="pst-scroll-pixel-helper"></div>
 <button class="btn rounded-pill" id="pst-back-to-top" type="button">
-<i class="fa-solid fa-arrow-up"></i>Back to top</button>
-<dialog id="pst-search-dialog">
+<i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
 <form action="../search.html" class="bd-search d-flex align-items-center" method="get">
 <i class="fa-solid fa-magnifying-glass"></i>
-<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
+<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
 <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-</dialog>
-<div class="pst-async-banner-revealer d-none">
-<aside aria-label="Version warning" class="d-none d-print-none" id="bd-header-version-warning"></aside>
+</form></div>
 </div>
-<header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-</header>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar">
+</nav>
 <div class="bd-container">
 <div class="bd-container__inner bd-page-width">
-<dialog id="pst-primary-sidebar-modal"></dialog>
-<div class="bd-sidebar-primary bd-sidebar" id="pst-primary-sidebar">
+<div class="bd-sidebar-primary bd-sidebar">
 <div class="sidebar-header-items sidebar-primary__section">
 </div>
 <div class="sidebar-primary-items__start sidebar-primary__section">
 <div class="sidebar-primary-item">
 <a class="navbar-brand logo" href="../intro.html">
-<img alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home" class="logo__image only-light" src="../_static/logo-ibm.jpg"/>
-<img alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home" class="logo__image only-dark pst-js-only" src="../_static/logo-ibm.jpg"/>
+<img alt="Logo image" class="logo__image only-light" src="../_static/logo-ibm.jpg"/>
+<script>document.write(`<img src="../_static/logo-ibm.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
 </a></div>
-<div class="sidebar-primary-item">
-<button aria-label="Search" class="btn search-button-field search-button__button pst-js-only" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Search">
-<i class="fa-solid fa-magnifying-glass"></i>
-<span class="search-button__default-text">Search</span>
-<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
-<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links bd-docs-nav">
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
 <div class="bd-toc-item navbar-nav active">
 <ul class="nav bd-sidenav bd-sidenav__home-link">
 <li class="toctree-l1">
@@ -147,21 +143,19 @@
 </nav></div>
 </div>
 <div class="sidebar-primary-items__end sidebar-primary__section">
-<div class="sidebar-primary-item">
-<div class="flat" data-ea-manual="true" data-ea-publisher="readthedocs" data-ea-type="readthedocs-sidebar" id="ethical-ad-placement">
-</div></div>
 </div>
+<div id="rtd-footer-container"></div>
 </div>
-<main class="bd-main" id="main-content" role="main">
+<main class="bd-main" id="main-content">
 <div class="sbt-scroll-pixel-helper"></div>
 <div class="bd-content">
 <div class="bd-article-container">
-<div class="bd-header-article d-print-none">
+<div class="bd-header-article">
 <div class="header-article-items header-article__inner">
 <div class="header-article-items__start">
-<div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle primary sidebar">
+<div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__primary" title="Toggle primary sidebar">
 <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
 </div>
 <div class="header-article-items__end">
 <div class="header-article-item">
@@ -171,16 +165,16 @@
 <i class="fas fa-rocket"></i>
 </button>
 <ul class="dropdown-menu">
-<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/quNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.ipynb" target="_blank" title="Launch on Binder">
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/quNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.ipynb" target="_blank" title="Launch onBinder">
 <span class="btn__icon-container">
-<img alt="Binder logo" src="../_static/images/logo_binder.svg"/>
+<img src="../_static/images/logo_binder.svg"/>
 </span>
 <span class="btn__text-container">Binder</span>
 </a>
 </li>
-<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/quNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.ipynb" target="_blank" title="Launch on Colab">
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/quNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.ipynb" target="_blank" title="Launch onColab">
 <span class="btn__icon-container">
-<img alt="Colab logo" src="../_static/images/logo_colab.png"/>
+<img src="../_static/images/logo_colab.png"/>
 </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -235,17 +229,25 @@
 <i class="fas fa-expand"></i>
 </span>
 </button>
-<button aria-label="Color mode" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" data-bs-placement="bottom" data-bs-title="Color mode" data-bs-toggle="tooltip">
-<i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
-<i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
-<i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
-</button>
-<button aria-label="Search" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Search">
-<i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle secondary sidebar">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__secondary" title="Toggle secondary sidebar">
 <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
 </div>
 </div>
@@ -276,55 +278,43 @@
 </div>
 </div>
 <div id="searchbox"></div>
-<article class="bd-article">
+<article class="bd-article" role="main">
 <section id="training-interfacing-with-the-vector-network-analyzer">
-<h1>TRAINING - Interfacing with the Vector Network Analyzer<a class="headerlink" href="#training-interfacing-with-the-vector-network-analyzer" title="Link to this heading">#</a></h1>
+<h1>TRAINING - Interfacing with the Vector Network Analyzer<a class="headerlink" href="#training-interfacing-with-the-vector-network-analyzer" title="Permalink to this heading">#</a></h1>
 <p>In this exercise, we will practice using Python to communicate with the vector network analyzer (VNA), which allows us to probe the microwave cavity’s frequency response. In short, the VNA acts as both a signal generator and a receiver. Within a defined frequency sweep, <span class="math notranslate nohighlight">\(\omega\in[\omega_1,\omega_2]\)</span>, it sends a signal at frequency <span class="math notranslate nohighlight">\(\omega\)</span> and measures the reflected power off the cavity. When <span class="math notranslate nohighlight">\(\omega\)</span> is resonant with the cavity’s resonance frequency <span class="math notranslate nohighlight">\(\omega_c\)</span>, i.e. <span class="math notranslate nohighlight">\(\omega=\omega_c\)</span>, the reflected power would be minimal. This will be covered in more details in the textbook. For now, we will focus on writing a small piece of code to send commands to the VNA, and collecting the relevant measurement data, <span class="math notranslate nohighlight">\(S_{21}\)</span>.</p>
 <section id="installing-the-vna-gui">
-<h2>1. Installing the VNA GUI<a class="headerlink" href="#installing-the-vna-gui" title="Link to this heading">#</a></h2>
+<h2>1. Installing the VNA GUI<a class="headerlink" href="#installing-the-vna-gui" title="Permalink to this heading">#</a></h2>
 <p>The GUI software for the VNA can be downloaded here: <a class="github reference external" href="https://github.com/jankae/LibreVNA/releases">jankae/LibreVNA</a></p>
 <p>You may download either the latest version or pre-release.</p>
 <p>You may also designate one person whose laptop/computer will be installed with the software. However, each person still needs to submit their own code.</p>
 </section>
 <section id="familiarize-with-the-gui">
-<h2>2. Familiarize with the GUI<a class="headerlink" href="#familiarize-with-the-gui" title="Link to this heading">#</a></h2>
+<h2>2. Familiarize with the GUI<a class="headerlink" href="#familiarize-with-the-gui" title="Permalink to this heading">#</a></h2>
 <p>Make sure the VNA is USB-connected to your computer. Then, open the LibreVNA-GUI. In the “Device” tab, you should be able to see the VNA’s device ID in “Connect To”. Select the device, and you should be seeing four quadrants, each representing a <a class="reference external" href="https://en.wikipedia.org/wiki/Scattering_parameters">S-parameter</a>. For the experiment you will be running, only <span class="math notranslate nohighlight">\(S_{21}\)</span> is needed. You may enlarge the “S21” screen by dragging its boundaries.</p>
 <p>In the top bar, make sure the “Sweep type” is Frequency. You can define the frequency sweep range by either setting (1) Start and Stop, or (2) Center and Span.</p>
 <p>Right-clicking on the plot and selecting “Axis Setup” allows you to select “Auto” for the axes’ range. This is important if you want to monitor signals with changing amplitudes and/or after you change the frequency sweep range.</p>
 <p><em>Note that Ports 1 &amp; 2 of the VNA are not connected to anything at the moment, so you should just be seeing noise in the “S21” plot.</em></p>
 </section>
 <section id="establish-connection-with-the-vna-via-python">
-<h2>3. Establish connection with the VNA via Python<a class="headerlink" href="#establish-connection-with-the-vna-via-python" title="Link to this heading">#</a></h2>
+<h2>3. Establish connection with the VNA via Python<a class="headerlink" href="#establish-connection-with-the-vna-via-python" title="Permalink to this heading">#</a></h2>
 <section id="download-the-python-file-below-make-sure-it-is-either-in-the-same-directory-as-this-jupyter-notebook-or-modify-the-directory-path-when-importing">
-<h3>3.1 Download the Python file below. Make sure it is either in the same directory as this Jupyter notebook or modify the directory path when importing.<a class="headerlink" href="#download-the-python-file-below-make-sure-it-is-either-in-the-same-directory-as-this-jupyter-notebook-or-modify-the-directory-path-when-importing" title="Link to this heading">#</a></h3>
+<h3>3.1 Download the Python file below. Make sure it is either in the same directory as this Jupyter notebook or modify the directory path when importing.<a class="headerlink" href="#download-the-python-file-below-make-sure-it-is-either-in-the-same-directory-as-this-jupyter-notebook-or-modify-the-directory-path-when-importing" title="Permalink to this heading">#</a></h3>
 <p>Click <a class="reference external" href="https://drive.google.com/file/d/1kkkXeQyyrg6BMhK2RJBleBGn8OjrYlfB/view?usp=sharing">here</a> to download.</p>
 </section>
 <section id="next-try-running-the-next-code-block">
-<h3>3.2 Next, try running the next code block.<a class="headerlink" href="#next-try-running-the-next-code-block" title="Link to this heading">#</a></h3>
+<h3>3.2 Next, try running the next code block.<a class="headerlink" href="#next-try-running-the-next-code-block" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># RUN ME</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">libreVNA</span><span class="w"> </span><span class="kn">import</span> <span class="n">libreVNA</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># RUN ME</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">libreVNA</span><span class="w"> </span><span class="kn">import</span> <span class="n">libreVNA</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named 'matplotlib'
+<span class="kn">from</span> <span class="nn">libreVNA</span> <span class="kn">import</span> <span class="n">libreVNA</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="connecting-to-the-vna">
-<h3>3.3 Connecting to the VNA<a class="headerlink" href="#connecting-to-the-vna" title="Link to this heading">#</a></h3>
+<h3>3.3 Connecting to the VNA<a class="headerlink" href="#connecting-to-the-vna" title="Permalink to this heading">#</a></h3>
 <p>If the above block runs without an issue, run the next code block to establish connection. After creating a handle to the VNA, you will notice there are two methods to communicate with the device.<code class="docutils literal notranslate"><span class="pre">vna.query(XXX)</span></code> and <code class="docutils literal notranslate"><span class="pre">vna.command(XXX)</span></code>. The former sends a command to the VNA and asks for a response (aka query), and the latter only sends a command. The input <code class="docutils literal notranslate"><span class="pre">XXX</span></code> to either of these methods is a <a class="reference external" href="https://en.wikipedia.org/wiki/Standard_Commands_for_Programmable_Instruments">SCPI</a> (Standard Commands for Programmable Instruments). For a complete of list of SCPI commands for the VNA, consult the Programming Guide below:</p>
 <p>Click <a class="reference external" href="https://drive.google.com/file/d/1GpGNjROYpluPD1voHh7sdNY6kIebRYhF/view?usp=share_link">here</a> to download.</p>
 <div class="cell tag_hide-output docutils container">
@@ -395,7 +385,7 @@
 </section>
 </section>
 <section id="setting-the-vna-parameters">
-<h2>4. Setting the VNA parameters<a class="headerlink" href="#setting-the-vna-parameters" title="Link to this heading">#</a></h2>
+<h2>4. Setting the VNA parameters<a class="headerlink" href="#setting-the-vna-parameters" title="Permalink to this heading">#</a></h2>
 <p>Write a Python script that does the following:</p>
 <ol class="arabic simple">
 <li><p>Sets the frequency sweep range from 2.93 GHz to 2.95 GHz</p></li>
@@ -425,14 +415,14 @@
 </div>
 </section>
 <section id="grabbing-data-off-the-vna">
-<h2>5. Grabbing data off the VNA<a class="headerlink" href="#grabbing-data-off-the-vna" title="Link to this heading">#</a></h2>
+<h2>5. Grabbing data off the VNA<a class="headerlink" href="#grabbing-data-off-the-vna" title="Permalink to this heading">#</a></h2>
 <p>Write a Python script that extracts <span class="math notranslate nohighlight">\(S_{21}\)</span> data vector, and plots both the amplitude and phase entries. You may find the method <code class="docutils literal notranslate"><span class="pre">vna.parse_VNA_trace_data(...)</span></code> helpful.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code goes here</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="c1"># grab the data of trace S21</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">vna</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">":VNA:TRACE:DATA? S21"</span><span class="p">)</span>
@@ -477,7 +467,8 @@
     </script>
 <script>kernelName = 'python3'</script>
 </article>
-<footer class="prev-next-footer d-print-none">
+<footer class="prev-next-footer">
+<!-- Previous / next buttons -->
 <div class="prev-next-area">
 <a class="left-prev" href="../T2E1-LAB-BB84.html" title="previous page">
 <i class="fa-solid fa-angle-left"></i>
@@ -496,8 +487,7 @@
 </div>
 </footer>
 </div>
-<dialog id="pst-secondary-sidebar-modal"></dialog>
-<div class="bd-sidebar-secondary bd-toc" id="pst-secondary-sidebar"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 <div class="sidebar-secondary-item">
 <div class="page-toc tocsection onthispage">
 <i class="fa-solid fa-list"></i> Contents
@@ -528,7 +518,7 @@ By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
 <div class="footer-item">
 <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2022.
       <br/>
 </p>
 </div>
@@ -542,9 +532,9 @@ By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
 </div>
 </div>
 <!-- Scripts loaded after <body> so the DOM is not blocked -->
-<script defer="" src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer="" src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+<script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 <footer class="bd-footer">
 </footer>
-<script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script></body>
+<script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script></body>
 </html>

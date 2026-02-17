@@ -1,101 +1,95 @@
 
 <!DOCTYPE html>
 
-<html data-content_root="./" lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
 <title>6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms — 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
 <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
-<!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-<noscript>
-<style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-</noscript>
 <!-- Loaded before other Sphinx assets -->
-<link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet"/>
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet"/>
-<link href="_static/pygments.css?v=03e43079" rel="stylesheet" type="text/css"/>
-<link href="_static/styles/sphinx-book-theme.css?v=a3416100" rel="stylesheet" type="text/css"/>
-<link href="_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
-<link href="_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
-<link href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" rel="stylesheet" type="text/css"/>
-<link href="_static/sphinx-thebe.css?v=4fa983c6" rel="stylesheet" type="text/css"/>
-<link href="_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
-<!-- So that users can add custom icons -->
-<script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+<link href="_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link href="_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link href="_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" rel="stylesheet" type="text/css"/>
+<link href="_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="_static/sphinx-thebe.css" rel="stylesheet" type="text/css"/>
+<link href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" rel="stylesheet" type="text/css"/>
 <!-- Pre-loaded scripts that we'll load fully later -->
-<link as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" rel="preload"/>
-<link as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" rel="preload"/>
-<script src="_static/documentation_options.js?v=9eb32ce0"></script>
-<script src="_static/doctools.js?v=9a2dae69"></script>
-<script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-<script src="_static/clipboard.min.js?v=a7894cd8"></script>
-<script src="_static/copybutton.js?v=f281be69"></script>
-<script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+<link as="script" href="_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" rel="preload"/>
+<link as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" rel="preload"/>
+<script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+<script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+<script src="_static/jquery.js"></script>
+<script src="_static/underscore.js"></script>
+<script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+<script src="_static/doctools.js"></script>
+<script src="_static/clipboard.min.js"></script>
+<script src="_static/copybutton.js"></script>
+<script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
 <script>let toggleHintShow = 'Click to show';</script>
 <script>let toggleHintHide = 'Click to hide';</script>
 <script>let toggleOpenOnPrint = 'true';</script>
-<script src="_static/togglebutton.js?v=4a39c7ea"></script>
+<script src="_static/togglebutton.js"></script>
 <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-<script src="_static/design-tabs.js?v=36754332"></script>
-<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-<script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-<script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-<script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="_static/design-tabs.js"></script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+<script async="async" src="_static/sphinx-thebe.js"></script>
 <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
 <link href="genindex.html" rel="index" title="Index"/>
 <link href="search.html" rel="search" title="Search"/>
 <link href="BASICS-quantum-optics-basics.html" rel="next" title="BASICS – Quantum Optics"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="en" name="docsearch:language"/>
-<meta content="" name="docsearch:version"/>
-<link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/></head>
+<link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/></head>
 <body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
-<div class="skip-link d-print-none" id="pst-skip-link"><a href="#main-content">Skip to main content</a></div>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <div id="pst-scroll-pixel-helper"></div>
 <button class="btn rounded-pill" id="pst-back-to-top" type="button">
-<i class="fa-solid fa-arrow-up"></i>Back to top</button>
-<dialog id="pst-search-dialog">
+<i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
 <form action="search.html" class="bd-search d-flex align-items-center" method="get">
 <i class="fa-solid fa-magnifying-glass"></i>
-<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
+<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
 <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-</dialog>
-<div class="pst-async-banner-revealer d-none">
-<aside aria-label="Version warning" class="d-none d-print-none" id="bd-header-version-warning"></aside>
+</form></div>
 </div>
-<header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-</header>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar">
+</nav>
 <div class="bd-container">
 <div class="bd-container__inner bd-page-width">
-<dialog id="pst-primary-sidebar-modal"></dialog>
-<div class="bd-sidebar-primary bd-sidebar" id="pst-primary-sidebar">
+<div class="bd-sidebar-primary bd-sidebar">
 <div class="sidebar-header-items sidebar-primary__section">
 </div>
 <div class="sidebar-primary-items__start sidebar-primary__section">
 <div class="sidebar-primary-item">
 <a class="navbar-brand logo" href="#">
-<img alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home" class="logo__image only-light" src="_static/logo-ibm.jpg"/>
-<img alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home" class="logo__image only-dark pst-js-only" src="_static/logo-ibm.jpg"/>
+<img alt="Logo image" class="logo__image only-light" src="_static/logo-ibm.jpg"/>
+<script>document.write(`<img src="_static/logo-ibm.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
 </a></div>
-<div class="sidebar-primary-item">
-<button aria-label="Search" class="btn search-button-field search-button__button pst-js-only" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Search">
-<i class="fa-solid fa-magnifying-glass"></i>
-<span class="search-button__default-text">Search</span>
-<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
-<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links bd-docs-nav">
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
 <div class="bd-toc-item navbar-nav active">
 <ul class="nav bd-sidenav bd-sidenav__home-link">
 <li class="toctree-l1 current active">
@@ -146,21 +140,19 @@
 </nav></div>
 </div>
 <div class="sidebar-primary-items__end sidebar-primary__section">
-<div class="sidebar-primary-item">
-<div class="flat" data-ea-manual="true" data-ea-publisher="readthedocs" data-ea-type="readthedocs-sidebar" id="ethical-ad-placement">
-</div></div>
 </div>
+<div id="rtd-footer-container"></div>
 </div>
-<main class="bd-main" id="main-content" role="main">
+<main class="bd-main" id="main-content">
 <div class="sbt-scroll-pixel-helper"></div>
 <div class="bd-content">
 <div class="bd-article-container">
-<div class="bd-header-article d-print-none">
+<div class="bd-header-article">
 <div class="header-article-items header-article__inner">
 <div class="header-article-items__start">
-<div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle primary sidebar">
+<div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__primary" title="Toggle primary sidebar">
 <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
 </div>
 <div class="header-article-items__end">
 <div class="header-article-item">
@@ -213,17 +205,25 @@
 <i class="fas fa-expand"></i>
 </span>
 </button>
-<button aria-label="Color mode" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" data-bs-placement="bottom" data-bs-title="Color mode" data-bs-toggle="tooltip">
-<i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
-<i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
-<i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
-</button>
-<button aria-label="Search" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Search">
-<i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle secondary sidebar">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__secondary" title="Toggle secondary sidebar">
 <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
 </div>
 </div>
@@ -263,12 +263,12 @@
 </div>
 </div>
 <div id="searchbox"></div>
-<article class="bd-article">
+<article class="bd-article" role="main">
 <section class="tex2jax_ignore mathjax_ignore" id="laboratory-in-quantum-systems-engineering-quantum-engineering-platforms">
-<h1>6.2410 – Laboratory in Quantum Systems Engineering: <em>Quantum Engineering Platforms</em><a class="headerlink" href="#laboratory-in-quantum-systems-engineering-quantum-engineering-platforms" title="Link to this heading">#</a></h1>
+<h1>6.2410 – Laboratory in Quantum Systems Engineering: <em>Quantum Engineering Platforms</em><a class="headerlink" href="#laboratory-in-quantum-systems-engineering-quantum-engineering-platforms" title="Permalink to this heading">#</a></h1>
 <p>This is the course website for the Spring 2025 offering of 6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms</p>
 <section id="instructors">
-<h2>Instructors<a class="headerlink" href="#instructors" title="Link to this heading">#</a></h2>
+<h2>Instructors<a class="headerlink" href="#instructors" title="Permalink to this heading">#</a></h2>
 <p>Dirk R. Englund <br/>
 Associate Professor of Electrical Engineering <br/>
 <a class="reference external" href="mailto:englund%40mit.edu">englund<span>@</span>mit<span>.</span>edu</a>, office 36-525</p>
@@ -277,7 +277,7 @@ Principal Research Scientist, Research Laboratory of Electronics <br/>
 <a class="reference external" href="mailto:pdkeat2%40mit.edu">pdkeat2<span>@</span>mit<span>.</span>edu</a>, office 36-285</p>
 </section>
 <section id="teaching-assistants">
-<h2>Teaching Assistants<a class="headerlink" href="#teaching-assistants" title="Link to this heading">#</a></h2>
+<h2>Teaching Assistants<a class="headerlink" href="#teaching-assistants" title="Permalink to this heading">#</a></h2>
 <p>Malick Sere <br/>
 <a class="reference external" href="mailto:msere%40mit.edu">msere<span>@</span>mit<span>.</span>edu</a></p>
 <p>Vetri Vel <br/>
@@ -286,11 +286,11 @@ Principal Research Scientist, Research Laboratory of Electronics <br/>
 <a class="reference external" href="mailto:maxaalto%40mit.edu">maxaalto<span>@</span>mit<span>.</span>edu</a></p>
 </section>
 <section id="collaborators">
-<h2>Collaborators<a class="headerlink" href="#collaborators" title="Link to this heading">#</a></h2>
+<h2>Collaborators<a class="headerlink" href="#collaborators" title="Permalink to this heading">#</a></h2>
 <p>We gratefully acknowledge assistance and contributions from <a class="reference external" href="https://qutools.com/">QuTools</a> in the development of lab modules and experiments, with particular input from Björn Habrich, Valentin Habrich, and Nico Klein.</p>
 </section>
 <section id="catalog-information">
-<h2>Catalog Information<a class="headerlink" href="#catalog-information" title="Link to this heading">#</a></h2>
+<h2>Catalog Information<a class="headerlink" href="#catalog-information" title="Permalink to this heading">#</a></h2>
 <p><strong>Description:</strong> Design and implementation of quantum information science and engineering, with a focus on technology areas (T1) quantum computing, (T2) quantum communications, and (T3) quantum sensing and quantum metrology. This laboratory-centric course focuses on the following quantum engineering platforms: (E1) quantum optics with an emphasis on enhanced sensing and communication; (E2) quantum simulation and computational tools; and (E3) and solid state spin systems with a focus on quantum sensing and magnetometry.</p>
 <p><strong>Prereqs:</strong> 6.2400, 6.6400, 18.435, or (8.04 and 8.05)</p>
 <p><strong>Units:</strong> 1-5-6</p>
@@ -303,24 +303,24 @@ Principal Research Scientist, Research Laboratory of Electronics <br/>
 <p><strong>Office hours:</strong> By Appointment</p>
 </section>
 <section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <p>This course covers an introduction to experimental methods and systems engineering in quantum information science and engineering, with a focus on technology areas of (T1) quantum computing, (T2) quantum communications, and (T3) quantum sensing and metrology.  These technology areas will be explored through both experimental and simulation platforms that are introduced in prepared laboratory exercises.  The prepared laboratory exercises will be broken into three types of platforms: (E1) quantum optics, with a focus on topics such as entanglement, single-photon interference, quantum key distribution, and quantum-enhanced sensing; (E2) quantum simulation and computational tools, such as QuTip and IBM Qiskit; and (E3) solid-state spin systems with a focus on quantum sensing and magnetometry.</p>
 <p>The first half of the semester is dedicated to basic training through prepared exercises.  The first week  will include an introduction to the laboratory and equipment.  The next six weeks will be for the development of core skills through prepared laboratory exercises.  These prepared laboratory exercises are divided into four modules, with each module lasting two weeks in total (4 2-hour lab sessions).  The modules will be completed in teams of 3-4 students.  Each team will complete three of the four modules during the first half of the course.</p>
 <p>Each module will include: (1) lecture notes and materials as well as pre-lab questions that are to be submitted for grading; (2) implementation of prepared exercises with individual lab notebook check-ins; and (3) the writing of summary  reports.  In these summary reports students are expected to address particular questions and topics noted within the module instructions.</p>
 <p>The second half of the semester is dedicated to open-ended final project activities (6 weeks).  Final project activities are broken into three phases: (1) proposal; (2) project work; (3) final report.   The proposal phase occurs over 2 weeks, and the final project work and report take up the remaining 4 weeks.  The final project must be within the broader area of quantum engineering and quantum technologies, and should build upon the material, skills, and technologies covered by the prepared lab activities from the first half of the course.  The educational purpose of the final project is to build technical expertise and broader contextual understanding from project conceptualization through to completion.</p>
 </section>
 <section id="ci-m">
-<h2>CI-M<a class="headerlink" href="#ci-m" title="Link to this heading">#</a></h2>
+<h2>CI-M<a class="headerlink" href="#ci-m" title="Permalink to this heading">#</a></h2>
 <p>This course is a CI-M course, and the communication-intensive components center around: (1) lab summaries; (2) proposal pitches (oral and written); as well as (3) final reports (again both oral and written). Feedback will be provided by instructors throughout this process, with the opportunity for revision in the proposal phase. The communication-intensive component is integral to the class.  Not only does it provide skill development in communication activities relevant to real-world project development and communication, but it also serves as the primary means to determine the quality of the final project and level of technical understanding.</p>
 </section>
 <section id="course-materials">
-<h2>Course Materials<a class="headerlink" href="#course-materials" title="Link to this heading">#</a></h2>
+<h2>Course Materials<a class="headerlink" href="#course-materials" title="Permalink to this heading">#</a></h2>
 <p>The course provides an online text (this website).</p>
 <p>You can also refer to the <a class="reference external" href="https://drive.google.com/file/d/1Ij5HzBRk8MmgjmGK3zJxFSqblDMYZY0I/view?usp=sharing">textbook for 6.2400</a> as a great resource.</p>
 <p>Other suggested references and content for further reading and viewing are provided as citations where relevant.</p>
 </section>
 <section id="chattutor">
-<h2>ChatTutor<a class="headerlink" href="#chattutor" title="Link to this heading">#</a></h2>
+<h2>ChatTutor<a class="headerlink" href="#chattutor" title="Permalink to this heading">#</a></h2>
 <p>The course website implements an AI tool based on an open-source project called <a class="reference external" href="https://github.com/ChatTutor/chattutor">ChatTutor</a>.  This is intended to provide yet another resource for engaging with the course material.  It has contextual awareness of the course materials on the course website, in addition to interfacing with ChatGPT.  You are welcome to try the tool, understanding it is still between an alpha and beta product.  In fact, we would love to have your feedback on how it works!</p>
 <p>Some things you should be aware of:</p>
 <ol class="arabic simple">
@@ -331,7 +331,7 @@ Principal Research Scientist, Research Laboratory of Electronics <br/>
 </ol>
 </section>
 <section id="grading">
-<h2>Grading<a class="headerlink" href="#grading" title="Link to this heading">#</a></h2>
+<h2>Grading<a class="headerlink" href="#grading" title="Permalink to this heading">#</a></h2>
 <p>The grading will be based on:</p>
 <ul class="simple">
 <li><p>3 Written Summaries (~2-3 pages each)  — 15%</p></li>
@@ -343,17 +343,17 @@ Principal Research Scientist, Research Laboratory of Electronics <br/>
 </ul>
 </section>
 <section id="late-submission-policy">
-<h2>Late Submission Policy<a class="headerlink" href="#late-submission-policy" title="Link to this heading">#</a></h2>
+<h2>Late Submission Policy<a class="headerlink" href="#late-submission-policy" title="Permalink to this heading">#</a></h2>
 <p>Submissions are due by the posted due date.  Late submissions will be penalized at a rate of 5 points per day late down to half credit.</p>
 </section>
 <section id="open-ended-design-project">
-<h2>Open-Ended Design Project<a class="headerlink" href="#open-ended-design-project" title="Link to this heading">#</a></h2>
+<h2>Open-Ended Design Project<a class="headerlink" href="#open-ended-design-project" title="Permalink to this heading">#</a></h2>
 <p>Students will select open-ended design projects following on core material covered in the technology areas (T) and experimental platforms (E). Students will be able to pursue projects that focus in varying degrees on design, construction, and testing of software or hardware, emphasizing different concentrations from 6.1, 6.2, and 6.3. The projects will include a proposal document and presentation as well as a final research report and presentation.  The two-week proposal period is essential for the development of a successful project plan.  These plans will incorporate feedback from course instructors and TAs, and will have to be approved by instructors and TAs.  Project effort begins as soon as a proposal plan is approved.</p>
 </section>
 <section id="schedule">
-<h2>Schedule<a class="headerlink" href="#schedule" title="Link to this heading">#</a></h2>
-<div class="pst-scrollable-table-container"><table class="table" id="tbl-course-schedule">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">Course Schedule</span><a class="headerlink" href="#tbl-course-schedule" title="Link to this table">#</a></caption>
+<h2>Schedule<a class="headerlink" href="#schedule" title="Permalink to this heading">#</a></h2>
+<table class="colwidths-auto table" id="tbl-course-schedule">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Course Schedule</span><a class="headerlink" href="#tbl-course-schedule" title="Permalink to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Week</p></th>
 <th class="head"><p>Topics</p></th>
@@ -380,15 +380,14 @@ Principal Research Scientist, Research Laboratory of Electronics <br/>
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 <section id="course-lab-table">
-<h2>Course Lab Table<a class="headerlink" href="#course-lab-table" title="Link to this heading">#</a></h2>
+<h2>Course Lab Table<a class="headerlink" href="#course-lab-table" title="Permalink to this heading">#</a></h2>
 <iframe height="1000px" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSqJpPOr5ky9dKWrHegL8xTKbTB703PomWJG05xopQQCgKLfsLCNGbhU3hAINlEuvLNK8T3SCilqLaK/pubhtml?gid=500397444&amp;single=true&amp;widget=true&amp;headers=false" width="800px"></iframe>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="course-website-table-of-contents">
-<h1>Course Website Table of Contents<a class="headerlink" href="#course-website-table-of-contents" title="Link to this heading">#</a></h1>
+<h1>Course Website Table of Contents<a class="headerlink" href="#course-website-table-of-contents" title="Permalink to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introductory Material</span></p>
 <ul>
@@ -462,7 +461,8 @@ Principal Research Scientist, Research Laboratory of Electronics <br/>
     </script>
 <script>kernelName = 'python3'</script>
 </article>
-<footer class="prev-next-footer d-print-none">
+<footer class="prev-next-footer">
+<!-- Previous / next buttons -->
 <div class="prev-next-area">
 <a class="right-next" href="BASICS-quantum-optics-basics.html" title="next page">
 <div class="prev-next-info">
@@ -474,8 +474,7 @@ Principal Research Scientist, Research Laboratory of Electronics <br/>
 </div>
 </footer>
 </div>
-<dialog id="pst-secondary-sidebar-modal"></dialog>
-<div class="bd-sidebar-secondary bd-toc" id="pst-secondary-sidebar"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 <div class="sidebar-secondary-item">
 <div class="page-toc tocsection onthispage">
 <i class="fa-solid fa-list"></i> Contents
@@ -515,9 +514,9 @@ By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
 <div class="footer-item">
 <p class="copyright">
     
-      © Copyright 2023.
-      <br>
-</br></p>
+      © Copyright 2022.
+      <br/>
+</p>
 </div>
 <div class="footer-item">
 </div>
@@ -529,9 +528,9 @@ By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
 </div>
 </div>
 <!-- Scripts loaded after <body> so the DOM is not blocked -->
-<script defer="" src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer="" src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+<script src="_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 <footer class="bd-footer">
 </footer>
-<script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script></body>
+<script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script><script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script><script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script></body>
 </html>

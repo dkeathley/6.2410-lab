@@ -1,55 +1,54 @@
 
 <!DOCTYPE html>
 
-<html data-content_root="../" lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
 <title>TEXT: Introduction to NV centers in diamond and cavity-based magnetometry — 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
 <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
-<!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-<noscript>
-<style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-</noscript>
 <!-- Loaded before other Sphinx assets -->
-<link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet"/>
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet"/>
-<link href="../_static/pygments.css?v=03e43079" rel="stylesheet" type="text/css"/>
-<link href="../_static/styles/sphinx-book-theme.css?v=a3416100" rel="stylesheet" type="text/css"/>
-<link href="../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
-<link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
-<link href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" rel="stylesheet" type="text/css"/>
-<link href="../_static/sphinx-thebe.css?v=4fa983c6" rel="stylesheet" type="text/css"/>
-<link href="../_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
-<!-- So that users can add custom icons -->
-<script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+<link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" rel="stylesheet" type="text/css"/>
+<link href="../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-thebe.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" rel="stylesheet" type="text/css"/>
 <!-- Pre-loaded scripts that we'll load fully later -->
-<link as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" rel="preload"/>
-<link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" rel="preload"/>
-<script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-<script src="../_static/doctools.js?v=9a2dae69"></script>
-<script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-<script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-<script src="../_static/copybutton.js?v=f281be69"></script>
-<script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+<link as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" rel="preload"/>
+<link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" rel="preload"/>
+<script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/clipboard.min.js"></script>
+<script src="../_static/copybutton.js"></script>
+<script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
 <script>let toggleHintShow = 'Click to show';</script>
 <script>let toggleHintHide = 'Click to hide';</script>
 <script>let toggleOpenOnPrint = 'true';</script>
-<script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+<script src="../_static/togglebutton.js"></script>
 <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-<script src="../_static/design-tabs.js?v=36754332"></script>
-<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-<script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+<script src="../_static/design-tabs.js"></script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+<script async="async" src="../_static/sphinx-thebe.js"></script>
 <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
 <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>DOCUMENTATION_OPTIONS.pagename = 'quNV-Jupyter/T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins';</script>
@@ -59,44 +58,41 @@
 <link href="T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.html" rel="prev" title="TRAINING - Interfacing with the Vector Network Analyzer"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="en" name="docsearch:language"/>
-<meta content="" name="docsearch:version"/>
-<link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/></head>
+<link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/></head>
 <body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
-<div class="skip-link d-print-none" id="pst-skip-link"><a href="#main-content">Skip to main content</a></div>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <div id="pst-scroll-pixel-helper"></div>
 <button class="btn rounded-pill" id="pst-back-to-top" type="button">
-<i class="fa-solid fa-arrow-up"></i>Back to top</button>
-<dialog id="pst-search-dialog">
+<i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
 <form action="../search.html" class="bd-search d-flex align-items-center" method="get">
 <i class="fa-solid fa-magnifying-glass"></i>
-<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
+<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
 <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-</dialog>
-<div class="pst-async-banner-revealer d-none">
-<aside aria-label="Version warning" class="d-none d-print-none" id="bd-header-version-warning"></aside>
+</form></div>
 </div>
-<header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-</header>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar">
+</nav>
 <div class="bd-container">
 <div class="bd-container__inner bd-page-width">
-<dialog id="pst-primary-sidebar-modal"></dialog>
-<div class="bd-sidebar-primary bd-sidebar" id="pst-primary-sidebar">
+<div class="bd-sidebar-primary bd-sidebar">
 <div class="sidebar-header-items sidebar-primary__section">
 </div>
 <div class="sidebar-primary-items__start sidebar-primary__section">
 <div class="sidebar-primary-item">
 <a class="navbar-brand logo" href="../intro.html">
-<img alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home" class="logo__image only-light" src="../_static/logo-ibm.jpg"/>
-<img alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home" class="logo__image only-dark pst-js-only" src="../_static/logo-ibm.jpg"/>
+<img alt="Logo image" class="logo__image only-light" src="../_static/logo-ibm.jpg"/>
+<script>document.write(`<img src="../_static/logo-ibm.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
 </a></div>
-<div class="sidebar-primary-item">
-<button aria-label="Search" class="btn search-button-field search-button__button pst-js-only" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Search">
-<i class="fa-solid fa-magnifying-glass"></i>
-<span class="search-button__default-text">Search</span>
-<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
-<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links bd-docs-nav">
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
 <div class="bd-toc-item navbar-nav active">
 <ul class="nav bd-sidenav bd-sidenav__home-link">
 <li class="toctree-l1">
@@ -147,21 +143,19 @@
 </nav></div>
 </div>
 <div class="sidebar-primary-items__end sidebar-primary__section">
-<div class="sidebar-primary-item">
-<div class="flat" data-ea-manual="true" data-ea-publisher="readthedocs" data-ea-type="readthedocs-sidebar" id="ethical-ad-placement">
-</div></div>
 </div>
+<div id="rtd-footer-container"></div>
 </div>
-<main class="bd-main" id="main-content" role="main">
+<main class="bd-main" id="main-content">
 <div class="sbt-scroll-pixel-helper"></div>
 <div class="bd-content">
 <div class="bd-article-container">
-<div class="bd-header-article d-print-none">
+<div class="bd-header-article">
 <div class="header-article-items header-article__inner">
 <div class="header-article-items__start">
-<div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle primary sidebar">
+<div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__primary" title="Toggle primary sidebar">
 <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
 </div>
 <div class="header-article-items__end">
 <div class="header-article-item">
@@ -171,16 +165,16 @@
 <i class="fas fa-rocket"></i>
 </button>
 <ul class="dropdown-menu">
-<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/quNV-Jupyter/T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.ipynb" target="_blank" title="Launch on Binder">
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/quNV-Jupyter/T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.ipynb" target="_blank" title="Launch onBinder">
 <span class="btn__icon-container">
-<img alt="Binder logo" src="../_static/images/logo_binder.svg"/>
+<img src="../_static/images/logo_binder.svg"/>
 </span>
 <span class="btn__text-container">Binder</span>
 </a>
 </li>
-<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/quNV-Jupyter/T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.ipynb" target="_blank" title="Launch on Colab">
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/quNV-Jupyter/T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.ipynb" target="_blank" title="Launch onColab">
 <span class="btn__icon-container">
-<img alt="Colab logo" src="../_static/images/logo_colab.png"/>
+<img src="../_static/images/logo_colab.png"/>
 </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -235,17 +229,25 @@
 <i class="fas fa-expand"></i>
 </span>
 </button>
-<button aria-label="Color mode" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" data-bs-placement="bottom" data-bs-title="Color mode" data-bs-toggle="tooltip">
-<i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
-<i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
-<i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
-</button>
-<button aria-label="Search" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Search">
-<i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle secondary sidebar">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__secondary" title="Toggle secondary sidebar">
 <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
 </div>
 </div>
@@ -289,24 +291,24 @@
 </div>
 </div>
 <div id="searchbox"></div>
-<article class="bd-article">
+<article class="bd-article" role="main">
 <section class="tex2jax_ignore mathjax_ignore" id="text-introduction-to-nv-centers-in-diamond-and-cavity-based-magnetometry">
-<span id="chapter-nv-centers"></span><h1>TEXT: Introduction to NV centers in diamond and cavity-based magnetometry<a class="headerlink" href="#text-introduction-to-nv-centers-in-diamond-and-cavity-based-magnetometry" title="Link to this heading">#</a></h1>
+<span id="chapter-nv-centers"></span><h1>TEXT: Introduction to NV centers in diamond and cavity-based magnetometry<a class="headerlink" href="#text-introduction-to-nv-centers-in-diamond-and-cavity-based-magnetometry" title="Permalink to this heading">#</a></h1>
 <ol class="arabic simple">
 <li><p>NV centers in diamond</p></li>
 <li><p>Microwave cavity</p></li>
 <li><p>Coupling between NV centers and microwave cavity</p></li>
 </ol>
 <section id="pre-labs">
-<h2>Pre-labs<a class="headerlink" href="#pre-labs" title="Link to this heading">#</a></h2>
+<h2>Pre-labs<a class="headerlink" href="#pre-labs" title="Permalink to this heading">#</a></h2>
 <p>This module contains three pre-labs, due on the first, second, and third days, respectively. The pre-lab questions can be found in this text.</p>
 </section>
 <section id="nv-centers-in-diamond">
-<h2>1. NV centers in diamond<a class="headerlink" href="#nv-centers-in-diamond" title="Link to this heading">#</a></h2>
+<h2>1. NV centers in diamond<a class="headerlink" href="#nv-centers-in-diamond" title="Permalink to this heading">#</a></h2>
 <p>Watch the Youtube video below to learn how diamonds are valuable to quantum information science!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">IFrame</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
 <span class="n">IFrame</span><span class="p">(</span><span class="s1">'https://www.youtube.com/embed/VCT0wDLyvSs'</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">350</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -319,7 +321,7 @@
 <p><strong>For a comprehensive review of NV centers in diamond, you may also read over the slides in the download link below:</strong></p>
 <p><strong>Click <a class="reference external" href="https://drive.google.com/file/d/1UuIW939mPKZ2AaD8i0lnlmR72GFbgirs/view?usp=share_link">here</a> to download.</strong></p>
 <section id="crystallographic-structure">
-<h3>1.1 Crystallographic structure<a class="headerlink" href="#crystallographic-structure" title="Link to this heading">#</a></h3>
+<h3>1.1 Crystallographic structure<a class="headerlink" href="#crystallographic-structure" title="Permalink to this heading">#</a></h3>
 <p>Diamond is a particularly interesting material in the realm of quantum information science. It is an excellent host substrate for optically active quantum emitters due to its wide bandgap (5.5 eV) and large transparency window. Among the many <em>color centers</em> in diamond, the negatively charged NV center is most famous for applications in quantum sensing and communication. It is a defect in the carbon lattice consisting of a substitional nitrogen atom accompanied by a vacancy site (see the left figure below).</p>
 <!-- <div>
 <img src="./FIGURES/NV_center.png" width="600"/>
@@ -328,13 +330,13 @@
 <figure class="align-default" id="nv-center-fig">
 <a class="reference internal image-reference" href="../_images/NV_center.png"><img alt="../_images/NV_center.png" src="../_images/NV_center.png" style="width: 600px;"/></a>
 <figcaption>
-<p><span class="caption-number">Fig. 50 </span><span class="caption-text">Figures adapted from quTools, quNV brochure.</span><a class="headerlink" href="#nv-center-fig" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 50 </span><span class="caption-text">Figures adapted from quTools, quNV brochure.</span><a class="headerlink" href="#nv-center-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Effectively, NV center is an artificial atom in a solid state environment with well-defined optical transitions. More importantly, NV center’s spin states have energy splitting sensitive to the environment’s magnetic field strength. The greater the magnetic field strength, the greater the splitting. In a way, NV center itself is a <em>magnetic field sensor</em>. One can then readout the spin states (at microwave frequencies) to measure ambient magnetic field.</p>
 </section>
 <section id="level-structure">
-<h3>1.2 Level structure<a class="headerlink" href="#level-structure" title="Link to this heading">#</a></h3>
+<h3>1.2 Level structure<a class="headerlink" href="#level-structure" title="Permalink to this heading">#</a></h3>
 <p>Now we briefly go over the level structure for NV center. If you are not familiar with atomic level structures, fear not! It is simply a diagram that locates the relative locations of different energy states. The exact details are not important, but for pedagogical sakes, I will briefly walk through what the above right diagram is trying to show.</p>
 <p>On the left-hand-side of the level structure, there are a ground state <span class="math notranslate nohighlight">\(^3\)</span>A and an excited state <span class="math notranslate nohighlight">\(^3\)</span>E. When the NV center decays from <span class="math notranslate nohighlight">\(^3\)</span>E to <span class="math notranslate nohighlight">\(^3\)</span>A, it emits a red photon at 637 nm. The reverse can also occur by shining the NV center with higher-energy (shorter wavelength) light at 532 nm such that it gets pumped from <span class="math notranslate nohighlight">\(^3\)</span>A to <span class="math notranslate nohighlight">\(^3\)</span>E.</p>
 <p>Next, we delve further into the different pathways the NV center can go from <span class="math notranslate nohighlight">\(^3\)</span>A to <span class="math notranslate nohighlight">\(^3\)</span>E. Within <span class="math notranslate nohighlight">\(^3\)</span>A, there exist three hyperfine states: <span class="math notranslate nohighlight">\(m_s=-1,0,+1\)</span>. Under zero magnetic field, the <span class="math notranslate nohighlight">\(m_s=\pm 1\)</span> states are <em>degenerate</em>, meaning they have the same energy. The difference in frequency between <span class="math notranslate nohighlight">\(m_s=0\)</span> and <span class="math notranslate nohighlight">\(m_s=\pm 1\)</span> is <span class="math notranslate nohighlight">\(D=2.87\)</span> GHz (caused by <a class="reference external" href="https://en.wikipedia.org/wiki/Crystal_field_theory">crystal field splitting</a>). If the NV center begins at <span class="math notranslate nohighlight">\(m_s=0\)</span> and is excited to the excited state <span class="math notranslate nohighlight">\(^3\)</span>E via 532 nm pumping, there is a strong probability that it would decay back to <span class="math notranslate nohighlight">\(m_s=0\)</span> within <span class="math notranslate nohighlight">\(^3\)</span>A. However, if it begins at <span class="math notranslate nohighlight">\(m_s=\pm 1\)</span> and is excited to <span class="math notranslate nohighlight">\(^3\)</span>E, it is now more likely to undergo <em>intersystem crossing</em>, which is an another decay pathway that takes the NV center to a metastable <span class="math notranslate nohighlight">\(^1\)</span>A state. Afterwards, it would <em>preferentially decay back to <span class="math notranslate nohighlight">\(m_s=0\)</span></em>. Two crucial take-aways here. One, this intersystem crossing process does not emiter 637 nm photons. Second, it preferentially returns what is initially <span class="math notranslate nohighlight">\(m_s=\pm 1\)</span> to <span class="math notranslate nohighlight">\(m_s=0\)</span>. Therefore, if you continuously pump the NV center with 532 nm light, in <em>steady state</em>, it would likely be in <span class="math notranslate nohighlight">\(m_s=0\)</span>. This mechanism is called spin polarization.</p>
@@ -342,7 +344,7 @@
 <figure class="align-default" id="odmr-fig">
 <a class="reference internal image-reference" href="../_images/ODMR.png"><img alt="../_images/ODMR.png" src="../_images/ODMR.png" style="width: 500px;"/></a>
 <figcaption>
-<p><span class="caption-number">Fig. 51 </span><span class="caption-text">Optical detected magnetic resonance. Figures adapted from quTools, quNV brochure.</span><a class="headerlink" href="#odmr-fig" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 51 </span><span class="caption-text">Optical detected magnetic resonance. Figures adapted from quTools, quNV brochure.</span><a class="headerlink" href="#odmr-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Recall previously, we assume there is no applied magnetic field such that <span class="math notranslate nohighlight">\(m_s=-1\)</span> and <span class="math notranslate nohighlight">\(m_s=+1\)</span> states are degenerate. If we do apply magnetic field to the NV center, however, the degeneracy would be broken. <span class="math notranslate nohighlight">\(m_s=-1\)</span> and <span class="math notranslate nohighlight">\(m_s=+1\)</span> states would start splitting apart, and their energy difference grows linearly with the magnetic field strength due to the <a class="reference external" href="https://en.wikipedia.org/wiki/Zeeman_effect">Zeeman effect</a>. Now instead of 2.87 GHz, there would be two microwave frequencies at which the fluorescence intensity would experience a dip (can you see why?). Effectively, by detecting the optical signal coming from the NV center and noting where the changes in the intensity occur, we can extract information about the applied magnetic field. This means the NV center itself acts as a magnetometer!</p>
@@ -350,9 +352,9 @@
 </section>
 </section>
 <section id="microwave-cavity">
-<h2>2. Microwave cavity<a class="headerlink" href="#microwave-cavity" title="Link to this heading">#</a></h2>
+<h2>2. Microwave cavity<a class="headerlink" href="#microwave-cavity" title="Permalink to this heading">#</a></h2>
 <section id="cavity-mode-of-a-cylindrical-resonator">
-<h3>2.1 Cavity mode of a cylindrical resonator<a class="headerlink" href="#cavity-mode-of-a-cylindrical-resonator" title="Link to this heading">#</a></h3>
+<h3>2.1 Cavity mode of a cylindrical resonator<a class="headerlink" href="#cavity-mode-of-a-cylindrical-resonator" title="Permalink to this heading">#</a></h3>
 <p>To do so, we need to first understand what a microwave cavity is and how it works. The cavity that we will be using in the experiment is a <a class="reference external" href="https://ieeexplore.ieee.org/document/1126654">cylindrical resonator</a> (you may also recall from your E&amp;M class Chapter 8 in Classical Electrodynamics by J. D. Jackson). The resonator mode of interest is the so-called TE<span class="math notranslate nohighlight">\(_{01\delta}\)</span> mode, which has <span class="math notranslate nohighlight">\(H_z,H_{\rho},\)</span> and <span class="math notranslate nohighlight">\(E_{\phi}\)</span> components in <a class="reference external" href="https://en.wikipedia.org/wiki/Cylindrical_coordinate_system">cylindrical coordinates</a>. Explicitly,</p>
 <div class="math notranslate nohighlight">
 \[H_z = H_1 J_0(k_c\rho) f(\tilde{z})\]</div>
@@ -368,13 +370,13 @@
 <figure class="align-default" id="magnetic-cavity-fig">
 <a class="reference internal image-reference" href="../_images/magnetic_cavity.png"><img alt="../_images/magnetic_cavity.png" src="../_images/magnetic_cavity.png" style="width: 600px;"/></a>
 <figcaption>
-<p><span class="caption-number">Fig. 52 </span><span class="caption-text">Simulation results from <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">Eisenach <em>et al.</em></a></span><a class="headerlink" href="#magnetic-cavity-fig" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 52 </span><span class="caption-text">Simulation results from <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">Eisenach <em>et al.</em></a></span><a class="headerlink" href="#magnetic-cavity-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>where the black dashed lines mark the outline of the resonator.</p>
 </section>
 <section id="cavity-resonance-frequency">
-<h3>2.2 Cavity resonance frequency<a class="headerlink" href="#cavity-resonance-frequency" title="Link to this heading">#</a></h3>
+<h3>2.2 Cavity resonance frequency<a class="headerlink" href="#cavity-resonance-frequency" title="Permalink to this heading">#</a></h3>
 <p>The resonance frequency <span class="math notranslate nohighlight">\(\omega_c\)</span> can be calculated by solving the coupled equations:</p>
 <div class="math notranslate nohighlight">
 \[\zeta \tan\left(\frac{\zeta L}{2}\right) = \zeta_0\]</div>
@@ -386,7 +388,7 @@
 <p>For more details on the derivation, you may consult <a class="reference external" href="https://aip.scitation.org/doi/full/10.1063/1.2976033">this paper</a> or the previous <a class="reference external" href="https://ieeexplore.ieee.org/document/1126654">cylindrical resonator</a> reference.</p>
 </section>
 <section id="inductive-coupling-between-a-microwave-cavity-and-a-loop-coupler">
-<h3>2.3 Inductive coupling between a microwave cavity and a loop coupler<a class="headerlink" href="#inductive-coupling-between-a-microwave-cavity-and-a-loop-coupler" title="Link to this heading">#</a></h3>
+<h3>2.3 Inductive coupling between a microwave cavity and a loop coupler<a class="headerlink" href="#inductive-coupling-between-a-microwave-cavity-and-a-loop-coupler" title="Permalink to this heading">#</a></h3>
 <p>From our beloved right-hand rule, you may know that the magnetic field should follow the black arrows in the figure below:</p>
 <!-- <div>
 <img src="magnetic_cavity_RHR.png" width="400"/>
@@ -394,13 +396,13 @@
 <figure class="align-default" id="magnetic-cavity-rhr-fig">
 <a class="reference internal image-reference" href="../_images/magnetic_cavity_RHR.png"><img alt="../_images/magnetic_cavity_RHR.png" src="../_images/magnetic_cavity_RHR.png" style="width: 600px;"/></a>
 <figcaption>
-<p><span class="caption-number">Fig. 53 </span><span class="caption-text">Field components of a cylindrical microwave cavity.</span><a class="headerlink" href="#magnetic-cavity-rhr-fig" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 53 </span><span class="caption-text">Field components of a cylindrical microwave cavity.</span><a class="headerlink" href="#magnetic-cavity-rhr-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>How do we experimentally <em>measure</em> the cavity resonance? It’s simple! We can simply use a metallic loop that <em>inductively</em> couples to the magnetic cavity. As such, we call it a loop coupler. The magnetic field exiting out of the cavity in the <span class="math notranslate nohighlight">\(z\)</span> direction (pointing up shown in the figure above) threads through the loop coupler, thereby inducing a current that is measurable. We will leverage this fact and read out the cavity resonance via a <a class="reference external" href="https://en.wikipedia.org/wiki/Network_analyzer_(electrical)">vector network analyzer (VNA)</a>, which you should have already gotten familiar with during the Parkour session.</p>
 </section>
 <section id="quality-factor">
-<h3>2.4 Quality factor<a class="headerlink" href="#quality-factor" title="Link to this heading">#</a></h3>
+<h3>2.4 Quality factor<a class="headerlink" href="#quality-factor" title="Permalink to this heading">#</a></h3>
 <p>One important metric to the quality of a microwave cavity is its <a class="reference external" href="https://en.wikipedia.org/wiki/Q_factor">quality factor</a>, which is defined as:</p>
 <div class="math notranslate nohighlight">
 \[Q = \omega_d/\kappa_c\]</div>
@@ -415,7 +417,7 @@
 <p>where <span class="math notranslate nohighlight">\(\kappa_{c0}\)</span> is the intrinsic cavity loss rate and <span class="math notranslate nohighlight">\(\kappa_{c1}\)</span> is the additional decay rate into the loop coupler.</p>
 </section>
 <section id="pre-lab-1-day-1">
-<h3>Pre-Lab 1 (Day 1)<a class="headerlink" href="#pre-lab-1-day-1" title="Link to this heading">#</a></h3>
+<h3>Pre-Lab 1 (Day 1)<a class="headerlink" href="#pre-lab-1-day-1" title="Permalink to this heading">#</a></h3>
 <p>In the first session of this experiment, you will first be characterizing the microwave cavity by measuring its resonance frequency and quality factor. Recall that a cavity <span class="math notranslate nohighlight">\(Q\)</span> is defined to be the ratio of its resonance frequency to its decay rate (also known as the cavity <em>linewidth</em>).</p>
 <ol class="arabic simple">
 <li><p>Calculate the <span class="math notranslate nohighlight">\(Q\)</span> of a cavity with resonance frequency at 3 GHz and linewidth of 100 kHz.</p></li>
@@ -430,7 +432,7 @@
 </section>
 </section>
 <section id="coupling-between-nv-centers-and-microwave-cavity">
-<h2>3. Coupling between NV centers and microwave cavity<a class="headerlink" href="#coupling-between-nv-centers-and-microwave-cavity" title="Link to this heading">#</a></h2>
+<h2>3. Coupling between NV centers and microwave cavity<a class="headerlink" href="#coupling-between-nv-centers-and-microwave-cavity" title="Permalink to this heading">#</a></h2>
 <p>So far, we have discussed two distinct entities, NV centers in diamond and microwave cavity. In our experiment, we will combine the two systems by simply putting a diamond sample full of NV centers inside the microwave resonator. There are two conditions we must first satisfy in order to observe quantum sensing with solid state spins. One, we need to first excite the entire diamond with 532 nm light, hence spin polarizing an ensemble of NV centers. Second, we need to apply the appropriate amount of magnetic field to shift the energy level of <span class="math notranslate nohighlight">\(m_s=+1\)</span>, such that the frequency difference between <span class="math notranslate nohighlight">\(m_s=+1\)</span> and <span class="math notranslate nohighlight">\(m_s=0\)</span> matches the resonance frequency of the microwave resonator. When the aforementioned conditions are met, we can observe the quantum mechanical response of the coupled system (consisted of NV centers and microwave cavity) by sending a microwave signal and measuring its reflection coefficient. Experimentally, we will have the VNA send microwave pulses across different frequencies down the loop coupler, which returns reflected pulses from the microwave cavity back to the receiving port of the VNA.</p>
 <p>The reflection coefficient <span class="math notranslate nohighlight">\(\Gamma\)</span> is given by:</p>
 <div class="math notranslate nohighlight">
@@ -444,13 +446,13 @@
 <figure class="align-default" id="odmr-vs-microwave-fig">
 <a class="reference internal image-reference" href="../_images/ODMR_vs_microwave.png"><img alt="../_images/ODMR_vs_microwave.png" src="../_images/ODMR_vs_microwave.png" style="width: 600px;"/></a>
 <figcaption>
-<p><span class="caption-number">Fig. 54 </span><span class="caption-text">ODMR and microwave readout results from <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">Eisenach <em>et al.</em></a></span><a class="headerlink" href="#odmr-vs-microwave-fig" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 54 </span><span class="caption-text">ODMR and microwave readout results from <a class="reference external" href="https://www.nature.com/articles/s41467-021-21256-7">Eisenach <em>et al.</em></a></span><a class="headerlink" href="#odmr-vs-microwave-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Due to coupling with the cavity, the NV centers’ microwave response (blue) exhibits much greater <a class="reference external" href="https://en.wikipedia.org/wiki/Signal-to-noise_ratio">signal-to-noise ratio (SNR)</a> than conventional ODMR (red)!</p>
 <p>In the first portion of the lab, you will use the given formulae for the reflection coefficient and assess how each parameter affects the NV centers’ microwave response.</p>
 <section id="pre-lab-2-day-2">
-<h3>Pre-lab 2 (Day 2)<a class="headerlink" href="#pre-lab-2-day-2" title="Link to this heading">#</a></h3>
+<h3>Pre-lab 2 (Day 2)<a class="headerlink" href="#pre-lab-2-day-2" title="Permalink to this heading">#</a></h3>
 <p>Here are some questions to better prepare you for the lab exercise.</p>
 <ol class="arabic">
 <li><p>Consult this <a class="reference external" href="https://e6cvd.com/us/application/quantum-radiation/dnv-b14-%203-0mmx3-0mm-0-5mm.html">product link</a> for one of the diamond types. Obtain the nitrogen concentration under “Materials Properties” and assume that all nitrogen defects in the crystal lattice are converted to NV centers. Estimate the density of NV centers in diamond in units of NV/m<span class="math notranslate nohighlight">\(^3\)</span>.</p>
@@ -461,21 +463,21 @@
 <p>Now you should be equiped to do the lab exercise!</p>
 </section>
 <section id="pre-lab-3-day-3">
-<h3>Pre-lab 3 (Day 3)<a class="headerlink" href="#pre-lab-3-day-3" title="Link to this heading">#</a></h3>
+<h3>Pre-lab 3 (Day 3)<a class="headerlink" href="#pre-lab-3-day-3" title="Permalink to this heading">#</a></h3>
 <section id="simulation-with-hyperfine-transitions">
-<h4>Simulation with hyperfine transitions<a class="headerlink" href="#simulation-with-hyperfine-transitions" title="Link to this heading">#</a></h4>
+<h4>Simulation with hyperfine transitions<a class="headerlink" href="#simulation-with-hyperfine-transitions" title="Permalink to this heading">#</a></h4>
 <p>In the previous session, you were able to simulate avoided crossing for a single hyperfine transition. Since NV centers in the diamond(s) that you will be using in the Lab Exercise parimarily constitute N-14 isotope, which is spin-1, you should expect to see <em>3</em> hyperfine transitions.</p>
 <figure class="align-default" id="hyperfine-transitions-fig">
 <a class="reference internal image-reference" href="../_images/hyperfine_transitions.png"><img alt="../_images/hyperfine_transitions.png" src="../_images/hyperfine_transitions.png" style="width: 400px;"/></a>
 <figcaption>
 <p><span class="caption-number">Fig. 55 </span><span class="caption-text">Ground-state energy level structure of a single NV center. Left: electron spin levels. The solid black arrow depicts optical electron spin polarization to the <span class="math notranslate nohighlight">\(m_S\)</span> = 0 state. Right: coupled electron-nuclear spin levels in the <span class="math notranslate nohighlight">\(|m_S\rangle\)</span> = +1  electronic spin state. Solid red arrows show
-nuclear spin preserving transitions (<span class="math notranslate nohighlight">\(1_+, 2_+\)</span>, and <span class="math notranslate nohighlight">\(3_+\)</span>). Dashed green arrows show nuclear spin exchanging transitions (<span class="math notranslate nohighlight">\(a_+, b_+, c_+,\)</span> and <span class="math notranslate nohighlight">\(d_+\)</span>). Figure adapted from <a class="reference external" href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.103.L140102">Huillery et al.</a>.</span><a class="headerlink" href="#hyperfine-transitions-fig" title="Link to this image">#</a></p>
+nuclear spin preserving transitions (<span class="math notranslate nohighlight">\(1_+, 2_+\)</span>, and <span class="math notranslate nohighlight">\(3_+\)</span>). Dashed green arrows show nuclear spin exchanging transitions (<span class="math notranslate nohighlight">\(a_+, b_+, c_+,\)</span> and <span class="math notranslate nohighlight">\(d_+\)</span>). Figure adapted from <a class="reference external" href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.103.L140102">Huillery et al.</a>.</span><a class="headerlink" href="#hyperfine-transitions-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Please write a Python script that shows the 2D reflection spectra for 3 hyperfine transitions, spaced 2 MHz apart.</p>
 </section>
 <section id="laser-safety">
-<h4>Laser safety<a class="headerlink" href="#laser-safety" title="Link to this heading">#</a></h4>
+<h4>Laser safety<a class="headerlink" href="#laser-safety" title="Permalink to this heading">#</a></h4>
 <p>In this week, you will be running experiments with a free-space 532nm laser that goes up to <strong>3W</strong>. Given that this is a <a class="reference external" href="https://www.lasersafetyfacts.com/laserclasses.html">class 4</a> laser, you must first undergo proper laser safety training.</p>
 <p>In addition to the training session conducted by MIT EHS, we strongly urge you to read through the Laser Safety page <a class="reference external" href="https://ehs.mit.edu/radiological-program/laser-safety/">here</a>.</p>
 <p>The teaching staff will also supply laser safety glasses (<a class="reference external" href="https://www.thorlabs.com/thorproduct.cfm?partnumber=LG12">LG12 from Thorlabs</a> with OD7 at 532<span class="math notranslate nohighlight">\(~\)</span>nm). You must be wearing these during the alignment step (step ii in Lab Exercise below) and during the experimental sequence (step vii).</p>
@@ -504,7 +506,8 @@ nuclear spin preserving transitions (<span class="math notranslate nohighlight">
     </script>
 <script>kernelName = 'python3'</script>
 </article>
-<footer class="prev-next-footer d-print-none">
+<footer class="prev-next-footer">
+<!-- Previous / next buttons -->
 <div class="prev-next-area">
 <a class="left-prev" href="T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.html" title="previous page">
 <i class="fa-solid fa-angle-left"></i>
@@ -523,8 +526,7 @@ nuclear spin preserving transitions (<span class="math notranslate nohighlight">
 </div>
 </footer>
 </div>
-<dialog id="pst-secondary-sidebar-modal"></dialog>
-<div class="bd-sidebar-secondary bd-toc" id="pst-secondary-sidebar"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 <div class="sidebar-secondary-item">
 <div class="page-toc tocsection onthispage">
 <i class="fa-solid fa-list"></i> Contents
@@ -568,7 +570,7 @@ By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
 <div class="footer-item">
 <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2022.
       <br/>
 </p>
 </div>
@@ -582,9 +584,9 @@ By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
 </div>
 </div>
 <!-- Scripts loaded after <body> so the DOM is not blocked -->
-<script defer="" src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer="" src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+<script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 <footer class="bd-footer">
 </footer>
-<script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script></body>
+<script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script></body>
 </html>

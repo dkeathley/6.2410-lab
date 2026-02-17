@@ -1,55 +1,54 @@
 
 <!DOCTYPE html>
 
-<html data-content_root="./" lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
 <title>TEXT – QKD (Week 2) — 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
 <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
-<!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-<noscript>
-<style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-</noscript>
 <!-- Loaded before other Sphinx assets -->
-<link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet"/>
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet"/>
-<link href="_static/pygments.css?v=03e43079" rel="stylesheet" type="text/css"/>
-<link href="_static/styles/sphinx-book-theme.css?v=a3416100" rel="stylesheet" type="text/css"/>
-<link href="_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
-<link href="_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
-<link href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" rel="stylesheet" type="text/css"/>
-<link href="_static/sphinx-thebe.css?v=4fa983c6" rel="stylesheet" type="text/css"/>
-<link href="_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
-<!-- So that users can add custom icons -->
-<script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+<link href="_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link href="_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link href="_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" rel="stylesheet" type="text/css"/>
+<link href="_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="_static/sphinx-thebe.css" rel="stylesheet" type="text/css"/>
+<link href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" rel="stylesheet" type="text/css"/>
 <!-- Pre-loaded scripts that we'll load fully later -->
-<link as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" rel="preload"/>
-<link as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" rel="preload"/>
-<script src="_static/documentation_options.js?v=9eb32ce0"></script>
-<script src="_static/doctools.js?v=9a2dae69"></script>
-<script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-<script src="_static/clipboard.min.js?v=a7894cd8"></script>
-<script src="_static/copybutton.js?v=f281be69"></script>
-<script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+<link as="script" href="_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" rel="preload"/>
+<link as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" rel="preload"/>
+<script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+<script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+<script src="_static/jquery.js"></script>
+<script src="_static/underscore.js"></script>
+<script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+<script src="_static/doctools.js"></script>
+<script src="_static/clipboard.min.js"></script>
+<script src="_static/copybutton.js"></script>
+<script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
 <script>let toggleHintShow = 'Click to show';</script>
 <script>let toggleHintHide = 'Click to hide';</script>
 <script>let toggleOpenOnPrint = 'true';</script>
-<script src="_static/togglebutton.js?v=4a39c7ea"></script>
+<script src="_static/togglebutton.js"></script>
 <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-<script src="_static/design-tabs.js?v=36754332"></script>
-<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-<script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+<script src="_static/design-tabs.js"></script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+<script async="async" src="_static/sphinx-thebe.js"></script>
 <script>DOCUMENTATION_OPTIONS.pagename = 'T2E1-TEXT-QKD';</script>
 <link href="genindex.html" rel="index" title="Index"/>
 <link href="search.html" rel="search" title="Search"/>
@@ -57,44 +56,41 @@
 <link href="T2E1-LAB-HBT.html" rel="prev" title="LAB – Hanbury Brown - Twiss Lab (Week 1)"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="en" name="docsearch:language"/>
-<meta content="" name="docsearch:version"/>
-<link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/></head>
+<link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/></head>
 <body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
-<div class="skip-link d-print-none" id="pst-skip-link"><a href="#main-content">Skip to main content</a></div>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <div id="pst-scroll-pixel-helper"></div>
 <button class="btn rounded-pill" id="pst-back-to-top" type="button">
-<i class="fa-solid fa-arrow-up"></i>Back to top</button>
-<dialog id="pst-search-dialog">
+<i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
 <form action="search.html" class="bd-search d-flex align-items-center" method="get">
 <i class="fa-solid fa-magnifying-glass"></i>
-<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
+<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
 <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-</dialog>
-<div class="pst-async-banner-revealer d-none">
-<aside aria-label="Version warning" class="d-none d-print-none" id="bd-header-version-warning"></aside>
+</form></div>
 </div>
-<header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-</header>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar">
+</nav>
 <div class="bd-container">
 <div class="bd-container__inner bd-page-width">
-<dialog id="pst-primary-sidebar-modal"></dialog>
-<div class="bd-sidebar-primary bd-sidebar" id="pst-primary-sidebar">
+<div class="bd-sidebar-primary bd-sidebar">
 <div class="sidebar-header-items sidebar-primary__section">
 </div>
 <div class="sidebar-primary-items__start sidebar-primary__section">
 <div class="sidebar-primary-item">
 <a class="navbar-brand logo" href="intro.html">
-<img alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home" class="logo__image only-light" src="_static/logo-ibm.jpg"/>
-<img alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home" class="logo__image only-dark pst-js-only" src="_static/logo-ibm.jpg"/>
+<img alt="Logo image" class="logo__image only-light" src="_static/logo-ibm.jpg"/>
+<script>document.write(`<img src="_static/logo-ibm.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
 </a></div>
-<div class="sidebar-primary-item">
-<button aria-label="Search" class="btn search-button-field search-button__button pst-js-only" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Search">
-<i class="fa-solid fa-magnifying-glass"></i>
-<span class="search-button__default-text">Search</span>
-<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
-<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links bd-docs-nav">
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
 <div class="bd-toc-item navbar-nav active">
 <ul class="nav bd-sidenav bd-sidenav__home-link">
 <li class="toctree-l1">
@@ -145,21 +141,19 @@
 </nav></div>
 </div>
 <div class="sidebar-primary-items__end sidebar-primary__section">
-<div class="sidebar-primary-item">
-<div class="flat" data-ea-manual="true" data-ea-publisher="readthedocs" data-ea-type="readthedocs-sidebar" id="ethical-ad-placement">
-</div></div>
 </div>
+<div id="rtd-footer-container"></div>
 </div>
-<main class="bd-main" id="main-content" role="main">
+<main class="bd-main" id="main-content">
 <div class="sbt-scroll-pixel-helper"></div>
 <div class="bd-content">
 <div class="bd-article-container">
-<div class="bd-header-article d-print-none">
+<div class="bd-header-article">
 <div class="header-article-items header-article__inner">
 <div class="header-article-items__start">
-<div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle primary sidebar">
+<div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__primary" title="Toggle primary sidebar">
 <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
 </div>
 <div class="header-article-items__end">
 <div class="header-article-item">
@@ -169,16 +163,16 @@
 <i class="fas fa-rocket"></i>
 </button>
 <ul class="dropdown-menu">
-<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/T2E1-TEXT-QKD.ipynb" target="_blank" title="Launch on Binder">
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/T2E1-TEXT-QKD.ipynb" target="_blank" title="Launch onBinder">
 <span class="btn__icon-container">
-<img alt="Binder logo" src="_static/images/logo_binder.svg"/>
+<img src="_static/images/logo_binder.svg"/>
 </span>
 <span class="btn__text-container">Binder</span>
 </a>
 </li>
-<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/T2E1-TEXT-QKD.ipynb" target="_blank" title="Launch on Colab">
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/T2E1-TEXT-QKD.ipynb" target="_blank" title="Launch onColab">
 <span class="btn__icon-container">
-<img alt="Colab logo" src="_static/images/logo_colab.png"/>
+<img src="_static/images/logo_colab.png"/>
 </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -233,17 +227,25 @@
 <i class="fas fa-expand"></i>
 </span>
 </button>
-<button aria-label="Color mode" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" data-bs-placement="bottom" data-bs-title="Color mode" data-bs-toggle="tooltip">
-<i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
-<i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
-<i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
-</button>
-<button aria-label="Search" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Search">
-<i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle secondary sidebar">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__secondary" title="Toggle secondary sidebar">
 <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
 </div>
 </div>
@@ -270,23 +272,23 @@
 </div>
 </div>
 <div id="searchbox"></div>
-<article class="bd-article">
+<article class="bd-article" role="main">
 <section class="tex2jax_ignore mathjax_ignore" id="text-qkd-week-2">
-<h1>TEXT – QKD (Week 2)<a class="headerlink" href="#text-qkd-week-2" title="Link to this heading">#</a></h1>
+<h1>TEXT – QKD (Week 2)<a class="headerlink" href="#text-qkd-week-2" title="Permalink to this heading">#</a></h1>
 <section id="generating-a-secret-key">
-<h2>Generating a secret key<a class="headerlink" href="#generating-a-secret-key" title="Link to this heading">#</a></h2>
+<h2>Generating a secret key<a class="headerlink" href="#generating-a-secret-key" title="Permalink to this heading">#</a></h2>
 <p>The next step of the experiment will be using the BB84 protocol to generate a secret key. You should be familiar with BB84 from your prsrequisite course, although there are links below to various resources describing the protocol. This text is intended to help you understand what the protocol aims to do and how it works. The pre-lab questions are brief and are located at the bottom of the page.</p>
 <p>This text covers the following topics:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#One-time-pad-encryption"><span class="xref myst">One time pad encryption</span></a></p></li>
-<li><p><a class="reference internal" href="#Description-of-BB84-protocol"><span class="xref myst">Description of BB84 protocol</span></a></p></li>
-<li><p><a class="reference internal" href="#Python-simulation"><span class="xref myst">Python simulation</span></a></p></li>
-<li><p><a class="reference internal" href="#Introduction-to-Ekert-protocol"><span class="xref myst">Intro to the Ekert protocol</span></a></p></li>
-<li><p><a class="reference internal" href="#Pre-Lab-questions"><span class="xref myst">Pre-Lab questions</span></a></p></li>
+<li><p><span class="xref myst">One time pad encryption</span></p></li>
+<li><p><span class="xref myst">Description of BB84 protocol</span></p></li>
+<li><p><span class="xref myst">Python simulation</span></p></li>
+<li><p><span class="xref myst">Intro to the Ekert protocol</span></p></li>
+<li><p><span class="xref myst">Pre-Lab questions</span></p></li>
 </ul>
 </section>
 <section id="one-time-pad-encryption">
-<h2>One time pad encryption<a class="headerlink" href="#one-time-pad-encryption" title="Link to this heading">#</a></h2>
+<h2>One time pad encryption<a class="headerlink" href="#one-time-pad-encryption" title="Permalink to this heading">#</a></h2>
 <p>One time pad encryption is a perfectly secure means of communicating a message. Alice takes the original message, the raw text, and encrypts it with a pad of random bits the same length as the message, resulting in the ciphertext. Alice transmits the ciphertext through a public channel to Bob. The channel is public because an eavesdropper Eve is able to intercept the entire message. Once Bob receives the ciphertext, he decrypts the ciphertext using the same pad Alice used initially. This allows him to read the original message.</p>
 <p>The benefit of OTP is its security: it’s impossible for an eavesdropper to decode the message.</p>
 <p>The drawbacks are the key distribution. You need a key that’s the same length as the message. Additionally, you need a new key for every message you want to encrypt and send: the protocol is only secure when each pad is used only once.</p>
@@ -294,7 +296,7 @@
 <p>The code cell below is designed as a very basic tutorial for how OTP works. Encrypting and decrypting a message is simple: bitwise XOR with the key. If you XOR the raw message with the key, you get the ciphertext. Then if you XOR the cypher test with the key, you get the initial message back.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">LENGTH</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 <span class="c1"># Generate a random message</span>
@@ -342,7 +344,7 @@ Message: [0 0 0 1 1 1 1 1 0 0]
 </div>
 </section>
 <section id="description-of-bb84-protocol">
-<h2>Description of BB84 protocol<a class="headerlink" href="#description-of-bb84-protocol" title="Link to this heading">#</a></h2>
+<h2>Description of BB84 protocol<a class="headerlink" href="#description-of-bb84-protocol" title="Permalink to this heading">#</a></h2>
 <p>BB84 is the first  QKD protocol, so there are a lot of great resources available to describe it. I’ll include a few here. You don’t have to read <em>all</em> of them, but make sure you understand what makes the protocol secure, how it’s related to quantum mechanics, and what the procedure of the protocol is.</p>
 <p>The original <a class="reference external" href="https://www.dropbox.com/s/i251d4hj5xi4pkr/BB84.pdf?dl=0">BB84 paper</a> lays out the protocol in an accessible and concise way. Section III is the most important part of the paper because it’s where the authors walk through the protocol.</p>
 <p>quTools also providesa <a class="reference external" href="https://www.qutools.com/files/quED/quED-QKD-manual.pdf">manual</a> on performing the QKD experiment with the quED. The BB84 protocol is described on pages 8 through 11.</p>
@@ -360,12 +362,12 @@ Message: [0 0 0 1 1 1 1 1 0 0]
 </div>
 </section>
 <section id="python-simulation">
-<h2>Python simulation<a class="headerlink" href="#python-simulation" title="Link to this heading">#</a></h2>
+<h2>Python simulation<a class="headerlink" href="#python-simulation" title="Permalink to this heading">#</a></h2>
 <p>The following code simulates a BB84 set-up. This is being provided to you so that you can look at the effects of Eve’s instrusion and the effects of loss. You can set the number of photons Alice sends as NN, the transmission from Alice to Bob as TT, and Eve’s intrustion as FE.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">random</span>
 
 <span class="c1"># How many photons does Alice send?</span>
 <span class="n">NN</span> <span class="o">=</span> <span class="mi">1000</span>
@@ -479,7 +481,7 @@ Eve got 48 bits
 <p>Based on this code, we see that as Eve listens in more often, she receives more bits of the key <strong>and</strong> Alice and Bob see more errors. Additionally, the loss of the system doesn’t contribute to errors.</p>
 </section>
 <section id="introduction-to-ekert-protocol">
-<h2>Introduction to Ekert protocol<a class="headerlink" href="#introduction-to-ekert-protocol" title="Link to this heading">#</a></h2>
+<h2>Introduction to Ekert protocol<a class="headerlink" href="#introduction-to-ekert-protocol" title="Permalink to this heading">#</a></h2>
 <p>BB84 is possibly the most well-known QKD protocol, but there are others. One important protocol is Ekert 91, which was published in 1991. Its main difference from BB84 is that it relies on the correlation of entangled photons. In this protocol, Alice and Bob each get one photon from a source of entangled photons and then do independent measurements on the polarization of their photon and report back which basis they used - either horizontal-vertical or diagonal-antidiagonal.</p>
 <p>Artur Ekert, who first publised the protocol, has made many YouTube videos on quantum information in general and QKD in particular. He teaches a class whose lecture materials are available online, and the <a class="reference external" href="https://qubit.guide/9-quantum-cryptography.html">QKD lectures</a> are gathered together. For this text, I’ve embedded one short video where Ekert walks through the protocol. You’ll note that he uses X and Z measurements on qubits. This is analogous to measuring the polarization in either the horizontal-vertical or diagonal-antidiagonal basis of linearly polarized photons.</p>
 <div class="cell docutils container">
@@ -495,7 +497,7 @@ Eve got 48 bits
 </div>
 </section>
 <section id="pre-lab-questions">
-<h2>Pre-Lab questions<a class="headerlink" href="#pre-lab-questions" title="Link to this heading">#</a></h2>
+<h2>Pre-Lab questions<a class="headerlink" href="#pre-lab-questions" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>What makes B84 secure?</p></li>
 <li><p>When Eve interferes on every bit, what is the resulting BER?</p></li>
@@ -523,7 +525,8 @@ Eve got 48 bits
     </script>
 <script>kernelName = 'python3'</script>
 </article>
-<footer class="prev-next-footer d-print-none">
+<footer class="prev-next-footer">
+<!-- Previous / next buttons -->
 <div class="prev-next-area">
 <a class="left-prev" href="T2E1-LAB-HBT.html" title="previous page">
 <i class="fa-solid fa-angle-left"></i>
@@ -542,8 +545,7 @@ Eve got 48 bits
 </div>
 </footer>
 </div>
-<dialog id="pst-secondary-sidebar-modal"></dialog>
-<div class="bd-sidebar-secondary bd-toc" id="pst-secondary-sidebar"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 <div class="sidebar-secondary-item">
 <div class="page-toc tocsection onthispage">
 <i class="fa-solid fa-list"></i> Contents
@@ -570,7 +572,7 @@ By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
 <div class="footer-item">
 <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2022.
       <br/>
 </p>
 </div>
@@ -584,9 +586,9 @@ By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
 </div>
 </div>
 <!-- Scripts loaded after <body> so the DOM is not blocked -->
-<script defer="" src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer="" src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+<script src="_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 <footer class="bd-footer">
 </footer>
-<script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script></body>
+<script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script><script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script><script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script><script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script><script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script><script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script><script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script><script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script></body>
 </html>

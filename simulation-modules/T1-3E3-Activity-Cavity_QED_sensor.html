@@ -1,57 +1,59 @@
 
 <!DOCTYPE html>
 
-<html data-content_root="../" lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
 <title>Activity 1: Solid State Spis – Cavity QED Digital Twin — 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
 <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
-<!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-<noscript>
-<style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-</noscript>
 <!-- Loaded before other Sphinx assets -->
-<link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet"/>
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet"/>
-<link href="../_static/pygments.css?v=03e43079" rel="stylesheet" type="text/css"/>
-<link href="../_static/styles/sphinx-book-theme.css?v=a3416100" rel="stylesheet" type="text/css"/>
-<link href="../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
-<link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
-<link href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" rel="stylesheet" type="text/css"/>
-<link href="../_static/sphinx-thebe.css?v=4fa983c6" rel="stylesheet" type="text/css"/>
-<link href="../_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
-<!-- So that users can add custom icons -->
-<script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+<link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" rel="stylesheet" type="text/css"/>
+<link href="../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-thebe.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" rel="stylesheet" type="text/css"/>
 <!-- Pre-loaded scripts that we'll load fully later -->
-<link as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" rel="preload"/>
-<link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" rel="preload"/>
-<script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-<script src="../_static/doctools.js?v=9a2dae69"></script>
-<script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-<script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-<script src="../_static/copybutton.js?v=f281be69"></script>
-<script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+<link as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" rel="preload"/>
+<link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" rel="preload"/>
+<script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/clipboard.min.js"></script>
+<script src="../_static/copybutton.js"></script>
+<script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
 <script>let toggleHintShow = 'Click to show';</script>
 <script>let toggleHintHide = 'Click to hide';</script>
 <script>let toggleOpenOnPrint = 'true';</script>
-<script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+<script src="../_static/togglebutton.js"></script>
 <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-<script src="../_static/design-tabs.js?v=36754332"></script>
-<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-<script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+<script src="../_static/design-tabs.js"></script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+<script async="async" src="../_static/sphinx-thebe.js"></script>
 <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
 <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script type="application/vnd.jupyter.widget-state+json">{"state": {"45b06a554b834d5f9c5f1fc82c9779bb": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "819aa024191742ec871024de059717e1": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_026c6ca2798a41de9e6808dd836704c1", "IPY_MODEL_65b86013e3bd4c6f95923072b3d0d852", "IPY_MODEL_0a199e7e47674150a37822c5d2e80cde", "IPY_MODEL_89340e13e9354a8990f6732c0598bbcc", "IPY_MODEL_b23a476f8c9543c684449807bfb8fb41", "IPY_MODEL_f0d5ea47e6414565b7693b73d88270e2"], "layout": "IPY_MODEL_45b06a554b834d5f9c5f1fc82c9779bb", "tabbable": null, "tooltip": null}}, "ebc0bc87a3c142138eae4216e759cf11": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "09f435832b594c4eb7f761d9aeb59222": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "026c6ca2798a41de9e6808dd836704c1": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "FloatSliderView", "behavior": "drag-tap", "continuous_update": true, "description": "g0_in", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_ebc0bc87a3c142138eae4216e759cf11", "max": 1.0, "min": 0.01, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.1, "style": "IPY_MODEL_09f435832b594c4eb7f761d9aeb59222", "tabbable": null, "tooltip": null, "value": 0.01}}, "303e4e2e09dc45af92c4d9f078bf40ea": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "7a4882d7ea864eb6a526a4641a3d9aae": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "65b86013e3bd4c6f95923072b3d0d852": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "FloatSliderView", "behavior": "drag-tap", "continuous_update": true, "description": "kc0_in", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_303e4e2e09dc45af92c4d9f078bf40ea", "max": 1000.0, "min": 1.0, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.1, "style": "IPY_MODEL_7a4882d7ea864eb6a526a4641a3d9aae", "tabbable": null, "tooltip": null, "value": 70.0}}, "b3b973e5ae10404a94c97d7acca082bc": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "dde31c0e0d7c48bca6230d5d704845d4": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "0a199e7e47674150a37822c5d2e80cde": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "FloatSliderView", "behavior": "drag-tap", "continuous_update": true, "description": "kc1_in", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_b3b973e5ae10404a94c97d7acca082bc", "max": 1000.0, "min": 1.0, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.1, "style": "IPY_MODEL_dde31c0e0d7c48bca6230d5d704845d4", "tabbable": null, "tooltip": null, "value": 111.0}}, "265c260af5d24cb6a53e6ff76685e0f5": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3220d0cb794c40358e471f46bbfbaa8a": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "89340e13e9354a8990f6732c0598bbcc": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "FloatSliderView", "behavior": "drag-tap", "continuous_update": true, "description": "ks_in", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_265c260af5d24cb6a53e6ff76685e0f5", "max": 1000.0, "min": 1.0, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.1, "style": "IPY_MODEL_3220d0cb794c40358e471f46bbfbaa8a", "tabbable": null, "tooltip": null, "value": 308.0}}, "69489c31181e4ca594b9590a78accb53": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "327291c327b341fc966a30f5090fb1b5": {"model_name": "ButtonStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "button_color": null, "font_family": null, "font_size": null, "font_style": null, "font_variant": null, "font_weight": null, "text_color": null, "text_decoration": null}}, "b23a476f8c9543c684449807bfb8fb41": {"model_name": "ButtonModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "ButtonModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "ButtonView", "button_style": "", "description": "Run Interact", "disabled": false, "icon": "", "layout": "IPY_MODEL_69489c31181e4ca594b9590a78accb53", "style": "IPY_MODEL_327291c327b341fc966a30f5090fb1b5", "tabbable": null, "tooltip": null}}, "bdbaaa6e44594b119fe72ab50bfe0a95": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f0d5ea47e6414565b7693b73d88270e2": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_bdbaaa6e44594b119fe72ab50bfe0a95", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}</script>
+<script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
 <script>DOCUMENTATION_OPTIONS.pagename = 'simulation-modules/T1-3E3-Activity-Cavity_QED_sensor';</script>
 <link href="../genindex.html" rel="index" title="Index"/>
 <link href="../search.html" rel="search" title="Search"/>
@@ -59,44 +61,41 @@
 <link href="../quNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.html" rel="prev" title="LAB – Quantum Sensing With Solid State Spins (Week 2)"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="en" name="docsearch:language"/>
-<meta content="" name="docsearch:version"/>
-<link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/></head>
+<link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/></head>
 <body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
-<div class="skip-link d-print-none" id="pst-skip-link"><a href="#main-content">Skip to main content</a></div>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <div id="pst-scroll-pixel-helper"></div>
 <button class="btn rounded-pill" id="pst-back-to-top" type="button">
-<i class="fa-solid fa-arrow-up"></i>Back to top</button>
-<dialog id="pst-search-dialog">
+<i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
 <form action="../search.html" class="bd-search d-flex align-items-center" method="get">
 <i class="fa-solid fa-magnifying-glass"></i>
-<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
+<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
 <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-</dialog>
-<div class="pst-async-banner-revealer d-none">
-<aside aria-label="Version warning" class="d-none d-print-none" id="bd-header-version-warning"></aside>
+</form></div>
 </div>
-<header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-</header>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar">
+</nav>
 <div class="bd-container">
 <div class="bd-container__inner bd-page-width">
-<dialog id="pst-primary-sidebar-modal"></dialog>
-<div class="bd-sidebar-primary bd-sidebar" id="pst-primary-sidebar">
+<div class="bd-sidebar-primary bd-sidebar">
 <div class="sidebar-header-items sidebar-primary__section">
 </div>
 <div class="sidebar-primary-items__start sidebar-primary__section">
 <div class="sidebar-primary-item">
 <a class="navbar-brand logo" href="../intro.html">
-<img alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home" class="logo__image only-light" src="../_static/logo-ibm.jpg"/>
-<img alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home" class="logo__image only-dark pst-js-only" src="../_static/logo-ibm.jpg"/>
+<img alt="Logo image" class="logo__image only-light" src="../_static/logo-ibm.jpg"/>
+<script>document.write(`<img src="../_static/logo-ibm.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
 </a></div>
-<div class="sidebar-primary-item">
-<button aria-label="Search" class="btn search-button-field search-button__button pst-js-only" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Search">
-<i class="fa-solid fa-magnifying-glass"></i>
-<span class="search-button__default-text">Search</span>
-<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
-<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links bd-docs-nav">
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
 <div class="bd-toc-item navbar-nav active">
 <ul class="nav bd-sidenav bd-sidenav__home-link">
 <li class="toctree-l1">
@@ -147,21 +146,19 @@
 </nav></div>
 </div>
 <div class="sidebar-primary-items__end sidebar-primary__section">
-<div class="sidebar-primary-item">
-<div class="flat" data-ea-manual="true" data-ea-publisher="readthedocs" data-ea-type="readthedocs-sidebar" id="ethical-ad-placement">
-</div></div>
 </div>
+<div id="rtd-footer-container"></div>
 </div>
-<main class="bd-main" id="main-content" role="main">
+<main class="bd-main" id="main-content">
 <div class="sbt-scroll-pixel-helper"></div>
 <div class="bd-content">
 <div class="bd-article-container">
-<div class="bd-header-article d-print-none">
+<div class="bd-header-article">
 <div class="header-article-items header-article__inner">
 <div class="header-article-items__start">
-<div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle primary sidebar">
+<div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__primary" title="Toggle primary sidebar">
 <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
 </div>
 <div class="header-article-items__end">
 <div class="header-article-item">
@@ -171,16 +168,16 @@
 <i class="fas fa-rocket"></i>
 </button>
 <ul class="dropdown-menu">
-<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/simulation-modules/T1-3E3-Activity-Cavity_QED_sensor.ipynb" target="_blank" title="Launch on Binder">
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/simulation-modules/T1-3E3-Activity-Cavity_QED_sensor.ipynb" target="_blank" title="Launch onBinder">
 <span class="btn__icon-container">
-<img alt="Binder logo" src="../_static/images/logo_binder.svg"/>
+<img src="../_static/images/logo_binder.svg"/>
 </span>
 <span class="btn__text-container">Binder</span>
 </a>
 </li>
-<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/simulation-modules/T1-3E3-Activity-Cavity_QED_sensor.ipynb" target="_blank" title="Launch on Colab">
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/simulation-modules/T1-3E3-Activity-Cavity_QED_sensor.ipynb" target="_blank" title="Launch onColab">
 <span class="btn__icon-container">
-<img alt="Colab logo" src="../_static/images/logo_colab.png"/>
+<img src="../_static/images/logo_colab.png"/>
 </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -235,17 +232,25 @@
 <i class="fas fa-expand"></i>
 </span>
 </button>
-<button aria-label="Color mode" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" data-bs-placement="bottom" data-bs-title="Color mode" data-bs-toggle="tooltip">
-<i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
-<i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
-<i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
-</button>
-<button aria-label="Search" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Search">
-<i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle secondary sidebar">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__secondary" title="Toggle secondary sidebar">
 <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
 </div>
 </div>
@@ -274,11 +279,11 @@
 </div>
 </div>
 <div id="searchbox"></div>
-<article class="bd-article">
+<article class="bd-article" role="main">
 <section class="tex2jax_ignore mathjax_ignore" id="activity-1-solid-state-spis-cavity-qed-digital-twin">
-<h1>Activity 1: Solid State Spis – Cavity QED Digital Twin<a class="headerlink" href="#activity-1-solid-state-spis-cavity-qed-digital-twin" title="Link to this heading">#</a></h1>
+<h1>Activity 1: Solid State Spis – Cavity QED Digital Twin<a class="headerlink" href="#activity-1-solid-state-spis-cavity-qed-digital-twin" title="Permalink to this heading">#</a></h1>
 <section id="prelab">
-<h2>Prelab<a class="headerlink" href="#prelab" title="Link to this heading">#</a></h2>
+<h2>Prelab<a class="headerlink" href="#prelab" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Setup <a class="reference external" href="https://qutip.org/">QuTiP</a> to run on a cloud service like Google Colab or install it on your own PC.</p></li>
 <li><p>Go through and perform the activities in <a class="reference external" href="https://qutip.org/qutip-tutorials/">QuTiP Lecture 0</a>.</p></li>
@@ -286,7 +291,7 @@
 </ol>
 </section>
 <section id="cavity-coupled-quantum-electrodynamic-qed-sensor">
-<h2>Cavity-coupled quantum electrodynamic (QED) sensor<a class="headerlink" href="#cavity-coupled-quantum-electrodynamic-qed-sensor" title="Link to this heading">#</a></h2>
+<h2>Cavity-coupled quantum electrodynamic (QED) sensor<a class="headerlink" href="#cavity-coupled-quantum-electrodynamic-qed-sensor" title="Permalink to this heading">#</a></h2>
 <p>Hanfeng Wang, Matthew E. Trusheim, and Dirk Englund</p>
 <p>Resonators for electromagnetic fields in the range of 1-100 GHz are essential in a range of quantum technologies, including superconducting quantum computers, microwave-optical quantum information interfaces, as well as sensors. Here, we consider microwave cavities coupled to ensembles of electron and nuclear spins associated with nitrogen vacancy (NV) centers in diamond. Following the discovery of coherent quantum dynamics of NV centers in the late 1990s, NV centers have emerged as leading quantum sensors for quantities ranging from electromagnetic fields to temperature, strain, rotation (gyroscopes), and have even been proposed for exotic schemes like dark matter detection. The key advantages of NV centers in sensing applications, over other electron spin systems, are their long coherence times and avaible optical polarization at room temperature.</p>
 <p>Suggested reading for this laboratory on hybrid systems of microwave cavities coupled to NV spin ensembles specifically:
@@ -301,34 +306,34 @@
 <figure class="align-default" id="cavity-qed-setup">
 <a class="bg-primary mb-1 reference internal image-reference" href="../_images/nv-center-cavity-qed-setup.png"><img alt="Experimental Setup" class="bg-primary mb-1" src="../_images/nv-center-cavity-qed-setup.png" style="width: 800px;"/></a>
 <figcaption>
-<p><span class="caption-number">Fig. 65 </span><span class="caption-text">Experimental setup for studying quantum spins.</span><a class="headerlink" href="#cavity-qed-setup" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 65 </span><span class="caption-text">Experimental setup for studying quantum spins.</span><a class="headerlink" href="#cavity-qed-setup" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="linear-regime">
-<h2>Linear Regime<a class="headerlink" href="#linear-regime" title="Link to this heading">#</a></h2>
+<h2>Linear Regime<a class="headerlink" href="#linear-regime" title="Permalink to this heading">#</a></h2>
 <p>Consider a case where we have a two-level system, such as a Nitrogen-Vacancy (NV) center, and an excitation, for example, a cavity mode. These two systems interact with each other when their frequencies are resonant. In the spectrum, we observe the phenomenon known as anti-crossing or avoided-crossing effect, which occurs when the energy levels of the two systems approach each other closely but do not actually cross.</p>
 <p>From <a class="reference external" href="https://en.wikipedia.org/wiki/Avoided_crossing">Wikipedia</a>: In quantum physics and quantum chemistry, an avoided crossing (sometimes called intended crossing, non-crossing or anticrossing) is the phenomenon where two eigenvalues of a Hermitian matrix representing a quantum observable and depending on N continuous real parameters cannot become equal in value (“cross”) except on a manifold of N-3 dimensions.</p>
 <figure class="align-default" id="avoided-crossing">
 <a class="bg-primary mb-1 reference internal image-reference" href="../_images/adiabatic-states-linear-field.png"><img alt="avoided crossing" class="bg-primary mb-1" src="../_images/adiabatic-states-linear-field.png" style="width: 800px;"/></a>
 <figcaption>
-<p><span class="caption-number">Fig. 66 </span><span class="caption-text">Avoided crossing of <span class="math notranslate nohighlight">\(\ket{\phi_1}\)</span> and <span class="math notranslate nohighlight">\(\ket{\phi_2}\)</span></span><a class="headerlink" href="#avoided-crossing" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 66 </span><span class="caption-text">Avoided crossing of <span class="math notranslate nohighlight">\(\ket{\phi_1}\)</span> and <span class="math notranslate nohighlight">\(\ket{\phi_2}\)</span></span><a class="headerlink" href="#avoided-crossing" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>This is the simplest case where we did not add the information about two-level system and the cavity mode. For example, the two-level system should have linewidth and cavity mode should have inherent loss. The question now is: how we paramitrize the system with those real conditions?</p>
 <p>The next code set is a good example to set it up. For details please refer to Erik’s paper in the prelab.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">HBox</span><span class="p">,</span> <span class="n">VBox</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">HBox</span><span class="p">,</span> <span class="n">VBox</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="nd">@widgets</span><span class="o">.</span><span class="n">interact_manual</span><span class="p">(</span>
     <span class="n">g0_in</span><span class="o">=</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">1.</span><span class="p">),</span><span class="n">kc0_in</span><span class="o">=</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1000.</span><span class="p">),</span><span class="n">kc1_in</span><span class="o">=</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1000.</span><span class="p">),</span><span class="n">ks_in</span><span class="o">=</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1000.</span><span class="p">))</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">runFunc</span><span class="p">(</span><span class="n">g0_in</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">kc0_in</span> <span class="o">=</span> <span class="mi">70</span><span class="p">,</span> <span class="n">kc1_in</span> <span class="o">=</span> <span class="mi">111</span><span class="p">,</span> <span class="n">ks_in</span> <span class="o">=</span> <span class="mi">308</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">runFunc</span><span class="p">(</span><span class="n">g0_in</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">kc0_in</span> <span class="o">=</span> <span class="mi">70</span><span class="p">,</span> <span class="n">kc1_in</span> <span class="o">=</span> <span class="mi">111</span><span class="p">,</span> <span class="n">ks_in</span> <span class="o">=</span> <span class="mi">308</span><span class="p">):</span>
     <span class="n">kc0</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">kc0_in</span><span class="p">;</span> <span class="c1">#kHz  Cavity linewidth</span>
     <span class="n">kc1</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">kc1_in</span><span class="p">;</span> <span class="c1">#kHz   Cavity-loop coupling (output coupling)</span>
 
@@ -412,22 +417,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">HBox</span><span class="p">,</span> <span class="n">VBox</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named 'matplotlib'
-</pre></div>
-</div>
-</div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "819aa024191742ec871024de059717e1"}</script></div>
 </div>
 </section>
 <section id="nonlinear-regime">
-<h2>Nonlinear Regime<a class="headerlink" href="#nonlinear-regime" title="Link to this heading">#</a></h2>
+<h2>Nonlinear Regime<a class="headerlink" href="#nonlinear-regime" title="Permalink to this heading">#</a></h2>
 <p>Now, we have a good understanding of the anti-crossing feature in NV-cavity coupling. However, this knowledge alone is not sufficient. Let’s delve deeper into the issue.</p>
 <p>In the schematic of the setup, there are actually three components: the NV center, the cavity mode, and an antenna designed to detect the cavity mode. It is crucial to couple the antenna with the cavity mode to facilitate detection. This raises a question:</p>
 <p>Why can’t the antenna couple with the NV system directly?</p>
@@ -435,8 +429,8 @@
 <p>Here we do not expand the details for the derivation about the Maxwell-Bloch equations because it is too complicated and beyond the scope of our course. If you are really interested in the whole process, please ask the TA.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="c1"># Constants and Parameters</span>
 <span class="n">Gamma</span> <span class="o">=</span> <span class="mf">330e3</span>  <span class="c1"># Inhomogeneous linewidth</span>
@@ -487,12 +481,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2aa0b52fbf3fd009ef95cdaa7f624596e0864755ce0ad4a80fcf2d91541e95ea.png" src="../_images/2aa0b52fbf3fd009ef95cdaa7f624596e0864755ce0ad4a80fcf2d91541e95ea.png"/>
+<img alt="../_images/655e1dc030055380c23f4443973040f93d4af569d9888dcd3ac089693b08d6a2.png" src="../_images/655e1dc030055380c23f4443973040f93d4af569d9888dcd3ac089693b08d6a2.png"/>
 </div>
 </div>
 </section>
 <section id="noise-model">
-<h2>Noise Model<a class="headerlink" href="#noise-model" title="Link to this heading">#</a></h2>
+<h2>Noise Model<a class="headerlink" href="#noise-model" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">length</span> <span class="o">=</span> <span class="mi">2000000</span>  <span class="c1"># Length of the signal</span>
@@ -528,12 +522,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e9aaca7597ea70bb9f3ee8d390e2919875187903b6b38dab73dd5116a794301f.png" src="../_images/e9aaca7597ea70bb9f3ee8d390e2919875187903b6b38dab73dd5116a794301f.png"/>
+<img alt="../_images/d5d073b5c375fcc725e783efc67b0b6661c0f93de70d4291ea1a6d591f8ddc96.png" src="../_images/d5d073b5c375fcc725e783efc67b0b6661c0f93de70d4291ea1a6d591f8ddc96.png"/>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.signal</span><span class="w"> </span><span class="kn">import</span> <span class="n">periodogram</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">periodogram</span>
 <span class="n">frequencies</span><span class="p">,</span> <span class="n">psd</span> <span class="o">=</span> <span class="n">periodogram</span><span class="p">(</span><span class="n">final</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">frequencies</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">psd</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s2">"log"</span><span class="p">)</span>
@@ -550,12 +544,12 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, 'Amplitude')
 </pre></div>
 </div>
-<img alt="../_images/58b72e1b247a377c4a29b4a1b1556045cf38185f8eb921e86298c766af0f215f.png" src="../_images/58b72e1b247a377c4a29b4a1b1556045cf38185f8eb921e86298c766af0f215f.png"/>
+<img alt="../_images/c55d1224eebb15feda2b00de24c5bc6b8306ef7c29c93cda57c4f8bf65ace04f.png" src="../_images/c55d1224eebb15feda2b00de24c5bc6b8306ef7c29c93cda57c4f8bf65ace04f.png"/>
 </div>
 </div>
 </section>
 <section id="exercise-1">
-<h2>Exercise 1:<a class="headerlink" href="#exercise-1" title="Link to this heading">#</a></h2>
+<h2>Exercise 1:<a class="headerlink" href="#exercise-1" title="Permalink to this heading">#</a></h2>
 <p>Now we have the signal and noise model. We provide a perfect plot of the signal below. Please generate one with the noise incorporated and plot it below the perfect signal for comparison.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -626,12 +620,12 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, 'In-phase component of $\\Gamma$')
 </pre></div>
 </div>
-<img alt="../_images/d6461070d8bac2b5196ff121aaf10fc6907a92adb4e9152de01a45ecfee81f8a.png" src="../_images/d6461070d8bac2b5196ff121aaf10fc6907a92adb4e9152de01a45ecfee81f8a.png"/>
+<img alt="../_images/a6b5171fb0a2657bd99741f809576d5030d825001af8830f493ac8077754ffd3.png" src="../_images/a6b5171fb0a2657bd99741f809576d5030d825001af8830f493ac8077754ffd3.png"/>
 </div>
 </div>
 </section>
 <section id="exercise-2">
-<h2>Exercise 2:<a class="headerlink" href="#exercise-2" title="Link to this heading">#</a></h2>
+<h2>Exercise 2:<a class="headerlink" href="#exercise-2" title="Permalink to this heading">#</a></h2>
 <p>Now assume we have a test field <span class="math notranslate nohighlight">\(B_t\)</span>. Could you emulate <span class="math notranslate nohighlight">\(B_t\)</span> in the digital twin? Approximate the minimum test field <span class="math notranslate nohighlight">\(B_t\)</span> you can measure in the digital twin (choose some noise level).</p>
 <p>Hint: Look at how the inphase and quadrature components of <span class="math notranslate nohighlight">\(\Gamma\)</span> change with magnetic field (which shifts the spin frequency). Which component of <span class="math notranslate nohighlight">\(\Gamma\)</span> is more sensitive to magnetic field near zero detuning? When does the change in underlying signal outweigh noise?</p>
 <div class="cell docutils container">
@@ -643,7 +637,7 @@
 </div>
 </section>
 <section id="minimum-detectable-magnetic-field">
-<h2>Minimum detectable magnetic field<a class="headerlink" href="#minimum-detectable-magnetic-field" title="Link to this heading">#</a></h2>
+<h2>Minimum detectable magnetic field<a class="headerlink" href="#minimum-detectable-magnetic-field" title="Permalink to this heading">#</a></h2>
 <p>Here is the sensitivity analysis for cavity-coupled sensor. In the ideal case, the spin-projection-limit sensitivity is propotional to the inverse of the square root of the number of spins (N). However, the NV decoherence time and dephasing time will decrease during the increase of the NV number. Therefore, the sensivitity will decrease sharply in the large-N regime. The script below calculated the spin-projection-limit sensitivity and photon-shot-noise-limit with different number of spins.</p>
 <p>The script below also include the cavity-coupled spin sensor. The scale of the sensitivity in the low-N regime is linear with the 1/N rather than 1/sqrt(N), which offers the possibility for this sensor to go below the spin-projection-limit sensitivity.</p>
 <div class="cell docutils container">
@@ -698,7 +692,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, 'Sensitivity (T/$\\sqrt{Hz}$)')
 </pre></div>
 </div>
-<img alt="../_images/fff1e7ecee8fb100c366d17e8fa129e71d8214d36bf59a83049beecd9c80974e.png" src="../_images/fff1e7ecee8fb100c366d17e8fa129e71d8214d36bf59a83049beecd9c80974e.png"/>
+<img alt="../_images/f24db174b18984e970c7fbbd32949d1f6a1be76abc29f44155650d51135dfbe0.png" src="../_images/f24db174b18984e970c7fbbd32949d1f6a1be76abc29f44155650d51135dfbe0.png"/>
 </div>
 </div>
 </section>
@@ -723,7 +717,8 @@
     </script>
 <script>kernelName = 'python3'</script>
 </article>
-<footer class="prev-next-footer d-print-none">
+<footer class="prev-next-footer">
+<!-- Previous / next buttons -->
 <div class="prev-next-area">
 <a class="left-prev" href="../quNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.html" title="previous page">
 <i class="fa-solid fa-angle-left"></i>
@@ -742,8 +737,7 @@
 </div>
 </footer>
 </div>
-<dialog id="pst-secondary-sidebar-modal"></dialog>
-<div class="bd-sidebar-secondary bd-toc" id="pst-secondary-sidebar"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 <div class="sidebar-secondary-item">
 <div class="page-toc tocsection onthispage">
 <i class="fa-solid fa-list"></i> Contents
@@ -772,7 +766,7 @@ By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
 <div class="footer-item">
 <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2022.
       <br/>
 </p>
 </div>
@@ -786,9 +780,9 @@ By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
 </div>
 </div>
 <!-- Scripts loaded after <body> so the DOM is not blocked -->
-<script defer="" src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer="" src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+<script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 <footer class="bd-footer">
 </footer>
-<script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script></body>
+<script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script></body>
 </html>

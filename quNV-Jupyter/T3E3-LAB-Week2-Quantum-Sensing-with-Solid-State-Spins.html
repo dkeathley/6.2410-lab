@@ -1,55 +1,54 @@
 
 <!DOCTYPE html>
 
-<html data-content_root="../" lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
 <title>LAB – Quantum Sensing With Solid State Spins (Week 2) — 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
 <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
-<!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-<noscript>
-<style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-</noscript>
 <!-- Loaded before other Sphinx assets -->
-<link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet"/>
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet"/>
-<link href="../_static/pygments.css?v=03e43079" rel="stylesheet" type="text/css"/>
-<link href="../_static/styles/sphinx-book-theme.css?v=a3416100" rel="stylesheet" type="text/css"/>
-<link href="../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
-<link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
-<link href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" rel="stylesheet" type="text/css"/>
-<link href="../_static/sphinx-thebe.css?v=4fa983c6" rel="stylesheet" type="text/css"/>
-<link href="../_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
-<!-- So that users can add custom icons -->
-<script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+<link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" rel="stylesheet" type="text/css"/>
+<link href="../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-thebe.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" rel="stylesheet" type="text/css"/>
 <!-- Pre-loaded scripts that we'll load fully later -->
-<link as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" rel="preload"/>
-<link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" rel="preload"/>
-<script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-<script src="../_static/doctools.js?v=9a2dae69"></script>
-<script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-<script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-<script src="../_static/copybutton.js?v=f281be69"></script>
-<script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+<link as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" rel="preload"/>
+<link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" rel="preload"/>
+<script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/clipboard.min.js"></script>
+<script src="../_static/copybutton.js"></script>
+<script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
 <script>let toggleHintShow = 'Click to show';</script>
 <script>let toggleHintHide = 'Click to hide';</script>
 <script>let toggleOpenOnPrint = 'true';</script>
-<script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+<script src="../_static/togglebutton.js"></script>
 <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-<script src="../_static/design-tabs.js?v=36754332"></script>
-<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-<script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+<script src="../_static/design-tabs.js"></script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+<script async="async" src="../_static/sphinx-thebe.js"></script>
 <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
 <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>DOCUMENTATION_OPTIONS.pagename = 'quNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins';</script>
@@ -59,44 +58,41 @@
 <link href="T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.html" rel="prev" title="LAB - Quantum Sensing with Solid State Spins (Week 1)"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="en" name="docsearch:language"/>
-<meta content="" name="docsearch:version"/>
-<link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/></head>
+<link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/></head>
 <body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
-<div class="skip-link d-print-none" id="pst-skip-link"><a href="#main-content">Skip to main content</a></div>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <div id="pst-scroll-pixel-helper"></div>
 <button class="btn rounded-pill" id="pst-back-to-top" type="button">
-<i class="fa-solid fa-arrow-up"></i>Back to top</button>
-<dialog id="pst-search-dialog">
+<i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
 <form action="../search.html" class="bd-search d-flex align-items-center" method="get">
 <i class="fa-solid fa-magnifying-glass"></i>
-<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
+<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
 <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-</dialog>
-<div class="pst-async-banner-revealer d-none">
-<aside aria-label="Version warning" class="d-none d-print-none" id="bd-header-version-warning"></aside>
+</form></div>
 </div>
-<header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-</header>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar">
+</nav>
 <div class="bd-container">
 <div class="bd-container__inner bd-page-width">
-<dialog id="pst-primary-sidebar-modal"></dialog>
-<div class="bd-sidebar-primary bd-sidebar" id="pst-primary-sidebar">
+<div class="bd-sidebar-primary bd-sidebar">
 <div class="sidebar-header-items sidebar-primary__section">
 </div>
 <div class="sidebar-primary-items__start sidebar-primary__section">
 <div class="sidebar-primary-item">
 <a class="navbar-brand logo" href="../intro.html">
-<img alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home" class="logo__image only-light" src="../_static/logo-ibm.jpg"/>
-<img alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home" class="logo__image only-dark pst-js-only" src="../_static/logo-ibm.jpg"/>
+<img alt="Logo image" class="logo__image only-light" src="../_static/logo-ibm.jpg"/>
+<script>document.write(`<img src="../_static/logo-ibm.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
 </a></div>
-<div class="sidebar-primary-item">
-<button aria-label="Search" class="btn search-button-field search-button__button pst-js-only" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Search">
-<i class="fa-solid fa-magnifying-glass"></i>
-<span class="search-button__default-text">Search</span>
-<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
-<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links bd-docs-nav">
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
 <div class="bd-toc-item navbar-nav active">
 <ul class="nav bd-sidenav bd-sidenav__home-link">
 <li class="toctree-l1">
@@ -147,21 +143,19 @@
 </nav></div>
 </div>
 <div class="sidebar-primary-items__end sidebar-primary__section">
-<div class="sidebar-primary-item">
-<div class="flat" data-ea-manual="true" data-ea-publisher="readthedocs" data-ea-type="readthedocs-sidebar" id="ethical-ad-placement">
-</div></div>
 </div>
+<div id="rtd-footer-container"></div>
 </div>
-<main class="bd-main" id="main-content" role="main">
+<main class="bd-main" id="main-content">
 <div class="sbt-scroll-pixel-helper"></div>
 <div class="bd-content">
 <div class="bd-article-container">
-<div class="bd-header-article d-print-none">
+<div class="bd-header-article">
 <div class="header-article-items header-article__inner">
 <div class="header-article-items__start">
-<div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle primary sidebar">
+<div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__primary" title="Toggle primary sidebar">
 <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
 </div>
 <div class="header-article-items__end">
 <div class="header-article-item">
@@ -171,16 +165,16 @@
 <i class="fas fa-rocket"></i>
 </button>
 <ul class="dropdown-menu">
-<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/quNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.ipynb" target="_blank" title="Launch on Binder">
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/quNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.ipynb" target="_blank" title="Launch onBinder">
 <span class="btn__icon-container">
-<img alt="Binder logo" src="../_static/images/logo_binder.svg"/>
+<img src="../_static/images/logo_binder.svg"/>
 </span>
 <span class="btn__text-container">Binder</span>
 </a>
 </li>
-<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/quNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.ipynb" target="_blank" title="Launch on Colab">
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/quNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.ipynb" target="_blank" title="Launch onColab">
 <span class="btn__icon-container">
-<img alt="Colab logo" src="../_static/images/logo_colab.png"/>
+<img src="../_static/images/logo_colab.png"/>
 </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -235,17 +229,25 @@
 <i class="fas fa-expand"></i>
 </span>
 </button>
-<button aria-label="Color mode" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" data-bs-placement="bottom" data-bs-title="Color mode" data-bs-toggle="tooltip">
-<i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
-<i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
-<i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
-</button>
-<button aria-label="Search" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Search">
-<i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle secondary sidebar">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__secondary" title="Toggle secondary sidebar">
 <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
 </div>
 </div>
@@ -283,29 +285,29 @@
 </div>
 </div>
 <div id="searchbox"></div>
-<article class="bd-article">
+<article class="bd-article" role="main">
 <section class="tex2jax_ignore mathjax_ignore" id="lab-quantum-sensing-with-solid-state-spins-week-2">
-<h1>LAB – Quantum Sensing With Solid State Spins (Week 2)<a class="headerlink" href="#lab-quantum-sensing-with-solid-state-spins-week-2" title="Link to this heading">#</a></h1>
+<h1>LAB – Quantum Sensing With Solid State Spins (Week 2)<a class="headerlink" href="#lab-quantum-sensing-with-solid-state-spins-week-2" title="Permalink to this heading">#</a></h1>
 <section id="aim-4-and-5-achieve-strong-coupling-between-nv-centers-and-the-microwave-resonator-improve-the-avoided-crossing-contrast">
-<h2>Aim 4 and 5: Achieve strong coupling between NV centers and the microwave resonator; Improve the avoided-crossing contrast<a class="headerlink" href="#aim-4-and-5-achieve-strong-coupling-between-nv-centers-and-the-microwave-resonator-improve-the-avoided-crossing-contrast" title="Link to this heading">#</a></h2>
+<h2>Aim 4 and 5: Achieve strong coupling between NV centers and the microwave resonator; Improve the avoided-crossing contrast<a class="headerlink" href="#aim-4-and-5-achieve-strong-coupling-between-nv-centers-and-the-microwave-resonator-improve-the-avoided-crossing-contrast" title="Permalink to this heading">#</a></h2>
 <p>This portion of the lab is not explicity split into days. A general guideline would be to aim to complete the data collection code on the first day, and to collect data and optimize coupling on the second day.</p>
 <p>If you have time, you should try to collect data on the first day, which would be valuable to achieve stronger contrast on the second day.</p>
 <section id="pre-lab">
-<h3>Pre-lab<a class="headerlink" href="#pre-lab" title="Link to this heading">#</a></h3>
+<h3>Pre-lab<a class="headerlink" href="#pre-lab" title="Permalink to this heading">#</a></h3>
 <p>Please complete the pre-lab 3 from the text prior to this lab session.</p>
 </section>
 <section id="setting-up-code-for-data-collection">
-<h3>Setting up Code for Data Collection<a class="headerlink" href="#setting-up-code-for-data-collection" title="Link to this heading">#</a></h3>
+<h3>Setting up Code for Data Collection<a class="headerlink" href="#setting-up-code-for-data-collection" title="Permalink to this heading">#</a></h3>
 <section id="i-collecting-data-from-the-vna">
-<h4>i) Collecting data from the VNA<a class="headerlink" href="#i-collecting-data-from-the-vna" title="Link to this heading">#</a></h4>
+<h4>i) Collecting data from the VNA<a class="headerlink" href="#i-collecting-data-from-the-vna" title="Permalink to this heading">#</a></h4>
 <p>You will be extacting data from the VNA using Python. This is covered in <a class="reference external" href="https://dkeathley.github.io/6.2410-lab/quNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.html">TRAINING - Interfacing with the Vector Network Analyzer</a>. Try extracting a plotting a trace from the VNA.</p>
 </section>
 <section id="ii-interface-with-the-power-supply">
-<h4>ii) Interface with the power supply<a class="headerlink" href="#ii-interface-with-the-power-supply" title="Link to this heading">#</a></h4>
+<h4>ii) Interface with the power supply<a class="headerlink" href="#ii-interface-with-the-power-supply" title="Permalink to this heading">#</a></h4>
 <p>Similar to interfacing with the VNA during T3E3-TRAINING, you will also need to be able to control the power supply via Python. First, install the packages <code class="docutils literal notranslate"><span class="pre">qcodes</span></code>, <code class="docutils literal notranslate"><span class="pre">qcodes_contrib_drivers</span></code>, and <code class="docutils literal notranslate"><span class="pre">pyserial</span></code>. Then, ensure the power supply’s USB port is connected to the computer. Run the following cell to determine which serial port it occupies.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">serial.tools.list_ports</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">serial.tools.list_ports</span>
 <span class="n">ports</span> <span class="o">=</span> <span class="n">serial</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">list_ports</span><span class="o">.</span><span class="n">comports</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">port</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="n">hwid</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">ports</span><span class="p">):</span>
@@ -322,11 +324,11 @@
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">serial.tools.list_ports</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">serial.tools.list_ports</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ports</span> <span class="o">=</span> <span class="n">serial</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">list_ports</span><span class="o">.</span><span class="n">comports</span><span class="p">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">for</span> <span class="n">port</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="n">hwid</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">ports</span><span class="p">):</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named 'serial'
+<span class="ne">ModuleNotFoundError</span>: No module named 'serial.tools'
 </pre></div>
 </div>
 </div>
@@ -344,7 +346,7 @@
 </div>
 </section>
 <section id="iii-write-an-experimental-sequence-to-produce-a-2d-map-of-frequency-vs-magnetic-field">
-<h4>iii) Write an experimental sequence to produce a 2D map of frequency vs magnetic field<a class="headerlink" href="#iii-write-an-experimental-sequence-to-produce-a-2d-map-of-frequency-vs-magnetic-field" title="Link to this heading">#</a></h4>
+<h4>iii) Write an experimental sequence to produce a 2D map of frequency vs magnetic field<a class="headerlink" href="#iii-write-an-experimental-sequence-to-produce-a-2d-map-of-frequency-vs-magnetic-field" title="Permalink to this heading">#</a></h4>
 <p>From T3E3-TRAINING, you were able to interface with the VNA via Python. And from part (i), you were able to interface with the power supply, which effectively drives the Helmholtz coil and thereby the amount of the mangetic field being generated.</p>
 <p>Below, please write an experiment sequence that performs a 2D sweep over both frequency and magnetic field. The sweep over frequency is essentially done for you by the VNA. Your task here will be to grab a trace off the VNA (with carefully defined frequency center and span corresponding to the cavity signal), and sweep over a range of voltages. The voltage range, i.e. the sweeping range of the magnetic field strength, should cover the required field strength to shift the NV centers’ resonance to match the cavity resonance. This was calculated by you in Aim 1’s Prelab.</p>
 <p><strong>Importantly, for each magnetic field strength, you should obtain an <em>average</em> over multiple frequency traces.</strong> In your script, please also compute the variance of each point. You may need VNA functionality not directly covered in the training. The <a class="reference external" href="https://drive.google.com/file/d/1GpGNjROYpluPD1voHh7sdNY6kIebRYhF/view">LibreVNA SCPI Programming Guide</a> may be useful.</p>
@@ -352,15 +354,15 @@
 </section>
 </section>
 <section id="running-the-coupling-experiment">
-<h3>Running the Coupling Experiment<a class="headerlink" href="#running-the-coupling-experiment" title="Link to this heading">#</a></h3>
+<h3>Running the Coupling Experiment<a class="headerlink" href="#running-the-coupling-experiment" title="Permalink to this heading">#</a></h3>
 <section id="i-aligning-the-laser-to-excite-the-diamond">
-<h4>i) Aligning the laser to excite the diamond<a class="headerlink" href="#i-aligning-the-laser-to-excite-the-diamond" title="Link to this heading">#</a></h4>
+<h4>i) Aligning the laser to excite the diamond<a class="headerlink" href="#i-aligning-the-laser-to-excite-the-diamond" title="Permalink to this heading">#</a></h4>
 <p>As you saw in previous labs, the resonator is composed of two parts with a hole in the center, and a silicon carbide wafer in between the two parts.</p>
 <p>The diamond should be just the right size to lie flat on the silicon carbide wafer at the bottom of the top half of the resonator hole. The diagram shown below is a reference to what the full stack looks like:</p>
 <figure class="align-default" id="stack-fig">
 <a class="reference internal image-reference" href="../_images/week2_stack.png"><img alt="../_images/week2_stack.png" src="../_images/week2_stack.png" style="width: 700px;"/></a>
 <figcaption>
-<p><span class="caption-number">Fig. 61 </span><span class="caption-text">Diagram depicting a combined stack of the magnetic resonators and a diamond sample placed inside a magnetic shield.</span><a class="headerlink" href="#stack-fig" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 61 </span><span class="caption-text">Diagram depicting a combined stack of the magnetic resonators and a diamond sample placed inside a magnetic shield.</span><a class="headerlink" href="#stack-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>At this point, call your TA over to the station to turn on the laser (heavily attenuated such that the optical power is much less than 3 W). <em><strong>Please wear proper laser safety glasses now.</strong></em></p>
@@ -368,24 +370,24 @@
 <figure class="align-default" id="mirror-knobs-fig">
 <a class="reference internal image-reference" href="../_images/week2_mirror_knobs.png"><img alt="../_images/week2_mirror_knobs.png" src="../_images/week2_mirror_knobs.png" style="width: 300px;"/></a>
 <figcaption>
-<p><span class="caption-number">Fig. 62 </span><span class="caption-text">The 45-degree kinematic mirror mount with two knobs used for aligning the laser beam with respect to the diamond samples.</span><a class="headerlink" href="#mirror-knobs-fig" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 62 </span><span class="caption-text">The 45-degree kinematic mirror mount with two knobs used for aligning the laser beam with respect to the diamond samples.</span><a class="headerlink" href="#mirror-knobs-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>With the laser at minimum power, still with your laser safety glasses on, you should be able to see <em>fluorescence</em> emanating from the diamond. The fluorescence stems from the atomic transitions between the ground and excited states of the triplet manifold <span class="math notranslate nohighlight">\(^3 E \leftrightarrow ^3 A\)</span> in NV centers’ level structure. Recall from T3E3-TEXT that the <em>direct</em> emission from the exited state to the ground state corresponds to 637<span class="math notranslate nohighlight">\(~\)</span>nm. <u>If we placed a 638<span class="math notranslate nohighlight">\(~\)</span>nm optical longpass filter in front of the diamond, would you still be able to observe fluorescence? Why or why not?</u> You may find the photoluminescence spectrum below helpful.</p>
 <figure class="align-default" id="nv-spectrum-fig">
 <a class="reference internal image-reference" href="../_images/week2_nv_spectrum.png"><img alt="../_images/week2_nv_spectrum.png" src="../_images/week2_nv_spectrum.png" style="width: 500px;"/></a>
 <figcaption>
-<p><span class="caption-number">Fig. 63 </span><span class="caption-text">NV center’s photoluminescence spectrum. Figure adapted froom <a class="reference external" href="https://www.science.org/doi/10.1126/science.276.5321.2012">Gruber <em>et al.</em></a>.</span><a class="headerlink" href="#nv-spectrum-fig" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 63 </span><span class="caption-text">NV center’s photoluminescence spectrum. Figure adapted froom <a class="reference external" href="https://www.science.org/doi/10.1126/science.276.5321.2012">Gruber <em>et al.</em></a>.</span><a class="headerlink" href="#nv-spectrum-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="ii-optimize-the-position-of-the-loop-coupler">
-<h4>ii) Optimize the position of the loop coupler<a class="headerlink" href="#ii-optimize-the-position-of-the-loop-coupler" title="Link to this heading">#</a></h4>
+<h4>ii) Optimize the position of the loop coupler<a class="headerlink" href="#ii-optimize-the-position-of-the-loop-coupler" title="Permalink to this heading">#</a></h4>
 <p>In order to see avoided-crossing, you want to maximize the effective <em>cooperativity</em> of the spin-cavity system. The cooperativity <span class="math notranslate nohighlight">\(C\)</span> scales with <span class="math notranslate nohighlight">\(1/\kappa_c\)</span>. In other words, we must ensure the quality factor is as high as possible, <em>while keeping the loop coupler sufficiently close to be able to probe to cavity’s frequency response</em>. Do your best to optimize the position of the loop coupler by changing its height using the micrometer on the displacement mount to achieve the highest quality factor, i.e. smallest cavity linewidth. Unfortunately, its <span class="math notranslate nohighlight">\(x,y\)</span> positions will be fixed by the iris, which is intended as both an additional magnetic shield and laser block. We can still somewhat tweak this by by slightly bending the coaxial cable feeding the loop.</p>
 <figure class="align-default" id="iris-adjust-fig">
 <a class="reference internal image-reference" href="../_images/week2_iris_adjust.png"><img alt="../_images/week2_iris_adjust.png" src="../_images/week2_iris_adjust.png" style="width: 600px;"/></a>
 <figcaption>
-<p><span class="caption-number">Fig. 64 </span><span class="caption-text">(left) Picture of an iris wrapping around the looper coupler. (right) Diagram showing the degrees of freedom for optimizing the loop coupler’s position.</span><a class="headerlink" href="#iris-adjust-fig" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 64 </span><span class="caption-text">(left) Picture of an iris wrapping around the looper coupler. (right) Diagram showing the degrees of freedom for optimizing the loop coupler’s position.</span><a class="headerlink" href="#iris-adjust-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The system is still quite sensitive, so avoid knocking it once you have achieved a good alignment. It may require further tweaking after the laser has been on for some time due to thermal heating.</p>
@@ -398,7 +400,7 @@
 </div>
 </section>
 <section id="iii-run-the-experimental-sequence-and-determine-if-you-have-achieved-strong-coupling">
-<h4>iii) Run the experimental sequence and determine if you have achieved strong coupling<a class="headerlink" href="#iii-run-the-experimental-sequence-and-determine-if-you-have-achieved-strong-coupling" title="Link to this heading">#</a></h4>
+<h4>iii) Run the experimental sequence and determine if you have achieved strong coupling<a class="headerlink" href="#iii-run-the-experimental-sequence-and-determine-if-you-have-achieved-strong-coupling" title="Permalink to this heading">#</a></h4>
 <p>Now, it is time to reproduce the avoided-crossing data you have seen in the demo and in your simulation results from Aim 2!</p>
 <p>Call your TA over when you have reached this step. <strong>Remeber to put on your laser safety glasses.</strong> After your TA closes the iris (if you have not done so already) and places the safety shielding (an additional laser block) above it, the laser will be turned on to its max power. At this point, run the experimental sequence you have scripted.</p>
 <p>If the cavity quality factor is narrow enough, and the coupling strength between NV centers and the microwave resonator is sufficiently strong, the spin-cavity system should achieve strong coupling. In this case,
@@ -407,7 +409,7 @@ your 2D map should contain “kinks” at each of the three hyperfine transition
 <p>Once you have obtained data exhibiting strong coupling, try increasing the number of VNA traces being averaged over per each magnetic field strength to see if the contrast improves further.</p>
 </section>
 <section id="iv-estimate-the-sensitivity">
-<h4>iv) Estimate the sensitivity<a class="headerlink" href="#iv-estimate-the-sensitivity" title="Link to this heading">#</a></h4>
+<h4>iv) Estimate the sensitivity<a class="headerlink" href="#iv-estimate-the-sensitivity" title="Permalink to this heading">#</a></h4>
 <p>With your acquired data, please estimate the maximal magnetic field sensitivity you have achieved. The phase noise of the spectrum analyzer in the VNA is measured to be <a class="reference external" href="https://github.com/jankae/LibreVNA/blob/master/Documentation/UserManual/specsheet.pdf">-103<span class="math notranslate nohighlight">\(~\)</span>dBc/Hz </a> at 1<span class="math notranslate nohighlight">\(~\)</span>GHz (for simplicity, we will assume the noise level is the same for our frequencies).</p>
 <p>You should:</p>
 <ul class="simple">
@@ -439,7 +441,8 @@ your 2D map should contain “kinks” at each of the three hyperfine transition
     </script>
 <script>kernelName = 'python3'</script>
 </article>
-<footer class="prev-next-footer d-print-none">
+<footer class="prev-next-footer">
+<!-- Previous / next buttons -->
 <div class="prev-next-area">
 <a class="left-prev" href="T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.html" title="previous page">
 <i class="fa-solid fa-angle-left"></i>
@@ -458,8 +461,7 @@ your 2D map should contain “kinks” at each of the three hyperfine transition
 </div>
 </footer>
 </div>
-<dialog id="pst-secondary-sidebar-modal"></dialog>
-<div class="bd-sidebar-secondary bd-toc" id="pst-secondary-sidebar"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 <div class="sidebar-secondary-item">
 <div class="page-toc tocsection onthispage">
 <i class="fa-solid fa-list"></i> Contents
@@ -497,7 +499,7 @@ By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
 <div class="footer-item">
 <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2022.
       <br/>
 </p>
 </div>
@@ -511,9 +513,9 @@ By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
 </div>
 </div>
 <!-- Scripts loaded after <body> so the DOM is not blocked -->
-<script defer="" src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer="" src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+<script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 <footer class="bd-footer">
 </footer>
-<script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script></body>
+<script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script></body>
 </html>

@@ -1,133 +1,46 @@
 Traceback (most recent call last):
-  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/MIT/dkeatley/venv/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "/home/dkeathley/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 730, in _async_poll_for_reply
+    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dkeathley/anaconda3/lib/python3.11/site-packages/nbclient/util.py", line 96, in ensure_async
+    result = await obj
+             ^^^^^^^^^
+  File "/home/dkeathley/anaconda3/lib/python3.11/site-packages/jupyter_client/channels.py", line 315, in get_msg
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dkeathley/anaconda3/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-    ~~~~~~~~~^
-        nb,
-        ^^^
-    ...<4 lines>...
-        **kwargs,
-        ^^^^^^^^^
-    )
-    ^
-  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/MIT/dkeatley/venv/lib/python3.13/site-packages/nbclient/client.py", line 1319, in execute
+  File "/home/dkeathley/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 1204, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/MIT/dkeatley/venv/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
-    return loop.run_until_complete(inner)
-           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
-  File "/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dkeathley/anaconda3/lib/python3.11/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dkeathley/anaconda3/lib/python3.11/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dkeathley/anaconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
     return future.result()
-           ~~~~~~~~~~~~~^^
-  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/MIT/dkeatley/venv/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
+           ^^^^^^^^^^^^^^^
+  File "/home/dkeathley/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 663, in async_execute
     await self.async_execute_cell(
-        cell, index, execution_count=self.code_cells_executed + 1
-    )
-  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/MIT/dkeatley/venv/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
-    await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/Users/adrianariton/Desktop/Adi/Faculta/An3/MIT/dkeatley/venv/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
-    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
-nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
-------------------
-import numpy as np
-import matplotlib.pyplot as plt
-import ipywidgets as widgets
-from ipywidgets import HBox, VBox
-from IPython.display import display
-%matplotlib inline
-
-@widgets.interact_manual(
-    g0_in=(0.01, 1.),kc0_in=(1., 1000.),kc1_in=(1., 1000.),ks_in=(1., 1000.))
-def runFunc(g0_in=0.01, kc0_in = 70, kc1_in = 111, ks_in = 308):
-    kc0 = 2*np.pi*kc0_in; #kHz  Cavity linewidth
-    kc1 = 2*np.pi*kc1_in; #kHz   Cavity-loop coupling (output coupling)
-
-    ks = 2*np.pi*ks_in; #kHz  Spin coherence time
-
-
-    density_NVs = 5; #PPM Density of NV centers in the diamond, given in ppm
-    diamondDensity = 1.76e29; # atoms/m^3 Atomic density of diamond
-    density_NVs_SI = density_NVs*1e-6*diamondDensity; # NV/m^3
-
-    diamond_sample_dim_x=3e-3; # m Diamond spatial dimensions, assuming cuboid
-    diamond_sample_dim_y=3e-3; # m
-    diamond_sample_dim_z=0.5e-3; # m
-    diamond_sample_volume = diamond_sample_dim_x*diamond_sample_dim_y*diamond_sample_dim_z;
-
-    N_NVs= density_NVs_SI*diamond_sample_volume ; # the number of NVs in the diamond
-
-    g0 = g0_in*1e-3; #kHz   Coupling strength for single spin, see referenced papers
-
-    geff = g0*np.sqrt(N_NVs); # Total coupling scales as sqrt(N)
-
-
-    kc = kc0 + kc1; # Total cavity loss
-
-    xnum = 101; # number of points to plot in x
-    ynum = 121;
-
-    # initialize sweep parameters
-    wdc = np.linspace(-0.8,0.8,num=xnum)*1e3*2*np.pi;  #kHz  Detuning of the probe frequency and cavity frequency
-    wsc = np.linspace(-7.4,7.4,num=ynum)*1e3*2*np.pi;  #kHz  Detuning of the spin frequency and cavity frequency
-
-    # initialize output ararys
-    inphaseOut = np.zeros((xnum,ynum));
-    quadratureOut = np.zeros((xnum,ynum));
-
-    for ii in range(xnum):
-
-      for jj in range(ynum):
-
-        wds = wdc[ii]-wsc[jj]; #drive-spin detuning
-
-        # Cavity reflection signal from references
-        refOutput = -1 + kc1/(kc/2+1j*wdc[ii]+pow(geff,2)/(ks/2+1j*wds));
-        inphaseOut[ii][jj] = np.real(refOutput); # In-phase part of the cavity signal
-        quadratureOut[ii][jj] = np.imag(refOutput);  # Quadrature part of the cavity signal
-
-    y, x = np.meshgrid(np.linspace(-7.4,7.4,num=ynum), np.linspace(-0.8,0.8,num=xnum),)
-    fig, figAxes = plt.subplots(2,2,sharex='all', sharey='all')
-    ax1 = figAxes[0,0];
-    ax2 = figAxes[0,1];
-    ax3 = figAxes[1,0];
-    ax4 = figAxes[1,1];
-
-
-    c = ax1.pcolormesh(y, x, quadratureOut)
-    ax1.set_title(r'Q$ = \text{Im}[\Gamma]$')
-    #ax1.set_xlabel('fsc (MHz)')
-    ax1.set_ylabel('fdc (MHz)')
-    fig.colorbar(c, ax=ax1)
-
-    c = ax2.pcolormesh(y, x, inphaseOut)
-    ax2.set_title(r'I$ = \text{Re}[\Gamma]$')
-    #ax2.set_xlabel('fsc (MHz)')
-    #ax2.set_ylabel('fdc (MHz)')
-    fig.colorbar(c, ax=ax2)
-
-    c = ax3.pcolormesh(y, x, np.sqrt(pow(quadratureOut,2)+pow(inphaseOut,2)))
-    ax3.set_title(r'P$ = |\Gamma|$')
-    ax3.set_xlabel('fsc (MHz)')
-    ax3.set_ylabel('fdc (MHz)')
-    fig.colorbar(c, ax=ax3)
-
-    c = ax4.pcolormesh(y, x, np.arctan( np.divide(quadratureOut,inphaseOut)))
-    ax4.set_title(r'$\phi = \arg(\Gamma)$')
-    ax4.set_xlabel('fsc (MHz)')
-    #ax4.set_ylabel('fdc (MHz)')
-    fig.colorbar(c, ax=ax4)
-
-    plt.show()
-
-------------------
-
-
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[1], line 2[0m
-[1;32m      1[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mnumpy[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mnp[39;00m
-[0;32m----> 2[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mplt[39;00m
-[1;32m      3[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mipywidgets[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mwidgets[39;00m
-[1;32m      4[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mipywidgets[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m HBox, VBox
-
-[0;31mModuleNotFoundError[0m: No module named 'matplotlib'
+  File "/home/dkeathley/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 949, in async_execute_cell
+    exec_reply = await self.task_poll_for_reply
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dkeathley/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 754, in _async_poll_for_reply
+    await self._async_handle_timeout(timeout, cell)
+  File "/home/dkeathley/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 801, in _async_handle_timeout
+    raise CellTimeoutError.error_from_timeout_and_cell(
+nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
+The message was: Cell execution timed out.
+Here is a preview of the cell contents:
+-------------------
+['import numpy as np', 'import matplotlib.pyplot as plt', '', '# Constants and Parameters', 'Gamma = 330e3  # Inhomogeneous linewidth']
+...
+["plt.xlabel(r'$(\\omega_s-\\omega_c)/(2\\pi)$ (MHz)', fontsize=14)", "plt.ylabel(r'$(\\omega_d-\\omega_c)/(2\\pi)$ (MHz)', fontsize=14)", "plt.title(r'$|\\Gamma|^2$', fontsize=14)", '', 'plt.show()']
+-------------------
 

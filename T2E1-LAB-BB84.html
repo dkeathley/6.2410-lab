@@ -1,55 +1,54 @@
 
 <!DOCTYPE html>
 
-<html data-content_root="./" lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
 <title>LAB – QKD (Week 2) — 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
 <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
-<!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-<noscript>
-<style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-</noscript>
 <!-- Loaded before other Sphinx assets -->
-<link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet"/>
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet"/>
-<link href="_static/pygments.css?v=03e43079" rel="stylesheet" type="text/css"/>
-<link href="_static/styles/sphinx-book-theme.css?v=a3416100" rel="stylesheet" type="text/css"/>
-<link href="_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
-<link href="_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
-<link href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" rel="stylesheet" type="text/css"/>
-<link href="_static/sphinx-thebe.css?v=4fa983c6" rel="stylesheet" type="text/css"/>
-<link href="_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
-<!-- So that users can add custom icons -->
-<script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+<link href="_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link href="_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link href="_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" rel="stylesheet" type="text/css"/>
+<link href="_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="_static/sphinx-thebe.css" rel="stylesheet" type="text/css"/>
+<link href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" rel="stylesheet" type="text/css"/>
 <!-- Pre-loaded scripts that we'll load fully later -->
-<link as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" rel="preload"/>
-<link as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" rel="preload"/>
-<script src="_static/documentation_options.js?v=9eb32ce0"></script>
-<script src="_static/doctools.js?v=9a2dae69"></script>
-<script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-<script src="_static/clipboard.min.js?v=a7894cd8"></script>
-<script src="_static/copybutton.js?v=f281be69"></script>
-<script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+<link as="script" href="_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" rel="preload"/>
+<link as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" rel="preload"/>
+<script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+<script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+<script src="_static/jquery.js"></script>
+<script src="_static/underscore.js"></script>
+<script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+<script src="_static/doctools.js"></script>
+<script src="_static/clipboard.min.js"></script>
+<script src="_static/copybutton.js"></script>
+<script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
 <script>let toggleHintShow = 'Click to show';</script>
 <script>let toggleHintHide = 'Click to hide';</script>
 <script>let toggleOpenOnPrint = 'true';</script>
-<script src="_static/togglebutton.js?v=4a39c7ea"></script>
+<script src="_static/togglebutton.js"></script>
 <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-<script src="_static/design-tabs.js?v=36754332"></script>
-<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-<script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+<script src="_static/design-tabs.js"></script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+<script async="async" src="_static/sphinx-thebe.js"></script>
 <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
 <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>DOCUMENTATION_OPTIONS.pagename = 'T2E1-LAB-BB84';</script>
@@ -59,44 +58,41 @@
 <link href="T2E1-TEXT-QKD.html" rel="prev" title="TEXT – QKD (Week 2)"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="en" name="docsearch:language"/>
-<meta content="" name="docsearch:version"/>
-<link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/></head>
+<link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/></head>
 <body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
-<div class="skip-link d-print-none" id="pst-skip-link"><a href="#main-content">Skip to main content</a></div>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <div id="pst-scroll-pixel-helper"></div>
 <button class="btn rounded-pill" id="pst-back-to-top" type="button">
-<i class="fa-solid fa-arrow-up"></i>Back to top</button>
-<dialog id="pst-search-dialog">
+<i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
 <form action="search.html" class="bd-search d-flex align-items-center" method="get">
 <i class="fa-solid fa-magnifying-glass"></i>
-<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
+<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
 <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-</dialog>
-<div class="pst-async-banner-revealer d-none">
-<aside aria-label="Version warning" class="d-none d-print-none" id="bd-header-version-warning"></aside>
+</form></div>
 </div>
-<header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-</header>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar">
+</nav>
 <div class="bd-container">
 <div class="bd-container__inner bd-page-width">
-<dialog id="pst-primary-sidebar-modal"></dialog>
-<div class="bd-sidebar-primary bd-sidebar" id="pst-primary-sidebar">
+<div class="bd-sidebar-primary bd-sidebar">
 <div class="sidebar-header-items sidebar-primary__section">
 </div>
 <div class="sidebar-primary-items__start sidebar-primary__section">
 <div class="sidebar-primary-item">
 <a class="navbar-brand logo" href="intro.html">
-<img alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home" class="logo__image only-light" src="_static/logo-ibm.jpg"/>
-<img alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home" class="logo__image only-dark pst-js-only" src="_static/logo-ibm.jpg"/>
+<img alt="Logo image" class="logo__image only-light" src="_static/logo-ibm.jpg"/>
+<script>document.write(`<img src="_static/logo-ibm.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
 </a></div>
-<div class="sidebar-primary-item">
-<button aria-label="Search" class="btn search-button-field search-button__button pst-js-only" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Search">
-<i class="fa-solid fa-magnifying-glass"></i>
-<span class="search-button__default-text">Search</span>
-<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
-<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links bd-docs-nav">
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
 <div class="bd-toc-item navbar-nav active">
 <ul class="nav bd-sidenav bd-sidenav__home-link">
 <li class="toctree-l1">
@@ -147,21 +143,19 @@
 </nav></div>
 </div>
 <div class="sidebar-primary-items__end sidebar-primary__section">
-<div class="sidebar-primary-item">
-<div class="flat" data-ea-manual="true" data-ea-publisher="readthedocs" data-ea-type="readthedocs-sidebar" id="ethical-ad-placement">
-</div></div>
 </div>
+<div id="rtd-footer-container"></div>
 </div>
-<main class="bd-main" id="main-content" role="main">
+<main class="bd-main" id="main-content">
 <div class="sbt-scroll-pixel-helper"></div>
 <div class="bd-content">
 <div class="bd-article-container">
-<div class="bd-header-article d-print-none">
+<div class="bd-header-article">
 <div class="header-article-items header-article__inner">
 <div class="header-article-items__start">
-<div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle primary sidebar">
+<div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__primary" title="Toggle primary sidebar">
 <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
 </div>
 <div class="header-article-items__end">
 <div class="header-article-item">
@@ -171,16 +165,16 @@
 <i class="fas fa-rocket"></i>
 </button>
 <ul class="dropdown-menu">
-<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/T2E1-LAB-BB84.ipynb" target="_blank" title="Launch on Binder">
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/T2E1-LAB-BB84.ipynb" target="_blank" title="Launch onBinder">
 <span class="btn__icon-container">
-<img alt="Binder logo" src="_static/images/logo_binder.svg"/>
+<img src="_static/images/logo_binder.svg"/>
 </span>
 <span class="btn__text-container">Binder</span>
 </a>
 </li>
-<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/T2E1-LAB-BB84.ipynb" target="_blank" title="Launch on Colab">
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/T2E1-LAB-BB84.ipynb" target="_blank" title="Launch onColab">
 <span class="btn__icon-container">
-<img alt="Colab logo" src="_static/images/logo_colab.png"/>
+<img src="_static/images/logo_colab.png"/>
 </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -235,17 +229,25 @@
 <i class="fas fa-expand"></i>
 </span>
 </button>
-<button aria-label="Color mode" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" data-bs-placement="bottom" data-bs-title="Color mode" data-bs-toggle="tooltip">
-<i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
-<i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
-<i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
-</button>
-<button aria-label="Search" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Search">
-<i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle secondary sidebar">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__secondary" title="Toggle secondary sidebar">
 <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
 </div>
 </div>
@@ -284,23 +286,23 @@
 </div>
 </div>
 <div id="searchbox"></div>
-<article class="bd-article">
+<article class="bd-article" role="main">
 <section class="tex2jax_ignore mathjax_ignore" id="lab-qkd-week-2">
-<h1>LAB – QKD (Week 2)<a class="headerlink" href="#lab-qkd-week-2" title="Link to this heading">#</a></h1>
+<h1>LAB – QKD (Week 2)<a class="headerlink" href="#lab-qkd-week-2" title="Permalink to this heading">#</a></h1>
 <p>Now that you know how to operate the quED, we want you to take your knowledge of QKD and generate a key via BB84. To do this efficiently, you’ll be developing Python scripts to perform taking the data and to do the post-processing. We’ve provided you with some barebones scripts to get you started. You should verify that they work as expected, and you can make any changes you wish.</p>
 <section id="process-for-this-lab">
-<h2>Process for this lab<a class="headerlink" href="#process-for-this-lab" title="Link to this heading">#</a></h2>
+<h2>Process for this lab<a class="headerlink" href="#process-for-this-lab" title="Permalink to this heading">#</a></h2>
 <p>quTools provides implementation details on how to do BB84 with the quED that can be found on pages 11 - 13 of their <a class="reference external" href="https://www.qutools.com/files/quED/quED-QKD-manual.pdf">QKD manual</a>. In terms of what you’ll accomplish in your lab sessions, you’ll follow these steps:</p>
 <ol class="arabic simple">
-<li><p>Verify that Alice is sending an appropriate <a class="reference internal" href="#Mean-photon-number"><span class="xref myst">number of photons</span></a> to Bob.</p></li>
-<li><p>Establish a method for Alice to <a class="reference internal" href="#Encode-bits"><span class="xref myst">encode bits</span></a> and Bob to decode them</p></li>
-<li><p>Based on your setup, construct a <a class="reference internal" href="#Build-a-model"><span class="xref myst">model</span></a> and estimate the secret key rate (SKR) you expect to see.</p></li>
-<li><p>Generate a raw key, including <a class="reference internal" href="#Take-data"><span class="xref myst">taking data</span></a> and <a class="reference internal" href="#Bit-sifting"><span class="xref myst">sifting the bits</span></a></p></li>
-<li><p>Perform post-processing with provided <a class="reference internal" href="#Information-Reconciliation/Error-Correction"><span class="xref myst">Information Reconciliation/Error Correction</span></a> and <a class="reference internal" href="#Privacy-Amplification"><span class="xref myst">Privacy Amplification</span></a> scripts.</p></li>
+<li><p>Verify that Alice is sending an appropriate <span class="xref myst">number of photons</span> to Bob.</p></li>
+<li><p>Establish a method for Alice to <span class="xref myst">encode bits</span> and Bob to decode them</p></li>
+<li><p>Based on your setup, construct a <span class="xref myst">model</span> and estimate the secret key rate (SKR) you expect to see.</p></li>
+<li><p>Generate a raw key, including <span class="xref myst">taking data</span> and <span class="xref myst">sifting the bits</span></p></li>
+<li><p>Perform post-processing with provided <span class="xref myst">Information Reconciliation/Error Correction</span> and <span class="xref myst">Privacy Amplification</span> scripts.</p></li>
 </ol>
 </section>
 <section id="aims-in-the-lab">
-<h2>Aims in the lab<a class="headerlink" href="#aims-in-the-lab" title="Link to this heading">#</a></h2>
+<h2>Aims in the lab<a class="headerlink" href="#aims-in-the-lab" title="Permalink to this heading">#</a></h2>
 <p>As you work on the above process, keep in mind the following topics you’ll need to discuss in your write-up:</p>
 <ol class="arabic simple">
 <li><p>Justify the security of your set-up</p></li>
@@ -310,17 +312,17 @@
 </ol>
 </section>
 <section id="lab-timeline">
-<h2>Lab Timeline<a class="headerlink" href="#lab-timeline" title="Link to this heading">#</a></h2>
+<h2>Lab Timeline<a class="headerlink" href="#lab-timeline" title="Permalink to this heading">#</a></h2>
 <p>This lab is not explicitly broken up by day.  Typically, the first day of this lab is used to develop the needed codebase for your QKD measurements (adapting from what is provided).  This would include code for calibration, and the sending, receiving, and sifting of the secret key.</p>
 <p>The second day is then used to send and recieve data, learning about the importance of various settings in the bit error rate and efficiency of sending your secret key.  It would also be used to complete the remainder of the lab, including the exercises at the end on error correction and privacy amplification.</p>
 </section>
 <section id="mean-photon-number">
-<h2>Mean photon number<a class="headerlink" href="#mean-photon-number" title="Link to this heading">#</a></h2>
+<h2>Mean photon number<a class="headerlink" href="#mean-photon-number" title="Permalink to this heading">#</a></h2>
 <p>Last week you spent some time finding <span class="math notranslate nohighlight">\(g^{(2)}(0)\)</span> of the SPDC source and looking at the mean number of photons in a pulse. The motivation for doing that was to verify we had an appropriate source for our QKD setup. This is important because…</p>
 <section id="bb84-s-security-is-based-on-the-no-cloning-theorem">
-<h3>BB84’s security is based on the no-cloning theorem<a class="headerlink" href="#bb84-s-security-is-based-on-the-no-cloning-theorem" title="Link to this heading">#</a></h3>
-<p>The no-cloning theorem states that for a given quanta in a superposition of eigenstates, it’s impossible to produce a perfect copy. For more information, see eg <a class="reference internal" href="#%22https://www.nature.com/articles/299802a0%22"><span class="xref myst">Wootters and Zurek 1982</span></a> or <a class="reference internal" href="#%22https://www.sciencedirect.com/science/article/pii/0375960182900846?via%3Dihub%22"><span class="xref myst">Dieks 1982</span></a>. In short, it means that if eavesdropper Eve listens in by: (1) intercepting the photons Alice sends to Bob; (2) measuring them; and (3) then pretending to be Alice by sending identical photons to Bob, she’ll create errors in the system that Alice and Bob can detect.</p>
-<p>When Alice sends more than one photon to Bob, Eve can perform a photon number splitting attack, which you can read more about in <a class="reference internal" href="#%22https://doi.org/10.1103/PhysRevLett.85.1330%22"><span class="xref myst">Brassard, Lutkenhaus, Mor, Sanders 2000</span></a></p>
+<h3>BB84’s security is based on the no-cloning theorem<a class="headerlink" href="#bb84-s-security-is-based-on-the-no-cloning-theorem" title="Permalink to this heading">#</a></h3>
+<p>The no-cloning theorem states that for a given quanta in a superposition of eigenstates, it’s impossible to produce a perfect copy. For more information, see eg <span class="xref myst">Wootters and Zurek 1982</span> or <span class="xref myst">Dieks 1982</span>. In short, it means that if eavesdropper Eve listens in by: (1) intercepting the photons Alice sends to Bob; (2) measuring them; and (3) then pretending to be Alice by sending identical photons to Bob, she’ll create errors in the system that Alice and Bob can detect.</p>
+<p>When Alice sends more than one photon to Bob, Eve can perform a photon number splitting attack, which you can read more about in <span class="xref myst">Brassard, Lutkenhaus, Mor, Sanders 2000</span></p>
 <p>The HBT set-up showed us that using just one output from the SPDC isn’t a true single photon source. So, we can approximate that by modeling it as a weak pulse with Poissonian statistics.</p>
 <p>Recall that for a Poisson distribution with mean value <span class="math notranslate nohighlight">\(\lambda\)</span> the probability of obtaining value k is given by</p>
 <div class="math notranslate nohighlight">
@@ -334,12 +336,12 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estimate the probability of getting more than k photons</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">scipy</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">poisson</span>
+<span class="kn">import</span> <span class="nn">scipy</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">poisson</span>
 
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">gt</span><span class="p">(</span><span class="n">kk</span><span class="p">,</span><span class="n">mu</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">gt</span><span class="p">(</span><span class="n">kk</span><span class="p">,</span><span class="n">mu</span><span class="p">):</span>
     <span class="n">xx</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">poisson</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="n">kk</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="n">mu</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">xx</span>
 
@@ -360,7 +362,7 @@
 </section>
 </section>
 <section id="encode-bits">
-<h2>Encode bits<a class="headerlink" href="#encode-bits" title="Link to this heading">#</a></h2>
+<h2>Encode bits<a class="headerlink" href="#encode-bits" title="Permalink to this heading">#</a></h2>
 <p>As you recall from your reading, BB84 uses linear polarization to encode bits. The two bases are <span class="math notranslate nohighlight">\(\left[ \H, \V \right]\)</span> (horizontal and vertical) and <span class="math notranslate nohighlight">\(\left[ \D, \AD \right]\)</span> (diagonal and anti-diagonal). For the sake of this lab, the default is that photons in the state <span class="math notranslate nohighlight">\(\H\)</span> or <span class="math notranslate nohighlight">\(\D\)</span> are <code class="docutils literal notranslate"><span class="pre">0</span></code> while photons in <span class="math notranslate nohighlight">\(\V\)</span> or <span class="math notranslate nohighlight">\(\AD\)</span> are <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -374,13 +376,13 @@
 <figure class="align-default" id="bb84-setup">
 <a class="reference internal image-reference" href="_images/qued-bb84-setup.png"><img alt="_images/qued-bb84-setup.png" src="_images/qued-bb84-setup.png" style="width: 600px;"/></a>
 <figcaption>
-<p><span class="caption-number">Fig. 49 </span><span class="caption-text">Setup for BB84 using the QuED.</span><a class="headerlink" href="#bb84-setup" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 49 </span><span class="caption-text">Setup for BB84 using the QuED.</span><a class="headerlink" href="#bb84-setup" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>As you can see in the above figure, with the default quED implementation Bob’s terminal is simply a polarizer and a detector. That means that for each bit, Bob has to choose a basis and a value to perform his measurement.</p>
 <p>Consider an example with a lossless system. If Alice sends a bit with value <code class="docutils literal notranslate"><span class="pre">1</span></code> in the <span class="math notranslate nohighlight">\(\left[ \D, \AD \right]\)</span> basis and Bob decides to measure in the <span class="math notranslate nohighlight">\(\left[ \D, \AD \right]\)</span> basis but has his polarizer set to <span class="math notranslate nohighlight">\(\D\)</span> (which is <code class="docutils literal notranslate"><span class="pre">0</span></code>) he won’t get a click. Even though Alice and Bob are using the same basis, they won’t get a bit for their raw key from that photon.</p>
 <section id="assign-random-values">
-<h3>Assign random values<a class="headerlink" href="#assign-random-values" title="Link to this heading">#</a></h3>
+<h3>Assign random values<a class="headerlink" href="#assign-random-values" title="Permalink to this heading">#</a></h3>
 <p>The first step is generating the random bits that Alice will send Bob as well as generating the order of which basis Alice will use to transmit each bit and which basis and bit Bob will use to measure it. For the sake of the course, we’ll use Python’s pseudorandom number generator to make all the choices.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -388,9 +390,9 @@
 
 <span class="c1"># Generate the basis and bit values for each bit from Alice and Bob</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">LENGTH</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 
@@ -434,24 +436,10 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">LENGTH</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="c1"># Are we using PBS and 2 detectors? The default is False</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named 'matplotlib'
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="set-correct-polarization">
-<h3>Set correct polarization<a class="headerlink" href="#set-correct-polarization" title="Link to this heading">#</a></h3>
+<h3>Set correct polarization<a class="headerlink" href="#set-correct-polarization" title="Permalink to this heading">#</a></h3>
 <p>Unless you want to rotate the half wave plate (HWP) and polarizer manually for every single bit, you’re going to want to make sure you can control polarization optics via a Python script. We’ve provided a basic script for you below, which you can edit as you see fit.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -460,7 +448,7 @@
 </section>
 </section>
 <section id="build-a-model">
-<h2>Build a model<a class="headerlink" href="#build-a-model" title="Link to this heading">#</a></h2>
+<h2>Build a model<a class="headerlink" href="#build-a-model" title="Permalink to this heading">#</a></h2>
 <p>Now that you know how to encode bits, it would be helpful to estimate what you expect to see in terms of a secret key rate.</p>
 <p>To start with, consider the following questions to determine the raw key:</p>
 <ul class="simple">
@@ -471,17 +459,17 @@
 <p>After you’ve done that, consider how many bits you sacrifice for error correction and privacy amplification, which you may want to wait to do once you’ve taken data and performed the post-processing.</p>
 </section>
 <section id="take-data">
-<h2>Take data<a class="headerlink" href="#take-data" title="Link to this heading">#</a></h2>
+<h2>Take data<a class="headerlink" href="#take-data" title="Permalink to this heading">#</a></h2>
 <p>Now you have all the pieces you need to take data! The cell immediately below this one is ready for you to define a function and get the data you need to create the raw key.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">urllib.request</span><span class="w"> </span><span class="kn">import</span> <span class="n">urlopen</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">requests.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">PreparedRequest</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">lxml</span><span class="w"> </span><span class="kn">import</span> <span class="n">html</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+<span class="kn">from</span> <span class="nn">requests.models</span> <span class="kn">import</span> <span class="n">PreparedRequest</span>
+<span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">html</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">time</span>
 
 <span class="c1"># User Parameters</span>
 <span class="n">integrationTimeValue</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1"># Integration time in ms, min = 100, max = 10000</span>
@@ -496,7 +484,7 @@
 <span class="n">countRate</span> <span class="o">=</span> <span class="s2">"cnt"</span>
 <span class="n">moterRef</span> <span class="o">=</span> <span class="s2">"mref"</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">quED_Access</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="n">reply</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="p">[]):</span>
+<span class="k">def</span> <span class="nf">quED_Access</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="n">reply</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="p">[]):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Function that accesses QED via an ethernet connection</span>
 <span class="sd">    Inputs:</span>
@@ -511,7 +499,7 @@
 <span class="sd">        finalData.data - data from measured channel</span>
 <span class="sd">    """</span>
     
-    <span class="k">class</span><span class="w"> </span><span class="nc">finalData</span><span class="p">:</span>
+    <span class="k">class</span> <span class="nc">finalData</span><span class="p">:</span>
         <span class="k">pass</span>
     
     <span class="c1"># For reading values out</span>
@@ -569,12 +557,12 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">urllib.request</span><span class="w"> </span><span class="kn">import</span> <span class="n">urlopen</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">requests.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">PreparedRequest</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span><span class="w"> </span><span class="nn">lxml</span><span class="w"> </span><span class="kn">import</span> <span class="n">html</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">requests.models</span> <span class="kn">import</span> <span class="n">PreparedRequest</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">html</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">re</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">import</span> <span class="nn">time</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named 'lxml'
 </pre></div>
@@ -586,7 +574,7 @@
 <p><strong>You need to modify this code for it to work for you!</strong>  First of all, you need to take into account your particular setup with only a polarizer.  Second, you might consider if a delay is needed to ensure the moving elements get to where they need to be before a measurement takes place (you can try if this is necessary or not).  Third, if there is an offset in angles you found in calibration, you will want to account for this somehow.  Basically, take this as an example, but you are responsible for developing it into the final, working version.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">QKD_exp</span><span class="p">(</span><span class="n">alice_bases</span><span class="p">,</span> <span class="n">bob_bases</span><span class="p">,</span> <span class="n">int_time</span><span class="p">,</span> <span class="n">det_H_index</span><span class="p">,</span> <span class="n">det_V_index</span><span class="p">,</span> <span class="n">num_trials</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">QKD_exp</span><span class="p">(</span><span class="n">alice_bases</span><span class="p">,</span> <span class="n">bob_bases</span><span class="p">,</span> <span class="n">int_time</span><span class="p">,</span> <span class="n">det_H_index</span><span class="p">,</span> <span class="n">det_V_index</span><span class="p">,</span> <span class="n">num_trials</span><span class="p">):</span>
 
     <span class="n">detector_H</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">detector_V</span> <span class="o">=</span> <span class="p">[]</span>
@@ -641,7 +629,7 @@
 </div>
 </section>
 <section id="bit-sifting">
-<h2>Bit sifting<a class="headerlink" href="#bit-sifting" title="Link to this heading">#</a></h2>
+<h2>Bit sifting<a class="headerlink" href="#bit-sifting" title="Permalink to this heading">#</a></h2>
 <p>Now that Alice has finished transmitting and Bob has finished measuring, they need to find cases where Alice sent a photon in the same polarization as Bob measured.</p>
 <p>In short, the sifting needs to step through the following questions:</p>
 <ol class="arabic simple">
@@ -652,7 +640,7 @@ and then discard any bits that don’t meet both criteria.</p></li>
 <p>As before, some code is provided below to get you started.</p>
 </section>
 <section id="information-reconciliation-error-correction">
-<h2>Information Reconciliation/Error Correction<a class="headerlink" href="#information-reconciliation-error-correction" title="Link to this heading">#</a></h2>
+<h2>Information Reconciliation/Error Correction<a class="headerlink" href="#information-reconciliation-error-correction" title="Permalink to this heading">#</a></h2>
 <p>Alice and Bob want to make sure that any errors in their key are corrected, but they don’t want Eve to get too much information. The figure of merit for information reconiciliation/error correction is bit error rate (BER), the ratio of bits that are incorrect.</p>
 <p>A basic error correction scheme is provided below. It is adapted from “Error Correction for Quantum Key Distribution” in Loepp and Wootters <a class="reference external" href="https://www.cambridge.org/core/books/abs/protecting-information/quantum-cryptography-revisited/8A88AA6C8C88E8A07E535FACEDE3C310">book available online with MIT Library sign in</a>.  You should read this section as well as the discussion on privacy amplification.  This is not meant to be a general introduction to error correction, but rather to provide an example approach so that you can see the basics of how error correction might be used.</p>
 <p>It first estimates the raw BER by having Alice and Bob compare the first <code class="docutils literal notranslate"><span class="pre">length_reveal</span></code> bits over a classical channel. Eve gets all the information Alice and Bob share over the classical channel, so Alice and Bob throw away those bits as they are no longer secret.</p>
@@ -707,7 +695,7 @@ and then discard any bits that don’t meet both criteria.</p></li>
 
 <span class="c1"># Define the error correction functions we'll need</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">errCor</span><span class="p">(</span><span class="n">err_mat</span><span class="p">,</span><span class="n">H</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">errCor</span><span class="p">(</span><span class="n">err_mat</span><span class="p">,</span><span class="n">H</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
     <span class="c1"># Multiply Alice's bits a by H</span>
     <span class="n">at</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
     <span class="n">Hat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">at</span><span class="p">)</span>
@@ -740,7 +728,7 @@ and then discard any bits that don’t meet both criteria.</p></li>
     <span class="n">bc</span> <span class="o">=</span> <span class="n">b</span> <span class="o">^</span> <span class="n">ev</span>
     <span class="k">return</span> <span class="n">bc</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">makeErrMat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">H</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">makeErrMat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">H</span><span class="p">):</span>
     <span class="n">err_mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="p">))</span>
 
     <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -821,7 +809,7 @@ and then discard any bits that don’t meet both criteria.</p></li>
 </div>
 </section>
 <section id="privacy-amplification">
-<h2>Privacy Amplification<a class="headerlink" href="#privacy-amplification" title="Link to this heading">#</a></h2>
+<h2>Privacy Amplification<a class="headerlink" href="#privacy-amplification" title="Permalink to this heading">#</a></h2>
 <p>In this set-up, Eve isn’t interacting with the optical set-up, so the only information she has is what Alice and Bob share via the classical channel.
 So, following pg 184 from “Error Correction for Quantum Key Distribution” in Loepp and Wootters <a class="reference external" href="https://www.cambridge.org/core/books/abs/protecting-information/quantum-cryptography-revisited/8A88AA6C8C88E8A07E535FACEDE3C310">book available online with MIT Library sign in</a>, we simply get rid of the last 3 bits of each of the 7-word chunks, and Eve will have no information about Alice and Bob’s shared key.  As discussed in the reference, this removes the problematic bits about which information might have been inadvertently shared.</p>
 <p>There are a variety of ways to perform error correction and privacy amplification. The privacy amplification needs to take into account how the error correction is done: if Alice and Bob reveal more information (which would allow the error correction to work for a worse qBER) they need to eliminate more bits to thwart Eve.  Again, this exercise is only meant to introduce a basic approach.</p>
@@ -840,7 +828,7 @@ So, following pg 184 from “Error Correction for Quantum Key Distribution” in
 </div>
 </section>
 <section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
 <p>In your write-up, think about one way you could improved the SKR using commerically available components. How practical is the component for the speed-up?</p>
 </section>
 </section>
@@ -864,7 +852,8 @@ So, following pg 184 from “Error Correction for Quantum Key Distribution” in
     </script>
 <script>kernelName = 'python3'</script>
 </article>
-<footer class="prev-next-footer d-print-none">
+<footer class="prev-next-footer">
+<!-- Previous / next buttons -->
 <div class="prev-next-area">
 <a class="left-prev" href="T2E1-TEXT-QKD.html" title="previous page">
 <i class="fa-solid fa-angle-left"></i>
@@ -883,8 +872,7 @@ So, following pg 184 from “Error Correction for Quantum Key Distribution” in
 </div>
 </footer>
 </div>
-<dialog id="pst-secondary-sidebar-modal"></dialog>
-<div class="bd-sidebar-secondary bd-toc" id="pst-secondary-sidebar"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 <div class="sidebar-secondary-item">
 <div class="page-toc tocsection onthispage">
 <i class="fa-solid fa-list"></i> Contents
@@ -923,7 +911,7 @@ By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
 <div class="footer-item">
 <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2022.
       <br/>
 </p>
 </div>
@@ -937,9 +925,9 @@ By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
 </div>
 </div>
 <!-- Scripts loaded after <body> so the DOM is not blocked -->
-<script defer="" src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer="" src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+<script src="_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 <footer class="bd-footer">
 </footer>
-<script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script></body>
+<script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script><script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script><script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script></body>
 </html>

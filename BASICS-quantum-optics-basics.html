@@ -541,7 +541,7 @@ document.write(`
 <h2>Commutation Relation<a class="headerlink" href="#commutation-relation" title="Link to this heading">#</a></h2>
 <p>It’s important to note that the annihilation and creation operators <strong>do not</strong> commute.  They have the following commutation relation</p>
 <div class="math notranslate nohighlight">
-\[ [\ahat_m, \adagger_n] \equiv \ahat_m \adagger_n - \adagger_m\ahat_n = \delta_{mn}, \]</div>
+\[ [\ahat_m, \adagger_n] \equiv \ahat_m \adagger_n - \adagger_n\ahat_m = \delta_{mn}, \]</div>
 <p>where <span class="math notranslate nohighlight">\(\delta_{mn} = 1\)</span> if <span class="math notranslate nohighlight">\(m = n\)</span> and <span class="math notranslate nohighlight">\(\delta_{mn} = 0\)</span> if <span class="math notranslate nohighlight">\(m \neq n\)</span>.</p>
 <p>This relation can be quite useful, in particular for ensuring operators are in “normal order” which we will describe in detail when reviewing the coherent state below.</p>
 </section>
@@ -576,7 +576,7 @@ document.write(`
 <h3>Relating the Field Operators to Classical Electromagnetic Waves<a class="headerlink" href="#relating-the-field-operators-to-classical-electromagnetic-waves" title="Link to this heading">#</a></h3>
 <p>To get a better sense for these operators, let’s consider the electric field of a classical light wave.  For a single frequency at one point in space, we can write the field as</p>
 <div class="math notranslate nohighlight">
-\[ E(t) = |\alpha|\cos(\omega_0 t + \varphi) \mathrm{.}\]</div>
+\[ E(t) = |\alpha|\cos(-\omega_0 t + \varphi) \mathrm{.}\]</div>
 <p>There are three important paramters that describe such a wave:</p>
 <ol class="arabic simple">
 <li><p>The central frequency <span class="math notranslate nohighlight">\(\omega_0\)</span></p></li>
@@ -585,7 +585,7 @@ document.write(`
 </ol>
 <p>However, by phasor analysis, we can also write the field as</p>
 <div class="math notranslate nohighlight">
-\[E(t) = \mathrm{Re}\lbrace \alpha e^{i\omega_0 t} \rbrace \mathrm{,}\]</div>
+\[E(t) = \mathrm{Re}\lbrace \alpha e^{-i\omega_0 t} \rbrace \mathrm{,}\]</div>
 <p>where</p>
 <div class="math notranslate nohighlight">
 \[\alpha = |\alpha|e^{i\varphi} = \mathrm{Re} \lbrace \alpha \rbrace + i\mathrm{Im} \lbrace \alpha \rbrace \mathrm{.}\]</div>

@@ -1,110 +1,187 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
-<title>Activity 3: SPDC Simulation by QuTip — 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
-<script data-cfasync="false">
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Activity 3: SPDC Simulation by QuTip &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+  
+  
+  
+  <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-<!-- Loaded before other Sphinx assets -->
-<link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
-<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
-<link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
-<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
-<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
-<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
-<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
-<link href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" rel="stylesheet" type="text/css"/>
-<link href="../_static/togglebutton.css" rel="stylesheet" type="text/css"/>
-<link href="../_static/copybutton.css" rel="stylesheet" type="text/css"/>
-<link href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
-<link href="../_static/sphinx-thebe.css" rel="stylesheet" type="text/css"/>
-<link href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" rel="stylesheet" type="text/css"/>
-<!-- Pre-loaded scripts that we'll load fully later -->
-<link as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" rel="preload"/>
-<link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" rel="preload"/>
-<script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
-<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-<script src="../_static/jquery.js"></script>
-<script src="../_static/underscore.js"></script>
-<script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-<script src="../_static/doctools.js"></script>
-<script src="../_static/clipboard.min.js"></script>
-<script src="../_static/copybutton.js"></script>
-<script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-<script>let toggleHintShow = 'Click to show';</script>
-<script>let toggleHintHide = 'Click to hide';</script>
-<script>let toggleOpenOnPrint = 'true';</script>
-<script src="../_static/togglebutton.js"></script>
-<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-<script src="../_static/design-tabs.js"></script>
-<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-<script async="async" src="../_static/sphinx-thebe.js"></script>
-<script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-<script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script type="application/vnd.jupyter.widget-state+json">{"state": {"9068d35c01184d34a2f5c595ce062fe6": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ac50d7f54cc84debb4339396bb05c7fb": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "b5c19bac71d9419ea0975478181b95ed": {"model_name": "IntSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "IntSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "IntSliderView", "behavior": "drag-tap", "continuous_update": false, "description": "Time index:", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_9068d35c01184d34a2f5c595ce062fe6", "max": 1000, "min": 0, "orientation": "horizontal", "readout": true, "readout_format": "d", "step": 1, "style": "IPY_MODEL_ac50d7f54cc84debb4339396bb05c7fb", "tabbable": null, "tooltip": null, "value": 500}}, "3c543fcba65b479095d670149805390d": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "4a5602ff71454e6397924907d463f9dc": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_b5c19bac71d9419ea0975478181b95ed", "IPY_MODEL_4a69683c466041a984421d22a47aa45a"], "layout": "IPY_MODEL_3c543fcba65b479095d670149805390d", "tabbable": null, "tooltip": null}}, "73b1181be19543afa3b5bb78f46c1c7e": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "4a69683c466041a984421d22a47aa45a": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_73b1181be19543afa3b5bb78f46c1c7e", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {}, "data": {"text/plain": "<Figure size 800x500 with 2 Axes>", "image/png": "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traDfv8dd9yR0aNHZ9CgQUmSWbNmZe3atQdcAwCHxn4AqH0180zFO73++utJ0vHD93+rr6/Pvffemw0bNuSiiy5Ke3t7fvazn+Wss87KnDlzOl0Yh+Ltt99OW1tbZs6cud/xmTNnprW19ZBuY/jw4Wltbc3u3buzb9++PPjggznxxBO7NA8AB7IfAGpPzTxT8b9VKpUsWLAgH//4xzN+/PhOz2loaMjq1atzxhln5IILLsijjz6aGTNm5Oabb+7y/W7bti379u3LsGHD9js+bNiwgz5l/k6nnXZazj333EyaNCn19fWZMWNG5syZ0+m5N954Y2688cbs27evyzMD9Ca9ZT8kdgTQvdRkVFx22WV54okn8m//9m/vel5jY2Nuv/32nHnmmTnhhBNyyy23pK6urvj+33kblUrlsG530aJFWbRo0a89r6WlJS0tLdmxY0cGDhx42HMC9Da9ZT8kdgTQvdTcy58+97nP5fvf/35+9KMf5bjjjnvXc1955ZVceumlmT17dt58881ceeWVRfd97LHHpk+fPgc86rR169YDHp0C4DfLfgCoXTUTFZVKJZdddlnuvPPOrF69OiNHjnzX87dt25YZM2Zk7NixHd/zne98JwsXLuzyDP369UtTU1NWrly53/GVK1fm9NNP7/LtAtB19gNA7auZlz+1tLTk29/+dr73ve/lmGOO6Xg0aODAgTn66KP3O7e9vT3nnHNORowYkRUrVqRv374ZO3ZsVq1alenTp+cjH/lIp49K7dy5M5s3b+74/Nlnn83GjRszaNCgNDY2JkkWLFiQuXPnZvLkyZk6dWqWLVuWLVu2ZP78+e/h1QNwMPYDQO2rmahYunRpkuQTn/jEfsdvvfXW/Nmf/dl+x+rr67N48eJMmzYt/fr16zg+YcKErFq1KoMHD+70PtavX5/p06d3fL5gwYIkybx583LbbbclSc4///y89tprueaaa/LSSy9l/PjxuffeezNixIjCKwSgK+wHgNpXM1FRqVQO6/xPfvKTnR4/9dRTD/o9n/jEJw7pfj772c/ms5/97GHNA8B7w34AqH01854KAACgexIVAABAEVEBAAAUERUAAEARUQEAABQRFQAAQBFRAQAAFBEVAABAEVEBAAAUERUAAEARUQEAABQRFQAAQBFRAQAAFBEVAABAEVEBAAAUERUAAEARUQEAABQRFQAAQBFRAQAAFBEVAABAEVEBAAAUERUAAEARUQEAABQRFQAAQBFRAQAAFBEVAABAEVEBAAAUERUAAEARUQEAABQRFQAAQBFRAQAAFBEVAABAEVEBAAAUERUAAEARUQEAABQRFQAAQBFRAQAAFBEVAABAEVEBAAAUERUAAEARUQEAABQRFQAAQBFRAQAAFBEVAABAEVEBAAAUERUAAEARUQEAABQRFQAAQBFRAQAAFBEVAABAEVEBAAAUERUAAEARUQEAABQRFQAAQBFRAQAAFBEVAABAEVEBAAAUERUAAEARUQEAABQRFQAAQBFRAQAAFBEVAABAEVEBAAAUERUAAEARUQEAABQRFQAAQBFRAQAAFBEVAABAEVEBAAAUERUAAEARUQEAABQRFQAAQBFRAQAAFBEVAABAEVEBAAAUERUAAEARUQEAABQRFQAAQBFRAQAAFBEVAABAEVEBAAAUERUAAEARUQEAABQRFQAAQBFRAQAAFBEVAABAEVEBAAAUERUAAEARUQEAABQRFQAAQBFRAQAAFBEVAABAEVEBAAAUERUAAEARUQEAABQRFQAAQBFRAQAAFBEVAABAEVEBAAAUERUAAEARUQEAABQRFQAAQBFRAQAAFBEVAABAEVEBAAAUERUAAEARUQEAABQRFQAAQBFRAQAAFBEVAABAEVEBAAAUERUAAEARUQEAABQRFQAAQBFRAQAAFBEVAABAEVEBAAAUERUAAEARUQEAABQRFQAAQBFRAQAAFBEVAABAEVEBAAAUERUAAEARUQEAABQRFQAAQBFRAQAAFBEVAABAEVEBAAAUERUAAEARUQEAABQRFQAAQBFRAQAAFBEVR8j111+fk08+OePGjcvll1+eSqVS7ZEAqBF2BNDTiYoj4NVXX82SJUvS1taWTZs2pa2tLWvXrq32WADUADsC6A36VnuAnmLv3r3ZvXt3kmTPnj0ZOnRolScCoFbYEUBP1yueqVizZk1mz56dhoaG1NXV5e677z7gnJtuuikjR45M//7909TUlIcffviQb3/IkCFZuHBhGhsb09DQkLPPPjujRo06glcAwHvFjgAo1yuiYteuXZk4cWKWLFnS6ddXrFiRK664IldffXU2bNiQadOmpbm5OVu2bOk4p6mpKePHjz/g48UXX8z27dtzzz335LnnnssLL7yQ1tbWrFmz5jd1eQAU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LFu2bMn8+fOrPdph27lzZzZv3tzx+bPPPpuNGzdm0KBBaWxsrOJkh6+lpSXf/va3873vfS/HHHNMx6OFAwcOzNFHH13l6Q7f3/zN36S5uTnDhw/PG2+8keXLl+fBBx/M/fffX+3RuuSYY4454LXLH/jABzJ48OBu+ZrmhQsXZvbs2WlsbMzWrVvz5S9/OTt27Mi8efOqPRpV1JP2Q2JH1LKetCPsh06U/QIqupMbb7yxMmLEiEq/fv0qv/M7v9NtfyXdj370o0qSAz7mzZtX7dEOW2fXkaRy6623Vnu0LvmLv/iLjv/HhgwZUpkxY0blhz/8YbXHOqK6868MPP/88ysf/vCHK+973/sqDQ0NlU9/+tOVJ598stpjUQN6yn6oVOyIWtbTd0Rv3w91lUqlciQKBwAA6J28pwIAACgiKgAAgCKiAgAAKCIqAACAIqICAAAoIioAAIAiogIAACgiKgAAgCKiAgAAKCIqoJvYvHlz6urq8oMf/CAzZszI+9///px44on593//92qPBkAV2Q/UAlEB3cTjjz+eurq6/OM//mP+9m//No8//ngaGxtz1VVXVXs0AKrIfqAWiAroJh5//PEMHDgwK1asyPTp0zNmzJh86lOfyquvvlrt0QCool+3H+6555587nOfq/KU9HSiArqJxx9/PLNnz86QIUM6jv385z/P6NGjqzgVANX26/bDE088kUmTJlVrPHoJUQHdxOOPP56pU6fud2zDhg059dRTkyTf+ta38ru/+7uZMGFC5syZk7fffrsKUwLwm/br9sMTTzyRH//4x2lqasrJJ5+cp59+ugpT0tOJCugGXn/99fziF7844JGmjRs3diyNc889N//+7/+eTZs25dhjj83DDz9chUkB+E06lP3wxBNPpLGxMW1tbfnc5z6X6667rgqT0tOJCugGHn/88fTp0ycTJ07sOPaLX/wi27dvz6mnnppKpZJly5ZlypQpmThxYu66667079+/ihMD8Jvw6/bDW2+9lbfffjstLS1JklNOOSXbtm2r1rj0YH2rPQDw6z3++OM56aSTcvTRR3cc27BhQz74wQ/m+OOPz6233prNmzdnzZo1OfroozNixIiMGzeuihMD8Jvw6/bDY489lnHjxqW+vr7ja6ecckq1xqUHq6tUKpVqDwGUWbhwYcaOHZuLL744X//61/O1r30tzz//fLXHAqDKbrvttnz1q1/Nxo0bs3379syaNSv33Xdfjj322GqPRg/jmQroAebOnZvzzjsvt99+e84888xMmDCh2iMBUAM2bdqUP/zDP8yUKVPS3t6e66+/XlDwnvBMBQAAUMQbtQEAgCKiAgAAKCIqAACAIqICAAAoIioAAIAiogIAACgiKgAAgCKiAgAAKCIqAACAIqICAAAoIioAAIAiogIAACjy/wHnv/iQvTpcEwAAAABJRU5ErkJggg=="}}], "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}</script>
-<script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-<script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
-<script>DOCUMENTATION_OPTIONS.pagename = 'simulation-modules/T1_3E2_spdc_simulation_by_qutip';</script>
-<link href="../genindex.html" rel="index" title="Index"/>
-<link href="../search.html" rel="search" title="Search"/>
-<link href="../FINAL-PROJECTS.html" rel="next" title="Final Design Project"/>
-<link href="T1-3E3-Activity-Compuational_HOM.html" rel="prev" title="Activity 2 – Two-photon (HOM) interference simulation"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="en" name="docsearch:language"/>
-<link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="../_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/></head>
-<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
-<a class="skip-link" href="#main-content">Skip to main content</a>
-<div id="pst-scroll-pixel-helper"></div>
-<button class="btn rounded-pill" id="pst-back-to-top" type="button">
-<i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
-<label class="overlay overlay-primary" for="__primary"></label>
-<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
-<label class="overlay overlay-secondary" for="__secondary"></label>
-<div class="search-button__wrapper">
-<div class="search-button__overlay"></div>
-<div class="search-button__search-container">
-<form action="../search.html" class="bd-search d-flex align-items-center" method="get">
-<i class="fa-solid fa-magnifying-glass"></i>
-<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
-<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'simulation-modules/T1_3E2_spdc_simulation_by_qutip';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Final Design Project" href="../FINAL-PROJECTS.html" />
+    <link rel="prev" title="Activity 2 – Two-photon (HOM) interference simulation" href="T1-3E3-Activity-Compuational_HOM.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
-<nav class="bd-header navbar navbar-expand-lg bd-navbar">
-</nav>
-<div class="bd-container">
-<div class="bd-container__inner bd-page-width">
-<div class="bd-sidebar-primary bd-sidebar">
-<div class="sidebar-header-items sidebar-primary__section">
-</div>
-<div class="sidebar-primary-items__start sidebar-primary__section">
-<div class="sidebar-primary-item">
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
 <a class="navbar-brand logo" href="../intro.html">
-<img alt="Logo image" class="logo__image only-light" src="../_static/logo-ibm.jpg"/>
-<script>document.write(`<img src="../_static/logo-ibm.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-ibm.jpg" class="logo__image only-light" alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home"/>
+    <script>document.write(`<img src="../_static/logo-ibm.jpg" class="logo__image only-dark" alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home"/>`);</script>
+  
+  
 </a></div>
-<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
-<div class="bd-toc-item navbar-nav active">
-<ul class="nav bd-sidenav bd-sidenav__home-link">
-<li class="toctree-l1">
-<a class="reference internal" href="../intro.html">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
                     6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
                 </a>
-</li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introductory Material</span></p>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introductory Material</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../BASICS-quantum-optics-basics.html">BASICS – Quantum Optics</a></li>
 </ul>
@@ -142,129 +219,249 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../TEMPLATES/TEMPLATE-6.2410-summary-report.html">Summary Report Template</a></li>
 </ul>
-</div>
+
+    </div>
 </nav></div>
-</div>
-<div class="sidebar-primary-items__end sidebar-primary__section">
-</div>
-<div id="rtd-footer-container"></div>
-</div>
-<main class="bd-main" id="main-content">
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
 <div class="sbt-scroll-pixel-helper"></div>
-<div class="bd-content">
-<div class="bd-article-container">
-<div class="bd-header-article">
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
-<div class="header-article-items__start">
-<div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__primary" title="Toggle primary sidebar">
-<span class="fa-solid fa-bars"></span>
-</label></div>
-</div>
-<div class="header-article-items__end">
-<div class="header-article-item">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
 <div class="article-header-buttons">
+
+
+
+
+
 <div class="dropdown dropdown-launch-buttons">
-<button aria-expanded="false" aria-label="Launch interactive content" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
-<i class="fas fa-rocket"></i>
-</button>
-<ul class="dropdown-menu">
-<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/simulation-modules/T1_3E2_spdc_simulation_by_qutip.ipynb" target="_blank" title="Launch onBinder">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/simulation-modules/T1_3E2_spdc_simulation_by_qutip.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
 <span class="btn__icon-container">
-<img src="../_static/images/logo_binder.svg"/>
-</span>
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
 <span class="btn__text-container">Binder</span>
 </a>
 </li>
-<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/simulation-modules/T1_3E2_spdc_simulation_by_qutip.ipynb" target="_blank" title="Launch onColab">
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/simulation-modules/T1_3E2_spdc_simulation_by_qutip.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
 <span class="btn__icon-container">
-<img src="../_static/images/logo_colab.png"/>
-</span>
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
 <span class="btn__text-container">Colab</span>
 </a>
 </li>
-</ul>
+      
+  </ul>
 </div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
-<button aria-expanded="false" aria-label="Source repositories" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
-<i class="fab fa-github"></i>
-</button>
-<ul class="dropdown-menu">
-<li><a class="btn btn-sm btn-source-repository-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://github.com/dkeathley/S23-6.2410-lab" target="_blank" title="Source repository">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dkeathley/S23-6.2410-lab" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
 <span class="btn__icon-container">
-<i class="fab fa-github"></i>
-</span>
+  <i class="fab fa-github"></i>
+  </span>
 <span class="btn__text-container">Repository</span>
 </a>
 </li>
-<li><a class="btn btn-sm btn-source-issues-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://github.com/dkeathley/S23-6.2410-lab/issues/new?title=Issue%20on%20page%20%2Fsimulation-modules/T1_3E2_spdc_simulation_by_qutip.html&amp;body=Your%20issue%20content%20here." target="_blank" title="Open an issue">
+      
+      
+      
+      
+      <li><a href="https://github.com/dkeathley/S23-6.2410-lab/issues/new?title=Issue%20on%20page%20%2Fsimulation-modules/T1_3E2_spdc_simulation_by_qutip.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
 <span class="btn__icon-container">
-<i class="fas fa-lightbulb"></i>
-</span>
+  <i class="fas fa-lightbulb"></i>
+  </span>
 <span class="btn__text-container">Open issue</span>
 </a>
 </li>
-</ul>
+      
+  </ul>
 </div>
+
+
+
+
+
+
 <div class="dropdown dropdown-download-buttons">
-<button aria-expanded="false" aria-label="Download this page" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
-<i class="fas fa-download"></i>
-</button>
-<ul class="dropdown-menu">
-<li><a class="btn btn-sm btn-download-source-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="../_sources/simulation-modules/T1_3E2_spdc_simulation_by_qutip.ipynb" target="_blank" title="Download source file">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/simulation-modules/T1_3E2_spdc_simulation_by_qutip.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
 <span class="btn__icon-container">
-<i class="fas fa-file"></i>
-</span>
+  <i class="fas fa-file"></i>
+  </span>
 <span class="btn__text-container">.ipynb</span>
 </a>
 </li>
-<li>
-<button class="btn btn-sm btn-download-pdf-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" onclick="window.print()" title="Print to PDF">
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
 <span class="btn__icon-container">
-<i class="fas fa-file-pdf"></i>
-</span>
+  <i class="fas fa-file-pdf"></i>
+  </span>
 <span class="btn__text-container">.pdf</span>
 </button>
 </li>
-</ul>
+      
+  </ul>
 </div>
-<button class="btn btn-sm btn-fullscreen-button" data-bs-placement="bottom" data-bs-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
 <span class="btn__icon-container">
-<i class="fas fa-expand"></i>
-</span>
+  <i class="fas fa-expand"></i>
+  </span>
+
 </button>
+
+
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
+
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__secondary" title="Toggle secondary sidebar">
-<span class="fa-solid fa-list"></span>
-</label>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
+      
+    </div>
+  
 </div>
 </div>
-</div>
-<div class="onlyprint" id="jb-print-docs-body">
-<h1>Activity 3: SPDC Simulation by QuTip</h1>
-<!-- Table of contents -->
-<div id="print-main-content">
-<div id="jb-print-toc">
-<div>
-<h2> Contents </h2>
-</div>
-<nav aria-label="Page">
-<ul class="visible nav section-nav flex-column">
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Activity 3: SPDC Simulation by QuTip</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports-and-headers">Imports and Headers</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-and-hamiltonian">Operators and Hamiltonian</a></li>
 </ul>
@@ -285,14 +482,18 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-degenerate-spdc-and-squeezing">Bonus: Degenerate SPDC and Squeezing</a></li>
 </ul>
-</nav>
+            </nav>
+        </div>
+    </div>
 </div>
-</div>
-</div>
+
+              
+                
 <div id="searchbox"></div>
-<article class="bd-article" role="main">
-<section class="tex2jax_ignore mathjax_ignore" id="activity-3-spdc-simulation-by-qutip">
-<h1>Activity 3: SPDC Simulation by QuTip<a class="headerlink" href="#activity-3-spdc-simulation-by-qutip" title="Permalink to this heading">#</a></h1>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="activity-3-spdc-simulation-by-qutip">
+<h1>Activity 3: SPDC Simulation by QuTip<a class="headerlink" href="#activity-3-spdc-simulation-by-qutip" title="Link to this heading">#</a></h1>
 <p>Quantum optics relies on a reliable source of single photons and entangled photon pairs.  A typical source of these photons is spontaneous parametric down-conversion (SPDC) within a nonlinear crystal.  For example, all of the quantum optics experimental lab modules in this class rely on SPDC.</p>
 <p>In this activity, we will simulate the SPDC process and the quantum states of light it generates.  We will do this through the formalism of the degenerate parametric amplifier.</p>
 <p>Specific aims of this activity are:</p>
@@ -301,7 +502,7 @@ document.write(`
 <li><p>Develop a realistic model of an SPDC source that could be further extended and used in the context of device and technology simulation and design.</p></li>
 </ul>
 <section id="imports-and-headers">
-<h2>Imports and Headers<a class="headerlink" href="#imports-and-headers" title="Permalink to this heading">#</a></h2>
+<h2>Imports and Headers<a class="headerlink" href="#imports-and-headers" title="Link to this heading">#</a></h2>
 <p>Install qutip if needed and import tools for the simulations performed throughout this activity.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -322,33 +523,28 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<details class="hide below-input">
+<details class="admonition hide below-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell output</span>
-<span class="expanded">Hide code cell output</span>
+<p class="collapsed admonition-title">Show code cell output</p>
+<p class="expanded admonition-title">Hide code cell output</p>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: qutip in /home/dkeathley/anaconda3/lib/python3.11/site-packages (4.7.5)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.16.6 in /home/dkeathley/anaconda3/lib/python3.11/site-packages (from qutip) (1.24.3)
-Requirement already satisfied: scipy&gt;=1.0 in /home/dkeathley/anaconda3/lib/python3.11/site-packages (from qutip) (1.11.2)
-Requirement already satisfied: packaging in /home/dkeathley/anaconda3/lib/python3.11/site-packages (from qutip) (23.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class="-Color -Color-Bold">[</span><span class="-Color -Color-Blue">notice</span><span class="-Color -Color-Bold">]</span> A new release of pip is available: <span class="-Color -Color-Red">24.0</span> -&gt; <span class="-Color -Color-Green">25.0.1</span>
-<span class="-Color -Color-Bold">[</span><span class="-Color -Color-Blue">notice</span><span class="-Color -Color-Bold">]</span> To update, run: <span class="-Color -Color-Green">pip install --upgrade pip</span>
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/dkeathley/anaconda3/lib/python3.11/site-packages/qutip/__init__.py:66: UserWarning: The new version of Cython, (&gt;= 3.0.0) is not supported.
-  warnings.warn(
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qutip
+  Downloading qutip-5.1.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.2 kB)
+Requirement already satisfied: numpy&gt;=1.22 in /usr/local/lib/python3.11/dist-packages (from qutip) (1.26.4)
+Requirement already satisfied: scipy&gt;=1.9 in /usr/local/lib/python3.11/dist-packages (from qutip) (1.13.1)
+Requirement already satisfied: packaging in /usr/local/lib/python3.11/dist-packages (from qutip) (24.2)
+Downloading qutip-5.1.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (30.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">30.1/30.1 MB</span> <span class=" -Color -Color-Red">18.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hInstalling collected packages: qutip
+Successfully installed qutip-5.1.1
 </pre></div>
 </div>
 </div>
 </details>
 </div>
 <section id="operators-and-hamiltonian">
-<span id="content-t1-3-e2-spdc"></span><h3>Operators and Hamiltonian<a class="headerlink" href="#operators-and-hamiltonian" title="Permalink to this heading">#</a></h3>
+<span id="content-t1-3-e2-spdc"></span><h3>Operators and Hamiltonian<a class="headerlink" href="#operators-and-hamiltonian" title="Link to this heading">#</a></h3>
 <p>If you have not read it yet, please read the introduction to how SPDC is physically generated in the <a class="reference internal" href="../T2E1-TEXT-HBT.html#content-t2e1-intro-single-photons"><span class="std std-ref">text</span></a> for the T2E1 lab module.</p>
 <p>The SPDC process works by driving a nonlinear crystal with strong light at a pump frequency <span class="math notranslate nohighlight">\(\omega_p\)</span>.  One photon of the pump light is then spontaneously converted into two photons <span class="math notranslate nohighlight">\(\omega_s\)</span> and <span class="math notranslate nohighlight">\(\omega_i\)</span>, which refer to the signal and idler modes respectively.  This naming convention was developed to describe parametric amplfiers where one wanted to amplify a weak signal using a strong pump.  Energy conservation requires that this also corresponds with the growth of an idler wave, and you have that <span class="math notranslate nohighlight">\(\omega_p = \omega_s + \omega_i\)</span>.  In the SPDC process we are concerned with the spontaneous generation of the signal and idler.  These occupy modes as <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> respectively.</p>
 <p>The parametric amplification occurs due to a nonlinear coupling between the fields of the pump, signal, and idler waves.  The coefficient describing the strength of this coupling is the nonlinear coefficient <span class="math notranslate nohighlight">\(\chi_2\)</span>, which is in general complex, but given freedom in choice of phase, we take it as a positive real number here.</p>
@@ -374,20 +570,20 @@ Requirement already satisfied: packaging in /home/dkeathley/anaconda3/lib/python
 </section>
 </section>
 <section id="prelab-exercises">
-<h2>Prelab Exercises<a class="headerlink" href="#prelab-exercises" title="Permalink to this heading">#</a></h2>
+<h2>Prelab Exercises<a class="headerlink" href="#prelab-exercises" title="Link to this heading">#</a></h2>
 <p>0a. Show that <span class="math notranslate nohighlight">\(\frac{d\hat{a}}{dt} = \frac{\chi}{2}\hat{b}^{\dagger}\)</span>, and  <span class="math notranslate nohighlight">\(\frac{d\hat{b}^{\dagger}}{dt} = \frac{\chi}{2}\hat{a}\)</span>. (Hint: use the fact that <span class="math notranslate nohighlight">\(\frac{d\hat{a}}{dt} = \frac{i}{\hbar}[\hat{H}, \hat{a}]\)</span> for any operator <span class="math notranslate nohighlight">\(\hat{a}\)</span>).</p>
 <p>Note: this is the Heisenberg picture where we evolve the operators instead of the state. See <a class="reference external" href="https://en.wikipedia.org/wiki/Heisenberg_picture">https://en.wikipedia.org/wiki/Heisenberg_picture</a>.</p>
 <p>0b.  The above coupled differential equation has the solutions <span class="math notranslate nohighlight">\(\hat{a}(T) = \cosh (\chi T/2) \hat{a}(0) + \sinh(\chi T/2) \hat{b}^\dagger (0)\)</span> and <span class="math notranslate nohighlight">\(\hat{b}^\dagger(T) = \sinh (\chi T/2) \hat{a}(0) + \cosh(\chi T/2) \hat{b}^\dagger (0)\)</span> at time <span class="math notranslate nohighlight">\(T\)</span> given the initial operators at time <span class="math notranslate nohighlight">\(0\)</span>. Derive the output photon number in <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> at a time <span class="math notranslate nohighlight">\(T\)</span>.  (Hints: Start with the vacuum state and apply the number operator; you should get something with <span class="math notranslate nohighlight">\(\sinh^2\)</span>).</p>
 </section>
 <section id="simulate-time-dependent-problem-in-qutip">
-<h2>Simulate Time-Dependent Problem in QuTiP<a class="headerlink" href="#simulate-time-dependent-problem-in-qutip" title="Permalink to this heading">#</a></h2>
+<h2>Simulate Time-Dependent Problem in QuTiP<a class="headerlink" href="#simulate-time-dependent-problem-in-qutip" title="Link to this heading">#</a></h2>
 <p>In the following code we define the needed creation and annihilation operators as well as the Hamiltonian of the system to solve.  The <code class="docutils literal notranslate"><span class="pre">tensor()</span></code> function is used to create composite operators that act on the joint Hilbert space of the two modes <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>. The <code class="docutils literal notranslate"><span class="pre">destroy()</span></code> and <code class="docutils literal notranslate"><span class="pre">num()</span></code> functions create the annihilation and number operators, respectively.</p>
 <p>Note that a difference between the following code and the equations above is that we factor out the <span class="math notranslate nohighlight">\(\hbar\)</span> term from the Hamiltonian.  By default, the unit of time in Qutip is set to be dimensionless, so <span class="math notranslate nohighlight">\(\hbar\)</span> is used to convert between dimensionless time and physical time.  In other words, the units in QuTiP are such that <span class="math notranslate nohighlight">\(\hbar = 1\)</span>.</p>
 <p>For the coupling term <span class="math notranslate nohighlight">\(\chi\)</span> we have selected a value that, in combination with the phase-matching bandwidth (provided below), results in a photon generation rate similar to what you see in the lab experiments. This will be described further in Exercise 1 where you calculate the photon pair generation rate.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Constants</span>
-<span class="n">hbar</span><span class="o">=</span><span class="mf">6.67e-34</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">)</span> <span class="c1">#Planck's reduced constant</span>
+<span class="n">hbar</span><span class="o">=</span><span class="mf">6.67e-34</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">)</span> <span class="c1">#Planck&#39;s reduced constant</span>
 <span class="n">eps0</span><span class="o">=</span><span class="mf">8.85e-12</span> <span class="c1"># permittivity of free space</span>
 <span class="n">c</span><span class="o">=</span><span class="mf">2.99792458e8</span> <span class="c1"># speed of light</span>
 
@@ -418,7 +614,7 @@ Requirement already satisfied: packaging in /home/dkeathley/anaconda3/lib/python
 </div>
 </section>
 <section id="initial-state-and-state-evolution">
-<h2>Initial state and state evolution<a class="headerlink" href="#initial-state-and-state-evolution" title="Permalink to this heading">#</a></h2>
+<h2>Initial state and state evolution<a class="headerlink" href="#initial-state-and-state-evolution" title="Link to this heading">#</a></h2>
 <p>In the following, we initialize/define:</p>
 <ul class="simple">
 <li><p>input state <span class="math notranslate nohighlight">\(\ket{\psi_0}\)</span> of modes a and b, which are both in the vacuum state</p></li>
@@ -457,9 +653,15 @@ Requirement already satisfied: packaging in /home/dkeathley/anaconda3/lib/python
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.11/dist-packages/qutip/solver/solver_base.py:576: FutureWarning: e_ops will be keyword only from qutip 5.3 for all solver
+  warnings.warn(
+</pre></div>
+</div>
+</div>
 </div>
 <section id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Link to this heading">#</a></h3>
 <p>1a. Verify the Hermiticity of the Hamiltonian.</p>
 <p>1b. Define operator objects for the number operators <span class="math notranslate nohighlight">\(\hat{N}\)</span> in <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, as well as the operator for <span class="math notranslate nohighlight">\(\hat{N}^2\)</span> for <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>.</p>
 <p>1c. Use the <code class="docutils literal notranslate"><span class="pre">expect()</span></code> function to evaluate the expectation of the photon number in <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> for all of the output states, provided by <code class="docutils literal notranslate"><span class="pre">phi_out.states</span></code>.  You should have <code class="docutils literal notranslate"><span class="pre">1000</span></code> output states, one for each point in time in <code class="docutils literal notranslate"><span class="pre">tlist</span></code>.  Plot the growth of the photon number as a function of time.  Does it makes sense? (Compare directly to your expected expression from the pre-lab).</p>
@@ -469,7 +671,7 @@ Requirement already satisfied: packaging in /home/dkeathley/anaconda3/lib/python
 </section>
 </section>
 <section id="state-evolution">
-<h2>State evolution<a class="headerlink" href="#state-evolution" title="Permalink to this heading">#</a></h2>
+<h2>State evolution<a class="headerlink" href="#state-evolution" title="Link to this heading">#</a></h2>
 <p>Next, we will plot the photon distributions of two quantum optical modes a and b at selected times.</p>
 <p>The time indices are spaced over the number of time steps in <code class="docutils literal notranslate"><span class="pre">tlist</span></code>.</p>
 <p>The following subplots show the state evolution (note the plots have shared horizontal and vertical axes). We represent the photon distributions as bar plots on the subplots.</p>
@@ -491,12 +693,12 @@ Requirement already satisfied: packaging in /home/dkeathley/anaconda3/lib/python
     <span class="n">max_val</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">bar_vals_a</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">bar_vals_b</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="c1"># ignore first entry P(0) which is always going to be large</span>
     <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">N1</span><span class="p">),</span> <span class="n">bar_vals_a</span><span class="p">)</span>
     <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">N2</span><span class="p">),</span> <span class="n">bar_vals_b</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'$P(n)$'</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'$P(n)$'</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'$n_a$'</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'$n_b$'</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">'log'</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">'log'</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$P(n)$&#39;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$P(n)$&#39;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$n_a$&#39;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$n_b$&#39;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
     <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="mi">10</span><span class="o">**-</span><span class="mi">8</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="n">bar_vals_a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mf">1.2</span><span class="p">)</span>
     <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="mi">10</span><span class="o">**-</span><span class="mi">8</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="n">bar_vals_a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mf">1.2</span><span class="p">)</span>
     <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">)</span>
@@ -509,7 +711,7 @@ Requirement already satisfied: packaging in /home/dkeathley/anaconda3/lib/python
     <span class="nb">max</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">tlist</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>
     <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
     <span class="n">value</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
-    <span class="n">description</span><span class="o">=</span><span class="s1">'Time index:'</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Time index:&#39;</span><span class="p">,</span>
     <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="c1">#display(t_selector)</span>
@@ -518,19 +720,30 @@ Requirement already satisfied: packaging in /home/dkeathley/anaconda3/lib/python
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "4a5602ff71454e6397924907d463f9dc"}</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.update_plot(t)&gt;
-</pre></div>
-</div>
-</div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "60c1162d10dc456f9f22444804ce0de8"}</script><div class="output text_html"><div style="max-width:800px; border: 1px solid var(--colab-border-color);"><style>
+      pre.function-repr-contents {
+        overflow-x: auto;
+        padding: 8px 12px;
+        max-height: 500px;
+      }
+
+      pre.function-repr-contents.function-repr-contents-collapsed {
+        cursor: pointer;
+        max-height: 100px;
+      }
+    </style>
+    <pre style="white-space: initial; background:
+         var(--colab-secondary-surface-color); padding: 8px 12px;
+         border-bottom: 1px solid var(--colab-border-color);"><b>update_plot</b><br/>def update_plot(t)</pre><pre class="function-repr-contents function-repr-contents-collapsed" style=""><a class="filepath" style="display:none" href="#">/content/&lt;ipython-input-15-b008fbc64c30&gt;</a>&lt;no docstring&gt;</pre></div></div></div>
 </div>
 <section id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Link to this heading">#</a></h3>
 <p>2a. Increase the coupling term, <span class="math notranslate nohighlight">\(\chi\)</span> and redo the above state visualization.  What happens in terms of the photon number distribution when <span class="math notranslate nohighlight">\(\chi\)</span> becomes large?  Does the analytical solution still hold?</p>
 <p>Hint: We assumed a constant number of pump photons.</p>
 </section>
 </section>
 <section id="second-order-coherence">
-<h2>Second-order coherence<a class="headerlink" href="#second-order-coherence" title="Permalink to this heading">#</a></h2>
+<h2>Second-order coherence<a class="headerlink" href="#second-order-coherence" title="Link to this heading">#</a></h2>
 <p>Here we examine the generated photon statistics further by looking at the second order correlation function of photons in the outgoing modes <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>. Note that second order coherence of single and heralded single-photons using SPDC is explored further in the <a class="reference internal" href="../T2E1-TEXT-HBT.html#content-t2e1-intro-single-photons"><span class="std std-ref">T2E1 lab</span></a> through the use of a HBT measurement.</p>
 <p>Classical fields satisfy the Cauchy-Schwarz inequality evaluated at the same time <span class="math notranslate nohighlight">\(t\)</span> on both detectors (Walls and Milburn, page 79).  This can be expressed with respect to the second order correlation functions of the output state at time <span class="math notranslate nohighlight">\(t\)</span> as:</p>
 <div class="math notranslate nohighlight">
@@ -544,7 +757,7 @@ Requirement already satisfied: packaging in /home/dkeathley/anaconda3/lib/python
 <p>and likewise for <span class="math notranslate nohighlight">\(g^{(2)}_{bb}\)</span>.</p>
 <p>In the following you will explore this inequality further.</p>
 <section id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Link to this heading">#</a></h3>
 <p>3a. Using the same procedure as for the photon number expectation calculations, now calculate and plot the second order correlation functions for <span class="math notranslate nohighlight">\(g^{(2)}_{aa}\)</span>, <span class="math notranslate nohighlight">\(g^{(2)}_{bb}\)</span>, and <span class="math notranslate nohighlight">\(g^{(2)}_{ab}\)</span>.</p>
 <p>3b. Is the Cauchy-Schwarz inequality broken?</p>
 <p>3c. You should find that the photon correlations of the fields produced from a vacuum passing through the parametric amplifier are strongly nonclassical. It turns out they saturate the bound by quantum mechanics.</p>
@@ -553,7 +766,7 @@ Requirement already satisfied: packaging in /home/dkeathley/anaconda3/lib/python
 </section>
 </section>
 <section id="bonus-degenerate-spdc-and-squeezing">
-<h2>Bonus: Degenerate SPDC and Squeezing<a class="headerlink" href="#bonus-degenerate-spdc-and-squeezing" title="Permalink to this heading">#</a></h2>
+<h2>Bonus: Degenerate SPDC and Squeezing<a class="headerlink" href="#bonus-degenerate-spdc-and-squeezing" title="Link to this heading">#</a></h2>
 <p>Two-photon states generated by degenerate SPDC sources (<em>i.e.</em> SPDC sources where the signal and idler share a single output mode) exhibit squeezing (see <a class="reference internal" href="../BASICS-quantum-optics-basics.html#sec-quantum-optics-basics-squeezed-states"><span class="std std-ref">Squeezed States</span></a>).  In fact, similar processes to what you are modeling are used to generate bright squeezed light that is enabling ultra-precise interferometric measurements.  To see how squeezed states can be used to reduce the readout noise of an interferometer, see <a class="reference internal" href="../T3E1-EXTRAS-interference-2-homodyne-detection.html#content-t3e1-extras-homodyne-detection"><span class="std std-ref">EXTRAS – Homodyne Detection</span></a>.</p>
 <p><strong>Ba.</strong> Implement a degenerate SPDC where both photons emitted into a single mode. This is decribed by the Hamiltonain</p>
 <div class="math notranslate nohighlight">
@@ -571,22 +784,23 @@ Requirement already satisfied: packaging in /home/dkeathley/anaconda3/lib/python
 </pre></div>
 </div>
 </div>
-<details class="hide below-input">
+<details class="admonition hide below-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell output</span>
-<span class="expanded">Hide code cell output</span>
+<p class="collapsed admonition-title">Show code cell output</p>
+<p class="expanded admonition-title">Hide code cell output</p>
 </summary>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x7f3d6dcc0c90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x7809a154d2d0&gt;
 </pre></div>
 </div>
-<img alt="../_images/2b8d519495a3aa58876d8ba6cb52d5dd958961d37e1a8efa21c82efd7a1a2898.png" src="../_images/2b8d519495a3aa58876d8ba6cb52d5dd958961d37e1a8efa21c82efd7a1a2898.png"/>
+<img alt="../_images/397040f6c51ff45328e4001f7ea445409a3334d7e30bc3444c1f33eea4d7b6ae.png" src="../_images/397040f6c51ff45328e4001f7ea445409a3334d7e30bc3444c1f33eea4d7b6ae.png" />
 </div>
 </details>
 </div>
 </section>
 </section>
-<script type="text/x-thebe-config">
+
+    <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
@@ -604,35 +818,52 @@ Requirement already satisfied: packaging in /home/dkeathley/anaconda3/lib/python
         predefinedOutput: true
     }
     </script>
-<script>kernelName = 'python3'</script>
-</article>
-<footer class="prev-next-footer">
-<!-- Previous / next buttons -->
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
-<a class="left-prev" href="T1-3E3-Activity-Compuational_HOM.html" title="previous page">
-<i class="fa-solid fa-angle-left"></i>
-<div class="prev-next-info">
-<p class="prev-next-subtitle">previous</p>
-<p class="prev-next-title">Activity 2 – Two-photon (HOM) interference simulation</p>
+    <a class="left-prev"
+       href="T1-3E3-Activity-Compuational_HOM.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Activity 2 – Two-photon (HOM) interference simulation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../FINAL-PROJECTS.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Final Design Project</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
-</a>
-<a class="right-next" href="../FINAL-PROJECTS.html" title="next page">
-<div class="prev-next-info">
-<p class="prev-next-subtitle">next</p>
-<p class="prev-next-title">Final Design Project</p>
-</div>
-<i class="fa-solid fa-angle-right"></i>
-</a>
-</div>
-</footer>
-</div>
-<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-<div class="sidebar-secondary-item">
-<div class="page-toc tocsection onthispage">
-<i class="fa-solid fa-list"></i> Contents
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
   </div>
-<nav class="bd-toc-nav page-toc">
-<ul class="visible nav section-nav flex-column">
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports-and-headers">Imports and Headers</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-and-hamiltonian">Operators and Hamiltonian</a></li>
 </ul>
@@ -653,36 +884,57 @@ Requirement already satisfied: packaging in /home/dkeathley/anaconda3/lib/python
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-degenerate-spdc-and-squeezing">Bonus: Degenerate SPDC and Squeezing</a></li>
 </ul>
-</nav></div>
+  </nav></div>
+
 </div></div>
-</div>
-<footer class="bd-footer-content">
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
 <div class="bd-footer-content__inner container">
-<div class="footer-item">
+  
+  <div class="footer-item">
+    
 <p class="component-author">
 By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
 </p>
-</div>
-<div class="footer-item">
-<p class="copyright">
+
+  </div>
+  
+  <div class="footer-item">
     
-      © Copyright 2022.
+
+  <p class="copyright">
+    
+      © Copyright 2023.
       <br/>
-</p>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
-<div class="footer-item">
-</div>
-<div class="footer-item">
-</div>
-</div>
-</footer>
-</main>
-</div>
-</div>
-<!-- Scripts loaded after <body> so the DOM is not blocked -->
-<script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
-<footer class="bd-footer">
-</footer>
-<script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script><script src="../_static/scripts/chattutor.config.js"></script><script src="../_static/scripts/chattutor.min.js"></script></body>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
 </html>

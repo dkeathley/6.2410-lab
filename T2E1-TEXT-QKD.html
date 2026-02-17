@@ -1,105 +1,185 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
-<title>TEXT – QKD (Week 2) — 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
-<script data-cfasync="false">
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>TEXT – QKD (Week 2) &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+  
+  
+  
+  <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-<!-- Loaded before other Sphinx assets -->
-<link href="_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
-<link href="_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
-<link href="_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
-<link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet"/>
-<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
-<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
-<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
-<link href="_static/pygments.css" rel="stylesheet" type="text/css"/>
-<link href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" rel="stylesheet" type="text/css"/>
-<link href="_static/togglebutton.css" rel="stylesheet" type="text/css"/>
-<link href="_static/copybutton.css" rel="stylesheet" type="text/css"/>
-<link href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
-<link href="_static/sphinx-thebe.css" rel="stylesheet" type="text/css"/>
-<link href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" rel="stylesheet" type="text/css"/>
-<!-- Pre-loaded scripts that we'll load fully later -->
-<link as="script" href="_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" rel="preload"/>
-<link as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" rel="preload"/>
-<script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
-<script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-<script src="_static/jquery.js"></script>
-<script src="_static/underscore.js"></script>
-<script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-<script src="_static/doctools.js"></script>
-<script src="_static/clipboard.min.js"></script>
-<script src="_static/copybutton.js"></script>
-<script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-<script>let toggleHintShow = 'Click to show';</script>
-<script>let toggleHintHide = 'Click to hide';</script>
-<script>let toggleOpenOnPrint = 'true';</script>
-<script src="_static/togglebutton.js"></script>
-<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-<script src="_static/design-tabs.js"></script>
-<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-<script async="async" src="_static/sphinx-thebe.js"></script>
-<script>DOCUMENTATION_OPTIONS.pagename = 'T2E1-TEXT-QKD';</script>
-<link href="genindex.html" rel="index" title="Index"/>
-<link href="search.html" rel="search" title="Search"/>
-<link href="T2E1-LAB-BB84.html" rel="next" title="LAB – QKD (Week 2)"/>
-<link href="T2E1-LAB-HBT.html" rel="prev" title="LAB – Hanbury Brown - Twiss Lab (Week 1)"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="en" name="docsearch:language"/>
-<link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/><link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/></head>
-<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
-<a class="skip-link" href="#main-content">Skip to main content</a>
-<div id="pst-scroll-pixel-helper"></div>
-<button class="btn rounded-pill" id="pst-back-to-top" type="button">
-<i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
-<label class="overlay overlay-primary" for="__primary"></label>
-<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
-<label class="overlay overlay-secondary" for="__secondary"></label>
-<div class="search-button__wrapper">
-<div class="search-button__overlay"></div>
-<div class="search-button__search-container">
-<form action="search.html" class="bd-search d-flex align-items-center" method="get">
-<i class="fa-solid fa-magnifying-glass"></i>
-<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
-<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'T2E1-TEXT-QKD';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="LAB – QKD (Week 2)" href="T2E1-LAB-BB84.html" />
+    <link rel="prev" title="LAB – Hanbury Brown - Twiss Lab (Week 1)" href="T2E1-LAB-HBT.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
-<nav class="bd-header navbar navbar-expand-lg bd-navbar">
-</nav>
-<div class="bd-container">
-<div class="bd-container__inner bd-page-width">
-<div class="bd-sidebar-primary bd-sidebar">
-<div class="sidebar-header-items sidebar-primary__section">
-</div>
-<div class="sidebar-primary-items__start sidebar-primary__section">
-<div class="sidebar-primary-item">
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
 <a class="navbar-brand logo" href="intro.html">
-<img alt="Logo image" class="logo__image only-light" src="_static/logo-ibm.jpg"/>
-<script>document.write(`<img src="_static/logo-ibm.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo-ibm.jpg" class="logo__image only-light" alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home"/>
+    <script>document.write(`<img src="_static/logo-ibm.jpg" class="logo__image only-dark" alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home"/>`);</script>
+  
+  
 </a></div>
-<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
-<div class="bd-toc-item navbar-nav active">
-<ul class="nav bd-sidenav bd-sidenav__home-link">
-<li class="toctree-l1">
-<a class="reference internal" href="intro.html">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
                 </a>
-</li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introductory Material</span></p>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introductory Material</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="BASICS-quantum-optics-basics.html">BASICS – Quantum Optics</a></li>
 </ul>
@@ -137,129 +217,249 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="TEMPLATES/TEMPLATE-6.2410-summary-report.html">Summary Report Template</a></li>
 </ul>
-</div>
+
+    </div>
 </nav></div>
-</div>
-<div class="sidebar-primary-items__end sidebar-primary__section">
-</div>
-<div id="rtd-footer-container"></div>
-</div>
-<main class="bd-main" id="main-content">
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
 <div class="sbt-scroll-pixel-helper"></div>
-<div class="bd-content">
-<div class="bd-article-container">
-<div class="bd-header-article">
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
-<div class="header-article-items__start">
-<div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__primary" title="Toggle primary sidebar">
-<span class="fa-solid fa-bars"></span>
-</label></div>
-</div>
-<div class="header-article-items__end">
-<div class="header-article-item">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
 <div class="article-header-buttons">
+
+
+
+
+
 <div class="dropdown dropdown-launch-buttons">
-<button aria-expanded="false" aria-label="Launch interactive content" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
-<i class="fas fa-rocket"></i>
-</button>
-<ul class="dropdown-menu">
-<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/T2E1-TEXT-QKD.ipynb" target="_blank" title="Launch onBinder">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/T2E1-TEXT-QKD.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
 <span class="btn__icon-container">
-<img src="_static/images/logo_binder.svg"/>
-</span>
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
 <span class="btn__text-container">Binder</span>
 </a>
 </li>
-<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/T2E1-TEXT-QKD.ipynb" target="_blank" title="Launch onColab">
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/T2E1-TEXT-QKD.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
 <span class="btn__icon-container">
-<img src="_static/images/logo_colab.png"/>
-</span>
+  
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
+  </span>
 <span class="btn__text-container">Colab</span>
 </a>
 </li>
-</ul>
+      
+  </ul>
 </div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
-<button aria-expanded="false" aria-label="Source repositories" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
-<i class="fab fa-github"></i>
-</button>
-<ul class="dropdown-menu">
-<li><a class="btn btn-sm btn-source-repository-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://github.com/dkeathley/S23-6.2410-lab" target="_blank" title="Source repository">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dkeathley/S23-6.2410-lab" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
 <span class="btn__icon-container">
-<i class="fab fa-github"></i>
-</span>
+  <i class="fab fa-github"></i>
+  </span>
 <span class="btn__text-container">Repository</span>
 </a>
 </li>
-<li><a class="btn btn-sm btn-source-issues-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://github.com/dkeathley/S23-6.2410-lab/issues/new?title=Issue%20on%20page%20%2FT2E1-TEXT-QKD.html&amp;body=Your%20issue%20content%20here." target="_blank" title="Open an issue">
+      
+      
+      
+      
+      <li><a href="https://github.com/dkeathley/S23-6.2410-lab/issues/new?title=Issue%20on%20page%20%2FT2E1-TEXT-QKD.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
 <span class="btn__icon-container">
-<i class="fas fa-lightbulb"></i>
-</span>
+  <i class="fas fa-lightbulb"></i>
+  </span>
 <span class="btn__text-container">Open issue</span>
 </a>
 </li>
-</ul>
+      
+  </ul>
 </div>
+
+
+
+
+
+
 <div class="dropdown dropdown-download-buttons">
-<button aria-expanded="false" aria-label="Download this page" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
-<i class="fas fa-download"></i>
-</button>
-<ul class="dropdown-menu">
-<li><a class="btn btn-sm btn-download-source-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="_sources/T2E1-TEXT-QKD.ipynb" target="_blank" title="Download source file">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/T2E1-TEXT-QKD.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
 <span class="btn__icon-container">
-<i class="fas fa-file"></i>
-</span>
+  <i class="fas fa-file"></i>
+  </span>
 <span class="btn__text-container">.ipynb</span>
 </a>
 </li>
-<li>
-<button class="btn btn-sm btn-download-pdf-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" onclick="window.print()" title="Print to PDF">
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
 <span class="btn__icon-container">
-<i class="fas fa-file-pdf"></i>
-</span>
+  <i class="fas fa-file-pdf"></i>
+  </span>
 <span class="btn__text-container">.pdf</span>
 </button>
 </li>
-</ul>
+      
+  </ul>
 </div>
-<button class="btn btn-sm btn-fullscreen-button" data-bs-placement="bottom" data-bs-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
 <span class="btn__icon-container">
-<i class="fas fa-expand"></i>
-</span>
+  <i class="fas fa-expand"></i>
+  </span>
+
 </button>
+
+
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
+
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__secondary" title="Toggle secondary sidebar">
-<span class="fa-solid fa-list"></span>
-</label>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
+      
+    </div>
+  
 </div>
 </div>
-</div>
-<div class="onlyprint" id="jb-print-docs-body">
-<h1>TEXT – QKD (Week 2)</h1>
-<!-- Table of contents -->
-<div id="print-main-content">
-<div id="jb-print-toc">
-<div>
-<h2> Contents </h2>
-</div>
-<nav aria-label="Page">
-<ul class="visible nav section-nav flex-column">
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>TEXT – QKD (Week 2)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-a-secret-key">Generating a secret key</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-time-pad-encryption">One time pad encryption</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description-of-bb84-protocol">Description of BB84 protocol</a></li>
@@ -267,28 +467,32 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-ekert-protocol">Introduction to Ekert protocol</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-lab-questions">Pre-Lab questions</a></li>
 </ul>
-</nav>
+            </nav>
+        </div>
+    </div>
 </div>
-</div>
-</div>
+
+              
+                
 <div id="searchbox"></div>
-<article class="bd-article" role="main">
-<section class="tex2jax_ignore mathjax_ignore" id="text-qkd-week-2">
-<h1>TEXT – QKD (Week 2)<a class="headerlink" href="#text-qkd-week-2" title="Permalink to this heading">#</a></h1>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="text-qkd-week-2">
+<h1>TEXT – QKD (Week 2)<a class="headerlink" href="#text-qkd-week-2" title="Link to this heading">#</a></h1>
 <section id="generating-a-secret-key">
-<h2>Generating a secret key<a class="headerlink" href="#generating-a-secret-key" title="Permalink to this heading">#</a></h2>
+<h2>Generating a secret key<a class="headerlink" href="#generating-a-secret-key" title="Link to this heading">#</a></h2>
 <p>The next step of the experiment will be using the BB84 protocol to generate a secret key. You should be familiar with BB84 from your prsrequisite course, although there are links below to various resources describing the protocol. This text is intended to help you understand what the protocol aims to do and how it works. The pre-lab questions are brief and are located at the bottom of the page.</p>
 <p>This text covers the following topics:</p>
 <ul class="simple">
-<li><p><span class="xref myst">One time pad encryption</span></p></li>
-<li><p><span class="xref myst">Description of BB84 protocol</span></p></li>
-<li><p><span class="xref myst">Python simulation</span></p></li>
-<li><p><span class="xref myst">Intro to the Ekert protocol</span></p></li>
-<li><p><span class="xref myst">Pre-Lab questions</span></p></li>
+<li><p><a class="reference internal" href="#One-time-pad-encryption"><span class="xref myst">One time pad encryption</span></a></p></li>
+<li><p><a class="reference internal" href="#Description-of-BB84-protocol"><span class="xref myst">Description of BB84 protocol</span></a></p></li>
+<li><p><a class="reference internal" href="#Python-simulation"><span class="xref myst">Python simulation</span></a></p></li>
+<li><p><a class="reference internal" href="#Introduction-to-Ekert-protocol"><span class="xref myst">Intro to the Ekert protocol</span></a></p></li>
+<li><p><a class="reference internal" href="#Pre-Lab-questions"><span class="xref myst">Pre-Lab questions</span></a></p></li>
 </ul>
 </section>
 <section id="one-time-pad-encryption">
-<h2>One time pad encryption<a class="headerlink" href="#one-time-pad-encryption" title="Permalink to this heading">#</a></h2>
+<h2>One time pad encryption<a class="headerlink" href="#one-time-pad-encryption" title="Link to this heading">#</a></h2>
 <p>One time pad encryption is a perfectly secure means of communicating a message. Alice takes the original message, the raw text, and encrypts it with a pad of random bits the same length as the message, resulting in the ciphertext. Alice transmits the ciphertext through a public channel to Bob. The channel is public because an eavesdropper Eve is able to intercept the entire message. Once Bob receives the ciphertext, he decrypts the ciphertext using the same pad Alice used initially. This allows him to read the original message.</p>
 <p>The benefit of OTP is its security: it’s impossible for an eavesdropper to decode the message.</p>
 <p>The drawbacks are the key distribution. You need a key that’s the same length as the message. Additionally, you need a new key for every message you want to encrypt and send: the protocol is only secure when each pad is used only once.</p>
@@ -312,17 +516,17 @@ document.write(`
 <span class="c1"># and the key</span>
 <span class="n">recover</span> <span class="o">=</span> <span class="n">cypher</span><span class="o">^</span><span class="n">key</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Message: </span><span class="si">% s</span><span class="s2">"</span> <span class="o">%</span><span class="p">(</span><span class="n">mess</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Key    : </span><span class="si">% s</span><span class="s2">"</span> <span class="o">%</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Now XOR those to get the cyphertext:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Cypher : </span><span class="si">% s</span><span class="s2">"</span> <span class="o">%</span><span class="p">(</span><span class="n">cypher</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"To recover the original message, you XOR the key and the cypher"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Key    : </span><span class="si">% s</span><span class="s2">"</span> <span class="o">%</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Cypher : </span><span class="si">% s</span><span class="s2">"</span> <span class="o">%</span><span class="p">(</span><span class="n">cypher</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"The recovered message after decryption is"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Decrypt: </span><span class="si">% s</span><span class="s2">"</span> <span class="o">%</span><span class="p">(</span><span class="n">recover</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Compare with original message"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Message: </span><span class="si">% s</span><span class="s2">"</span> <span class="o">%</span><span class="p">(</span><span class="n">mess</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Message: </span><span class="si">% s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">mess</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Key    : </span><span class="si">% s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Now XOR those to get the cyphertext:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cypher : </span><span class="si">% s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">cypher</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;To recover the original message, you XOR the key and the cypher&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Key    : </span><span class="si">% s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cypher : </span><span class="si">% s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">cypher</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The recovered message after decryption is&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Decrypt: </span><span class="si">% s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">recover</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Compare with original message&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Message: </span><span class="si">% s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">mess</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -344,7 +548,7 @@ Message: [0 0 0 1 1 1 1 1 0 0]
 </div>
 </section>
 <section id="description-of-bb84-protocol">
-<h2>Description of BB84 protocol<a class="headerlink" href="#description-of-bb84-protocol" title="Permalink to this heading">#</a></h2>
+<h2>Description of BB84 protocol<a class="headerlink" href="#description-of-bb84-protocol" title="Link to this heading">#</a></h2>
 <p>BB84 is the first  QKD protocol, so there are a lot of great resources available to describe it. I’ll include a few here. You don’t have to read <em>all</em> of them, but make sure you understand what makes the protocol secure, how it’s related to quantum mechanics, and what the procedure of the protocol is.</p>
 <p>The original <a class="reference external" href="https://www.dropbox.com/s/i251d4hj5xi4pkr/BB84.pdf?dl=0">BB84 paper</a> lays out the protocol in an accessible and concise way. Section III is the most important part of the paper because it’s where the authors walk through the protocol.</p>
 <p>quTools also providesa <a class="reference external" href="https://www.qutools.com/files/quED/quED-QKD-manual.pdf">manual</a> on performing the QKD experiment with the quED. The BB84 protocol is described on pages 8 through 11.</p>
@@ -352,17 +556,17 @@ Message: [0 0 0 1 1 1 1 1 0 0]
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%HTML</span>
-<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">"560"</span> <span class="na">height</span><span class="o">=</span><span class="s">"315"</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://www.youtube.com/embed/ToOLbdrWst4?start=783"</span> <span class="na">title</span><span class="o">=</span><span class="s">"YouTube video player"</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">"0"</span> <span class="na">allow</span><span class="o">=</span><span class="s">"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/ToOLbdrWst4?start=783&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;YouTube video player&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/ToOLbdrWst4?start=783" title="YouTube video player" width="560"></iframe>
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/ToOLbdrWst4?start=783" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div></div>
 </div>
 </section>
 <section id="python-simulation">
-<h2>Python simulation<a class="headerlink" href="#python-simulation" title="Permalink to this heading">#</a></h2>
+<h2>Python simulation<a class="headerlink" href="#python-simulation" title="Link to this heading">#</a></h2>
 <p>The following code simulates a BB84 set-up. This is being provided to you so that you can look at the effects of Eve’s instrusion and the effects of loss. You can set the number of photons Alice sends as NN, the transmission from Alice to Bob as TT, and Eve’s intrustion as FE.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -373,7 +577,7 @@ Message: [0 0 0 1 1 1 1 1 0 0]
 <span class="n">NN</span> <span class="o">=</span> <span class="mi">1000</span>
 
 <span class="c1"># What is the transmission between Alice and Bob? </span>
-<span class="c1"># Transmission of 1 implies there's no loss at all</span>
+<span class="c1"># Transmission of 1 implies there&#39;s no loss at all</span>
 <span class="c1"># Transmission of 0 implies Eve is blocking the Alice to Bob channel</span>
 <span class="n">TT</span> <span class="o">=</span> <span class="mf">0.9</span>
 
@@ -382,16 +586,16 @@ Message: [0 0 0 1 1 1 1 1 0 0]
 
 <span class="c1"># Initialize arrays</span>
 
-<span class="c1"># What bits did Alice's transmitted message send?</span>
+<span class="c1"># What bits did Alice&#39;s transmitted message send?</span>
 <span class="n">bits_tx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">NN</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span>
 <span class="c1"># What polarization did Alice use?</span>
 <span class="n">pol_tx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">NN</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span>
 
 <span class="c1"># Did the photon make it?</span>
 <span class="n">photon_rx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">NN</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="c1"># Bob's measurement basis</span>
+<span class="c1"># Bob&#39;s measurement basis</span>
 <span class="n">pol_rx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">NN</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="c1"># Bob's received photons</span>
+<span class="c1"># Bob&#39;s received photons</span>
 <span class="n">bits_rx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">NN</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span>
 
 <span class="c1"># Did Eve interefere?</span>
@@ -414,13 +618,13 @@ Message: [0 0 0 1 1 1 1 1 0 0]
         <span class="n">Eve_rx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Record that this is an occurence of Eve eavesdropping</span>
         <span class="n">Eve_bas</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># She randomly selects a basis</span>
         <span class="n">Eve_pol</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Eve_bas</span>
-        <span class="k">if</span> <span class="n">Eve_bas</span> <span class="o">==</span> <span class="n">bas_A</span><span class="p">:</span> <span class="c1"># If her basis matches Alice's</span>
+        <span class="k">if</span> <span class="n">Eve_bas</span> <span class="o">==</span> <span class="n">bas_A</span><span class="p">:</span> <span class="c1"># If her basis matches Alice&#39;s</span>
             <span class="n">Eve_bit</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">bit_A</span> <span class="c1"># Then she recovers the bit perfectly</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">Eve_bit</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># otherwise, it's a coin toss   </span>
+            <span class="n">Eve_bit</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># otherwise, it&#39;s a coin toss   </span>
         <span class="n">bit_rx</span> <span class="o">=</span> <span class="n">Eve_bit</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1"># Now the bit Bob receives will be the bit Eve sends</span>
         <span class="n">bas_rx</span> <span class="o">=</span> <span class="n">Eve_bas</span> <span class="c1"># In the basis that Eve sends</span>
-    <span class="k">else</span><span class="p">:</span> <span class="c1"># If Eve isn't measuring and sending out photons</span>
+    <span class="k">else</span><span class="p">:</span> <span class="c1"># If Eve isn&#39;t measuring and sending out photons</span>
         <span class="n">pho_E</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Mark this as no Eve involvement</span>
         <span class="n">bit_rx</span> <span class="o">=</span> <span class="n">bit_A</span> <span class="c1"># The bit Bob receives is ths bit Alice sends</span>
         <span class="n">bas_rx</span> <span class="o">=</span> <span class="n">bas_A</span> <span class="c1"># in the basis in which Alice sent it</span>
@@ -458,12 +662,12 @@ Message: [0 0 0 1 1 1 1 1 0 0]
 <span class="n">ixe</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">Eve_rx</span> <span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">Eve_pol</span> <span class="o">==</span> <span class="n">pol_tx</span><span class="p">))])</span>
 
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Alice sent Bob </span><span class="si">% d</span><span class="s2"> bits"</span><span class="o">%</span> <span class="n">NN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Bob received </span><span class="si">% d</span><span class="s2"> bits"</span><span class="o">%</span> <span class="n">photon_rx</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"They used the same basis in </span><span class="si">%d</span><span class="s2"> of those bits"</span> <span class="o">%</span><span class="k">ix</span>.size)
-<span class="nb">print</span><span class="p">(</span><span class="s2">"This resulted in a total of </span><span class="si">%d</span><span class="s2"> bits without errors"</span> <span class="o">%</span><span class="k">usable_key</span>)
-<span class="nb">print</span><span class="p">(</span><span class="s2">"The BER was </span><span class="si">%10.2E</span><span class="s2">"</span> <span class="o">%</span><span class="k">BER</span>)
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Eve got </span><span class="si">%d</span><span class="s2"> bits"</span> <span class="o">%</span><span class="k">ixe</span>.size)
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Alice sent Bob </span><span class="si">% d</span><span class="s2"> bits&quot;</span><span class="o">%</span> <span class="n">NN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bob received </span><span class="si">% d</span><span class="s2"> bits&quot;</span><span class="o">%</span> <span class="n">photon_rx</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;They used the same basis in </span><span class="si">%d</span><span class="s2"> of those bits&quot;</span> <span class="o">%</span><span class="k">ix</span>.size)
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This resulted in a total of </span><span class="si">%d</span><span class="s2"> bits without errors&quot;</span> <span class="o">%</span><span class="k">usable_key</span>)
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The BER was </span><span class="si">%10.2E</span><span class="s2">&quot;</span> <span class="o">%</span><span class="k">BER</span>)
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Eve got </span><span class="si">%d</span><span class="s2"> bits&quot;</span> <span class="o">%</span><span class="k">ixe</span>.size)
 </pre></div>
 </div>
 </div>
@@ -481,23 +685,23 @@ Eve got 48 bits
 <p>Based on this code, we see that as Eve listens in more often, she receives more bits of the key <strong>and</strong> Alice and Bob see more errors. Additionally, the loss of the system doesn’t contribute to errors.</p>
 </section>
 <section id="introduction-to-ekert-protocol">
-<h2>Introduction to Ekert protocol<a class="headerlink" href="#introduction-to-ekert-protocol" title="Permalink to this heading">#</a></h2>
+<h2>Introduction to Ekert protocol<a class="headerlink" href="#introduction-to-ekert-protocol" title="Link to this heading">#</a></h2>
 <p>BB84 is possibly the most well-known QKD protocol, but there are others. One important protocol is Ekert 91, which was published in 1991. Its main difference from BB84 is that it relies on the correlation of entangled photons. In this protocol, Alice and Bob each get one photon from a source of entangled photons and then do independent measurements on the polarization of their photon and report back which basis they used - either horizontal-vertical or diagonal-antidiagonal.</p>
 <p>Artur Ekert, who first publised the protocol, has made many YouTube videos on quantum information in general and QKD in particular. He teaches a class whose lecture materials are available online, and the <a class="reference external" href="https://qubit.guide/9-quantum-cryptography.html">QKD lectures</a> are gathered together. For this text, I’ve embedded one short video where Ekert walks through the protocol. You’ll note that he uses X and Z measurements on qubits. This is analogous to measuring the polarization in either the horizontal-vertical or diagonal-antidiagonal basis of linearly polarized photons.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%HTML</span>
-<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">"560"</span> <span class="na">height</span><span class="o">=</span><span class="s">"315"</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://www.youtube.com/embed/2ExG7UJgfmQ"</span> <span class="na">title</span><span class="o">=</span><span class="s">"YouTube video player"</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">"0"</span> <span class="na">allow</span><span class="o">=</span><span class="s">"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/2ExG7UJgfmQ&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;YouTube video player&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/2ExG7UJgfmQ" title="YouTube video player" width="560"></iframe>
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/2ExG7UJgfmQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div></div>
 </div>
 </section>
 <section id="pre-lab-questions">
-<h2>Pre-Lab questions<a class="headerlink" href="#pre-lab-questions" title="Permalink to this heading">#</a></h2>
+<h2>Pre-Lab questions<a class="headerlink" href="#pre-lab-questions" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>What makes B84 secure?</p></li>
 <li><p>When Eve interferes on every bit, what is the resulting BER?</p></li>
@@ -505,7 +709,8 @@ Eve got 48 bits
 </ol>
 </section>
 </section>
-<script type="text/x-thebe-config">
+
+    <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
@@ -523,35 +728,52 @@ Eve got 48 bits
         predefinedOutput: true
     }
     </script>
-<script>kernelName = 'python3'</script>
-</article>
-<footer class="prev-next-footer">
-<!-- Previous / next buttons -->
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
-<a class="left-prev" href="T2E1-LAB-HBT.html" title="previous page">
-<i class="fa-solid fa-angle-left"></i>
-<div class="prev-next-info">
-<p class="prev-next-subtitle">previous</p>
-<p class="prev-next-title">LAB – Hanbury Brown - Twiss Lab (Week 1)</p>
+    <a class="left-prev"
+       href="T2E1-LAB-HBT.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">LAB – Hanbury Brown - Twiss Lab (Week 1)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="T2E1-LAB-BB84.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">LAB – QKD (Week 2)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
-</a>
-<a class="right-next" href="T2E1-LAB-BB84.html" title="next page">
-<div class="prev-next-info">
-<p class="prev-next-subtitle">next</p>
-<p class="prev-next-title">LAB – QKD (Week 2)</p>
-</div>
-<i class="fa-solid fa-angle-right"></i>
-</a>
-</div>
-</footer>
-</div>
-<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-<div class="sidebar-secondary-item">
-<div class="page-toc tocsection onthispage">
-<i class="fa-solid fa-list"></i> Contents
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
   </div>
-<nav class="bd-toc-nav page-toc">
-<ul class="visible nav section-nav flex-column">
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-a-secret-key">Generating a secret key</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-time-pad-encryption">One time pad encryption</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description-of-bb84-protocol">Description of BB84 protocol</a></li>
@@ -559,36 +781,57 @@ Eve got 48 bits
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-ekert-protocol">Introduction to Ekert protocol</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-lab-questions">Pre-Lab questions</a></li>
 </ul>
-</nav></div>
+  </nav></div>
+
 </div></div>
-</div>
-<footer class="bd-footer-content">
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
 <div class="bd-footer-content__inner container">
-<div class="footer-item">
+  
+  <div class="footer-item">
+    
 <p class="component-author">
 By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
 </p>
-</div>
-<div class="footer-item">
-<p class="copyright">
+
+  </div>
+  
+  <div class="footer-item">
     
-      © Copyright 2022.
+
+  <p class="copyright">
+    
+      © Copyright 2023.
       <br/>
-</p>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
-<div class="footer-item">
-</div>
-<div class="footer-item">
-</div>
-</div>
-</footer>
-</main>
-</div>
-</div>
-<!-- Scripts loaded after <body> so the DOM is not blocked -->
-<script src="_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
-<footer class="bd-footer">
-</footer>
-<script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script><script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script><script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script><script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script><script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script><script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script><script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script><script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script><script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script></body>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
 </html>

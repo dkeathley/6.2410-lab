@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Activity 2 – Two-photon (HOM) interference simulation &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+    <title>Activity 3 – Two-photon (HOM) interference simulation &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
   
   
   
@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'simulation-modules/T1-3E3-Activity-Compuational_HOM';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Activity 3: SPDC Simulation by QuTip" href="T1_3E2_spdc_simulation_by_qutip.html" />
-    <link rel="prev" title="Activity 1: Solid State Spis – Cavity QED Digital Twin" href="T1-3E3-Activity-Cavity_QED_sensor.html" />
+    <link rel="next" title="Activity 1: SPDC Simulation by QuTip" href="T1_3E2_spdc_simulation_by_qutip.html" />
+    <link rel="prev" title="Activity 2: Solid State Spis – Cavity QED Digital Twin" href="T1-3E3-Activity-Cavity_QED_sensor.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -207,9 +207,9 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">T1:3E2 -- Quantum Simulation Lab</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="T1-3E3-Activity-Cavity_QED_sensor.html">Activity 1: Solid State Spis – Cavity QED Digital Twin</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Activity 2 – Two-photon (HOM) interference simulation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="T1_3E2_spdc_simulation_by_qutip.html">Activity 3: SPDC Simulation by QuTip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T1-3E3-Activity-Cavity_QED_sensor.html">Activity 2: Solid State Spis – Cavity QED Digital Twin</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Activity 3 – Two-photon (HOM) interference simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T1_3E2_spdc_simulation_by_qutip.html">Activity 1: SPDC Simulation by QuTip</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Final Projects</span></p>
 <ul class="nav bd-sidenav">
@@ -452,7 +452,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Activity 2 – Two-photon (HOM) interference simulation</h1>
+    <h1>Activity 3 – Two-photon (HOM) interference simulation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -462,6 +462,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prelab-activity">Prelab Activity</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#headers-and-imports">Headers and Imports</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-atom-decay">1. Single atom decay</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Questions</a></li>
@@ -479,13 +480,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="activity-2-two-photon-hom-interference-simulation">
-<h1>Activity 2 – Two-photon (HOM) interference simulation<a class="headerlink" href="#activity-2-two-photon-hom-interference-simulation" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="activity-3-two-photon-hom-interference-simulation">
+<h1>Activity 3 – Two-photon (HOM) interference simulation<a class="headerlink" href="#activity-3-two-photon-hom-interference-simulation" title="Link to this heading">#</a></h1>
 <p>This lab module will focus on simulating photon statistics. Since photons are a quantum-mechanical phenomenon, measuring photon statistics allows us to directly probe the quantum-mechanical nature of light.</p>
 <p>You will learn how to setup a Monte-Carlo quantum simulation of emitters coupled to electromagnetic modes. You will use correlations in single photon measurements to explore quantum-mechanical states that these systems generate, such as single photon or NOON states.</p>
 <p>While we won’t go into detail in this lab activity, these sorts of single photon intereference experiments form the basis of entanglement generation protocols, which allow entanglement to be shared between remote spins (see some of the optional reading at the end).</p>
-<p>Pre-lab:</p>
-<p>Install QuTip and reproduce the first example of the <a class="reference external" href="https://qutip.org/docs/4.5/guide/dynamics/dynamics-monte.html">Quantum Monte Carlo solver</a>.</p>
+<section id="prelab-activity">
+<h2>Prelab Activity<a class="headerlink" href="#prelab-activity" title="Link to this heading">#</a></h2>
+<p>Setup QuTip and reproduce the first example of the <a class="reference external" href="https://qutip.org/docs/4.5/guide/dynamics/dynamics-monte.html">Quantum Monte Carlo solver</a>.</p>
+</section>
 <section id="headers-and-imports">
 <h2>Headers and Imports<a class="headerlink" href="#headers-and-imports" title="Link to this heading">#</a></h2>
 <p>Import the necessary libraries and python packages. We will use <a class="reference external" href="https://qutip.org/">QuTiP</a> for this exercise.</p>
@@ -817,7 +820,7 @@ Total run time: 107.48s
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Activity 1: Solid State Spis – Cavity QED Digital Twin</p>
+        <p class="prev-next-title">Activity 2: Solid State Spis – Cavity QED Digital Twin</p>
       </div>
     </a>
     <a class="right-next"
@@ -825,7 +828,7 @@ Total run time: 107.48s
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Activity 3: SPDC Simulation by QuTip</p>
+        <p class="prev-next-title">Activity 1: SPDC Simulation by QuTip</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -845,6 +848,7 @@ Total run time: 107.48s
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prelab-activity">Prelab Activity</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#headers-and-imports">Headers and Imports</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-atom-decay">1. Single atom decay</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Questions</a></li>

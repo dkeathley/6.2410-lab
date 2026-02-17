@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Activity 3: SPDC Simulation by QuTip &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+    <title>Activity 1: SPDC Simulation by QuTip &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
   
   
   
@@ -59,11 +59,14 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"0b3837d30be34c2fb14315b2804e1f13": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "132c731c29ea48ae92dd3e1ab1ed746f": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "1a1387fd1bfb4eec8cce5d4faffd4f86": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "IntSliderModel", "state": {"behavior": "drag-tap", "continuous_update": false, "description": "Time index:", "layout": "IPY_MODEL_d6a17f1db2414c4abce47b7637233725", "max": 1000, "style": "IPY_MODEL_87fef42aa065458aab1e496b17c33af1", "value": 500}}, "1bc5a313cfbf47dc80c1cac4a8fccd56": {"model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "model_name": "OutputModel", "state": {"layout": "IPY_MODEL_e5f32fbeef124ce7b8cb52f0862842f2", "outputs": [{"ename": "TypeError", "evalue": "'numpy.float64' object cannot be interpreted as an integer", "output_type": "error", "traceback": ["\u001b[31m---------------------------------------------------------------------------\u001b[39m", "\u001b[31mTypeError\u001b[39m                                 Traceback (most recent call last)", "\u001b[36mFile \u001b[39m\u001b[32m~/.local/lib/python3.13/site-packages/ipywidgets/widgets/interaction.py:243\u001b[39m, in \u001b[36minteractive.update\u001b[39m\u001b[34m(self, *args)\u001b[39m\n\u001b[32m    241\u001b[39m     value = widget.get_interact_value()\n\u001b[32m    242\u001b[39m     \u001b[38;5;28mself\u001b[39m.kwargs[widget._kwarg] = value\n\u001b[32m--> \u001b[39m\u001b[32m243\u001b[39m \u001b[38;5;28mself\u001b[39m.result = \u001b[38;5;28;43mself\u001b[39;49m\u001b[43m.\u001b[49m\u001b[43mf\u001b[49m\u001b[43m(\u001b[49m\u001b[43m*\u001b[49m\u001b[43m*\u001b[49m\u001b[38;5;28;43mself\u001b[39;49m\u001b[43m.\u001b[49m\u001b[43mkwargs\u001b[49m\u001b[43m)\u001b[49m\n\u001b[32m    244\u001b[39m show_inline_matplotlib_plots()\n\u001b[32m    245\u001b[39m \u001b[38;5;28;01mif\u001b[39;00m \u001b[38;5;28mself\u001b[39m.auto_display \u001b[38;5;129;01mand\u001b[39;00m \u001b[38;5;28mself\u001b[39m.result \u001b[38;5;129;01mis\u001b[39;00m \u001b[38;5;129;01mnot\u001b[39;00m \u001b[38;5;28;01mNone\u001b[39;00m:\n", "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[4]\u001b[39m\u001b[32m, line 13\u001b[39m, in \u001b[36mupdate_plot\u001b[39m\u001b[34m(t)\u001b[39m\n\u001b[32m     11\u001b[39m     bar_vals_b = real(psib.diag())\n\u001b[32m     12\u001b[39m \u001b[38;5;66;03m#    max_val = max(bar_vals_a.max(), bar_vals_b.max())\u001b[39;00m\n\u001b[32m---> \u001b[39m\u001b[32m13\u001b[39m     max_val = \u001b[38;5;28;43mmax\u001b[39;49m\u001b[43m(\u001b[49m\u001b[43mbar_vals_a\u001b[49m\u001b[43m[\u001b[49m\u001b[32;43m1\u001b[39;49m\u001b[43m:\u001b[49m\u001b[43m]\u001b[49m\u001b[43m.\u001b[49m\u001b[43mmax\u001b[49m\u001b[43m(\u001b[49m\u001b[43m)\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mbar_vals_b\u001b[49m\u001b[43m[\u001b[49m\u001b[32;43m1\u001b[39;49m\u001b[43m:\u001b[49m\u001b[43m]\u001b[49m\u001b[43m.\u001b[49m\u001b[43mmax\u001b[49m\u001b[43m(\u001b[49m\u001b[43m)\u001b[49m\u001b[43m)\u001b[49m \u001b[38;5;66;03m# ignore first entry P(0) which is always going to be large\u001b[39;00m\n\u001b[32m     14\u001b[39m     axes[\u001b[32m0\u001b[39m].bar(\u001b[38;5;28mrange\u001b[39m(N1), bar_vals_a)\n\u001b[32m     15\u001b[39m     axes[\u001b[32m1\u001b[39m].bar(\u001b[38;5;28mrange\u001b[39m(N2), bar_vals_b)\n", "\u001b[36mFile \u001b[39m\u001b[32m/usr/lib64/python3.13/site-packages/numpy/_core/fromnumeric.py:3164\u001b[39m, in \u001b[36mmax\u001b[39m\u001b[34m(a, axis, out, keepdims, initial, where)\u001b[39m\n\u001b[32m   3052\u001b[39m \u001b[38;5;129m@array_function_dispatch\u001b[39m(_max_dispatcher)\n\u001b[32m   3053\u001b[39m \u001b[38;5;129m@set_module\u001b[39m(\u001b[33m'\u001b[39m\u001b[33mnumpy\u001b[39m\u001b[33m'\u001b[39m)\n\u001b[32m   3054\u001b[39m \u001b[38;5;28;01mdef\u001b[39;00m \u001b[34mmax\u001b[39m(a, axis=\u001b[38;5;28;01mNone\u001b[39;00m, out=\u001b[38;5;28;01mNone\u001b[39;00m, keepdims=np._NoValue, initial=np._NoValue,\n\u001b[32m   3055\u001b[39m          where=np._NoValue):\n\u001b[32m   3056\u001b[39m \u001b[38;5;250m    \u001b[39m\u001b[33;03m\"\"\"\u001b[39;00m\n\u001b[32m   3057\u001b[39m \u001b[33;03m    Return the maximum of an array or maximum along an axis.\u001b[39;00m\n\u001b[32m   3058\u001b[39m \n\u001b[32m   (...)\u001b[39m\u001b[32m   3162\u001b[39m \u001b[33;03m    5\u001b[39;00m\n\u001b[32m   3163\u001b[39m \u001b[33;03m    \"\"\"\u001b[39;00m\n\u001b[32m-> \u001b[39m\u001b[32m3164\u001b[39m     \u001b[38;5;28;01mreturn\u001b[39;00m \u001b[43m_wrapreduction\u001b[49m\u001b[43m(\u001b[49m\u001b[43ma\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mnp\u001b[49m\u001b[43m.\u001b[49m\u001b[43mmaximum\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[33;43m'\u001b[39;49m\u001b[33;43mmax\u001b[39;49m\u001b[33;43m'\u001b[39;49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43maxis\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[38;5;28;43;01mNone\u001b[39;49;00m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mout\u001b[49m\u001b[43m,\u001b[49m\n\u001b[32m   3165\u001b[39m \u001b[43m                          \u001b[49m\u001b[43mkeepdims\u001b[49m\u001b[43m=\u001b[49m\u001b[43mkeepdims\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43minitial\u001b[49m\u001b[43m=\u001b[49m\u001b[43minitial\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mwhere\u001b[49m\u001b[43m=\u001b[49m\u001b[43mwhere\u001b[49m\u001b[43m)\u001b[49m\n", "\u001b[36mFile \u001b[39m\u001b[32m/usr/lib64/python3.13/site-packages/numpy/_core/fromnumeric.py:84\u001b[39m, in \u001b[36m_wrapreduction\u001b[39m\u001b[34m(obj, ufunc, method, axis, dtype, out, **kwargs)\u001b[39m\n\u001b[32m     82\u001b[39m             \u001b[38;5;28;01mreturn\u001b[39;00m reduction(axis=axis, dtype=dtype, out=out, **passkwargs)\n\u001b[32m     83\u001b[39m         \u001b[38;5;28;01melse\u001b[39;00m:\n\u001b[32m---> \u001b[39m\u001b[32m84\u001b[39m             \u001b[38;5;28;01mreturn\u001b[39;00m \u001b[43mreduction\u001b[49m\u001b[43m(\u001b[49m\u001b[43maxis\u001b[49m\u001b[43m=\u001b[49m\u001b[43maxis\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mout\u001b[49m\u001b[43m=\u001b[49m\u001b[43mout\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43m*\u001b[49m\u001b[43m*\u001b[49m\u001b[43mpasskwargs\u001b[49m\u001b[43m)\u001b[49m\n\u001b[32m     86\u001b[39m \u001b[38;5;28;01mreturn\u001b[39;00m ufunc.reduce(obj, axis, dtype, out, **passkwargs)\n", "\u001b[36mFile \u001b[39m\u001b[32m/usr/lib64/python3.13/site-packages/numpy/_core/_methods.py:44\u001b[39m, in \u001b[36m_amax\u001b[39m\u001b[34m(a, axis, out, keepdims, initial, where)\u001b[39m\n\u001b[32m     42\u001b[39m \u001b[38;5;28;01mdef\u001b[39;00m \u001b[34m_amax\u001b[39m(a, axis=\u001b[38;5;28;01mNone\u001b[39;00m, out=\u001b[38;5;28;01mNone\u001b[39;00m, keepdims=\u001b[38;5;28;01mFalse\u001b[39;00m,\n\u001b[32m     43\u001b[39m           initial=_NoValue, where=\u001b[38;5;28;01mTrue\u001b[39;00m):\n\u001b[32m---> \u001b[39m\u001b[32m44\u001b[39m     \u001b[38;5;28;01mreturn\u001b[39;00m \u001b[43mumr_maximum\u001b[49m\u001b[43m(\u001b[49m\u001b[43ma\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43maxis\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[38;5;28;43;01mNone\u001b[39;49;00m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mout\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mkeepdims\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43minitial\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mwhere\u001b[49m\u001b[43m)\u001b[49m\n", "\u001b[31mTypeError\u001b[39m: 'numpy.float64' object cannot be interpreted as an integer"]}]}}, "1f80faec89b04866b657c6d2fedbb170": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "SliderStyleModel", "state": {"description_width": ""}}, "256fa074448d43949b1834f8fe40607e": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "VBoxModel", "state": {"_dom_classes": ["widget-interact"], "children": ["IPY_MODEL_1a1387fd1bfb4eec8cce5d4faffd4f86", "IPY_MODEL_1bc5a313cfbf47dc80c1cac4a8fccd56"], "layout": "IPY_MODEL_0b3837d30be34c2fb14315b2804e1f13"}}, "2953798ce9ec4586ab029c61197b866e": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "IntSliderModel", "state": {"behavior": "drag-tap", "continuous_update": false, "description": "Time index:", "layout": "IPY_MODEL_c26c8d1a3a80450c9522620ce998882a", "max": 1000, "style": "IPY_MODEL_67af4b1558c64ae8ab67256175bddc37", "value": 500}}, "358a7753975340b187329441318cddcd": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "5614052f5937444a8f4907c314cbc367": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "VBoxModel", "state": {"_dom_classes": ["widget-interact"], "children": ["IPY_MODEL_dfd2d093e5e64ae8966eaa410646ac21", "IPY_MODEL_abf7111cfa6c421a9aad9b6b90683b2e"], "layout": "IPY_MODEL_e94975239fb4427db6599f45e8b1f7fc"}}, "570a6b1293114bec9e8620d3c6b71d95": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "67af4b1558c64ae8ab67256175bddc37": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "SliderStyleModel", "state": {"description_width": ""}}, "82a9d21fdd684c0cb6b4f0406523307a": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "87fef42aa065458aab1e496b17c33af1": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "SliderStyleModel", "state": {"description_width": ""}}, "9c037213100d4405814b176dd2ea0c56": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "VBoxModel", "state": {"_dom_classes": ["widget-interact"], "children": ["IPY_MODEL_2953798ce9ec4586ab029c61197b866e", "IPY_MODEL_fb3201e0ec7e4def85bc429f684da6a9"], "layout": "IPY_MODEL_132c731c29ea48ae92dd3e1ab1ed746f"}}, "a0f39a2efd36483088ea7db71c31eff6": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "SliderStyleModel", "state": {"description_width": ""}}, "abf7111cfa6c421a9aad9b6b90683b2e": {"model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "model_name": "OutputModel", "state": {"layout": "IPY_MODEL_570a6b1293114bec9e8620d3c6b71d95"}}, "b3faf7695a9f4bf5adfaf5c68b09dae5": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "c26c8d1a3a80450c9522620ce998882a": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "ccabe09c084b40a9aaa5e4daf8cd248b": {"model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "model_name": "OutputModel", "state": {"layout": "IPY_MODEL_d4270659831242a78d32867a9872dfb1"}}, "d4270659831242a78d32867a9872dfb1": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "d6a17f1db2414c4abce47b7637233725": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "dfd2d093e5e64ae8966eaa410646ac21": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "IntSliderModel", "state": {"behavior": "drag-tap", "continuous_update": false, "description": "Time index:", "layout": "IPY_MODEL_f230903a330345f79c7b0bfe53b49272", "max": 1000, "style": "IPY_MODEL_a0f39a2efd36483088ea7db71c31eff6", "value": 500}}, "e5f32fbeef124ce7b8cb52f0862842f2": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "e94975239fb4427db6599f45e8b1f7fc": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "f230903a330345f79c7b0bfe53b49272": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {}}, "f5f63229cca64cb3a0b7727510567665": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "VBoxModel", "state": {"_dom_classes": ["widget-interact"], "children": ["IPY_MODEL_f6961029437f40448cfe39e47e9e0dd9", "IPY_MODEL_ccabe09c084b40a9aaa5e4daf8cd248b"], "layout": "IPY_MODEL_82a9d21fdd684c0cb6b4f0406523307a"}}, "f6961029437f40448cfe39e47e9e0dd9": {"model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "model_name": "IntSliderModel", "state": {"behavior": "drag-tap", "continuous_update": false, "description": "Time index:", "layout": "IPY_MODEL_358a7753975340b187329441318cddcd", "max": 1000, "style": "IPY_MODEL_1f80faec89b04866b657c6d2fedbb170", "value": 500}}, "fb3201e0ec7e4def85bc429f684da6a9": {"model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "model_name": "OutputModel", "state": {"layout": "IPY_MODEL_b3faf7695a9f4bf5adfaf5c68b09dae5"}}}, "version_major": 2, "version_minor": 0}</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'simulation-modules/T1_3E2_spdc_simulation_by_qutip';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Final Design Project" href="../FINAL-PROJECTS.html" />
-    <link rel="prev" title="Activity 2 – Two-photon (HOM) interference simulation" href="T1-3E3-Activity-Compuational_HOM.html" />
+    <link rel="prev" title="Activity 3 – Two-photon (HOM) interference simulation" href="T1-3E3-Activity-Compuational_HOM.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -207,9 +210,9 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">T1:3E2 -- Quantum Simulation Lab</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="T1-3E3-Activity-Cavity_QED_sensor.html">Activity 1: Solid State Spis – Cavity QED Digital Twin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="T1-3E3-Activity-Compuational_HOM.html">Activity 2 – Two-photon (HOM) interference simulation</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Activity 3: SPDC Simulation by QuTip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T1-3E3-Activity-Cavity_QED_sensor.html">Activity 2: Solid State Spis – Cavity QED Digital Twin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T1-3E3-Activity-Compuational_HOM.html">Activity 3 – Two-photon (HOM) interference simulation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Activity 1: SPDC Simulation by QuTip</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Final Projects</span></p>
 <ul class="nav bd-sidenav">
@@ -452,7 +455,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Activity 3: SPDC Simulation by QuTip</h1>
+    <h1>Activity 1: SPDC Simulation by QuTip</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -462,6 +465,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prelab-exercise-pt-1">Prelab Exercise Pt. 1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports-and-headers">Imports and Headers</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-and-hamiltonian">Operators and Hamiltonian</a></li>
 </ul>
@@ -492,8 +496,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="activity-3-spdc-simulation-by-qutip">
-<h1>Activity 3: SPDC Simulation by QuTip<a class="headerlink" href="#activity-3-spdc-simulation-by-qutip" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="activity-1-spdc-simulation-by-qutip">
+<h1>Activity 1: SPDC Simulation by QuTip<a class="headerlink" href="#activity-1-spdc-simulation-by-qutip" title="Link to this heading">#</a></h1>
 <p>Quantum optics relies on a reliable source of single photons and entangled photon pairs.  A typical source of these photons is spontaneous parametric down-conversion (SPDC) within a nonlinear crystal.  For example, all of the quantum optics experimental lab modules in this class rely on SPDC.</p>
 <p>In this activity, we will simulate the SPDC process and the quantum states of light it generates.  We will do this through the formalism of the degenerate parametric amplifier.</p>
 <p>Specific aims of this activity are:</p>
@@ -501,6 +505,12 @@ document.write(`
 <li><p>Enrich your understanding of the SPDC process.</p></li>
 <li><p>Develop a realistic model of an SPDC source that could be further extended and used in the context of device and technology simulation and design.</p></li>
 </ul>
+<section id="prelab-exercise-pt-1">
+<h2>Prelab Exercise Pt. 1<a class="headerlink" href="#prelab-exercise-pt-1" title="Link to this heading">#</a></h2>
+<p>0a. Setup <a class="reference external" href="https://qutip.org/">QuTiP</a> to run on a cloud service like Google Colab or install it on your own PC.</p>
+<p>0b. Go through and perform the activities in <a class="reference external" href="https://qutip.org/qutip-tutorials/">QuTiP Lecture 0</a>.</p>
+<p>For these parts, you can submit a Jupyter notebook and pdf export showing you went through and performed the activities.</p>
+</section>
 <section id="imports-and-headers">
 <h2>Imports and Headers<a class="headerlink" href="#imports-and-headers" title="Link to this heading">#</a></h2>
 <p>Install qutip if needed and import tools for the simulations performed throughout this activity.</p>
@@ -529,15 +539,11 @@ document.write(`
 <p class="expanded admonition-title">Hide code cell output</p>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qutip
-  Downloading qutip-5.1.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.2 kB)
-Requirement already satisfied: numpy&gt;=1.22 in /usr/local/lib/python3.11/dist-packages (from qutip) (1.26.4)
-Requirement already satisfied: scipy&gt;=1.9 in /usr/local/lib/python3.11/dist-packages (from qutip) (1.13.1)
-Requirement already satisfied: packaging in /usr/local/lib/python3.11/dist-packages (from qutip) (24.2)
-Downloading qutip-5.1.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (30.1 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">30.1/30.1 MB</span> <span class=" -Color -Color-Red">18.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hInstalling collected packages: qutip
-Successfully installed qutip-5.1.1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: qutip in /home/dkeathley/.local/lib/python3.13/site-packages (5.2.3)
+Requirement already satisfied: numpy&gt;=1.22 in /usr/lib64/python3.13/site-packages (from qutip) (2.2.6)
+Requirement already satisfied: scipy!=1.16.0,!=1.17.0,&gt;=1.9 in /home/dkeathley/.local/lib/python3.13/site-packages (from qutip) (1.16.3)
+Requirement already satisfied: packaging in /usr/lib/python3.13/site-packages (from qutip) (24.2)
 </pre></div>
 </div>
 </div>
@@ -571,9 +577,9 @@ Successfully installed qutip-5.1.1
 </section>
 <section id="prelab-exercises">
 <h2>Prelab Exercises<a class="headerlink" href="#prelab-exercises" title="Link to this heading">#</a></h2>
-<p>0a. Show that <span class="math notranslate nohighlight">\(\frac{d\hat{a}}{dt} = \frac{\chi}{2}\hat{b}^{\dagger}\)</span>, and  <span class="math notranslate nohighlight">\(\frac{d\hat{b}^{\dagger}}{dt} = \frac{\chi}{2}\hat{a}\)</span>. (Hint: use the fact that <span class="math notranslate nohighlight">\(\frac{d\hat{a}}{dt} = \frac{i}{\hbar}[\hat{H}, \hat{a}]\)</span> for any operator <span class="math notranslate nohighlight">\(\hat{a}\)</span>).</p>
+<p>0c. Show that <span class="math notranslate nohighlight">\(\frac{d\hat{a}}{dt} = \frac{\chi}{2}\hat{b}^{\dagger}\)</span>, and  <span class="math notranslate nohighlight">\(\frac{d\hat{b}^{\dagger}}{dt} = \frac{\chi}{2}\hat{a}\)</span>. (Hint: use the fact that <span class="math notranslate nohighlight">\(\frac{d\hat{a}}{dt} = \frac{i}{\hbar}[\hat{H}, \hat{a}]\)</span> for any operator <span class="math notranslate nohighlight">\(\hat{a}\)</span>).</p>
 <p>Note: this is the Heisenberg picture where we evolve the operators instead of the state. See <a class="reference external" href="https://en.wikipedia.org/wiki/Heisenberg_picture">https://en.wikipedia.org/wiki/Heisenberg_picture</a>.</p>
-<p>0b.  The above coupled differential equation has the solutions <span class="math notranslate nohighlight">\(\hat{a}(T) = \cosh (\chi T/2) \hat{a}(0) + \sinh(\chi T/2) \hat{b}^\dagger (0)\)</span> and <span class="math notranslate nohighlight">\(\hat{b}^\dagger(T) = \sinh (\chi T/2) \hat{a}(0) + \cosh(\chi T/2) \hat{b}^\dagger (0)\)</span> at time <span class="math notranslate nohighlight">\(T\)</span> given the initial operators at time <span class="math notranslate nohighlight">\(0\)</span>. Derive the output photon number in <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> at a time <span class="math notranslate nohighlight">\(T\)</span>.  (Hints: Start with the vacuum state and apply the number operator; you should get something with <span class="math notranslate nohighlight">\(\sinh^2\)</span>).</p>
+<p>0d.  The above coupled differential equation has the solutions <span class="math notranslate nohighlight">\(\hat{a}(T) = \cosh (\chi T/2) \hat{a}(0) + \sinh(\chi T/2) \hat{b}^\dagger (0)\)</span> and <span class="math notranslate nohighlight">\(\hat{b}^\dagger(T) = \sinh (\chi T/2) \hat{a}(0) + \cosh(\chi T/2) \hat{b}^\dagger (0)\)</span> at time <span class="math notranslate nohighlight">\(T\)</span> given the initial operators at time <span class="math notranslate nohighlight">\(0\)</span>. Derive the output photon number in <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> at a time <span class="math notranslate nohighlight">\(T\)</span>.  (Hints: Start with the vacuum state and apply the number operator; you should get something with <span class="math notranslate nohighlight">\(\sinh^2\)</span>).</p>
 </section>
 <section id="simulate-time-dependent-problem-in-qutip">
 <h2>Simulate Time-Dependent Problem in QuTiP<a class="headerlink" href="#simulate-time-dependent-problem-in-qutip" title="Link to this heading">#</a></h2>
@@ -624,8 +630,8 @@ Successfully installed qutip-5.1.1
 </ul>
 <p>We then use the function mesolve from the Qutip library to solve the <a class="reference external" href="https://https://en.wikipedia.org/wiki/Quantum_master_equation">quantum master equation </a> to find the time evolution of the system. The function takes as input the Hamiltonian <code class="docutils literal notranslate"><span class="pre">Hab</span></code>, the initial state <code class="docutils literal notranslate"><span class="pre">psi0</span></code>, the list of times <code class="docutils literal notranslate"><span class="pre">tlist</span></code>, the list of collapse operators <code class="docutils literal notranslate"><span class="pre">c_ops</span></code>, and the list of observables <code class="docutils literal notranslate"><span class="pre">e_ops</span></code>. The function returns an object output that contains information about the time evolution of the system, such as the states of the system at each time in <code class="docutils literal notranslate"><span class="pre">tlist</span></code>.</p>
 <p>In the example, the <code class="docutils literal notranslate"><span class="pre">c_ops</span></code> list is empty, which means that there are no sources of decoherence or dissipation in the system. As a result, the evolution of the system is purely unitary and described by the Hamiltonian <span class="math notranslate nohighlight">\(H_{ab}\)</span>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># System Definition:</span>
 
 <span class="c1"># Initial State</span>
@@ -653,19 +659,35 @@ Successfully installed qutip-5.1.1
 </pre></div>
 </div>
 </div>
+<details class="admonition hide below-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell output</p>
+<p class="expanded admonition-title">Hide code cell output</p>
+</summary>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.11/dist-packages/qutip/solver/solver_base.py:576: FutureWarning: e_ops will be keyword only from qutip 5.3 for all solver
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/dkeathley/.local/lib/python3.13/site-packages/qutip/solver/solver_base.py:598: FutureWarning: e_ops will be keyword only from qutip 5.3 for all solver
   warnings.warn(
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <section id="exercise-1">
 <h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Link to this heading">#</a></h3>
 <p>1a. Verify the Hermiticity of the Hamiltonian.</p>
 <p>1b. Define operator objects for the number operators <span class="math notranslate nohighlight">\(\hat{N}\)</span> in <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, as well as the operator for <span class="math notranslate nohighlight">\(\hat{N}^2\)</span> for <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>.</p>
-<p>1c. Use the <code class="docutils literal notranslate"><span class="pre">expect()</span></code> function to evaluate the expectation of the photon number in <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> for all of the output states, provided by <code class="docutils literal notranslate"><span class="pre">phi_out.states</span></code>.  You should have <code class="docutils literal notranslate"><span class="pre">1000</span></code> output states, one for each point in time in <code class="docutils literal notranslate"><span class="pre">tlist</span></code>.  Plot the growth of the photon number as a function of time.  Does it makes sense? (Compare directly to your expected expression from the pre-lab).</p>
+<p>1c. Use the <code class="docutils literal notranslate"><span class="pre">expect()</span></code> function to evaluate the expectation of the photon number in <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> for all of the output states, provided by <code class="docutils literal notranslate"><span class="pre">phi_out.states</span></code>.  You should have <code class="docutils literal notranslate"><span class="pre">1000</span></code> output states, one for each point in time in <code class="docutils literal notranslate"><span class="pre">tlist</span></code>.  Plot the growth of the photon number as a function of time.  Does it makes sense? (Compare directly to your expected expression from the pre-lab by plotting that result on top of the result simulated with QuTip).</p>
 <p>The code block below gets you started.  If needed, a refresher on photon number operators and photon number statistics is provided in <a class="reference internal" href="../BASICS-quantum-optics-basics.html#content-basics-quantum-optics"><span class="std std-ref">BASICS – Quantum Optics</span></a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">na</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span><span class="o">*</span><span class="n">a</span> <span class="c1">#number operator for mod a</span>
+<span class="n">e_na</span> <span class="o">=</span> <span class="n">expect</span><span class="p">(</span><span class="n">na</span><span class="p">,</span> <span class="n">psi_out</span><span class="o">.</span><span class="n">states</span><span class="p">)</span>
+
+<span class="c1">#... your code here to finish the exercise ...</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>1d. Now calculate the standard deviation of the photon number in <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>.  Explain the nature of the growth of the standard deviation.  Does it also match theory?  Explain why this growth behavior make sense.</p>
 <p>1e. The photon rate (output photons per second) can be expressed as the phase-matching bandwidth times the photon number.  Given the maximum value at the final time in the interaction, what is the photon emission rate?  How does this compare to the incident pump photon rate assuming a pump wavelength of 400 nm and power of 10 mW?</p>
 </section>
@@ -689,8 +711,6 @@ Successfully installed qutip-5.1.1
     <span class="n">psib</span> <span class="o">=</span> <span class="n">ptrace</span><span class="p">(</span><span class="n">psi_out</span><span class="o">.</span><span class="n">states</span><span class="p">[</span><span class="n">t</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">bar_vals_a</span> <span class="o">=</span> <span class="n">real</span><span class="p">(</span><span class="n">psia</span><span class="o">.</span><span class="n">diag</span><span class="p">())</span>
     <span class="n">bar_vals_b</span> <span class="o">=</span> <span class="n">real</span><span class="p">(</span><span class="n">psib</span><span class="o">.</span><span class="n">diag</span><span class="p">())</span>
-<span class="c1">#    max_val = max(bar_vals_a.max(), bar_vals_b.max())</span>
-    <span class="n">max_val</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">bar_vals_a</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">bar_vals_b</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="c1"># ignore first entry P(0) which is always going to be large</span>
     <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">N1</span><span class="p">),</span> <span class="n">bar_vals_a</span><span class="p">)</span>
     <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">N2</span><span class="p">),</span> <span class="n">bar_vals_b</span><span class="p">)</span>
     <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$P(n)$&#39;</span><span class="p">)</span>
@@ -715,26 +735,13 @@ Successfully installed qutip-5.1.1
     <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="c1">#display(t_selector)</span>
-<span class="n">widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">update_plot</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">t_selector</span><span class="p">)</span>
+<span class="n">widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">update_plot</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">t_selector</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "60c1162d10dc456f9f22444804ce0de8"}</script><div class="output text_html"><div style="max-width:800px; border: 1px solid var(--colab-border-color);"><style>
-      pre.function-repr-contents {
-        overflow-x: auto;
-        padding: 8px 12px;
-        max-height: 500px;
-      }
-
-      pre.function-repr-contents.function-repr-contents-collapsed {
-        cursor: pointer;
-        max-height: 100px;
-      }
-    </style>
-    <pre style="white-space: initial; background:
-         var(--colab-secondary-surface-color); padding: 8px 12px;
-         border-bottom: 1px solid var(--colab-border-color);"><b>update_plot</b><br/>def update_plot(t)</pre><pre class="function-repr-contents function-repr-contents-collapsed" style=""><a class="filepath" style="display:none" href="#">/content/&lt;ipython-input-15-b008fbc64c30&gt;</a>&lt;no docstring&gt;</pre></div></div></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "f5f63229cca64cb3a0b7727510567665", "version_major": 2, "version_minor": 0}</script><img alt="../_images/758e067fee4ab9825597587529948023ab106001ea1cee7992ffc0a23ab029ea.png" src="../_images/758e067fee4ab9825597587529948023ab106001ea1cee7992ffc0a23ab029ea.png" />
+</div>
 </div>
 <section id="exercise-2">
 <h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Link to this heading">#</a></h3>
@@ -774,8 +781,8 @@ Successfully installed qutip-5.1.1
 <p>Use the same settings as above for the non-degenerate SPDC generation (i.e. same <code class="docutils literal notranslate"><span class="pre">chi</span></code>, <code class="docutils literal notranslate"><span class="pre">tlist</span></code>, etc).</p>
 <p><strong>Bb.</strong> Calculate and visualize the Wigner function of the output state using QuTiP (<code class="docutils literal notranslate"><span class="pre">qutip.Wigner</span></code>).  The Wigner function helps visualize the field distribution of the outgoing state along the in-phase and quadrature planes.</p>
 <p><strong>Bc.</strong> Now increase the nonlinearity setting <code class="docutils literal notranslate"><span class="pre">chi=5e-4</span></code>.  Plot the Wigner function again.  What is the difference? Do you see the halmarks of squeezing?</p>
-<div class="cell tag_hide-output docutils container">
-<div class="cell_input above-output-prompt docutils container">
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Wigner function example you can use:</span>
 
 <span class="n">xvec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
@@ -784,18 +791,12 @@ Successfully installed qutip-5.1.1
 </pre></div>
 </div>
 </div>
-<details class="admonition hide below-input">
-<summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell output</p>
-<p class="expanded admonition-title">Hide code cell output</p>
-</summary>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x7809a154d2d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x7fa98a872660&gt;
 </pre></div>
 </div>
-<img alt="../_images/397040f6c51ff45328e4001f7ea445409a3334d7e30bc3444c1f33eea4d7b6ae.png" src="../_images/397040f6c51ff45328e4001f7ea445409a3334d7e30bc3444c1f33eea4d7b6ae.png" />
+<img alt="../_images/c50e861e6ebed4f680245fad61447afcb1fb55c9b4383242e566feeff255421f.png" src="../_images/c50e861e6ebed4f680245fad61447afcb1fb55c9b4383242e566feeff255421f.png" />
 </div>
-</details>
 </div>
 </section>
 </section>
@@ -836,7 +837,7 @@ Successfully installed qutip-5.1.1
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Activity 2 – Two-photon (HOM) interference simulation</p>
+        <p class="prev-next-title">Activity 3 – Two-photon (HOM) interference simulation</p>
       </div>
     </a>
     <a class="right-next"
@@ -864,6 +865,7 @@ Successfully installed qutip-5.1.1
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prelab-exercise-pt-1">Prelab Exercise Pt. 1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports-and-headers">Imports and Headers</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-and-hamiltonian">Operators and Hamiltonian</a></li>
 </ul>

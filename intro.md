@@ -5,10 +5,6 @@ This is the course website for the Spring 2025 offering of 6.2410 -- Laboratory 
 
 ## Instructors
 
-Dirk R. Englund <br>
-Associate Professor of Electrical Engineering <br>
-englund@mit.edu, office 36-525
-
 P. Donald Keathley <br>
 Principal Research Scientist, Research Laboratory of Electronics <br>
 pdkeat2@mit.edu, office 36-285
@@ -17,12 +13,6 @@ pdkeat2@mit.edu, office 36-285
 
 Malick Sere <br>
 msere@mit.edu
-
-Vetri Vel <br>
-vetri@mit.edu
-
-Max Aalto <br>
-maxaalto@mit.edu
 
 ## Collaborators
 
@@ -103,11 +93,11 @@ Students will select open-ended design projects following on core material cover
 
 | Week | Topics | 
 | --- | --- |
-| 1 | Introduction to “quantum engineering” laboratory. Overview of course & platforms. |
-| 2-3 | Round 1 Labs in groups of 3-4; lab report |
-| 4-5 | Round 2 Labs in groups of 3-4; lab report |
-| 6-7 | Round 3 Labs in groups of 3-4; lab report | 
-| 8-9 | Open-ended design project proposal document + pitch presentation |
+| 1-2 | Introduction to “quantum engineering” laboratory. Overview of course & platforms. |
+| 3-4 | Round 1 Labs in groups of 3-4; lab report |
+| 5-6 | Round 2 Labs in groups of 3-4; lab report |
+| 7-8 | Round 3 Labs in groups of 3-4; lab report | 
+| 9 | Open-ended design project proposal document + pitch presentation |
 | 10-14 | Open-ended design projects leading to final report and presentation |
 
 ```

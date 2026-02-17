@@ -8,7 +8,7 @@ logo: FIGURES/logo-ibm.jpg
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: auto #auto or force or cache or 'off'
+  execute_notebooks: 'off' #auto or force or cache or 'off'
   timeout: 30
 
 # Define the name of the latex output file for PDF builds

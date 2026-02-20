@@ -33,7 +33,7 @@ parts:
   - caption: T1:3E2 -- Quantum Simulation Lab
     chapters:
     - file: simulation-modules/T1_3E2_spdc_simulation_by_qutip.ipynb
-    #- file: simulation-modules/T1-3E3-Activity-Cavity_QED_sensor.ipynb
+    - file: simulation-modules/T1-3E3-Activity-Cavity_QED_sensor.ipynb
     #- file: simulation-modules/T1-3E3-Activity-Compuational_HOM.ipynb
   - caption: Final Projects
     chapters:

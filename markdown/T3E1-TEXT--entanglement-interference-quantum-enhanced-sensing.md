@@ -711,7 +711,7 @@ with optimal operating points being $\varphi_0 = \pi/(2N)$ (or any other $\varph
 
 In the post-lab questions below, you will explore extensions to $N = 3$ and $N = 4$ NOON-state interferometers.  In particular you will examine why realization of such interferometers is technically challenging to accomplish in the real world. However, we emphasize that **these challenges aren't fundamental -- only technological.  Yet another example of why we need quantum engineers.**
 
-+++
++++ {"editable": true, "slideshow": {"slide_type": ""}, "tags": ["remove-cell"]}
 
 ### Numerical Experiments
 
@@ -736,9 +736,12 @@ This is rather arbitrary for visualization, and we look over a period of 1 secon
 colab:
   base_uri: https://localhost:8080/
   height: 513
+editable: true
 id: 2c213cbb-39d2-4c14-a48b-a4e83b72246a
 outputId: 2560f16d-e7b7-4a76-fc1d-2f10399e6051
-tags: [hide-output]
+slideshow:
+  slide_type: ''
+tags: [hide-output, remove-cell]
 ---
 import numpy as np
 import matplotlib.pyplot as plt
@@ -788,15 +791,19 @@ ax3.set_title('4004', fontsize=15);
 ```
 
 ```{code-cell} ipython3
-:id: 244f29bc-77de-449a-bad3-927510c5a4f0
-:outputId: 9c825584-870a-4df2-c76d-b56efbaa481f
-:tags: [remove-cell]
-
+---
+editable: true
+id: 244f29bc-77de-449a-bad3-927510c5a4f0
+outputId: 9c825584-870a-4df2-c76d-b56efbaa481f
+slideshow:
+  slide_type: ''
+tags: [remove-cell]
+---
 from myst_nb import glue
 glue("noon_classical_comparison", fig, display=True)
 ```
 
-+++ {"id": "e3e102af-b5ec-4e81-b942-d4b0a45f5428"}
++++ {"editable": true, "id": "e3e102af-b5ec-4e81-b942-d4b0a45f5428", "slideshow": {"slide_type": ""}, "tags": ["remove-cell"]}
 
 ```{glue:figure} noon_classical_comparison
 :figwidth: 800px
@@ -805,7 +812,7 @@ glue("noon_classical_comparison", fig, display=True)
 Comparison of classical and NOON state interferomters.  The plot shows the recorded number of counts (photon counts for the classical case, or multiphoton events in the NOON state cases) for a fixed number of 1000 photons input to each interferomter.  The phase is modulated sinusoidally in time with an amplitude of 0.05 radians and frequency of 4 Hz.  Note the improved noise performance of the NOON-state interferometers.  If you reduce the phase modulation amplitude, you will notice that the NOON state interferometers can resolve phase modulations of lower amplitude than the classical interferometer. 
 ```
 
-+++
++++ {"editable": true, "slideshow": {"slide_type": ""}, "tags": ["remove-cell"]}
 
 Note how the modulation is clearly better resolved defined with higher signal-to-noise ratio as the photon order increases. This is even in-spite of progressively fewer collected events!  
 
@@ -816,8 +823,11 @@ You are encouraged to launch this notebook where you will find an interactive ve
 colab:
   base_uri: https://localhost:8080/
   height: 513
+editable: true
 id: 2c213cbb-39d2-4c14-a48b-a4e83b72246a
 outputId: 2560f16d-e7b7-4a76-fc1d-2f10399e6051
+slideshow:
+  slide_type: ''
 tags: [remove-cell]
 ---
 import numpy as np
@@ -899,7 +909,7 @@ system_set = ipywidgets.interactive(update,
 display(system_set);
 ```
 
-+++ {"id": "WEqkDzKhWJM-"}
++++ {"editable": true, "id": "WEqkDzKhWJM-", "slideshow": {"slide_type": ""}, "tags": ["remove-cell"]}
 
 ### Post-Lab Questions
 
